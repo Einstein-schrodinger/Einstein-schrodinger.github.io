@@ -49,10 +49,10 @@ class="math inline">\(m_{\mathrm{d}}^{*}=N_{\mathrm{v}}^{2/3}m_{\mathrm{b}}^*\)<
 <h4 id="计算代码">1.2 计算代码</h4>
 <figure class="highlight matlab"><table><tr><td class="code"><pre><span class="line"><span class="comment">%基于单抛物带模型拟合S-n的关系得到态密度有效质量----简并条件下</span></span><br><span class="line">clc,clear</span><br><span class="line">Kb = <span class="number">1.38066</span>*<span class="number">10</span>^<span class="number">-23</span>;  <span class="comment">%J/K 1J=1V*A*s 1W = 1J/s</span></span><br><span class="line">h = <span class="number">6.62608</span>*<span class="number">10</span>^<span class="number">-34</span>; <span class="comment">%J*s</span></span><br><span class="line">hr = h/(<span class="number">2</span>*<span class="built_in">pi</span>); <span class="comment">%简约普朗克常数</span></span><br><span class="line">e = <span class="number">1.60219</span>*<span class="number">10</span>^<span class="number">-19</span>;  <span class="comment">%1C=1A*s</span></span><br><span class="line">me = <span class="number">9.10953</span>*<span class="number">10</span>^<span class="number">-31</span>;  <span class="comment">%Kg</span></span><br><span class="line">K = Kb/e;</span><br><span class="line">T = <span class="number">323</span>;  <span class="comment">%K 温度</span></span><br><span class="line"></span><br><span class="line">Sdata = [<span class="number">76.76</span>, <span class="number">101.92</span>, <span class="number">108.97</span>, <span class="number">174.48</span>]*<span class="number">10</span>^(<span class="number">-6</span>);  <span class="comment">%将uV/K转换为V/K</span></span><br><span class="line">ndata = [<span class="number">1.97</span>, <span class="number">1.04</span>, <span class="number">0.46</span>, <span class="number">0.63</span>]*<span class="number">10</span>^<span class="number">20</span>*<span class="number">10</span>^<span class="number">6</span>;   <span class="comment">%cm^-3, 转换为m^-3</span></span><br><span class="line"><span class="comment">% Sdata = [76.76]*10^(-6);  %将uV/K转换为V/K</span></span><br><span class="line"><span class="comment">% ndata = [1.97]*10^20*10^6;   %cm^-3, 转换为m^-3</span></span><br><span class="line">em0 = <span class="number">123</span>; <span class="comment">%态密度有效质量的初值  和初值有很大关系</span></span><br><span class="line">S = @(em,ndata)(<span class="number">8</span>*<span class="built_in">pi</span>^<span class="number">2</span>*Kb^<span class="number">2</span>)/(<span class="number">3</span>*e*h^<span class="number">2</span>)*em*me*T*(<span class="built_in">pi</span>./(<span class="number">3</span>*ndata)).^(<span class="number">2</span>/<span class="number">3</span>);</span><br><span class="line">[emf, resnorm] = lsqcurvefit(S, em0, ndata, Sdata); <span class="comment">%emf:拟合的得到的态密度有效质量，resnorm残差平方和</span></span><br><span class="line">display(emf);  <span class="comment">%显示拟合得到的值</span></span><br><span class="line"></span><br><span class="line">ndatac = (<span class="number">0.2</span>:<span class="number">0.001</span>:<span class="number">2</span>)*<span class="number">10</span>^<span class="number">26</span>;</span><br><span class="line">Sdatac = S(emf, ndatac);</span><br><span class="line"><span class="built_in">plot</span>(ndatac*<span class="number">10</span>^(<span class="number">-24</span>), Sdatac*<span class="number">10</span>^(<span class="number">6</span>), <span class="string">&#x27;-&#x27;</span>);</span><br><span class="line"><span class="built_in">hold</span> on</span><br><span class="line"><span class="built_in">plot</span>(ndata*<span class="number">10</span>^(<span class="number">-24</span>), Sdata*<span class="number">10</span>^(<span class="number">6</span>), <span class="string">&#x27;ro&#x27;</span>, <span class="string">&#x27;MarkerFaceColor&#x27;</span>, <span class="string">&#x27;r&#x27;</span>);  <span class="comment">%数据点为实心圆</span></span><br><span class="line">xlabel(<span class="string">&#x27;p [10^&#123;18&#125;\cdotcm^&#123;-3&#125;]&#x27;</span>);</span><br><span class="line">ylabel(<span class="string">&#x27;S [\muV\cdotK^&#123;-1&#125;]&#x27;</span>);</span><br></pre></td></tr></table></figure>
 <h4 id="计算结果">1.3 计算结果</h4>
-<h3 id="mathrmcu_2se单抛物带模型计算12">2.<span
+<h3 id="mathrmcu_2se单抛物带模型计算1-2">2.<span
 class="math inline">\(\mathrm{Cu_2Se}\)</span>单抛物带模型计算<a
 href="#fn1" class="footnote-ref" id="fnref1"
-role="doc-noteref"><sup>1</sup></a>,<a href="#fn2" class="footnote-ref"
+role="doc-noteref"><sup>1</sup></a> <a href="#fn2" class="footnote-ref"
 id="fnref2" role="doc-noteref"><sup>2</sup></a></h3>
 <h4 id="计算公式-1">2.1 计算公式</h4>
 <ul>
@@ -79,16 +79,20 @@ r_\mathrm{H} =
 </ul>
 <p><span class="math display">\[
 \mu_\mathrm{H}=\frac{1}{2}\frac{F_{-1/2}(\eta)}{F_0(\eta)}\mu_{0}
-\]</span> + <strong><span
+\]</span></p>
+<ul>
+<li><p><strong><span
 class="math inline">\(\mu_{0}\)</span>为漂移迁移率</strong>
-<strong>由此可以得到电导率</strong> + <strong>电导率</strong> <span
-class="math display">\[
-  \sigma =pe\mu=\frac{16\sqrt{2}\pi
+<strong>由此可以得到电导率</strong></p></li>
+<li><p><strong>电导率</strong> <span class="math display">\[
+\sigma =pe\mu=\frac{16\sqrt{2}\pi
 ek_\mathrm{B}^{3/2}TF_0(\eta)}{3h^3}\mu_{0}{m_\mathrm{d}^{*}}^{3/2}
 \tag{3}
-  \]</span> + <strong><span class="math inline">\(\mu_\mathrm{w} =
-\mu_{0}{m_\mathrm{d}^{*}}^{3/2}\)</span>为权重迁移率</strong> + +
-<strong>洛伦兹常数(参考其它文献):</strong></p>
+\]</span></p></li>
+<li><p><strong><span class="math inline">\(\mu_\mathrm{w} =
+\mu_{0}{m_\mathrm{d}^{*}}^{3/2}\)</span>为权重迁移率</strong></p></li>
+<li><p><strong>洛伦兹常数(参考其它文献):</strong></p></li>
+</ul>
 <p><span class="math display">\[
 L=(\frac{k_\mathrm{B}}{e})^2\left\{
 \frac{(r+3F_{r+2}(\eta)}{(r+1)F_{r}(\eta)}
@@ -103,7 +107,7 @@ role="doc-endnotes">
 <ol>
 <li id="fn1"><p><a
 href="https://doi.org/10.1002/adma.201903480"><strong>Zhao, K., et al.
-(2019). "Are <span class="math display">\[\mathrm{Cu_2Te}\]</span>-Based
+(2019). "Are <span class="math inline">\(\mathrm{Cu_2Te}\)</span>-Based
 Compounds Excellent Thermoelectric Materials?" Advanced Materials
 31(49): 1903480.</strong></a><a href="#fnref1" class="footnote-back"
 role="doc-backlink">↩︎</a></p></li>
