@@ -31,9 +31,10 @@ role="doc-noteref"><sup>3</sup></a></h3>
 <li><strong>塞贝克系数与简约费米能级的关系:</strong></li>
 </ul>
 <p><span class="math display">\[
-S(\eta)=\frac{k_\mathrm{B}}{e}\left[
+\begin{split} S(\eta)=\frac{k_\mathrm{B}}{e}\left[
 \frac{(r+2)F_{r+1}(\eta)}{(r+1)F_{r}(\eta)}-\eta \right] \\
-F_i(\eta)=\int_0^\infty \frac{x^i}{1+e^{(x-\eta)}} \mathrm{d}x \tag{1}
+F_i(\eta)=\int_0^\infty \frac{x^i}{1+e^{(x-\eta)}} \mathrm{d}x
+\end{split} \tag{1}
 \]</span></p>
 <ul>
 <li><strong>霍尔载流子浓度:</strong></li>
