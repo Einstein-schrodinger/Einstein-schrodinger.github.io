@@ -1,34 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Hello World</title>
-    <url>/blog/2022/10/26/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very
-first post. Check <a href="https://hexo.io/docs/">documentation</a> for
-more info. If you get any problems when using Hexo, you can find the
-answer in <a
-href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or
-you can ask me on <a
-href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="quick-start">Quick Start</h2>
-<h3 id="create-a-new-post">Create a new post</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a
-href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="run-server">Run server</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="generate-static-files">Generate static files</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a
-href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="deploy-to-remote-sites">Deploy to remote sites</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a
-href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
-  </entry>
-  <entry>
     <title>单抛物(Single Parabolic Band,SPB)模型</title>
     <url>/blog/2022/10/28/%E5%8D%95%E6%8A%9B%E7%89%A9%E5%B8%A6%E6%A8%A1%E5%9E%8B/</url>
     <content><![CDATA[<h1 id="单抛物single-parabolic-bandspb拟合计算">单抛物(<strong>Single
@@ -44,15 +16,16 @@ S=\frac{8\pi^2{k_\mathrm{B}}^2T}{3eh^2}m_{\mathrm{d}}^{*}\left(\frac{\pi}{3p}\ri
 <li><strong><span
 class="math inline">\(m_{\mathrm{d}}^{*}=N_{\mathrm{v}}^{2/3}m_{\mathrm{b}}^*\)</span>:态密度有效质量</strong></li>
 </ul>
-<h4 id="基于drude-sommerfeld自由电子模型">1.1
-基于Drude-Sommerfeld自由电子模型</h4>
 <h4 id="计算代码">1.2 计算代码</h4>
 <figure class="highlight matlab"><table><tr><td class="code"><pre><span class="line"><span class="comment">%基于单抛物带模型拟合S-n的关系得到态密度有效质量----简并条件下</span></span><br><span class="line">clc,clear</span><br><span class="line">Kb = <span class="number">1.38066</span>*<span class="number">10</span>^<span class="number">-23</span>;  <span class="comment">%J/K 1J=1V*A*s 1W = 1J/s</span></span><br><span class="line">h = <span class="number">6.62608</span>*<span class="number">10</span>^<span class="number">-34</span>; <span class="comment">%J*s</span></span><br><span class="line">hr = h/(<span class="number">2</span>*<span class="built_in">pi</span>); <span class="comment">%简约普朗克常数</span></span><br><span class="line">e = <span class="number">1.60219</span>*<span class="number">10</span>^<span class="number">-19</span>;  <span class="comment">%1C=1A*s</span></span><br><span class="line">me = <span class="number">9.10953</span>*<span class="number">10</span>^<span class="number">-31</span>;  <span class="comment">%Kg</span></span><br><span class="line">K = Kb/e;</span><br><span class="line">T = <span class="number">323</span>;  <span class="comment">%K 温度</span></span><br><span class="line"></span><br><span class="line">Sdata = [<span class="number">76.76</span>, <span class="number">101.92</span>, <span class="number">108.97</span>, <span class="number">174.48</span>]*<span class="number">10</span>^(<span class="number">-6</span>);  <span class="comment">%将uV/K转换为V/K</span></span><br><span class="line">ndata = [<span class="number">1.97</span>, <span class="number">1.04</span>, <span class="number">0.46</span>, <span class="number">0.63</span>]*<span class="number">10</span>^<span class="number">20</span>*<span class="number">10</span>^<span class="number">6</span>;   <span class="comment">%cm^-3, 转换为m^-3</span></span><br><span class="line"><span class="comment">% Sdata = [76.76]*10^(-6);  %将uV/K转换为V/K</span></span><br><span class="line"><span class="comment">% ndata = [1.97]*10^20*10^6;   %cm^-3, 转换为m^-3</span></span><br><span class="line">em0 = <span class="number">123</span>; <span class="comment">%态密度有效质量的初值  和初值有很大关系</span></span><br><span class="line">S = @(em,ndata)(<span class="number">8</span>*<span class="built_in">pi</span>^<span class="number">2</span>*Kb^<span class="number">2</span>)/(<span class="number">3</span>*e*h^<span class="number">2</span>)*em*me*T*(<span class="built_in">pi</span>./(<span class="number">3</span>*ndata)).^(<span class="number">2</span>/<span class="number">3</span>);</span><br><span class="line">[emf, resnorm] = lsqcurvefit(S, em0, ndata, Sdata); <span class="comment">%emf:拟合的得到的态密度有效质量，resnorm残差平方和</span></span><br><span class="line">display(emf);  <span class="comment">%显示拟合得到的值</span></span><br><span class="line"></span><br><span class="line">ndatac = (<span class="number">0.2</span>:<span class="number">0.001</span>:<span class="number">2</span>)*<span class="number">10</span>^<span class="number">26</span>;</span><br><span class="line">Sdatac = S(emf, ndatac);</span><br><span class="line"><span class="built_in">plot</span>(ndatac*<span class="number">10</span>^(<span class="number">-24</span>), Sdatac*<span class="number">10</span>^(<span class="number">6</span>), <span class="string">&#x27;-&#x27;</span>);</span><br><span class="line"><span class="built_in">hold</span> on</span><br><span class="line"><span class="built_in">plot</span>(ndata*<span class="number">10</span>^(<span class="number">-24</span>), Sdata*<span class="number">10</span>^(<span class="number">6</span>), <span class="string">&#x27;ro&#x27;</span>, <span class="string">&#x27;MarkerFaceColor&#x27;</span>, <span class="string">&#x27;r&#x27;</span>);  <span class="comment">%数据点为实心圆</span></span><br><span class="line">xlabel(<span class="string">&#x27;p [10^&#123;18&#125;\cdotcm^&#123;-3&#125;]&#x27;</span>);</span><br><span class="line">ylabel(<span class="string">&#x27;S [\muV\cdotK^&#123;-1&#125;]&#x27;</span>);</span><br></pre></td></tr></table></figure>
 <h4 id="计算结果">1.3 计算结果</h4>
-<h3 id="cu2se单抛物带模型计算1-2">2.Cu<sub>2</sub>Se单抛物带模型计算<a
+<p>...</p>
+<h3 id="cu2se单抛物带模型计算1-2-3">2.Cu<sub>2</sub>Se单抛物带模型计算<a
 href="#fn1" class="footnote-ref" id="fnref1"
 role="doc-noteref"><sup>1</sup></a> <a href="#fn2" class="footnote-ref"
-id="fnref2" role="doc-noteref"><sup>2</sup></a></h3>
+id="fnref2" role="doc-noteref"><sup>2</sup></a> <a href="#fn3"
+class="footnote-ref" id="fnref3"
+role="doc-noteref"><sup>3</sup></a></h3>
 <h4 id="计算公式-1">2.1 计算公式</h4>
 <ul>
 <li><strong>塞贝克系数与简约费米能级的关系:</strong></li>
@@ -117,6 +90,9 @@ Cu<sub>2-y</sub>S<sub>1/3</sub>Se<sub>1/3</sub>Te<sub>1/3</sub>
 liquid-like materials with nanoscale mosaic structures." Nano Energy 42:
 43-50.</strong></a><a href="#fnref2" class="footnote-back"
 role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p><strong><font color = red>特别致谢:</font></strong><a
+href="http://muchong.com/t-12417284-1"><strong><font color = red>穿越千年</font></strong></a><a
+href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
 ]]></content>
@@ -130,5 +106,33 @@ role="doc-backlink">↩︎</a></p></li>
         <tag>Pisarenko plot</tag>
         <tag>Matlab code</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/blog/2022/10/26/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very
+first post. Check <a href="https://hexo.io/docs/">documentation</a> for
+more info. If you get any problems when using Hexo, you can find the
+answer in <a
+href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or
+you can ask me on <a
+href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="quick-start">Quick Start</h2>
+<h3 id="create-a-new-post">Create a new post</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a
+href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="run-server">Run server</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="generate-static-files">Generate static files</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>More info: <a
+href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="deploy-to-remote-sites">Deploy to remote sites</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>More info: <a
+href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
   </entry>
 </search>
