@@ -31,9 +31,8 @@ role="doc-noteref"><sup>3</sup></a></h3>
 <li><strong>塞贝克系数与简约费米能级的关系:</strong></li>
 </ul>
 <p><span class="math display">\[
-S(\eta)=\frac{k_\mathrm{B}}{e} \cdot \left[ \frac{(r+2) \cdot
-F_{r+1}(\eta)}{(r+1) \cdot F_{r}(\eta)}-\eta \right]  \\
-\\
+S(\eta)=\frac{k_\mathrm{B}}{e}\left[
+\frac{(r+2)F_{r+1}(\eta)}{(r+1)F_{r}(\eta)}-\eta \right] \\
 F_i(\eta)=\int_0^\infty \frac{x^i}{1+e^{(x-\eta)}} \mathrm{d}x \tag{1}
 \]</span></p>
 <ul>
@@ -41,8 +40,7 @@ F_i(\eta)=\int_0^\infty \frac{x^i}{1+e^{(x-\eta)}} \mathrm{d}x \tag{1}
 </ul>
 <p><span class="math display">\[
 p_\mathrm{H}=4\pi\left(\frac{2m_{\mathrm{d}}^*k_\mathrm{B}
-T}{h^2}\right)^{3/2}\frac{F_{1/2}(\eta)}{r_{H}}
-\\
+T}{h^2}\right)^{3/2}\frac{F_{1/2}(\eta)}{r_{H}} \\
 r_\mathrm{H} =
 \frac{3}{4}\frac{F_{1/2}(\eta)F_{-1/2}(\eta)}{F_0^2(\eta)} \tag{2}
 \]</span></p>
