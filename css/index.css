@@ -3228,10 +3228,15 @@ h1.page-title + .tag-cloud-list {
   padding: 40px 20px;
   color: var(--light-grey);
   text-align: center;
+  font-size: 16px;
+  color: #f00;
+font-family
 }
+#footer-wrap 华文楷体,
 #footer-wrap a {
   color: var(--light-grey);
 }
+#footer-wrap 华文楷体:hover,
 #footer-wrap a:hover {
   text-decoration: underline;
 }
