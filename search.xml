@@ -93,7 +93,7 @@ ek_\mathrm{B}^{3/2}TF_0(\eta)}{3h^3}\mu_{0}{m_\mathrm{d}^{*}}^{3/2}
 </ul>
 <p><span class="math display">\[
 L=\left(\frac{k_\mathrm{B}}{e}\right)^2\left\{
-\frac{(r+3F_{r+2}(\eta)}{(r+1)F_{r}(\eta)}
+\frac{(r+3)F_{r+2}(\eta)}{(r+1)F_{r}(\eta)}
 -\left[\frac{(r+2)F_{r+1}(\eta)}{(r+1)F_{r+1}(\eta)}\right]^2 \right\}
 \tag{4}
 \]</span></p>
