@@ -2513,11 +2513,14 @@ h1.page-title + .tag-cloud-list {
   padding: 20px 24px;
 }
 #aside-content .card-info .author-info__name {
-  font-weight: 500;
+  font-weight: bold;
   font-size: 1.57em;
+  color: #ff69b4;
 }
 #aside-content .card-info .author-info__description {
+  font-weight: bold;
   margin-top: -0.42em;
+  color: #8a2be2;
 }
 #aside-content .card-info .card-info-data {
   margin: 14px 0 4px;
@@ -2907,11 +2910,11 @@ h1.page-title + .tag-cloud-list {
   color: #49b1f5 !important;
 }
 .site-data > a .headline {
-  color: var(--font-color);
+  color: #063af8;
 }
 .site-data > a .length-num {
   margin-top: -0.32em;
-  color: var(--text-highlight-color);
+  color: #063af8;
   font-size: 1.4em;
 }
 @media screen and (min-width: 900px) {
