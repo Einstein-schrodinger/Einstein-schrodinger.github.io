@@ -54,7 +54,7 @@
 }
 
 /* 侧边栏和卡片 */
-[data-theme="dark"] #aside-content .card-widget #recent-posts>.recent-post-item {
+[data-theme="dark"] #aside-content .card-widget #recent-posts>.recent-post-item #aside-content>.card-widget.card-info {
     background: rgba(35, 35, 35, .5);
 }
 
