@@ -15,13 +15,6 @@
     background: rgba(255, 255, 255, .8);
 }
 
-.cardHover,
-.layout>div:first-child:not(.recent-posts),
-#aside-content .card-widget,
-.layout>.recent-posts .pagination>*:not(.space) {
-    background: rgba(255, 255, 255, .8);
-}
-
 /*侧边卡片的透明度 */
 :root {
     --card-bg: rgba(255, 255, 255, .8);
@@ -61,23 +54,14 @@
 }
 
 /* 所有页面黑夜背景 */
-[data-theme="dark"] #recent-posts>.recent-post-item,
+[data-theme="dark"] #aside_content .card-widget,
+#recent-posts>.recent-post-item,
+#aside-content>.card-widget.card-info,
 .layout_page>div:first-child:not(.recent-posts),
 .layout_post>#page,
 .layout_post>#post,
 .read-mode .layout_post>#post {
-    background: rgba(35, 35, 35, .5);
-}
-
-[data-theme="dark"] #aside-content>.card-widget.card-info {
-    background: rgba(35, 35, 35, .5);
-}
-
-
-[data-theme="dark"] .cardHover,
-.layout>div:first-child:not(.recent-posts),
-#aside-content .card-widget,
-.layout>.recent-posts .pagination>*:not(.space) {
+    /* 以下代表透明度为0.5 */
     background: rgba(35, 35, 35, .5);
 }
 
