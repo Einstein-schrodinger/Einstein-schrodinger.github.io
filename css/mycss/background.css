@@ -60,12 +60,12 @@
 .layout_post>#page,
 .layout_post>#post,
 .read-mode .layout_post>#post {
-    background: rgba(35, 35, 35, .5) !important;
+    background: rgba(35, 35, 35, .5);
 }
 
 /* 文章页黑夜背景 */
 [data-theme=dark] .layout_post>#post {
-    background: rgba(35, 35, 35, .5) !important;
+    background: rgba(35, 35, 35, .5);
 }
 
 /* 手机端适配 */
