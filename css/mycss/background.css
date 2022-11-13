@@ -1,14 +1,7 @@
-/* 文章页背景 */
-.layout_post>#post {
-    /* 以下代表透明度为0.5 可以自行修改*/
-    background: rgba(255, 255, 255, .8);
-}
-
 /* 所有页面背景 */
 .cardHover,
 #aside_content .card-widget,
 #recent-posts>.recent-post-item,
-.layout>div:first-child:not(.recent-posts),
 .layout_page>div:first-child:not(.recent-posts),
 .layout>.recent-posts .pagination>*:not(.space),
 .layout_post>#page,
@@ -61,7 +54,6 @@
 #aside_content .card-widget,
 #aside-content>.card-widget.card-info,
 #recent-posts>.recent-post-item,
-.layout>div:first-child:not(.recent-posts),
 .layout_page>div:first-child:not(.recent-posts),
 .layout>.recent-posts .pagination>*:not(.space),
 .layout_post>#page,
