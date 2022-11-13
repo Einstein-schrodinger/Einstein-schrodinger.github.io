@@ -15,6 +15,13 @@
     background: rgba(255, 255, 255, .8);
 }
 
+.cardHover,
+.layout>div:first-child:not(.recent-posts),
+#aside-content .card-widget,
+.layout>.recent-posts .pagination>*:not(.space) {
+    background: rgba(255, 255, 255, .8);
+}
+
 /*侧边卡片的透明度 */
 :root {
     --card-bg: rgba(255, 255, 255, .8);
@@ -54,8 +61,7 @@
 }
 
 /* 所有页面黑夜背景 */
-[data-theme="dark"] #aside_content .card-widget,
-#recent-posts>.recent-post-item,
+[data-theme="dark"] #recent-posts>.recent-post-item,
 .layout_page>div:first-child:not(.recent-posts),
 .layout_post>#page,
 .layout_post>#post,
@@ -70,7 +76,6 @@
 
 [data-theme="dark"] .cardHover,
 .layout>div:first-child:not(.recent-posts),
-#recent-posts>.recent-post-item,
 #aside-content .card-widget,
 .layout>.recent-posts .pagination>*:not(.space) {
     background: rgba(35, 35, 35, .5);
