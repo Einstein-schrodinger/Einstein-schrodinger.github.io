@@ -53,6 +53,16 @@
     text-shadow: 0 0 2px var(--theme-color) !important;
 }
 
+/* 侧边栏和卡片 */
+[data-theme="dark"] #aside-content .card-widget {
+    background: rgba(25, 25, 25, .88)
+}
+
+/* 文章页背景 */
+[data-theme=dark] div#post {
+    background: rgba(35, 35, 35, .5);
+}
+
 /* 手机端适配 */
 [data-theme="dark"] #sidebar #sidebar-menus .menus_items .site-page {
     text-shadow: 0 0 2px var(--theme-color) !important;
