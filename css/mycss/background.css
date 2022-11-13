@@ -1,82 +1,69 @@
 #recent-posts>.recent-post-item {
-    background: var(--trans-light);
-    backdrop-filter: var(--backdrop-filter);
-    border-radius: 25px;
-    border: 1px solid #a9a9a9
+    background: rgba(255, 255, 255, .8);
 }
 
 #aside-content .card-widget {
-    background: var(--trans-light);
-    backdrop-filter: var(--backdrop-filter);
-    border-radius: 18px;
-    transition: .3s;
-    border: 1px solid #a9a9a9
+    background: rgba(255, 255, 255, .8);
 }
 
 div#post {
-    background: var(--trans-light);
-    backdrop-filter: var(--backdrop-filter);
+    background: rgba(255, 255, 255, .8);
 }
 
 div#page {
-    background: var(--trans-light);
-    backdrop-filter: var(--backdrop-filter)
+    background: rgba(255, 255, 255, .8);
 }
 
 div#archive {
-    background: var(--trans-light);
-    backdrop-filter: var(--backdrop-filter)
+    background: rgba(255, 255, 255, .8);
 }
 
 div#tag {
-    background: var(--trans-light);
-    backdrop-filter: var(--backdrop-filter)
+    background: rgba(255, 255, 255, .8);
 }
 
 div#category {
-    background: var(--trans-light);
-    backdrop-filter: var(--backdrop-filter)
+    background: rgba(255, 255, 255, .8);
 }
 
 #page-header.nav-fixed #nav {
-    background: rgba(255, 255, 255, .75);
-    backdrop-filter: var(--backdrop-filter)
+    background: rgba(255, 255, 255, .8);
 }
 
 [data-theme=dark] #page-header.nav-fixed #nav {
-    background: rgba(0, 0, 0, .7) !important
+    background: rgba(35, 35, 35, .5) !important
 }
 
 [data-theme=dark] #recent-posts>.recent-post-item {
-    background: var(--trans-dark)
+    background: rgba(35, 35, 35, .5)
 }
 
 [data-theme=dark] #aside-content .card-widget {
-    background: var(--trans-dark)
+    background: rgba(35, 35, 35, .5)
 }
 
 [data-theme=dark] #aside-content>.card-widget.card-info {
-    background: var(--trans-dark)
+    background: rgba(35, 35, 35, .5)
 }
 
 [data-theme=dark] div#post {
-    background: var(--trans-dark)
+    background: rgba(35, 35, 35, .5)
 }
 
 [data-theme=dark] div#tag {
-    background: var(--trans-dark)
+    background: rgba(35, 35, 35, .5)
 }
 
 [data-theme=dark] div#archive {
-    background: var(--trans-dark)
+    background: rgba(35, 35, 35, .5)
 }
 
 [data-theme=dark] div#page {
-    background: var(--trans-dark)
+    background: rgba(35, 35, 35, .5)
 }
 
 [data-theme=dark] div#category {
-    background: var(--trans-dark)
+    background: rgba(35, 35, 35, .5)
 }
 
 [data-theme=dark] #footer::before {
@@ -88,20 +75,20 @@ div#category {
 }
 
 .read-mode #aside-content .card-widget {
-    background: rgba(158, 204, 171, .5) !important
+    background: rgba(35, 35, 35, .5) !important
 }
 
 .read-mode div#post {
-    background: rgba(158, 204, 171, .5) !important
+    background: rgba(35, 35, 35, .5) !important
 }
 
 [data-theme=dark] .read-mode #aside-content .card-widget {
-    background: rgba(25, 25, 25, .9) !important;
+    background: rgba(35, 35, 35, .5) !important;
     color: #fff
 }
 
 [data-theme=dark] .read-mode div#post {
-    background: rgba(25, 25, 25, .9) !important;
+    background: rgba(35, 35, 35, .5) !important;
     color: #fff
 }
 
@@ -113,21 +100,7 @@ div#category {
     background: 0 0 !important
 }
 
-.vwrap {
-    box-shadow: 2px 2px 5px #bbb;
-    background: rgba(255, 255, 255, .3);
-    border-radius: 8px;
-    padding: 30px;
-    margin: 30px 0 30px 0
-}
 
-.vcard {
-    box-shadow: 2px 2px 5px #bbb;
-    background: rgba(255, 255, 255, .3);
-    border-radius: 8px;
-    padding: 30px;
-    margin: 30px 0 0 0
-}
 
 /*侧边卡片的透明度 */
 :root {
@@ -153,21 +126,21 @@ div#category {
 }
 
 /* 夜间模式遮罩透明 */
-[data-theme="dark"] #footer::before {
+[data-theme=dark] #footer::before {
     background: transparent !important;
 }
 
-[data-theme="dark"] #page-header::before {
+[data-theme=dark] #page-header::before {
     background: transparent !important;
 }
 
 /* 夜间模式菜单栏发光字 */
-[data-theme="dark"] #nav .site-page,
-[data-theme="dark"] #nav .menus_items .menus_item .menus_item_child li a {
+[data-theme=dark] #nav .site-page,
+[data-theme=dark] #nav .menus_items .menus_item .menus_item_child li a {
     text-shadow: 0 0 2px var(--theme-color) !important;
 }
 
 /* 手机端适配 */
-[data-theme="dark"] #sidebar #sidebar-menus .menus_items .site-page {
+[data-theme=dark] #sidebar #sidebar-menus .menus_items .site-page {
     text-shadow: 0 0 2px var(--theme-color) !important;
 }
