@@ -1,14 +1,132 @@
-/* 所有页面背景 */
-.cardHover,
-#aside_content .card-widget,
-#recent-posts>.recent-post-item,
-.layout_page>div:first-child:not(.recent-posts),
-.layout>.recent-posts .pagination>*:not(.space),
-.layout_post>#page,
-.layout_post>#post,
-.read-mode .layout_post>#post {
-    /* 以下代表透明度为0.5 */
-    background: rgba(255, 255, 255, .8);
+#recent-posts>.recent-post-item {
+    background: var(--trans-light);
+    backdrop-filter: var(--backdrop-filter);
+    border-radius: 25px;
+    border: 1px solid #a9a9a9
+}
+
+#aside-content .card-widget {
+    background: var(--trans-light);
+    backdrop-filter: var(--backdrop-filter);
+    border-radius: 18px;
+    transition: .3s;
+    border: 1px solid #a9a9a9
+}
+
+div#post {
+    background: var(--trans-light);
+    backdrop-filter: var(--backdrop-filter);
+}
+
+div#page {
+    background: var(--trans-light);
+    backdrop-filter: var(--backdrop-filter)
+}
+
+div#archive {
+    background: var(--trans-light);
+    backdrop-filter: var(--backdrop-filter)
+}
+
+div#tag {
+    background: var(--trans-light);
+    backdrop-filter: var(--backdrop-filter)
+}
+
+div#category {
+    background: var(--trans-light);
+    backdrop-filter: var(--backdrop-filter)
+}
+
+#page-header.nav-fixed #nav {
+    background: rgba(255, 255, 255, .75);
+    backdrop-filter: var(--backdrop-filter)
+}
+
+[data-theme=dark] #page-header.nav-fixed #nav {
+    background: rgba(0, 0, 0, .7) !important
+}
+
+[data-theme=dark] #recent-posts>.recent-post-item {
+    background: var(--trans-dark)
+}
+
+[data-theme=dark] #aside-content .card-widget {
+    background: var(--trans-dark)
+}
+
+[data-theme=dark] #aside-content>.card-widget.card-info {
+    background: var(--trans-dark)
+}
+
+[data-theme=dark] div#post {
+    background: var(--trans-dark)
+}
+
+[data-theme=dark] div#tag {
+    background: var(--trans-dark)
+}
+
+[data-theme=dark] div#archive {
+    background: var(--trans-dark)
+}
+
+[data-theme=dark] div#page {
+    background: var(--trans-dark)
+}
+
+[data-theme=dark] div#category {
+    background: var(--trans-dark)
+}
+
+[data-theme=dark] #footer::before {
+    background: 0 0 !important
+}
+
+[data-theme=dark] #page-header::before {
+    background: 0 0 !important
+}
+
+.read-mode #aside-content .card-widget {
+    background: rgba(158, 204, 171, .5) !important
+}
+
+.read-mode div#post {
+    background: rgba(158, 204, 171, .5) !important
+}
+
+[data-theme=dark] .read-mode #aside-content .card-widget {
+    background: rgba(25, 25, 25, .9) !important;
+    color: #fff
+}
+
+[data-theme=dark] .read-mode div#post {
+    background: rgba(25, 25, 25, .9) !important;
+    color: #fff
+}
+
+#footer {
+    background: 0 0 !important
+}
+
+#page-header {
+    background: 0 0 !important
+}
+
+.vwrap {
+    box-shadow: 2px 2px 5px #bbb;
+    background: rgba(255, 255, 255, .3);
+    border-radius: 8px;
+    padding: 30px;
+    margin: 30px 0 30px 0
+}
+
+.vcard {
+    box-shadow: 2px 2px 5px #bbb;
+    background: rgba(255, 255, 255, .3);
+    border-radius: 8px;
+    padding: 30px;
+    margin: 30px 0 0 0
 }
 
 /*侧边卡片的透明度 */
@@ -47,20 +165,6 @@
 [data-theme="dark"] #nav .site-page,
 [data-theme="dark"] #nav .menus_items .menus_item .menus_item_child li a {
     text-shadow: 0 0 2px var(--theme-color) !important;
-}
-
-/* 所有页面黑夜背景 */
-[data-theme="dark"] .cardHover,
-#aside_content .card-widget,
-#aside-content>.card-widget.card-info,
-#recent-posts>.recent-post-item,
-.layout_page>div:first-child:not(.recent-posts),
-.layout>.recent-posts .pagination>*:not(.space),
-.layout_post>#page,
-.layout_post>#post,
-.read-mode .layout_post>#post {
-    /* 以下代表透明度为0.5 */
-    background: rgba(35, 35, 35, .5);
 }
 
 /* 手机端适配 */
