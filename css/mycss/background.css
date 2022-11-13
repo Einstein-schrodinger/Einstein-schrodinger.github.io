@@ -54,12 +54,12 @@
 }
 
 /* 侧边栏和卡片 */
-[data-theme="dark"] #aside-content .card-widget {
-    background: rgba(25, 25, 25, .88)
+[data-theme="dark"] #aside-content .card-widget #recent-posts>.recent-post-item {
+    background: rgba(35, 35, 35, .5);
 }
 
 /* 文章页背景 */
-[data-theme=dark] div#post {
+[data-theme=dark] div#post div#swiper_container #categoryBar {
     background: rgba(35, 35, 35, .5);
 }
 
