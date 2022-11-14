@@ -3,7 +3,10 @@
   <entry>
     <title>出入红尘</title>
     <url>/2022/10/26/%E5%87%BA%E5%85%A5%E7%BA%A2%E5%B0%98/</url>
-    <content><![CDATA[<div class='poem'><div class='poem-title'>好了歌</div><div class='poem-author'>曹雪芹</div><p>世人都晓神仙好，惟有功名忘不了！<br>古今将相在何方？荒冢一堆草没了。<br>世人都晓神仙好，只有金银忘不了！<br>终朝只恨聚无多，及到多时眼闭了。<br>世人都晓神仙好，只有娇妻忘不了！<br>君生日日说恩情，君死又随人去了。<br>世人都晓神仙好，只有儿孙忘不了！<br>痴心父母古来多，孝顺儿孙谁见了？ </p>
+    <content><![CDATA[<div class='poem'><div class='poem-title'>好了歌</div><div class='poem-author'>曹雪芹</div><p>世人都晓神仙好，惟有功名忘不了！ 古今将相在何方？荒冢一堆草没了。
+世人都晓神仙好，只有金银忘不了！ 终朝只恨聚无多，及到多时眼闭了。
+世人都晓神仙好，只有娇妻忘不了！ 君生日日说恩情，君死又随人去了。
+世人都晓神仙好，只有儿孙忘不了！ 痴心父母古来多，孝顺儿孙谁见了？</p>
 </div>
 ]]></content>
       <categories>
@@ -16,50 +19,100 @@
   <entry>
     <title>单抛物带(Single Parabolic Band,SPB)模型</title>
     <url>/2022/11/07/%E5%8D%95%E6%8A%9B%E7%89%A9%E5%B8%A6%E6%A8%A1%E5%9E%8B/</url>
-    <content><![CDATA[<h1 id="单抛物带-Single-Parabolic-Band，SPB-模型拟合计算"><a href="#单抛物带-Single-Parabolic-Band，SPB-模型拟合计算" class="headerlink" title="单抛物带(Single Parabolic Band，SPB)模型拟合计算"></a>单抛物带(<strong>Single Parabolic Band，SPB</strong>)模型拟合计算</h1><h2 id="1-Cu2Se单抛物带模型计算-简并条件下"><a href="#1-Cu2Se单抛物带模型计算-简并条件下" class="headerlink" title="1.Cu2Se单抛物带模型计算(简并条件下)"></a>1.Cu<sub>2</sub>Se单抛物带模型计算(简并条件下)</h2><h3 id="1-1计算公式"><a href="#1-1计算公式" class="headerlink" title="1.1计算公式"></a>1.1计算公式</h3><script type="math/tex; mode=display">
-S=\frac{8\pi^2{k_\mathrm{B}}^2T}{3eh^2}m_{\mathrm{d}}^{*}\left(\frac{\pi}{3p}\right)^{2/3} \tag{1}</script><ul>
-<li><strong>$m<em>{\mathrm{d}}^{*}=N</em>{\mathrm{v}}^{2/3}m_{\mathrm{b}}^*$:态密度有效质量</strong></li>
+    <content><![CDATA[<h1
+id="单抛物带single-parabolic-bandspb模型拟合计算">单抛物带(<strong>Single
+Parabolic Band，SPB</strong>)模型拟合计算</h1>
+<h2
+id="cu2se单抛物带模型计算简并条件下">1.Cu<sub>2</sub>Se单抛物带模型计算(简并条件下)</h2>
+<h3 id="计算公式">1.1计算公式</h3>
+<p><span class="math display">\[
+S=\frac{8\pi^2{k_\mathrm{B}}^2T}{3eh^2}m_{\mathrm{d}}^{*}\left(\frac{\pi}{3p}\right)^{2/3}
+\tag{1}
+\]</span></p>
+<ul>
+<li><strong><span
+class="math inline">\(m_{\mathrm{d}}^{*}=N_{\mathrm{v}}^{2/3}m_{\mathrm{b}}^*\)</span>:态密度有效质量</strong></li>
 </ul>
-<h3 id="1-2-计算代码"><a href="#1-2-计算代码" class="headerlink" title="1.2 计算代码"></a>1.2 计算代码</h3><figure class="highlight matlab"><table><tr><td class="code"><pre><span class="line"><span class="comment">%基于单抛物带模型拟合S-n的关系得到态密度有效质量----简并条件下</span></span><br><span class="line">clc,clear</span><br><span class="line">Kb = <span class="number">1.38066</span>*<span class="number">10</span>^<span class="number">-23</span>;  <span class="comment">%J/K 1J=1V*A*s 1W = 1J/s</span></span><br><span class="line">h = <span class="number">6.62608</span>*<span class="number">10</span>^<span class="number">-34</span>; <span class="comment">%J*s</span></span><br><span class="line">hr = h/(<span class="number">2</span>*<span class="built_in">pi</span>); <span class="comment">%简约普朗克常数</span></span><br><span class="line">e = <span class="number">1.60219</span>*<span class="number">10</span>^<span class="number">-19</span>;  <span class="comment">%1C=1A*s</span></span><br><span class="line">me = <span class="number">9.10953</span>*<span class="number">10</span>^<span class="number">-31</span>;  <span class="comment">%Kg</span></span><br><span class="line">K = Kb/e;</span><br><span class="line">T = <span class="number">323</span>;  <span class="comment">%K 温度</span></span><br><span class="line"></span><br><span class="line">Sdata = [<span class="number">76.76</span>, <span class="number">101.92</span>, <span class="number">108.97</span>, <span class="number">174.48</span>]*<span class="number">10</span>^(<span class="number">-6</span>);  <span class="comment">%将uV/K转换为V/K</span></span><br><span class="line">ndata = [<span class="number">1.97</span>, <span class="number">1.04</span>, <span class="number">0.46</span>, <span class="number">0.63</span>]*<span class="number">10</span>^<span class="number">20</span>*<span class="number">10</span>^<span class="number">6</span>;   <span class="comment">%cm^-3, 转换为m^-3</span></span><br><span class="line"><span class="comment">% Sdata = [76.76]*10^(-6);  %将uV/K转换为V/K</span></span><br><span class="line"><span class="comment">% ndata = [1.97]*10^20*10^6;   %cm^-3, 转换为m^-3</span></span><br><span class="line">em0 = <span class="number">123</span>; <span class="comment">%态密度有效质量的初值  和初值有很大关系</span></span><br><span class="line">S = @(em,ndata)(<span class="number">8</span>*<span class="built_in">pi</span>^<span class="number">2</span>*Kb^<span class="number">2</span>)/(<span class="number">3</span>*e*h^<span class="number">2</span>)*em*me*T*(<span class="built_in">pi</span>./(<span class="number">3</span>*ndata)).^(<span class="number">2</span>/<span class="number">3</span>);</span><br><span class="line">[emf, resnorm] = lsqcurvefit(S, em0, ndata, Sdata); <span class="comment">%emf:拟合的得到的态密度有效质量，resnorm残差平方和</span></span><br><span class="line">display(emf);  <span class="comment">%显示拟合得到的值</span></span><br><span class="line"></span><br><span class="line">ndatac = (<span class="number">0.2</span>:<span class="number">0.001</span>:<span class="number">2</span>)*<span class="number">10</span>^<span class="number">26</span>;</span><br><span class="line">Sdatac = S(emf, ndatac);</span><br><span class="line"><span class="built_in">plot</span>(ndatac*<span class="number">10</span>^(<span class="number">-24</span>), Sdatac*<span class="number">10</span>^(<span class="number">6</span>), <span class="string">&#x27;-&#x27;</span>);</span><br><span class="line"><span class="built_in">hold</span> on</span><br><span class="line"><span class="built_in">plot</span>(ndata*<span class="number">10</span>^(<span class="number">-24</span>), Sdata*<span class="number">10</span>^(<span class="number">6</span>), <span class="string">&#x27;ro&#x27;</span>, <span class="string">&#x27;MarkerFaceColor&#x27;</span>, <span class="string">&#x27;r&#x27;</span>);  <span class="comment">%数据点为实心圆</span></span><br><span class="line">xlabel(<span class="string">&#x27;p [10^&#123;18&#125;\cdotcm^&#123;-3&#125;]&#x27;</span>);</span><br><span class="line">ylabel(<span class="string">&#x27;S [\muV\cdotK^&#123;-1&#125;]&#x27;</span>);</span><br></pre></td></tr></table></figure>
-<h3 id="1-3-计算结果"><a href="#1-3-计算结果" class="headerlink" title="1.3 计算结果"></a>1.3 计算结果</h3><p>…</p>
-<h2 id="2-Cu2Se单抛物带模型计算1-2-3"><a href="#2-Cu2Se单抛物带模型计算1-2-3" class="headerlink" title="2.Cu2Se单抛物带模型计算1 2 3"></a>2.Cu<sub>2</sub>Se单抛物带模型计算<sup><a href="#fn_1" id="reffn_1">1</a></sup> <sup><a href="#fn_2" id="reffn_2">2</a></sup> <sup><a href="#fn_3" id="reffn_3">3</a></sup></h2><h3 id="2-1-计算公式"><a href="#2-1-计算公式" class="headerlink" title="2.1 计算公式"></a>2.1 计算公式</h3><ul>
+<h3 id="计算代码">1.2 计算代码</h3>
+<figure class="highlight matlab"><table><tr><td class="code"><pre><span class="line"><span class="comment">%基于单抛物带模型拟合S-n的关系得到态密度有效质量----简并条件下</span></span><br><span class="line">clc,clear</span><br><span class="line">Kb = <span class="number">1.38066</span>*<span class="number">10</span>^<span class="number">-23</span>;  <span class="comment">%J/K 1J=1V*A*s 1W = 1J/s</span></span><br><span class="line">h = <span class="number">6.62608</span>*<span class="number">10</span>^<span class="number">-34</span>; <span class="comment">%J*s</span></span><br><span class="line">hr = h/(<span class="number">2</span>*<span class="built_in">pi</span>); <span class="comment">%简约普朗克常数</span></span><br><span class="line">e = <span class="number">1.60219</span>*<span class="number">10</span>^<span class="number">-19</span>;  <span class="comment">%1C=1A*s</span></span><br><span class="line">me = <span class="number">9.10953</span>*<span class="number">10</span>^<span class="number">-31</span>;  <span class="comment">%Kg</span></span><br><span class="line">K = Kb/e;</span><br><span class="line">T = <span class="number">323</span>;  <span class="comment">%K 温度</span></span><br><span class="line"></span><br><span class="line">Sdata = [<span class="number">76.76</span>, <span class="number">101.92</span>, <span class="number">108.97</span>, <span class="number">174.48</span>]*<span class="number">10</span>^(<span class="number">-6</span>);  <span class="comment">%将uV/K转换为V/K</span></span><br><span class="line">ndata = [<span class="number">1.97</span>, <span class="number">1.04</span>, <span class="number">0.46</span>, <span class="number">0.63</span>]*<span class="number">10</span>^<span class="number">20</span>*<span class="number">10</span>^<span class="number">6</span>;   <span class="comment">%cm^-3, 转换为m^-3</span></span><br><span class="line"><span class="comment">% Sdata = [76.76]*10^(-6);  %将uV/K转换为V/K</span></span><br><span class="line"><span class="comment">% ndata = [1.97]*10^20*10^6;   %cm^-3, 转换为m^-3</span></span><br><span class="line">em0 = <span class="number">123</span>; <span class="comment">%态密度有效质量的初值  和初值有很大关系</span></span><br><span class="line">S = @(em,ndata)(<span class="number">8</span>*<span class="built_in">pi</span>^<span class="number">2</span>*Kb^<span class="number">2</span>)/(<span class="number">3</span>*e*h^<span class="number">2</span>)*em*me*T*(<span class="built_in">pi</span>./(<span class="number">3</span>*ndata)).^(<span class="number">2</span>/<span class="number">3</span>);</span><br><span class="line">[emf, resnorm] = lsqcurvefit(S, em0, ndata, Sdata); <span class="comment">%emf:拟合的得到的态密度有效质量，resnorm残差平方和</span></span><br><span class="line">display(emf);  <span class="comment">%显示拟合得到的值</span></span><br><span class="line"></span><br><span class="line">ndatac = (<span class="number">0.2</span>:<span class="number">0.001</span>:<span class="number">2</span>)*<span class="number">10</span>^<span class="number">26</span>;</span><br><span class="line">Sdatac = S(emf, ndatac);</span><br><span class="line"><span class="built_in">plot</span>(ndatac*<span class="number">10</span>^(<span class="number">-24</span>), Sdatac*<span class="number">10</span>^(<span class="number">6</span>), <span class="string">&#x27;-&#x27;</span>);</span><br><span class="line"><span class="built_in">hold</span> on</span><br><span class="line"><span class="built_in">plot</span>(ndata*<span class="number">10</span>^(<span class="number">-24</span>), Sdata*<span class="number">10</span>^(<span class="number">6</span>), <span class="string">&#x27;ro&#x27;</span>, <span class="string">&#x27;MarkerFaceColor&#x27;</span>, <span class="string">&#x27;r&#x27;</span>);  <span class="comment">%数据点为实心圆</span></span><br><span class="line">xlabel(<span class="string">&#x27;p [10^&#123;18&#125;\cdotcm^&#123;-3&#125;]&#x27;</span>);</span><br><span class="line">ylabel(<span class="string">&#x27;S [\muV\cdotK^&#123;-1&#125;]&#x27;</span>);</span><br></pre></td></tr></table></figure>
+<h3 id="计算结果">1.3 计算结果</h3>
+<p>...</p>
+<h2 id="cu2se单抛物带模型计算1-2-3">2.Cu<sub>2</sub>Se单抛物带模型计算<a
+href="#fn1" class="footnote-ref" id="fnref1"
+role="doc-noteref"><sup>1</sup></a> <a href="#fn2" class="footnote-ref"
+id="fnref2" role="doc-noteref"><sup>2</sup></a> <a href="#fn3"
+class="footnote-ref" id="fnref3"
+role="doc-noteref"><sup>3</sup></a></h2>
+<h3 id="计算公式-1">2.1 计算公式</h3>
+<ul>
 <li><strong>塞贝克系数与简约费米能级的关系:</strong></li>
 </ul>
-<script type="math/tex; mode=display">
-\begin{split} S(\eta)&=\frac{k_\mathrm{B}}{e}\left[ \frac{(r+2)F_{r+1}(\eta)}{(r+1)F_{r}(\eta)}-\eta \right] \\
-F_i(\eta)&=\int_0^\infty \frac{x^i}{1+e^{(x-\eta)}} \mathrm{d}x \end{split} \tag{1}</script><ul>
+<p><span class="math display">\[
+\begin{split} S(\eta)&amp;=\frac{k_\mathrm{B}}{e}\left[
+\frac{(r+2)F_{r+1}(\eta)}{(r+1)F_{r}(\eta)}-\eta \right] \\
+F_i(\eta)&amp;=\int_0^\infty \frac{x^i}{1+e^{(x-\eta)}} \mathrm{d}x
+\end{split} \tag{1}
+\]</span></p>
+<ul>
 <li><strong>霍尔载流子浓度:</strong></li>
 </ul>
-<script type="math/tex; mode=display">
+<p><span class="math display">\[
 \begin{split}
-p_\mathrm{H}& =4\pi\left(\frac{2m_{\mathrm{d}}^*k_\mathrm{B} T}{h^2}\right)^{3/2}\frac{F_{1/2}(\eta)}{r_{H}} \\
-r_\mathrm{H}& = \frac{3}{4}\frac{F_{1/2}(\eta)F_{-1/2}(\eta)}{F_0^2(\eta)} 
-\end{split}\tag{2}</script><ul>
+p_\mathrm{H}&amp; =4\pi\left(\frac{2m_{\mathrm{d}}^*k_\mathrm{B}
+T}{h^2}\right)^{3/2}\frac{F_{1/2}(\eta)}{r_{H}} \\
+r_\mathrm{H}&amp; =
+\frac{3}{4}\frac{F_{1/2}(\eta)F_{-1/2}(\eta)}{F_0^2(\eta)}
+\end{split}\tag{2}
+\]</span></p>
+<ul>
 <li><strong>霍尔迁移率(非简并条件):</strong></li>
 </ul>
-<script type="math/tex; mode=display">
-\mu_\mathrm{H}=\frac{1}{2}\frac{F_{-1/2}(\eta)}{F_0(\eta)}\mu_{0}</script><ul>
-<li><p><strong>$\mu_{0}$为漂移迁移率</strong><br><strong>由此可以得到电导率</strong></p>
-</li>
-<li><p><strong>电导率</strong></p>
-<script type="math/tex; mode=display">
-\sigma =pe\mu=\frac{16\sqrt{2}\pi ek_\mathrm{B}^{3/2}TF_0(\eta)}{3h^3}\mu_{0}{m_\mathrm{d}^{*}}^{3/2} \tag{3}</script></li>
-<li><p><strong>$\mu<em>\mathrm{w} = \mu</em>{0}{m_\mathrm{d}^{*}}^{3/2}$为权重迁移率</strong></p>
-</li>
-<li><p><strong>洛伦兹常数(参考其它文献):</strong></p>
-</li>
+<p><span class="math display">\[
+\mu_\mathrm{H}=\frac{1}{2}\frac{F_{-1/2}(\eta)}{F_0(\eta)}\mu_{0}
+\]</span></p>
+<ul>
+<li><p><strong><span
+class="math inline">\(\mu_{0}\)</span>为漂移迁移率</strong>
+<strong>由此可以得到电导率</strong></p></li>
+<li><p><strong>电导率</strong> <span class="math display">\[
+\sigma =pe\mu=\frac{16\sqrt{2}\pi
+ek_\mathrm{B}^{3/2}TF_0(\eta)}{3h^3}\mu_{0}{m_\mathrm{d}^{*}}^{3/2}
+\tag{3}
+\]</span></p></li>
+<li><p><strong><span class="math inline">\(\mu_\mathrm{w} =
+\mu_{0}{m_\mathrm{d}^{*}}^{3/2}\)</span>为权重迁移率</strong></p></li>
+<li><p><strong>洛伦兹常数(参考其它文献):</strong></p></li>
 </ul>
-<script type="math/tex; mode=display">
-L=\left(\frac{k_\mathrm{B}}{e}\right)^2\left\{ \frac{(r+3)F_{r+2}(\eta)}{(r+1)F_{r}(\eta)} -\left[\frac{(r+2)F_{r+1}(\eta)}{(r+1)F_{r+1}(\eta)}\right]^2 \right\} \tag{4}</script><h3 id="2-2-计算代码"><a href="#2-2-计算代码" class="headerlink" title="2.2 计算代码"></a>2.2 计算代码</h3><figure class="highlight matlab"><table><tr><td class="code"><pre><span class="line"><span class="comment">%基于单抛物带模型拟合S-n的关系得到态密度有效质量</span></span><br><span class="line">clc,clear</span><br><span class="line">Kb = <span class="number">1.38066</span>*<span class="number">10</span>^<span class="number">-23</span>;  <span class="comment">%J/K 1J=1V*A*s</span></span><br><span class="line">e = <span class="number">1.60219</span>*<span class="number">10</span>^<span class="number">-19</span>; <span class="comment">%1C=1A*s</span></span><br><span class="line">K = Kb/e;</span><br><span class="line">lambda = <span class="number">0</span>;<span class="comment">%只考虑声学声子散射lambad = 0，离化杂质散射为2</span></span><br><span class="line">h = <span class="number">6.62608</span>*<span class="number">10</span>^<span class="number">-34</span>; <span class="comment">%J*s、</span></span><br><span class="line">me = <span class="number">9.10953</span>*<span class="number">10</span>^<span class="number">-31</span>; <span class="comment">%Kg</span></span><br><span class="line">T = <span class="number">323</span>; <span class="comment">%K</span></span><br><span class="line">Sdata = [<span class="number">76.76</span>, <span class="number">101.92</span>, <span class="number">108.97</span>, <span class="number">174.48</span>]*<span class="number">10</span>^(<span class="number">-6</span>);  <span class="comment">%将uV/K转换为V/K</span></span><br><span class="line">pdata = [<span class="number">1.97</span>, <span class="number">1.04</span>, <span class="number">0.46</span>, <span class="number">0.63</span>]*<span class="number">10</span>^<span class="number">20</span>*<span class="number">10</span>^<span class="number">6</span>;   <span class="comment">%cm^-3, 转换为m^-3; 10^26m^(-3)=10^20 cm^(-3) 将m^(-3)换成cm^(-3)，并且以10^20cm^(-3)为单位开始</span></span><br><span class="line"><span class="comment">% Sdata = [76.76]*10^(-6);  %将uV/K转换为V/K</span></span><br><span class="line"><span class="comment">% pdata = [1.97]*10^20*10^6;   %cm^-3, 转换为m^-3</span></span><br><span class="line">Fn = @(no,yita)quadgk(@(x)x.^no./(<span class="number">1</span>+<span class="built_in">exp</span>(x-yita)),<span class="number">0</span>,<span class="built_in">inf</span>);</span><br><span class="line">rH = @(yita)((<span class="number">3</span>*Fn(<span class="number">1</span>/<span class="number">2</span>,yita)*Fn(<span class="number">-1</span>/<span class="number">2</span>,yita))/(<span class="number">4</span>*Fn(<span class="number">0</span>,yita)^<span class="number">2</span>));</span><br><span class="line"><span class="comment">%初始化</span></span><br><span class="line">yita = <span class="built_in">zeros</span>(<span class="number">1</span>,<span class="built_in">length</span>(Sdata)); </span><br><span class="line">Fndata = <span class="built_in">zeros</span>(<span class="number">1</span>,<span class="built_in">length</span>(Sdata));</span><br><span class="line">rHdata = <span class="built_in">zeros</span>(<span class="number">1</span>,<span class="built_in">length</span>(Sdata));</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> <span class="built_in">i</span> = <span class="number">1</span>:<span class="built_in">length</span>(Sdata)</span><br><span class="line">        func1 = @(yita)K*((lambda+<span class="number">2</span>)*Fn(lambda+<span class="number">1</span>,yita)/((lambda+<span class="number">1</span>)*Fn(lambda,yita))-yita)-Sdata(<span class="built_in">i</span>); <span class="comment">%V/K</span></span><br><span class="line">        yita(<span class="built_in">i</span>) = fzero(func1,<span class="number">0</span>);</span><br><span class="line">         Fndata(<span class="built_in">i</span>) =  Fn(<span class="number">1</span>/<span class="number">2</span>,yita(<span class="built_in">i</span>));</span><br><span class="line">         rHdata(<span class="built_in">i</span>) =  rH(yita(<span class="built_in">i</span>));</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line">Fr = Fndata./rHdata;</span><br><span class="line">func2 = @(em,Fr)(<span class="number">4</span>*<span class="built_in">pi</span>*(<span class="number">2</span>*Kb*T*em*me)^(<span class="number">3</span>/<span class="number">2</span>)/h^<span class="number">3.</span>*Fr);   <span class="comment">%func2 = p </span></span><br><span class="line"><span class="comment">% func2 = @(em, yita)(4*pi*(2*Kb*T*em*me)^(3/2)/h^3*Fn(1/2,yita)/rH(yita));   %func2 = p </span></span><br><span class="line">em0 = <span class="number">12</span>; <span class="comment">%态密度有效质量的初值  和初值有很大关系</span></span><br><span class="line">[emf, resnorm] = lsqcurvefit(func2, em0, yita, pdata); <span class="comment">%emf:拟合的得到的态密度有效质量，resnorm残差平方和</span></span><br><span class="line">display(emf);  <span class="comment">%显示拟合得到的值</span></span><br><span class="line"></span><br><span class="line"><span class="comment">%拟合得到态密度有效质量</span></span><br><span class="line">p = (<span class="number">0.2</span>:<span class="number">0.01</span>:<span class="number">2</span>)*<span class="number">10</span>^<span class="number">26</span>; <span class="comment">%10^26m^(-3)=10^20 cm^(-3) 将m^(-3)换成cm^(-3)，并且以10^20cm^(-3)为单位开始</span></span><br><span class="line">S = <span class="built_in">zeros</span>(<span class="number">1</span>,<span class="built_in">length</span>(p));</span><br><span class="line"> <span class="keyword">for</span> <span class="built_in">i</span> = <span class="number">1</span>:<span class="built_in">length</span>(p)</span><br><span class="line">        f1 = @(yita)(<span class="number">4</span>*<span class="built_in">pi</span>*(<span class="number">2</span>*Kb*T*emf*me)^(<span class="number">3</span>/<span class="number">2</span>)/h^<span class="number">3</span>*Fn(<span class="number">1</span>/<span class="number">2</span>,yita)/rH(yita)-p(<span class="built_in">i</span>)); </span><br><span class="line">        yita(<span class="built_in">i</span>) = fzero(f1,<span class="number">0</span>);</span><br><span class="line">        S(<span class="built_in">i</span>) = K*((lambda+<span class="number">2</span>)*Fn(lambda+<span class="number">1</span>,yita(<span class="built_in">i</span>))/((lambda+<span class="number">1</span>)*Fn(lambda,yita(<span class="built_in">i</span>)))-yita(<span class="built_in">i</span>)); <span class="comment">%V/K</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"><span class="built_in">plot</span>(p*<span class="number">10</span>^(<span class="number">-24</span>),S*<span class="number">10</span>^<span class="number">6</span>,<span class="string">&#x27;-&#x27;</span>,<span class="string">&#x27;LineWidth&#x27;</span>,<span class="number">1</span>)  <span class="comment">%将V/K换成uV/K</span></span><br><span class="line"><span class="built_in">hold</span> on</span><br><span class="line"><span class="built_in">plot</span>(pdata*<span class="number">10</span>^(<span class="number">-24</span>), Sdata*<span class="number">10</span>^(<span class="number">6</span>), <span class="string">&#x27;ro&#x27;</span>, <span class="string">&#x27;MarkerFaceColor&#x27;</span>, <span class="string">&#x27;r&#x27;</span>);  <span class="comment">%数据点为实心圆</span></span><br><span class="line">xlabel(<span class="string">&#x27;p [10^&#123;18&#125;\cdotcm^&#123;-3&#125;]&#x27;</span>);</span><br><span class="line">ylabel(<span class="string">&#x27;S [\muV\cdotK^&#123;-1&#125;]&#x27;</span>);</span><br></pre></td></tr></table></figure>
-<blockquote id="fn_1">
-<sup>1</sup>. <a href="https://doi.org/10.1002/adma.201903480"><strong>Zhao, K., et al. (2019). “Are Cu<sub>2</sub>Te-Based Compounds Excellent Thermoelectric Materials?” Advanced Materials 31(49): 1903480.</strong></a>  <a href="#reffn_1" title="Jump back to footnote [1] in the text."> &#8617;</a>
-</blockquote>
-<blockquote id="fn_2">
-<sup>2</sup>. <a href="https://doi.org/10.1016/j.nanoen.2017.10.042"><strong>Zhao, K., et al. (2017). “High thermoelectric performance and low thermal conductivity in Cu<sub>2-y</sub>S<sub>1/3</sub>Se<sub>1/3</sub>Te<sub>1/3</sub> liquid-like materials with nanoscale mosaic structures.” Nano Energy 42: 43-50.</strong></a><a href="#reffn_2" title="Jump back to footnote [2] in the text."> &#8617;</a>
-</blockquote>
-<blockquote id="fn_3">
-<sup>3</sup>. <strong><font color = red>特别致谢:</font></strong><a href="http://muchong.com/t-12417284-1"><strong><font color = red>穿越千年</font></strong></a><a href="#reffn_3" title="Jump back to footnote [3] in the text."> &#8617;</a>
-</blockquote>
+<p><span class="math display">\[
+L=\left(\frac{k_\mathrm{B}}{e}\right)^2\left\{
+\frac{(r+3)F_{r+2}(\eta)}{(r+1)F_{r}(\eta)}
+-\left[\frac{(r+2)F_{r+1}(\eta)}{(r+1)F_{r+1}(\eta)}\right]^2 \right\}
+\tag{4}
+\]</span></p>
+<h3 id="计算代码-1">2.2 计算代码</h3>
+<figure class="highlight matlab"><table><tr><td class="code"><pre><span class="line"><span class="comment">%基于单抛物带模型拟合S-n的关系得到态密度有效质量</span></span><br><span class="line">clc,clear</span><br><span class="line">Kb = <span class="number">1.38066</span>*<span class="number">10</span>^<span class="number">-23</span>;  <span class="comment">%J/K 1J=1V*A*s</span></span><br><span class="line">e = <span class="number">1.60219</span>*<span class="number">10</span>^<span class="number">-19</span>; <span class="comment">%1C=1A*s</span></span><br><span class="line">K = Kb/e;</span><br><span class="line">lambda = <span class="number">0</span>;<span class="comment">%只考虑声学声子散射lambad = 0，离化杂质散射为2</span></span><br><span class="line">h = <span class="number">6.62608</span>*<span class="number">10</span>^<span class="number">-34</span>; <span class="comment">%J*s、</span></span><br><span class="line">me = <span class="number">9.10953</span>*<span class="number">10</span>^<span class="number">-31</span>; <span class="comment">%Kg</span></span><br><span class="line">T = <span class="number">323</span>; <span class="comment">%K</span></span><br><span class="line">Sdata = [<span class="number">76.76</span>, <span class="number">101.92</span>, <span class="number">108.97</span>, <span class="number">174.48</span>]*<span class="number">10</span>^(<span class="number">-6</span>);  <span class="comment">%将uV/K转换为V/K</span></span><br><span class="line">pdata = [<span class="number">1.97</span>, <span class="number">1.04</span>, <span class="number">0.46</span>, <span class="number">0.63</span>]*<span class="number">10</span>^<span class="number">20</span>*<span class="number">10</span>^<span class="number">6</span>;   <span class="comment">%cm^-3, 转换为m^-3; 10^26m^(-3)=10^20 cm^(-3) 将m^(-3)换成cm^(-3)，并且以10^20cm^(-3)为单位开始</span></span><br><span class="line"><span class="comment">% Sdata = [76.76]*10^(-6);  %将uV/K转换为V/K</span></span><br><span class="line"><span class="comment">% pdata = [1.97]*10^20*10^6;   %cm^-3, 转换为m^-3</span></span><br><span class="line">Fn = @(no,yita)quadgk(@(x)x.^no./(<span class="number">1</span>+<span class="built_in">exp</span>(x-yita)),<span class="number">0</span>,<span class="built_in">inf</span>);</span><br><span class="line">rH = @(yita)((<span class="number">3</span>*Fn(<span class="number">1</span>/<span class="number">2</span>,yita)*Fn(<span class="number">-1</span>/<span class="number">2</span>,yita))/(<span class="number">4</span>*Fn(<span class="number">0</span>,yita)^<span class="number">2</span>));</span><br><span class="line"><span class="comment">%初始化</span></span><br><span class="line">yita = <span class="built_in">zeros</span>(<span class="number">1</span>,<span class="built_in">length</span>(Sdata)); </span><br><span class="line">Fndata = <span class="built_in">zeros</span>(<span class="number">1</span>,<span class="built_in">length</span>(Sdata));</span><br><span class="line">rHdata = <span class="built_in">zeros</span>(<span class="number">1</span>,<span class="built_in">length</span>(Sdata));</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> <span class="built_in">i</span> = <span class="number">1</span>:<span class="built_in">length</span>(Sdata)</span><br><span class="line">        func1 = @(yita)K*((lambda+<span class="number">2</span>)*Fn(lambda+<span class="number">1</span>,yita)/((lambda+<span class="number">1</span>)*Fn(lambda,yita))-yita)-Sdata(<span class="built_in">i</span>); <span class="comment">%V/K</span></span><br><span class="line">        yita(<span class="built_in">i</span>) = fzero(func1,<span class="number">0</span>);</span><br><span class="line">         Fndata(<span class="built_in">i</span>) =  Fn(<span class="number">1</span>/<span class="number">2</span>,yita(<span class="built_in">i</span>));</span><br><span class="line">         rHdata(<span class="built_in">i</span>) =  rH(yita(<span class="built_in">i</span>));</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line">Fr = Fndata./rHdata;</span><br><span class="line">func2 = @(em,Fr)(<span class="number">4</span>*<span class="built_in">pi</span>*(<span class="number">2</span>*Kb*T*em*me)^(<span class="number">3</span>/<span class="number">2</span>)/h^<span class="number">3.</span>*Fr);   <span class="comment">%func2 = p </span></span><br><span class="line"><span class="comment">% func2 = @(em, yita)(4*pi*(2*Kb*T*em*me)^(3/2)/h^3*Fn(1/2,yita)/rH(yita));   %func2 = p </span></span><br><span class="line">em0 = <span class="number">12</span>; <span class="comment">%态密度有效质量的初值  和初值有很大关系</span></span><br><span class="line">[emf, resnorm] = lsqcurvefit(func2, em0, yita, pdata); <span class="comment">%emf:拟合的得到的态密度有效质量，resnorm残差平方和</span></span><br><span class="line">display(emf);  <span class="comment">%显示拟合得到的值</span></span><br><span class="line"></span><br><span class="line"><span class="comment">%拟合得到态密度有效质量</span></span><br><span class="line">p = (<span class="number">0.2</span>:<span class="number">0.01</span>:<span class="number">2</span>)*<span class="number">10</span>^<span class="number">26</span>; <span class="comment">%10^26m^(-3)=10^20 cm^(-3) 将m^(-3)换成cm^(-3)，并且以10^20cm^(-3)为单位开始</span></span><br><span class="line">S = <span class="built_in">zeros</span>(<span class="number">1</span>,<span class="built_in">length</span>(p));</span><br><span class="line"> <span class="keyword">for</span> <span class="built_in">i</span> = <span class="number">1</span>:<span class="built_in">length</span>(p)</span><br><span class="line">        f1 = @(yita)(<span class="number">4</span>*<span class="built_in">pi</span>*(<span class="number">2</span>*Kb*T*emf*me)^(<span class="number">3</span>/<span class="number">2</span>)/h^<span class="number">3</span>*Fn(<span class="number">1</span>/<span class="number">2</span>,yita)/rH(yita)-p(<span class="built_in">i</span>)); </span><br><span class="line">        yita(<span class="built_in">i</span>) = fzero(f1,<span class="number">0</span>);</span><br><span class="line">        S(<span class="built_in">i</span>) = K*((lambda+<span class="number">2</span>)*Fn(lambda+<span class="number">1</span>,yita(<span class="built_in">i</span>))/((lambda+<span class="number">1</span>)*Fn(lambda,yita(<span class="built_in">i</span>)))-yita(<span class="built_in">i</span>)); <span class="comment">%V/K</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"><span class="built_in">plot</span>(p*<span class="number">10</span>^(<span class="number">-24</span>),S*<span class="number">10</span>^<span class="number">6</span>,<span class="string">&#x27;-&#x27;</span>,<span class="string">&#x27;LineWidth&#x27;</span>,<span class="number">1</span>)  <span class="comment">%将V/K换成uV/K</span></span><br><span class="line"><span class="built_in">hold</span> on</span><br><span class="line"><span class="built_in">plot</span>(pdata*<span class="number">10</span>^(<span class="number">-24</span>), Sdata*<span class="number">10</span>^(<span class="number">6</span>), <span class="string">&#x27;ro&#x27;</span>, <span class="string">&#x27;MarkerFaceColor&#x27;</span>, <span class="string">&#x27;r&#x27;</span>);  <span class="comment">%数据点为实心圆</span></span><br><span class="line">xlabel(<span class="string">&#x27;p [10^&#123;18&#125;\cdotcm^&#123;-3&#125;]&#x27;</span>);</span><br><span class="line">ylabel(<span class="string">&#x27;S [\muV\cdotK^&#123;-1&#125;]&#x27;</span>);</span><br></pre></td></tr></table></figure>
+<section id="footnotes" class="footnotes footnotes-end-of-document"
+role="doc-endnotes">
+<hr />
+<ol>
+<li id="fn1"><p><a
+href="https://doi.org/10.1002/adma.201903480"><strong>Zhao, K., et al.
+(2019). "Are Cu<sub>2</sub>Te-Based Compounds Excellent Thermoelectric
+Materials?" Advanced Materials 31(49): 1903480.</strong></a><a
+href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p><a
+href="https://doi.org/10.1016/j.nanoen.2017.10.042"><strong>Zhao, K., et
+al. (2017). "High thermoelectric performance and low thermal
+conductivity in
+Cu<sub>2-y</sub>S<sub>1/3</sub>Se<sub>1/3</sub>Te<sub>1/3</sub>
+liquid-like materials with nanoscale mosaic structures." Nano Energy 42:
+43-50.</strong></a><a href="#fnref2" class="footnote-back"
+role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p><strong><font color = red>特别致谢:</font></strong><a
+href="http://muchong.com/t-12417284-1"><strong><font color = red>穿越千年</font></strong></a><a
+href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
 ]]></content>
       <categories>
         <category>热电材料</category>
@@ -75,8 +128,11 @@ L=\left(\frac{k_\mathrm{B}}{e}\right)^2\left\{ \frac{(r+3)F_{r+2}(\eta)}{(r+1)F_
   <entry>
     <title>水调歌头</title>
     <url>/2022/11/13/%E6%B0%B4%E8%B0%83%E6%AD%8C%E5%A4%B4/</url>
-    <content><![CDATA[<div class='poem'><div class='poem-title'>水调歌头</div><div class='poem-author'>苏轼</div><p>丙辰中秋，欢饮达旦，大醉，作此篇，兼怀子由。<br>明月几时有？把酒问青天。<br>不知天上宫阙，今夕是何年？<br>我欲乘风归去，又恐琼楼玉宇，高处不胜寒。<br>起舞弄清影，何似在人间？</p>
-<p>转朱阁，低绮户，照无眠。<br>不应有恨，何事长向别时圆？<br>人有悲欢离合，月有阴晴圆缺，此事古难全。<br>但愿人长久，千里共婵娟。</p>
+    <content><![CDATA[<div class='poem'><div class='poem-title'>水调歌头</div><div class='poem-author'>苏轼</div><p>丙辰中秋，欢饮达旦，大醉，作此篇，兼怀子由。 明月几时有？把酒问青天。
+不知天上宫阙，今夕是何年？ 我欲乘风归去，又恐琼楼玉宇，高处不胜寒。
+起舞弄清影，何似在人间？</p>
+<p>转朱阁，低绮户，照无眠。 不应有恨，何事长向别时圆？
+人有悲欢离合，月有阴晴圆缺，此事古难全。 但愿人长久，千里共婵娟。</p>
 </div>
 ]]></content>
       <categories>
