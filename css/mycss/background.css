@@ -1,3 +1,10 @@
+/* 底部页码栏 */
+#pagination {
+    width: 100%;
+    margin: auto;
+}
+
+/*白天与夜间模式配色*/
 #recent-posts>.recent-post-item {
     background: rgba(255, 255, 255, .8);
 }
