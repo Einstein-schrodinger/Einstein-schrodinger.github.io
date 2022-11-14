@@ -4450,7 +4450,7 @@ font-family
 }
 mjx-container[display],
 .has-jax {
-  overflow-x: auto;
+  overflow-x: hidden;
   overflow-y: hidden;
   line-height: normal !important;
 }
