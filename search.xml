@@ -1,6 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>博客搭建之Twikoo</title>
+    <url>/2022/11/15/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E4%B9%8BTwikoo/</url>
+    <content><![CDATA[<h1 id="博客搭建之Twikoo"><a href="#博客搭建之Twikoo" class="headerlink" title="博客搭建之Twikoo"></a>博客搭建之Twikoo</h1><div class="note info modern"><p>鉴于每个人的博客根目录名称都不太一样，本贴<strong>博客根目录</strong>一律以<code>[BlogRoot]</code>指代。<br>站点配置文件<code>_config.yml</code>，路径为<code>[BlogRoot]\_config.yml</code>。<br>主题配置文件<code>_config.yml</code>，路径为<code>[BlogRoot]\themes\butterfly\_config.yml</code>。</p>
+</div>
+<h2 id="1-Twikoo的评论设置"><a href="#1-Twikoo的评论设置" class="headerlink" title="1.Twikoo的评论设置"></a>1.Twikoo的评论设置</h2><h3 id="1-1-支持图片评论"><a href="#1-1-支持图片评论" class="headerlink" title="1.1 支持图片评论"></a>1.1 支持图片评论</h3><p>   Twikoo评论区要支持图片评论功能需要配置图床，这里以比较容易设置的<a href="https://smms.app/">smms</a>图床为例，首先要进行注册，注册成功之后，会给你5GB的空间用来存储图片，一般来说够用了。将获取的smms图床的token复制到Twikoo插件设置里的<code>IMAGE_CDN_ToKEN</code>，并且将<code>IMAGE_CDN</code>填写为<code>smms</code>，其余选项保持默认即可，配置结束之后记得拉到最下方点击保存，刷新一下即可生效。下面图片展示详细的步骤：</p>
+<ul>
+<li>smms注册并获取token</li>
+</ul>
+<p><img src="https://blogresource.sqwdream.cloud/post/博客搭建之Twikoo/img/body/smms.jpg" alt=""></p>
+<ul>
+<li>网站的Twikoo评论设置</li>
+</ul>
+<p><img src="https://blogresource.sqwdream.cloud/post/博客搭建之Twikoo/img/body/评论图床设置.jpg" alt=""></p>
+<h3 id="1-2-支持Latex公式评论"><a href="#1-2-支持Latex公式评论" class="headerlink" title="1.2 支持Latex公式评论"></a>1.2 支持Latex公式评论</h3><p>   支持公式评论可以参考Twikoo官网的<a href="https://twikoo.js.org/faq.html#%E5%A6%82%E4%BD%95%E5%90%AF%E7%94%A8-katex-%E6%94%AF%E6%8C%81">如何开启Katex支持？</a>，就是在主题配置文件<code>_config.yml</code>中引入如下代码：</p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">innject:</span></span><br><span class="line">  <span class="attr">head:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">&lt;link</span> <span class="string">rel=&quot;stylesheet&quot;</span> <span class="string">href=&quot;https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css&quot;</span> <span class="string">integrity=&quot;sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X&quot;</span> <span class="string">crossorigin=&quot;anonymous&quot;&gt;</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">&lt;script</span> <span class="string">defer</span> <span class="string">src=&quot;https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js&quot;</span> <span class="string">integrity=&quot;sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4&quot;</span> <span class="string">crossorigin=&quot;anonymous&quot;&gt;&lt;/script&gt;</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">&lt;script</span> <span class="string">defer</span> <span class="string">src=&quot;https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js&quot;</span> <span class="string">integrity=&quot;sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa&quot;</span> <span class="string">crossorigin=&quot;anonymous&quot;&gt;&lt;/script&gt;</span></span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>博客搭建</category>
+      </categories>
+      <tags>
+        <tag>Twikoo</tag>
+        <tag>图床</tag>
+        <tag>博客搭建</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>出入红尘</title>
+    <url>/2022/10/26/%E5%87%BA%E5%85%A5%E7%BA%A2%E5%B0%98/</url>
+    <content><![CDATA[<div class='poem'><div class='poem-title'>好了歌</div><div class='poem-author'>曹雪芹</div><p>世人都晓神仙好，惟有功名忘不了！<br>古今将相在何方？荒冢一堆草没了。<br>世人都晓神仙好，只有金银忘不了！<br>终朝只恨聚无多，及到多时眼闭了。<br>世人都晓神仙好，只有娇妻忘不了！<br>君生日日说恩情，君死又随人去了。<br>世人都晓神仙好，只有儿孙忘不了！<br>痴心父母古来多，孝顺儿孙谁见了？ </p>
+</div>
+]]></content>
+      <categories>
+        <category>诗与远方</category>
+      </categories>
+      <tags>
+        <tag>诗与远方</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>水调歌头</title>
+    <url>/2022/11/13/%E6%B0%B4%E8%B0%83%E6%AD%8C%E5%A4%B4/</url>
+    <content><![CDATA[<div class='poem'><div class='poem-title'>水调歌头</div><div class='poem-author'>苏轼</div><p>丙辰中秋，欢饮达旦，大醉，作此篇，兼怀子由。<br>明月几时有？把酒问青天。<br>不知天上宫阙，今夕是何年？<br>我欲乘风归去，又恐琼楼玉宇，高处不胜寒。<br>起舞弄清影，何似在人间？</p>
+<p>转朱阁，低绮户，照无眠。<br>不应有恨，何事长向别时圆？<br>人有悲欢离合，月有阴晴圆缺，此事古难全。<br>但愿人长久，千里共婵娟。</p>
+</div>
+]]></content>
+      <categories>
+        <category>诗与远方</category>
+      </categories>
+      <tags>
+        <tag>诗与远方</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>单抛物带(Single Parabolic Band,SPB)模型</title>
     <url>/2022/11/07/%E5%8D%95%E6%8A%9B%E7%89%A9%E5%B8%A6%E6%A8%A1%E5%9E%8B/</url>
     <content><![CDATA[<h1 id="单抛物带-Single-Parabolic-Band，SPB-模型拟合计算"><a href="#单抛物带-Single-Parabolic-Band，SPB-模型拟合计算" class="headerlink" title="单抛物带(Single Parabolic Band，SPB)模型拟合计算"></a>单抛物带(<strong>Single Parabolic Band，SPB</strong>)模型拟合计算</h1><h2 id="1-Cu2Se单抛物带模型计算-简并条件下"><a href="#1-Cu2Se单抛物带模型计算-简并条件下" class="headerlink" title="1.Cu2Se单抛物带模型计算(简并条件下)"></a>1.Cu<sub>2</sub>Se单抛物带模型计算(简并条件下)</h2><h3 id="1-1-计算公式"><a href="#1-1-计算公式" class="headerlink" title="1.1 计算公式"></a>1.1 计算公式</h3><script type="math/tex; mode=display">
@@ -60,56 +113,18 @@ L=\left(\frac{k_\mathrm{B}}{e}\right)^2\left\{ \frac{(r+3)F_{r+2}(\eta)}{(r+1)F_
       </tags>
   </entry>
   <entry>
-    <title>出入红尘</title>
-    <url>/2022/10/26/%E5%87%BA%E5%85%A5%E7%BA%A2%E5%B0%98/</url>
-    <content><![CDATA[<div class='poem'><div class='poem-title'>好了歌</div><div class='poem-author'>曹雪芹</div><p>世人都晓神仙好，惟有功名忘不了！<br>古今将相在何方？荒冢一堆草没了。<br>世人都晓神仙好，只有金银忘不了！<br>终朝只恨聚无多，及到多时眼闭了。<br>世人都晓神仙好，只有娇妻忘不了！<br>君生日日说恩情，君死又随人去了。<br>世人都晓神仙好，只有儿孙忘不了！<br>痴心父母古来多，孝顺儿孙谁见了？ </p>
-</div>
-]]></content>
-      <categories>
-        <category>诗与远方</category>
-      </categories>
-      <tags>
-        <tag>诗与远方</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>水调歌头</title>
-    <url>/2022/11/13/%E6%B0%B4%E8%B0%83%E6%AD%8C%E5%A4%B4/</url>
-    <content><![CDATA[<div class='poem'><div class='poem-title'>水调歌头</div><div class='poem-author'>苏轼</div><p>丙辰中秋，欢饮达旦，大醉，作此篇，兼怀子由。<br>明月几时有？把酒问青天。<br>不知天上宫阙，今夕是何年？<br>我欲乘风归去，又恐琼楼玉宇，高处不胜寒。<br>起舞弄清影，何似在人间？</p>
-<p>转朱阁，低绮户，照无眠。<br>不应有恨，何事长向别时圆？<br>人有悲欢离合，月有阴晴圆缺，此事古难全。<br>但愿人长久，千里共婵娟。</p>
-</div>
-]]></content>
-      <categories>
-        <category>诗与远方</category>
-      </categories>
-      <tags>
-        <tag>诗与远方</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>博客搭建之Twikoo</title>
-    <url>/2022/11/15/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E4%B9%8BTwikoo/</url>
-    <content><![CDATA[<h1 id="博客搭建之Twikoo"><a href="#博客搭建之Twikoo" class="headerlink" title="博客搭建之Twikoo"></a>博客搭建之Twikoo</h1><div class="note info modern"><p>鉴于每个人的博客根目录名称都不太一样，本贴<strong>博客根目录</strong>一律以<code>[BlogRoot]</code>指代。<br>站点配置文件<code>_config.yml</code>，路径为<code>[BlogRoot]\_config.yml</code>。<br>主题配置文件<code>_config.yml</code>，路径为<code>[BlogRoot]\themes\butterfly\_config.yml</code>。</p>
-</div>
-<h2 id="1-Twikoo的评论设置"><a href="#1-Twikoo的评论设置" class="headerlink" title="1.Twikoo的评论设置"></a>1.Twikoo的评论设置</h2><h3 id="1-1-支持图片评论"><a href="#1-1-支持图片评论" class="headerlink" title="1.1 支持图片评论"></a>1.1 支持图片评论</h3><p>   Twikoo评论区要支持图片评论功能需要配置图床，这里以比较容易设置的<a href="https://smms.app/">smms</a>图床为例，首先要进行注册，注册成功之后，会给你5GB的空间用来存储图片，一般来说够用了。将获取的smms图床的token复制到Twikoo插件设置里的<code>IMAGE_CDN_ToKEN</code>，并且将<code>IMAGE_CDN</code>填写为<code>smms</code>，其余选项保持默认即可，配置结束之后记得拉到最下方点击保存，刷新一下即可生效。下面图片展示详细的步骤：</p>
-<ul>
-<li>smms注册并获取token</li>
-</ul>
-<p><img src="https://blogresource.sqwdream.cloud/post/博客搭建之Twikoo/img/body/smms.jpg" alt=""></p>
-<ul>
-<li>网站的Twikoo评论设置</li>
-</ul>
-<p><img src="https://blogresource.sqwdream.cloud/post/博客搭建之Twikoo/img/body/评论图床设置.jpg" alt=""></p>
-<h3 id="1-2-支持Latex公式评论"><a href="#1-2-支持Latex公式评论" class="headerlink" title="1.2 支持Latex公式评论"></a>1.2 支持Latex公式评论</h3><p>   支持公式评论可以参考Twikoo官网的<a href="https://twikoo.js.org/faq.html#%E5%A6%82%E4%BD%95%E5%90%AF%E7%94%A8-katex-%E6%94%AF%E6%8C%81">如何开启Katex支持？</a>，就是在主题配置文件<code>_config.yml</code>中引入如下代码：</p>
-<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">innject:</span></span><br><span class="line">  <span class="attr">head:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">&lt;link</span> <span class="string">rel=&quot;stylesheet&quot;</span> <span class="string">href=&quot;https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css&quot;</span> <span class="string">integrity=&quot;sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X&quot;</span> <span class="string">crossorigin=&quot;anonymous&quot;&gt;</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">&lt;script</span> <span class="string">defer</span> <span class="string">src=&quot;https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js&quot;</span> <span class="string">integrity=&quot;sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4&quot;</span> <span class="string">crossorigin=&quot;anonymous&quot;&gt;&lt;/script&gt;</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">&lt;script</span> <span class="string">defer</span> <span class="string">src=&quot;https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js&quot;</span> <span class="string">integrity=&quot;sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa&quot;</span> <span class="string">crossorigin=&quot;anonymous&quot;&gt;&lt;/script&gt;</span></span><br></pre></td></tr></table></figure>
+    <title>博客搭建之外挂标签</title>
+    <url>/2022/11/15/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E4%B9%8B%E5%A4%96%E6%8C%82%E6%A0%87%E7%AD%BE/</url>
+    <content><![CDATA[<h1 id="博客搭建之外挂标签"><a href="#博客搭建之外挂标签" class="headerlink" title="博客搭建之外挂标签"></a>博客搭建之外挂标签</h1><div class="note info modern"></div>
+<h2 id="1-Markdown-自带格式"><a href="#1-Markdown-自带格式" class="headerlink" title="1.Markdown 自带格式"></a>1.Markdown 自带格式</h2><h3 id="1-1-代码块"><a href="#1-1-代码块" class="headerlink" title="1.1 代码块"></a>1.1 代码块</h3><div class="tabs" id="代码块"><ul class="nav-tabs"><li class="tab active"><button type="button" data-href="#代码块-1">示例源码</button></li><li class="tab"><button type="button" data-href="#代码块-2">渲染演示</button></li></ul><div class="tab-contents"><div class="tab-item-content active" id="代码块-1"><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">\```Shell</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">提交网站</span></span><br><span class="line">hexo cl &amp;&amp; hexo g &amp;&amp; hexo d;</span><br><span class="line">npm run clgd;</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">提交仓库</span></span><br><span class="line">git add .;</span><br><span class="line">git commit -m &quot;图片更新&quot;;</span><br><span class="line">git push origin main;</span><br><span class="line">\```</span><br></pre></td></tr></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="代码块-2"><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">提交网站</span></span><br><span class="line">hexo cl &amp;&amp; hexo g &amp;&amp; hexo d;</span><br><span class="line">npm run clgd;</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">提交仓库</span></span><br><span class="line">git add .;</span><br><span class="line">git commit -m &quot;图片更新&quot;;</span><br><span class="line">git push origin main;</span><br></pre></td></tr></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div></div>
+<h3 id="1-2-多级标题"><a href="#1-2-多级标题" class="headerlink" title="1.2 多级标题"></a>1.2 多级标题</h3><div class="tabs" id="多级标题"><ul class="nav-tabs"><li class="tab active"><button type="button" data-href="#多级标题-1">示例源码</button></li><li class="tab"><button type="button" data-href="#多级标题-2">渲染演示</button></li></ul><div class="tab-contents"><div class="tab-item-content active" id="多级标题-1"><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="section">#注意之间的空格</span></span><br><span class="line"><span class="section"># H1</span></span><br><span class="line"><span class="section">## H2</span></span><br><span class="line"><span class="section">### H3</span></span><br><span class="line"><span class="section">#### H4</span></span><br><span class="line"><span class="section">##### H5</span></span><br><span class="line"><span class="section">###### H6</span></span><br></pre></td></tr></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="多级标题-2"><h1 id="H1"><a href="#H1" class="headerlink" title="H1"></a>H1</h1><h2 id="H2"><a href="#H2" class="headerlink" title="H2"></a>H2</h2><h3 id="H3"><a href="#H3" class="headerlink" title="H3"></a>H3</h3><h4 id="H4"><a href="#H4" class="headerlink" title="H4"></a>H4</h4><h5 id="H5"><a href="#H5" class="headerlink" title="H5"></a>H5</h5><h6 id="H6"><a href="#H6" class="headerlink" title="H6"></a>H6</h6><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div></div>
 ]]></content>
       <categories>
         <category>博客搭建</category>
       </categories>
       <tags>
-        <tag>Twikoo</tag>
-        <tag>图床</tag>
         <tag>博客搭建</tag>
+        <tag>外挂标签</tag>
       </tags>
   </entry>
 </search>
