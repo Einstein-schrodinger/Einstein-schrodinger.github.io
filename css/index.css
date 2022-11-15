@@ -3776,7 +3776,7 @@ font-family
   overflow-wrap: break-word;
 }
 #article-container a {
-  color: #99a9bf;
+  color: #00f /*$theme-link-color*/;
 }
 #article-container a:hover {
   text-decoration: underline;
