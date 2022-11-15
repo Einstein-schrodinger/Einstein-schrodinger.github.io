@@ -1,65 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>博客搭建之Twikoo</title>
-    <url>/2022/11/15/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E4%B9%8BTwikoo/</url>
-    <content><![CDATA[<h1 id="博客搭建之twikoo">博客搭建之Twikoo</h1>
-<div class="note info simple"><p>==注意:==
-鉴于每个人的博客根目录名称都不太一样，本贴<strong>博客根目录</strong>一律以<code>[BlogRoot]</code>指代。
-站点配置文件<code>_config.yml</code>,路径为<code>[BlogRoot]\_config.yml</code>
-主体配置文件<code>_config.yml</code>,路径为<code>[BlogRoot]\themes\butterfly\_config.yml</code></p>
-</div>
-<h2 id="twikoo的评论设置">1.Twikoo的评论设置</h2>
-<h3 id="支持图片评论">1.1 支持图片评论</h3>
-<p>Twikoo评论区要支持图片评论功能需要配置图床，这里以比较容易设置的<a
-href="https://smms.app/">smms</a>图床为例，首先要进行注册，注册成功之后，会给你5GB的空间用来存储图片，一般来说够用了。将获取的smms图床的token复制到Twikoo插件设置里的<code>IMAGE_CDN_ToKEN</code>,并且将<code>IMAGE_CDN</code>填写为<code>smms</code>,其余选项保持默认即可，配置结束之后记得拉到最下方点击保存，刷新一下即可生效。下面图片展示详细的步骤：</p>
-<ul>
-<li>smms注册并获取token</li>
-</ul>
-<p><img
-src="https://blogresource.sqwdream.cloud/post/博客搭建之Twikoo/img/body/smms.jpg" /></p>
-<ul>
-<li>网站的Twikoo评论设置</li>
-</ul>
-<p><img
-src="https://blogresource.sqwdream.cloud/post/博客搭建之Twikoo/img/body/评论图床设置.jpg" /></p>
-<h3 id="支持latex公式评论">1.2 支持Latex公式评论</h3>
-<p>支持公式评论可以参考Twikoo官网的<a
-href="https://twikoo.js.org/faq.html#%E5%A6%82%E4%BD%95%E5%90%AF%E7%94%A8-katex-%E6%94%AF%E6%8C%81">如何开启Katex支持？</a>，就是在主题配置文件<code>_config.yml</code>中引入如下代码：</p>
-<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">innject:</span></span><br><span class="line">  <span class="attr">head:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">&lt;link</span> <span class="string">rel=&quot;stylesheet&quot;</span> <span class="string">href=&quot;https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css&quot;</span> <span class="string">integrity=&quot;sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X&quot;</span> <span class="string">crossorigin=&quot;anonymous&quot;&gt;</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">&lt;script</span> <span class="string">defer</span> <span class="string">src=&quot;https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js&quot;</span> <span class="string">integrity=&quot;sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4&quot;</span> <span class="string">crossorigin=&quot;anonymous&quot;&gt;&lt;/script&gt;</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">&lt;script</span> <span class="string">defer</span> <span class="string">src=&quot;https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js&quot;</span> <span class="string">integrity=&quot;sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa&quot;</span> <span class="string">crossorigin=&quot;anonymous&quot;&gt;&lt;/script&gt;</span></span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>博客搭建</category>
-      </categories>
-      <tags>
-        <tag>twikoo</tag>
-        <tag>图床</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>出入红尘</title>
     <url>/2022/10/26/%E5%87%BA%E5%85%A5%E7%BA%A2%E5%B0%98/</url>
     <content><![CDATA[<div class='poem'><div class='poem-title'>好了歌</div><div class='poem-author'>曹雪芹</div><p>世人都晓神仙好，惟有功名忘不了！ 古今将相在何方？荒冢一堆草没了。
 世人都晓神仙好，只有金银忘不了！ 终朝只恨聚无多，及到多时眼闭了。
 世人都晓神仙好，只有娇妻忘不了！ 君生日日说恩情，君死又随人去了。
 世人都晓神仙好，只有儿孙忘不了！ 痴心父母古来多，孝顺儿孙谁见了？</p>
-</div>
-]]></content>
-      <categories>
-        <category>诗与远方</category>
-      </categories>
-      <tags>
-        <tag>诗与远方</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>水调歌头</title>
-    <url>/2022/11/13/%E6%B0%B4%E8%B0%83%E6%AD%8C%E5%A4%B4/</url>
-    <content><![CDATA[<div class='poem'><div class='poem-title'>水调歌头</div><div class='poem-author'>苏轼</div><p>丙辰中秋，欢饮达旦，大醉，作此篇，兼怀子由。 明月几时有？把酒问青天。
-不知天上宫阙，今夕是何年？ 我欲乘风归去，又恐琼楼玉宇，高处不胜寒。
-起舞弄清影，何似在人间？</p>
-<p>转朱阁，低绮户，照无眠。 不应有恨，何事长向别时圆？
-人有悲欢离合，月有阴晴圆缺，此事古难全。 但愿人长久，千里共婵娟。</p>
 </div>
 ]]></content>
       <categories>
@@ -176,6 +123,59 @@ href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
         <tag>SPB</tag>
         <tag>Pisarenko plot</tag>
         <tag>Matlab code</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>博客搭建之Twikoo</title>
+    <url>/2022/11/15/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E4%B9%8BTwikoo/</url>
+    <content><![CDATA[<h1 id="博客搭建之twikoo">博客搭建之Twikoo</h1>
+<div class="note info modern"><p>鉴于每个人的博客根目录名称都不太一样，本贴<strong>博客根目录</strong>一律以<code>[BlogRoot]</code>指代。
+站点配置文件<code>_config.yml</code>，路径为<code>[BlogRoot]\_config.yml</code>
+主体配置文件<code>_config.yml</code>，路径为<code>[BlogRoot]\themes\butterfly\_config.yml</code></p>
+</div>
+<h2 id="twikoo的评论设置">1.Twikoo的评论设置</h2>
+<h3 id="支持图片评论">1.1 支持图片评论</h3>
+<p>Twikoo评论区要支持图片评论功能需要配置图床，这里以比较容易设置的<a
+href="https://smms.app/">smms</a>图床为例，首先要进行注册，注册成功之后，会给你5GB的空间用来存储图片，一般来说够用了。将获取的smms图床的token复制到Twikoo插件设置里的<code>IMAGE_CDN_ToKEN</code>，并且将<code>IMAGE_CDN</code>填写为<code>smms</code>，其余选项保持默认即可，配置结束之后记得拉到最下方点击保存，刷新一下即可生效。下面图片展示详细的步骤：</p>
+<ul>
+<li>smms注册并获取token</li>
+</ul>
+<p><img
+src="https://blogresource.sqwdream.cloud/post/博客搭建之Twikoo/img/body/smms.jpg" /></p>
+<ul>
+<li>网站的Twikoo评论设置</li>
+</ul>
+<p><img
+src="https://blogresource.sqwdream.cloud/post/博客搭建之Twikoo/img/body/评论图床设置.jpg" /></p>
+<h3 id="支持latex公式评论">1.2 支持Latex公式评论</h3>
+<p>支持公式评论可以参考Twikoo官网的<a
+href="https://twikoo.js.org/faq.html#%E5%A6%82%E4%BD%95%E5%90%AF%E7%94%A8-katex-%E6%94%AF%E6%8C%81">如何开启Katex支持？</a>，就是在主题配置文件<code>_config.yml</code>中引入如下代码：</p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">innject:</span></span><br><span class="line">  <span class="attr">head:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">&lt;link</span> <span class="string">rel=&quot;stylesheet&quot;</span> <span class="string">href=&quot;https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css&quot;</span> <span class="string">integrity=&quot;sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X&quot;</span> <span class="string">crossorigin=&quot;anonymous&quot;&gt;</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">&lt;script</span> <span class="string">defer</span> <span class="string">src=&quot;https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js&quot;</span> <span class="string">integrity=&quot;sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4&quot;</span> <span class="string">crossorigin=&quot;anonymous&quot;&gt;&lt;/script&gt;</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">&lt;script</span> <span class="string">defer</span> <span class="string">src=&quot;https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js&quot;</span> <span class="string">integrity=&quot;sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa&quot;</span> <span class="string">crossorigin=&quot;anonymous&quot;&gt;&lt;/script&gt;</span></span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>博客搭建</category>
+      </categories>
+      <tags>
+        <tag>Twikoo</tag>
+        <tag>图床</tag>
+        <tag>博客搭建</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>水调歌头</title>
+    <url>/2022/11/13/%E6%B0%B4%E8%B0%83%E6%AD%8C%E5%A4%B4/</url>
+    <content><![CDATA[<div class='poem'><div class='poem-title'>水调歌头</div><div class='poem-author'>苏轼</div><p>丙辰中秋，欢饮达旦，大醉，作此篇，兼怀子由。 明月几时有？把酒问青天。
+不知天上宫阙，今夕是何年？ 我欲乘风归去，又恐琼楼玉宇，高处不胜寒。
+起舞弄清影，何似在人间？</p>
+<p>转朱阁，低绮户，照无眠。 不应有恨，何事长向别时圆？
+人有悲欢离合，月有阴晴圆缺，此事古难全。 但愿人长久，千里共婵娟。</p>
+</div>
+]]></content>
+      <categories>
+        <category>诗与远方</category>
+      </categories>
+      <tags>
+        <tag>诗与远方</tag>
       </tags>
   </entry>
 </search>
