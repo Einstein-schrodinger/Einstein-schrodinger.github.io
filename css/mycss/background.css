@@ -6,7 +6,7 @@
 
 /*白天与夜间模式配色*/
 #recent-posts>.recent-post-item {
-    background: rgba(255, 255, 255, .8);
+    background: rgba(255, 255, 255, .92);
 }
 
 #aside-content .card-widget {
@@ -14,63 +14,63 @@
 }
 
 div#post {
-    background: rgba(255, 255, 255, .8);
+    background: rgba(255, 255, 255, .92);
 }
 
 div#page {
-    background: rgba(255, 255, 255, .8);
+    background: rgba(255, 255, 255, .92);
 }
 
 div#archive {
-    background: rgba(255, 255, 255, .8);
+    background: rgba(255, 255, 255, .92);
 }
 
 div#tag {
-    background: rgba(255, 255, 255, .8);
+    background: rgba(255, 255, 255, .92);
 }
 
 div#category {
-    background: rgba(255, 255, 255, .8);
+    background: rgba(255, 255, 255, .92);
 }
 
 #page-header.nav-fixed #nav {
-    background: rgba(255, 255, 255, .8);
+    background: rgba(255, 255, 255, .92);
 }
 
 [data-theme=dark] #page-header.nav-fixed #nav {
-    background: rgba(35, 35, 35, .5) !important
+    background: rgba(35, 35, 35, .8) !important
 }
 
 [data-theme=dark] #recent-posts>.recent-post-item {
-    background: rgba(35, 35, 35, .5)
+    background: rgba(35, 35, 35, .8)
 }
 
 [data-theme=dark] #aside-content .card-widget {
-    background: rgba(35, 35, 35, .5)
+    background: rgba(35, 35, 35, .8)
 }
 
 [data-theme=dark] #aside-content>.card-widget.card-info {
-    background: rgba(35, 35, 35, .5)
+    background: rgba(35, 35, 35, .8)
 }
 
 [data-theme=dark] div#post {
-    background: rgba(35, 35, 35, .5)
+    background: rgba(35, 35, 35, .8)
 }
 
 [data-theme=dark] div#tag {
-    background: rgba(35, 35, 35, .5)
+    background: rgba(35, 35, 35, .8)
 }
 
 [data-theme=dark] div#archive {
-    background: rgba(35, 35, 35, .5)
+    background: rgba(35, 35, 35, .8)
 }
 
 [data-theme=dark] div#page {
-    background: rgba(35, 35, 35, .5)
+    background: rgba(35, 35, 35, .8)
 }
 
 [data-theme=dark] div#category {
-    background: rgba(35, 35, 35, .5)
+    background: rgba(35, 35, 35, .8)
 }
 
 [data-theme=dark] #footer::before {
@@ -82,20 +82,20 @@ div#category {
 }
 
 .read-mode #aside-content .card-widget {
-    background: rgba(35, 35, 35, .5) !important
+    background: rgba(35, 35, 35, .8) !important
 }
 
 .read-mode div#post {
-    background: rgba(35, 35, 35, .5) !important
+    background: rgba(35, 35, 35, .8) !important
 }
 
 [data-theme=dark] .read-mode #aside-content .card-widget {
-    background: rgba(35, 35, 35, .5) !important;
+    background: rgba(35, 35, 35, .8) !important;
     color: #fff
 }
 
 [data-theme=dark] .read-mode div#post {
-    background: rgba(35, 35, 35, .5) !important;
+    background: rgba(35, 35, 35, .8) !important;
     color: #fff
 }
 
@@ -111,7 +111,7 @@ div#category {
 
 /*侧边卡片的透明度 */
 :root {
-    --card-bg: rgba(255, 255, 255, .8);
+    --card-bg: rgba(255, 255, 255, .92);
 }
 
 /* 页脚与头图透明 */
