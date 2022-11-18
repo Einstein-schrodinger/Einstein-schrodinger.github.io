@@ -151,3 +151,15 @@ div#category {
 [data-theme=dark] #sidebar #sidebar-menus .menus_items .site-page {
     text-shadow: 0 0 2px var(--theme-color) !important;
 }
+
+/*樱花背景*/
+.cherry-container {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    left: 0;
+    top: 0;
+    z-index: -1;
+}
