@@ -327,23 +327,6 @@ A Wonderful Theme for Hexo
       </tags>
   </entry>
   <entry>
-    <title>水调歌头</title>
-    <url>//ac668694.html</url>
-    <content><![CDATA[<div class='poem'><div class='poem-title'>水调歌头</div><div class='poem-author'>苏轼</div><p>丙辰中秋，欢饮达旦，大醉，作此篇，兼怀子由。 明月几时有？把酒问青天。
-不知天上宫阙，今夕是何年？ 我欲乘风归去，又恐琼楼玉宇，高处不胜寒。
-起舞弄清影，何似在人间？</p>
-<p>转朱阁，低绮户，照无眠。 不应有恨，何事长向别时圆？
-人有悲欢离合，月有阴晴圆缺，此事古难全。 但愿人长久，千里共婵娟。</p>
-</div>
-]]></content>
-      <categories>
-        <category>诗与远方</category>
-      </categories>
-      <tags>
-        <tag>诗与远方</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>博客搭建之夜间繁星</title>
     <url>//5ed672e6.html</url>
     <content><![CDATA[<h1 id="博客搭建之夜间繁星">博客搭建之夜间繁星</h1>
@@ -408,6 +391,23 @@ id="引入对应的资源修改主题配置文件_config.yml在-inject-配置项
       <tags>
         <tag>博客搭建</tag>
         <tag>樱花雨背景特效</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>水调歌头</title>
+    <url>//ac668694.html</url>
+    <content><![CDATA[<div class='poem'><div class='poem-title'>水调歌头</div><div class='poem-author'>苏轼</div><p>丙辰中秋，欢饮达旦，大醉，作此篇，兼怀子由。 明月几时有？把酒问青天。
+不知天上宫阙，今夕是何年？ 我欲乘风归去，又恐琼楼玉宇，高处不胜寒。
+起舞弄清影，何似在人间？</p>
+<p>转朱阁，低绮户，照无眠。 不应有恨，何事长向别时圆？
+人有悲欢离合，月有阴晴圆缺，此事古难全。 但愿人长久，千里共婵娟。</p>
+</div>
+]]></content>
+      <categories>
+        <category>诗与远方</category>
+      </categories>
+      <tags>
+        <tag>诗与远方</tag>
       </tags>
   </entry>
   <entry>
