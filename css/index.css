@@ -1484,7 +1484,7 @@ button {
 }
 a {
   color: #99a9bf;
-  text-decoration: none;
+  text-decoration: none !important;
   word-wrap: break-word;
   -webkit-transition: all 0.2s;
   -moz-transition: all 0.2s;
