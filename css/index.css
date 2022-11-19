@@ -3802,6 +3802,7 @@ font-family
   color: #00f /*$theme-link-color*/;
 }
 #article-container a:hover {
+  color: #f00;
   text-decoration: none /*underline*/;
 }
 #article-container img {
