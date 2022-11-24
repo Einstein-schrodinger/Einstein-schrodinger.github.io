@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>出入红尘</title>
+    <url>//1168772c.html</url>
+    <content><![CDATA[<div class='poem'><div class='poem-title'>好了歌</div><div class='poem-author'>曹雪芹</div><p>世人都晓神仙好，惟有功名忘不了！<br>古今将相在何方？荒冢一堆草没了。<br>世人都晓神仙好，只有金银忘不了！<br>终朝只恨聚无多，及到多时眼闭了。<br>世人都晓神仙好，只有娇妻忘不了！<br>君生日日说恩情，君死又随人去了。<br>世人都晓神仙好，只有儿孙忘不了！<br>痴心父母古来多，孝顺儿孙谁见了？ </p>
+</div>
+]]></content>
+      <categories>
+        <category>诗与远方</category>
+      </categories>
+      <tags>
+        <tag>诗与远方</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>博客搭建之Twikoo</title>
     <url>//6fc19c10.html</url>
     <content><![CDATA[<h1 id="博客搭建之Twikoo"><a href="#博客搭建之Twikoo" class="headerlink" title="博客搭建之Twikoo"></a>博客搭建之Twikoo</h1><div class="note info modern"><p>鉴于每个人的博客根目录名称都不太一样，本贴<strong>博客根目录</strong>一律以<code>[BlogRoot]</code>指代。<br>站点配置文件<code>_config.yml</code>，路径为<code>[BlogRoot]\_config.yml</code>。<br>主题配置文件<code>_config.yml</code>，路径为<code>[BlogRoot]\themes\butterfly\_config.yml</code>。</p>
@@ -24,19 +37,6 @@
         <tag>博客搭建</tag>
         <tag>Twikoo</tag>
         <tag>图床</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>出入红尘</title>
-    <url>//1168772c.html</url>
-    <content><![CDATA[<div class='poem'><div class='poem-title'>好了歌</div><div class='poem-author'>曹雪芹</div><p>世人都晓神仙好，惟有功名忘不了！<br>古今将相在何方？荒冢一堆草没了。<br>世人都晓神仙好，只有金银忘不了！<br>终朝只恨聚无多，及到多时眼闭了。<br>世人都晓神仙好，只有娇妻忘不了！<br>君生日日说恩情，君死又随人去了。<br>世人都晓神仙好，只有儿孙忘不了！<br>痴心父母古来多，孝顺儿孙谁见了？ </p>
-</div>
-]]></content>
-      <categories>
-        <category>诗与远方</category>
-      </categories>
-      <tags>
-        <tag>诗与远方</tag>
       </tags>
   </entry>
   <entry>
@@ -224,20 +224,6 @@ L=\left(\frac{k_\mathrm{B}}{e}\right)^2\left\{ \frac{(r+3)F_{r+2}(\eta)}{(r+1)F_
       </tags>
   </entry>
   <entry>
-    <title>水调歌头</title>
-    <url>//ac668694.html</url>
-    <content><![CDATA[<div class='poem'><div class='poem-title'>水调歌头</div><div class='poem-author'>苏轼</div><p>丙辰中秋，欢饮达旦，大醉，作此篇，兼怀子由。<br>明月几时有？把酒问青天。<br>不知天上宫阙，今夕是何年？<br>我欲乘风归去，又恐琼楼玉宇，高处不胜寒。<br>起舞弄清影，何似在人间？</p>
-<p>转朱阁，低绮户，照无眠。<br>不应有恨，何事长向别时圆？<br>人有悲欢离合，月有阴晴圆缺，此事古难全。<br>但愿人长久，千里共婵娟。</p>
-</div>
-]]></content>
-      <categories>
-        <category>诗与远方</category>
-      </categories>
-      <tags>
-        <tag>诗与远方</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>博客搭建之樱花雨</title>
     <url>//a163ffe3.html</url>
     <content><![CDATA[<h1 id="博客搭建之樱花雨"><a href="#博客搭建之樱花雨" class="headerlink" title="博客搭建之樱花雨"></a>博客搭建之樱花雨</h1><div class="note info modern"><p>鉴于每个人的博客根目录名称都不太一样，本贴<strong>博客根目录</strong>一律以<code>[BlogRoot]</code>指代。<br>站点配置文件<code>_config.yml</code>，路径为<code>[BlogRoot]\_config.yml</code>。<br>主题配置文件<code>_config.yml</code>，路径为<code>[BlogRoot]\themes\butterfly\_config.yml</code>。<br>需要<code>jQuery</code>支持，不然会报错：<code>$ is not defined</code>。<br>搬运自：<a href="https://www.xmwpro.com/post/736f6468.html/">添加 Cherry 樱花雨背景特效</a></p>
@@ -253,6 +239,20 @@ L=\left(\frac{k_\mathrm{B}}{e}\right)^2\left\{ \frac{(r+3)F_{r+2}(\eta)}{(r+1)F_
       <tags>
         <tag>博客搭建</tag>
         <tag>樱花雨背景特效</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>水调歌头</title>
+    <url>//ac668694.html</url>
+    <content><![CDATA[<div class='poem'><div class='poem-title'>水调歌头</div><div class='poem-author'>苏轼</div><p>丙辰中秋，欢饮达旦，大醉，作此篇，兼怀子由。<br>明月几时有？把酒问青天。<br>不知天上宫阙，今夕是何年？<br>我欲乘风归去，又恐琼楼玉宇，高处不胜寒。<br>起舞弄清影，何似在人间？</p>
+<p>转朱阁，低绮户，照无眠。<br>不应有恨，何事长向别时圆？<br>人有悲欢离合，月有阴晴圆缺，此事古难全。<br>但愿人长久，千里共婵娟。</p>
+</div>
+]]></content>
+      <categories>
+        <category>诗与远方</category>
+      </categories>
+      <tags>
+        <tag>诗与远方</tag>
       </tags>
   </entry>
   <entry>
