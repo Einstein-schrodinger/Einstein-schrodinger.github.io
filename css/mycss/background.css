@@ -81,6 +81,10 @@ div#category {
     background: 0 0 !important
 }
 
+[data-theme=dark] #aside-content>.card-widget.card-info>#card-info-btn {
+    background-color: rgba(35, 35, 35, .8);
+}
+
 .read-mode #aside-content .card-widget {
     background: rgba(35, 35, 35, .8) !important
 }
