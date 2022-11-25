@@ -85,6 +85,11 @@ div#category {
     background-color: rgba(35, 35, 35, .8);
 }
 
+[data-theme=dark] #waifu-toggle {
+    background-color: rgba(35, 35, 35, .8);
+    color: #FFFFFFB3;
+}
+
 .read-mode #aside-content .card-widget {
     background: rgba(35, 35, 35, .8) !important
 }
