@@ -1,22 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>出入红尘</title>
-    <url>//1168772c.html</url>
-    <content><![CDATA[<div class='poem'><div class='poem-title'>好了歌</div><div class='poem-author'>曹雪芹</div><p>世人都晓神仙好，惟有功名忘不了！ 古今将相在何方？荒冢一堆草没了。
-世人都晓神仙好，只有金银忘不了！ 终朝只恨聚无多，及到多时眼闭了。
-世人都晓神仙好，只有娇妻忘不了！ 君生日日说恩情，君死又随人去了。
-世人都晓神仙好，只有儿孙忘不了！ 痴心父母古来多，孝顺儿孙谁见了？</p>
-</div>
-]]></content>
-      <categories>
-        <category>诗与远方</category>
-      </categories>
-      <tags>
-        <tag>诗与远方</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>单抛物带(Single Parabolic Band,SPB)模型</title>
     <url>//3ca822df.html</url>
     <content><![CDATA[<h1
@@ -44,6 +28,22 @@ Parabolic Band，SPB</strong>)模型相关计算</h1>
         <tag>SPB</tag>
         <tag>Pisarenko plot</tag>
         <tag>Matlab code</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>出入红尘</title>
+    <url>//1168772c.html</url>
+    <content><![CDATA[<div class='poem'><div class='poem-title'>好了歌</div><div class='poem-author'>曹雪芹</div><p>世人都晓神仙好，惟有功名忘不了！ 古今将相在何方？荒冢一堆草没了。
+世人都晓神仙好，只有金银忘不了！ 终朝只恨聚无多，及到多时眼闭了。
+世人都晓神仙好，只有娇妻忘不了！ 君生日日说恩情，君死又随人去了。
+世人都晓神仙好，只有儿孙忘不了！ 痴心父母古来多，孝顺儿孙谁见了？</p>
+</div>
+]]></content>
+      <categories>
+        <category>诗与远方</category>
+      </categories>
+      <tags>
+        <tag>诗与远方</tag>
       </tags>
   </entry>
   <entry>
@@ -180,6 +180,23 @@ id="引入对应的资源修改主题配置文件_config.yml在-inject-配置项
       <tags>
         <tag>博客搭建</tag>
         <tag>樱花雨背景特效</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>水调歌头</title>
+    <url>//ac668694.html</url>
+    <content><![CDATA[<div class='poem'><div class='poem-title'>水调歌头</div><div class='poem-author'>苏轼</div><p>丙辰中秋，欢饮达旦，大醉，作此篇，兼怀子由。 明月几时有？把酒问青天。
+不知天上宫阙，今夕是何年？ 我欲乘风归去，又恐琼楼玉宇，高处不胜寒。
+起舞弄清影，何似在人间？</p>
+<p>转朱阁，低绮户，照无眠。 不应有恨，何事长向别时圆？
+人有悲欢离合，月有阴晴圆缺，此事古难全。 但愿人长久，千里共婵娟。</p>
+</div>
+]]></content>
+      <categories>
+        <category>诗与远方</category>
+      </categories>
+      <tags>
+        <tag>诗与远方</tag>
       </tags>
   </entry>
   <entry>
@@ -2291,8 +2308,8 @@ class="reference-title">参考资料</span></span></span></p>
 class="hidden-anchor"></span><sup class="reference"><a href="#referfrom_[4]">[4]</a></sup><span
 class="reference-bubble"><span class="reference-item"><span
 class="reference-literature">hexo-theme-volantis 标签插件</span><span
-class="reference-title">参考资料</span></span></span>的标签样式。引入<code>[tag].js</code>，并针对<code>butterfly</code>主题修改了相应的<code>[tag].styl</code>。在此鸣谢<code>Volantis</code>主题众开发者。
-主要参考内容包括各个volantis的内置标签插件文档<span id="referto_[5]"
+class="reference-title">参考资料</span></span></span>的标签样式。引入<code>[tag].js</code>，并针对<code>butterfly</code>主题修改了相应的<code>[tag].styl</code>。在此鸣谢<code>Volantis</code>主题众开发者。主要参考内容包括各个volantis的内置标签插件文档<span
+id="referto_[5]"
 class="hidden-anchor"></span><sup class="reference"><a href="#referfrom_[5]">[5]</a></sup><span
 class="reference-bubble"><span class="reference-item"><span
 class="reference-literature">Volantis文档:内置标签插件</span><span
@@ -2393,7 +2410,134 @@ class="hidden-anchor"></span><a class="reference-anchor" href="#referto_[9]">[9]
 </div>
 </a><a class="reference-link" href="https://www.antmoe.com/posts/3b43914f/">小康的butterfly主题使用文档</a>
 </div><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div></div>
-<h3 id="pdf展示">2.29 PDF展示</h3>
+<h3 id="hexo-tag-map-插件">2.29 Hexo-tag-map 插件</h3>
+<div class="tabs" id="hexo-tag-map"><ul class="nav-tabs"><li class="tab active"><button type="button" data-href="#hexo-tag-map-1">标签语法</button></li><li class="tab"><button type="button" data-href="#hexo-tag-map-2">配置参数</button></li><li class="tab"><button type="button" data-href="#hexo-tag-map-3">示例源码</button></li><li class="tab"><button type="button" data-href="#hexo-tag-map-4">渲染演示</button></li></ul><div class="tab-contents"><div class="tab-item-content active" id="hexo-tag-map-1"><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% + 标签值 + 经度 + 纬度 + 文本 + 缩放等级 + 宽 + 高 + 默认图层 + %&#125;</span><br></pre></td></tr></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="hexo-tag-map-2"><table>
+<colgroup>
+<col style="width: 11%" />
+<col style="width: 10%" />
+<col style="width: 25%" />
+<col style="width: 14%" />
+<col style="width: 25%" />
+<col style="width: 13%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">地图名</th>
+<th style="text-align: center;">标签值 <必填></th>
+<th style="text-align: center;">宽 (默认 100%) / 高 (默认 360px)</th>
+<th style="text-align: center;">缩放等级 (默认 14)</th>
+<th style="text-align: center;">宽 (默认 100%) / 高 (默认 360px)</th>
+<th style="text-align: center;">默认图层 (默认 1)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">混合地图</td>
+<td style="text-align: center;">map</td>
+<td style="text-align: center;">百分数或具体值 (100% 或 360px)</td>
+<td style="text-align: center;">取值 3~18</td>
+<td style="text-align: center;">百分数或具体值 (100% 或 360px)</td>
+<td style="text-align: center;">取值 1~7</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">谷歌地图</td>
+<td style="text-align: center;">googleMap</td>
+<td style="text-align: center;">百分数或具体值 (100% 或 360px)</td>
+<td style="text-align: center;">取值 1~20</td>
+<td style="text-align: center;">百分数或具体值 (100% 或 360px)</td>
+<td style="text-align: center;">取值 1~3</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">高德地图</td>
+<td style="text-align: center;">gaodeMap</td>
+<td style="text-align: center;">百分数或具体值 (100% 或 360px)</td>
+<td style="text-align: center;">取值 3~18</td>
+<td style="text-align: center;">百分数或具体值 (100% 或 360px)</td>
+<td style="text-align: center;">取值 1~3</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">百度地图</td>
+<td style="text-align: center;">baiduMap</td>
+<td style="text-align: center;">百分数或具体值 (100% 或 360px)</td>
+<td style="text-align: center;">取值 4~18</td>
+<td style="text-align: center;">百分数或具体值 (100% 或 360px)</td>
+<td style="text-align: center;">取值 1~2</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Geoq 地图</td>
+<td style="text-align: center;">geoqMap</td>
+<td style="text-align: center;">百分数或具体值 (100% 或 360px)</td>
+<td style="text-align: center;">取值 1~18</td>
+<td style="text-align: center;">百分数或具体值 (100% 或 360px)</td>
+<td style="text-align: center;">取值 1~5</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">openstreet 地图</td>
+<td style="text-align: center;">openstreetMap</td>
+<td style="text-align: center;">百分数或具体值 (100% 或 360px)</td>
+<td style="text-align: center;">取值 1~18</td>
+<td style="text-align: center;">百分数或具体值 (100% 或 360px)</td>
+<td style="text-align: center;">不支持此参数</td>
+</tr>
+</tbody>
+</table>
+<ol type="1">
+<li>参数之间，用英文逗号相隔</li>
+<li>参数必须按上述事例顺序输入，不得为空</li>
+<li>同一个页面，同一组经纬度值，只能插入一个相同标签值的地图
+(若有需要，可以将第二个地图上，经度或纬度末尾删除一两个数)</li>
+<li>参数取值必须在上述范围内</li>
+<li>默认图层：即地图叠加层的值，默认常规地图还是卫星地图，可按地图显示顺序取值</li>
+<li>缩放等级，数字越大，地图比例尺越小，显示的越精细</li>
+<li>除标签值外，其他参数选填，但每个参数的左边的参数必填</li>
+<li>谷歌地图需要外网才能加载查看</li>
+</ol>
+<p>坐标获取：<a
+href="https://lbs.amap.com/tools/picker">高德地图坐标拾取系统</a>、<a
+href="https://api.map.baidu.com/lbsapi/getpoint/index.html">百度地图坐标拾取系统</a></p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="hexo-tag-map-3"><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% map 120.101101,30.239119 %&#125;</span><br><span class="line">&#123;% geoqMap 120.101101,30.239119, 这里是西湖灵隐寺，据说求姻缘很灵验哦！ %&#125;</span><br><span class="line">&#123;% geoqMap 120.101101,30.239119, 这里是西湖灵隐寺，据说求姻缘很灵验哦！, 13, 90%, 320px, 3 %&#125;</span><br></pre></td></tr></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="hexo-tag-map-4"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-tag-map/lib/leaflet@1.7.1.css">
+<script data-pjax src="https://cdn.jsdelivr.net/npm/hexo-tag-map/lib/leaflet@1.7.1.js"></script>
+<script data-pjax src="https://cdn.jsdelivr.net/npm/hexo-tag-map/lib/leaflet.ChineseTmsProviders@1.0.4.js"></script>
+<div class="map-box">
+<div id="map-120.101101-30.239119"
+style="max-width:100%; height:360px;display: block;margin:0 auto;z-index:1;border-radius: 5px;">
+
+</div>
+</div>
+<script type="text/javascript">var normalm=L.tileLayer.chinaProvider('GaoDe.Normal.Map',{maxZoom:20,minZoom:1,attribution:'Amap'});var imgm=L.tileLayer.chinaProvider('GaoDe.Satellite.Map',{maxZoom:20,minZoom:1,attribution:'Amap'});var imga=L.tileLayer.chinaProvider('GaoDe.Satellite.Annotion',{maxZoom:20,minZoom:1,attribution:'Amap'});var normalMap=L.tileLayer.chinaProvider('Google.Normal.Map',{maxZoom:20,minZoom:1,attribution:'Google Maps'}),satelliteMap=L.tileLayer.chinaProvider('Google.Satellite.Map',{maxZoom:21,minZoom:1,attribution:'Google Maps'});routeMap=L.tileLayer.chinaProvider('Google.Satellite.Annotion',{maxZoom:21,minZoom:1});var normalMap=L.tileLayer.chinaProvider('Google.Normal.Map',{maxZoom:21,minZoom:1,attribution:'Google Maps'}),satelliteMap=L.tileLayer.chinaProvider('Google.Satellite.Map',{maxZoom:21,minZoom:1,attribution:'Google Maps'}),routeMap=L.tileLayer.chinaProvider('Google.Satellite.Annotion',{maxZoom:21,minZoom:1,attribution:'Google Maps'});var normalm1=L.tileLayer.chinaProvider('Geoq.Normal.Map',{maxZoom:21,minZoom:1,attribution:'GeoQ'});var normal=L.layerGroup([normalm]),image=L.layerGroup([imgm,imga]);var baseLayers={"高德地图":normal,"智图地图":normalm1,"谷歌地图":normalMap,"高德卫星地图":imgm,"谷歌卫星地图":satelliteMap,"高德卫星标注":image,"谷歌卫星标注":routeMap};var mymap=L.map('map-120.101101-30.239119',{center:[30.239119,120.101101],zoom:14,layers:[normal],zoomControl:false});L.control.layers(baseLayers,null).addTo(mymap);L.control.zoom({zoomInTitle:'放大',zoomOutTitle:'缩小'}).addTo(mymap);</script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-tag-map/lib/leaflet@1.7.1.css">
+<script data-pjax src="https://cdn.jsdelivr.net/npm/hexo-tag-map/lib/leaflet@1.7.1.js"></script>
+<script data-pjax src="https://cdn.jsdelivr.net/npm/hexo-tag-map/lib/leaflet.ChineseTmsProviders@1.0.4.js"></script>
+<div id="geoqMap-120.101101-30.239119"
+style="max-width:100%; height:360px;display: block;margin:0 auto;z-index:1;border-radius: 5px;">
+
+</div>
+<script type="text/javascript">var normalm1=L.tileLayer.chinaProvider('Geoq.Normal.Map',{maxZoom:20,minZoom:1,attribution:'GeoQ'});var normalm2=L.tileLayer.chinaProvider('Geoq.Normal.PurplishBlue',{maxZoom:20,minZoom:1,attribution:'GeoQ'});var normalm3=L.tileLayer.chinaProvider('Geoq.Normal.Gray',{maxZoom:20,minZoom:1,attribution:'GeoQ'});var normalm4=L.tileLayer.chinaProvider('Geoq.Normal.Warm',{maxZoom:20,minZoom:1,attribution:'GeoQ'});var normalm5=L.tileLayer.chinaProvider('Geoq.Theme.Hydro',{maxZoom:20,minZoom:1,attribution:'GeoQ'});var normal=L.layerGroup([normalm1,normalm2,normalm3,normalm4,normalm5]);var baseLayers={"智图地图":normalm1,"午夜蓝":normalm2,"灰色":normalm3,"暖色":normalm4,"水系":normalm5};var mymap=L.map("geoqMap-120.101101-30.239119",{center:[30.239119,120.101101],zoom:14,layers:[normalm1],zoomControl:false});L.control.layers(baseLayers,null).addTo(mymap);L.control.zoom({zoomInTitle:'放大',zoomOutTitle:'缩小'}).addTo(mymap);var marker = L.marker(['30.239119','120.101101']).addTo(mymap);marker.bindPopup("这里是西湖灵隐寺，据说求姻缘很灵验哦！").openPopup();</script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-tag-map/lib/leaflet@1.7.1.css">
+<script data-pjax src="https://cdn.jsdelivr.net/npm/hexo-tag-map/lib/leaflet@1.7.1.js"></script>
+<script data-pjax src="https://cdn.jsdelivr.net/npm/hexo-tag-map/lib/leaflet.ChineseTmsProviders@1.0.4.js"></script>
+<div id="geoqMap-120.101101-30.239119"
+style="max-width:90%; height:320px;display: block;margin:0 auto;z-index:1;border-radius: 5px;">
+
+</div>
+<script type="text/javascript">var normalm1=L.tileLayer.chinaProvider('Geoq.Normal.Map',{maxZoom:20,minZoom:1,attribution:'GeoQ'});var normalm2=L.tileLayer.chinaProvider('Geoq.Normal.PurplishBlue',{maxZoom:20,minZoom:1,attribution:'GeoQ'});var normalm3=L.tileLayer.chinaProvider('Geoq.Normal.Gray',{maxZoom:20,minZoom:1,attribution:'GeoQ'});var normalm4=L.tileLayer.chinaProvider('Geoq.Normal.Warm',{maxZoom:20,minZoom:1,attribution:'GeoQ'});var normalm5=L.tileLayer.chinaProvider('Geoq.Theme.Hydro',{maxZoom:20,minZoom:1,attribution:'GeoQ'});var normal=L.layerGroup([normalm1,normalm2,normalm3,normalm4,normalm5]);var baseLayers={"智图地图":normalm1,"午夜蓝":normalm2,"灰色":normalm3,"暖色":normalm4,"水系":normalm5};var mymap=L.map("geoqMap-120.101101-30.239119",{center:[30.239119,120.101101],zoom:13,layers:[normalm3],zoomControl:false});L.control.layers(baseLayers,null).addTo(mymap);L.control.zoom({zoomInTitle:'放大',zoomOutTitle:'缩小'}).addTo(mymap);var marker = L.marker(['30.239119','120.101101']).addTo(mymap);marker.bindPopup("这里是西湖灵隐寺，据说求姻缘很灵验哦！").openPopup();</script><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div></div>
+<h3 id="隐藏块">2.30 隐藏块</h3>
+<div class="tabs" id="隐藏块"><ul class="nav-tabs"><li class="tab active"><button type="button" data-href="#隐藏块-1">标签语法</button></li><li class="tab"><button type="button" data-href="#隐藏块-2">配置参数</button></li><li class="tab"><button type="button" data-href="#隐藏块-3">示例源码</button></li><li class="tab"><button type="button" data-href="#隐藏块-4">渲染演示</button></li></ul><div class="tab-contents"><div class="tab-item-content active" id="隐藏块-1"><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% hideBlock display,bg,color %&#125;</span><br><span class="line">content</span><br><span class="line">&#123;% endhideBlock %&#125;</span><br></pre></td></tr></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="隐藏块-2"><ol type="1">
+<li><code>content</code>：要隐藏的内容</li>
+<li><code>display</code>：展示前按钮显示的文字（可选）</li>
+<li><code>bg</code>：按钮的背景颜色（可选）</li>
+<li><code>color</code>：按钮显示的文字的颜色（可选）</li>
+</ol><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="隐藏块-3"><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% hideBlock 点我预览, blue %&#125;</span><br><span class="line">这里有张图片：</span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;https://blogresource.sqwdream.cloud/post/博客问题集锦/img/cover/黑洞.png&quot;</span> <span class="attr">alt</span>=<span class="string">&quot;image (1)&quot;</span> <span class="attr">style</span>=<span class="string">&quot;zoom:100%;&quot;</span> /&gt;</span></span></span><br><span class="line">&#123;% endhideBlock %&#125;</span><br></pre></td></tr></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="隐藏块-4"><div class="hide-block">
+<button type="button" class="hide-button" style="background-color:  blue;">
+点我预览
+</button>
+<div class="hide-content">
+<p>
+这里有张图片：
+<img src="https://blogresource.sqwdream.cloud/post/博客问题集锦/img/cover/黑洞.png" />
+</p>
+</div>
+</div><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div></div>
+<h3 id="pdf展示">2.31 PDF展示</h3>
 ]]></content>
       <categories>
         <category>博客搭建</category>
@@ -2401,23 +2545,6 @@ class="hidden-anchor"></span><a class="reference-anchor" href="#referto_[9]">[9]
       <tags>
         <tag>博客搭建</tag>
         <tag>外挂标签</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>水调歌头</title>
-    <url>//ac668694.html</url>
-    <content><![CDATA[<div class='poem'><div class='poem-title'>水调歌头</div><div class='poem-author'>苏轼</div><p>丙辰中秋，欢饮达旦，大醉，作此篇，兼怀子由。 明月几时有？把酒问青天。
-不知天上宫阙，今夕是何年？ 我欲乘风归去，又恐琼楼玉宇，高处不胜寒。
-起舞弄清影，何似在人间？</p>
-<p>转朱阁，低绮户，照无眠。 不应有恨，何事长向别时圆？
-人有悲欢离合，月有阴晴圆缺，此事古难全。 但愿人长久，千里共婵娟。</p>
-</div>
-]]></content>
-      <categories>
-        <category>诗与远方</category>
-      </categories>
-      <tags>
-        <tag>诗与远方</tag>
       </tags>
   </entry>
   <entry>
