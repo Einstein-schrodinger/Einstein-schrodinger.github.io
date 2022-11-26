@@ -1,6 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>出入红尘</title>
+    <url>//1168772c.html</url>
+    <content><![CDATA[<div class='poem'><div class='poem-title'>好了歌</div><div class='poem-author'>曹雪芹</div><p>世人都晓神仙好，惟有功名忘不了！ 古今将相在何方？荒冢一堆草没了。
+世人都晓神仙好，只有金银忘不了！ 终朝只恨聚无多，及到多时眼闭了。
+世人都晓神仙好，只有娇妻忘不了！ 君生日日说恩情，君死又随人去了。
+世人都晓神仙好，只有儿孙忘不了！ 痴心父母古来多，孝顺儿孙谁见了？</p>
+</div>
+]]></content>
+      <categories>
+        <category>诗与远方</category>
+      </categories>
+      <tags>
+        <tag>诗与远方</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>单抛物带(Single Parabolic Band,SPB)模型</title>
     <url>//3ca822df.html</url>
     <content><![CDATA[<h1
@@ -67,46 +83,6 @@ href="https://twikoo.js.org/faq.html#%E5%A6%82%E4%BD%95%E5%90%AF%E7%94%A8-katex-
       </tags>
   </entry>
   <entry>
-    <title>博客问题集锦</title>
-    <url>//6bf8c91.html</url>
-    <content><![CDATA[<div class="note info modern"><p>鉴于每个人的博客根目录名称都不太一样，本贴<strong>博客根目录</strong>一律以<code>[BlogRoot]</code>指代。
-数学公式配置：<a
-href="https://butterfly.js.org/posts/ceeb73f/#Math-%E6%95%B8%E5%AD%B8">Math
-数学</a> 参考：<a
-href="https://www.cnblogs.com/Ai-heng/p/7282110.html">hexo博客MathJax公式渲染问题</a></p>
-</div>
-<h1 id="公式渲染问题">公式渲染问题</h1>
-<details class="folding-tag" cyan><summary> 点击查看 </summary>
-              <div class='content'>
-              <p>在博客中一些数学公式会出现渲染问题，当然md文件也有可能出现渲染问题，比如引用变成上标等，这里只介绍出现的MathJax数学公式的渲染问题，主要问题就是行内数学公式会出现渲染失败的情况，对于单个符号问题渲染还是可以的，但是涉及到等式就会出现渲染失败的情况，具体问题展示如下：</p><p><ahref="https://blogresource.sqwdream.cloud/post/博客问题集锦/img/body/行内公式error.jpg"></a></p><p>解决的方法如下：</p><ol type="1"><li><p>更换公式渲染引擎</p><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm uninstall hexo-renderer-marked --save</span><br><span class="line">npm install hexo-renderer-kramed --save</span><br></pre></td></tr></table></figure></li><li><p>修改<code>[BlogRoot]/node_modules/kramed/lib/rules/inline.js</code>文件</p><figure class="highlight diff"><table><tr><td class="code"><pre><span class="line"><span class="deletion">- escape: /^\\([\\`*&#123;&#125;\[\]()#$+\-.!_&gt;])/,  /*11行*/</span></span><br><span class="line"><span class="addition">+ escape: /^\\([`*\[\]()#$+\-.!_&gt;])/,</span></span><br><span class="line"><span class="deletion">- em: /^\b_((?:__|[\s\S])+?)_\b|^\*((?:\*\*|[\s\S])+?)\*(?!\*)/,  /*20行*/  </span></span><br><span class="line"><span class="addition">+ em: /^\*((?:\*\*|[\s\S])+?)\*(?!\*)/,</span></span><br></pre></td></tr></table></figure></li><li><p>如果在md文件中用到数学公式，要在Front-matter中加入<code>mathjax: true</code></p></li><li><p>如果和butterfly外观标签混合使用，比如数学公式嵌套在butterfly外挂标签中，可以尝试在Front-matter中删除<code>mathjax: true</code>，以防止渲染冲突</p></li></ol>
-              </div>
-            </details>
-]]></content>
-      <categories>
-        <category>博客问题集锦</category>
-      </categories>
-      <tags>
-        <tag>MathJax</tag>
-        <tag>公式渲染</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>出入红尘</title>
-    <url>//1168772c.html</url>
-    <content><![CDATA[<div class='poem'><div class='poem-title'>好了歌</div><div class='poem-author'>曹雪芹</div><p>世人都晓神仙好，惟有功名忘不了！ 古今将相在何方？荒冢一堆草没了。
-世人都晓神仙好，只有金银忘不了！ 终朝只恨聚无多，及到多时眼闭了。
-世人都晓神仙好，只有娇妻忘不了！ 君生日日说恩情，君死又随人去了。
-世人都晓神仙好，只有儿孙忘不了！ 痴心父母古来多，孝顺儿孙谁见了？</p>
-</div>
-]]></content>
-      <categories>
-        <category>诗与远方</category>
-      </categories>
-      <tags>
-        <tag>诗与远方</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>博客搭建之夜间繁星</title>
     <url>//5ed672e6.html</url>
     <content><![CDATA[<h1 id="博客搭建之夜间繁星">博客搭建之夜间繁星</h1>
@@ -169,23 +145,6 @@ id="修改站点配置文件blogroot_config.yml添加以下内容">2.修改站�
       <tags>
         <tag>博客搭建</tag>
         <tag>文章链接</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>水调歌头</title>
-    <url>//ac668694.html</url>
-    <content><![CDATA[<div class='poem'><div class='poem-title'>水调歌头</div><div class='poem-author'>苏轼</div><p>丙辰中秋，欢饮达旦，大醉，作此篇，兼怀子由。 明月几时有？把酒问青天。
-不知天上宫阙，今夕是何年？ 我欲乘风归去，又恐琼楼玉宇，高处不胜寒。
-起舞弄清影，何似在人间？</p>
-<p>转朱阁，低绮户，照无眠。 不应有恨，何事长向别时圆？
-人有悲欢离合，月有阴晴圆缺，此事古难全。 但愿人长久，千里共婵娟。</p>
-</div>
-]]></content>
-      <categories>
-        <category>诗与远方</category>
-      </categories>
-      <tags>
-        <tag>诗与远方</tag>
       </tags>
   </entry>
   <entry>
@@ -2410,12 +2369,10 @@ class="hidden-anchor"></span><a class="reference-anchor" href="#referto_[9]">[9]
 </a><a class="reference-link" href="https://www.antmoe.com/posts/3b43914f/">小康的butterfly主题使用文档</a>
 </div><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div></div>
 <h3 id="隐藏块">2.29 隐藏块</h3>
-<div class="tabs" id="隐藏块"><ul class="nav-tabs"><li class="tab active"><button type="button" data-href="#隐藏块-1">标签语法</button></li><li class="tab"><button type="button" data-href="#隐藏块-2">配置参数</button></li><li class="tab"><button type="button" data-href="#隐藏块-3">示例源码</button></li><li class="tab"><button type="button" data-href="#隐藏块-4">渲染演示</button></li></ul><div class="tab-contents"><div class="tab-item-content active" id="隐藏块-1"><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% hideBlock display,bg,color %&#125;</span><br><span class="line">content</span><br><span class="line">&#123;% endhideBlock %&#125;</span><br></pre></td></tr></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="隐藏块-2"><ol type="1">
-<li><code>content</code>：要隐藏的内容</li>
-<li><code>display</code>：展示前按钮显示的文字（可选）</li>
-<li><code>bg</code>：按钮的背景颜色（可选）</li>
-<li><code>color</code>：按钮显示的文字的颜色（可选）</li>
-</ol><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="隐藏块-3"><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% hideBlock 点我预览, blue %&#125;</span><br><span class="line">这里有张图片：</span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;https://blogresource.sqwdream.cloud/post/博客问题集锦/img/cover/黑洞.png&quot;</span> <span class="attr">alt</span>=<span class="string">&quot;image (1)&quot;</span> <span class="attr">style</span>=<span class="string">&quot;zoom:100%;&quot;</span> /&gt;</span></span></span><br><span class="line">&#123;% endhideBlock %&#125;</span><br></pre></td></tr></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="隐藏块-4"><div class="hide-block">
+<div class="tabs" id="隐藏块"><ul class="nav-tabs"><li class="tab active"><button type="button" data-href="#隐藏块-1">标签语法</button></li><li class="tab"><button type="button" data-href="#隐藏块-2">配置参数</button></li><li class="tab"><button type="button" data-href="#隐藏块-3">示例源码</button></li><li class="tab"><button type="button" data-href="#隐藏块-4">渲染演示</button></li></ul><div class="tab-contents"><div class="tab-item-content active" id="隐藏块-1"><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% hideBlock display,bg,color %&#125;</span><br><span class="line">content</span><br><span class="line">&#123;% endhideBlock %&#125;</span><br></pre></td></tr></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="隐藏块-2"><p>1.<code>content</code>：要隐藏的内容</p>
+<p>2.<code>display</code>：展示前按钮显示的文字（可选）</p>
+<p>3.<code>bg</code>：按钮的背景颜色（可选）</p>
+<p>4.<code>color</code>：按钮显示的文字的颜色（可选）</p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="隐藏块-3"><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% hideBlock 点我预览, blue %&#125;</span><br><span class="line">这里有张图片：</span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;https://blogresource.sqwdream.cloud/post/博客问题集锦/img/cover/黑洞.png&quot;</span> <span class="attr">alt</span>=<span class="string">&quot;image (1)&quot;</span> <span class="attr">style</span>=<span class="string">&quot;zoom:100%;&quot;</span> /&gt;</span></span></span><br><span class="line">&#123;% endhideBlock %&#125;</span><br></pre></td></tr></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="隐藏块-4"><div class="hide-block">
 <button type="button" class="hide-button" style="background-color:  blue;">
 点我预览
 </button>
@@ -2527,6 +2484,23 @@ href="https://api.map.baidu.com/lbsapi/getpoint/index.html">百度地图坐标�
       </tags>
   </entry>
   <entry>
+    <title>水调歌头</title>
+    <url>//ac668694.html</url>
+    <content><![CDATA[<div class='poem'><div class='poem-title'>水调歌头</div><div class='poem-author'>苏轼</div><p>丙辰中秋，欢饮达旦，大醉，作此篇，兼怀子由。 明月几时有？把酒问青天。
+不知天上宫阙，今夕是何年？ 我欲乘风归去，又恐琼楼玉宇，高处不胜寒。
+起舞弄清影，何似在人间？</p>
+<p>转朱阁，低绮户，照无眠。 不应有恨，何事长向别时圆？
+人有悲欢离合，月有阴晴圆缺，此事古难全。 但愿人长久，千里共婵娟。</p>
+</div>
+]]></content>
+      <categories>
+        <category>诗与远方</category>
+      </categories>
+      <tags>
+        <tag>诗与远方</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>博客搭建之樱花雨</title>
     <url>//a163ffe3.html</url>
     <content><![CDATA[<h1 id="博客搭建之樱花雨">博客搭建之樱花雨</h1>
@@ -2559,6 +2533,30 @@ id="引入对应的资源修改主题配置文件_config.yml在-inject-配置项
       <tags>
         <tag>博客搭建</tag>
         <tag>樱花雨背景特效</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>博客问题集锦</title>
+    <url>//6bf8c91.html</url>
+    <content><![CDATA[<div class="note info modern"><p>鉴于每个人的博客根目录名称都不太一样，本贴<strong>博客根目录</strong>一律以<code>[BlogRoot]</code>指代。
+数学公式配置：<a
+href="https://butterfly.js.org/posts/ceeb73f/#Math-%E6%95%B8%E5%AD%B8">Math
+数学</a> 参考：<a
+href="https://www.cnblogs.com/Ai-heng/p/7282110.html">hexo博客MathJax公式渲染问题</a></p>
+</div>
+<h1 id="公式渲染问题">公式渲染问题</h1>
+<details class="folding-tag" cyan><summary> 点击查看 </summary>
+              <div class='content'>
+              <p>在博客中一些数学公式会出现渲染问题，当然md文件也有可能出现渲染问题，比如引用变成上标等，这里只介绍出现的MathJax数学公式的渲染问题，主要问题就是行内数学公式会出现渲染失败的情况，对于单个符号问题渲染还是可以的，但是涉及到等式就会出现渲染失败的情况，具体问题展示如下：</p><p><ahref="https://blogresource.sqwdream.cloud/post/博客问题集锦/img/body/行内公式error.jpg"></a></p><p>解决的方法如下：</p><ol type="1"><li><p>更换公式渲染引擎</p><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm uninstall hexo-renderer-marked --save</span><br><span class="line">npm install hexo-renderer-kramed --save</span><br></pre></td></tr></table></figure></li><li><p>修改<code>[BlogRoot]/node_modules/kramed/lib/rules/inline.js</code>文件</p><figure class="highlight diff"><table><tr><td class="code"><pre><span class="line"><span class="deletion">- escape: /^\\([\\`*&#123;&#125;\[\]()#$+\-.!_&gt;])/,  /*11行*/</span></span><br><span class="line"><span class="addition">+ escape: /^\\([`*\[\]()#$+\-.!_&gt;])/,</span></span><br><span class="line"><span class="deletion">- em: /^\b_((?:__|[\s\S])+?)_\b|^\*((?:\*\*|[\s\S])+?)\*(?!\*)/,  /*20行*/  </span></span><br><span class="line"><span class="addition">+ em: /^\*((?:\*\*|[\s\S])+?)\*(?!\*)/,</span></span><br></pre></td></tr></table></figure></li><li><p>如果在md文件中用到数学公式，要在Front-matter中加入<code>mathjax: true</code></p></li><li><p>如果和butterfly外观标签混合使用，比如数学公式嵌套在butterfly外挂标签中，可以尝试在Front-matter中删除<code>mathjax: true</code>，以防止渲染冲突</p></li></ol>
+              </div>
+            </details>
+]]></content>
+      <categories>
+        <category>博客问题集锦</category>
+      </categories>
+      <tags>
+        <tag>MathJax</tag>
+        <tag>公式渲染</tag>
       </tags>
   </entry>
 </search>
