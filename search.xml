@@ -148,6 +148,30 @@ id="修改站点配置文件blogroot_config.yml添加以下内容">2.修改站�
       </tags>
   </entry>
   <entry>
+    <title>博客问题集锦</title>
+    <url>//6bf8c91.html</url>
+    <content><![CDATA[<div class="note info modern"><p>鉴于每个人的博客根目录名称都不太一样，本贴<strong>博客根目录</strong>一律以<code>[BlogRoot]</code>指代。
+数学公式配置：<a
+href="https://butterfly.js.org/posts/ceeb73f/#Math-%E6%95%B8%E5%AD%B8">Math
+数学</a> 参考：<a
+href="https://www.cnblogs.com/Ai-heng/p/7282110.html">hexo博客MathJax公式渲染问题</a></p>
+</div>
+<h1 id="公式渲染问题">公式渲染问题</h1>
+<details class="folding-tag" cyan><summary> 点击查看 </summary>
+              <div class='content'>
+              <p>在博客中一些数学公式会出现渲染问题，当然md文件也有可能出现渲染问题，比如引用变成上标等，这里只介绍出现的MathJax数学公式的渲染问题，主要问题就是行内数学公式会出现渲染失败的情况，对于单个符号问题渲染还是可以的，但是涉及到等式就会出现渲染失败的情况，具体问题展示如下：</p><p><ahref="https://blogresource.sqwdream.cloud/post/博客问题集锦/img/body/行内公式error.jpg"></a></p><p>解决的方法如下：</p><ol type="1"><li><p>更换公式渲染引擎</p><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm uninstall hexo-renderer-marked --save</span><br><span class="line">npm install hexo-renderer-kramed --save</span><br></pre></td></tr></table></figure></li><li><p>修改<code>[BlogRoot]/node_modules/kramed/lib/rules/inline.js</code>文件</p><figure class="highlight diff"><table><tr><td class="code"><pre><span class="line"><span class="deletion">- escape: /^\\([\\`*&#123;&#125;\[\]()#$+\-.!_&gt;])/,  /*11行*/</span></span><br><span class="line"><span class="addition">+ escape: /^\\([`*\[\]()#$+\-.!_&gt;])/,</span></span><br><span class="line"><span class="deletion">- em: /^\b_((?:__|[\s\S])+?)_\b|^\*((?:\*\*|[\s\S])+?)\*(?!\*)/,  /*20行*/  </span></span><br><span class="line"><span class="addition">+ em: /^\*((?:\*\*|[\s\S])+?)\*(?!\*)/,</span></span><br></pre></td></tr></table></figure></li><li><p>如果在md文件中用到数学公式，要在Front-matter中加入<code>mathjax: true</code></p></li><li><p>如果和butterfly外观标签混合使用，比如数学公式嵌套在butterfly外挂标签中，可以尝试在Front-matter中删除<code>mathjax: true</code>，以防止渲染冲突</p></li></ol>
+              </div>
+            </details>
+]]></content>
+      <categories>
+        <category>博客问题集锦</category>
+      </categories>
+      <tags>
+        <tag>MathJax</tag>
+        <tag>公式渲染</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>博客搭建之樱花雨</title>
     <url>//a163ffe3.html</url>
     <content><![CDATA[<h1 id="博客搭建之樱花雨">博客搭建之樱花雨</h1>
@@ -180,6 +204,23 @@ id="引入对应的资源修改主题配置文件_config.yml在-inject-配置项
       <tags>
         <tag>博客搭建</tag>
         <tag>樱花雨背景特效</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>水调歌头</title>
+    <url>//ac668694.html</url>
+    <content><![CDATA[<div class='poem'><div class='poem-title'>水调歌头</div><div class='poem-author'>苏轼</div><p>丙辰中秋，欢饮达旦，大醉，作此篇，兼怀子由。 明月几时有？把酒问青天。
+不知天上宫阙，今夕是何年？ 我欲乘风归去，又恐琼楼玉宇，高处不胜寒。
+起舞弄清影，何似在人间？</p>
+<p>转朱阁，低绮户，照无眠。 不应有恨，何事长向别时圆？
+人有悲欢离合，月有阴晴圆缺，此事古难全。 但愿人长久，千里共婵娟。</p>
+</div>
+]]></content>
+      <categories>
+        <category>诗与远方</category>
+      </categories>
+      <tags>
+        <tag>诗与远方</tag>
       </tags>
   </entry>
   <entry>
@@ -2509,7 +2550,7 @@ href="https://api.map.baidu.com/lbsapi/getpoint/index.html">百度地图坐标�
 点击查看
 </summary>
 <pre><code>          &lt;div class=&#39;content&#39;&gt;
-          &lt;p&gt;缺省(渲染有问题)&lt;/p&gt;
+          &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/hexo-tag-map/lib/leaflet@1.7.1.css&quot;&gt;&lt;script data-pjax src=&quot;https://cdn.jsdelivr.net/npm/hexo-tag-map/lib/leaflet@1.7.1.js&quot;&gt;&lt;/script&gt;&lt;script data-pjax src=&quot;https://cdn.jsdelivr.net/npm/hexo-tag-map/lib/leaflet.ChineseTmsProviders@1.0.4.js&quot;&gt;&lt;/script&gt;&lt;div class=&quot;map-box&quot;&gt;&lt;div id=&quot;map-120.101101-30.239119&quot;style=&quot;max-width:100%; height:360px;display: block;margin:0 auto;z-index:1;border-radius: 5px;&quot;&gt;&lt;/div&gt;&lt;/div&gt;&lt;script type=&quot;text/javascript&quot;&gt;var normalm=L.tileLayer.chinaProvider(&#39;GaoDe.Normal.Map&#39;,{maxZoom:20,minZoom:1,attribution:&#39;Amap&#39;});var imgm=L.tileLayer.chinaProvider(&#39;GaoDe.Satellite.Map&#39;,{maxZoom:20,minZoom:1,attribution:&#39;Amap&#39;});var imga=L.tileLayer.chinaProvider(&#39;GaoDe.Satellite.Annotion&#39;,{maxZoom:20,minZoom:1,attribution:&#39;Amap&#39;});var normalMap=L.tileLayer.chinaProvider(&#39;Google.Normal.Map&#39;,{maxZoom:20,minZoom:1,attribution:&#39;Google Maps&#39;}),satelliteMap=L.tileLayer.chinaProvider(&#39;Google.Satellite.Map&#39;,{maxZoom:21,minZoom:1,attribution:&#39;Google Maps&#39;});routeMap=L.tileLayer.chinaProvider(&#39;Google.Satellite.Annotion&#39;,{maxZoom:21,minZoom:1});var normalMap=L.tileLayer.chinaProvider(&#39;Google.Normal.Map&#39;,{maxZoom:21,minZoom:1,attribution:&#39;Google Maps&#39;}),satelliteMap=L.tileLayer.chinaProvider(&#39;Google.Satellite.Map&#39;,{maxZoom:21,minZoom:1,attribution:&#39;Google Maps&#39;}),routeMap=L.tileLayer.chinaProvider(&#39;Google.Satellite.Annotion&#39;,{maxZoom:21,minZoom:1,attribution:&#39;Google Maps&#39;});var normalm1=L.tileLayer.chinaProvider(&#39;Geoq.Normal.Map&#39;,{maxZoom:21,minZoom:1,attribution:&#39;GeoQ&#39;});var normal=L.layerGroup([normalm]),image=L.layerGroup([imgm,imga]);var baseLayers={&quot;高德地图&quot;:normal,&quot;智图地图&quot;:normalm1,&quot;谷歌地图&quot;:normalMap,&quot;高德卫星地图&quot;:imgm,&quot;谷歌卫星地图&quot;:satelliteMap,&quot;高德卫星标注&quot;:image,&quot;谷歌卫星标注&quot;:routeMap};var mymap=L.map(&#39;map-120.101101-30.239119&#39;,{center:[30.239119,120.101101],zoom:14,layers:[normal],zoomControl:false});L.control.layers(baseLayers,null).addTo(mymap);L.control.zoom({zoomInTitle:&#39;放大&#39;,zoomOutTitle:&#39;缩小&#39;}).addTo(mymap);&lt;/script&gt;&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/hexo-tag-map/lib/leaflet@1.7.1.css&quot;&gt;&lt;script data-pjax src=&quot;https://cdn.jsdelivr.net/npm/hexo-tag-map/lib/leaflet@1.7.1.js&quot;&gt;&lt;/script&gt;&lt;script data-pjax src=&quot;https://cdn.jsdelivr.net/npm/hexo-tag-map/lib/leaflet.ChineseTmsProviders@1.0.4.js&quot;&gt;&lt;/script&gt;&lt;div class=&quot;map-box&quot;&gt;&lt;div id=&quot;gaodeMap-120.101101-30.239119&quot;style=&quot;max-width:100%; height:360px;display: block;margin:0 auto;z-index:1;border-radius: 5px;&quot;&gt;&lt;/div&gt;&lt;/div&gt;&lt;script type=&quot;text/javascript&quot;&gt;var normalm=L.tileLayer.chinaProvider(&#39;GaoDe.Normal.Map&#39;,{maxZoom:20,minZoom:1,attribution:&#39;Amap&#39;});var imgm=L.tileLayer.chinaProvider(&#39;GaoDe.Satellite.Map&#39;,{maxZoom:20,minZoom:1,attribution:&#39;Amap&#39;});var imga=L.tileLayer.chinaProvider(&#39;GaoDe.Satellite.Annotion&#39;,{maxZoom:20,minZoom:1,attribution:&#39;Amap&#39;});var normal=L.layerGroup([normalm]),image=L.layerGroup([imgm,imga]);var baseLayers={&quot;高德地图&quot;:normal,&quot;高德卫星地图&quot;:imgm,&quot;高德卫星标注&quot;:image};var mymap=L.map(&#39;gaodeMap-120.101101-30.239119&#39;,{center:[30.239119,120.101101],zoom:14,layers:[normal],zoomControl:false});L.control.layers(baseLayers,null).addTo(mymap);L.control.zoom({zoomInTitle:&#39;放大&#39;,zoomOutTitle:&#39;缩小&#39;}).addTo(mymap);var marker = L.marker([&#39;30.239119&#39;,&#39;120.101101&#39;]).addTo(mymap);marker.bindPopup(&quot;这里是西湖灵隐寺，据说求姻缘很灵验哦！&quot;).openPopup();&lt;/script&gt;&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/hexo-tag-map/lib/leaflet@1.7.1.css&quot;&gt;&lt;script data-pjax src=&quot;https://cdn.jsdelivr.net/npm/hexo-tag-map/lib/leaflet@1.7.1.js&quot;&gt;&lt;/script&gt;&lt;script data-pjax src=&quot;https://cdn.jsdelivr.net/npm/hexo-tag-map/lib/leaflet.ChineseTmsProviders@1.0.4.js&quot;&gt;&lt;/script&gt;&lt;div class=&quot;map-box&quot;&gt;&lt;div id=&quot;gaodeMap-120.101101-30.239119&quot;style=&quot;max-width:90%; height:320px;display: block;margin:0 auto;z-index:1;border-radius: 5px;&quot;&gt;&lt;/div&gt;&lt;/div&gt;&lt;script type=&quot;text/javascript&quot;&gt;var normalm=L.tileLayer.chinaProvider(&#39;GaoDe.Normal.Map&#39;,{maxZoom:20,minZoom:1,attribution:&#39;Amap&#39;});var imgm=L.tileLayer.chinaProvider(&#39;GaoDe.Satellite.Map&#39;,{maxZoom:20,minZoom:1,attribution:&#39;Amap&#39;});var imga=L.tileLayer.chinaProvider(&#39;GaoDe.Satellite.Annotion&#39;,{maxZoom:20,minZoom:1,attribution:&#39;Amap&#39;});var normal=L.layerGroup([normalm]),image=L.layerGroup([imgm,imga]);var baseLayers={&quot;高德地图&quot;:normal,&quot;高德卫星地图&quot;:imgm,&quot;高德卫星标注&quot;:image};var mymap=L.map(&#39;gaodeMap-120.101101-30.239119&#39;,{center:[30.239119,120.101101],zoom:13,layers:[normal],zoomControl:false});L.control.layers(baseLayers,null).addTo(mymap);L.control.zoom({zoomInTitle:&#39;放大&#39;,zoomOutTitle:&#39;缩小&#39;}).addTo(mymap);var marker = L.marker([&#39;30.239119&#39;,&#39;120.101101&#39;]).addTo(mymap);marker.bindPopup(&quot;这里是西湖灵隐寺，据说求姻缘很灵验哦！&quot;).openPopup();&lt;/script&gt;
           &lt;/div&gt;
         &lt;/details&gt;</code></pre><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div></div>
 <h3 id="pdf展示">2.31 PDF展示</h3>
@@ -2520,47 +2561,6 @@ href="https://api.map.baidu.com/lbsapi/getpoint/index.html">百度地图坐标�
       <tags>
         <tag>博客搭建</tag>
         <tag>外挂标签</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>博客问题集锦</title>
-    <url>//6bf8c91.html</url>
-    <content><![CDATA[<div class="note info modern"><p>鉴于每个人的博客根目录名称都不太一样，本贴<strong>博客根目录</strong>一律以<code>[BlogRoot]</code>指代。
-数学公式配置：<a
-href="https://butterfly.js.org/posts/ceeb73f/#Math-%E6%95%B8%E5%AD%B8">Math
-数学</a> 参考：<a
-href="https://www.cnblogs.com/Ai-heng/p/7282110.html">hexo博客MathJax公式渲染问题</a></p>
-</div>
-<h1 id="公式渲染问题">公式渲染问题</h1>
-<details class="folding-tag" cyan><summary> 点击查看 </summary>
-              <div class='content'>
-              <p>在博客中一些数学公式会出现渲染问题，当然md文件也有可能出现渲染问题，比如引用变成上标等，这里只介绍出现的MathJax数学公式的渲染问题，主要问题就是行内数学公式会出现渲染失败的情况，对于单个符号问题渲染还是可以的，但是涉及到等式就会出现渲染失败的情况，具体问题展示如下：</p><p><ahref="https://blogresource.sqwdream.cloud/post/博客问题集锦/img/body/行内公式error.jpg"></a></p><p>解决的方法如下：</p><ol type="1"><li><p>更换公式渲染引擎</p><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm uninstall hexo-renderer-marked --save</span><br><span class="line">npm install hexo-renderer-kramed --save</span><br></pre></td></tr></table></figure></li><li><p>修改<code>[BlogRoot]/node_modules/kramed/lib/rules/inline.js</code>文件</p><figure class="highlight diff"><table><tr><td class="code"><pre><span class="line"><span class="deletion">- escape: /^\\([\\`*&#123;&#125;\[\]()#$+\-.!_&gt;])/,  /*11行*/</span></span><br><span class="line"><span class="addition">+ escape: /^\\([`*\[\]()#$+\-.!_&gt;])/,</span></span><br><span class="line"><span class="deletion">- em: /^\b_((?:__|[\s\S])+?)_\b|^\*((?:\*\*|[\s\S])+?)\*(?!\*)/,  /*20行*/  </span></span><br><span class="line"><span class="addition">+ em: /^\*((?:\*\*|[\s\S])+?)\*(?!\*)/,</span></span><br></pre></td></tr></table></figure></li><li><p>如果在md文件中用到数学公式，要在Front-matter中加入<code>mathjax: true</code></p></li><li><p>如果和butterfly外观标签混合使用，比如数学公式嵌套在butterfly外挂标签中，可以尝试在Front-matter中删除<code>mathjax: true</code>，以防止渲染冲突</p></li></ol>
-              </div>
-            </details>
-]]></content>
-      <categories>
-        <category>博客问题集锦</category>
-      </categories>
-      <tags>
-        <tag>MathJax</tag>
-        <tag>公式渲染</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>水调歌头</title>
-    <url>//ac668694.html</url>
-    <content><![CDATA[<div class='poem'><div class='poem-title'>水调歌头</div><div class='poem-author'>苏轼</div><p>丙辰中秋，欢饮达旦，大醉，作此篇，兼怀子由。 明月几时有？把酒问青天。
-不知天上宫阙，今夕是何年？ 我欲乘风归去，又恐琼楼玉宇，高处不胜寒。
-起舞弄清影，何似在人间？</p>
-<p>转朱阁，低绮户，照无眠。 不应有恨，何事长向别时圆？
-人有悲欢离合，月有阴晴圆缺，此事古难全。 但愿人长久，千里共婵娟。</p>
-</div>
-]]></content>
-      <categories>
-        <category>诗与远方</category>
-      </categories>
-      <tags>
-        <tag>诗与远方</tag>
       </tags>
   </entry>
 </search>
