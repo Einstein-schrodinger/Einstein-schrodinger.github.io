@@ -83,63 +83,6 @@ Parabolic Band，SPB</strong>)模型相关计算</h1>
       </tags>
   </entry>
   <entry>
-    <title>博客搭建之文章链接</title>
-    <url>//cc96dfee.html</url>
-    <content><![CDATA[<h1 id="博客搭建之文章链接">博客搭建之文章链接</h1>
-<div class="note info modern"><p>鉴于每个人的博客根目录名称都不太一样，本贴<strong>博客根目录</strong>一律以<code>[BlogRoot]</code>指代。
-站点配置文件<code>_config.yml</code>，路径为<code>[BlogRoot]\_config.yml</code>。
-主题配置文件<code>_config.yml</code>，路径为<code>[BlogRoot]\themes\butterfly\_config.yml</code>。</p>
-</div>
-<h2
-id="缩短文末copyright中文章链接的长度">缩短文末Copyright中文章链接的长度</h2>
-<h3
-id="在博客根目录下blogroot安装插件">1.在博客根目录下<code>[BlogRoot]</code>安装插件：</h3>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm install hexo-abbrlink --save</span><br></pre></td></tr></table></figure>
-<h3
-id="修改站点配置文件blogroot_config.yml添加以下内容">2.修改站点配置文件<code>[BlogRoot]\_config.yml</code>，添加以下内容：</h3>
-<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># permalink: :year/:month/:day/:title/</span></span><br><span class="line"><span class="comment"># permalink: p/:abbrlink.html  # p 是自定义的前缀</span></span><br><span class="line"><span class="attr">permalink:</span> <span class="string">/:abbrlink.html</span>  <span class="comment"># p 是自定义的前缀</span></span><br><span class="line"><span class="attr">abbrlink:</span></span><br><span class="line">    <span class="attr">alg:</span> <span class="string">crc32</span>   <span class="comment">#算法： crc16(default) and crc32</span></span><br><span class="line">    <span class="attr">rep:</span> <span class="string">hex</span>     <span class="comment">#进制： dec(default) and hex</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li><strong>不同算法和进制生成不同的格式</strong></li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">crc16 &amp; hex</span><br><span class="line">https://post.zz173.com/posts/66c8.html</span><br><span class="line">crc16 &amp; dec</span><br><span class="line">https://post.zz173.com/posts/65535.html</span><br><span class="line"></span><br><span class="line">crc32 &amp; hex</span><br><span class="line">https://post.zz173.com/posts/8ddf18fb.html</span><br><span class="line">crc32 &amp; dec</span><br><span class="line">https://post.zz173.com/posts/1690090958.html</span><br></pre></td></tr></table></figure>
-<ul>
-<li><strong><code>hexo g</code>生成网页时，会在每篇文章的<code>front matter</code>中加入一项<code>abbrlink</code>，它是根据文章题目生成的，生成之后不可更改，可以删除重新生成</strong></li>
-</ul>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">abbrlink: cc96dfee</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>博客搭建</category>
-      </categories>
-      <tags>
-        <tag>博客搭建</tag>
-        <tag>文章链接</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>博客问题集锦</title>
-    <url>//6bf8c91.html</url>
-    <content><![CDATA[<div class="note info modern"><p>鉴于每个人的博客根目录名称都不太一样，本贴<strong>博客根目录</strong>一律以<code>[BlogRoot]</code>指代。
-数学公式配置：<a
-href="https://butterfly.js.org/posts/ceeb73f/#Math-%E6%95%B8%E5%AD%B8">Math
-数学</a> 参考：<a
-href="https://www.cnblogs.com/Ai-heng/p/7282110.html">hexo博客MathJax公式渲染问题</a></p>
-</div>
-<h1 id="公式渲染问题">公式渲染问题</h1>
-<details class="folding-tag" cyan><summary> 点击查看 </summary>
-              <div class='content'>
-              <p>在博客中一些数学公式会出现渲染问题，当然md文件也有可能出现渲染问题，比如引用变成上标等，这里只介绍出现的MathJax数学公式的渲染问题，主要问题就是行内数学公式会出现渲染失败的情况，对于单个符号问题渲染还是可以的，但是涉及到等式就会出现渲染失败的情况，具体问题展示如下：</p><p><ahref="https://blogresource.sqwdream.cloud/post/博客问题集锦/img/body/行内公式error.jpg"></a></p><p>解决的方法如下：</p><ol type="1"><li><p>更换公式渲染引擎</p><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm uninstall hexo-renderer-marked --save</span><br><span class="line">npm install hexo-renderer-kramed --save</span><br></pre></td></tr></table></figure></li><li><p>修改<code>[BlogRoot]/node_modules/kramed/lib/rules/inline.js</code>文件</p><figure class="highlight diff"><table><tr><td class="code"><pre><span class="line"><span class="deletion">- escape: /^\\([\\`*&#123;&#125;\[\]()#$+\-.!_&gt;])/,  /*11行*/</span></span><br><span class="line"><span class="addition">+ escape: /^\\([`*\[\]()#$+\-.!_&gt;])/,</span></span><br><span class="line"><span class="deletion">- em: /^\b_((?:__|[\s\S])+?)_\b|^\*((?:\*\*|[\s\S])+?)\*(?!\*)/,  /*20行*/  </span></span><br><span class="line"><span class="addition">+ em: /^\*((?:\*\*|[\s\S])+?)\*(?!\*)/,</span></span><br></pre></td></tr></table></figure></li><li><p>如果在md文件中用到数学公式，要在Front-matter中加入<code>mathjax: true</code></p></li><li><p>如果和butterfly外观标签混合使用，比如数学公式嵌套在butterfly外挂标签中，可以尝试在Front-matter中删除<code>mathjax: true</code>，以防止渲染冲突</p></li></ol>
-              </div>
-            </details>
-]]></content>
-      <categories>
-        <category>博客问题集锦</category>
-      </categories>
-      <tags>
-        <tag>MathJax</tag>
-        <tag>公式渲染</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>博客搭建之夜间繁星</title>
     <url>//5ed672e6.html</url>
     <content><![CDATA[<h1 id="博客搭建之夜间繁星">博客搭建之夜间繁星</h1>
@@ -2262,14 +2205,138 @@ style="background-color:#868fd7;">clip-path属性使用裁剪方式创建元素�
 <li><code>literature</code>: 引用的参考文献名称</li>
 <li><code>url</code>: 引用的参考文献链接，可省略</li>
 </ul></li>
-</ol><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="引用文献-3"><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">Akilarの糖果屋(akilar.top)是一个私人性质的博客&#123;% referto &#x27;[1]&#x27;,&#x27;Akilarの糖果屋群聊简介&#x27; %&#125;，从各类教程至生活点滴，无话不谈。建群的目的是提供一个闲聊的场所。博客采用Hexo框架&#123;% referto &#x27;[2]&#x27;,&#x27;Hexo中文文档&#x27; %&#125;，Butterfly主题&#123;% referto &#x27;[3]&#x27;,&#x27;Butterfly 安装文档(一) 快速开始&#x27; %&#125;</span><br><span class="line"></span><br><span class="line">本项目参考了Volantis&#123;% referto &#x27;[4]&#x27;,&#x27;hexo-theme-volantis 标签插件&#x27; %&#125;的标签样式。引入<span class="code">`[tag].js`</span>，并针对<span class="code">`butterfly`</span>主题修改了相应的<span class="code">`[tag].styl`</span>。在此鸣谢<span class="code">`Volantis`</span>主题众开发者。</span><br><span class="line">主要参考内容包括各个volantis的内置标签插件文档&#123;% referto &#x27;[5]&#x27;,&#x27;Volantis文档:内置标签插件&#x27; %&#125;</span><br><span class="line">Butterfly主题的各个衍生魔改&#123;% referto &#x27;[6]&#x27;,&#x27;Butterfly 安装文档:标签外挂（Tag Plugins&#x27; %&#125;&#123;% referto &#x27;[7]&#x27;,&#x27;小弋の生活馆全样式预览&#x27; %&#125;&#123;% referto &#x27;[8]&#x27;,&#x27;l-lin-font-awesome-animation&#x27; %&#125;&#123;% referto &#x27;[9]&#x27;,&#x27;小康的butterfly主题使用文档&#x27; %&#125;</span><br><span class="line"></span><br><span class="line">&#123;% referfrom &#x27;[1]&#x27;,&#x27;Akilarの糖果屋群聊简介&#x27;,&#x27;https://jq.qq.com/?<span class="emphasis">_wv=1027&amp;k=pGLB2C0N&#x27; %&#125;</span></span><br><span class="line"><span class="emphasis">&#123;% referfrom &#x27;[2]&#x27;,&#x27;Hexo中文文档&#x27;,&#x27;https://hexo.io/zh-cn/docs/&#x27; %&#125;</span></span><br><span class="line"><span class="emphasis">&#123;% referfrom &#x27;[3]&#x27;,&#x27;Butterfly 安装文档(一) 快速开始&#x27;,&#x27;https://butterfly.js.org/posts/21cfbf15/&#x27; %&#125;</span></span><br><span class="line"><span class="emphasis">&#123;% referfrom &#x27;[4]&#x27;,&#x27;hexo-theme-volantis 标签插件&#x27;,&#x27;https://volantis.js.org/v5/tag-plugins/&#x27; %&#125;</span></span><br><span class="line"><span class="emphasis">&#123;% referfrom &#x27;[5]&#x27;,&#x27;Volantis文档:内置标签插件&#x27;,&#x27;https://volantis.js.org/tag-plugins/&#x27; %&#125;</span></span><br><span class="line"><span class="emphasis">&#123;% referfrom &#x27;[6]&#x27;,&#x27;Butterfly 安装文档:标签外挂（Tag Plugins&#x27;,&#x27;https://butterfly.js.org/posts/4aa8abbe/#%E6%A8%99%E7%B1%A4%E5%A4%96%E6%8E%9B%EF%BC%88Tag-Plugins%EF%BC%89&#x27; %&#125;</span></span><br><span class="line"><span class="emphasis">&#123;% referfrom &#x27;[7]&#x27;,&#x27;小弋の生活馆全样式预览&#x27;,&#x27;https://lovelijunyi.gitee.io/posts/c898.html&#x27; %&#125;</span></span><br><span class="line"><span class="emphasis">&#123;% referfrom &#x27;[8]&#x27;,&#x27;l-lin-font-awesome-animation&#x27;,&#x27;https://github.com/l-lin/font-awesome-animation&#x27; %&#125;</span></span><br><span class="line"><span class="emphasis">&#123;% referfrom &#x27;[9]&#x27;,&#x27;小康的butterfly主题使用文档&#x27;,&#x27;https://www.antmoe.com/posts/3b43914f/&#x27; %&#125;</span></span><br></pre></td></tr></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="引用文献-4"><details class="folding-tag" cyan>
-<summary>
+</ol><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="引用文献-3"><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">Akilarの糖果屋(akilar.top)是一个私人性质的博客&#123;% referto &#x27;[1]&#x27;,&#x27;Akilarの糖果屋群聊简介&#x27; %&#125;，从各类教程至生活点滴，无话不谈。建群的目的是提供一个闲聊的场所。博客采用Hexo框架&#123;% referto &#x27;[2]&#x27;,&#x27;Hexo中文文档&#x27; %&#125;，Butterfly主题&#123;% referto &#x27;[3]&#x27;,&#x27;Butterfly 安装文档(一) 快速开始&#x27; %&#125;</span><br><span class="line"></span><br><span class="line">本项目参考了Volantis&#123;% referto &#x27;[4]&#x27;,&#x27;hexo-theme-volantis 标签插件&#x27; %&#125;的标签样式。引入<span class="code">`[tag].js`</span>，并针对<span class="code">`butterfly`</span>主题修改了相应的<span class="code">`[tag].styl`</span>。在此鸣谢<span class="code">`Volantis`</span>主题众开发者。</span><br><span class="line">主要参考内容包括各个volantis的内置标签插件文档&#123;% referto &#x27;[5]&#x27;,&#x27;Volantis文档:内置标签插件&#x27; %&#125;</span><br><span class="line">Butterfly主题的各个衍生魔改&#123;% referto &#x27;[6]&#x27;,&#x27;Butterfly 安装文档:标签外挂（Tag Plugins&#x27; %&#125;&#123;% referto &#x27;[7]&#x27;,&#x27;小弋の生活馆全样式预览&#x27; %&#125;&#123;% referto &#x27;[8]&#x27;,&#x27;l-lin-font-awesome-animation&#x27; %&#125;&#123;% referto &#x27;[9]&#x27;,&#x27;小康的butterfly主题使用文档&#x27; %&#125;</span><br><span class="line"></span><br><span class="line">&#123;% referfrom &#x27;[1]&#x27;,&#x27;Akilarの糖果屋群聊简介&#x27;,&#x27;https://jq.qq.com/?<span class="emphasis">_wv=1027&amp;k=pGLB2C0N&#x27; %&#125;</span></span><br><span class="line"><span class="emphasis">&#123;% referfrom &#x27;[2]&#x27;,&#x27;Hexo中文文档&#x27;,&#x27;https://hexo.io/zh-cn/docs/&#x27; %&#125;</span></span><br><span class="line"><span class="emphasis">&#123;% referfrom &#x27;[3]&#x27;,&#x27;Butterfly 安装文档(一) 快速开始&#x27;,&#x27;https://butterfly.js.org/posts/21cfbf15/&#x27; %&#125;</span></span><br><span class="line"><span class="emphasis">&#123;% referfrom &#x27;[4]&#x27;,&#x27;hexo-theme-volantis 标签插件&#x27;,&#x27;https://volantis.js.org/v5/tag-plugins/&#x27; %&#125;</span></span><br><span class="line"><span class="emphasis">&#123;% referfrom &#x27;[5]&#x27;,&#x27;Volantis文档:内置标签插件&#x27;,&#x27;https://volantis.js.org/tag-plugins/&#x27; %&#125;</span></span><br><span class="line"><span class="emphasis">&#123;% referfrom &#x27;[6]&#x27;,&#x27;Butterfly 安装文档:标签外挂（Tag Plugins&#x27;,&#x27;https://butterfly.js.org/posts/4aa8abbe/#%E6%A8%99%E7%B1%A4%E5%A4%96%E6%8E%9B%EF%BC%88Tag-Plugins%EF%BC%89&#x27; %&#125;</span></span><br><span class="line"><span class="emphasis">&#123;% referfrom &#x27;[7]&#x27;,&#x27;小弋の生活馆全样式预览&#x27;,&#x27;https://lovelijunyi.gitee.io/posts/c898.html&#x27; %&#125;</span></span><br><span class="line"><span class="emphasis">&#123;% referfrom &#x27;[8]&#x27;,&#x27;l-lin-font-awesome-animation&#x27;,&#x27;https://github.com/l-lin/font-awesome-animation&#x27; %&#125;</span></span><br><span class="line"><span class="emphasis">&#123;% referfrom &#x27;[9]&#x27;,&#x27;小康的butterfly主题使用文档&#x27;,&#x27;https://www.antmoe.com/posts/3b43914f/&#x27; %&#125;</span></span><br></pre></td></tr></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="引用文献-4"><details class="toggle" style="border: 1px solid  pink">
+<summary class="toggle-button" style="background-color:  pink;">
 点击查看
 </summary>
-<pre><code>          &lt;div class=&#39;content&#39;&gt;
-          &lt;p&gt;Akilarの糖果屋(akilar.top)是一个私人性质的博客&lt;span id=&quot;referto_[1]&quot;class=&quot;hidden-anchor&quot;&gt;&lt;/span&gt;&lt;sup class=&quot;reference&quot;&gt;&lt;a href=&quot;#referfrom_[1]&quot;&gt;[1]&lt;/a&gt;&lt;/sup&gt;&lt;spanclass=&quot;reference-bubble&quot;&gt;&lt;span class=&quot;reference-item&quot;&gt;&lt;spanclass=&quot;reference-literature&quot;&gt;Akilarの糖果屋群聊简介&lt;/span&gt;&lt;spanclass=&quot;reference-title&quot;&gt;参考资料&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;，从各类教程至生活点滴，无话不谈。建群的目的是提供一个闲聊的场所。博客采用Hexo框架&lt;spanid=&quot;referto_[2]&quot;class=&quot;hidden-anchor&quot;&gt;&lt;/span&gt;&lt;sup class=&quot;reference&quot;&gt;&lt;a href=&quot;#referfrom_[2]&quot;&gt;[2]&lt;/a&gt;&lt;/sup&gt;&lt;spanclass=&quot;reference-bubble&quot;&gt;&lt;span class=&quot;reference-item&quot;&gt;&lt;spanclass=&quot;reference-literature&quot;&gt;Hexo中文文档&lt;/span&gt;&lt;spanclass=&quot;reference-title&quot;&gt;参考资料&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;，Butterfly主题&lt;spanid=&quot;referto_[3]&quot;class=&quot;hidden-anchor&quot;&gt;&lt;/span&gt;&lt;sup class=&quot;reference&quot;&gt;&lt;a href=&quot;#referfrom_[3]&quot;&gt;[3]&lt;/a&gt;&lt;/sup&gt;&lt;spanclass=&quot;reference-bubble&quot;&gt;&lt;span class=&quot;reference-item&quot;&gt;&lt;spanclass=&quot;reference-literature&quot;&gt;Butterfly 安装文档(一) 快速开始&lt;/span&gt;&lt;spanclass=&quot;reference-title&quot;&gt;参考资料&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;&lt;p&gt;本项目参考了Volantis&lt;span id=&quot;referto_[4]&quot;class=&quot;hidden-anchor&quot;&gt;&lt;/span&gt;&lt;sup class=&quot;reference&quot;&gt;&lt;a href=&quot;#referfrom_[4]&quot;&gt;[4]&lt;/a&gt;&lt;/sup&gt;&lt;spanclass=&quot;reference-bubble&quot;&gt;&lt;span class=&quot;reference-item&quot;&gt;&lt;spanclass=&quot;reference-literature&quot;&gt;hexo-theme-volantis 标签插件&lt;/span&gt;&lt;spanclass=&quot;reference-title&quot;&gt;参考资料&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;的标签样式。引入&lt;code&gt;[tag].js&lt;/code&gt;，并针对&lt;code&gt;butterfly&lt;/code&gt;主题修改了相应的&lt;code&gt;[tag].styl&lt;/code&gt;。在此鸣谢&lt;code&gt;Volantis&lt;/code&gt;主题众开发者。主要参考内容包括各个volantis的内置标签插件文档&lt;spanid=&quot;referto_[5]&quot;class=&quot;hidden-anchor&quot;&gt;&lt;/span&gt;&lt;sup class=&quot;reference&quot;&gt;&lt;a href=&quot;#referfrom_[5]&quot;&gt;[5]&lt;/a&gt;&lt;/sup&gt;&lt;spanclass=&quot;reference-bubble&quot;&gt;&lt;span class=&quot;reference-item&quot;&gt;&lt;spanclass=&quot;reference-literature&quot;&gt;Volantis文档:内置标签插件&lt;/span&gt;&lt;spanclass=&quot;reference-title&quot;&gt;参考资料&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;Butterfly主题的各个衍生魔改&lt;span id=&quot;referto_[6]&quot;class=&quot;hidden-anchor&quot;&gt;&lt;/span&gt;&lt;sup class=&quot;reference&quot;&gt;&lt;a href=&quot;#referfrom_[6]&quot;&gt;[6]&lt;/a&gt;&lt;/sup&gt;&lt;spanclass=&quot;reference-bubble&quot;&gt;&lt;span class=&quot;reference-item&quot;&gt;&lt;spanclass=&quot;reference-literature&quot;&gt;Butterfly 安装文档:标签外挂（TagPlugins&lt;/span&gt;&lt;spanclass=&quot;reference-title&quot;&gt;参考资料&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;spanid=&quot;referto_[7]&quot;class=&quot;hidden-anchor&quot;&gt;&lt;/span&gt;&lt;sup class=&quot;reference&quot;&gt;&lt;a href=&quot;#referfrom_[7]&quot;&gt;[7]&lt;/a&gt;&lt;/sup&gt;&lt;spanclass=&quot;reference-bubble&quot;&gt;&lt;span class=&quot;reference-item&quot;&gt;&lt;spanclass=&quot;reference-literature&quot;&gt;小弋の生活馆全样式预览&lt;/span&gt;&lt;spanclass=&quot;reference-title&quot;&gt;参考资料&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;spanid=&quot;referto_[8]&quot;class=&quot;hidden-anchor&quot;&gt;&lt;/span&gt;&lt;sup class=&quot;reference&quot;&gt;&lt;a href=&quot;#referfrom_[8]&quot;&gt;[8]&lt;/a&gt;&lt;/sup&gt;&lt;spanclass=&quot;reference-bubble&quot;&gt;&lt;span class=&quot;reference-item&quot;&gt;&lt;spanclass=&quot;reference-literature&quot;&gt;l-lin-font-awesome-animation&lt;/span&gt;&lt;spanclass=&quot;reference-title&quot;&gt;参考资料&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;spanid=&quot;referto_[9]&quot;class=&quot;hidden-anchor&quot;&gt;&lt;/span&gt;&lt;sup class=&quot;reference&quot;&gt;&lt;a href=&quot;#referfrom_[9]&quot;&gt;[9]&lt;/a&gt;&lt;/sup&gt;&lt;spanclass=&quot;reference-bubble&quot;&gt;&lt;span class=&quot;reference-item&quot;&gt;&lt;spanclass=&quot;reference-literature&quot;&gt;小康的butterfly主题使用文档&lt;/span&gt;&lt;spanclass=&quot;reference-title&quot;&gt;参考资料&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;&lt;div class=&quot;reference-source&quot;&gt;&lt;span id=&quot;referfrom_[1]&quot;class=&quot;hidden-anchor&quot;&gt;&lt;/span&gt;&lt;a class=&quot;reference-anchor&quot; href=&quot;#referto_[1]&quot;&gt;[1]&lt;div class=&quot;reference-anchor-up fa-solid fa-angles-up&quot;&gt;&lt;/div&gt;&lt;/a&gt;&lt;a class=&quot;reference-link&quot; href=&quot;https://jq.qq.com/?_wv=1027&amp;k=pGLB2C0N&quot;&gt;Akilarの糖果屋群聊简介&lt;/a&gt;&lt;/div&gt;&lt;div class=&quot;reference-source&quot;&gt;&lt;span id=&quot;referfrom_[2]&quot;class=&quot;hidden-anchor&quot;&gt;&lt;/span&gt;&lt;a class=&quot;reference-anchor&quot; href=&quot;#referto_[2]&quot;&gt;[2]&lt;div class=&quot;reference-anchor-up fa-solid fa-angles-up&quot;&gt;&lt;/div&gt;&lt;/a&gt;&lt;a class=&quot;reference-link&quot; href=&quot;https://hexo.io/zh-cn/docs/&quot;&gt;Hexo中文文档&lt;/a&gt;&lt;/div&gt;&lt;div class=&quot;reference-source&quot;&gt;&lt;span id=&quot;referfrom_[3]&quot;class=&quot;hidden-anchor&quot;&gt;&lt;/span&gt;&lt;a class=&quot;reference-anchor&quot; href=&quot;#referto_[3]&quot;&gt;[3]&lt;div class=&quot;reference-anchor-up fa-solid fa-angles-up&quot;&gt;&lt;/div&gt;&lt;/a&gt;&lt;a class=&quot;reference-link&quot; href=&quot;https://butterfly.js.org/posts/21cfbf15/&quot;&gt;Butterfly安装文档(一) 快速开始&lt;/a&gt;&lt;/div&gt;&lt;div class=&quot;reference-source&quot;&gt;&lt;span id=&quot;referfrom_[4]&quot;class=&quot;hidden-anchor&quot;&gt;&lt;/span&gt;&lt;a class=&quot;reference-anchor&quot; href=&quot;#referto_[4]&quot;&gt;[4]&lt;div class=&quot;reference-anchor-up fa-solid fa-angles-up&quot;&gt;&lt;/div&gt;&lt;/a&gt;&lt;a class=&quot;reference-link&quot; href=&quot;https://volantis.js.org/v5/tag-plugins/&quot;&gt;hexo-theme-volantis标签插件&lt;/a&gt;&lt;/div&gt;&lt;div class=&quot;reference-source&quot;&gt;&lt;span id=&quot;referfrom_[5]&quot;class=&quot;hidden-anchor&quot;&gt;&lt;/span&gt;&lt;a class=&quot;reference-anchor&quot; href=&quot;#referto_[5]&quot;&gt;[5]&lt;div class=&quot;reference-anchor-up fa-solid fa-angles-up&quot;&gt;&lt;/div&gt;&lt;/a&gt;&lt;a class=&quot;reference-link&quot; href=&quot;https://volantis.js.org/tag-plugins/&quot;&gt;Volantis文档:内置标签插件&lt;/a&gt;&lt;/div&gt;&lt;div class=&quot;reference-source&quot;&gt;&lt;span id=&quot;referfrom_[6]&quot;class=&quot;hidden-anchor&quot;&gt;&lt;/span&gt;&lt;a class=&quot;reference-anchor&quot; href=&quot;#referto_[6]&quot;&gt;[6]&lt;div class=&quot;reference-anchor-up fa-solid fa-angles-up&quot;&gt;&lt;/div&gt;&lt;/a&gt;&lt;a class=&quot;reference-link&quot; href=&quot;https://butterfly.js.org/posts/4aa8abbe/#%E6%A8%99%E7%B1%A4%E5%A4%96%E6%8E%9B%EF%BC%88Tag-Plugins%EF%BC%89&quot;&gt;Butterfly安装文档:标签外挂（Tag Plugins&lt;/a&gt;&lt;/div&gt;&lt;div class=&quot;reference-source&quot;&gt;&lt;span id=&quot;referfrom_[7]&quot;class=&quot;hidden-anchor&quot;&gt;&lt;/span&gt;&lt;a class=&quot;reference-anchor&quot; href=&quot;#referto_[7]&quot;&gt;[7]&lt;div class=&quot;reference-anchor-up fa-solid fa-angles-up&quot;&gt;&lt;/div&gt;&lt;/a&gt;&lt;a class=&quot;reference-link&quot; href=&quot;https://lovelijunyi.gitee.io/posts/c898.html&quot;&gt;小弋の生活馆全样式预览&lt;/a&gt;&lt;/div&gt;&lt;div class=&quot;reference-source&quot;&gt;&lt;span id=&quot;referfrom_[8]&quot;class=&quot;hidden-anchor&quot;&gt;&lt;/span&gt;&lt;a class=&quot;reference-anchor&quot; href=&quot;#referto_[8]&quot;&gt;[8]&lt;div class=&quot;reference-anchor-up fa-solid fa-angles-up&quot;&gt;&lt;/div&gt;&lt;/a&gt;&lt;a class=&quot;reference-link&quot; href=&quot;https://github.com/l-lin/font-awesome-animation&quot;&gt;l-lin-font-awesome-animation&lt;/a&gt;&lt;/div&gt;&lt;div class=&quot;reference-source&quot;&gt;&lt;span id=&quot;referfrom_[9]&quot;class=&quot;hidden-anchor&quot;&gt;&lt;/span&gt;&lt;a class=&quot;reference-anchor&quot; href=&quot;#referto_[9]&quot;&gt;[9]&lt;div class=&quot;reference-anchor-up fa-solid fa-angles-up&quot;&gt;&lt;/div&gt;&lt;/a&gt;&lt;a class=&quot;reference-link&quot; href=&quot;https://www.antmoe.com/posts/3b43914f/&quot;&gt;小康的butterfly主题使用文档&lt;/a&gt;&lt;/div&gt;
-          &lt;/div&gt;
-        &lt;/details&gt;</code></pre><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div></div>
+<div class="toggle-content">
+<p>
+Akilarの糖果屋(akilar.top)是一个私人性质的博客<span id="referto_[1]"
+class="hidden-anchor"></span><sup class="reference"><a href="#referfrom_[1]">[1]</a></sup><span
+class="reference-bubble"><span class="reference-item"><span
+class="reference-literature">Akilarの糖果屋群聊简介</span><span
+class="reference-title">参考资料</span></span></span>，从各类教程至生活点滴，无话不谈。建群的目的是提供一个闲聊的场所。博客采用Hexo框架<span
+id="referto_[2]"
+class="hidden-anchor"></span><sup class="reference"><a href="#referfrom_[2]">[2]</a></sup><span
+class="reference-bubble"><span class="reference-item"><span
+class="reference-literature">Hexo中文文档</span><span
+class="reference-title">参考资料</span></span></span>，Butterfly主题<span
+id="referto_[3]"
+class="hidden-anchor"></span><sup class="reference"><a href="#referfrom_[3]">[3]</a></sup><span
+class="reference-bubble"><span class="reference-item"><span
+class="reference-literature">Butterfly 安装文档(一) 快速开始</span><span
+class="reference-title">参考资料</span></span></span>
+</p>
+<p>
+本项目参考了Volantis<span id="referto_[4]"
+class="hidden-anchor"></span><sup class="reference"><a href="#referfrom_[4]">[4]</a></sup><span
+class="reference-bubble"><span class="reference-item"><span
+class="reference-literature">hexo-theme-volantis 标签插件</span><span
+class="reference-title">参考资料</span></span></span>的标签样式。引入<code>[tag].js</code>，并针对<code>butterfly</code>主题修改了相应的<code>[tag].styl</code>。在此鸣谢<code>Volantis</code>主题众开发者。主要参考内容包括各个volantis的内置标签插件文档<span
+id="referto_[5]"
+class="hidden-anchor"></span><sup class="reference"><a href="#referfrom_[5]">[5]</a></sup><span
+class="reference-bubble"><span class="reference-item"><span
+class="reference-literature">Volantis文档:内置标签插件</span><span
+class="reference-title">参考资料</span></span></span>
+Butterfly主题的各个衍生魔改<span id="referto_[6]"
+class="hidden-anchor"></span><sup class="reference"><a href="#referfrom_[6]">[6]</a></sup><span
+class="reference-bubble"><span class="reference-item"><span
+class="reference-literature">Butterfly 安装文档:标签外挂（Tag
+Plugins</span><span
+class="reference-title">参考资料</span></span></span><span
+id="referto_[7]"
+class="hidden-anchor"></span><sup class="reference"><a href="#referfrom_[7]">[7]</a></sup><span
+class="reference-bubble"><span class="reference-item"><span
+class="reference-literature">小弋の生活馆全样式预览</span><span
+class="reference-title">参考资料</span></span></span><span
+id="referto_[8]"
+class="hidden-anchor"></span><sup class="reference"><a href="#referfrom_[8]">[8]</a></sup><span
+class="reference-bubble"><span class="reference-item"><span
+class="reference-literature">l-lin-font-awesome-animation</span><span
+class="reference-title">参考资料</span></span></span><span
+id="referto_[9]"
+class="hidden-anchor"></span><sup class="reference"><a href="#referfrom_[9]">[9]</a></sup><span
+class="reference-bubble"><span class="reference-item"><span
+class="reference-literature">小康的butterfly主题使用文档</span><span
+class="reference-title">参考资料</span></span></span>
+</p>
+<div class="reference-source">
+<span id="referfrom_[1]"
+class="hidden-anchor"></span><a class="reference-anchor" href="#referto_[1]">[1]
+<div class="reference-anchor-up fa-solid fa-angles-up">
+
+</div>
+<p></a><a class="reference-link" href="https://jq.qq.com/?_wv=1027&k=pGLB2C0N">Akilarの糖果屋群聊简介</a></p>
+</div>
+<div class="reference-source">
+<span id="referfrom_[2]"
+class="hidden-anchor"></span><a class="reference-anchor" href="#referto_[2]">[2]
+<div class="reference-anchor-up fa-solid fa-angles-up">
+
+</div>
+<p></a><a class="reference-link" href="https://hexo.io/zh-cn/docs/">Hexo中文文档</a></p>
+</div>
+<div class="reference-source">
+<span id="referfrom_[3]"
+class="hidden-anchor"></span><a class="reference-anchor" href="#referto_[3]">[3]
+<div class="reference-anchor-up fa-solid fa-angles-up">
+
+</div>
+<p></a><a class="reference-link" href="https://butterfly.js.org/posts/21cfbf15/">Butterfly
+安装文档(一) 快速开始</a></p>
+</div>
+<div class="reference-source">
+<span id="referfrom_[4]"
+class="hidden-anchor"></span><a class="reference-anchor" href="#referto_[4]">[4]
+<div class="reference-anchor-up fa-solid fa-angles-up">
+
+</div>
+<p></a><a class="reference-link" href="https://volantis.js.org/v5/tag-plugins/">hexo-theme-volantis
+标签插件</a></p>
+</div>
+<div class="reference-source">
+<span id="referfrom_[5]"
+class="hidden-anchor"></span><a class="reference-anchor" href="#referto_[5]">[5]
+<div class="reference-anchor-up fa-solid fa-angles-up">
+
+</div>
+<p></a><a class="reference-link" href="https://volantis.js.org/tag-plugins/">Volantis文档:内置标签插件</a></p>
+</div>
+<div class="reference-source">
+<span id="referfrom_[6]"
+class="hidden-anchor"></span><a class="reference-anchor" href="#referto_[6]">[6]
+<div class="reference-anchor-up fa-solid fa-angles-up">
+
+</div>
+<p></a><a class="reference-link" href="https://butterfly.js.org/posts/4aa8abbe/#%E6%A8%99%E7%B1%A4%E5%A4%96%E6%8E%9B%EF%BC%88Tag-Plugins%EF%BC%89">Butterfly
+安装文档:标签外挂（Tag Plugins</a></p>
+</div>
+<div class="reference-source">
+<span id="referfrom_[7]"
+class="hidden-anchor"></span><a class="reference-anchor" href="#referto_[7]">[7]
+<div class="reference-anchor-up fa-solid fa-angles-up">
+
+</div>
+<p></a><a class="reference-link" href="https://lovelijunyi.gitee.io/posts/c898.html">小弋の生活馆全样式预览</a></p>
+</div>
+<div class="reference-source">
+<span id="referfrom_[8]"
+class="hidden-anchor"></span><a class="reference-anchor" href="#referto_[8]">[8]
+<div class="reference-anchor-up fa-solid fa-angles-up">
+
+</div>
+<p></a><a class="reference-link" href="https://github.com/l-lin/font-awesome-animation">l-lin-font-awesome-animation</a></p>
+</div>
+<div class="reference-source">
+<span id="referfrom_[9]"
+class="hidden-anchor"></span><a class="reference-anchor" href="#referto_[9]">[9]
+<div class="reference-anchor-up fa-solid fa-angles-up">
+
+</div>
+<p></a><a class="reference-link" href="https://www.antmoe.com/posts/3b43914f/">小康的butterfly主题使用文档</a></p>
+</div>
+</div>
+</details><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div></div>
 <h3 id="隐藏块">2.29 隐藏块</h3>
 <div class="tabs" id="隐藏块"><ul class="nav-tabs"><li class="tab active"><button type="button" data-href="#隐藏块-1">标签语法</button></li><li class="tab"><button type="button" data-href="#隐藏块-2">配置参数</button></li><li class="tab"><button type="button" data-href="#隐藏块-3">示例源码</button></li><li class="tab"><button type="button" data-href="#隐藏块-4">渲染演示</button></li></ul><div class="tab-contents"><div class="tab-item-content active" id="隐藏块-1"><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% hideBlock display,bg,color %&#125;</span><br><span class="line">content</span><br><span class="line">&#123;% endhideBlock %&#125;</span><br></pre></td></tr></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="隐藏块-2"><ol type="1">
 <li><code>content</code>：要隐藏的内容</li>
@@ -2385,20 +2452,27 @@ style="background-color:#868fd7;">clip-path属性使用裁剪方式创建元素�
       </tags>
   </entry>
   <entry>
-    <title>水调歌头</title>
-    <url>//ac668694.html</url>
-    <content><![CDATA[<div class='poem'><div class='poem-title'>水调歌头</div><div class='poem-author'>苏轼</div><p>丙辰中秋，欢饮达旦，大醉，作此篇，兼怀子由。 明月几时有？把酒问青天。
-不知天上宫阙，今夕是何年？ 我欲乘风归去，又恐琼楼玉宇，高处不胜寒。
-起舞弄清影，何似在人间？</p>
-<p>转朱阁，低绮户，照无眠。 不应有恨，何事长向别时圆？
-人有悲欢离合，月有阴晴圆缺，此事古难全。 但愿人长久，千里共婵娟。</p>
+    <title>博客问题集锦</title>
+    <url>//6bf8c91.html</url>
+    <content><![CDATA[<div class="note info modern"><p>鉴于每个人的博客根目录名称都不太一样，本贴<strong>博客根目录</strong>一律以<code>[BlogRoot]</code>指代。
+数学公式配置：<a
+href="https://butterfly.js.org/posts/ceeb73f/#Math-%E6%95%B8%E5%AD%B8">Math
+数学</a> 参考：<a
+href="https://www.cnblogs.com/Ai-heng/p/7282110.html">hexo博客MathJax公式渲染问题</a></p>
 </div>
+<h1 id="公式渲染问题">公式渲染问题</h1>
+<details class="folding-tag" cyan><summary> 点击查看 </summary>
+              <div class='content'>
+              <p>在博客中一些数学公式会出现渲染问题，当然md文件也有可能出现渲染问题，比如引用变成上标等，这里只介绍出现的MathJax数学公式的渲染问题，主要问题就是行内数学公式会出现渲染失败的情况，对于单个符号问题渲染还是可以的，但是涉及到等式就会出现渲染失败的情况，具体问题展示如下：</p><p><ahref="https://blogresource.sqwdream.cloud/post/博客问题集锦/img/body/行内公式error.jpg"></a></p><p>解决的方法如下：</p><ol type="1"><li><p>更换公式渲染引擎</p><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm uninstall hexo-renderer-marked --save</span><br><span class="line">npm install hexo-renderer-kramed --save</span><br></pre></td></tr></table></figure></li><li><p>修改<code>[BlogRoot]/node_modules/kramed/lib/rules/inline.js</code>文件</p><figure class="highlight diff"><table><tr><td class="code"><pre><span class="line"><span class="deletion">- escape: /^\\([\\`*&#123;&#125;\[\]()#$+\-.!_&gt;])/,  /*11行*/</span></span><br><span class="line"><span class="addition">+ escape: /^\\([`*\[\]()#$+\-.!_&gt;])/,</span></span><br><span class="line"><span class="deletion">- em: /^\b_((?:__|[\s\S])+?)_\b|^\*((?:\*\*|[\s\S])+?)\*(?!\*)/,  /*20行*/  </span></span><br><span class="line"><span class="addition">+ em: /^\*((?:\*\*|[\s\S])+?)\*(?!\*)/,</span></span><br></pre></td></tr></table></figure></li><li><p>如果在md文件中用到数学公式，要在Front-matter中加入<code>mathjax: true</code></p></li><li><p>如果和butterfly外观标签混合使用，比如数学公式嵌套在butterfly外挂标签中，可以尝试在Front-matter中删除<code>mathjax: true</code>，以防止渲染冲突</p></li></ol>
+              </div>
+            </details>
 ]]></content>
       <categories>
-        <category>诗与远方</category>
+        <category>博客问题集锦</category>
       </categories>
       <tags>
-        <tag>诗与远方</tag>
+        <tag>MathJax</tag>
+        <tag>公式渲染</tag>
       </tags>
   </entry>
   <entry>
@@ -2434,6 +2508,56 @@ id="引入对应的资源修改主题配置文件_config.yml在-inject-配置项
       <tags>
         <tag>博客搭建</tag>
         <tag>樱花雨背景特效</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>水调歌头</title>
+    <url>//ac668694.html</url>
+    <content><![CDATA[<div class='poem'><div class='poem-title'>水调歌头</div><div class='poem-author'>苏轼</div><p>丙辰中秋，欢饮达旦，大醉，作此篇，兼怀子由。 明月几时有？把酒问青天。
+不知天上宫阙，今夕是何年？ 我欲乘风归去，又恐琼楼玉宇，高处不胜寒。
+起舞弄清影，何似在人间？</p>
+<p>转朱阁，低绮户，照无眠。 不应有恨，何事长向别时圆？
+人有悲欢离合，月有阴晴圆缺，此事古难全。 但愿人长久，千里共婵娟。</p>
+</div>
+]]></content>
+      <categories>
+        <category>诗与远方</category>
+      </categories>
+      <tags>
+        <tag>诗与远方</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>博客搭建之文章链接</title>
+    <url>//cc96dfee.html</url>
+    <content><![CDATA[<h1 id="博客搭建之文章链接">博客搭建之文章链接</h1>
+<div class="note info modern"><p>鉴于每个人的博客根目录名称都不太一样，本贴<strong>博客根目录</strong>一律以<code>[BlogRoot]</code>指代。
+站点配置文件<code>_config.yml</code>，路径为<code>[BlogRoot]\_config.yml</code>。
+主题配置文件<code>_config.yml</code>，路径为<code>[BlogRoot]\themes\butterfly\_config.yml</code>。</p>
+</div>
+<h2
+id="缩短文末copyright中文章链接的长度">缩短文末Copyright中文章链接的长度</h2>
+<h3
+id="在博客根目录下blogroot安装插件">1.在博客根目录下<code>[BlogRoot]</code>安装插件：</h3>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm install hexo-abbrlink --save</span><br></pre></td></tr></table></figure>
+<h3
+id="修改站点配置文件blogroot_config.yml添加以下内容">2.修改站点配置文件<code>[BlogRoot]\_config.yml</code>，添加以下内容：</h3>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># permalink: :year/:month/:day/:title/</span></span><br><span class="line"><span class="comment"># permalink: p/:abbrlink.html  # p 是自定义的前缀</span></span><br><span class="line"><span class="attr">permalink:</span> <span class="string">/:abbrlink.html</span>  <span class="comment"># p 是自定义的前缀</span></span><br><span class="line"><span class="attr">abbrlink:</span></span><br><span class="line">    <span class="attr">alg:</span> <span class="string">crc32</span>   <span class="comment">#算法： crc16(default) and crc32</span></span><br><span class="line">    <span class="attr">rep:</span> <span class="string">hex</span>     <span class="comment">#进制： dec(default) and hex</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>不同算法和进制生成不同的格式</strong></li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">crc16 &amp; hex</span><br><span class="line">https://post.zz173.com/posts/66c8.html</span><br><span class="line">crc16 &amp; dec</span><br><span class="line">https://post.zz173.com/posts/65535.html</span><br><span class="line"></span><br><span class="line">crc32 &amp; hex</span><br><span class="line">https://post.zz173.com/posts/8ddf18fb.html</span><br><span class="line">crc32 &amp; dec</span><br><span class="line">https://post.zz173.com/posts/1690090958.html</span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong><code>hexo g</code>生成网页时，会在每篇文章的<code>front matter</code>中加入一项<code>abbrlink</code>，它是根据文章题目生成的，生成之后不可更改，可以删除重新生成</strong></li>
+</ul>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">abbrlink: cc96dfee</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>博客搭建</category>
+      </categories>
+      <tags>
+        <tag>博客搭建</tag>
+        <tag>文章链接</tag>
       </tags>
   </entry>
 </search>
