@@ -83,39 +83,6 @@ href="https://twikoo.js.org/faq.html#%E5%A6%82%E4%BD%95%E5%90%AF%E7%94%A8-katex-
       </tags>
   </entry>
   <entry>
-    <title>博客搭建之文章链接</title>
-    <url>//cc96dfee.html</url>
-    <content><![CDATA[<h1 id="博客搭建之文章链接">博客搭建之文章链接</h1>
-<div class="note info modern"><p>鉴于每个人的博客根目录名称都不太一样，本贴<strong>博客根目录</strong>一律以<code>[BlogRoot]</code>指代。
-站点配置文件<code>_config.yml</code>，路径为<code>[BlogRoot]\_config.yml</code>。
-主题配置文件<code>_config.yml</code>，路径为<code>[BlogRoot]\themes\butterfly\_config.yml</code>。</p>
-</div>
-<h2
-id="缩短文末copyright中文章链接的长度">缩短文末Copyright中文章链接的长度</h2>
-<h3
-id="在博客根目录下blogroot安装插件">1.在博客根目录下<code>[BlogRoot]</code>安装插件：</h3>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm install hexo-abbrlink --save</span><br></pre></td></tr></table></figure>
-<h3
-id="修改站点配置文件blogroot_config.yml添加以下内容">2.修改站点配置文件<code>[BlogRoot]\_config.yml</code>，添加以下内容：</h3>
-<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># permalink: :year/:month/:day/:title/</span></span><br><span class="line"><span class="comment"># permalink: p/:abbrlink.html  # p 是自定义的前缀</span></span><br><span class="line"><span class="attr">permalink:</span> <span class="string">/:abbrlink.html</span>  <span class="comment"># p 是自定义的前缀</span></span><br><span class="line"><span class="attr">abbrlink:</span></span><br><span class="line">    <span class="attr">alg:</span> <span class="string">crc32</span>   <span class="comment">#算法： crc16(default) and crc32</span></span><br><span class="line">    <span class="attr">rep:</span> <span class="string">hex</span>     <span class="comment">#进制： dec(default) and hex</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li><strong>不同算法和进制生成不同的格式</strong></li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">crc16 &amp; hex</span><br><span class="line">https://post.zz173.com/posts/66c8.html</span><br><span class="line">crc16 &amp; dec</span><br><span class="line">https://post.zz173.com/posts/65535.html</span><br><span class="line"></span><br><span class="line">crc32 &amp; hex</span><br><span class="line">https://post.zz173.com/posts/8ddf18fb.html</span><br><span class="line">crc32 &amp; dec</span><br><span class="line">https://post.zz173.com/posts/1690090958.html</span><br></pre></td></tr></table></figure>
-<ul>
-<li><strong><code>hexo g</code>生成网页时，会在每篇文章的<code>front matter</code>中加入一项<code>abbrlink</code>，它是根据文章题目生成的，生成之后不可更改，可以删除重新生成</strong></li>
-</ul>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">abbrlink: cc96dfee</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>博客搭建</category>
-      </categories>
-      <tags>
-        <tag>博客搭建</tag>
-        <tag>文章链接</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>博客搭建之夜间繁星</title>
     <url>//5ed672e6.html</url>
     <content><![CDATA[<h1 id="博客搭建之夜间繁星">博客搭建之夜间繁星</h1>
@@ -145,47 +112,6 @@ id="手机端也呈现夜间繁星效果在universe.css文件中加入">4.手机
       <tags>
         <tag>博客搭建</tag>
         <tag>夜间繁星背景特效</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>博客问题集锦</title>
-    <url>//6bf8c91.html</url>
-    <content><![CDATA[<div class="note info modern"><p>鉴于每个人的博客根目录名称都不太一样，本贴<strong>博客根目录</strong>一律以<code>[BlogRoot]</code>指代。
-数学公式配置：<a
-href="https://butterfly.js.org/posts/ceeb73f/#Math-%E6%95%B8%E5%AD%B8">Math
-数学</a> 参考：<a
-href="https://www.cnblogs.com/Ai-heng/p/7282110.html">hexo博客MathJax公式渲染问题</a></p>
-</div>
-<h1 id="公式渲染问题">公式渲染问题</h1>
-<details class="folding-tag" cyan><summary> 点击查看 </summary>
-              <div class='content'>
-              <p>在博客中一些数学公式会出现渲染问题，当然md文件也有可能出现渲染问题，比如引用变成上标等，这里只介绍出现的MathJax数学公式的渲染问题，主要问题就是行内数学公式会出现渲染失败的情况，对于单个符号问题渲染还是可以的，但是涉及到等式就会出现渲染失败的情况，具体问题展示如下：</p><p><ahref="https://blogresource.sqwdream.cloud/post/博客问题集锦/img/body/行内公式error.jpg"></a></p><p>解决的方法如下：</p><ol type="1"><li><p>更换公式渲染引擎</p><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm uninstall hexo-renderer-marked --save</span><br><span class="line">npm install hexo-renderer-kramed --save</span><br></pre></td></tr></table></figure></li><li><p>修改<code>[BlogRoot]/node_modules/kramed/lib/rules/inline.js</code>文件</p><figure class="highlight diff"><table><tr><td class="code"><pre><span class="line"><span class="deletion">- escape: /^\\([\\`*&#123;&#125;\[\]()#$+\-.!_&gt;])/,  /*11行*/</span></span><br><span class="line"><span class="addition">+ escape: /^\\([`*\[\]()#$+\-.!_&gt;])/,</span></span><br><span class="line"><span class="deletion">- em: /^\b_((?:__|[\s\S])+?)_\b|^\*((?:\*\*|[\s\S])+?)\*(?!\*)/,  /*20行*/  </span></span><br><span class="line"><span class="addition">+ em: /^\*((?:\*\*|[\s\S])+?)\*(?!\*)/,</span></span><br></pre></td></tr></table></figure></li><li><p>如果在md文件中用到数学公式，要在Front-matter中加入<code>mathjax: true</code></p></li><li><p>如果和butterfly外观标签混合使用，比如数学公式嵌套在butterfly外挂标签中，可以尝试在Front-matter中删除<code>mathjax: true</code>，以防止渲染冲突</p></li></ol>
-              </div>
-            </details>
-]]></content>
-      <categories>
-        <category>博客问题集锦</category>
-      </categories>
-      <tags>
-        <tag>MathJax</tag>
-        <tag>公式渲染</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>水调歌头</title>
-    <url>//ac668694.html</url>
-    <content><![CDATA[<div class='poem'><div class='poem-title'>水调歌头</div><div class='poem-author'>苏轼</div><p>丙辰中秋，欢饮达旦，大醉，作此篇，兼怀子由。 明月几时有？把酒问青天。
-不知天上宫阙，今夕是何年？ 我欲乘风归去，又恐琼楼玉宇，高处不胜寒。
-起舞弄清影，何似在人间？</p>
-<p>转朱阁，低绮户，照无眠。 不应有恨，何事长向别时圆？
-人有悲欢离合，月有阴晴圆缺，此事古难全。 但愿人长久，千里共婵娟。</p>
-</div>
-]]></content>
-      <categories>
-        <category>诗与远方</category>
-      </categories>
-      <tags>
-        <tag>诗与远方</tag>
       </tags>
   </entry>
   <entry>
@@ -1071,53 +997,6 @@ ban
 </p>
 </div></li>
 </ol><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div></div>
-<h3 id="单选列表-radio">2.8 单选列表 radio</h3>
-<div class="tabs" id="单选列表"><ul class="nav-tabs"><li class="tab active"><button type="button" data-href="#单选列表-1">标签语法</button></li><li class="tab"><button type="button" data-href="#单选列表-2">配置参数</button></li><li class="tab"><button type="button" data-href="#单选列表-3">示例源码</button></li><li class="tab"><button type="button" data-href="#单选列表-4">渲染演示</button></li></ul><div class="tab-contents"><div class="tab-item-content active" id="单选列表-1"><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% radio 样式参数（可选）, 文本（支持简单md） %&#125;</span><br></pre></td></tr></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="单选列表-2"><ol type="1">
-<li><code>颜色</code>: red,yellow,green,cyan,blue,gray</li>
-<li><code>选中状态</code>: checked</li>
-</ol><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="单选列表-3"><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% radio 纯文本测试 %&#125;</span><br><span class="line">&#123;% radio checked, 支持简单的 [<span class="string">markdown</span>](<span class="link">https://guides.github.com/features/mastering-markdown/</span>) 语法 %&#125;</span><br><span class="line">&#123;% radio red, 支持自定义颜色 %&#125;</span><br><span class="line">&#123;% radio green, 绿色 %&#125;</span><br><span class="line">&#123;% radio yellow, 黄色 %&#125;</span><br><span class="line">&#123;% radio cyan, 青色 %&#125;</span><br><span class="line">&#123;% radio blue, 蓝色 %&#125;</span><br></pre></td></tr></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="单选列表-4"><div class='checkbox'>
-<input type="radio" />
-<p>
-纯文本测试
-</p>
-<pre><code>        &lt;/div&gt;</code></pre>
-<div class='checkbox checked'>
-<input type="radio" checked="checked"/>
-<p>
-支持简单的
-&lt;ahref="https://guides.github.com/features/mastering-markdown/"&gt;markdown</a>语法
-</p>
-<pre><code>        &lt;/div&gt;</code></pre>
-<div class='checkbox red'>
-<input type="radio" />
-<p>
-支持自定义颜色
-</p>
-<pre><code>        &lt;/div&gt;</code></pre>
-<div class='checkbox green'>
-<input type="radio" />
-<p>
-绿色
-</p>
-<pre><code>        &lt;/div&gt;</code></pre>
-<div class='checkbox yellow'>
-<input type="radio" />
-<p>
-黄色
-</p>
-<pre><code>        &lt;/div&gt;</code></pre>
-<div class='checkbox cyan'>
-<input type="radio" />
-<p>
-青色
-</p>
-<pre><code>        &lt;/div&gt;</code></pre>
-<div class='checkbox blue'>
-<input type="radio" />
-<p>
-蓝色
-</p>
-<pre><code>        &lt;/div&gt;</code></pre><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div></div>
 <h3 id="时间轴-timeline">2.9 时间轴 timeline</h3>
 <div class="tabs" id="时间轴"><ul class="nav-tabs"><li class="tab active"><button type="button" data-href="#时间轴-1">标签语法</button></li><li class="tab"><button type="button" data-href="#时间轴-2">配置参数</button></li><li class="tab"><button type="button" data-href="#时间轴-3">示例源码</button></li><li class="tab"><button type="button" data-href="#时间轴-4">渲染演示</button></li></ul><div class="tab-contents"><div class="tab-item-content active" id="时间轴-1"><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% timeline 时间线标题（可选）[,color] %&#125;</span><br><span class="line">&lt;!-- timeline 时间节点（标题） --&gt;</span><br><span class="line">正文内容</span><br><span class="line">&lt;!-- endtimeline --&gt;</span><br><span class="line">&lt;!-- timeline 时间节点（标题） --&gt;</span><br><span class="line">正文内容</span><br><span class="line">&lt;!-- endtimeline --&gt;</span><br><span class="line">&#123;% endtimeline %&#125;</span><br></pre></td></tr></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="时间轴-2"><ol type="1">
 <li>title:标题/时间线</li>
@@ -2200,6 +2079,383 @@ data-wow-delay="5s" data-wow-offset="" data-wow-iteration="10">
 </p>
 </div>
 </div><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div></div>
+<h3 id="进度条-progress">2.25 进度条 progress</h3>
+<div class="tip info"><p>进度条标签参考<a
+href="https://rongbuqiu.com/jdt.html">沂佰孜猫-给HEXO文章添加彩色进度条</a>。
+源样式提取自<a href="https://zwying0814.gitbook.io/cuteen/">Cuteen</a>
+主题。</p>
+</div>
+<div class="tabs" id="进度条"><ul class="nav-tabs"><li class="tab active"><button type="button" data-href="#进度条-1">标签语法</button></li><li class="tab"><button type="button" data-href="#进度条-2">配置参数</button></li><li class="tab"><button type="button" data-href="#进度条-3">示例源码</button></li><li class="tab"><button type="button" data-href="#进度条-4">渲染演示</button></li></ul><div class="tab-contents"><div class="tab-item-content active" id="进度条-1"><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% progress [width] [color] [text] %&#125;</span><br></pre></td></tr></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="进度条-2"><ol type="1">
+<li><code>width</code>: 0 到 100 的阿拉伯数字</li>
+<li><code>color</code>: 颜色，取值有
+red,yellow,green,cyan,blue,gray</li>
+<li><code>text</code>: 进度条上的文字内容</li>
+</ol><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="进度条-3"><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% progress 10 red 进度条样式预览 %&#125;</span><br><span class="line">&#123;% progress 30 yellow 进度条样式预览 %&#125;</span><br><span class="line">&#123;% progress 50 green 进度条样式预览 %&#125;</span><br><span class="line">&#123;% progress 70 cyan 进度条样式预览 %&#125;</span><br><span class="line">&#123;% progress 90 blue 进度条样式预览 %&#125;</span><br><span class="line">&#123;% progress 100 gray 进度条样式预览 %&#125;</span><br></pre></td></tr></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="进度条-4"><div class="progress">
+<div
+class="progress-bar-animated progress-bar progress-bar-striped bg-red"
+style="width: 10%" aria-valuenow="10" aria-valuemin="0"
+aria-valuemax="100">
+<p>
+进度条样式预览
+</p>
+</div>
+</div>
+<div class="progress">
+<div
+class="progress-bar-animated progress-bar progress-bar-striped bg-yellow"
+style="width: 30%" aria-valuenow="30" aria-valuemin="0"
+aria-valuemax="100">
+<p>
+进度条样式预览
+</p>
+</div>
+</div>
+<div class="progress">
+<div
+class="progress-bar-animated progress-bar progress-bar-striped bg-green"
+style="width: 50%" aria-valuenow="50" aria-valuemin="0"
+aria-valuemax="100">
+<p>
+进度条样式预览
+</p>
+</div>
+</div>
+<div class="progress">
+<div
+class="progress-bar-animated progress-bar progress-bar-striped bg-cyan"
+style="width: 70%" aria-valuenow="70" aria-valuemin="0"
+aria-valuemax="100">
+<p>
+进度条样式预览
+</p>
+</div>
+</div>
+<div class="progress">
+<div
+class="progress-bar-animated progress-bar progress-bar-striped bg-blue"
+style="width: 90%" aria-valuenow="90" aria-valuemin="0"
+aria-valuemax="100">
+<p>
+进度条样式预览
+</p>
+</div>
+</div>
+<div class="progress">
+<div
+class="progress-bar-animated progress-bar progress-bar-striped bg-gray"
+style="width: 100%" aria-valuenow="100" aria-valuemin="0"
+aria-valuemax="100">
+<p>
+进度条样式预览
+</p>
+</div>
+</div><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div></div>
+<h3 id="注释-notation">2.26 注释 notation</h3>
+<div class="tabs" id="注释"><ul class="nav-tabs"><li class="tab active"><button type="button" data-href="#注释-1">标签语法</button></li><li class="tab"><button type="button" data-href="#注释-2">配置参数</button></li><li class="tab"><button type="button" data-href="#注释-3">示例源码</button></li><li class="tab"><button type="button" data-href="#注释-4">渲染演示</button></li></ul><div class="tab-contents"><div class="tab-item-content active" id="注释-1"><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% nota [label], [text] %&#125;</span><br></pre></td></tr></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="注释-2"><ol type="1">
+<li><code>label</code>: 注释词汇</li>
+<li><code>text</code>: 悬停显示的注解内容</li>
+</ol><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="注释-3"><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% nota 把鼠标移动到我上面试试, 可以看到注解内容出现在顶栏 %&#125;</span><br></pre></td></tr></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="注释-4"><p><span class="nota"
+data-nota="可以看到注解内容出现在顶栏">把鼠标移动到我上面试试</span></p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div></div>
+<h3 id="气泡注释-bubble">2.27 气泡注释 bubble</h3>
+<div class="tabs" id="气泡注释"><ul class="nav-tabs"><li class="tab active"><button type="button" data-href="#气泡注释-1">标签语法</button></li><li class="tab"><button type="button" data-href="#气泡注释-2">配置参数</button></li><li class="tab"><button type="button" data-href="#气泡注释-3">示例源码</button></li><li class="tab"><button type="button" data-href="#气泡注释-4">渲染演示</button></li></ul><div class="tab-contents"><div class="tab-item-content active" id="气泡注释-1"><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% bubble [content] , [notation] ,[background-color] %&#125;</span><br></pre></td></tr></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="气泡注释-2"><ol type="1">
+<li><code>content</code>: 注释词汇</li>
+<li><code>notation</code>: 悬停显示的注解内容</li>
+<li><code>background-color</code>: 可选，气泡背景色。默认为
+“#71a4e3”</li>
+</ol><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="气泡注释-3"><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">最近我学到了不少新玩意儿（虽然对很多大佬来说这些已经是旧技术了），比如CSS的&#123;% bubble 兄弟相邻选择器,&quot;例如 h1 + p &#123;margin-top:50px;&#125;&quot; %&#125;，&#123;% bubble flex布局,&quot;Flex 是 Flexible Box 的缩写，意为&quot;弹性布局&quot;，用来为盒状模型提供最大的灵活性&quot;,&quot;#ec5830&quot; %&#125;，&#123;% bubble transform变换,&quot;transform 属性向元素应用 2D 或 3D 转换。该属性允许我们对元素进行旋转、缩放、移动或倾斜。&quot;,&quot;#1db675&quot; %&#125;，animation的&#123;% bubble 贝塞尔速度曲线,&quot;贝塞尔曲线(Bézier curve)，又称贝兹曲线或贝济埃曲线，是应用于二维图形应用程序的数学曲线。一般的矢量图形软件通过它来精确画出曲线，贝兹曲线由线段与节点组成，节点是可拖动的支点，线段像可伸缩的皮筋&quot;,&quot;#de4489&quot; %&#125;写法，还有今天刚看到的&#123;% bubble clip-path,&quot;clip-path属性使用裁剪方式创建元素的可显示区域。区域内的部分显示，区域外的隐藏。&quot;,&quot;#868fd7&quot; %&#125;属性。这些对我来说很新颖的概念狠狠的冲击着我以前积累起来的设计思路。</span><br></pre></td></tr></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="气泡注释-4"><p>最近我学到了不少新玩意儿（虽然对很多大佬来说这些已经是旧技术了），比如CSS的<span
+class="bubble-content">兄弟相邻选择器</span><span
+class="bubble-notation"><span class="bubble-item"
+style="background-color:#71a4e3;">例如 h1 + p
+{margin-top:50px;}</span></span>，<span
+class="bubble-content">flex布局</span><span
+class="bubble-notation"><span class="bubble-item"
+style="background-color:#ec5830;">Flex 是 Flexible Box
+的缩写，意为弹性布局"，用来为盒状模型提供最大的灵活性"</span></span>，<span
+class="bubble-content">transform变换</span><span
+class="bubble-notation"><span class="bubble-item"
+style="background-color:#1db675;">transform 属性向元素应用 2D 或 3D
+转换。该属性允许我们对元素进行旋转、缩放、移动或倾斜。</span></span>，animation的<span
+class="bubble-content">贝塞尔速度曲线</span><span
+class="bubble-notation"><span class="bubble-item"
+style="background-color:#de4489;">贝塞尔曲线(Bézier
+curve)，又称贝兹曲线或贝济埃曲线，是应用于二维图形应用程序的数学曲线。一般的矢量图形软件通过它来精确画出曲线，贝兹曲线由线段与节点组成，节点是可拖动的支点，线段像可伸缩的皮筋</span></span>写法，还有今天刚看到的<span
+class="bubble-content">clip-path</span><span
+class="bubble-notation"><span class="bubble-item"
+style="background-color:#868fd7;">clip-path属性使用裁剪方式创建元素的可显示区域。区域内的部分显示，区域外的隐藏。</span></span>属性。这些对我来说很新颖的概念狠狠的冲击着我以前积累起来的设计思路。</p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div></div>
+<h3 id="引用文献-reference">2.28 引用文献 reference</h3>
+<div class="tabs" id="引用文献"><ul class="nav-tabs"><li class="tab active"><button type="button" data-href="#引用文献-1">标签语法</button></li><li class="tab"><button type="button" data-href="#引用文献-2">配置参数</button></li><li class="tab"><button type="button" data-href="#引用文献-3">示例源码</button></li><li class="tab"><button type="button" data-href="#引用文献-4">渲染演示</button></li></ul><div class="tab-contents"><div class="tab-item-content active" id="引用文献-1"><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% referto [id] , [literature] %&#125;</span><br><span class="line">&#123;% referfrom [id] , [literature] , [url] %&#125;</span><br></pre></td></tr></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="引用文献-2"><ol type="1">
+<li>referto 引用上标
+<ul>
+<li><code>id</code>: 上标序号内容，需与 referfrom 标签的 id
+对应才能实现跳转</li>
+<li><code>literature</code>: 引用的参考文献名称</li>
+</ul></li>
+<li>referfrom 引用出处
+<ul>
+<li><code>id</code>: 序号内容，需与 referto 标签的 id 对应才能实现
+跳转</li>
+<li><code>literature</code>: 引用的参考文献名称</li>
+<li><code>url</code>: 引用的参考文献链接，可省略</li>
+</ul></li>
+</ol><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="引用文献-3"><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">Akilarの糖果屋(akilar.top)是一个私人性质的博客&#123;% referto &#x27;[1]&#x27;,&#x27;Akilarの糖果屋群聊简介&#x27; %&#125;，从各类教程至生活点滴，无话不谈。建群的目的是提供一个闲聊的场所。博客采用Hexo框架&#123;% referto &#x27;[2]&#x27;,&#x27;Hexo中文文档&#x27; %&#125;，Butterfly主题&#123;% referto &#x27;[3]&#x27;,&#x27;Butterfly 安装文档(一) 快速开始&#x27; %&#125;</span><br><span class="line"></span><br><span class="line">本项目参考了Volantis&#123;% referto &#x27;[4]&#x27;,&#x27;hexo-theme-volantis 标签插件&#x27; %&#125;的标签样式。引入<span class="code">`[tag].js`</span>，并针对<span class="code">`butterfly`</span>主题修改了相应的<span class="code">`[tag].styl`</span>。在此鸣谢<span class="code">`Volantis`</span>主题众开发者。</span><br><span class="line">主要参考内容包括各个volantis的内置标签插件文档&#123;% referto &#x27;[5]&#x27;,&#x27;Volantis文档:内置标签插件&#x27; %&#125;</span><br><span class="line">Butterfly主题的各个衍生魔改&#123;% referto &#x27;[6]&#x27;,&#x27;Butterfly 安装文档:标签外挂（Tag Plugins&#x27; %&#125;&#123;% referto &#x27;[7]&#x27;,&#x27;小弋の生活馆全样式预览&#x27; %&#125;&#123;% referto &#x27;[8]&#x27;,&#x27;l-lin-font-awesome-animation&#x27; %&#125;&#123;% referto &#x27;[9]&#x27;,&#x27;小康的butterfly主题使用文档&#x27; %&#125;</span><br><span class="line"></span><br><span class="line">&#123;% referfrom &#x27;[1]&#x27;,&#x27;Akilarの糖果屋群聊简介&#x27;,&#x27;https://jq.qq.com/?<span class="emphasis">_wv=1027&amp;k=pGLB2C0N&#x27; %&#125;</span></span><br><span class="line"><span class="emphasis">&#123;% referfrom &#x27;[2]&#x27;,&#x27;Hexo中文文档&#x27;,&#x27;https://hexo.io/zh-cn/docs/&#x27; %&#125;</span></span><br><span class="line"><span class="emphasis">&#123;% referfrom &#x27;[3]&#x27;,&#x27;Butterfly 安装文档(一) 快速开始&#x27;,&#x27;https://butterfly.js.org/posts/21cfbf15/&#x27; %&#125;</span></span><br><span class="line"><span class="emphasis">&#123;% referfrom &#x27;[4]&#x27;,&#x27;hexo-theme-volantis 标签插件&#x27;,&#x27;https://volantis.js.org/v5/tag-plugins/&#x27; %&#125;</span></span><br><span class="line"><span class="emphasis">&#123;% referfrom &#x27;[5]&#x27;,&#x27;Volantis文档:内置标签插件&#x27;,&#x27;https://volantis.js.org/tag-plugins/&#x27; %&#125;</span></span><br><span class="line"><span class="emphasis">&#123;% referfrom &#x27;[6]&#x27;,&#x27;Butterfly 安装文档:标签外挂（Tag Plugins&#x27;,&#x27;https://butterfly.js.org/posts/4aa8abbe/#%E6%A8%99%E7%B1%A4%E5%A4%96%E6%8E%9B%EF%BC%88Tag-Plugins%EF%BC%89&#x27; %&#125;</span></span><br><span class="line"><span class="emphasis">&#123;% referfrom &#x27;[7]&#x27;,&#x27;小弋の生活馆全样式预览&#x27;,&#x27;https://lovelijunyi.gitee.io/posts/c898.html&#x27; %&#125;</span></span><br><span class="line"><span class="emphasis">&#123;% referfrom &#x27;[8]&#x27;,&#x27;l-lin-font-awesome-animation&#x27;,&#x27;https://github.com/l-lin/font-awesome-animation&#x27; %&#125;</span></span><br><span class="line"><span class="emphasis">&#123;% referfrom &#x27;[9]&#x27;,&#x27;小康的butterfly主题使用文档&#x27;,&#x27;https://www.antmoe.com/posts/3b43914f/&#x27; %&#125;</span></span><br></pre></td></tr></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="引用文献-4"><p>Akilarの糖果屋(akilar.top)是一个私人性质的博客<span id="referto_[1]"
+class="hidden-anchor"></span><sup class="reference"><a href="#referfrom_[1]">[1]</a></sup><span
+class="reference-bubble"><span class="reference-item"><span
+class="reference-literature">Akilarの糖果屋群聊简介</span><span
+class="reference-title">参考资料</span></span></span>，从各类教程至生活点滴，无话不谈。建群的目的是提供一个闲聊的场所。博客采用Hexo框架<span
+id="referto_[2]"
+class="hidden-anchor"></span><sup class="reference"><a href="#referfrom_[2]">[2]</a></sup><span
+class="reference-bubble"><span class="reference-item"><span
+class="reference-literature">Hexo中文文档</span><span
+class="reference-title">参考资料</span></span></span>，Butterfly主题<span
+id="referto_[3]"
+class="hidden-anchor"></span><sup class="reference"><a href="#referfrom_[3]">[3]</a></sup><span
+class="reference-bubble"><span class="reference-item"><span
+class="reference-literature">Butterfly 安装文档(一) 快速开始</span><span
+class="reference-title">参考资料</span></span></span></p>
+<p>本项目参考了Volantis<span id="referto_[4]"
+class="hidden-anchor"></span><sup class="reference"><a href="#referfrom_[4]">[4]</a></sup><span
+class="reference-bubble"><span class="reference-item"><span
+class="reference-literature">hexo-theme-volantis 标签插件</span><span
+class="reference-title">参考资料</span></span></span>的标签样式。引入<code>[tag].js</code>，并针对<code>butterfly</code>主题修改了相应的<code>[tag].styl</code>。在此鸣谢<code>Volantis</code>主题众开发者。
+主要参考内容包括各个volantis的内置标签插件文档<span id="referto_[5]"
+class="hidden-anchor"></span><sup class="reference"><a href="#referfrom_[5]">[5]</a></sup><span
+class="reference-bubble"><span class="reference-item"><span
+class="reference-literature">Volantis文档:内置标签插件</span><span
+class="reference-title">参考资料</span></span></span>
+Butterfly主题的各个衍生魔改<span id="referto_[6]"
+class="hidden-anchor"></span><sup class="reference"><a href="#referfrom_[6]">[6]</a></sup><span
+class="reference-bubble"><span class="reference-item"><span
+class="reference-literature">Butterfly 安装文档:标签外挂（Tag
+Plugins</span><span
+class="reference-title">参考资料</span></span></span><span
+id="referto_[7]"
+class="hidden-anchor"></span><sup class="reference"><a href="#referfrom_[7]">[7]</a></sup><span
+class="reference-bubble"><span class="reference-item"><span
+class="reference-literature">小弋の生活馆全样式预览</span><span
+class="reference-title">参考资料</span></span></span><span
+id="referto_[8]"
+class="hidden-anchor"></span><sup class="reference"><a href="#referfrom_[8]">[8]</a></sup><span
+class="reference-bubble"><span class="reference-item"><span
+class="reference-literature">l-lin-font-awesome-animation</span><span
+class="reference-title">参考资料</span></span></span><span
+id="referto_[9]"
+class="hidden-anchor"></span><sup class="reference"><a href="#referfrom_[9]">[9]</a></sup><span
+class="reference-bubble"><span class="reference-item"><span
+class="reference-literature">小康的butterfly主题使用文档</span><span
+class="reference-title">参考资料</span></span></span></p>
+<div class="reference-source">
+<span id="referfrom_[1]"
+class="hidden-anchor"></span><a class="reference-anchor" href="#referto_[1]">[1]
+<div class="reference-anchor-up fa-solid fa-angles-up">
+
+</div>
+</a><a class="reference-link" href="https://jq.qq.com/?_wv=1027&k=pGLB2C0N">Akilarの糖果屋群聊简介</a>
+</div>
+<div class="reference-source">
+<span id="referfrom_[2]"
+class="hidden-anchor"></span><a class="reference-anchor" href="#referto_[2]">[2]
+<div class="reference-anchor-up fa-solid fa-angles-up">
+
+</div>
+</a><a class="reference-link" href="https://hexo.io/zh-cn/docs/">Hexo中文文档</a>
+</div>
+<div class="reference-source">
+<span id="referfrom_[3]"
+class="hidden-anchor"></span><a class="reference-anchor" href="#referto_[3]">[3]
+<div class="reference-anchor-up fa-solid fa-angles-up">
+
+</div>
+</a><a class="reference-link" href="https://butterfly.js.org/posts/21cfbf15/">Butterfly
+安装文档(一) 快速开始</a>
+</div>
+<div class="reference-source">
+<span id="referfrom_[4]"
+class="hidden-anchor"></span><a class="reference-anchor" href="#referto_[4]">[4]
+<div class="reference-anchor-up fa-solid fa-angles-up">
+
+</div>
+</a><a class="reference-link" href="https://volantis.js.org/v5/tag-plugins/">hexo-theme-volantis
+标签插件</a>
+</div>
+<div class="reference-source">
+<span id="referfrom_[5]"
+class="hidden-anchor"></span><a class="reference-anchor" href="#referto_[5]">[5]
+<div class="reference-anchor-up fa-solid fa-angles-up">
+
+</div>
+</a><a class="reference-link" href="https://volantis.js.org/tag-plugins/">Volantis文档:内置标签插件</a>
+</div>
+<div class="reference-source">
+<span id="referfrom_[6]"
+class="hidden-anchor"></span><a class="reference-anchor" href="#referto_[6]">[6]
+<div class="reference-anchor-up fa-solid fa-angles-up">
+
+</div>
+</a><a class="reference-link" href="https://butterfly.js.org/posts/4aa8abbe/#%E6%A8%99%E7%B1%A4%E5%A4%96%E6%8E%9B%EF%BC%88Tag-Plugins%EF%BC%89">Butterfly
+安装文档:标签外挂（Tag Plugins</a>
+</div>
+<div class="reference-source">
+<span id="referfrom_[7]"
+class="hidden-anchor"></span><a class="reference-anchor" href="#referto_[7]">[7]
+<div class="reference-anchor-up fa-solid fa-angles-up">
+
+</div>
+</a><a class="reference-link" href="https://lovelijunyi.gitee.io/posts/c898.html">小弋の生活馆全样式预览</a>
+</div>
+<div class="reference-source">
+<span id="referfrom_[8]"
+class="hidden-anchor"></span><a class="reference-anchor" href="#referto_[8]">[8]
+<div class="reference-anchor-up fa-solid fa-angles-up">
+
+</div>
+</a><a class="reference-link" href="https://github.com/l-lin/font-awesome-animation">l-lin-font-awesome-animation</a>
+</div>
+<div class="reference-source">
+<span id="referfrom_[9]"
+class="hidden-anchor"></span><a class="reference-anchor" href="#referto_[9]">[9]
+<div class="reference-anchor-up fa-solid fa-angles-up">
+
+</div>
+</a><a class="reference-link" href="https://www.antmoe.com/posts/3b43914f/">小康的butterfly主题使用文档</a>
+</div><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div></div>
+<h3 id="pdf展示">2.29 PDF展示</h3>
+<div class="tabs" id="pdf展示"><ul class="nav-tabs"><li class="tab active"><button type="button" data-href="#pdf展示-1">标签语法</button></li><li class="tab"><button type="button" data-href="#pdf展示-2">配置参数</button></li><li class="tab"><button type="button" data-href="#pdf展示-3">示例源码</button></li><li class="tab"><button type="button" data-href="#pdf展示-4">渲染演示</button></li></ul><div class="tab-contents"><div class="tab-item-content active" id="pdf展示-1"><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% pdf 文件路径 %&#125;</span><br></pre></td></tr></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="pdf展示-2"><ol type="1">
+<li><code>文件路径</code>: 可以是相对路径或者是在线链接</li>
+</ol><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="pdf展示-3"><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">1.本地文件:在md文件路径下创建一个同名文件夹，其内放pdf文件名为<span class="code">`能带模型.pdf`</span>的文件</span><br><span class="line">&#123;% pdf 能带模型.pdf %&#125;</span><br><span class="line">2.在线链接</span><br><span class="line">&#123;% pdf https://pubs.acs.org/doi/pdf/10.1021/acs.chemrev.0c00026 %&#125;</span><br></pre></td></tr></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="pdf展示-4"><p>1.本地文件:在md文件路径下创建一个同名文件夹，其内放pdf文件名为<code>能带模型.pdf</code>的文件</p>
+<pre><code>&lt;div class=&quot;row&quot;&gt;
+&lt;embed src=&quot;能带模型.pdf&quot; width=&quot;100%&quot; height=&quot;550&quot; type=&quot;application/pdf&quot;&gt;
+&lt;/div&gt;</code></pre>
+<p>2.在线链接</p>
+<pre><code>&lt;div class=&quot;row&quot;&gt;
+&lt;embed src=&quot;https://pubs.acs.org/doi/pdf/10.1021/acs.chemrev.0c00026&quot; width=&quot;100%&quot; height=&quot;550&quot; type=&quot;application/pdf&quot;&gt;
+&lt;/div&gt;</code></pre><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div></div>
+<h3 id="hexo-tag-map-插件">2.30 Hexo-tag-map 插件</h3>
+<div class="tabs" id="hexo-tag-map"><ul class="nav-tabs"><li class="tab active"><button type="button" data-href="#hexo-tag-map-1">标签语法</button></li><li class="tab"><button type="button" data-href="#hexo-tag-map-2">配置参数</button></li><li class="tab"><button type="button" data-href="#hexo-tag-map-3">示例源码</button></li><li class="tab"><button type="button" data-href="#hexo-tag-map-4">渲染演示</button></li></ul><div class="tab-contents"><div class="tab-item-content active" id="hexo-tag-map-1"><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% + 标签值 + 经度 + 纬度 + 文本 + 缩放等级 + 宽 + 高 + 默认图层 + %&#125;</span><br></pre></td></tr></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="hexo-tag-map-2"><table>
+<colgroup>
+<col style="width: 11%" />
+<col style="width: 10%" />
+<col style="width: 25%" />
+<col style="width: 14%" />
+<col style="width: 25%" />
+<col style="width: 13%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">地图名</th>
+<th style="text-align: center;">标签值 <必填></th>
+<th style="text-align: center;">宽 (默认 100%) / 高 (默认 360px)</th>
+<th style="text-align: center;">缩放等级 (默认 14)</th>
+<th style="text-align: center;">宽 (默认 100%) / 高 (默认 360px)</th>
+<th style="text-align: center;">默认图层 (默认 1)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">混合地图</td>
+<td style="text-align: center;">map</td>
+<td style="text-align: center;">百分数或具体值 (100% 或 360px)</td>
+<td style="text-align: center;">取值 3~18</td>
+<td style="text-align: center;">百分数或具体值 (100% 或 360px)</td>
+<td style="text-align: center;">取值 1~7</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">谷歌地图</td>
+<td style="text-align: center;">googleMap</td>
+<td style="text-align: center;">百分数或具体值 (100% 或 360px)</td>
+<td style="text-align: center;">取值 1~20</td>
+<td style="text-align: center;">百分数或具体值 (100% 或 360px)</td>
+<td style="text-align: center;">取值 1~3</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">高德地图</td>
+<td style="text-align: center;">gaodeMap</td>
+<td style="text-align: center;">百分数或具体值 (100% 或 360px)</td>
+<td style="text-align: center;">取值 3~18</td>
+<td style="text-align: center;">百分数或具体值 (100% 或 360px)</td>
+<td style="text-align: center;">取值 1~3</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">百度地图</td>
+<td style="text-align: center;">baiduMap</td>
+<td style="text-align: center;">百分数或具体值 (100% 或 360px)</td>
+<td style="text-align: center;">取值 4~18</td>
+<td style="text-align: center;">百分数或具体值 (100% 或 360px)</td>
+<td style="text-align: center;">取值 1~2</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Geoq 地图</td>
+<td style="text-align: center;">geoqMap</td>
+<td style="text-align: center;">百分数或具体值 (100% 或 360px)</td>
+<td style="text-align: center;">取值 1~18</td>
+<td style="text-align: center;">百分数或具体值 (100% 或 360px)</td>
+<td style="text-align: center;">取值 1~5</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">openstreet 地图</td>
+<td style="text-align: center;">openstreetMap</td>
+<td style="text-align: center;">百分数或具体值 (100% 或 360px)</td>
+<td style="text-align: center;">取值 1~18</td>
+<td style="text-align: center;">百分数或具体值 (100% 或 360px)</td>
+<td style="text-align: center;">不支持此参数</td>
+</tr>
+</tbody>
+</table>
+<ol type="1">
+<li>参数之间，用英文逗号相隔</li>
+<li>参数必须按上述事例顺序输入，不得为空</li>
+<li>同一个页面，同一组经纬度值，只能插入一个相同标签值的地图
+(若有需要，可以将第二个地图上，经度或纬度末尾删除一两个数)</li>
+<li>参数取值必须在上述范围内</li>
+<li>默认图层：即地图叠加层的值，默认常规地图还是卫星地图，可按地图显示顺序取值</li>
+<li>缩放等级，数字越大，地图比例尺越小，显示的越精细</li>
+<li>除标签值外，其他参数选填，但每个参数的左边的参数必填</li>
+<li>谷歌地图需要外网才能加载查看</li>
+</ol>
+<p>坐标获取：<a
+href="https://lbs.amap.com/tools/picker">高德地图坐标拾取系统</a>、<a
+href="https://api.map.baidu.com/lbsapi/getpoint/index.html">百度地图坐标拾取系统</a></p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="hexo-tag-map-3"><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% map 120.101101,30.239119 %&#125;</span><br><span class="line">&#123;% googleMap 120.101101,30.239119, 这里是西湖灵隐寺，据说求姻缘很灵验哦！ %&#125;</span><br><span class="line">&#123;% geoqMap 120.101101,30.239119, 这里是西湖灵隐寺，据说求姻缘很灵验哦！, 13, 90%, 320px, 3 %&#125;</span><br></pre></td></tr></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="hexo-tag-map-4"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-tag-map/lib/leaflet@1.7.1.css">
+<script data-pjax src="https://cdn.jsdelivr.net/npm/hexo-tag-map/lib/leaflet@1.7.1.js"></script>
+<script data-pjax src="https://cdn.jsdelivr.net/npm/hexo-tag-map/lib/leaflet.ChineseTmsProviders@1.0.4.js"></script>
+<div class="map-box">
+<div id="map-120.101101-30.239119"
+style="max-width:100%; height:360px;display: block;margin:0 auto;z-index:1;border-radius: 5px;">
+
+</div>
+</div>
+<script type="text/javascript">var normalm=L.tileLayer.chinaProvider('GaoDe.Normal.Map',{maxZoom:20,minZoom:1,attribution:'Amap'});var imgm=L.tileLayer.chinaProvider('GaoDe.Satellite.Map',{maxZoom:20,minZoom:1,attribution:'Amap'});var imga=L.tileLayer.chinaProvider('GaoDe.Satellite.Annotion',{maxZoom:20,minZoom:1,attribution:'Amap'});var normalMap=L.tileLayer.chinaProvider('Google.Normal.Map',{maxZoom:20,minZoom:1,attribution:'Google Maps'}),satelliteMap=L.tileLayer.chinaProvider('Google.Satellite.Map',{maxZoom:21,minZoom:1,attribution:'Google Maps'});routeMap=L.tileLayer.chinaProvider('Google.Satellite.Annotion',{maxZoom:21,minZoom:1});var normalMap=L.tileLayer.chinaProvider('Google.Normal.Map',{maxZoom:21,minZoom:1,attribution:'Google Maps'}),satelliteMap=L.tileLayer.chinaProvider('Google.Satellite.Map',{maxZoom:21,minZoom:1,attribution:'Google Maps'}),routeMap=L.tileLayer.chinaProvider('Google.Satellite.Annotion',{maxZoom:21,minZoom:1,attribution:'Google Maps'});var normalm1=L.tileLayer.chinaProvider('Geoq.Normal.Map',{maxZoom:21,minZoom:1,attribution:'GeoQ'});var normal=L.layerGroup([normalm]),image=L.layerGroup([imgm,imga]);var baseLayers={"高德地图":normal,"智图地图":normalm1,"谷歌地图":normalMap,"高德卫星地图":imgm,"谷歌卫星地图":satelliteMap,"高德卫星标注":image,"谷歌卫星标注":routeMap};var mymap=L.map('map-120.101101-30.239119',{center:[30.239119,120.101101],zoom:14,layers:[normal],zoomControl:false});L.control.layers(baseLayers,null).addTo(mymap);L.control.zoom({zoomInTitle:'放大',zoomOutTitle:'缩小'}).addTo(mymap);</script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-tag-map/lib/leaflet@1.7.1.css">
+<script data-pjax src="https://cdn.jsdelivr.net/npm/hexo-tag-map/lib/leaflet@1.7.1.js"></script>
+<script data-pjax src="https://cdn.jsdelivr.net/npm/hexo-tag-map/lib/leaflet.ChineseTmsProviders@1.0.4.js"></script>
+<div id="googleMap-120.101101-30.239119"
+style="max-width:100%; height:360px;display: block;margin:0 auto;z-index:1;border-radius: 5px;">
+
+</div>
+<script type="text/javascript">var normalMap=L.tileLayer.chinaProvider('Google.Normal.Map',{maxZoom:22,minZoom:1,attribution:'Google Maps'}),satelliteMap=L.tileLayer.chinaProvider('Google.Satellite.Map',{maxZoom:22,minZoom:1,attribution:'Google Maps'}),routeMap=L.tileLayer.chinaProvider('Google.Satellite.Annotion',{maxZoom:22,minZoom:1,attribution:'Google Maps'});var baseLayers={"谷歌地图":normalMap,"谷歌卫星图":satelliteMap,"谷歌卫星标注": routeMap};var overlayLayers={};var mymap=L.map("googleMap-120.101101-30.239119",{center:[30.239119,120.101101],zoom:14,layers:[normalMap],zoomControl:false});L.control.layers(baseLayers,null).addTo(mymap);L.control.zoom({zoomInTitle:'放大',zoomOutTitle:'缩小'}).addTo(mymap);var marker = L.marker(['30.239119','120.101101']).addTo(mymap);marker.bindPopup("这里是西湖灵隐寺，据说求姻缘很灵验哦！").openPopup();</script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-tag-map/lib/leaflet@1.7.1.css">
+<script data-pjax src="https://cdn.jsdelivr.net/npm/hexo-tag-map/lib/leaflet@1.7.1.js"></script>
+<script data-pjax src="https://cdn.jsdelivr.net/npm/hexo-tag-map/lib/leaflet.ChineseTmsProviders@1.0.4.js"></script>
+<div id="geoqMap-120.101101-30.239119"
+style="max-width:90%; height:320px;display: block;margin:0 auto;z-index:1;border-radius: 5px;">
+
+</div>
+<script type="text/javascript">var normalm1=L.tileLayer.chinaProvider('Geoq.Normal.Map',{maxZoom:20,minZoom:1,attribution:'GeoQ'});var normalm2=L.tileLayer.chinaProvider('Geoq.Normal.PurplishBlue',{maxZoom:20,minZoom:1,attribution:'GeoQ'});var normalm3=L.tileLayer.chinaProvider('Geoq.Normal.Gray',{maxZoom:20,minZoom:1,attribution:'GeoQ'});var normalm4=L.tileLayer.chinaProvider('Geoq.Normal.Warm',{maxZoom:20,minZoom:1,attribution:'GeoQ'});var normalm5=L.tileLayer.chinaProvider('Geoq.Theme.Hydro',{maxZoom:20,minZoom:1,attribution:'GeoQ'});var normal=L.layerGroup([normalm1,normalm2,normalm3,normalm4,normalm5]);var baseLayers={"智图地图":normalm1,"午夜蓝":normalm2,"灰色":normalm3,"暖色":normalm4,"水系":normalm5};var mymap=L.map("geoqMap-120.101101-30.239119",{center:[30.239119,120.101101],zoom:13,layers:[normalm3],zoomControl:false});L.control.layers(baseLayers,null).addTo(mymap);L.control.zoom({zoomInTitle:'放大',zoomOutTitle:'缩小'}).addTo(mymap);var marker = L.marker(['30.239119','120.101101']).addTo(mymap);marker.bindPopup("这里是西湖灵隐寺，据说求姻缘很灵验哦！").openPopup();</script><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div></div>
+<h3 id="隐藏块">2.31 隐藏块</h3>
+<div class="tabs" id="隐藏块"><ul class="nav-tabs"><li class="tab active"><button type="button" data-href="#隐藏块-1">标签语法</button></li><li class="tab"><button type="button" data-href="#隐藏块-2">配置参数</button></li><li class="tab"><button type="button" data-href="#隐藏块-3">示例源码</button></li><li class="tab"><button type="button" data-href="#隐藏块-4">渲染演示</button></li></ul><div class="tab-contents"><div class="tab-item-content active" id="隐藏块-1"><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% hideBlock display,bg,color %&#125;</span><br><span class="line">content</span><br><span class="line">&#123;% endhideBlock %&#125;</span><br></pre></td></tr></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="隐藏块-2"><ol type="1">
+<li><code>content</code>：要隐藏的内容</li>
+<li><code>display</code>：展示前按钮显示的文字（可选）</li>
+<li><code>bg</code>：按钮的背景颜色（可选）</li>
+<li><code>color</code>：按钮显示的文字的颜色（可选）</li>
+</ol><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="隐藏块-3"><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% hideBlock 点我预览, blue %&#125;</span><br><span class="line">这里有张图片：</span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;https://blogresource.sqwdream.cloud/post/博客问题集锦/img/cover/黑洞.png&quot;</span> <span class="attr">alt</span>=<span class="string">&quot;image (1)&quot;</span> <span class="attr">style</span>=<span class="string">&quot;zoom:100%;&quot;</span> /&gt;</span></span></span><br><span class="line">&#123;% endhideBlock %&#125;</span><br></pre></td></tr></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="隐藏块-4"><div class="hide-block">
+<button type="button" class="hide-button" style="background-color:  blue;">
+点我预览
+</button>
+<div class="hide-content">
+<p>
+这里有张图片：
+<img src="https://blogresource.sqwdream.cloud/post/博客问题集锦/img/cover/黑洞.png" />
+</p>
+</div>
+</div><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div></div>
 ]]></content>
       <categories>
         <category>博客搭建</category>
@@ -2242,6 +2498,80 @@ id="引入对应的资源修改主题配置文件_config.yml在-inject-配置项
       <tags>
         <tag>博客搭建</tag>
         <tag>樱花雨背景特效</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>博客搭建之文章链接</title>
+    <url>//cc96dfee.html</url>
+    <content><![CDATA[<h1 id="博客搭建之文章链接">博客搭建之文章链接</h1>
+<div class="note info modern"><p>鉴于每个人的博客根目录名称都不太一样，本贴<strong>博客根目录</strong>一律以<code>[BlogRoot]</code>指代。
+站点配置文件<code>_config.yml</code>，路径为<code>[BlogRoot]\_config.yml</code>。
+主题配置文件<code>_config.yml</code>，路径为<code>[BlogRoot]\themes\butterfly\_config.yml</code>。</p>
+</div>
+<h2
+id="缩短文末copyright中文章链接的长度">缩短文末Copyright中文章链接的长度</h2>
+<h3
+id="在博客根目录下blogroot安装插件">1.在博客根目录下<code>[BlogRoot]</code>安装插件：</h3>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm install hexo-abbrlink --save</span><br></pre></td></tr></table></figure>
+<h3
+id="修改站点配置文件blogroot_config.yml添加以下内容">2.修改站点配置文件<code>[BlogRoot]\_config.yml</code>，添加以下内容：</h3>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># permalink: :year/:month/:day/:title/</span></span><br><span class="line"><span class="comment"># permalink: p/:abbrlink.html  # p 是自定义的前缀</span></span><br><span class="line"><span class="attr">permalink:</span> <span class="string">/:abbrlink.html</span>  <span class="comment"># p 是自定义的前缀</span></span><br><span class="line"><span class="attr">abbrlink:</span></span><br><span class="line">    <span class="attr">alg:</span> <span class="string">crc32</span>   <span class="comment">#算法： crc16(default) and crc32</span></span><br><span class="line">    <span class="attr">rep:</span> <span class="string">hex</span>     <span class="comment">#进制： dec(default) and hex</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>不同算法和进制生成不同的格式</strong></li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">crc16 &amp; hex</span><br><span class="line">https://post.zz173.com/posts/66c8.html</span><br><span class="line">crc16 &amp; dec</span><br><span class="line">https://post.zz173.com/posts/65535.html</span><br><span class="line"></span><br><span class="line">crc32 &amp; hex</span><br><span class="line">https://post.zz173.com/posts/8ddf18fb.html</span><br><span class="line">crc32 &amp; dec</span><br><span class="line">https://post.zz173.com/posts/1690090958.html</span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong><code>hexo g</code>生成网页时，会在每篇文章的<code>front matter</code>中加入一项<code>abbrlink</code>，它是根据文章题目生成的，生成之后不可更改，可以删除重新生成</strong></li>
+</ul>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">abbrlink: cc96dfee</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>博客搭建</category>
+      </categories>
+      <tags>
+        <tag>博客搭建</tag>
+        <tag>文章链接</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>博客问题集锦</title>
+    <url>//6bf8c91.html</url>
+    <content><![CDATA[<div class="note info modern"><p>鉴于每个人的博客根目录名称都不太一样，本贴<strong>博客根目录</strong>一律以<code>[BlogRoot]</code>指代。
+数学公式配置：<a
+href="https://butterfly.js.org/posts/ceeb73f/#Math-%E6%95%B8%E5%AD%B8">Math
+数学</a> 参考：<a
+href="https://www.cnblogs.com/Ai-heng/p/7282110.html">hexo博客MathJax公式渲染问题</a></p>
+</div>
+<h1 id="公式渲染问题">公式渲染问题</h1>
+<details class="folding-tag" cyan><summary> 点击查看 </summary>
+              <div class='content'>
+              <p>在博客中一些数学公式会出现渲染问题，当然md文件也有可能出现渲染问题，比如引用变成上标等，这里只介绍出现的MathJax数学公式的渲染问题，主要问题就是行内数学公式会出现渲染失败的情况，对于单个符号问题渲染还是可以的，但是涉及到等式就会出现渲染失败的情况，具体问题展示如下：</p><p><ahref="https://blogresource.sqwdream.cloud/post/博客问题集锦/img/body/行内公式error.jpg"></a></p><p>解决的方法如下：</p><ol type="1"><li><p>更换公式渲染引擎</p><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm uninstall hexo-renderer-marked --save</span><br><span class="line">npm install hexo-renderer-kramed --save</span><br></pre></td></tr></table></figure></li><li><p>修改<code>[BlogRoot]/node_modules/kramed/lib/rules/inline.js</code>文件</p><figure class="highlight diff"><table><tr><td class="code"><pre><span class="line"><span class="deletion">- escape: /^\\([\\`*&#123;&#125;\[\]()#$+\-.!_&gt;])/,  /*11行*/</span></span><br><span class="line"><span class="addition">+ escape: /^\\([`*\[\]()#$+\-.!_&gt;])/,</span></span><br><span class="line"><span class="deletion">- em: /^\b_((?:__|[\s\S])+?)_\b|^\*((?:\*\*|[\s\S])+?)\*(?!\*)/,  /*20行*/  </span></span><br><span class="line"><span class="addition">+ em: /^\*((?:\*\*|[\s\S])+?)\*(?!\*)/,</span></span><br></pre></td></tr></table></figure></li><li><p>如果在md文件中用到数学公式，要在Front-matter中加入<code>mathjax: true</code></p></li><li><p>如果和butterfly外观标签混合使用，比如数学公式嵌套在butterfly外挂标签中，可以尝试在Front-matter中删除<code>mathjax: true</code>，以防止渲染冲突</p></li></ol>
+              </div>
+            </details>
+]]></content>
+      <categories>
+        <category>博客问题集锦</category>
+      </categories>
+      <tags>
+        <tag>MathJax</tag>
+        <tag>公式渲染</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>水调歌头</title>
+    <url>//ac668694.html</url>
+    <content><![CDATA[<div class='poem'><div class='poem-title'>水调歌头</div><div class='poem-author'>苏轼</div><p>丙辰中秋，欢饮达旦，大醉，作此篇，兼怀子由。 明月几时有？把酒问青天。
+不知天上宫阙，今夕是何年？ 我欲乘风归去，又恐琼楼玉宇，高处不胜寒。
+起舞弄清影，何似在人间？</p>
+<p>转朱阁，低绮户，照无眠。 不应有恨，何事长向别时圆？
+人有悲欢离合，月有阴晴圆缺，此事古难全。 但愿人长久，千里共婵娟。</p>
+</div>
+]]></content>
+      <categories>
+        <category>诗与远方</category>
+      </categories>
+      <tags>
+        <tag>诗与远方</tag>
       </tags>
   </entry>
 </search>
