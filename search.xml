@@ -96,6 +96,30 @@ S=\frac{8\pi^2{k_\mathrm{B}}^2T}{3eh^2}m_{\mathrm{d}}^{*}\left(\frac{\pi}{3p}\ri
       </tags>
   </entry>
   <entry>
+    <title>博客问题集锦</title>
+    <url>//6bf8c91.html</url>
+    <content><![CDATA[<div class="note info modern"><p>鉴于每个人的博客根目录名称都不太一样，本贴<strong>博客根目录</strong>一律以<code>[BlogRoot]</code>指代。
+数学公式配置：<a
+href="https://butterfly.js.org/posts/ceeb73f/#Math-%E6%95%B8%E5%AD%B8">Math
+数学</a> 参考：<a
+href="https://www.cnblogs.com/Ai-heng/p/7282110.html">hexo博客MathJax公式渲染问题</a></p>
+</div>
+<h1 id="公式渲染问题">公式渲染问题</h1>
+<details class="folding-tag" cyan><summary> 点击查看 </summary>
+              <div class='content'>
+              <p>在博客中一些数学公式会出现渲染问题，当然md文件也有可能出现渲染问题，比如引用变成上标等，这里只介绍出现的MathJax数学公式的渲染问题，主要问题就是行内数学公式会出现渲染失败的情况，对于单个符号问题渲染还是可以的，但是涉及到等式就会出现渲染失败的情况，具体问题展示如下：</p><p><ahref="https://blogresource.sqwdream.cloud/post/博客问题集锦/img/body/行内公式error.jpg"></a></p><p>解决的方法如下：</p><ol type="1"><li><p>更换公式渲染引擎</p><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm uninstall hexo-renderer-marked --save</span><br><span class="line">npm install hexo-renderer-kramed --save</span><br></pre></td></tr></table></figure></li><li><p>修改<code>[BlogRoot]/node_modules/kramed/lib/rules/inline.js</code>文件</p><figure class="highlight diff"><table><tr><td class="code"><pre><span class="line"><span class="deletion">- escape: /^\\([\\`*&#123;&#125;\[\]()#$+\-.!_&gt;])/,  /*11行*/</span></span><br><span class="line"><span class="addition">+ escape: /^\\([`*\[\]()#$+\-.!_&gt;])/,</span></span><br><span class="line"><span class="deletion">- em: /^\b_((?:__|[\s\S])+?)_\b|^\*((?:\*\*|[\s\S])+?)\*(?!\*)/,  /*20行*/  </span></span><br><span class="line"><span class="addition">+ em: /^\*((?:\*\*|[\s\S])+?)\*(?!\*)/,</span></span><br></pre></td></tr></table></figure></li><li><p>如果在md文件中用到数学公式，要在Front-matter中加入<code>mathjax: true</code></p></li><li><p>如果和butterfly外观标签混合使用，比如数学公式嵌套在butterfly外挂标签中，可以尝试在Front-matter中删除<code>mathjax: true</code>，以防止渲染冲突</p></li></ol>
+              </div>
+            </details>
+]]></content>
+      <categories>
+        <category>博客问题集锦</category>
+      </categories>
+      <tags>
+        <tag>MathJax</tag>
+        <tag>公式渲染</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>博客搭建之Twikoo</title>
     <url>//6fc19c10.html</url>
     <content><![CDATA[<h1 id="博客搭建之twikoo">博客搭建之Twikoo</h1>
@@ -161,39 +185,6 @@ id="手机端也呈现夜间繁星效果在universe.css文件中加入">4.手机
       <tags>
         <tag>博客搭建</tag>
         <tag>夜间繁星背景特效</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>博客搭建之文章链接</title>
-    <url>//cc96dfee.html</url>
-    <content><![CDATA[<h1 id="博客搭建之文章链接">博客搭建之文章链接</h1>
-<div class="note info modern"><p>鉴于每个人的博客根目录名称都不太一样，本贴<strong>博客根目录</strong>一律以<code>[BlogRoot]</code>指代。
-站点配置文件<code>_config.yml</code>，路径为<code>[BlogRoot]\_config.yml</code>。
-主题配置文件<code>_config.yml</code>，路径为<code>[BlogRoot]\themes\butterfly\_config.yml</code>。</p>
-</div>
-<h2
-id="缩短文末copyright中文章链接的长度">缩短文末Copyright中文章链接的长度</h2>
-<h3
-id="在博客根目录下blogroot安装插件">1.在博客根目录下<code>[BlogRoot]</code>安装插件：</h3>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm install hexo-abbrlink --save</span><br></pre></td></tr></table></figure>
-<h3
-id="修改站点配置文件blogroot_config.yml添加以下内容">2.修改站点配置文件<code>[BlogRoot]\_config.yml</code>，添加以下内容：</h3>
-<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># permalink: :year/:month/:day/:title/</span></span><br><span class="line"><span class="comment"># permalink: p/:abbrlink.html  # p 是自定义的前缀</span></span><br><span class="line"><span class="attr">permalink:</span> <span class="string">/:abbrlink.html</span>  <span class="comment"># p 是自定义的前缀</span></span><br><span class="line"><span class="attr">abbrlink:</span></span><br><span class="line">    <span class="attr">alg:</span> <span class="string">crc32</span>   <span class="comment">#算法： crc16(default) and crc32</span></span><br><span class="line">    <span class="attr">rep:</span> <span class="string">hex</span>     <span class="comment">#进制： dec(default) and hex</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li><strong>不同算法和进制生成不同的格式</strong></li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">crc16 &amp; hex</span><br><span class="line">https://post.zz173.com/posts/66c8.html</span><br><span class="line">crc16 &amp; dec</span><br><span class="line">https://post.zz173.com/posts/65535.html</span><br><span class="line"></span><br><span class="line">crc32 &amp; hex</span><br><span class="line">https://post.zz173.com/posts/8ddf18fb.html</span><br><span class="line">crc32 &amp; dec</span><br><span class="line">https://post.zz173.com/posts/1690090958.html</span><br></pre></td></tr></table></figure>
-<ul>
-<li><strong><code>hexo g</code>生成网页时，会在每篇文章的<code>front matter</code>中加入一项<code>abbrlink</code>，它是根据文章题目生成的，生成之后不可更改，可以删除重新生成</strong></li>
-</ul>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">abbrlink: cc96dfee</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>博客搭建</category>
-      </categories>
-      <tags>
-        <tag>博客搭建</tag>
-        <tag>文章链接</tag>
       </tags>
   </entry>
   <entry>
@@ -2102,7 +2093,9 @@ data-nota="可以看到注解内容出现在顶栏">把鼠标移动到我上面�
 <h3 id="气泡注释-bubble"><a
 href="https://www.sqwdream.cloud/44dec147.html">1.27 气泡注释
 bubble</a></h3>
-<h3 id="引用文献-reference">1.28 引用文献 reference</h3>
+<h3 id="引用文献-reference"><a
+href="https://www.sqwdream.cloud/965f46ee.html">1.28 引用文献
+reference</a></h3>
 <h3 id="隐藏块">1.29 隐藏块</h3>
 <div class="tabs" id="隐藏块"><ul class="nav-tabs"><li class="tab active"><button type="button" data-href="#隐藏块-1">标签语法</button></li><li class="tab"><button type="button" data-href="#隐藏块-2">配置参数</button></li><li class="tab"><button type="button" data-href="#隐藏块-3">示例源码</button></li><li class="tab"><button type="button" data-href="#隐藏块-4">渲染演示</button></li></ul><div class="tab-contents"><div class="tab-item-content active" id="隐藏块-1"><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% hideBlock display,bg,color %&#125;</span><br><span class="line">content</span><br><span class="line">&#123;% endhideBlock %&#125;</span><br></pre></td></tr></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="隐藏块-2"><p>1.<code>content</code>：要隐藏的内容</p>
 <p>2.<code>display</code>：展示前按钮显示的文字（可选）</p>
@@ -2254,14 +2247,56 @@ id="引入对应的资源修改主题配置文件_config.yml在-inject-配置项
       </tags>
   </entry>
   <entry>
+    <title>外挂标签之旋转相册</title>
+    <url>//75b3d8a.html</url>
+    <content><![CDATA[<h1 id="外挂标签之旋转相册">外挂标签之旋转相册</h1>
+<div class="tip info"><p>旋转相册标签与fancybox灯箱存在兼容性bug，若发现旋转相册呈扁平状，请关闭fancybox或换用medium_zoom。</p>
+</div>
+<h4 id="标签语法">标签语法</h4>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% carousel [Id] , [name] %&#125;</span><br><span class="line">![](<span class="link">/img/1.jpg</span>)</span><br><span class="line">![](<span class="link">/img/2.jpg</span>)</span><br><span class="line">![](<span class="link">/img/3,jpg</span>)</span><br><span class="line">&#123;% endcarousel %&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="配置参数">配置参数</h4>
+<ol type="1">
+<li><code>Id</code>:
+相册唯一ID，用于监测相册鼠标动作。禁止使用中文。同一页内不得出现相同ID的carousel相册。</li>
+<li><code>name</code>: 相册中间显示的内容，建议用英文单引号包裹。</li>
+</ol>
+<h4 id="示例源码">示例源码</h4>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% carousel &#x27;SF&#x27;,&#x27;strike freedom&#x27; %&#125;</span><br><span class="line">![](<span class="link">https://npm.elemecdn.com/akilar-candyassets/image/20200907110444226.png</span>)</span><br><span class="line">![](<span class="link">https://npm.elemecdn.com/akilar-candyassets/image/20200907110508327.png</span>)</span><br><span class="line">![](<span class="link">https://npm.elemecdn.com/akilar-candyassets/image/20200907110525753.png</span>)</span><br><span class="line">![](<span class="link">https://npm.elemecdn.com/akilar-candyassets/image/20200907110600751.png</span>)</span><br><span class="line">![](<span class="link">https://npm.elemecdn.com/akilar-candyassets/image/20200907110621554.png</span>)</span><br><span class="line">![](<span class="link">https://npm.elemecdn.com/akilar-candyassets/image/20200907110637459.png</span>)</span><br><span class="line">![](<span class="link">https://npm.elemecdn.com/akilar-candyassets/image/20200907110654150.png</span>)</span><br><span class="line">![](<span class="link">https://npm.elemecdn.com/akilar-candyassets/image/20200907110707916.png</span>)</span><br><span class="line">![](<span class="link">https://npm.elemecdn.com/akilar-candyassets/image/20200907110719787.png</span>)</span><br><span class="line">![](<span class="link">https://npm.elemecdn.com/akilar-candyassets/image/20200907110731118.png</span>)</span><br><span class="line">&#123;% endcarousel %&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="渲染演示">渲染演示</h4>
+<div id='SF' class='carousel'><div id="SF-drag-container" class="drag-container"><div id="SF-spin-container" class="spin-container"><img
+src="https://npm.elemecdn.com/akilar-candyassets/image/20200907110444226.png" />
+<img
+src="https://npm.elemecdn.com/akilar-candyassets/image/20200907110508327.png" />
+<img
+src="https://npm.elemecdn.com/akilar-candyassets/image/20200907110525753.png" />
+<img
+src="https://npm.elemecdn.com/akilar-candyassets/image/20200907110600751.png" />
+<img
+src="https://npm.elemecdn.com/akilar-candyassets/image/20200907110621554.png" />
+<img
+src="https://npm.elemecdn.com/akilar-candyassets/image/20200907110637459.png" />
+<img
+src="https://npm.elemecdn.com/akilar-candyassets/image/20200907110654150.png" />
+<img
+src="https://npm.elemecdn.com/akilar-candyassets/image/20200907110707916.png" />
+<img
+src="https://npm.elemecdn.com/akilar-candyassets/image/20200907110719787.png" />
+<img
+src="https://npm.elemecdn.com/akilar-candyassets/image/20200907110731118.png" /><p>strike freedom</p></div><div id="SF-carousel-ground" class="carousel-ground"></div></div></div><script type="text/javascript">carouselinit('SF');</script>
+]]></content>
+      <categories>
+        <category>博客搭建</category>
+      </categories>
+      <tags>
+        <tag>博客搭建</tag>
+        <tag>外挂标签</tag>
+        <tag>旋转相册</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>外挂标签之引用文献</title>
     <url>//965f46ee.html</url>
     <content><![CDATA[<h1 id="外挂标签之引用文献">外挂标签之引用文献</h1>
-<div class="note info modern"><p>外挂标签存在渲染失败/冲突的可能，有序/无序列表嵌套在外挂标签中也容易出现问题，PDF外挂标签、旋转相册还存在问题。
-搬运自：<a href="https://akilar.top/posts/615e2dec/">Tag Plugins
-Plus</a>、<a
-href="https://www.fomal.cc/posts/2013454d.html">Markdown语法与外挂标签写法汇总</a></p>
-</div>
 <h4 id="标签语法">标签语法</h4>
 <figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% referto [id] , [literature] %&#125;</span><br><span class="line">&#123;% referfrom [id] , [literature] , [url] %&#125;</span><br></pre></td></tr></table></figure>
 <h4 id="配置参数">配置参数</h4>
@@ -2306,15 +2341,42 @@ Butterfly主题的各个衍生魔改<span class="hidden-anchor" id="referto_[6]"
       </tags>
   </entry>
   <entry>
+    <title>博客搭建之文章链接</title>
+    <url>//cc96dfee.html</url>
+    <content><![CDATA[<h1 id="博客搭建之文章链接">博客搭建之文章链接</h1>
+<div class="note info modern"><p>鉴于每个人的博客根目录名称都不太一样，本贴<strong>博客根目录</strong>一律以<code>[BlogRoot]</code>指代。
+站点配置文件<code>_config.yml</code>，路径为<code>[BlogRoot]\_config.yml</code>。
+主题配置文件<code>_config.yml</code>，路径为<code>[BlogRoot]\themes\butterfly\_config.yml</code>。</p>
+</div>
+<h2
+id="缩短文末copyright中文章链接的长度">缩短文末Copyright中文章链接的长度</h2>
+<h3
+id="在博客根目录下blogroot安装插件">1.在博客根目录下<code>[BlogRoot]</code>安装插件：</h3>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm install hexo-abbrlink --save</span><br></pre></td></tr></table></figure>
+<h3
+id="修改站点配置文件blogroot_config.yml添加以下内容">2.修改站点配置文件<code>[BlogRoot]\_config.yml</code>，添加以下内容：</h3>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># permalink: :year/:month/:day/:title/</span></span><br><span class="line"><span class="comment"># permalink: p/:abbrlink.html  # p 是自定义的前缀</span></span><br><span class="line"><span class="attr">permalink:</span> <span class="string">/:abbrlink.html</span>  <span class="comment"># p 是自定义的前缀</span></span><br><span class="line"><span class="attr">abbrlink:</span></span><br><span class="line">    <span class="attr">alg:</span> <span class="string">crc32</span>   <span class="comment">#算法： crc16(default) and crc32</span></span><br><span class="line">    <span class="attr">rep:</span> <span class="string">hex</span>     <span class="comment">#进制： dec(default) and hex</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>不同算法和进制生成不同的格式</strong></li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">crc16 &amp; hex</span><br><span class="line">https://post.zz173.com/posts/66c8.html</span><br><span class="line">crc16 &amp; dec</span><br><span class="line">https://post.zz173.com/posts/65535.html</span><br><span class="line"></span><br><span class="line">crc32 &amp; hex</span><br><span class="line">https://post.zz173.com/posts/8ddf18fb.html</span><br><span class="line">crc32 &amp; dec</span><br><span class="line">https://post.zz173.com/posts/1690090958.html</span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong><code>hexo g</code>生成网页时，会在每篇文章的<code>front matter</code>中加入一项<code>abbrlink</code>，它是根据文章题目生成的，生成之后不可更改，可以删除重新生成</strong></li>
+</ul>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">abbrlink: cc96dfee</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>博客搭建</category>
+      </categories>
+      <tags>
+        <tag>博客搭建</tag>
+        <tag>文章链接</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>外挂标签之气泡注释</title>
     <url>//44dec147.html</url>
     <content><![CDATA[<h1 id="外挂标签之气泡注释">外挂标签之气泡注释</h1>
-<div class="note info modern"><p>外挂标签存在渲染失败/冲突的可能，有序/无序列表嵌套在外挂标签中也容易出现问题，PDF外挂标签、旋转相册还存在问题。
-搬运自：<a href="https://akilar.top/posts/615e2dec/">Tag Plugins
-Plus</a>、<a
-href="https://www.fomal.cc/posts/2013454d.html">Markdown语法与外挂标签写法汇总</a></p>
-</div>
-<h3 id="气泡注释-bubble">气泡注释 bubble</h3>
 <h4 id="标签语法">标签语法</h4>
 <figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% bubble [content] , [notation] ,[background-color] %&#125;</span><br></pre></td></tr></table></figure>
 <h4 id="配置参数">配置参数</h4>
@@ -2366,30 +2428,6 @@ Parabolic Band，SPB</strong>)模型相关计算</h1>
         <tag>SPB</tag>
         <tag>Pisarenko plot</tag>
         <tag>Matlab code</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>博客问题集锦</title>
-    <url>//6bf8c91.html</url>
-    <content><![CDATA[<div class="note info modern"><p>鉴于每个人的博客根目录名称都不太一样，本贴<strong>博客根目录</strong>一律以<code>[BlogRoot]</code>指代。
-数学公式配置：<a
-href="https://butterfly.js.org/posts/ceeb73f/#Math-%E6%95%B8%E5%AD%B8">Math
-数学</a> 参考：<a
-href="https://www.cnblogs.com/Ai-heng/p/7282110.html">hexo博客MathJax公式渲染问题</a></p>
-</div>
-<h1 id="公式渲染问题">公式渲染问题</h1>
-<details class="folding-tag" cyan><summary> 点击查看 </summary>
-              <div class='content'>
-              <p>在博客中一些数学公式会出现渲染问题，当然md文件也有可能出现渲染问题，比如引用变成上标等，这里只介绍出现的MathJax数学公式的渲染问题，主要问题就是行内数学公式会出现渲染失败的情况，对于单个符号问题渲染还是可以的，但是涉及到等式就会出现渲染失败的情况，具体问题展示如下：</p><p><ahref="https://blogresource.sqwdream.cloud/post/博客问题集锦/img/body/行内公式error.jpg"></a></p><p>解决的方法如下：</p><ol type="1"><li><p>更换公式渲染引擎</p><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm uninstall hexo-renderer-marked --save</span><br><span class="line">npm install hexo-renderer-kramed --save</span><br></pre></td></tr></table></figure></li><li><p>修改<code>[BlogRoot]/node_modules/kramed/lib/rules/inline.js</code>文件</p><figure class="highlight diff"><table><tr><td class="code"><pre><span class="line"><span class="deletion">- escape: /^\\([\\`*&#123;&#125;\[\]()#$+\-.!_&gt;])/,  /*11行*/</span></span><br><span class="line"><span class="addition">+ escape: /^\\([`*\[\]()#$+\-.!_&gt;])/,</span></span><br><span class="line"><span class="deletion">- em: /^\b_((?:__|[\s\S])+?)_\b|^\*((?:\*\*|[\s\S])+?)\*(?!\*)/,  /*20行*/  </span></span><br><span class="line"><span class="addition">+ em: /^\*((?:\*\*|[\s\S])+?)\*(?!\*)/,</span></span><br></pre></td></tr></table></figure></li><li><p>如果在md文件中用到数学公式，要在Front-matter中加入<code>mathjax: true</code></p></li><li><p>如果和butterfly外观标签混合使用，比如数学公式嵌套在butterfly外挂标签中，可以尝试在Front-matter中删除<code>mathjax: true</code>，以防止渲染冲突</p></li></ol>
-              </div>
-            </details>
-]]></content>
-      <categories>
-        <category>博客问题集锦</category>
-      </categories>
-      <tags>
-        <tag>MathJax</tag>
-        <tag>公式渲染</tag>
       </tags>
   </entry>
   <entry>
