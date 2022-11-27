@@ -17,76 +17,10 @@
       </tags>
   </entry>
   <entry>
-    <title>单抛物带(Single Parabolic Band,SPB)模型</title>
-    <url>//3ca822df.html</url>
-    <content><![CDATA[<h1
-id="单抛物带single-parabolic-bandspb模型相关计算">单抛物带(<strong>Single
-Parabolic Band，SPB</strong>)模型相关计算</h1>
-<h2 id="单抛物带模型计算简并条件下">单抛物带模型计算(简并条件下)</h2>
-<details class="folding-tag" cyan><summary> 点击查看 </summary>
-              <div class='content'>
-              <h3 id="计算公式">1.1 计算公式</h3><p><span class="math display">\[S=\frac{8\pi^2{k_\mathrm{B}}^2T}{3eh^2}m_{\mathrm{d}}^{*}\left(\frac{\pi}{3p}\right)^{2/3}\tag{1}\]</span></p><ul><li><spanclass="math inline">\(m_{\mathrm{d}}^{*}=N_{\mathrm{v}}^{2/3}m_{\mathrm{b}}^*\)</span><strong>:态密度有效质量</strong></li></ul><h3 id="计算代码">1.2 计算代码</h3><figure class="highlight matlab"><table><tr><td class="code"><pre><span class="line"><span class="comment">%基于单抛物带模型拟合S-n的关系得到态密度有效质量----简并条件下</span></span><br><span class="line">clc,clear</span><br><span class="line">Kb = <span class="number">1.38066</span>*<span class="number">10</span>^<span class="number">-23</span>;  <span class="comment">%J/K 1J=1V*A*s 1W = 1J/s</span></span><br><span class="line">h = <span class="number">6.62608</span>*<span class="number">10</span>^<span class="number">-34</span>; <span class="comment">%J*s</span></span><br><span class="line">hr = h/(<span class="number">2</span>*<span class="built_in">pi</span>); <span class="comment">%简约普朗克常数</span></span><br><span class="line">e = <span class="number">1.60219</span>*<span class="number">10</span>^<span class="number">-19</span>;  <span class="comment">%1C=1A*s</span></span><br><span class="line">me = <span class="number">9.10953</span>*<span class="number">10</span>^<span class="number">-31</span>;  <span class="comment">%Kg</span></span><br><span class="line">K = Kb/e;</span><br><span class="line">T = <span class="number">323</span>;  <span class="comment">%K 温度</span></span><br><span class="line"></span><br><span class="line">Sdata = [<span class="number">76.76</span>, <span class="number">101.92</span>, <span class="number">108.97</span>, <span class="number">174.48</span>]*<span class="number">10</span>^(<span class="number">-6</span>);  <span class="comment">%将uV/K转换为V/K</span></span><br><span class="line">ndata = [<span class="number">1.97</span>, <span class="number">1.04</span>, <span class="number">0.46</span>, <span class="number">0.63</span>]*<span class="number">10</span>^<span class="number">20</span>*<span class="number">10</span>^<span class="number">6</span>;   <span class="comment">%cm^-3, 转换为m^-3</span></span><br><span class="line"><span class="comment">% Sdata = [76.76]*10^(-6);  %将uV/K转换为V/K</span></span><br><span class="line"><span class="comment">% ndata = [1.97]*10^20*10^6;   %cm^-3, 转换为m^-3</span></span><br><span class="line">em0 = <span class="number">123</span>; <span class="comment">%态密度有效质量的初值  和初值有很大关系</span></span><br><span class="line">S = @(em,ndata)(<span class="number">8</span>*<span class="built_in">pi</span>^<span class="number">2</span>*Kb^<span class="number">2</span>)/(<span class="number">3</span>*e*h^<span class="number">2</span>)*em*me*T*(<span class="built_in">pi</span>./(<span class="number">3</span>*ndata)).^(<span class="number">2</span>/<span class="number">3</span>);</span><br><span class="line">[emf, resnorm] = lsqcurvefit(S, em0, ndata, Sdata); <span class="comment">%emf:拟合的得到的态密度有效质量，resnorm残差平方和</span></span><br><span class="line">display(emf);  <span class="comment">%显示拟合得到的值</span></span><br><span class="line"></span><br><span class="line">ndatac = (<span class="number">0.2</span>:<span class="number">0.001</span>:<span class="number">2</span>)*<span class="number">10</span>^<span class="number">26</span>;</span><br><span class="line">Sdatac = S(emf, ndatac);</span><br><span class="line"><span class="built_in">plot</span>(ndatac*<span class="number">10</span>^(<span class="number">-24</span>), Sdatac*<span class="number">10</span>^(<span class="number">6</span>), <span class="string">&#x27;-&#x27;</span>);</span><br><span class="line"><span class="built_in">hold</span> on</span><br><span class="line"><span class="built_in">plot</span>(ndata*<span class="number">10</span>^(<span class="number">-24</span>), Sdata*<span class="number">10</span>^(<span class="number">6</span>), <span class="string">&#x27;ro&#x27;</span>, <span class="string">&#x27;MarkerFaceColor&#x27;</span>, <span class="string">&#x27;r&#x27;</span>);  <span class="comment">%数据点为实心圆</span></span><br><span class="line">xlabel(<span class="string">&#x27;p [10^&#123;18&#125;\cdotcm^&#123;-3&#125;]&#x27;</span>);</span><br><span class="line">ylabel(<span class="string">&#x27;S [\muV\cdotK^&#123;-1&#125;]&#x27;</span>);</span><br></pre></td></tr></table></figure><h3 id="计算结果">1.3 计算结果</h3><div class="hide-block"><button type="button" class="hide-button" style>查看计算结果</button><div class="hide-content"><p><imgsrc="https://blogresource.sqwdream.cloud/post/单抛物带模型/img/单抛物带模型.jpg" /></p></div></div>
-              </div>
-            </details>
-<h2 id="单抛物带模型计算">单抛物带模型计算</h2>
-<details class="folding-tag" cyan><summary> 点击查看 </summary>
-              <div class='content'>
-              <h3 id="计算公式1-2-3">1.1 计算公式<a href="#fn1" class="footnote-ref"id="fnref1" role="doc-noteref"><sup>1</sup></a> <a href="#fn2"class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> <ahref="#fn3" class="footnote-ref" id="fnref3"role="doc-noteref"><sup>3</sup></a></h3><ul><li><strong>塞贝克系数与简约费米能级的关系:</strong></li></ul><p><span class="math display">\[\begin{split} S(\eta)&amp;=\frac{k_\mathrm{B}}{e}\left[\frac{(r+2)F_{r+1}(\eta)}{(r+1)F_{r}(\eta)}-\eta \right] \\F_i(\eta)&amp;=\int_0^\infty \frac{x^i}{1+e^{(x-\eta)}} \mathrm{d}x\end{split} \tag{1}\]</span></p><ul><li><strong>霍尔载流子浓度:</strong></li></ul><p><span class="math display">\[\begin{split}p_\mathrm{H}&amp; =4\pi\left(\frac{2m_{\mathrm{d}}^*k_\mathrm{B}T}{h^2}\right)^{3/2}\frac{F_{1/2}(\eta)}{r_{H}} \\r_\mathrm{H}&amp; =\frac{3}{4}\frac{F_{1/2}(\eta)F_{-1/2}(\eta)}{F_0^2(\eta)}\end{split}\tag{2}\]</span></p><ul><li><strong>霍尔迁移率(非简并条件):</strong></li></ul><p><span class="math display">\[\mu_\mathrm{H}=\frac{1}{2}\frac{F_{-1/2}(\eta)}{F_0(\eta)}\mu_{0}\]</span></p><ul><li><p><strong><spanclass="math inline">\(\mu_{0}\)</span>为漂移迁移率</strong><strong>由此可以得到电导率</strong></p></li><li><p><strong>电导率</strong> <span class="math display">\[\sigma =pe\mu=\frac{16\sqrt{2}\piek_\mathrm{B}^{3/2}TF_0(\eta)}{3h^3}\mu_{0}{m_\mathrm{d}^{*}}^{3/2}\tag{3}\]</span></p></li><li><p><span class="math inline">\(\mu_\mathrm{w} =\mu_{0}{m_\mathrm{d}^{*}}^{3/2}\)</span><strong>为权重迁移率</strong></p></li><li><p><strong>洛伦兹常数(参考其它文献):</strong></p></li></ul><p><span class="math display">\[L=\left(\frac{k_\mathrm{B}}{e}\right)^2\left\{\frac{(r+3)F_{r+2}(\eta)}{(r+1)F_{r}(\eta)}-\left[\frac{(r+2)F_{r+1}(\eta)}{(r+1)F_{r+1}(\eta)}\right]^2 \right\}\tag{4}\]</span></p><h3 id="计算代码">1.2 计算代码</h3><figure class="highlight matlab"><table><tr><td class="code"><pre><span class="line"><span class="comment">%基于单抛物带模型拟合S-n的关系得到态密度有效质量</span></span><br><span class="line">clc,clear</span><br><span class="line">Kb = <span class="number">1.38066</span>*<span class="number">10</span>^<span class="number">-23</span>;  <span class="comment">%J/K 1J=1V*A*s</span></span><br><span class="line">e = <span class="number">1.60219</span>*<span class="number">10</span>^<span class="number">-19</span>; <span class="comment">%1C=1A*s</span></span><br><span class="line">K = Kb/e;</span><br><span class="line">lambda = <span class="number">0</span>;<span class="comment">%只考虑声学声子散射lambad = 0，离化杂质散射为2</span></span><br><span class="line">h = <span class="number">6.62608</span>*<span class="number">10</span>^<span class="number">-34</span>; <span class="comment">%J*s、</span></span><br><span class="line">me = <span class="number">9.10953</span>*<span class="number">10</span>^<span class="number">-31</span>; <span class="comment">%Kg</span></span><br><span class="line">T = <span class="number">323</span>; <span class="comment">%K</span></span><br><span class="line">Sdata = [<span class="number">76.76</span>, <span class="number">101.92</span>, <span class="number">108.97</span>, <span class="number">174.48</span>]*<span class="number">10</span>^(<span class="number">-6</span>);  <span class="comment">%将uV/K转换为V/K</span></span><br><span class="line">pdata = [<span class="number">1.97</span>, <span class="number">1.04</span>, <span class="number">0.46</span>, <span class="number">0.63</span>]*<span class="number">10</span>^<span class="number">20</span>*<span class="number">10</span>^<span class="number">6</span>;   <span class="comment">%cm^-3, 转换为m^-3; 10^26m^(-3)=10^20 cm^(-3) 将m^(-3)换成cm^(-3)，并且以10^20cm^(-3)为单位开始</span></span><br><span class="line"><span class="comment">% Sdata = [76.76]*10^(-6);  %将uV/K转换为V/K</span></span><br><span class="line"><span class="comment">% pdata = [1.97]*10^20*10^6;   %cm^-3, 转换为m^-3</span></span><br><span class="line">Fn = @(no,yita)quadgk(@(x)x.^no./(<span class="number">1</span>+<span class="built_in">exp</span>(x-yita)),<span class="number">0</span>,<span class="built_in">inf</span>);</span><br><span class="line">rH = @(yita)((<span class="number">3</span>*Fn(<span class="number">1</span>/<span class="number">2</span>,yita)*Fn(<span class="number">-1</span>/<span class="number">2</span>,yita))/(<span class="number">4</span>*Fn(<span class="number">0</span>,yita)^<span class="number">2</span>));</span><br><span class="line"><span class="comment">%初始化</span></span><br><span class="line">yita = <span class="built_in">zeros</span>(<span class="number">1</span>,<span class="built_in">length</span>(Sdata)); </span><br><span class="line">Fndata = <span class="built_in">zeros</span>(<span class="number">1</span>,<span class="built_in">length</span>(Sdata));</span><br><span class="line">rHdata = <span class="built_in">zeros</span>(<span class="number">1</span>,<span class="built_in">length</span>(Sdata));</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> <span class="built_in">i</span> = <span class="number">1</span>:<span class="built_in">length</span>(Sdata)</span><br><span class="line">        func1 = @(yita)K*((lambda+<span class="number">2</span>)*Fn(lambda+<span class="number">1</span>,yita)/((lambda+<span class="number">1</span>)*Fn(lambda,yita))-yita)-Sdata(<span class="built_in">i</span>); <span class="comment">%V/K</span></span><br><span class="line">        yita(<span class="built_in">i</span>) = fzero(func1,<span class="number">0</span>);</span><br><span class="line">         Fndata(<span class="built_in">i</span>) =  Fn(<span class="number">1</span>/<span class="number">2</span>,yita(<span class="built_in">i</span>));</span><br><span class="line">         rHdata(<span class="built_in">i</span>) =  rH(yita(<span class="built_in">i</span>));</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line">Fr = Fndata./rHdata;</span><br><span class="line">func2 = @(em,Fr)(<span class="number">4</span>*<span class="built_in">pi</span>*(<span class="number">2</span>*Kb*T*em*me)^(<span class="number">3</span>/<span class="number">2</span>)/h^<span class="number">3.</span>*Fr);   <span class="comment">%func2 = p </span></span><br><span class="line"><span class="comment">% func2 = @(em, yita)(4*pi*(2*Kb*T*em*me)^(3/2)/h^3*Fn(1/2,yita)/rH(yita));   %func2 = p </span></span><br><span class="line">em0 = <span class="number">12</span>; <span class="comment">%态密度有效质量的初值  和初值有很大关系</span></span><br><span class="line">[emf, resnorm] = lsqcurvefit(func2, em0, yita, pdata); <span class="comment">%emf:拟合的得到的态密度有效质量，resnorm残差平方和</span></span><br><span class="line">display(emf);  <span class="comment">%显示拟合得到的值</span></span><br><span class="line"></span><br><span class="line"><span class="comment">%拟合得到态密度有效质量</span></span><br><span class="line">p = (<span class="number">0.2</span>:<span class="number">0.01</span>:<span class="number">2</span>)*<span class="number">10</span>^<span class="number">26</span>; <span class="comment">%10^26m^(-3)=10^20 cm^(-3) 将m^(-3)换成cm^(-3)，并且以10^20cm^(-3)为单位开始</span></span><br><span class="line">S = <span class="built_in">zeros</span>(<span class="number">1</span>,<span class="built_in">length</span>(p));</span><br><span class="line"> <span class="keyword">for</span> <span class="built_in">i</span> = <span class="number">1</span>:<span class="built_in">length</span>(p)</span><br><span class="line">        f1 = @(yita)(<span class="number">4</span>*<span class="built_in">pi</span>*(<span class="number">2</span>*Kb*T*emf*me)^(<span class="number">3</span>/<span class="number">2</span>)/h^<span class="number">3</span>*Fn(<span class="number">1</span>/<span class="number">2</span>,yita)/rH(yita)-p(<span class="built_in">i</span>)); </span><br><span class="line">        yita(<span class="built_in">i</span>) = fzero(f1,<span class="number">0</span>);</span><br><span class="line">        S(<span class="built_in">i</span>) = K*((lambda+<span class="number">2</span>)*Fn(lambda+<span class="number">1</span>,yita(<span class="built_in">i</span>))/((lambda+<span class="number">1</span>)*Fn(lambda,yita(<span class="built_in">i</span>)))-yita(<span class="built_in">i</span>)); <span class="comment">%V/K</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"><span class="built_in">plot</span>(p*<span class="number">10</span>^(<span class="number">-24</span>),S*<span class="number">10</span>^<span class="number">6</span>,<span class="string">&#x27;-&#x27;</span>,<span class="string">&#x27;LineWidth&#x27;</span>,<span class="number">1</span>)  <span class="comment">%将V/K换成uV/K</span></span><br><span class="line"><span class="built_in">hold</span> on</span><br><span class="line"><span class="built_in">plot</span>(pdata*<span class="number">10</span>^(<span class="number">-24</span>), Sdata*<span class="number">10</span>^(<span class="number">6</span>), <span class="string">&#x27;ro&#x27;</span>, <span class="string">&#x27;MarkerFaceColor&#x27;</span>, <span class="string">&#x27;r&#x27;</span>);  <span class="comment">%数据点为实心圆</span></span><br><span class="line">xlabel(<span class="string">&#x27;p [10^&#123;18&#125;\cdotcm^&#123;-3&#125;]&#x27;</span>);</span><br><span class="line">ylabel(<span class="string">&#x27;S [\muV\cdotK^&#123;-1&#125;]&#x27;</span>);</span><br></pre></td></tr></table></figure><h3 id="计算结果">1.3 计算结果</h3><div class="hide-block"><button type="button" class="hide-button" style>查看计算结果</button><div class="hide-content"><p><imgsrc="https://blogresource.sqwdream.cloud/post/单抛物带模型/img/单抛物带模型.jpg" /></p></div></div><h3 id="相关参考">1.4 相关参考</h3><section id="footnotes" class="footnotes footnotes-end-of-document"role="doc-endnotes"><hr /><ol><li id="fn1"><p><ahref="https://doi.org/10.1002/adma.201903480"><strong>Zhao, K., et al.(2019). "Are Cu<sub>2</sub>Te-Based Compounds Excellent ThermoelectricMaterials?" Advanced Materials 31(49): 1903480.</strong></a><ahref="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li><li id="fn2"><p><ahref="https://doi.org/10.1016/j.nanoen.2017.10.042"><strong>Zhao, K., etal. (2017). "High thermoelectric performance and low thermalconductivity inCu<sub>2-y</sub>S<sub>1/3</sub>Se<sub>1/3</sub>Te<sub>1/3</sub>liquid-like materials with nanoscale mosaic structures." Nano Energy 42:43-50.</strong></a><a href="#fnref2" class="footnote-back"role="doc-backlink">↩︎</a></p></li><li id="fn3"><p><strong><font color = red>特别致谢:</font></strong><ahref="http://muchong.com/t-12417284-1"><strong><font color = red>穿越千年</font></strong></a><ahref="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li></ol></section>
-              </div>
-            </details>
-]]></content>
-      <categories>
-        <category>热电</category>
-      </categories>
-      <tags>
-        <tag>热电</tag>
-        <tag>单抛物带模型</tag>
-        <tag>SPB</tag>
-        <tag>Pisarenko plot</tag>
-        <tag>Matlab code</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>博客搭建之Twikoo</title>
-    <url>//6fc19c10.html</url>
-    <content><![CDATA[<h1 id="博客搭建之twikoo">博客搭建之Twikoo</h1>
-<div class="note info modern"><p>鉴于每个人的博客根目录名称都不太一样，本贴<strong>博客根目录</strong>一律以<code>[BlogRoot]</code>指代。
-站点配置文件<code>_config.yml</code>，路径为<code>[BlogRoot]\_config.yml</code>。
-主题配置文件<code>_config.yml</code>，路径为<code>[BlogRoot]\themes\butterfly\_config.yml</code>。</p>
-</div>
-<h2 id="twikoo的评论设置">1.Twikoo的评论设置</h2>
-<h3 id="支持图片评论">1.1 支持图片评论</h3>
-<p>Twikoo评论区要支持图片评论功能需要配置图床，这里以比较容易设置的<a
-href="https://smms.app/">smms</a>图床为例，首先要进行注册，注册成功之后，会给你5GB的空间用来存储图片，一般来说够用了。将获取的smms图床的token复制到Twikoo插件设置里的<code>IMAGE_CDN_ToKEN</code>，并且将<code>IMAGE_CDN</code>填写为<code>smms</code>，其余选项保持默认即可，配置结束之后记得拉到最下方点击保存，刷新一下即可生效。下面图片展示详细的步骤：</p>
-<ul>
-<li>smms注册并获取token</li>
-</ul>
-<p><img
-src="https://blogresource.sqwdream.cloud/post/博客搭建之Twikoo/img/body/smms.jpg" /></p>
-<ul>
-<li>网站的Twikoo评论设置</li>
-</ul>
-<p><img
-src="https://blogresource.sqwdream.cloud/post/博客搭建之Twikoo/img/body/评论图床设置.jpg" /></p>
-<h3 id="支持latex公式评论">1.2 支持Latex公式评论</h3>
-<p>支持公式评论可以参考Twikoo官网的<a
-href="https://twikoo.js.org/faq.html#%E5%A6%82%E4%BD%95%E5%90%AF%E7%94%A8-katex-%E6%94%AF%E6%8C%81">如何开启Katex支持？</a>，就是在主题配置文件<code>_config.yml</code>中引入如下代码：</p>
-<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">innject:</span></span><br><span class="line">  <span class="attr">head:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">&lt;link</span> <span class="string">rel=&quot;stylesheet&quot;</span> <span class="string">href=&quot;https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css&quot;</span> <span class="string">integrity=&quot;sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X&quot;</span> <span class="string">crossorigin=&quot;anonymous&quot;&gt;</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">&lt;script</span> <span class="string">defer</span> <span class="string">src=&quot;https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js&quot;</span> <span class="string">integrity=&quot;sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4&quot;</span> <span class="string">crossorigin=&quot;anonymous&quot;&gt;&lt;/script&gt;</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">&lt;script</span> <span class="string">defer</span> <span class="string">src=&quot;https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js&quot;</span> <span class="string">integrity=&quot;sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa&quot;</span> <span class="string">crossorigin=&quot;anonymous&quot;&gt;&lt;/script&gt;</span></span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>博客搭建</category>
-      </categories>
-      <tags>
-        <tag>博客搭建</tag>
-        <tag>Twikoo</tag>
-        <tag>图床</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>博客搭建之Markdown基本语法</title>
     <url>//b289d8f9.html</url>
     <content><![CDATA[<h1 id="博客搭建之markdown基本语法">博客搭建之Markdown基本语法</h1>
-<div class="note info modern"><p>arkdown<code>的高亮语法在</code>hexo`博客中无法渲染</p>
+<div class="note info modern"><p>Markdown的高亮语法在<code>hexo</code>博客中无法渲染</p>
 <p>搬运自：<a
 href="https://www.fomal.cc/posts/2013454d.html">Markdown语法与外挂标签写法汇总</a></p>
 </div>
@@ -173,100 +107,120 @@ S=\frac{8\pi^2{k_\mathrm{B}}^2T}{3eh^2}m_{\mathrm{d}}^{*}\left(\frac{\pi}{3p}\ri
         <category>博客搭建</category>
       </categories>
       <tags>
-        <tag>博客搭建</tag>
         <tag>Markdown</tag>
+        <tag>博客搭建</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>单抛物带(Single Parabolic Band,SPB)模型</title>
+    <url>//3ca822df.html</url>
+    <content><![CDATA[<h1
+id="单抛物带single-parabolic-bandspb模型相关计算">单抛物带(<strong>Single
+Parabolic Band，SPB</strong>)模型相关计算</h1>
+<h2 id="单抛物带模型计算简并条件下">单抛物带模型计算(简并条件下)</h2>
+<details class="folding-tag" cyan><summary> 点击查看 </summary>
+              <div class='content'>
+              <h3 id="计算公式">1.1 计算公式</h3><p><span class="math display">\[S=\frac{8\pi^2{k_\mathrm{B}}^2T}{3eh^2}m_{\mathrm{d}}^{*}\left(\frac{\pi}{3p}\right)^{2/3}\tag{1}\]</span></p><ul><li><spanclass="math inline">\(m_{\mathrm{d}}^{*}=N_{\mathrm{v}}^{2/3}m_{\mathrm{b}}^*\)</span><strong>:态密度有效质量</strong></li></ul><h3 id="计算代码">1.2 计算代码</h3><figure class="highlight matlab"><table><tr><td class="code"><pre><span class="line"><span class="comment">%基于单抛物带模型拟合S-n的关系得到态密度有效质量----简并条件下</span></span><br><span class="line">clc,clear</span><br><span class="line">Kb = <span class="number">1.38066</span>*<span class="number">10</span>^<span class="number">-23</span>;  <span class="comment">%J/K 1J=1V*A*s 1W = 1J/s</span></span><br><span class="line">h = <span class="number">6.62608</span>*<span class="number">10</span>^<span class="number">-34</span>; <span class="comment">%J*s</span></span><br><span class="line">hr = h/(<span class="number">2</span>*<span class="built_in">pi</span>); <span class="comment">%简约普朗克常数</span></span><br><span class="line">e = <span class="number">1.60219</span>*<span class="number">10</span>^<span class="number">-19</span>;  <span class="comment">%1C=1A*s</span></span><br><span class="line">me = <span class="number">9.10953</span>*<span class="number">10</span>^<span class="number">-31</span>;  <span class="comment">%Kg</span></span><br><span class="line">K = Kb/e;</span><br><span class="line">T = <span class="number">323</span>;  <span class="comment">%K 温度</span></span><br><span class="line"></span><br><span class="line">Sdata = [<span class="number">76.76</span>, <span class="number">101.92</span>, <span class="number">108.97</span>, <span class="number">174.48</span>]*<span class="number">10</span>^(<span class="number">-6</span>);  <span class="comment">%将uV/K转换为V/K</span></span><br><span class="line">ndata = [<span class="number">1.97</span>, <span class="number">1.04</span>, <span class="number">0.46</span>, <span class="number">0.63</span>]*<span class="number">10</span>^<span class="number">20</span>*<span class="number">10</span>^<span class="number">6</span>;   <span class="comment">%cm^-3, 转换为m^-3</span></span><br><span class="line"><span class="comment">% Sdata = [76.76]*10^(-6);  %将uV/K转换为V/K</span></span><br><span class="line"><span class="comment">% ndata = [1.97]*10^20*10^6;   %cm^-3, 转换为m^-3</span></span><br><span class="line">em0 = <span class="number">123</span>; <span class="comment">%态密度有效质量的初值  和初值有很大关系</span></span><br><span class="line">S = @(em,ndata)(<span class="number">8</span>*<span class="built_in">pi</span>^<span class="number">2</span>*Kb^<span class="number">2</span>)/(<span class="number">3</span>*e*h^<span class="number">2</span>)*em*me*T*(<span class="built_in">pi</span>./(<span class="number">3</span>*ndata)).^(<span class="number">2</span>/<span class="number">3</span>);</span><br><span class="line">[emf, resnorm] = lsqcurvefit(S, em0, ndata, Sdata); <span class="comment">%emf:拟合的得到的态密度有效质量，resnorm残差平方和</span></span><br><span class="line">display(emf);  <span class="comment">%显示拟合得到的值</span></span><br><span class="line"></span><br><span class="line">ndatac = (<span class="number">0.2</span>:<span class="number">0.001</span>:<span class="number">2</span>)*<span class="number">10</span>^<span class="number">26</span>;</span><br><span class="line">Sdatac = S(emf, ndatac);</span><br><span class="line"><span class="built_in">plot</span>(ndatac*<span class="number">10</span>^(<span class="number">-24</span>), Sdatac*<span class="number">10</span>^(<span class="number">6</span>), <span class="string">&#x27;-&#x27;</span>);</span><br><span class="line"><span class="built_in">hold</span> on</span><br><span class="line"><span class="built_in">plot</span>(ndata*<span class="number">10</span>^(<span class="number">-24</span>), Sdata*<span class="number">10</span>^(<span class="number">6</span>), <span class="string">&#x27;ro&#x27;</span>, <span class="string">&#x27;MarkerFaceColor&#x27;</span>, <span class="string">&#x27;r&#x27;</span>);  <span class="comment">%数据点为实心圆</span></span><br><span class="line">xlabel(<span class="string">&#x27;p [10^&#123;18&#125;\cdotcm^&#123;-3&#125;]&#x27;</span>);</span><br><span class="line">ylabel(<span class="string">&#x27;S [\muV\cdotK^&#123;-1&#125;]&#x27;</span>);</span><br></pre></td></tr></table></figure><h3 id="计算结果">1.3 计算结果</h3><div class="hide-block"><button type="button" class="hide-button" style>查看计算结果</button><div class="hide-content"><p><imgsrc="https://blogresource.sqwdream.cloud/post/单抛物带模型/img/单抛物带模型.jpg" /></p></div></div>
+              </div>
+            </details>
+<h2 id="单抛物带模型计算">单抛物带模型计算</h2>
+<details class="folding-tag" cyan><summary> 点击查看 </summary>
+              <div class='content'>
+              <h3 id="计算公式1-2-3">1.1 计算公式<a href="#fn1" class="footnote-ref"id="fnref1" role="doc-noteref"><sup>1</sup></a> <a href="#fn2"class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> <ahref="#fn3" class="footnote-ref" id="fnref3"role="doc-noteref"><sup>3</sup></a></h3><ul><li><strong>塞贝克系数与简约费米能级的关系:</strong></li></ul><p><span class="math display">\[\begin{split} S(\eta)&amp;=\frac{k_\mathrm{B}}{e}\left[\frac{(r+2)F_{r+1}(\eta)}{(r+1)F_{r}(\eta)}-\eta \right] \\F_i(\eta)&amp;=\int_0^\infty \frac{x^i}{1+e^{(x-\eta)}} \mathrm{d}x\end{split} \tag{1}\]</span></p><ul><li><strong>霍尔载流子浓度:</strong></li></ul><p><span class="math display">\[\begin{split}p_\mathrm{H}&amp; =4\pi\left(\frac{2m_{\mathrm{d}}^*k_\mathrm{B}T}{h^2}\right)^{3/2}\frac{F_{1/2}(\eta)}{r_{H}} \\r_\mathrm{H}&amp; =\frac{3}{4}\frac{F_{1/2}(\eta)F_{-1/2}(\eta)}{F_0^2(\eta)}\end{split}\tag{2}\]</span></p><ul><li><strong>霍尔迁移率(非简并条件):</strong></li></ul><p><span class="math display">\[\mu_\mathrm{H}=\frac{1}{2}\frac{F_{-1/2}(\eta)}{F_0(\eta)}\mu_{0}\]</span></p><ul><li><p><strong><spanclass="math inline">\(\mu_{0}\)</span>为漂移迁移率</strong><strong>由此可以得到电导率</strong></p></li><li><p><strong>电导率</strong> <span class="math display">\[\sigma =pe\mu=\frac{16\sqrt{2}\piek_\mathrm{B}^{3/2}TF_0(\eta)}{3h^3}\mu_{0}{m_\mathrm{d}^{*}}^{3/2}\tag{3}\]</span></p></li><li><p><span class="math inline">\(\mu_\mathrm{w} =\mu_{0}{m_\mathrm{d}^{*}}^{3/2}\)</span><strong>为权重迁移率</strong></p></li><li><p><strong>洛伦兹常数(参考其它文献):</strong></p></li></ul><p><span class="math display">\[L=\left(\frac{k_\mathrm{B}}{e}\right)^2\left\{\frac{(r+3)F_{r+2}(\eta)}{(r+1)F_{r}(\eta)}-\left[\frac{(r+2)F_{r+1}(\eta)}{(r+1)F_{r+1}(\eta)}\right]^2 \right\}\tag{4}\]</span></p><h3 id="计算代码">1.2 计算代码</h3><figure class="highlight matlab"><table><tr><td class="code"><pre><span class="line"><span class="comment">%基于单抛物带模型拟合S-n的关系得到态密度有效质量</span></span><br><span class="line">clc,clear</span><br><span class="line">Kb = <span class="number">1.38066</span>*<span class="number">10</span>^<span class="number">-23</span>;  <span class="comment">%J/K 1J=1V*A*s</span></span><br><span class="line">e = <span class="number">1.60219</span>*<span class="number">10</span>^<span class="number">-19</span>; <span class="comment">%1C=1A*s</span></span><br><span class="line">K = Kb/e;</span><br><span class="line">lambda = <span class="number">0</span>;<span class="comment">%只考虑声学声子散射lambad = 0，离化杂质散射为2</span></span><br><span class="line">h = <span class="number">6.62608</span>*<span class="number">10</span>^<span class="number">-34</span>; <span class="comment">%J*s、</span></span><br><span class="line">me = <span class="number">9.10953</span>*<span class="number">10</span>^<span class="number">-31</span>; <span class="comment">%Kg</span></span><br><span class="line">T = <span class="number">323</span>; <span class="comment">%K</span></span><br><span class="line">Sdata = [<span class="number">76.76</span>, <span class="number">101.92</span>, <span class="number">108.97</span>, <span class="number">174.48</span>]*<span class="number">10</span>^(<span class="number">-6</span>);  <span class="comment">%将uV/K转换为V/K</span></span><br><span class="line">pdata = [<span class="number">1.97</span>, <span class="number">1.04</span>, <span class="number">0.46</span>, <span class="number">0.63</span>]*<span class="number">10</span>^<span class="number">20</span>*<span class="number">10</span>^<span class="number">6</span>;   <span class="comment">%cm^-3, 转换为m^-3; 10^26m^(-3)=10^20 cm^(-3) 将m^(-3)换成cm^(-3)，并且以10^20cm^(-3)为单位开始</span></span><br><span class="line"><span class="comment">% Sdata = [76.76]*10^(-6);  %将uV/K转换为V/K</span></span><br><span class="line"><span class="comment">% pdata = [1.97]*10^20*10^6;   %cm^-3, 转换为m^-3</span></span><br><span class="line">Fn = @(no,yita)quadgk(@(x)x.^no./(<span class="number">1</span>+<span class="built_in">exp</span>(x-yita)),<span class="number">0</span>,<span class="built_in">inf</span>);</span><br><span class="line">rH = @(yita)((<span class="number">3</span>*Fn(<span class="number">1</span>/<span class="number">2</span>,yita)*Fn(<span class="number">-1</span>/<span class="number">2</span>,yita))/(<span class="number">4</span>*Fn(<span class="number">0</span>,yita)^<span class="number">2</span>));</span><br><span class="line"><span class="comment">%初始化</span></span><br><span class="line">yita = <span class="built_in">zeros</span>(<span class="number">1</span>,<span class="built_in">length</span>(Sdata)); </span><br><span class="line">Fndata = <span class="built_in">zeros</span>(<span class="number">1</span>,<span class="built_in">length</span>(Sdata));</span><br><span class="line">rHdata = <span class="built_in">zeros</span>(<span class="number">1</span>,<span class="built_in">length</span>(Sdata));</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> <span class="built_in">i</span> = <span class="number">1</span>:<span class="built_in">length</span>(Sdata)</span><br><span class="line">        func1 = @(yita)K*((lambda+<span class="number">2</span>)*Fn(lambda+<span class="number">1</span>,yita)/((lambda+<span class="number">1</span>)*Fn(lambda,yita))-yita)-Sdata(<span class="built_in">i</span>); <span class="comment">%V/K</span></span><br><span class="line">        yita(<span class="built_in">i</span>) = fzero(func1,<span class="number">0</span>);</span><br><span class="line">         Fndata(<span class="built_in">i</span>) =  Fn(<span class="number">1</span>/<span class="number">2</span>,yita(<span class="built_in">i</span>));</span><br><span class="line">         rHdata(<span class="built_in">i</span>) =  rH(yita(<span class="built_in">i</span>));</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line">Fr = Fndata./rHdata;</span><br><span class="line">func2 = @(em,Fr)(<span class="number">4</span>*<span class="built_in">pi</span>*(<span class="number">2</span>*Kb*T*em*me)^(<span class="number">3</span>/<span class="number">2</span>)/h^<span class="number">3.</span>*Fr);   <span class="comment">%func2 = p </span></span><br><span class="line"><span class="comment">% func2 = @(em, yita)(4*pi*(2*Kb*T*em*me)^(3/2)/h^3*Fn(1/2,yita)/rH(yita));   %func2 = p </span></span><br><span class="line">em0 = <span class="number">12</span>; <span class="comment">%态密度有效质量的初值  和初值有很大关系</span></span><br><span class="line">[emf, resnorm] = lsqcurvefit(func2, em0, yita, pdata); <span class="comment">%emf:拟合的得到的态密度有效质量，resnorm残差平方和</span></span><br><span class="line">display(emf);  <span class="comment">%显示拟合得到的值</span></span><br><span class="line"></span><br><span class="line"><span class="comment">%拟合得到态密度有效质量</span></span><br><span class="line">p = (<span class="number">0.2</span>:<span class="number">0.01</span>:<span class="number">2</span>)*<span class="number">10</span>^<span class="number">26</span>; <span class="comment">%10^26m^(-3)=10^20 cm^(-3) 将m^(-3)换成cm^(-3)，并且以10^20cm^(-3)为单位开始</span></span><br><span class="line">S = <span class="built_in">zeros</span>(<span class="number">1</span>,<span class="built_in">length</span>(p));</span><br><span class="line"> <span class="keyword">for</span> <span class="built_in">i</span> = <span class="number">1</span>:<span class="built_in">length</span>(p)</span><br><span class="line">        f1 = @(yita)(<span class="number">4</span>*<span class="built_in">pi</span>*(<span class="number">2</span>*Kb*T*emf*me)^(<span class="number">3</span>/<span class="number">2</span>)/h^<span class="number">3</span>*Fn(<span class="number">1</span>/<span class="number">2</span>,yita)/rH(yita)-p(<span class="built_in">i</span>)); </span><br><span class="line">        yita(<span class="built_in">i</span>) = fzero(f1,<span class="number">0</span>);</span><br><span class="line">        S(<span class="built_in">i</span>) = K*((lambda+<span class="number">2</span>)*Fn(lambda+<span class="number">1</span>,yita(<span class="built_in">i</span>))/((lambda+<span class="number">1</span>)*Fn(lambda,yita(<span class="built_in">i</span>)))-yita(<span class="built_in">i</span>)); <span class="comment">%V/K</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"><span class="built_in">plot</span>(p*<span class="number">10</span>^(<span class="number">-24</span>),S*<span class="number">10</span>^<span class="number">6</span>,<span class="string">&#x27;-&#x27;</span>,<span class="string">&#x27;LineWidth&#x27;</span>,<span class="number">1</span>)  <span class="comment">%将V/K换成uV/K</span></span><br><span class="line"><span class="built_in">hold</span> on</span><br><span class="line"><span class="built_in">plot</span>(pdata*<span class="number">10</span>^(<span class="number">-24</span>), Sdata*<span class="number">10</span>^(<span class="number">6</span>), <span class="string">&#x27;ro&#x27;</span>, <span class="string">&#x27;MarkerFaceColor&#x27;</span>, <span class="string">&#x27;r&#x27;</span>);  <span class="comment">%数据点为实心圆</span></span><br><span class="line">xlabel(<span class="string">&#x27;p [10^&#123;18&#125;\cdotcm^&#123;-3&#125;]&#x27;</span>);</span><br><span class="line">ylabel(<span class="string">&#x27;S [\muV\cdotK^&#123;-1&#125;]&#x27;</span>);</span><br></pre></td></tr></table></figure><h3 id="计算结果">1.3 计算结果</h3><div class="hide-block"><button type="button" class="hide-button" style>查看计算结果</button><div class="hide-content"><p><imgsrc="https://blogresource.sqwdream.cloud/post/单抛物带模型/img/单抛物带模型.jpg" /></p></div></div><h3 id="相关参考">1.4 相关参考</h3><section id="footnotes" class="footnotes footnotes-end-of-document"role="doc-endnotes"><hr /><ol><li id="fn1"><p><ahref="https://doi.org/10.1002/adma.201903480"><strong>Zhao, K., et al.(2019). "Are Cu<sub>2</sub>Te-Based Compounds Excellent ThermoelectricMaterials?" Advanced Materials 31(49): 1903480.</strong></a><ahref="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li><li id="fn2"><p><ahref="https://doi.org/10.1016/j.nanoen.2017.10.042"><strong>Zhao, K., etal. (2017). "High thermoelectric performance and low thermalconductivity inCu<sub>2-y</sub>S<sub>1/3</sub>Se<sub>1/3</sub>Te<sub>1/3</sub>liquid-like materials with nanoscale mosaic structures." Nano Energy 42:43-50.</strong></a><a href="#fnref2" class="footnote-back"role="doc-backlink">↩︎</a></p></li><li id="fn3"><p><strong><font color = red>特别致谢:</font></strong><ahref="http://muchong.com/t-12417284-1"><strong><font color = red>穿越千年</font></strong></a><ahref="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li></ol></section>
+              </div>
+            </details>
+]]></content>
+      <categories>
+        <category>热电</category>
+      </categories>
+      <tags>
+        <tag>热电</tag>
+        <tag>单抛物带模型</tag>
+        <tag>SPB</tag>
+        <tag>Pisarenko plot</tag>
+        <tag>Matlab code</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>博客搭建之Twikoo</title>
+    <url>//6fc19c10.html</url>
+    <content><![CDATA[<h1 id="博客搭建之twikoo">博客搭建之Twikoo</h1>
+<div class="note info modern"><p>鉴于每个人的博客根目录名称都不太一样，本贴<strong>博客根目录</strong>一律以<code>[BlogRoot]</code>指代。
+站点配置文件<code>_config.yml</code>，路径为<code>[BlogRoot]\_config.yml</code>。
+主题配置文件<code>_config.yml</code>，路径为<code>[BlogRoot]\themes\butterfly\_config.yml</code>。</p>
+</div>
+<h2 id="twikoo的评论设置">1.Twikoo的评论设置</h2>
+<h3 id="支持图片评论">1.1 支持图片评论</h3>
+<p>Twikoo评论区要支持图片评论功能需要配置图床，这里以比较容易设置的<a
+href="https://smms.app/">smms</a>图床为例，首先要进行注册，注册成功之后，会给你5GB的空间用来存储图片，一般来说够用了。将获取的smms图床的token复制到Twikoo插件设置里的<code>IMAGE_CDN_ToKEN</code>，并且将<code>IMAGE_CDN</code>填写为<code>smms</code>，其余选项保持默认即可，配置结束之后记得拉到最下方点击保存，刷新一下即可生效。下面图片展示详细的步骤：</p>
+<ul>
+<li>smms注册并获取token</li>
+</ul>
+<p><img
+src="https://blogresource.sqwdream.cloud/post/博客搭建之Twikoo/img/body/smms.jpg" /></p>
+<ul>
+<li>网站的Twikoo评论设置</li>
+</ul>
+<p><img
+src="https://blogresource.sqwdream.cloud/post/博客搭建之Twikoo/img/body/评论图床设置.jpg" /></p>
+<h3 id="支持latex公式评论">1.2 支持Latex公式评论</h3>
+<p>支持公式评论可以参考Twikoo官网的<a
+href="https://twikoo.js.org/faq.html#%E5%A6%82%E4%BD%95%E5%90%AF%E7%94%A8-katex-%E6%94%AF%E6%8C%81">如何开启Katex支持？</a>，就是在主题配置文件<code>_config.yml</code>中引入如下代码：</p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">innject:</span></span><br><span class="line">  <span class="attr">head:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">&lt;link</span> <span class="string">rel=&quot;stylesheet&quot;</span> <span class="string">href=&quot;https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css&quot;</span> <span class="string">integrity=&quot;sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X&quot;</span> <span class="string">crossorigin=&quot;anonymous&quot;&gt;</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">&lt;script</span> <span class="string">defer</span> <span class="string">src=&quot;https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js&quot;</span> <span class="string">integrity=&quot;sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4&quot;</span> <span class="string">crossorigin=&quot;anonymous&quot;&gt;&lt;/script&gt;</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">&lt;script</span> <span class="string">defer</span> <span class="string">src=&quot;https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js&quot;</span> <span class="string">integrity=&quot;sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa&quot;</span> <span class="string">crossorigin=&quot;anonymous&quot;&gt;&lt;/script&gt;</span></span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>博客搭建</category>
+      </categories>
+      <tags>
+        <tag>博客搭建</tag>
+        <tag>Twikoo</tag>
+        <tag>图床</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>博客搭建之文章链接</title>
+    <url>//cc96dfee.html</url>
+    <content><![CDATA[<h1 id="博客搭建之文章链接">博客搭建之文章链接</h1>
+<div class="note info modern"><p>鉴于每个人的博客根目录名称都不太一样，本贴<strong>博客根目录</strong>一律以<code>[BlogRoot]</code>指代。
+站点配置文件<code>_config.yml</code>，路径为<code>[BlogRoot]\_config.yml</code>。
+主题配置文件<code>_config.yml</code>，路径为<code>[BlogRoot]\themes\butterfly\_config.yml</code>。</p>
+</div>
+<h2
+id="缩短文末copyright中文章链接的长度">缩短文末Copyright中文章链接的长度</h2>
+<h3
+id="在博客根目录下blogroot安装插件">1.在博客根目录下<code>[BlogRoot]</code>安装插件：</h3>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm install hexo-abbrlink --save</span><br></pre></td></tr></table></figure>
+<h3
+id="修改站点配置文件blogroot_config.yml添加以下内容">2.修改站点配置文件<code>[BlogRoot]\_config.yml</code>，添加以下内容：</h3>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># permalink: :year/:month/:day/:title/</span></span><br><span class="line"><span class="comment"># permalink: p/:abbrlink.html  # p 是自定义的前缀</span></span><br><span class="line"><span class="attr">permalink:</span> <span class="string">/:abbrlink.html</span>  <span class="comment"># p 是自定义的前缀</span></span><br><span class="line"><span class="attr">abbrlink:</span></span><br><span class="line">    <span class="attr">alg:</span> <span class="string">crc32</span>   <span class="comment">#算法： crc16(default) and crc32</span></span><br><span class="line">    <span class="attr">rep:</span> <span class="string">hex</span>     <span class="comment">#进制： dec(default) and hex</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>不同算法和进制生成不同的格式</strong></li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">crc16 &amp; hex</span><br><span class="line">https://post.zz173.com/posts/66c8.html</span><br><span class="line">crc16 &amp; dec</span><br><span class="line">https://post.zz173.com/posts/65535.html</span><br><span class="line"></span><br><span class="line">crc32 &amp; hex</span><br><span class="line">https://post.zz173.com/posts/8ddf18fb.html</span><br><span class="line">crc32 &amp; dec</span><br><span class="line">https://post.zz173.com/posts/1690090958.html</span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong><code>hexo g</code>生成网页时，会在每篇文章的<code>front matter</code>中加入一项<code>abbrlink</code>，它是根据文章题目生成的，生成之后不可更改，可以删除重新生成</strong></li>
+</ul>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">abbrlink: cc96dfee</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>博客搭建</category>
+      </categories>
+      <tags>
+        <tag>博客搭建</tag>
+        <tag>文章链接</tag>
       </tags>
   </entry>
   <entry>
     <title>博客搭建之外挂标签</title>
     <url>//107251be.html</url>
     <content><![CDATA[<h1 id="博客搭建之外挂标签">博客搭建之外挂标签</h1>
-<div class="note info modern"><p>外挂标签存在渲染失败/冲突的可能，比如<code>markdown</code>的高亮语法在<code>hexo</code>博客中无法渲染，有序/无序列表嵌套在外挂标签中也容易出现问题，</p>
-<p>PDF外挂标签、旋转相册还存在问题。</p>
+<div class="note info modern"><p>外挂标签存在渲染失败/冲突的可能，有序/无序列表嵌套在外挂标签中也容易出现问题，PDF外挂标签、旋转相册还存在问题。</p>
 <p>搬运自：<a href="https://akilar.top/posts/615e2dec/">Tag Plugins
 Plus</a>、<a
 href="https://www.fomal.cc/posts/2013454d.html">Markdown语法与外挂标签写法汇总</a></p>
 </div>
-<h2 id="markdown-自带格式">1.Markdown 自带格式</h2>
-<h3 id="代码块">1.1 代码块</h3>
-<div class="tabs" id="代码块"><ul class="nav-tabs"><li class="tab active"><button type="button" data-href="#代码块-1">示例源码</button></li><li class="tab"><button type="button" data-href="#代码块-2">渲染演示</button></li></ul><div class="tab-contents"><div class="tab-item-content active" id="代码块-1"><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">\```Shell</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">提交网站</span></span><br><span class="line">hexo cl &amp;&amp; hexo g &amp;&amp; hexo d;</span><br><span class="line">npm run clgd;</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">提交仓库</span></span><br><span class="line">git add .;</span><br><span class="line">git commit -m &quot;图片更新&quot;;</span><br><span class="line">git push origin main;</span><br><span class="line">\```</span><br></pre></td></tr></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="代码块-2"><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">提交网站</span></span><br><span class="line">hexo cl &amp;&amp; hexo g &amp;&amp; hexo d;</span><br><span class="line">npm run clgd;</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">提交仓库</span></span><br><span class="line">git add .;</span><br><span class="line">git commit -m &quot;图片更新&quot;;</span><br><span class="line">git push origin main;</span><br></pre></td></tr></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div></div>
-<h3 id="多级标题">1.2 多级标题</h3>
-<div class="tabs" id="多级标题"><ul class="nav-tabs"><li class="tab active"><button type="button" data-href="#多级标题-1">示例源码</button></li><li class="tab"><button type="button" data-href="#多级标题-2">渲染演示</button></li></ul><div class="tab-contents"><div class="tab-item-content active" id="多级标题-1"><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="section">#注意之间的空格</span></span><br><span class="line"><span class="section"># H1</span></span><br><span class="line"><span class="section">## H2</span></span><br><span class="line"><span class="section">### H3</span></span><br><span class="line"><span class="section">#### H4</span></span><br><span class="line"><span class="section">##### H5</span></span><br><span class="line"><span class="section">###### H6</span></span><br></pre></td></tr></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="多级标题-2"><p>参考文章的标题</p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div></div>
-<h3 id="文字样式">1.3 文字样式</h3>
-<div class="tabs" id="文字样式"><ul class="nav-tabs"><li class="tab active"><button type="button" data-href="#文字样式-1">示例源码</button></li><li class="tab"><button type="button" data-href="#文字样式-2">渲染演示</button></li></ul><div class="tab-contents"><div class="tab-item-content active" id="文字样式-1"><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="code">`强调`</span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">u</span>&gt;</span></span>下划线<span class="language-xml"><span class="tag">&lt;/<span class="name">u</span>&gt;</span></span></span><br><span class="line">我是<span class="language-xml"><span class="tag">&lt;<span class="name">sup</span>&gt;</span></span>上标<span class="language-xml"><span class="tag">&lt;/<span class="name">sup</span>&gt;</span></span></span><br><span class="line">我是<span class="language-xml"><span class="tag">&lt;<span class="name">sub</span>&gt;</span></span>下标<span class="language-xml"><span class="tag">&lt;/<span class="name">sub</span>&gt;</span></span></span><br><span class="line"><span class="emphasis">*我是斜体*</span></span><br><span class="line"><span class="strong">**我是粗体**</span></span><br><span class="line"><span class="strong">**<span class="emphasis">*我是斜体加粗*</span>**</span></span><br><span class="line">~~我被删除了~~</span><br><span class="line">==我被高亮了==</span><br><span class="line"><span class="section">#放在tab外挂标签里会出错</span></span><br><span class="line">$\color&#123;#FF3030&#125;&#123;我是红色&#125;$</span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">font</span> <span class="attr">color</span>=<span class="string">&quot;red&quot;</span>&gt;</span></span>我也是红色<span class="language-xml"><span class="tag">&lt;/<span class="name">font</span>&gt;</span></span></span><br></pre></td></tr></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="文字样式-2"><p><code>强调</code> <u>下划线</u> 我是<sup>上标</sup>
-我是<sub>下标</sub> <em>我是斜体</em> <strong>我是粗体</strong>
-<strong><em>我是斜体加粗</em></strong> <del>我被删除了</del>
-==我被高亮了== <font color="red">我也是红色</font></p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div></div>
-<h3 id="引用">1.4 引用</h3>
-<div class="tabs" id="引用"><ul class="nav-tabs"><li class="tab active"><button type="button" data-href="#引用-1">示例源码</button></li><li class="tab"><button type="button" data-href="#引用-2">渲染演示</button></li></ul><div class="tab-contents"><div class="tab-item-content active" id="引用-1"><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="quote">&gt; 物理</span></span><br><span class="line"><span class="quote">&gt; 二级引用</span></span><br><span class="line"><span class="quote">&gt; 热电</span></span><br><span class="line">&gt;&gt;Cu<span class="language-xml"><span class="tag">&lt;<span class="name">sub</span>&gt;</span></span>2<span class="language-xml"><span class="tag">&lt;/<span class="name">sub</span>&gt;</span></span>Se</span><br><span class="line">&gt;&gt;</span><br><span class="line">&gt;&gt;Bi<span class="language-xml"><span class="tag">&lt;<span class="name">sub</span>&gt;</span></span>2<span class="language-xml"><span class="tag">&lt;/<span class="name">sub</span>&gt;</span></span>Te<span class="language-xml"><span class="tag">&lt;<span class="name">sub</span>&gt;</span></span>3<span class="language-xml"><span class="tag">&lt;/<span class="name">sub</span>&gt;</span></span></span><br><span class="line"><span class="quote">&gt; </span></span><br><span class="line"><span class="quote">&gt; ...</span></span><br></pre></td></tr></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="引用-2"><blockquote>
-<p>物理 二级引用 热电</p>
-<blockquote>
-<p>Cu<sub>2</sub>Se Bi<sub>2</sub>Te<sub>3</sub></p>
-</blockquote>
-<p>...</p>
-</blockquote><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div></div>
-<h3 id="分割线">1.5 分割线</h3>
-<div class="tabs" id="分割线"><ul class="nav-tabs"><li class="tab active"><button type="button" data-href="#分割线-1">示例源码</button></li><li class="tab"><button type="button" data-href="#分割线-2">渲染演示</button></li></ul><div class="tab-contents"><div class="tab-item-content active" id="分割线-1"><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line"><span class="strong">**<span class="emphasis">*</span></span></span><br></pre></td></tr></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="分割线-2"><hr />
-<hr /><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div></div>
-<h3 id="列表--以及空格都可以">1.6 列表 (*,+,-以及空格都可以)</h3>
-<h4 id="无序列表">1.6.1 无序列表</h4>
-<div class="tabs" id="无序列表"><ul class="nav-tabs"><li class="tab active"><button type="button" data-href="#无序列表-1">示例源码</button></li><li class="tab"><button type="button" data-href="#无序列表-2">渲染演示</button></li></ul><div class="tab-contents"><div class="tab-item-content active" id="无序列表-1"><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="bullet">+</span> 清晨入古寺</span><br><span class="line"><span class="bullet">  +</span> 初日照高林</span><br><span class="line"><span class="bullet">    +</span> 曲径通幽处</span><br><span class="line"><span class="bullet">      +</span> 禅房花木深</span><br></pre></td></tr></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="无序列表-2"><ul>
-<li>清晨入古寺
-<ul>
-<li>初日照高林
-<ul>
-<li>曲径通幽处
-<ul>
-<li>禅房花木深</li>
-</ul></li>
-</ul></li>
-</ul></li>
-</ul><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div></div>
-<h4 id="有序列表">1.6.2 有序列表</h4>
-<div class="tabs" id="有序列表"><ul class="nav-tabs"><li class="tab active"><button type="button" data-href="#有序列表-1">示例源码</button></li><li class="tab"><button type="button" data-href="#有序列表-2">渲染演示</button></li></ul><div class="tab-contents"><div class="tab-item-content active" id="有序列表-1"><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="section">#注意之间的空格</span></span><br><span class="line"><span class="bullet">1.</span> 山光悦鸟性</span><br><span class="line"><span class="bullet">2.</span> 潭影空人心</span><br><span class="line"><span class="bullet">3.</span> 万籁此都寂</span><br><span class="line"><span class="bullet">4.</span> 但余终磬音</span><br></pre></td></tr></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="有序列表-2"><ol type="1">
-<li><p>山光悦鸟性</p></li>
-<li><p>潭影空人心</p></li>
-<li><p>万籁此都寂</p></li>
-<li><p>但余终磬音</p></li>
-</ol><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div></div>
-<h3 id="图片">1.7 图片</h3>
-<div class="tabs" id="图片"><ul class="nav-tabs"><li class="tab active"><button type="button" data-href="#图片-1">示例源码</button></li><li class="tab"><button type="button" data-href="#图片-2">渲染演示</button></li></ul><div class="tab-contents"><div class="tab-item-content active" id="图片-1"><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="section">#本地图片</span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;/img/和花.jpeg&quot;</span> <span class="attr">alt</span>=<span class="string">&quot;熊猫和花&quot;</span> <span class="attr">style</span>=<span class="string">&quot;zoom:100%;&quot;</span>/&gt;</span></span></span><br><span class="line"><span class="section">#在线图片</span></span><br><span class="line">![](<span class="link">https://blogresource.sqwdream.cloud/background/beautiful_girl.png</span>)</span><br></pre></td></tr></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="图片-2"><p>本地图片
-<img src="/img/和花.jpeg" alt="熊猫和花" style="zoom:100%;"/> 在线图片
-<img
-src="https://blogresource.sqwdream.cloud/background/beautiful_girl.png" /></p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div></div>
-<h3 id="表格">1.8 表格</h3>
-<div class="tabs" id="图片"><ul class="nav-tabs"><li class="tab active"><button type="button" data-href="#图片-1">示例源码</button></li><li class="tab"><button type="button" data-href="#图片-2">渲染演示</button></li></ul><div class="tab-contents"><div class="tab-item-content active" id="图片-1"><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">| 姓名 | 学号 | 年龄     |</span><br><span class="line">| ---- | ---- | -------- |</span><br><span class="line">| 金   | 01   | 十万年   |</span><br><span class="line">| 断   | 02   | 无       |</span><br><span class="line">| 鼬   | 03   | 长生不老 |</span><br></pre></td></tr></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="图片-2"><table>
-<thead>
-<tr class="header">
-<th>姓名</th>
-<th>学号</th>
-<th>年龄</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>金</td>
-<td>01</td>
-<td>十万年</td>
-</tr>
-<tr class="even">
-<td>断</td>
-<td>02</td>
-<td>无</td>
-</tr>
-<tr class="odd">
-<td>鼬</td>
-<td>03</td>
-<td>长生不老</td>
-</tr>
-</tbody>
-</table><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div></div>
-<h3 id="公式">1.9 公式</h3>
-<div class="tabs" id="公式"><ul class="nav-tabs"><li class="tab active"><button type="button" data-href="#公式-1">示例源码</button></li><li class="tab"><button type="button" data-href="#公式-2">渲染演示</button></li></ul><div class="tab-contents"><div class="tab-item-content active" id="公式-1"><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">$$</span><br><span class="line">S=\frac&#123;8\pi^2&#123;k<span class="emphasis">_\mathrm&#123;B&#125;&#125;^2T&#125;&#123;3eh^2&#125;m_</span>&#123;\mathrm&#123;d&#125;&#125;^&#123;<span class="emphasis">*&#125;\left(\frac&#123;\pi&#125;&#123;3p&#125;\right)^&#123;2/3&#125; </span></span><br><span class="line"><span class="emphasis">$$</span></span><br></pre></td></tr></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="公式-2"><p><span class="math display">\[
-S=\frac{8\pi^2{k_\mathrm{B}}^2T}{3eh^2}m_{\mathrm{d}}^{*}\left(\frac{\pi}{3p}\right)^{2/3}
-\]</span></p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div></div>
-<h2 id="butterfly-外挂标签">2.Butterfly 外挂标签</h2>
-<h3 id="行内样式文本-text">2.1 行内样式文本 text</h3>
+<h2 id="butterfly-外挂标签">1.Butterfly 外挂标签</h2>
+<h3 id="行内样式文本-text">1.1 行内样式文本 text</h3>
 <div class="tabs" id="行内样式文本"><ul class="nav-tabs"><li class="tab active"><button type="button" data-href="#行内样式文本-1">标签语法</button></li><li class="tab"><button type="button" data-href="#行内样式文本-2">示例源码</button></li><li class="tab"><button type="button" data-href="#行内样式文本-3">渲染演示</button></li></ul><div class="tab-contents"><div class="tab-item-content active" id="行内样式文本-1"><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% u 文本内容 %&#125;</span><br><span class="line">&#123;% emp 文本内容 %&#125;</span><br><span class="line">&#123;% wavy 文本内容 %&#125;</span><br><span class="line">&#123;% del 文本内容 %&#125;</span><br><span class="line">&#123;% kbd 文本内容 %&#125;</span><br><span class="line">&#123;% psw 文本内容 %&#125;</span><br></pre></td></tr></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="行内样式文本-2"><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="bullet">1.</span> 带 &#123;% u 下划线 %&#125; 的文本</span><br><span class="line"><span class="bullet">2.</span> 带 &#123;% emp 着重号 %&#125; 的文本</span><br><span class="line"><span class="bullet">3.</span> 带 &#123;% wavy 波浪线 %&#125; 的文本</span><br><span class="line"><span class="bullet">4.</span> 带 &#123;% del 删除线 %&#125; 的文本</span><br><span class="line"><span class="bullet">5.</span> 键盘样式的文本 &#123;% kbd command %&#125; + &#123;% kbd D %&#125;</span><br><span class="line"><span class="bullet">6.</span> 密码样式的文本：&#123;% psw 这里没有验证码 %&#125;</span><br></pre></td></tr></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="行内样式文本-3"><ol type="1">
 <li>带 <u>下划线</u> 的文本</li>
 <li>带 <emp>着重号</emp> 的文本</li>
@@ -275,7 +229,7 @@ S=\frac{8\pi^2{k_\mathrm{B}}^2T}{3eh^2}m_{\mathrm{d}}^{*}\left(\frac{\pi}{3p}\ri
 <li>键盘样式的文本 <kbd>Ctrl</kbd> + <kbd>D</kbd></li>
 <li>密码样式的文本：<psw>这里没有验证码</psw></li>
 </ol><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div></div>
-<h3 id="行内文本-span">2.2 行内文本 span</h3>
+<h3 id="行内文本-span">1.2 行内文本 span</h3>
 <div class="tabs" id="行内文本"><ul class="nav-tabs"><li class="tab active"><button type="button" data-href="#行内文本-1">标签语法</button></li><li class="tab"><button type="button" data-href="#行内文本-2">配置参数</button></li><li class="tab"><button type="button" data-href="#行内文本-3">示例源码</button></li><li class="tab"><button type="button" data-href="#行内文本-4">渲染演示</button></li></ul><div class="tab-contents"><div class="tab-item-content active" id="行内文本-1"><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% span 样式参数(参数以空格划分), 文本内容&#125;</span><br></pre></td></tr></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="行内文本-2"><ol type="1">
 <li><code>字体</code>:logo,code</li>
 <li><code>颜色</code>:red,yellow,green,cyan,blue,gray</li>
@@ -290,7 +244,7 @@ class="p blue">蓝色</span>、<span class="p gray">灰色</span>。</li>
 class="p center logo large">Volantis</span> <span
 class="p center small">A Wonderful Theme for Hexo</span></li>
 </ul><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div></div>
-<h3 id="段落文本-p">2.3 段落文本 p</h3>
+<h3 id="段落文本-p">1.3 段落文本 p</h3>
 <div class="tabs" id="段落文本"><ul class="nav-tabs"><li class="tab active"><button type="button" data-href="#段落文本-1">标签语法</button></li><li class="tab"><button type="button" data-href="#段落文本-2">配置参数</button></li><li class="tab"><button type="button" data-href="#段落文本-3">示例源码</button></li><li class="tab"><button type="button" data-href="#段落文本-4">渲染演示</button></li></ul><div class="tab-contents"><div class="tab-item-content active" id="段落文本-1"><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% p 样式参数(参数以空格划分), 文本内容&#125;</span><br></pre></td></tr></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="段落文本-2"><ol type="1">
 <li><code>字体</code>:logo,code</li>
 <li><code>颜色</code>:red,yellow,green,cyan,blue,gray</li>
@@ -330,7 +284,7 @@ Volantis
 A Wonderful Theme for Hexo
 </p></li>
 </ul><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div></div>
-<h3 id="引用-note">2.4 引用 note</h3>
+<h3 id="引用-note">1.4 引用 note</h3>
 <div class="tabs" id="引用"><ul class="nav-tabs"><li class="tab active"><button type="button" data-href="#引用-1">通用配置</button></li><li class="tab"><button type="button" data-href="#引用-2">语法格式</button></li><li class="tab"><button type="button" data-href="#引用-3">参数配置</button></li><li class="tab"><button type="button" data-href="#引用-4">示例源码</button></li><li class="tab"><button type="button" data-href="#引用-5">渲染演示</button></li></ul><div class="tab-contents"><div class="tab-item-content active" id="引用-1"><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">note:</span><br><span class="line">  # Note tag style values:</span><br><span class="line">  #  - simple    bs-callout old alert style. Default.</span><br><span class="line">  #  - modern    bs-callout new (v2-v3) alert style.</span><br><span class="line">  #  - flat      flat callout style with background, like on Mozilla or StackOverflow.</span><br><span class="line">  #  - disabled  disable all CSS styles import of note tag.</span><br><span class="line">  style: simple</span><br><span class="line">  icons: false</span><br><span class="line">  border<span class="emphasis">_radius: 3</span></span><br><span class="line"><span class="emphasis">  # Offset lighter of background in % for modern and flat styles (modern: -12 | 12; flat: -18 | 6).</span></span><br><span class="line"><span class="emphasis">  # Offset also applied to label tag variables. This option can work with disabled note tag.</span></span><br><span class="line"><span class="emphasis">  light_</span>bg<span class="emphasis">_offset: 0</span></span><br></pre></td></tr></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="引用-2"><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="section"># 自带icon</span></span><br><span class="line">&#123;% note [class] [no-icon] [style] %&#125;</span><br><span class="line">Any content (support inline tags too.io).</span><br><span class="line">&#123;% endnote %&#125;</span><br><span class="line"><span class="section"># 外部icon</span></span><br><span class="line">&#123;% note [color] [icon] [style] %&#125;</span><br><span class="line">Any content (support inline tags too.io).</span><br><span class="line">&#123;% endnote %&#125;</span><br></pre></td></tr></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="引用-3"><ol type="1">
 <li>自带icon</li>
 </ol>
@@ -917,7 +871,7 @@ danger 提示块标签
 </ol>
 </div>
 </details><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div></div>
-<h3 id="上标标签-tip">2.5 上标标签 tip</h3>
+<h3 id="上标标签-tip">1.5 上标标签 tip</h3>
 <div class="tabs" id="上标标签"><ul class="nav-tabs"><li class="tab active"><button type="button" data-href="#上标标签-1">标签语法</button></li><li class="tab"><button type="button" data-href="#上标标签-2">配置参数</button></li><li class="tab"><button type="button" data-href="#上标标签-3">示例源码</button></li><li class="tab"><button type="button" data-href="#上标标签-4">渲染演示</button></li></ul><div class="tab-contents"><div class="tab-item-content active" id="上标标签-1"><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% tip [参数，可选] %&#125;文本内容&#123;% endtip %&#125;</span><br></pre></td></tr></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="上标标签-2"><ol type="1">
 <li><code>样式</code>:
 success,error,warning,bolt,ban,home,sync,cogs,key,bell</li>
@@ -987,7 +941,7 @@ bell
 自定义font awesome图标
 </p>
 </div><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div></div>
-<h3 id="动态标签-anima">2.6 动态标签 anima</h3>
+<h3 id="动态标签-anima">1.6 动态标签 anima</h3>
 <div class="tabs" id="动态标签"><ul class="nav-tabs"><li class="tab active"><button type="button" data-href="#动态标签-1">标签语法</button></li><li class="tab"><button type="button" data-href="#动态标签-2">配置参数</button></li><li class="tab"><button type="button" data-href="#动态标签-3">示例源码</button></li><li class="tab"><button type="button" data-href="#动态标签-4">渲染演示</button></li></ul><div class="tab-contents"><div class="tab-item-content active" id="动态标签-1"><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% tip [参数，可选] %&#125;文本内容&#123;% endtip %&#125;</span><br></pre></td></tr></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="动态标签-2"><div class="note blue icon-padding modern">
 <i class="note-icon fas fa-bullhorn"></i>
 <ol type="1">
@@ -1064,7 +1018,7 @@ ban
 </p>
 </div></li>
 </ol><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div></div>
-<h3 id="复选列表-checkbox">2.7 复选列表 checkbox</h3>
+<h3 id="复选列表-checkbox">1.7 复选列表 checkbox</h3>
 <div class="tabs" id="复选列表"><ul class="nav-tabs"><li class="tab active"><button type="button" data-href="#复选列表-1">标签语法</button></li><li class="tab"><button type="button" data-href="#复选列表-2">配置参数</button></li><li class="tab"><button type="button" data-href="#复选列表-3">示例源码</button></li><li class="tab"><button type="button" data-href="#复选列表-4">渲染演示</button></li></ul><div class="tab-contents"><div class="tab-item-content active" id="复选列表-1"><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% checkbox 样式参数（可选）, 文本（支持简单md） %&#125;</span><br></pre></td></tr></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="复选列表-2"><ol type="1">
 <li><p><code>样式</code>: plus, minus, times</p></li>
 <li><p><code>颜色</code>: red,yellow,green,cyan,blue,gray</p></li>
@@ -1131,7 +1085,7 @@ checked将所需的CSS类添加到图标（或DOM中的任何元素）</p></li>
 叉
 </p>
 <pre><code>        &lt;/div&gt;</code></pre><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div></div>
-<h3 id="单选列表-radio">2.8 单选列表 radio</h3>
+<h3 id="单选列表-radio">1.8 单选列表 radio</h3>
 <div class="tabs" id="单选列表"><ul class="nav-tabs"><li class="tab active"><button type="button" data-href="#单选列表-1">标签语法</button></li><li class="tab"><button type="button" data-href="#单选列表-2">配置参数</button></li><li class="tab"><button type="button" data-href="#单选列表-3">示例源码</button></li><li class="tab"><button type="button" data-href="#单选列表-4">渲染演示</button></li></ul><div class="tab-contents"><div class="tab-item-content active" id="单选列表-1"><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% radio 样式参数（可选）, 文本（支持简单md） %&#125;</span><br></pre></td></tr></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="单选列表-2"><ol type="1">
 <li><code>颜色</code>: red,yellow,green,cyan,blue,gray</li>
 <li><code>选中状态</code>: checked</li>
@@ -1178,7 +1132,7 @@ checked将所需的CSS类添加到图标（或DOM中的任何元素）</p></li>
 蓝色
 </p>
 <pre><code>        &lt;/div&gt;</code></pre><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div></div>
-<h3 id="时间轴-timeline">2.9 时间轴 timeline</h3>
+<h3 id="时间轴-timeline">1.9 时间轴 timeline</h3>
 <div class="tabs" id="时间轴"><ul class="nav-tabs"><li class="tab active"><button type="button" data-href="#时间轴-1">标签语法</button></li><li class="tab"><button type="button" data-href="#时间轴-2">配置参数</button></li><li class="tab"><button type="button" data-href="#时间轴-3">示例源码</button></li><li class="tab"><button type="button" data-href="#时间轴-4">渲染演示</button></li></ul><div class="tab-contents"><div class="tab-item-content active" id="时间轴-1"><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% timeline 时间线标题（可选）[,color] %&#125;</span><br><span class="line">&lt;!-- timeline 时间节点（标题） --&gt;</span><br><span class="line">正文内容</span><br><span class="line">&lt;!-- endtimeline --&gt;</span><br><span class="line">&lt;!-- timeline 时间节点（标题） --&gt;</span><br><span class="line">正文内容</span><br><span class="line">&lt;!-- endtimeline --&gt;</span><br><span class="line">&#123;% endtimeline %&#125;</span><br></pre></td></tr></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="时间轴-2"><ol type="1">
 <li>title:标题/时间线</li>
 <li>color:timeline颜色:default(留空) / blue / pink / red / purple /
@@ -1271,7 +1225,7 @@ group 组件的列表名优先显示文章的 <code>short_title</code> 其次是
 </div>
 </div>
 </div><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div></div>
-<h3 id="链接卡片-link">2.10 链接卡片 link</h3>
+<h3 id="链接卡片-link">1.10 链接卡片 link</h3>
 <div class="tabs" id="链接卡片"><ul class="nav-tabs"><li class="tab active"><button type="button" data-href="#链接卡片-1">标签语法</button></li><li class="tab"><button type="button" data-href="#链接卡片-2">示例源码</button></li><li class="tab"><button type="button" data-href="#链接卡片-3">渲染演示</button></li></ul><div class="tab-contents"><div class="tab-item-content active" id="链接卡片-1"><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% link 标题, 链接, 图片链接（可选） %&#125;</span><br></pre></td></tr></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="链接卡片-2"><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% link 糖果屋教程贴, https://akilar.top/posts/615e2dec/, https://cdn.cbd.int/akilar-candyassets@1.0.36/image/siteicon/favicon.ico %&#125;</span><br></pre></td></tr></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="链接卡片-3"><div class="tag link">
 <a class="link-card" title="糖果屋教程贴" href="https://akilar.top/posts/615e2dec/">
 <div class="left">
@@ -1287,7 +1241,7 @@ https://akilar.top/posts/615e2dec/
 </div>
 </a>
 </div><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div></div>
-<h3 id="按钮-btns">2.11 按钮 btns</h3>
+<h3 id="按钮-btns">1.11 按钮 btns</h3>
 <div class="tabs" id="按钮"><ul class="nav-tabs"><li class="tab active"><button type="button" data-href="#按钮-1">标签语法</button></li><li class="tab"><button type="button" data-href="#按钮-2">配置参数</button></li><li class="tab"><button type="button" data-href="#按钮-3">示例源码</button></li><li class="tab"><button type="button" data-href="#按钮-4">渲染演示</button></li></ul><div class="tab-contents"><div class="tab-item-content active" id="按钮-1"><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% btns 样式参数 %&#125;</span><br><span class="line">&#123;% cell 标题, 链接, 图片或者图标 %&#125;</span><br><span class="line">&#123;% cell 标题, 链接, 图片或者图标 %&#125;</span><br><span class="line">&#123;% endbtns %&#125;</span><br></pre></td></tr></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="按钮-2"><ol type="1">
 <li>圆角样式：rounded, circle</li>
 <li>增加文字样式：可以在容器内增加
@@ -1375,7 +1329,7 @@ style="text-align: center;">填充布局，自动铺满至少一行，多了会�
 </a>
 </div></li>
 </ol><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div></div>
-<h3 id="github卡片-ghcard">2.12 github卡片 ghcard</h3>
+<h3 id="github卡片-ghcard">1.12 github卡片 ghcard</h3>
 <div class="tabs" id="github卡片"><ul class="nav-tabs"><li class="tab active"><button type="button" data-href="#github卡片-1">标签语法</button></li><li class="tab"><button type="button" data-href="#github卡片-2">配置参数</button></li><li class="tab"><button type="button" data-href="#github卡片-3">示例源码</button></li><li class="tab"><button type="button" data-href="#github卡片-4">渲染演示</button></li></ul><div class="tab-contents"><div class="tab-item-content active" id="github卡片-1"><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% ghcard 用户名, 其它参数（可选） %&#125;</span><br><span class="line">&#123;% ghcard 用户名/仓库, 其它参数（可选） %&#125;</span><br></pre></td></tr></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="github卡片-2"><ol type="1">
 <li>圆角样式：rounded, circle</li>
 <li>增加文字样式：可以在容器内增加
@@ -1435,7 +1389,7 @@ style="text-align: center;">填充布局，自动铺满至少一行，多了会�
 <li><p>仓库信息卡片</p>
 <p>缺省</p></li>
 </ol><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div></div>
-<h3 id="github徽标-ghbdage">2.13 github徽标 ghbdage</h3>
+<h3 id="github徽标-ghbdage">1.13 github徽标 ghbdage</h3>
 <div class="tabs" id="github徽标"><ul class="nav-tabs"><li class="tab active"><button type="button" data-href="#github徽标-1">标签语法</button></li><li class="tab"><button type="button" data-href="#github徽标-2">配置参数</button></li><li class="tab"><button type="button" data-href="#github徽标-3">示例源码</button></li><li class="tab"><button type="button" data-href="#github徽标-4">渲染演示</button></li></ul><div class="tab-contents"><div class="tab-item-content active" id="github徽标-1"><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% bdage [right],[left],[logo]||[color],[link],[title]||[option] %&#125;</span><br></pre></td></tr></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="github徽标-2"><ol type="1">
 <li><code>left</code>：徽标左边的信息，必选参数。</li>
 <li><code>right</code>: 徽标右边的信息，必选参数，</li>
@@ -1470,7 +1424,7 @@ href="https://shields.io/">shields.io</a>的全部API参数支持，具体参数
 <p>//如果是跨顺序省略可选参数组，仍然需要写双竖线||用作分割
 <object class="ghbdage" style="margin-inline:5px" title="" standby="loading..." data="https://img.shields.io/badge/Vercel-Hosted-orange?logo=Vercel&color=orange&link=&style=social&logoWidth=20&logoColor=violet"></object></p></li>
 </ol><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div></div>
-<h3 id="网站卡片-sites">2.14 网站卡片 sites</h3>
+<h3 id="网站卡片-sites">1.14 网站卡片 sites</h3>
 <div class="tabs" id="网站卡片"><ul class="nav-tabs"><li class="tab active"><button type="button" data-href="#网站卡片-1">标签语法</button></li><li class="tab"><button type="button" data-href="#网站卡片-2">示例源码</button></li><li class="tab"><button type="button" data-href="#网站卡片-3">渲染演示</button></li></ul><div class="tab-contents"><div class="tab-item-content active" id="网站卡片-1"><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% sitegroup %&#125;</span><br><span class="line">&#123;% site 标题, url=链接, screenshot=截图链接, avatar=头像链接（可选）, description=描述（可选） %&#125;</span><br><span class="line">&#123;% site 标题, url=链接, screenshot=截图链接, avatar=头像链接（可选）, description=描述（可选） %&#125;</span><br><span class="line">&#123;% endsitegroup %&#125;</span><br></pre></td></tr></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="网站卡片-2"><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% sitegroup %&#125;</span><br><span class="line">&#123;% site Colsrch, url=https://colsrch.top, screenshot=https://i.loli.net/2020/08/22/dFRWXm52OVu8qfK.png, avatar=https://cdn.jsdelivr.net/gh/Colsrch/images/Colsrch/avatar.jpg, description=这是一段关于这个网站的描述文字 %&#125;</span><br><span class="line">&#123;% endsitegroup %&#125;</span><br></pre></td></tr></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="网站卡片-3"><div class="site-card-group">
 <a class="site-card" href="https://colsrch.top">
 <div class="img">
@@ -1483,14 +1437,14 @@ class="desc">这是一段关于这个网站的描述文字</span>
 </div>
 </a>
 </div><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div></div>
-<h3 id="行内图片-inlineimage">2.15 行内图片 inlineimage</h3>
+<h3 id="行内图片-inlineimage">1.15 行内图片 inlineimage</h3>
 <div class="tabs" id="行内图片"><ul class="nav-tabs"><li class="tab active"><button type="button" data-href="#行内图片-1">标签语法</button></li><li class="tab"><button type="button" data-href="#行内图片-2">配置参数</button></li><li class="tab"><button type="button" data-href="#行内图片-3">示例源码</button></li><li class="tab"><button type="button" data-href="#行内图片-4">渲染演示</button></li></ul><div class="tab-contents"><div class="tab-item-content active" id="行内图片-1"><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% inlineimage 图片链接, height=高度（可选） %&#125;</span><br></pre></td></tr></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="行内图片-2"><p>高度：height=20px</p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="行内图片-3"><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">这是 &#123;% inlineimage https://cdn.jsdelivr.net/gh/volantis-x/cdn-emoji/aru-l/0000.gif %&#125; 一段话。</span><br><span class="line"></span><br><span class="line">这又是 &#123;% inlineimage https://cdn.jsdelivr.net/gh/volantis-x/cdn-emoji/aru-l/5150.gif, height=40px %&#125; 一段话。</span><br></pre></td></tr></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="行内图片-4"><p>这是
 <img no-lazy class="inline" src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-emoji/aru-l/0000.gif" style="height:1.5em"/>
 一段话。</p>
 <p>这又是
 <img no-lazy class="inline" src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-emoji/aru-l/5150.gif" style="height:40px;"/>
 一段话。</p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div></div>
-<h3 id="单张图片-image">2.16 单张图片 image</h3>
+<h3 id="单张图片-image">1.16 单张图片 image</h3>
 <div class="tabs" id="单张图片"><ul class="nav-tabs"><li class="tab active"><button type="button" data-href="#单张图片-1">标签语法</button></li><li class="tab"><button type="button" data-href="#单张图片-2">配置参数</button></li><li class="tab"><button type="button" data-href="#单张图片-3">示例源码</button></li><li class="tab"><button type="button" data-href="#单张图片-4">渲染演示</button></li></ul><div class="tab-contents"><div class="tab-item-content active" id="单张图片-1"><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% image 链接, width=宽度（可选）, height=高度（可选）, alt=描述（可选）, bg=占位颜色（可选） %&#125;</span><br></pre></td></tr></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="单张图片-2"><ol type="1">
 <li>图片宽度高度：width=300px, height=32px</li>
 <li>图片描述：alt=图片描述（butterfly需要在主题配置文件中开启图片描述）</li>
@@ -1533,13 +1487,13 @@ class="desc">这是一段关于这个网站的描述文字</span>
 <span class="image-caption">优化不同宽度浏览的观感</span>
 </div></li>
 </ol><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div></div>
-<h3 id="音频-audio">2.17 音频 audio</h3>
+<h3 id="音频-audio">1.17 音频 audio</h3>
 <div class="tabs" id="音频"><ul class="nav-tabs"><li class="tab active"><button type="button" data-href="#音频-1">标签语法</button></li><li class="tab"><button type="button" data-href="#音频-2">示例源码</button></li><li class="tab"><button type="button" data-href="#音频-3">渲染演示</button></li></ul><div class="tab-contents"><div class="tab-item-content active" id="音频-1"><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% audio 音频链接 %&#125;</span><br></pre></td></tr></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="音频-2"><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% audio https://github.com/volantis-x/volantis-docs/releases/download/assets/Lumia1020.mp3 %&#125;</span><br></pre></td></tr></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="音频-3"><div class="audio">
 <audio controls preload>
 <source src='https://github.com/volantis-x/volantis-docs/releases/download/assets/Lumia1020.mp3' type='audio/mp3'>
 Your browser does not support the audio tag.</audio>
 </div><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div></div>
-<h3 id="视频-vidio">2.18 视频 vidio</h3>
+<h3 id="视频-vidio">1.18 视频 vidio</h3>
 <div class="tabs" id="视频"><ul class="nav-tabs"><li class="tab active"><button type="button" data-href="#视频-1">标签语法</button></li><li class="tab"><button type="button" data-href="#视频-2">配置参数</button></li><li class="tab"><button type="button" data-href="#视频-3">示例源码</button></li><li class="tab"><button type="button" data-href="#视频-4">渲染演示</button></li></ul><div class="tab-contents"><div class="tab-item-content active" id="视频-1"><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% video 视频链接 %&#125;</span><br></pre></td></tr></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="视频-2"><ol type="1">
 <li>对齐方向：left, center, right</li>
 <li>列数：逗号后面直接写列数，支持 1 ～ 4 列</li>
@@ -1624,7 +1578,7 @@ Your browser does not support the audio tag.</audio>
 </div>
 </div></li>
 </ol><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div></div>
-<h3 id="相册-gallery">2.19 相册 gallery</h3>
+<h3 id="相册-gallery">1.19 相册 gallery</h3>
 <div class="tabs" id="相册"><ul class="nav-tabs"><li class="tab active"><button type="button" data-href="#相册-1">标签语法</button></li><li class="tab"><button type="button" data-href="#相册-2">配置参数</button></li><li class="tab"><button type="button" data-href="#相册-3">示例源码</button></li><li class="tab"><button type="button" data-href="#相册-4">渲染演示</button></li></ul><div class="tab-contents"><div class="tab-item-content active" id="相册-1"><ol type="1">
 <li><p>gallerygroup 相册图库</p>
 <figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;gallery-group-main&quot;</span>&gt;</span></span></span><br><span class="line">&#123;% galleryGroup name description link img-url %&#125;</span><br><span class="line">&#123;% galleryGroup name description link img-url %&#125;</span><br><span class="line">&#123;% galleryGroup name description link img-url %&#125;</span><br><span class="line"><span class="language-xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br></pre></td></tr></table></figure></li>
@@ -1697,7 +1651,7 @@ OH MY GIRL
 </p>
 <pre><code>   &lt;/div&gt;</code></pre></li>
 </ol><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div></div>
-<h3 id="折叠框-foldingtoggle">2.20 折叠框 folding/Toggle</h3>
+<h3 id="折叠框-foldingtoggle">1.20 折叠框 folding/Toggle</h3>
 <div class="tabs" id="折叠框"><ul class="nav-tabs"><li class="tab active"><button type="button" data-href="#折叠框-1">标签语法</button></li><li class="tab"><button type="button" data-href="#折叠框-2">配置参数</button></li><li class="tab"><button type="button" data-href="#折叠框-3">示例源码</button></li><li class="tab"><button type="button" data-href="#折叠框-4">渲染演示</button></li></ul><div class="tab-contents"><div class="tab-item-content active" id="折叠框-1"><ol type="1">
 <li><p>folding 折叠框</p>
 <figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% folding 状态（可选）, 标题 %&#125;</span><br><span class="line">content</span><br><span class="line">&#123;% endfolding %&#125;</span><br></pre></td></tr></table></figure></li>
@@ -1789,7 +1743,7 @@ themes/Butterfly
 </p>
 </div>
 </details><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div></div>
-<h3 id="分栏-tab">2.21 分栏 tab</h3>
+<h3 id="分栏-tab">1.21 分栏 tab</h3>
 <div class="tabs" id="分栏"><ul class="nav-tabs"><li class="tab active"><button type="button" data-href="#分栏-1">标签语法</button></li><li class="tab"><button type="button" data-href="#分栏-2">配置参数</button></li><li class="tab"><button type="button" data-href="#分栏-3">示例源码</button></li><li class="tab"><button type="button" data-href="#分栏-4">渲染演示</button></li></ul><div class="tab-contents"><div class="tab-item-content active" id="分栏-1"><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% tabs Unique name, [index] %&#125;</span><br><span class="line">&lt;!-- tab [Tab caption] [@icon] --&gt;</span><br><span class="line">Any content (support inline tags too).</span><br><span class="line">&lt;!-- endtab --&gt;</span><br><span class="line">&#123;% endtabs %&#125;</span><br></pre></td></tr></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="分栏-2"><p>1.Unique name :</p>
 <ul>
 <li><p>选项卡块标签的唯一名称，不带逗号。</p></li>
@@ -2032,7 +1986,7 @@ Demo 4 - 自定义 Tab 名 + 只有 icon + icon 和 Tab 名
 </div>
 </div>
 </div><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div></div>
-<h3 id="诗词标签-poem">2.22 诗词标签 poem</h3>
+<h3 id="诗词标签-poem">1.22 诗词标签 poem</h3>
 <div class="tabs" id="诗词标签"><ul class="nav-tabs"><li class="tab active"><button type="button" data-href="#诗词标签-1">标签语法</button></li><li class="tab"><button type="button" data-href="#诗词标签-2">配置参数</button></li><li class="tab"><button type="button" data-href="#诗词标签-3">示例源码</button></li><li class="tab"><button type="button" data-href="#诗词标签-4">渲染演示</button></li></ul><div class="tab-contents"><div class="tab-item-content active" id="诗词标签-1"><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% poem [title],[author] %&#125;</span><br><span class="line">诗词内容</span><br><span class="line">&#123;% endpoem %&#125;</span><br></pre></td></tr></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="诗词标签-2"><ol type="1">
 <li>title：诗词标题</li>
 <li>author：作者，可以不写</li>
@@ -2053,7 +2007,7 @@ Demo 4 - 自定义 Tab 名 + 只有 icon + icon 和 Tab 名
 人有悲欢离合，月有阴晴圆缺，此事古难全。 但愿人长久，千里共婵娟。
 </p>
 </div><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div></div>
-<h3 id="阿里图标-icon">2.23 阿里图标 icon</h3>
+<h3 id="阿里图标-icon">1.23 阿里图标 icon</h3>
 <div class="tip info"><p>本标签的图标需要自己额外引入阿里矢量图标库的样式，具体引入方案请移步：<a
 href="https://akilar.top/posts/d2ebecef/">Hexo引入阿里矢量图标库</a></p>
 </div>
@@ -2087,7 +2041,7 @@ href="https://akilar.top/posts/d2ebecef/">Hexo引入阿里矢量图标库</a></p
 <svg class="icon" style="width: 5em; height: 5em" aria-hidden="true">
 <use xlink:href="#icon-tianqi_leizhenyu"></use>
 </svg><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div></div>
-<h3 id="特效标签-wow">2.24 特效标签 wow</h3>
+<h3 id="特效标签-wow">1.24 特效标签 wow</h3>
 <div class="tabs" id="特效标签"><ul class="nav-tabs"><li class="tab active"><button type="button" data-href="#特效标签-1">标签语法</button></li><li class="tab"><button type="button" data-href="#特效标签-2">配置参数</button></li><li class="tab"><button type="button" data-href="#特效标签-3">示例源码</button></li><li class="tab"><button type="button" data-href="#特效标签-4">渲染演示</button></li></ul><div class="tab-contents"><div class="tab-item-content active" id="特效标签-1"><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% wow [animete],[duration],[delay],[offset],[iteration] %&#125;</span><br><span class="line">内容</span><br><span class="line">&#123;% endwow %&#125;</span><br></pre></td></tr></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="特效标签-2"><ol type="1">
 <li><code>animate</code>: 动画样式，效果详见 <a
 href="https://animate.style/">animate.css 参考文档</a></li>
@@ -2150,7 +2104,7 @@ data-wow-delay="5s" data-wow-offset="" data-wow-iteration="10">
 </p>
 </div>
 </div><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div></div>
-<h3 id="进度条-progress">2.25 进度条 progress</h3>
+<h3 id="进度条-progress">1.25 进度条 progress</h3>
 <div class="tip info"><p>进度条标签参考<a
 href="https://rongbuqiu.com/jdt.html">沂佰孜猫-给HEXO文章添加彩色进度条</a>。
 源样式提取自<a href="https://zwying0814.gitbook.io/cuteen/">Cuteen</a>
@@ -2221,7 +2175,7 @@ aria-valuemax="100">
 </p>
 </div>
 </div><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div></div>
-<h3 id="注释-notation">2.26 注释 notation</h3>
+<h3 id="注释-notation">1.26 注释 notation</h3>
 <div class="tabs" id="注释"><ul class="nav-tabs"><li class="tab active"><button type="button" data-href="#注释-1">标签语法</button></li><li class="tab"><button type="button" data-href="#注释-2">配置参数</button></li><li class="tab"><button type="button" data-href="#注释-3">示例源码</button></li><li class="tab"><button type="button" data-href="#注释-4">渲染演示</button></li></ul><div class="tab-contents"><div class="tab-item-content active" id="注释-1"><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% nota [label], [text] %&#125;</span><br></pre></td></tr></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="注释-2"><ol type="1">
 <li><code>label</code>: 注释词汇</li>
 <li><code>text</code>: 悬停显示的注解内容</li>
@@ -2262,7 +2216,7 @@ style="background-color:#868fd7;">clip-path属性使用裁剪方式创建元素�
 </p>
 </div>
 </details><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div></div>
-<h3 id="引用文献-reference">2.28 引用文献 reference</h3>
+<h3 id="引用文献-reference">1.28 引用文献 reference</h3>
 <div class="tabs" id="引用文献"><ul class="nav-tabs"><li class="tab active"><button type="button" data-href="#引用文献-1">标签语法</button></li><li class="tab"><button type="button" data-href="#引用文献-2">配置参数</button></li><li class="tab"><button type="button" data-href="#引用文献-3">示例源码</button></li><li class="tab"><button type="button" data-href="#引用文献-4">渲染演示</button></li></ul><div class="tab-contents"><div class="tab-item-content active" id="引用文献-1"><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% referto [id] , [literature] %&#125;</span><br><span class="line">&#123;% referfrom [id] , [literature] , [url] %&#125;</span><br></pre></td></tr></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="引用文献-2"><ol type="1">
 <li>referto 引用上标
 <ul>
@@ -2398,7 +2352,7 @@ class="hidden-anchor"></span><a class="reference-anchor" href="#referto_[9]">[9]
 </div>
 </a><a class="reference-link" href="https://www.antmoe.com/posts/3b43914f/">小康的butterfly主题使用文档</a>
 </div><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div></div>
-<h3 id="隐藏块">2.29 隐藏块</h3>
+<h3 id="隐藏块">1.29 隐藏块</h3>
 <div class="tabs" id="隐藏块"><ul class="nav-tabs"><li class="tab active"><button type="button" data-href="#隐藏块-1">标签语法</button></li><li class="tab"><button type="button" data-href="#隐藏块-2">配置参数</button></li><li class="tab"><button type="button" data-href="#隐藏块-3">示例源码</button></li><li class="tab"><button type="button" data-href="#隐藏块-4">渲染演示</button></li></ul><div class="tab-contents"><div class="tab-item-content active" id="隐藏块-1"><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% hideBlock display,bg,color %&#125;</span><br><span class="line">content</span><br><span class="line">&#123;% endhideBlock %&#125;</span><br></pre></td></tr></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="隐藏块-2"><p>1.<code>content</code>：要隐藏的内容</p>
 <p>2.<code>display</code>：展示前按钮显示的文字（可选）</p>
 <p>3.<code>bg</code>：按钮的背景颜色（可选）</p>
@@ -2413,7 +2367,7 @@ class="hidden-anchor"></span><a class="reference-anchor" href="#referto_[9]">[9]
 </p>
 </div>
 </div><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div></div>
-<h3 id="hexo-tag-map-插件">2.30 Hexo-tag-map 插件</h3>
+<h3 id="hexo-tag-map-插件">1.30 Hexo-tag-map 插件</h3>
 <div class="tabs" id="hexo-tag-map"><ul class="nav-tabs"><li class="tab active"><button type="button" data-href="#hexo-tag-map-1">标签语法</button></li><li class="tab"><button type="button" data-href="#hexo-tag-map-2">配置参数</button></li><li class="tab"><button type="button" data-href="#hexo-tag-map-3">示例源码</button></li><li class="tab"><button type="button" data-href="#hexo-tag-map-4">渲染演示</button></li></ul><div class="tab-contents"><div class="tab-item-content active" id="hexo-tag-map-1"><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% + 标签值 + 经度 + 纬度 + 文本 + 缩放等级 + 宽 + 高 + 默认图层 + %&#125;</span><br></pre></td></tr></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="hexo-tag-map-2"><table>
 <colgroup>
 <col style="width: 11%" />
@@ -2503,7 +2457,7 @@ href="https://api.map.baidu.com/lbsapi/getpoint/index.html">百度地图坐标�
           &lt;p&gt;缺省(渲染有问题)&lt;/p&gt;
           &lt;/div&gt;
         &lt;/details&gt;</code></pre><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div></div>
-<h3 id="pdf展示">2.31 PDF展示</h3>
+<h3 id="pdf展示">1.31 PDF展示</h3>
 ]]></content>
       <categories>
         <category>博客搭建</category>
@@ -2543,63 +2497,6 @@ id="手机端也呈现夜间繁星效果在universe.css文件中加入">4.手机
       <tags>
         <tag>博客搭建</tag>
         <tag>夜间繁星背景特效</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>博客搭建之文章链接</title>
-    <url>//cc96dfee.html</url>
-    <content><![CDATA[<h1 id="博客搭建之文章链接">博客搭建之文章链接</h1>
-<div class="note info modern"><p>鉴于每个人的博客根目录名称都不太一样，本贴<strong>博客根目录</strong>一律以<code>[BlogRoot]</code>指代。
-站点配置文件<code>_config.yml</code>，路径为<code>[BlogRoot]\_config.yml</code>。
-主题配置文件<code>_config.yml</code>，路径为<code>[BlogRoot]\themes\butterfly\_config.yml</code>。</p>
-</div>
-<h2
-id="缩短文末copyright中文章链接的长度">缩短文末Copyright中文章链接的长度</h2>
-<h3
-id="在博客根目录下blogroot安装插件">1.在博客根目录下<code>[BlogRoot]</code>安装插件：</h3>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm install hexo-abbrlink --save</span><br></pre></td></tr></table></figure>
-<h3
-id="修改站点配置文件blogroot_config.yml添加以下内容">2.修改站点配置文件<code>[BlogRoot]\_config.yml</code>，添加以下内容：</h3>
-<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># permalink: :year/:month/:day/:title/</span></span><br><span class="line"><span class="comment"># permalink: p/:abbrlink.html  # p 是自定义的前缀</span></span><br><span class="line"><span class="attr">permalink:</span> <span class="string">/:abbrlink.html</span>  <span class="comment"># p 是自定义的前缀</span></span><br><span class="line"><span class="attr">abbrlink:</span></span><br><span class="line">    <span class="attr">alg:</span> <span class="string">crc32</span>   <span class="comment">#算法： crc16(default) and crc32</span></span><br><span class="line">    <span class="attr">rep:</span> <span class="string">hex</span>     <span class="comment">#进制： dec(default) and hex</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li><strong>不同算法和进制生成不同的格式</strong></li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">crc16 &amp; hex</span><br><span class="line">https://post.zz173.com/posts/66c8.html</span><br><span class="line">crc16 &amp; dec</span><br><span class="line">https://post.zz173.com/posts/65535.html</span><br><span class="line"></span><br><span class="line">crc32 &amp; hex</span><br><span class="line">https://post.zz173.com/posts/8ddf18fb.html</span><br><span class="line">crc32 &amp; dec</span><br><span class="line">https://post.zz173.com/posts/1690090958.html</span><br></pre></td></tr></table></figure>
-<ul>
-<li><strong><code>hexo g</code>生成网页时，会在每篇文章的<code>front matter</code>中加入一项<code>abbrlink</code>，它是根据文章题目生成的，生成之后不可更改，可以删除重新生成</strong></li>
-</ul>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">abbrlink: cc96dfee</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>博客搭建</category>
-      </categories>
-      <tags>
-        <tag>博客搭建</tag>
-        <tag>文章链接</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>博客问题集锦</title>
-    <url>//6bf8c91.html</url>
-    <content><![CDATA[<div class="note info modern"><p>鉴于每个人的博客根目录名称都不太一样，本贴<strong>博客根目录</strong>一律以<code>[BlogRoot]</code>指代。
-数学公式配置：<a
-href="https://butterfly.js.org/posts/ceeb73f/#Math-%E6%95%B8%E5%AD%B8">Math
-数学</a> 参考：<a
-href="https://www.cnblogs.com/Ai-heng/p/7282110.html">hexo博客MathJax公式渲染问题</a></p>
-</div>
-<h1 id="公式渲染问题">公式渲染问题</h1>
-<details class="folding-tag" cyan><summary> 点击查看 </summary>
-              <div class='content'>
-              <p>在博客中一些数学公式会出现渲染问题，当然md文件也有可能出现渲染问题，比如引用变成上标等，这里只介绍出现的MathJax数学公式的渲染问题，主要问题就是行内数学公式会出现渲染失败的情况，对于单个符号问题渲染还是可以的，但是涉及到等式就会出现渲染失败的情况，具体问题展示如下：</p><p><ahref="https://blogresource.sqwdream.cloud/post/博客问题集锦/img/body/行内公式error.jpg"></a></p><p>解决的方法如下：</p><ol type="1"><li><p>更换公式渲染引擎</p><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm uninstall hexo-renderer-marked --save</span><br><span class="line">npm install hexo-renderer-kramed --save</span><br></pre></td></tr></table></figure></li><li><p>修改<code>[BlogRoot]/node_modules/kramed/lib/rules/inline.js</code>文件</p><figure class="highlight diff"><table><tr><td class="code"><pre><span class="line"><span class="deletion">- escape: /^\\([\\`*&#123;&#125;\[\]()#$+\-.!_&gt;])/,  /*11行*/</span></span><br><span class="line"><span class="addition">+ escape: /^\\([`*\[\]()#$+\-.!_&gt;])/,</span></span><br><span class="line"><span class="deletion">- em: /^\b_((?:__|[\s\S])+?)_\b|^\*((?:\*\*|[\s\S])+?)\*(?!\*)/,  /*20行*/  </span></span><br><span class="line"><span class="addition">+ em: /^\*((?:\*\*|[\s\S])+?)\*(?!\*)/,</span></span><br></pre></td></tr></table></figure></li><li><p>如果在md文件中用到数学公式，要在Front-matter中加入<code>mathjax: true</code></p></li><li><p>如果和butterfly外观标签混合使用，比如数学公式嵌套在butterfly外挂标签中，可以尝试在Front-matter中删除<code>mathjax: true</code>，以防止渲染冲突</p></li></ol>
-              </div>
-            </details>
-]]></content>
-      <categories>
-        <category>博客问题集锦</category>
-      </categories>
-      <tags>
-        <tag>MathJax</tag>
-        <tag>公式渲染</tag>
       </tags>
   </entry>
   <entry>
@@ -2652,6 +2549,30 @@ id="引入对应的资源修改主题配置文件_config.yml在-inject-配置项
       </categories>
       <tags>
         <tag>诗与远方</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>博客问题集锦</title>
+    <url>//6bf8c91.html</url>
+    <content><![CDATA[<div class="note info modern"><p>鉴于每个人的博客根目录名称都不太一样，本贴<strong>博客根目录</strong>一律以<code>[BlogRoot]</code>指代。
+数学公式配置：<a
+href="https://butterfly.js.org/posts/ceeb73f/#Math-%E6%95%B8%E5%AD%B8">Math
+数学</a> 参考：<a
+href="https://www.cnblogs.com/Ai-heng/p/7282110.html">hexo博客MathJax公式渲染问题</a></p>
+</div>
+<h1 id="公式渲染问题">公式渲染问题</h1>
+<details class="folding-tag" cyan><summary> 点击查看 </summary>
+              <div class='content'>
+              <p>在博客中一些数学公式会出现渲染问题，当然md文件也有可能出现渲染问题，比如引用变成上标等，这里只介绍出现的MathJax数学公式的渲染问题，主要问题就是行内数学公式会出现渲染失败的情况，对于单个符号问题渲染还是可以的，但是涉及到等式就会出现渲染失败的情况，具体问题展示如下：</p><p><ahref="https://blogresource.sqwdream.cloud/post/博客问题集锦/img/body/行内公式error.jpg"></a></p><p>解决的方法如下：</p><ol type="1"><li><p>更换公式渲染引擎</p><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm uninstall hexo-renderer-marked --save</span><br><span class="line">npm install hexo-renderer-kramed --save</span><br></pre></td></tr></table></figure></li><li><p>修改<code>[BlogRoot]/node_modules/kramed/lib/rules/inline.js</code>文件</p><figure class="highlight diff"><table><tr><td class="code"><pre><span class="line"><span class="deletion">- escape: /^\\([\\`*&#123;&#125;\[\]()#$+\-.!_&gt;])/,  /*11行*/</span></span><br><span class="line"><span class="addition">+ escape: /^\\([`*\[\]()#$+\-.!_&gt;])/,</span></span><br><span class="line"><span class="deletion">- em: /^\b_((?:__|[\s\S])+?)_\b|^\*((?:\*\*|[\s\S])+?)\*(?!\*)/,  /*20行*/  </span></span><br><span class="line"><span class="addition">+ em: /^\*((?:\*\*|[\s\S])+?)\*(?!\*)/,</span></span><br></pre></td></tr></table></figure></li><li><p>如果在md文件中用到数学公式，要在Front-matter中加入<code>mathjax: true</code></p></li><li><p>如果和butterfly外观标签混合使用，比如数学公式嵌套在butterfly外挂标签中，可以尝试在Front-matter中删除<code>mathjax: true</code>，以防止渲染冲突</p></li></ol>
+              </div>
+            </details>
+]]></content>
+      <categories>
+        <category>博客问题集锦</category>
+      </categories>
+      <tags>
+        <tag>MathJax</tag>
+        <tag>公式渲染</tag>
       </tags>
   </entry>
 </search>
