@@ -1,42 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>博客搭建之Twikoo</title>
-    <url>/posts/6fc19c10.html</url>
-    <content><![CDATA[<h1 id="博客搭建之twikoo">博客搭建之Twikoo</h1>
-<div class="note info modern"><p>鉴于每个人的博客根目录名称都不太一样，本贴<strong>博客根目录</strong>一律以<code>[BlogRoot]</code>指代。
-站点配置文件<code>_config.yml</code>，路径为<code>[BlogRoot]\_config.yml</code>。
-主题配置文件<code>_config.yml</code>，路径为<code>[BlogRoot]\themes\butterfly\_config.yml</code>。</p>
-</div>
-<h2 id="twikoo的评论设置">1.Twikoo的评论设置</h2>
-<h3 id="支持图片评论">1.1 支持图片评论</h3>
-<p>Twikoo评论区要支持图片评论功能需要配置图床，这里以比较容易设置的<a
-href="https://smms.app/">smms</a>图床为例，首先要进行注册，注册成功之后，会给你5GB的空间用来存储图片，一般来说够用了。将获取的smms图床的token复制到Twikoo插件设置里的<code>IMAGE_CDN_ToKEN</code>，并且将<code>IMAGE_CDN</code>填写为<code>smms</code>，其余选项保持默认即可，配置结束之后记得拉到最下方点击保存，刷新一下即可生效。下面图片展示详细的步骤：</p>
-<ul>
-<li>smms注册并获取token</li>
-</ul>
-<p><img
-src="https://blogresource.sqwdream.cloud/post/博客搭建之Twikoo/img/body/smms.jpg" /></p>
-<ul>
-<li>网站的Twikoo评论设置</li>
-</ul>
-<p><img
-src="https://blogresource.sqwdream.cloud/post/博客搭建之Twikoo/img/body/评论图床设置.jpg" /></p>
-<h3 id="支持latex公式评论">1.2 支持Latex公式评论</h3>
-<p>支持公式评论可以参考Twikoo官网的<a
-href="https://twikoo.js.org/faq.html#%E5%A6%82%E4%BD%95%E5%90%AF%E7%94%A8-katex-%E6%94%AF%E6%8C%81">如何开启Katex支持？</a>，就是在主题配置文件<code>_config.yml</code>中引入如下代码：</p>
-<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">innject:</span></span><br><span class="line">  <span class="attr">head:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">&lt;link</span> <span class="string">rel=&quot;stylesheet&quot;</span> <span class="string">href=&quot;https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css&quot;</span> <span class="string">integrity=&quot;sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X&quot;</span> <span class="string">crossorigin=&quot;anonymous&quot;&gt;</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">&lt;script</span> <span class="string">defer</span> <span class="string">src=&quot;https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js&quot;</span> <span class="string">integrity=&quot;sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4&quot;</span> <span class="string">crossorigin=&quot;anonymous&quot;&gt;&lt;/script&gt;</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">&lt;script</span> <span class="string">defer</span> <span class="string">src=&quot;https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js&quot;</span> <span class="string">integrity=&quot;sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa&quot;</span> <span class="string">crossorigin=&quot;anonymous&quot;&gt;&lt;/script&gt;</span></span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>博客搭建</category>
-      </categories>
-      <tags>
-        <tag>博客搭建</tag>
-        <tag>Twikoo</tag>
-        <tag>图床</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>博客搭建之Markdown基本语法</title>
     <url>/posts/b289d8f9.html</url>
     <content><![CDATA[<h1 id="博客搭建之markdown基本语法">博客搭建之Markdown基本语法</h1>
@@ -127,40 +91,8 @@ S=\frac{8\pi^2{k_\mathrm{B}}^2T}{3eh^2}m_{\mathrm{d}}^{*}\left(\frac{\pi}{3p}\ri
         <category>博客搭建</category>
       </categories>
       <tags>
-        <tag>博客搭建</tag>
         <tag>Markdown</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>博客搭建之夜间繁星</title>
-    <url>/posts/5ed672e6.html</url>
-    <content><![CDATA[<h1 id="博客搭建之夜间繁星">博客搭建之夜间繁星</h1>
-<div class="note info modern"><p>鉴于每个人的博客根目录名称都不太一样，本贴<strong>博客根目录</strong>一律以<code>[BlogRoot]</code>指代。
-站点配置文件<code>_config.yml</code>，路径为<code>[BlogRoot]\_config.yml</code>。
-主题配置文件<code>_config.yml</code>，路径为<code>[BlogRoot]\themes\butterfly\_config.yml</code>。
-搬运自：<a
-href="https://b.leonus.cn/2022/universe.html">Hexo博客夜间模式繁星（宇宙）效果</a></p>
-</div>
-<h2 id="夜间繁星背景特效">夜间繁星背景特效</h2>
-<h3
-id="新建文件blogrootthemesbutterflysourcejsuniverse.js添加以下内容">1.新建文件<code>[BlogRoot]\themes\butterfly\source\js\universe.js</code>，添加以下内容：</h3>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">dark</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">window</span>.<span class="property">requestAnimationFrame</span> = <span class="variable language_">window</span>.<span class="property">requestAnimationFrame</span> || <span class="variable language_">window</span>.<span class="property">mozRequestAnimationFrame</span> || <span class="variable language_">window</span>.<span class="property">webkitRequestAnimationFrame</span> || <span class="variable language_">window</span>.<span class="property">msRequestAnimationFrame</span>;</span><br><span class="line">    <span class="keyword">var</span> n, e, i, h, t = <span class="number">.05</span>,</span><br><span class="line">        s = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;universe&quot;</span>),</span><br><span class="line">        o = !<span class="number">0</span>,</span><br><span class="line">        a = <span class="string">&quot;180,184,240&quot;</span>,</span><br><span class="line">        r = <span class="string">&quot;226,225,142&quot;</span>,</span><br><span class="line">        d = <span class="string">&quot;226,225,224&quot;</span>,</span><br><span class="line">        c = [];</span><br><span class="line"></span><br><span class="line">    <span class="keyword">function</span> <span class="title function_">f</span>(<span class="params"></span>) &#123;</span><br><span class="line">        n = <span class="variable language_">window</span>.<span class="property">innerWidth</span>, e = <span class="variable language_">window</span>.<span class="property">innerHeight</span>, i = <span class="number">.216</span> * n, s.<span class="title function_">setAttribute</span>(<span class="string">&quot;width&quot;</span>, n), s.<span class="title function_">setAttribute</span>(<span class="string">&quot;height&quot;</span>, e)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">function</span> <span class="title function_">u</span>(<span class="params"></span>) &#123;</span><br><span class="line">        h.<span class="title function_">clearRect</span>(<span class="number">0</span>, <span class="number">0</span>, n, e);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">var</span> t = c.<span class="property">length</span>, i = <span class="number">0</span>; i &lt; t; i++) &#123;</span><br><span class="line">            <span class="keyword">var</span> s = c[i];</span><br><span class="line">            s.<span class="title function_">move</span>(), s.<span class="title function_">fadeIn</span>(), s.<span class="title function_">fadeOut</span>(), s.<span class="title function_">draw</span>()</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">function</span> <span class="title function_">y</span>(<span class="params"></span>) &#123;</span><br><span class="line">        <span class="variable language_">this</span>.<span class="property">reset</span> = <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">            <span class="variable language_">this</span>.<span class="property">giant</span> = <span class="title function_">m</span>(<span class="number">3</span>), <span class="variable language_">this</span>.<span class="property">comet</span> = !<span class="variable language_">this</span>.<span class="property">giant</span> &amp;&amp; !o &amp;&amp; <span class="title function_">m</span>(<span class="number">10</span>), <span class="variable language_">this</span>.<span class="property">x</span> = <span class="title function_">l</span>(<span class="number">0</span>, n - <span class="number">10</span>), <span class="variable language_">this</span>.<span class="property">y</span> = <span class="title function_">l</span>(<span class="number">0</span>, e), <span class="variable language_">this</span>.<span class="property">r</span> = <span class="title function_">l</span>(<span class="number">1.1</span>, <span class="number">2.6</span>), <span class="variable language_">this</span>.<span class="property">dx</span> = <span class="title function_">l</span>(t, <span class="number">6</span> * t) + (<span class="variable language_">this</span>.<span class="property">comet</span> + <span class="number">1</span> - <span class="number">1</span>) * t * <span class="title function_">l</span>(<span class="number">50</span>, <span class="number">120</span>) + <span class="number">2</span> * t, <span class="variable language_">this</span>.<span class="property">dy</span> = -<span class="title function_">l</span>(t, <span class="number">6</span> * t) - (<span class="variable language_">this</span>.<span class="property">comet</span> + <span class="number">1</span> - <span class="number">1</span>) * t * <span class="title function_">l</span>(<span class="number">50</span>, <span class="number">120</span>), <span class="variable language_">this</span>.<span class="property">fadingOut</span> = <span class="literal">null</span>, <span class="variable language_">this</span>.<span class="property">fadingIn</span> = !<span class="number">0</span>, <span class="variable language_">this</span>.<span class="property">opacity</span> = <span class="number">0</span>, <span class="variable language_">this</span>.<span class="property">opacityTresh</span> = <span class="title function_">l</span>(<span class="number">.2</span>, <span class="number">1</span> - <span class="number">.4</span> * (<span class="variable language_">this</span>.<span class="property">comet</span> + <span class="number">1</span> - <span class="number">1</span>)), <span class="variable language_">this</span>.<span class="property">do</span> = <span class="title function_">l</span>(<span class="number">5e-4</span>, <span class="number">.002</span>) + <span class="number">.001</span> * (<span class="variable language_">this</span>.<span class="property">comet</span> + <span class="number">1</span> - <span class="number">1</span>)</span><br><span class="line">        &#125;, <span class="variable language_">this</span>.<span class="property">fadeIn</span> = <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">            <span class="variable language_">this</span>.<span class="property">fadingIn</span> &amp;&amp; (<span class="variable language_">this</span>.<span class="property">fadingIn</span> = !(<span class="variable language_">this</span>.<span class="property">opacity</span> &gt; <span class="variable language_">this</span>.<span class="property">opacityTresh</span>), <span class="variable language_">this</span>.<span class="property">opacity</span> += <span class="variable language_">this</span>.<span class="property">do</span>)</span><br><span class="line">        &#125;, <span class="variable language_">this</span>.<span class="property">fadeOut</span> = <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">            <span class="variable language_">this</span>.<span class="property">fadingOut</span> &amp;&amp; (<span class="variable language_">this</span>.<span class="property">fadingOut</span> = !(<span class="variable language_">this</span>.<span class="property">opacity</span> &lt; <span class="number">0</span>), <span class="variable language_">this</span>.<span class="property">opacity</span> -= <span class="variable language_">this</span>.<span class="property">do</span> /<span class="number">2</span>,(<span class="variable language_">this</span>.<span class="property">x</span>&gt;n||<span class="variable language_">this</span>.<span class="property">y</span>&lt;<span class="number">0</span>)&amp;&amp;(<span class="variable language_">this</span>.<span class="property">fadingOut</span>=!<span class="number">1</span>,<span class="variable language_">this</span>.<span class="title function_">reset</span>()))&#125;,<span class="variable language_">this</span>.<span class="property">draw</span>=<span class="keyword">function</span>(<span class="params"></span>)&#123;<span class="keyword">if</span>(h.<span class="title function_">beginPath</span>(),<span class="variable language_">this</span>.<span class="property">giant</span>)h.<span class="property">fillStyle</span>=<span class="string">&quot;rgba(&quot;</span>+a+<span class="string">&quot;,&quot;</span>+<span class="variable language_">this</span>.<span class="property">opacity</span>+<span class="string">&quot;)&quot;</span>,h.<span class="title function_">arc</span>(<span class="variable language_">this</span>.<span class="property">x</span>,<span class="variable language_">this</span>.<span class="property">y</span>,<span class="number">2</span>,<span class="number">0</span>,<span class="number">2</span>*<span class="title class_">Math</span>.<span class="property">PI</span>,!<span class="number">1</span>);<span class="keyword">else</span> <span class="keyword">if</span>(<span class="variable language_">this</span>.<span class="property">comet</span>)&#123;h.<span class="property">fillStyle</span>=<span class="string">&quot;rgba(&quot;</span>+d+<span class="string">&quot;,&quot;</span>+<span class="variable language_">this</span>.<span class="property">opacity</span>+<span class="string">&quot;)&quot;</span>,h.<span class="title function_">arc</span>(<span class="variable language_">this</span>.<span class="property">x</span>,<span class="variable language_">this</span>.<span class="property">y</span>,<span class="number">1.5</span>,<span class="number">0</span>,<span class="number">2</span>*<span class="title class_">Math</span>.<span class="property">PI</span>,!<span class="number">1</span>);<span class="keyword">for</span>(<span class="keyword">var</span> t=<span class="number">0</span>;t&lt;<span class="number">30</span>;t++)h.<span class="property">fillStyle</span>=<span class="string">&quot;rgba(&quot;</span>+d+<span class="string">&quot;,&quot;</span>+(<span class="variable language_">this</span>.<span class="property">opacity</span>-<span class="variable language_">this</span>.<span class="property">opacity</span>/<span class="number">20</span> * t) + <span class="string">&quot;)&quot;</span>, h.<span class="title function_">rect</span>(<span class="variable language_">this</span>.<span class="property">x</span> - <span class="variable language_">this</span>.<span class="property">dx</span> / <span class="number">4</span> * t, <span class="variable language_">this</span>.<span class="property">y</span> - <span class="variable language_">this</span>.<span class="property">dy</span> / <span class="number">4</span> * t - <span class="number">2</span>, <span class="number">2</span>, <span class="number">2</span>), h.<span class="title function_">fill</span>()</span><br><span class="line">        &#125; <span class="keyword">else</span> h.<span class="property">fillStyle</span> = <span class="string">&quot;rgba(&quot;</span> + r + <span class="string">&quot;,&quot;</span> + <span class="variable language_">this</span>.<span class="property">opacity</span> + <span class="string">&quot;)&quot;</span>, h.<span class="title function_">rect</span>(<span class="variable language_">this</span>.<span class="property">x</span>, <span class="variable language_">this</span>.<span class="property">y</span>, <span class="variable language_">this</span>.<span class="property">r</span>, <span class="variable language_">this</span>.<span class="property">r</span>);</span><br><span class="line">            h.<span class="title function_">closePath</span>(), h.<span class="title function_">fill</span>()</span><br><span class="line">        &#125;, <span class="variable language_">this</span>.<span class="property">move</span> = <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">            <span class="variable language_">this</span>.<span class="property">x</span> += <span class="variable language_">this</span>.<span class="property">dx</span>, <span class="variable language_">this</span>.<span class="property">y</span> += <span class="variable language_">this</span>.<span class="property">dy</span>, !<span class="number">1</span> === <span class="variable language_">this</span>.<span class="property">fadingOut</span> &amp;&amp; <span class="variable language_">this</span>.<span class="title function_">reset</span>(), (<span class="variable language_">this</span>.<span class="property">x</span> &gt; n - n / <span class="number">4</span> || <span class="variable language_">this</span>.<span class="property">y</span> &lt; <span class="number">0</span>) &amp;&amp; (<span class="variable language_">this</span>.<span class="property">fadingOut</span> = !<span class="number">0</span>)</span><br><span class="line">        &#125;, <span class="built_in">setTimeout</span>(<span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">            o = !<span class="number">1</span></span><br><span class="line">        &#125;, <span class="number">50</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">function</span> <span class="title function_">m</span>(<span class="params">t</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="title class_">Math</span>.<span class="title function_">floor</span>(<span class="number">1e3</span> * <span class="title class_">Math</span>.<span class="title function_">random</span>()) + <span class="number">1</span> &lt; <span class="number">10</span> * t</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">function</span> <span class="title function_">l</span>(<span class="params">t, i</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="title class_">Math</span>.<span class="title function_">random</span>() * (i - t) + t</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="title function_">f</span>(), <span class="variable language_">window</span>.<span class="title function_">addEventListener</span>(<span class="string">&quot;resize&quot;</span>, f, !<span class="number">1</span>), <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">        h = s.<span class="title function_">getContext</span>(<span class="string">&quot;2d&quot;</span>);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">var</span> t = <span class="number">0</span>; t &lt; i; t++) c[t] = <span class="keyword">new</span> y, c[t].<span class="title function_">reset</span>();</span><br><span class="line">        <span class="title function_">u</span>()</span><br><span class="line">    &#125;(), <span class="keyword">function</span> <span class="title function_">t</span>(<span class="params"></span>) &#123;</span><br><span class="line">        <span class="variable language_">document</span>.<span class="title function_">getElementsByTagName</span>(<span class="string">&#x27;html&#x27;</span>)[<span class="number">0</span>].<span class="title function_">getAttribute</span>(<span class="string">&#x27;data-theme&#x27;</span>) == <span class="string">&#x27;dark&#x27;</span> &amp;&amp; <span class="title function_">u</span>(), <span class="variable language_">window</span>.<span class="title function_">requestAnimationFrame</span>(t)</span><br><span class="line">    &#125;()</span><br><span class="line">&#125;;</span><br><span class="line"><span class="title function_">dark</span>()</span><br></pre></td></tr></table></figure>
-<h3
-id="新建文件blogrootthemesbutterflysourcecssmycssuniverse.css添加以下内容">2.新建文件<code>[BlogRoot]\themes\butterfly\source\css\mycss\universe.css</code>，添加以下内容：</h3>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#universe</span> &#123;</span><br><span class="line">    <span class="attribute">display</span>: block;</span><br><span class="line">    <span class="attribute">position</span>: fixed;</span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">border</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">outline</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">left</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">top</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">100%</span>;</span><br><span class="line">    <span class="attribute">pointer-events</span>: none;</span><br><span class="line">    <span class="attribute">z-index</span>: <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3
-id="引入对应的资源修改主题配置文件_config.yml在inject配置项引入">3.引入对应的资源,修改主题配置文件<code>_config.yml</code>,在<code>inject</code>配置项引入：</h3>
-<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">inject:</span></span><br><span class="line">  <span class="attr">head:</span> </span><br><span class="line">    <span class="bullet">-</span> <span class="string">&lt;link</span> <span class="string">rel=&quot;stylesheet&quot;</span> <span class="string">href=&quot;/css/mycss/universe.css?version=220002&quot;&gt;</span> <span class="comment"># 添加?version=220002是为了每次修改css后，更改其值用户就会自动发起新的请求，不会使用本地缓存。问号后面可以跟任意内容，只要使其内容和上次不同就可以。</span></span><br><span class="line">  <span class="attr">bottom:</span></span><br><span class="line">    <span class="comment"># 夜间模式背景</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">&lt;canvas</span> <span class="string">id=&quot;universe&quot;&gt;&lt;/canvas&gt;</span> <span class="comment"># 创建画布</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">&lt;script</span> <span class="string">src=&quot;/js/universe.js&quot;&gt;&lt;/script&gt;</span> <span class="comment"># 引入js</span></span><br></pre></td></tr></table></figure>
-<h3
-id="手机端也呈现夜间繁星效果在universe.css文件中加入">4.手机端也呈现夜间繁星效果，在<code>universe.css</code>文件中加入：</h3>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@media</span> screen <span class="keyword">and</span> (<span class="attribute">max-width</span>: <span class="number">768px</span>) &#123;</span><br><span class="line">    <span class="selector-id">#universe</span> &#123;</span><br><span class="line">        <span class="attribute">display</span>: none;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">/* 下面这个是切换手机背景的代码，有需要的可以使用，没需要的删了就行 */</span></span><br><span class="line">    <span class="selector-id">#web_bg</span> &#123;</span><br><span class="line">        <span class="attribute">background-image</span>: <span class="built_in">url</span>(<span class="string">&quot;https://img.vm.laomishuo.com/image/2021/05/2021053107390019.jpeg&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>博客搭建</category>
-      </categories>
-      <tags>
         <tag>博客搭建</tag>
-        <tag>夜间繁星背景特效</tag>
       </tags>
   </entry>
   <entry>
@@ -1355,8 +1287,8 @@ Your browser does not support the audio tag.</audio>
 </div>
 </div></li>
 </ol><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div></div>
-<h2 id="相册-gallery">1.19 <a
-href="https://www.sqwdream.cloud/posts/7cede130.html">相册
+<h2 id="相册-gallery"><a
+href="https://www.sqwdream.cloud/posts/7cede130.html">1.19 相册
 gallery</a></h2>
 <h2 id="折叠框-foldingtoggle">1.20 折叠框 folding/Toggle</h2>
 <div class="tabs" id="折叠框"><ul class="nav-tabs"><li class="tab active"><button type="button" data-href="#折叠框-1">标签语法</button></li><li class="tab"><button type="button" data-href="#折叠框-2">配置参数</button></li><li class="tab"><button type="button" data-href="#折叠框-3">示例源码</button></li><li class="tab"><button type="button" data-href="#折叠框-4">渲染演示</button></li></ul><div class="tab-contents"><div class="tab-item-content active" id="折叠框-1"><ol type="1">
@@ -1749,68 +1681,6 @@ href="https://akilar.top/posts/d2ebecef/">Hexo引入阿里矢量图标库</a></p
 <use xlink:href="#icon-tianqi_leizhenyu"></use>
 </svg><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div></div>
 <h2 id="特效标签-wow">1.24 特效标签 wow</h2>
-<div class="tabs" id="特效标签"><ul class="nav-tabs"><li class="tab active"><button type="button" data-href="#特效标签-1">标签语法</button></li><li class="tab"><button type="button" data-href="#特效标签-2">配置参数</button></li><li class="tab"><button type="button" data-href="#特效标签-3">示例源码</button></li><li class="tab"><button type="button" data-href="#特效标签-4">渲染演示</button></li></ul><div class="tab-contents"><div class="tab-item-content active" id="特效标签-1"><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% wow [animete],[duration],[delay],[offset],[iteration] %&#125;</span><br><span class="line">内容</span><br><span class="line">&#123;% endwow %&#125;</span><br></pre></td></tr></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="特效标签-2"><ol type="1">
-<li><code>animate</code>: 动画样式，效果详见 <a
-href="https://animate.style/">animate.css 参考文档</a></li>
-<li><code>duration</code>: 选填项，动画持续时间，单位可以是
-<code>ms</code> 也可以是 <code>s</code>。例如
-<code>3s</code>，<code>700ms</code>。</li>
-<li><code>delay</code>: 选填项，动画开始的延迟时间，单位可以是
-<code>ms</code> 也可以是 <code>s</code>。例如
-<code>3s</code>，<code>700ms</code>。</li>
-<li><code>offset</code>: 选填项，开始动画的距离（相对浏览器底部）</li>
-<li><code>iteration</code>: 选填项，动画重复的次数</li>
-</ol><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="特效标签-3"><p>1.flip 动画效果</p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% wow animate<span class="strong">__zoomIn,5s,5s,100,10 %&#125;</span></span><br><span class="line"><span class="strong">&#123;% note blue &#x27;fas fa-bullhorn&#x27; modern%&#125;</span></span><br><span class="line"><span class="strong">`zoomIn`动画效果，持续`5s`，延时`5s`，离底部`100`距离时启动，重复`10`次</span></span><br><span class="line"><span class="strong">&#123;% endnote %&#125;</span></span><br><span class="line"><span class="strong">&#123;% endwow %&#125;</span></span><br></pre></td></tr></table></figure>
-<p>2.zoomIn 动画效果，持续 5s，延时 5s，离底部 100 距离时启动，重复 10
-次</p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% wow animate<span class="strong">__zoomIn,5s,5s,100,10 %&#125;</span></span><br><span class="line"><span class="strong">&#123;% note blue &#x27;fas fa-bullhorn&#x27; modern%&#125;</span></span><br><span class="line"><span class="strong">`zoomIn`动画效果，持续`5s`，延时`5s`，离底部`100`距离时启动，重复`10`次</span></span><br><span class="line"><span class="strong">&#123;% endnote %&#125;</span></span><br><span class="line"><span class="strong">&#123;% endwow %&#125;</span></span><br></pre></td></tr></table></figure>
-<p>3.slideInRight 动画效果，持续 5s，延时 5s</p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% wow animate<span class="strong">__slideInRight,5s,5s %&#125;</span></span><br><span class="line"><span class="strong">&#123;% note orange &#x27;fas fa-car&#x27; modern%&#125;</span></span><br><span class="line"><span class="strong">`slideInRight`动画效果，持续`5s`，延时`5s`。</span></span><br><span class="line"><span class="strong">&#123;% endnote %&#125;</span></span><br><span class="line"><span class="strong">&#123;% endwow %&#125;</span></span><br></pre></td></tr></table></figure>
-<p>4.heartBeat 动画效果，延时 5s，重复 10
-次。此处注意不用的参数位置要留空，用逗号间隔</p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% wow animate<span class="strong">__heartBeat,,5s,,10 %&#125;</span></span><br><span class="line"><span class="strong">&#123;% note red &#x27;fas fa-battery-half&#x27; modern%&#125;</span></span><br><span class="line"><span class="strong">`heartBeat`动画效果，延时`5s`，重复`10`次。</span></span><br><span class="line"><span class="strong">&#123;% endnote %&#125;</span></span><br><span class="line"><span class="strong">&#123;% endwow %&#125;</span></span><br></pre></td></tr></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="特效标签-4"><p>1.flip 动画效果</p>
-<div class="wow animate__zoomIn" data-wow-duration="5s"
-data-wow-delay="5s" data-wow-offset="100" data-wow-iteration="10">
-<div class="note blue icon-padding modern">
-<i class="note-icon fas fa-bullhorn"></i>
-<p>
-<code>zoomIn</code>动画效果，持续<code>5s</code>，延时<code>5s</code>，离底部<code>100</code>距离时启动，重复<code>10</code>次
-</p>
-</div>
-</div>
-<p>2.zoomIn 动画效果，持续 5s，延时 5s，离底部 100 距离时启动，重复 10
-次</p>
-<div class="wow animate__zoomIn" data-wow-duration="5s"
-data-wow-delay="5s" data-wow-offset="100" data-wow-iteration="10">
-<div class="note blue icon-padding modern">
-<i class="note-icon fas fa-bullhorn"></i>
-<p>
-<code>zoomIn</code>动画效果，持续<code>5s</code>，延时<code>5s</code>，离底部<code>100</code>距离时启动，重复<code>10</code>次
-</p>
-</div>
-</div>
-<p>3.slideInRight 动画效果，持续 5s，延时 5s</p>
-<div class="wow animate__slideInRight" data-wow-duration="5s"
-data-wow-delay="5s" data-wow-offset="" data-wow-iteration="">
-<div class="note orange icon-padding modern">
-<i class="note-icon fas fa-car"></i>
-<p>
-<code>slideInRight</code>动画效果，持续<code>5s</code>，延时<code>5s</code>。
-</p>
-</div>
-</div>
-<p>4.heartBeat 动画效果，延时 5s，重复 10
-次。此处注意不用的参数位置要留空，用逗号间隔</p>
-<div class="wow animate__heartBeat" data-wow-duration=""
-data-wow-delay="5s" data-wow-offset="" data-wow-iteration="10">
-<div class="note red icon-padding modern">
-<i class="note-icon fas fa-battery-half"></i>
-<p>
-<code>heartBeat</code>动画效果，延时<code>5s</code>，重复<code>10</code>次。
-</p>
-</div>
-</div><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div></div>
 <h2 id="进度条-progress">1.25 进度条 progress</h2>
 <div class="tip info"><p>进度条标签参考<a
 href="https://rongbuqiu.com/jdt.html">沂佰孜猫-给HEXO文章添加彩色进度条</a>。
@@ -1928,6 +1798,74 @@ href="https://www.sqwdream.cloud/posts/75b3d8a.html">1.32
       </tags>
   </entry>
   <entry>
+    <title>博客搭建之夜间繁星</title>
+    <url>/posts/5ed672e6.html</url>
+    <content><![CDATA[<h1 id="博客搭建之夜间繁星">博客搭建之夜间繁星</h1>
+<div class="note info modern"><p>鉴于每个人的博客根目录名称都不太一样，本贴<strong>博客根目录</strong>一律以<code>[BlogRoot]</code>指代。
+站点配置文件<code>_config.yml</code>，路径为<code>[BlogRoot]\_config.yml</code>。
+主题配置文件<code>_config.yml</code>，路径为<code>[BlogRoot]\themes\butterfly\_config.yml</code>。
+搬运自：<a
+href="https://b.leonus.cn/2022/universe.html">Hexo博客夜间模式繁星（宇宙）效果</a></p>
+</div>
+<h2 id="夜间繁星背景特效">夜间繁星背景特效</h2>
+<h3
+id="新建文件blogrootthemesbutterflysourcejsuniverse.js添加以下内容">1.新建文件<code>[BlogRoot]\themes\butterfly\source\js\universe.js</code>，添加以下内容：</h3>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">dark</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">window</span>.<span class="property">requestAnimationFrame</span> = <span class="variable language_">window</span>.<span class="property">requestAnimationFrame</span> || <span class="variable language_">window</span>.<span class="property">mozRequestAnimationFrame</span> || <span class="variable language_">window</span>.<span class="property">webkitRequestAnimationFrame</span> || <span class="variable language_">window</span>.<span class="property">msRequestAnimationFrame</span>;</span><br><span class="line">    <span class="keyword">var</span> n, e, i, h, t = <span class="number">.05</span>,</span><br><span class="line">        s = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;universe&quot;</span>),</span><br><span class="line">        o = !<span class="number">0</span>,</span><br><span class="line">        a = <span class="string">&quot;180,184,240&quot;</span>,</span><br><span class="line">        r = <span class="string">&quot;226,225,142&quot;</span>,</span><br><span class="line">        d = <span class="string">&quot;226,225,224&quot;</span>,</span><br><span class="line">        c = [];</span><br><span class="line"></span><br><span class="line">    <span class="keyword">function</span> <span class="title function_">f</span>(<span class="params"></span>) &#123;</span><br><span class="line">        n = <span class="variable language_">window</span>.<span class="property">innerWidth</span>, e = <span class="variable language_">window</span>.<span class="property">innerHeight</span>, i = <span class="number">.216</span> * n, s.<span class="title function_">setAttribute</span>(<span class="string">&quot;width&quot;</span>, n), s.<span class="title function_">setAttribute</span>(<span class="string">&quot;height&quot;</span>, e)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">function</span> <span class="title function_">u</span>(<span class="params"></span>) &#123;</span><br><span class="line">        h.<span class="title function_">clearRect</span>(<span class="number">0</span>, <span class="number">0</span>, n, e);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">var</span> t = c.<span class="property">length</span>, i = <span class="number">0</span>; i &lt; t; i++) &#123;</span><br><span class="line">            <span class="keyword">var</span> s = c[i];</span><br><span class="line">            s.<span class="title function_">move</span>(), s.<span class="title function_">fadeIn</span>(), s.<span class="title function_">fadeOut</span>(), s.<span class="title function_">draw</span>()</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">function</span> <span class="title function_">y</span>(<span class="params"></span>) &#123;</span><br><span class="line">        <span class="variable language_">this</span>.<span class="property">reset</span> = <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">            <span class="variable language_">this</span>.<span class="property">giant</span> = <span class="title function_">m</span>(<span class="number">3</span>), <span class="variable language_">this</span>.<span class="property">comet</span> = !<span class="variable language_">this</span>.<span class="property">giant</span> &amp;&amp; !o &amp;&amp; <span class="title function_">m</span>(<span class="number">10</span>), <span class="variable language_">this</span>.<span class="property">x</span> = <span class="title function_">l</span>(<span class="number">0</span>, n - <span class="number">10</span>), <span class="variable language_">this</span>.<span class="property">y</span> = <span class="title function_">l</span>(<span class="number">0</span>, e), <span class="variable language_">this</span>.<span class="property">r</span> = <span class="title function_">l</span>(<span class="number">1.1</span>, <span class="number">2.6</span>), <span class="variable language_">this</span>.<span class="property">dx</span> = <span class="title function_">l</span>(t, <span class="number">6</span> * t) + (<span class="variable language_">this</span>.<span class="property">comet</span> + <span class="number">1</span> - <span class="number">1</span>) * t * <span class="title function_">l</span>(<span class="number">50</span>, <span class="number">120</span>) + <span class="number">2</span> * t, <span class="variable language_">this</span>.<span class="property">dy</span> = -<span class="title function_">l</span>(t, <span class="number">6</span> * t) - (<span class="variable language_">this</span>.<span class="property">comet</span> + <span class="number">1</span> - <span class="number">1</span>) * t * <span class="title function_">l</span>(<span class="number">50</span>, <span class="number">120</span>), <span class="variable language_">this</span>.<span class="property">fadingOut</span> = <span class="literal">null</span>, <span class="variable language_">this</span>.<span class="property">fadingIn</span> = !<span class="number">0</span>, <span class="variable language_">this</span>.<span class="property">opacity</span> = <span class="number">0</span>, <span class="variable language_">this</span>.<span class="property">opacityTresh</span> = <span class="title function_">l</span>(<span class="number">.2</span>, <span class="number">1</span> - <span class="number">.4</span> * (<span class="variable language_">this</span>.<span class="property">comet</span> + <span class="number">1</span> - <span class="number">1</span>)), <span class="variable language_">this</span>.<span class="property">do</span> = <span class="title function_">l</span>(<span class="number">5e-4</span>, <span class="number">.002</span>) + <span class="number">.001</span> * (<span class="variable language_">this</span>.<span class="property">comet</span> + <span class="number">1</span> - <span class="number">1</span>)</span><br><span class="line">        &#125;, <span class="variable language_">this</span>.<span class="property">fadeIn</span> = <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">            <span class="variable language_">this</span>.<span class="property">fadingIn</span> &amp;&amp; (<span class="variable language_">this</span>.<span class="property">fadingIn</span> = !(<span class="variable language_">this</span>.<span class="property">opacity</span> &gt; <span class="variable language_">this</span>.<span class="property">opacityTresh</span>), <span class="variable language_">this</span>.<span class="property">opacity</span> += <span class="variable language_">this</span>.<span class="property">do</span>)</span><br><span class="line">        &#125;, <span class="variable language_">this</span>.<span class="property">fadeOut</span> = <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">            <span class="variable language_">this</span>.<span class="property">fadingOut</span> &amp;&amp; (<span class="variable language_">this</span>.<span class="property">fadingOut</span> = !(<span class="variable language_">this</span>.<span class="property">opacity</span> &lt; <span class="number">0</span>), <span class="variable language_">this</span>.<span class="property">opacity</span> -= <span class="variable language_">this</span>.<span class="property">do</span> /<span class="number">2</span>,(<span class="variable language_">this</span>.<span class="property">x</span>&gt;n||<span class="variable language_">this</span>.<span class="property">y</span>&lt;<span class="number">0</span>)&amp;&amp;(<span class="variable language_">this</span>.<span class="property">fadingOut</span>=!<span class="number">1</span>,<span class="variable language_">this</span>.<span class="title function_">reset</span>()))&#125;,<span class="variable language_">this</span>.<span class="property">draw</span>=<span class="keyword">function</span>(<span class="params"></span>)&#123;<span class="keyword">if</span>(h.<span class="title function_">beginPath</span>(),<span class="variable language_">this</span>.<span class="property">giant</span>)h.<span class="property">fillStyle</span>=<span class="string">&quot;rgba(&quot;</span>+a+<span class="string">&quot;,&quot;</span>+<span class="variable language_">this</span>.<span class="property">opacity</span>+<span class="string">&quot;)&quot;</span>,h.<span class="title function_">arc</span>(<span class="variable language_">this</span>.<span class="property">x</span>,<span class="variable language_">this</span>.<span class="property">y</span>,<span class="number">2</span>,<span class="number">0</span>,<span class="number">2</span>*<span class="title class_">Math</span>.<span class="property">PI</span>,!<span class="number">1</span>);<span class="keyword">else</span> <span class="keyword">if</span>(<span class="variable language_">this</span>.<span class="property">comet</span>)&#123;h.<span class="property">fillStyle</span>=<span class="string">&quot;rgba(&quot;</span>+d+<span class="string">&quot;,&quot;</span>+<span class="variable language_">this</span>.<span class="property">opacity</span>+<span class="string">&quot;)&quot;</span>,h.<span class="title function_">arc</span>(<span class="variable language_">this</span>.<span class="property">x</span>,<span class="variable language_">this</span>.<span class="property">y</span>,<span class="number">1.5</span>,<span class="number">0</span>,<span class="number">2</span>*<span class="title class_">Math</span>.<span class="property">PI</span>,!<span class="number">1</span>);<span class="keyword">for</span>(<span class="keyword">var</span> t=<span class="number">0</span>;t&lt;<span class="number">30</span>;t++)h.<span class="property">fillStyle</span>=<span class="string">&quot;rgba(&quot;</span>+d+<span class="string">&quot;,&quot;</span>+(<span class="variable language_">this</span>.<span class="property">opacity</span>-<span class="variable language_">this</span>.<span class="property">opacity</span>/<span class="number">20</span> * t) + <span class="string">&quot;)&quot;</span>, h.<span class="title function_">rect</span>(<span class="variable language_">this</span>.<span class="property">x</span> - <span class="variable language_">this</span>.<span class="property">dx</span> / <span class="number">4</span> * t, <span class="variable language_">this</span>.<span class="property">y</span> - <span class="variable language_">this</span>.<span class="property">dy</span> / <span class="number">4</span> * t - <span class="number">2</span>, <span class="number">2</span>, <span class="number">2</span>), h.<span class="title function_">fill</span>()</span><br><span class="line">        &#125; <span class="keyword">else</span> h.<span class="property">fillStyle</span> = <span class="string">&quot;rgba(&quot;</span> + r + <span class="string">&quot;,&quot;</span> + <span class="variable language_">this</span>.<span class="property">opacity</span> + <span class="string">&quot;)&quot;</span>, h.<span class="title function_">rect</span>(<span class="variable language_">this</span>.<span class="property">x</span>, <span class="variable language_">this</span>.<span class="property">y</span>, <span class="variable language_">this</span>.<span class="property">r</span>, <span class="variable language_">this</span>.<span class="property">r</span>);</span><br><span class="line">            h.<span class="title function_">closePath</span>(), h.<span class="title function_">fill</span>()</span><br><span class="line">        &#125;, <span class="variable language_">this</span>.<span class="property">move</span> = <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">            <span class="variable language_">this</span>.<span class="property">x</span> += <span class="variable language_">this</span>.<span class="property">dx</span>, <span class="variable language_">this</span>.<span class="property">y</span> += <span class="variable language_">this</span>.<span class="property">dy</span>, !<span class="number">1</span> === <span class="variable language_">this</span>.<span class="property">fadingOut</span> &amp;&amp; <span class="variable language_">this</span>.<span class="title function_">reset</span>(), (<span class="variable language_">this</span>.<span class="property">x</span> &gt; n - n / <span class="number">4</span> || <span class="variable language_">this</span>.<span class="property">y</span> &lt; <span class="number">0</span>) &amp;&amp; (<span class="variable language_">this</span>.<span class="property">fadingOut</span> = !<span class="number">0</span>)</span><br><span class="line">        &#125;, <span class="built_in">setTimeout</span>(<span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">            o = !<span class="number">1</span></span><br><span class="line">        &#125;, <span class="number">50</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">function</span> <span class="title function_">m</span>(<span class="params">t</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="title class_">Math</span>.<span class="title function_">floor</span>(<span class="number">1e3</span> * <span class="title class_">Math</span>.<span class="title function_">random</span>()) + <span class="number">1</span> &lt; <span class="number">10</span> * t</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">function</span> <span class="title function_">l</span>(<span class="params">t, i</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="title class_">Math</span>.<span class="title function_">random</span>() * (i - t) + t</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="title function_">f</span>(), <span class="variable language_">window</span>.<span class="title function_">addEventListener</span>(<span class="string">&quot;resize&quot;</span>, f, !<span class="number">1</span>), <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">        h = s.<span class="title function_">getContext</span>(<span class="string">&quot;2d&quot;</span>);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">var</span> t = <span class="number">0</span>; t &lt; i; t++) c[t] = <span class="keyword">new</span> y, c[t].<span class="title function_">reset</span>();</span><br><span class="line">        <span class="title function_">u</span>()</span><br><span class="line">    &#125;(), <span class="keyword">function</span> <span class="title function_">t</span>(<span class="params"></span>) &#123;</span><br><span class="line">        <span class="variable language_">document</span>.<span class="title function_">getElementsByTagName</span>(<span class="string">&#x27;html&#x27;</span>)[<span class="number">0</span>].<span class="title function_">getAttribute</span>(<span class="string">&#x27;data-theme&#x27;</span>) == <span class="string">&#x27;dark&#x27;</span> &amp;&amp; <span class="title function_">u</span>(), <span class="variable language_">window</span>.<span class="title function_">requestAnimationFrame</span>(t)</span><br><span class="line">    &#125;()</span><br><span class="line">&#125;;</span><br><span class="line"><span class="title function_">dark</span>()</span><br></pre></td></tr></table></figure>
+<h3
+id="新建文件blogrootthemesbutterflysourcecssmycssuniverse.css添加以下内容">2.新建文件<code>[BlogRoot]\themes\butterfly\source\css\mycss\universe.css</code>，添加以下内容：</h3>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#universe</span> &#123;</span><br><span class="line">    <span class="attribute">display</span>: block;</span><br><span class="line">    <span class="attribute">position</span>: fixed;</span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">border</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">outline</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">left</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">top</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">100%</span>;</span><br><span class="line">    <span class="attribute">pointer-events</span>: none;</span><br><span class="line">    <span class="attribute">z-index</span>: <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3
+id="引入对应的资源修改主题配置文件_config.yml在inject配置项引入">3.引入对应的资源,修改主题配置文件<code>_config.yml</code>,在<code>inject</code>配置项引入：</h3>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">inject:</span></span><br><span class="line">  <span class="attr">head:</span> </span><br><span class="line">    <span class="bullet">-</span> <span class="string">&lt;link</span> <span class="string">rel=&quot;stylesheet&quot;</span> <span class="string">href=&quot;/css/mycss/universe.css?version=220002&quot;&gt;</span> <span class="comment"># 添加?version=220002是为了每次修改css后，更改其值用户就会自动发起新的请求，不会使用本地缓存。问号后面可以跟任意内容，只要使其内容和上次不同就可以。</span></span><br><span class="line">  <span class="attr">bottom:</span></span><br><span class="line">    <span class="comment"># 夜间模式背景</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">&lt;canvas</span> <span class="string">id=&quot;universe&quot;&gt;&lt;/canvas&gt;</span> <span class="comment"># 创建画布</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">&lt;script</span> <span class="string">src=&quot;/js/universe.js&quot;&gt;&lt;/script&gt;</span> <span class="comment"># 引入js</span></span><br></pre></td></tr></table></figure>
+<h3
+id="手机端也呈现夜间繁星效果在universe.css文件中加入">4.手机端也呈现夜间繁星效果，在<code>universe.css</code>文件中加入：</h3>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@media</span> screen <span class="keyword">and</span> (<span class="attribute">max-width</span>: <span class="number">768px</span>) &#123;</span><br><span class="line">    <span class="selector-id">#universe</span> &#123;</span><br><span class="line">        <span class="attribute">display</span>: none;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">/* 下面这个是切换手机背景的代码，有需要的可以使用，没需要的删了就行 */</span></span><br><span class="line">    <span class="selector-id">#web_bg</span> &#123;</span><br><span class="line">        <span class="attribute">background-image</span>: <span class="built_in">url</span>(<span class="string">&quot;https://img.vm.laomishuo.com/image/2021/05/2021053107390019.jpeg&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>博客搭建</category>
+      </categories>
+      <tags>
+        <tag>博客搭建</tag>
+        <tag>夜间繁星背景特效</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>博客搭建之Twikoo</title>
+    <url>/posts/6fc19c10.html</url>
+    <content><![CDATA[<h1 id="博客搭建之twikoo">博客搭建之Twikoo</h1>
+<div class="note info modern"><p>鉴于每个人的博客根目录名称都不太一样，本贴<strong>博客根目录</strong>一律以<code>[BlogRoot]</code>指代。
+站点配置文件<code>_config.yml</code>，路径为<code>[BlogRoot]\_config.yml</code>。
+主题配置文件<code>_config.yml</code>，路径为<code>[BlogRoot]\themes\butterfly\_config.yml</code>。</p>
+</div>
+<h2 id="twikoo的评论设置">1.Twikoo的评论设置</h2>
+<h3 id="支持图片评论">1.1 支持图片评论</h3>
+<p>Twikoo评论区要支持图片评论功能需要配置图床，这里以比较容易设置的<a
+href="https://smms.app/">smms</a>图床为例，首先要进行注册，注册成功之后，会给你5GB的空间用来存储图片，一般来说够用了。将获取的smms图床的token复制到Twikoo插件设置里的<code>IMAGE_CDN_ToKEN</code>，并且将<code>IMAGE_CDN</code>填写为<code>smms</code>，其余选项保持默认即可，配置结束之后记得拉到最下方点击保存，刷新一下即可生效。下面图片展示详细的步骤：</p>
+<ul>
+<li>smms注册并获取token</li>
+</ul>
+<p><img
+src="https://blogresource.sqwdream.cloud/post/博客搭建之Twikoo/img/body/smms.jpg" /></p>
+<ul>
+<li>网站的Twikoo评论设置</li>
+</ul>
+<p><img
+src="https://blogresource.sqwdream.cloud/post/博客搭建之Twikoo/img/body/评论图床设置.jpg" /></p>
+<h3 id="支持latex公式评论">1.2 支持Latex公式评论</h3>
+<p>支持公式评论可以参考Twikoo官网的<a
+href="https://twikoo.js.org/faq.html#%E5%A6%82%E4%BD%95%E5%90%AF%E7%94%A8-katex-%E6%94%AF%E6%8C%81">如何开启Katex支持？</a>，就是在主题配置文件<code>_config.yml</code>中引入如下代码：</p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">innject:</span></span><br><span class="line">  <span class="attr">head:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">&lt;link</span> <span class="string">rel=&quot;stylesheet&quot;</span> <span class="string">href=&quot;https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css&quot;</span> <span class="string">integrity=&quot;sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X&quot;</span> <span class="string">crossorigin=&quot;anonymous&quot;&gt;</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">&lt;script</span> <span class="string">defer</span> <span class="string">src=&quot;https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js&quot;</span> <span class="string">integrity=&quot;sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4&quot;</span> <span class="string">crossorigin=&quot;anonymous&quot;&gt;&lt;/script&gt;</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">&lt;script</span> <span class="string">defer</span> <span class="string">src=&quot;https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js&quot;</span> <span class="string">integrity=&quot;sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa&quot;</span> <span class="string">crossorigin=&quot;anonymous&quot;&gt;&lt;/script&gt;</span></span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>博客搭建</category>
+      </categories>
+      <tags>
+        <tag>博客搭建</tag>
+        <tag>Twikoo</tag>
+        <tag>图床</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>博客搭建之文章链接</title>
     <url>/posts/cc96dfee.html</url>
     <content><![CDATA[<h1 id="博客搭建之文章链接">博客搭建之文章链接</h1>
@@ -2020,6 +1958,22 @@ href="https://www.cnblogs.com/Ai-heng/p/7282110.html">hexo博客MathJax公式渲
       </tags>
   </entry>
   <entry>
+    <title>出入红尘</title>
+    <url>/posts/1168772c.html</url>
+    <content><![CDATA[<div class='poem'><div class='poem-title'>好了歌</div><div class='poem-author'>曹雪芹</div><p>世人都晓神仙好，惟有功名忘不了！ 古今将相在何方？荒冢一堆草没了。
+世人都晓神仙好，只有金银忘不了！ 终朝只恨聚无多，及到多时眼闭了。
+世人都晓神仙好，只有娇妻忘不了！ 君生日日说恩情，君死又随人去了。
+世人都晓神仙好，只有儿孙忘不了！ 痴心父母古来多，孝顺儿孙谁见了？</p>
+</div>
+]]></content>
+      <categories>
+        <category>诗与远方</category>
+      </categories>
+      <tags>
+        <tag>诗与远方</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>单抛物带(Single Parabolic Band,SPB)模型</title>
     <url>/posts/3ca822df.html</url>
     <content><![CDATA[<h1
@@ -2047,22 +2001,6 @@ Parabolic Band，SPB</strong>)模型相关计算</h1>
         <tag>SPB</tag>
         <tag>Pisarenko plot</tag>
         <tag>Matlab code</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>出入红尘</title>
-    <url>/posts/1168772c.html</url>
-    <content><![CDATA[<div class='poem'><div class='poem-title'>好了歌</div><div class='poem-author'>曹雪芹</div><p>世人都晓神仙好，惟有功名忘不了！ 古今将相在何方？荒冢一堆草没了。
-世人都晓神仙好，只有金银忘不了！ 终朝只恨聚无多，及到多时眼闭了。
-世人都晓神仙好，只有娇妻忘不了！ 君生日日说恩情，君死又随人去了。
-世人都晓神仙好，只有儿孙忘不了！ 痴心父母古来多，孝顺儿孙谁见了？</p>
-</div>
-]]></content>
-      <categories>
-        <category>诗与远方</category>
-      </categories>
-      <tags>
-        <tag>诗与远方</tag>
       </tags>
   </entry>
   <entry>
@@ -2180,6 +2118,77 @@ md。无需再自己配置长宽。<strong>建议在粘贴时故意使用长短�
       </tags>
   </entry>
   <entry>
+    <title>外挂标签之特效标签</title>
+    <url>/posts/dd1db991.html</url>
+    <content><![CDATA[<h1 id="外挂标签之特效标签">外挂标签之特效标签</h1>
+<h2 id="标签语法">标签语法</h2>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% wow [animete],[duration],[delay],[offset],[iteration] %&#125;</span><br><span class="line">内容</span><br><span class="line">&#123;% endwow %&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="配置参数">配置参数</h2>
+<ol type="1">
+<li><code>animate</code>: 动画样式，效果详见 <a
+href="https://animate.style/">animate.css 参考文档</a></li>
+<li><code>duration</code>: 选填项，动画持续时间，单位可以是
+<code>ms</code> 也可以是 <code>s</code>。例如
+<code>3s</code>，<code>700ms</code>。</li>
+<li><code>delay</code>: 选填项，动画开始的延迟时间，单位可以是
+<code>ms</code> 也可以是 <code>s</code>。例如
+<code>3s</code>，<code>700ms</code>。</li>
+<li><code>offset</code>: 选填项，开始动画的距离（相对浏览器底部）</li>
+<li><code>iteration</code>: 选填项，动画重复的次数</li>
+</ol>
+<h2 id="示例源码--">示例源码--&gt;</h2>
+<ol type="1">
+<li><p>flip 动画效果 <figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% wow animate<span class="strong">__zoomIn,5s,5s,100,10 %&#125;</span></span><br><span class="line"><span class="strong">&#123;% note blue &#x27;fas fa-bullhorn&#x27; modern%&#125;</span></span><br><span class="line"><span class="strong">`zoomIn`动画效果，持续`5s`，延时`5s`，离底部`100`距离时启动，重复`10`次</span></span><br><span class="line"><span class="strong">&#123;% endnote %&#125;</span></span><br><span class="line"><span class="strong">&#123;% endwow %&#125;</span></span><br></pre></td></tr></table></figure></p></li>
+<li><p>zoomIn 动画效果，持续 5s，延时 5s，离底部 100 距离时启动，重复 10
+次 <figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% wow animate<span class="strong">__zoomIn,5s,5s,100,10 %&#125;</span></span><br><span class="line"><span class="strong">&#123;% note blue &#x27;fas fa-bullhorn&#x27; modern%&#125;</span></span><br><span class="line"><span class="strong">`zoomIn`动画效果，持续`5s`，延时`5s`，离底部`100`距离时启动，重复`10`次</span></span><br><span class="line"><span class="strong">&#123;% endnote %&#125;</span></span><br><span class="line"><span class="strong">&#123;% endwow %&#125;</span></span><br></pre></td></tr></table></figure></p></li>
+<li><p>slideInRight 动画效果，持续 5s，延时 5s <figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% wow animate<span class="strong">__slideInRight,5s,5s %&#125;</span></span><br><span class="line"><span class="strong">&#123;% note orange &#x27;fas fa-car&#x27; modern%&#125;</span></span><br><span class="line"><span class="strong">`slideInRight`动画效果，持续`5s`，延时`5s`。</span></span><br><span class="line"><span class="strong">&#123;% endnote %&#125;</span></span><br><span class="line"><span class="strong">&#123;% endwow %&#125;</span></span><br></pre></td></tr></table></figure></p></li>
+<li><p>heartBeat 动画效果，延时 5s，重复 10
+次。此处注意不用的参数位置要留空，用逗号间隔 <figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% wow animate<span class="strong">__heartBeat,,5s,,10 %&#125;</span></span><br><span class="line"><span class="strong">&#123;% note red &#x27;fas fa-battery-half&#x27; modern%&#125;</span></span><br><span class="line"><span class="strong">`heartBeat`动画效果，延时`5s`，重复`10`次。</span></span><br><span class="line"><span class="strong">&#123;% endnote %&#125;</span></span><br><span class="line"><span class="strong">&#123;% endwow %&#125;</span></span><br></pre></td></tr></table></figure></p></li>
+</ol>
+<h2 id="渲染演示">渲染演示</h2>
+<ol type="1">
+<li><p>flip 动画效果 <div class='wow animate__zoomIn' data-wow-duration='5s' data-wow-delay='5s' data-wow-offset='100'  data-wow-iteration='10' ><div class="note blue icon-padding modern">
+<i class="note-icon fas fa-bullhorn"></i>
+<p>
+<code>zoomIn</code>动画效果，持续<code>5s</code>，延时<code>5s</code>，离底部<code>100</code>距离时启动，重复<code>10</code>次
+</p>
+</div>
+</div></p></li>
+<li><p>zoomIn 动画效果，持续 5s，延时 5s，离底部 100 距离时启动，重复 10
+次 <div class='wow animate__zoomIn' data-wow-duration='5s' data-wow-delay='5s' data-wow-offset='100'  data-wow-iteration='10' ><div class="note blue icon-padding modern">
+<i class="note-icon fas fa-bullhorn"></i>
+<p>
+<code>zoomIn</code>动画效果，持续<code>5s</code>，延时<code>5s</code>，离底部<code>100</code>距离时启动，重复<code>10</code>次
+</p>
+</div>
+</div></p></li>
+<li><p>slideInRight 动画效果，持续 5s，延时 5s <div class='wow animate__slideInRight' data-wow-duration='5s' data-wow-delay='5s' data-wow-offset=''  data-wow-iteration='' ><div class="note orange icon-padding modern">
+<i class="note-icon fas fa-car"></i>
+<p>
+<code>slideInRight</code>动画效果，持续<code>5s</code>，延时<code>5s</code>。
+</p>
+</div>
+</div></p></li>
+<li><p>heartBeat 动画效果，延时 5s，重复 10
+次。此处注意不用的参数位置要留空，用逗号间隔 <div class='wow animate__heartBeat' data-wow-duration='' data-wow-delay='5s' data-wow-offset=''  data-wow-iteration='10' ><div class="note red icon-padding modern">
+<i class="note-icon fas fa-battery-half"></i>
+<p>
+<code>heartBeat</code>动画效果，延时<code>5s</code>，重复<code>10</code>次。
+</p>
+</div>
+</div></p></li>
+</ol>
+]]></content>
+      <categories>
+        <category>博客搭建</category>
+      </categories>
+      <tags>
+        <tag>博客搭建</tag>
+        <tag>外挂标签</tag>
+        <tag>特效标签</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>外挂标签之地图</title>
     <url>/posts/546b5cdc.html</url>
     <content><![CDATA[<h1 id="外挂标签之地图">外挂标签之地图</h1>
@@ -2290,51 +2299,6 @@ href="https://api.map.baidu.com/lbsapi/getpoint/index.html">百度地图坐标�
       </tags>
   </entry>
   <entry>
-    <title>外挂标签之单选列表</title>
-    <url>/posts/ed0ab06c.html</url>
-    <content><![CDATA[<h1 id="外挂标签之单选列表">外挂标签之单选列表</h1>
-<h2 id="标签语法">标签语法</h2>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% radio 样式参数（可选）, 文本（支持简单md） %&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="配置参数">配置参数</h2>
-<ol type="1">
-<li><code>颜色</code>: red,yellow,green,cyan,blue,gray</li>
-<li><code>选中状态</code>: checked</li>
-</ol>
-<h2 id="示例源码">示例源码</h2>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% radio 纯文本测试 %&#125;</span><br><span class="line">&#123;% radio checked, 支持简单的 [<span class="string">markdown</span>](<span class="link">https://guides.github.com/features/mastering-markdown/</span>) 语法 %&#125;</span><br><span class="line">&#123;% radio red, 支持自定义颜色 %&#125;</span><br><span class="line">&#123;% radio green, 绿色 %&#125;</span><br><span class="line">&#123;% radio yellow, 黄色 %&#125;</span><br><span class="line">&#123;% radio cyan, 青色 %&#125;</span><br><span class="line">&#123;% radio blue, 蓝色 %&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="渲染演示">渲染演示</h2>
-<div class='checkbox'><input type="radio" />
-            <p>纯文本测试</p>
-            </div>
-<div class='checkbox checked'><input type="radio" checked="checked"/>
-            <p>支持简单的 <ahref="https://guides.github.com/features/mastering-markdown/">markdown</a>语法</p>
-            </div>
-<div class='checkbox red'><input type="radio" />
-            <p>支持自定义颜色</p>
-            </div>
-<div class='checkbox green'><input type="radio" />
-            <p>绿色</p>
-            </div>
-<div class='checkbox yellow'><input type="radio" />
-            <p>黄色</p>
-            </div>
-<div class='checkbox cyan'><input type="radio" />
-            <p>青色</p>
-            </div>
-<div class='checkbox blue'><input type="radio" />
-            <p>蓝色</p>
-            </div>
-]]></content>
-      <categories>
-        <category>博客搭建</category>
-      </categories>
-      <tags>
-        <tag>博客搭建</tag>
-        <tag>外挂标签</tag>
-        <tag>单选列表</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>外挂标签之复选列表</title>
     <url>/posts/24a2c022.html</url>
     <content><![CDATA[<h1 id="外挂标签之复选列表">外挂标签之复选列表</h1>
@@ -2391,42 +2355,40 @@ checked将所需的CSS类添加到图标（或DOM中的任何元素）</li>
       </tags>
   </entry>
   <entry>
-    <title>外挂标签之引用文献</title>
-    <url>/posts/965f46ee.html</url>
-    <content><![CDATA[<h1 id="外挂标签之引用文献">外挂标签之引用文献</h1>
+    <title>外挂标签之单选列表</title>
+    <url>/posts/ed0ab06c.html</url>
+    <content><![CDATA[<h1 id="外挂标签之单选列表">外挂标签之单选列表</h1>
 <h2 id="标签语法">标签语法</h2>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% referto [id] , [literature] %&#125;</span><br><span class="line">&#123;% referfrom [id] , [literature] , [url] %&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% radio 样式参数（可选）, 文本（支持简单md） %&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="配置参数">配置参数</h2>
 <ol type="1">
-<li>referto 引用上标
-<ul>
-<li><code>id</code>: 上标序号内容，需与 referfrom 标签的 id
-对应才能实现跳转</li>
-<li><code>literature</code>: 引用的参考文献名称</li>
-</ul></li>
-<li>referfrom 引用出处
-<ul>
-<li><code>id</code>: 序号内容，需与 referto 标签的 id 对应才能实现
-跳转</li>
-<li><code>literature</code>: 引用的参考文献名称</li>
-<li><code>url</code>: 引用的参考文献链接，可省略</li>
-</ul></li>
+<li><code>颜色</code>: red,yellow,green,cyan,blue,gray</li>
+<li><code>选中状态</code>: checked</li>
 </ol>
 <h2 id="示例源码">示例源码</h2>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">Akilarの糖果屋(akilar.top)是一个私人性质的博客&#123;% referto &#x27;[1]&#x27;,&#x27;Akilarの糖果屋群聊简介&#x27; %&#125;，从各类教程至生活点滴，无话不谈。建群的目的是提供一个闲聊的场所。博客采用Hexo框架&#123;% referto &#x27;[2]&#x27;,&#x27;Hexo中文文档&#x27; %&#125;，Butterfly主题&#123;% referto &#x27;[3]&#x27;,&#x27;Butterfly 安装文档(一) 快速开始&#x27; %&#125;</span><br><span class="line"></span><br><span class="line">本项目参考了Volantis&#123;% referto &#x27;[4]&#x27;,&#x27;hexo-theme-volantis 标签插件&#x27; %&#125;的标签样式。引入<span class="code">`[tag].js`</span>，并针对<span class="code">`butterfly`</span>主题修改了相应的<span class="code">`[tag].styl`</span>。在此鸣谢<span class="code">`Volantis`</span>主题众开发者。</span><br><span class="line">主要参考内容包括各个volantis的内置标签插件文档&#123;% referto &#x27;[5]&#x27;,&#x27;Volantis文档:内置标签插件&#x27; %&#125;</span><br><span class="line">Butterfly主题的各个衍生魔改&#123;% referto &#x27;[6]&#x27;,&#x27;Butterfly 安装文档:标签外挂（Tag Plugins&#x27; %&#125;&#123;% referto &#x27;[7]&#x27;,&#x27;小弋の生活馆全样式预览&#x27; %&#125;&#123;% referto &#x27;[8]&#x27;,&#x27;l-lin-font-awesome-animation&#x27; %&#125;&#123;% referto &#x27;[9]&#x27;,&#x27;小康的butterfly主题使用文档&#x27; %&#125;</span><br><span class="line"></span><br><span class="line">&#123;% referfrom &#x27;[1]&#x27;,&#x27;Akilarの糖果屋群聊简介&#x27;,&#x27;https://jq.qq.com/?<span class="emphasis">_wv=1027&amp;k=pGLB2C0N&#x27; %&#125;</span></span><br><span class="line"><span class="emphasis">&#123;% referfrom &#x27;[2]&#x27;,&#x27;Hexo中文文档&#x27;,&#x27;https://hexo.io/zh-cn/docs/&#x27; %&#125;</span></span><br><span class="line"><span class="emphasis">&#123;% referfrom &#x27;[3]&#x27;,&#x27;Butterfly 安装文档(一) 快速开始&#x27;,&#x27;https://butterfly.js.org/posts/21cfbf15/&#x27; %&#125;</span></span><br><span class="line"><span class="emphasis">&#123;% referfrom &#x27;[4]&#x27;,&#x27;hexo-theme-volantis 标签插件&#x27;,&#x27;https://volantis.js.org/v5/tag-plugins/&#x27; %&#125;</span></span><br><span class="line"><span class="emphasis">&#123;% referfrom &#x27;[5]&#x27;,&#x27;Volantis文档:内置标签插件&#x27;,&#x27;https://volantis.js.org/tag-plugins/&#x27; %&#125;</span></span><br><span class="line"><span class="emphasis">&#123;% referfrom &#x27;[6]&#x27;,&#x27;Butterfly 安装文档:标签外挂（Tag Plugins）&#x27;,&#x27;https://butterfly.js.org/posts/4aa8abbe/#%E6%A8%99%E7%B1%A4%E5%A4%96%E6%8E%9B%EF%BC%88Tag-Plugins%EF%BC%89&#x27; %&#125;</span></span><br><span class="line"><span class="emphasis">&#123;% referfrom &#x27;[7]&#x27;,&#x27;小弋の生活馆全样式预览&#x27;,&#x27;https://lovelijunyi.gitee.io/posts/c898.html&#x27; %&#125;</span></span><br><span class="line"><span class="emphasis">&#123;% referfrom &#x27;[8]&#x27;,&#x27;l-lin-font-awesome-animation&#x27;,&#x27;https://github.com/l-lin/font-awesome-animation&#x27; %&#125;</span></span><br><span class="line"><span class="emphasis">&#123;% referfrom &#x27;[9]&#x27;,&#x27;小康的butterfly主题使用文档&#x27;,&#x27;https://www.antmoe.com/posts/3b43914f/&#x27; %&#125;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% radio 纯文本测试 %&#125;</span><br><span class="line">&#123;% radio checked, 支持简单的 [<span class="string">markdown</span>](<span class="link">https://guides.github.com/features/mastering-markdown/</span>) 语法 %&#125;</span><br><span class="line">&#123;% radio red, 支持自定义颜色 %&#125;</span><br><span class="line">&#123;% radio green, 绿色 %&#125;</span><br><span class="line">&#123;% radio yellow, 黄色 %&#125;</span><br><span class="line">&#123;% radio cyan, 青色 %&#125;</span><br><span class="line">&#123;% radio blue, 蓝色 %&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="渲染演示">渲染演示</h2>
-<p>Akilarの糖果屋(akilar.top)是一个私人性质的博客<span class="hidden-anchor" id="referto_[1]"></span><sup class="reference"><a href="#referfrom_[1]">[1]</a></sup><span class="reference-bubble"><span class="reference-item"><span class="reference-literature">Akilarの糖果屋群聊简介</span><span class="reference-title">参考资料</span></span></span>，从各类教程至生活点滴，无话不谈。建群的目的是提供一个闲聊的场所。博客采用Hexo框架<span class="hidden-anchor" id="referto_[2]"></span><sup class="reference"><a href="#referfrom_[2]">[2]</a></sup><span class="reference-bubble"><span class="reference-item"><span class="reference-literature">Hexo中文文档</span><span class="reference-title">参考资料</span></span></span>，Butterfly主题<span class="hidden-anchor" id="referto_[3]"></span><sup class="reference"><a href="#referfrom_[3]">[3]</a></sup><span class="reference-bubble"><span class="reference-item"><span class="reference-literature">Butterfly 安装文档(一) 快速开始</span><span class="reference-title">参考资料</span></span></span></p>
-<p>本项目参考了Volantis<span class="hidden-anchor" id="referto_[4]"></span><sup class="reference"><a href="#referfrom_[4]">[4]</a></sup><span class="reference-bubble"><span class="reference-item"><span class="reference-literature">hexo-theme-volantis 标签插件</span><span class="reference-title">参考资料</span></span></span>的标签样式。引入<code>[tag].js</code>，并针对<code>butterfly</code>主题修改了相应的<code>[tag].styl</code>。在此鸣谢<code>Volantis</code>主题众开发者。主要参考内容包括各个volantis的内置标签插件文档<span class="hidden-anchor" id="referto_[5]"></span><sup class="reference"><a href="#referfrom_[5]">[5]</a></sup><span class="reference-bubble"><span class="reference-item"><span class="reference-literature">Volantis文档:内置标签插件</span><span class="reference-title">参考资料</span></span></span>
-Butterfly主题的各个衍生魔改<span class="hidden-anchor" id="referto_[6]"></span><sup class="reference"><a href="#referfrom_[6]">[6]</a></sup><span class="reference-bubble"><span class="reference-item"><span class="reference-literature">Butterfly 安装文档:标签外挂（Tag Plugins</span><span class="reference-title">参考资料</span></span></span><span class="hidden-anchor" id="referto_[7]"></span><sup class="reference"><a href="#referfrom_[7]">[7]</a></sup><span class="reference-bubble"><span class="reference-item"><span class="reference-literature">小弋の生活馆全样式预览</span><span class="reference-title">参考资料</span></span></span><span class="hidden-anchor" id="referto_[8]"></span><sup class="reference"><a href="#referfrom_[8]">[8]</a></sup><span class="reference-bubble"><span class="reference-item"><span class="reference-literature">l-lin-font-awesome-animation</span><span class="reference-title">参考资料</span></span></span><span class="hidden-anchor" id="referto_[9]"></span><sup class="reference"><a href="#referfrom_[9]">[9]</a></sup><span class="reference-bubble"><span class="reference-item"><span class="reference-literature">小康的butterfly主题使用文档</span><span class="reference-title">参考资料</span></span></span></p>
-<div class="reference-source"><span class="hidden-anchor" id="referfrom_[1]"></span><a class="reference-anchor" href="#referto_[1]">[1]<div class="reference-anchor-up fa-solid fa-angles-up"></div></a><a class="reference-link" href="https://jq.qq.com/?_wv=1027&k=pGLB2C0N">Akilarの糖果屋群聊简介</a></div>
-<div class="reference-source"><span class="hidden-anchor" id="referfrom_[2]"></span><a class="reference-anchor" href="#referto_[2]">[2]<div class="reference-anchor-up fa-solid fa-angles-up"></div></a><a class="reference-link" href="https://hexo.io/zh-cn/docs/">Hexo中文文档</a></div>
-<div class="reference-source"><span class="hidden-anchor" id="referfrom_[3]"></span><a class="reference-anchor" href="#referto_[3]">[3]<div class="reference-anchor-up fa-solid fa-angles-up"></div></a><a class="reference-link" href="https://butterfly.js.org/posts/21cfbf15/">Butterfly 安装文档(一) 快速开始</a></div>
-<div class="reference-source"><span class="hidden-anchor" id="referfrom_[4]"></span><a class="reference-anchor" href="#referto_[4]">[4]<div class="reference-anchor-up fa-solid fa-angles-up"></div></a><a class="reference-link" href="https://volantis.js.org/v5/tag-plugins/">hexo-theme-volantis 标签插件</a></div>
-<div class="reference-source"><span class="hidden-anchor" id="referfrom_[5]"></span><a class="reference-anchor" href="#referto_[5]">[5]<div class="reference-anchor-up fa-solid fa-angles-up"></div></a><a class="reference-link" href="https://volantis.js.org/tag-plugins/">Volantis文档:内置标签插件</a></div>
-<div class="reference-source"><span class="hidden-anchor" id="referfrom_[6]"></span><a class="reference-anchor" href="#referto_[6]">[6]<div class="reference-anchor-up fa-solid fa-angles-up"></div></a><a class="reference-link" href="https://butterfly.js.org/posts/4aa8abbe/#%E6%A8%99%E7%B1%A4%E5%A4%96%E6%8E%9B%EF%BC%88Tag-Plugins%EF%BC%89">Butterfly 安装文档:标签外挂（Tag Plugins</a></div>
-<div class="reference-source"><span class="hidden-anchor" id="referfrom_[7]"></span><a class="reference-anchor" href="#referto_[7]">[7]<div class="reference-anchor-up fa-solid fa-angles-up"></div></a><a class="reference-link" href="https://lovelijunyi.gitee.io/posts/c898.html">小弋の生活馆全样式预览</a></div>
-<div class="reference-source"><span class="hidden-anchor" id="referfrom_[8]"></span><a class="reference-anchor" href="#referto_[8]">[8]<div class="reference-anchor-up fa-solid fa-angles-up"></div></a><a class="reference-link" href="https://github.com/l-lin/font-awesome-animation">l-lin-font-awesome-animation</a></div>
-<div class="reference-source"><span class="hidden-anchor" id="referfrom_[9]"></span><a class="reference-anchor" href="#referto_[9]">[9]<div class="reference-anchor-up fa-solid fa-angles-up"></div></a><a class="reference-link" href="https://www.antmoe.com/posts/3b43914f/">小康的butterfly主题使用文档</a></div>
+<div class='checkbox'><input type="radio" />
+            <p>纯文本测试</p>
+            </div>
+<div class='checkbox checked'><input type="radio" checked="checked"/>
+            <p>支持简单的 <ahref="https://guides.github.com/features/mastering-markdown/">markdown</a>语法</p>
+            </div>
+<div class='checkbox red'><input type="radio" />
+            <p>支持自定义颜色</p>
+            </div>
+<div class='checkbox green'><input type="radio" />
+            <p>绿色</p>
+            </div>
+<div class='checkbox yellow'><input type="radio" />
+            <p>黄色</p>
+            </div>
+<div class='checkbox cyan'><input type="radio" />
+            <p>青色</p>
+            </div>
+<div class='checkbox blue'><input type="radio" />
+            <p>蓝色</p>
+            </div>
 ]]></content>
       <categories>
         <category>博客搭建</category>
@@ -2434,7 +2396,7 @@ Butterfly主题的各个衍生魔改<span class="hidden-anchor" id="referto_[6]"
       <tags>
         <tag>博客搭建</tag>
         <tag>外挂标签</tag>
-        <tag>引用文献</tag>
+        <tag>单选列表</tag>
       </tags>
   </entry>
   <entry>
@@ -2509,6 +2471,53 @@ src="https://npm.elemecdn.com/akilar-candyassets/image/20200907110731118.png" />
         <tag>博客搭建</tag>
         <tag>外挂标签</tag>
         <tag>气泡注释</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>外挂标签之引用文献</title>
+    <url>/posts/965f46ee.html</url>
+    <content><![CDATA[<h1 id="外挂标签之引用文献">外挂标签之引用文献</h1>
+<h2 id="标签语法">标签语法</h2>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% referto [id] , [literature] %&#125;</span><br><span class="line">&#123;% referfrom [id] , [literature] , [url] %&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="配置参数">配置参数</h2>
+<ol type="1">
+<li>referto 引用上标
+<ul>
+<li><code>id</code>: 上标序号内容，需与 referfrom 标签的 id
+对应才能实现跳转</li>
+<li><code>literature</code>: 引用的参考文献名称</li>
+</ul></li>
+<li>referfrom 引用出处
+<ul>
+<li><code>id</code>: 序号内容，需与 referto 标签的 id 对应才能实现
+跳转</li>
+<li><code>literature</code>: 引用的参考文献名称</li>
+<li><code>url</code>: 引用的参考文献链接，可省略</li>
+</ul></li>
+</ol>
+<h2 id="示例源码">示例源码</h2>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">Akilarの糖果屋(akilar.top)是一个私人性质的博客&#123;% referto &#x27;[1]&#x27;,&#x27;Akilarの糖果屋群聊简介&#x27; %&#125;，从各类教程至生活点滴，无话不谈。建群的目的是提供一个闲聊的场所。博客采用Hexo框架&#123;% referto &#x27;[2]&#x27;,&#x27;Hexo中文文档&#x27; %&#125;，Butterfly主题&#123;% referto &#x27;[3]&#x27;,&#x27;Butterfly 安装文档(一) 快速开始&#x27; %&#125;</span><br><span class="line"></span><br><span class="line">本项目参考了Volantis&#123;% referto &#x27;[4]&#x27;,&#x27;hexo-theme-volantis 标签插件&#x27; %&#125;的标签样式。引入<span class="code">`[tag].js`</span>，并针对<span class="code">`butterfly`</span>主题修改了相应的<span class="code">`[tag].styl`</span>。在此鸣谢<span class="code">`Volantis`</span>主题众开发者。</span><br><span class="line">主要参考内容包括各个volantis的内置标签插件文档&#123;% referto &#x27;[5]&#x27;,&#x27;Volantis文档:内置标签插件&#x27; %&#125;</span><br><span class="line">Butterfly主题的各个衍生魔改&#123;% referto &#x27;[6]&#x27;,&#x27;Butterfly 安装文档:标签外挂（Tag Plugins&#x27; %&#125;&#123;% referto &#x27;[7]&#x27;,&#x27;小弋の生活馆全样式预览&#x27; %&#125;&#123;% referto &#x27;[8]&#x27;,&#x27;l-lin-font-awesome-animation&#x27; %&#125;&#123;% referto &#x27;[9]&#x27;,&#x27;小康的butterfly主题使用文档&#x27; %&#125;</span><br><span class="line"></span><br><span class="line">&#123;% referfrom &#x27;[1]&#x27;,&#x27;Akilarの糖果屋群聊简介&#x27;,&#x27;https://jq.qq.com/?<span class="emphasis">_wv=1027&amp;k=pGLB2C0N&#x27; %&#125;</span></span><br><span class="line"><span class="emphasis">&#123;% referfrom &#x27;[2]&#x27;,&#x27;Hexo中文文档&#x27;,&#x27;https://hexo.io/zh-cn/docs/&#x27; %&#125;</span></span><br><span class="line"><span class="emphasis">&#123;% referfrom &#x27;[3]&#x27;,&#x27;Butterfly 安装文档(一) 快速开始&#x27;,&#x27;https://butterfly.js.org/posts/21cfbf15/&#x27; %&#125;</span></span><br><span class="line"><span class="emphasis">&#123;% referfrom &#x27;[4]&#x27;,&#x27;hexo-theme-volantis 标签插件&#x27;,&#x27;https://volantis.js.org/v5/tag-plugins/&#x27; %&#125;</span></span><br><span class="line"><span class="emphasis">&#123;% referfrom &#x27;[5]&#x27;,&#x27;Volantis文档:内置标签插件&#x27;,&#x27;https://volantis.js.org/tag-plugins/&#x27; %&#125;</span></span><br><span class="line"><span class="emphasis">&#123;% referfrom &#x27;[6]&#x27;,&#x27;Butterfly 安装文档:标签外挂（Tag Plugins）&#x27;,&#x27;https://butterfly.js.org/posts/4aa8abbe/#%E6%A8%99%E7%B1%A4%E5%A4%96%E6%8E%9B%EF%BC%88Tag-Plugins%EF%BC%89&#x27; %&#125;</span></span><br><span class="line"><span class="emphasis">&#123;% referfrom &#x27;[7]&#x27;,&#x27;小弋の生活馆全样式预览&#x27;,&#x27;https://lovelijunyi.gitee.io/posts/c898.html&#x27; %&#125;</span></span><br><span class="line"><span class="emphasis">&#123;% referfrom &#x27;[8]&#x27;,&#x27;l-lin-font-awesome-animation&#x27;,&#x27;https://github.com/l-lin/font-awesome-animation&#x27; %&#125;</span></span><br><span class="line"><span class="emphasis">&#123;% referfrom &#x27;[9]&#x27;,&#x27;小康的butterfly主题使用文档&#x27;,&#x27;https://www.antmoe.com/posts/3b43914f/&#x27; %&#125;</span></span><br></pre></td></tr></table></figure>
+<h2 id="渲染演示">渲染演示</h2>
+<p>Akilarの糖果屋(akilar.top)是一个私人性质的博客<span class="hidden-anchor" id="referto_[1]"></span><sup class="reference"><a href="#referfrom_[1]">[1]</a></sup><span class="reference-bubble"><span class="reference-item"><span class="reference-literature">Akilarの糖果屋群聊简介</span><span class="reference-title">参考资料</span></span></span>，从各类教程至生活点滴，无话不谈。建群的目的是提供一个闲聊的场所。博客采用Hexo框架<span class="hidden-anchor" id="referto_[2]"></span><sup class="reference"><a href="#referfrom_[2]">[2]</a></sup><span class="reference-bubble"><span class="reference-item"><span class="reference-literature">Hexo中文文档</span><span class="reference-title">参考资料</span></span></span>，Butterfly主题<span class="hidden-anchor" id="referto_[3]"></span><sup class="reference"><a href="#referfrom_[3]">[3]</a></sup><span class="reference-bubble"><span class="reference-item"><span class="reference-literature">Butterfly 安装文档(一) 快速开始</span><span class="reference-title">参考资料</span></span></span></p>
+<p>本项目参考了Volantis<span class="hidden-anchor" id="referto_[4]"></span><sup class="reference"><a href="#referfrom_[4]">[4]</a></sup><span class="reference-bubble"><span class="reference-item"><span class="reference-literature">hexo-theme-volantis 标签插件</span><span class="reference-title">参考资料</span></span></span>的标签样式。引入<code>[tag].js</code>，并针对<code>butterfly</code>主题修改了相应的<code>[tag].styl</code>。在此鸣谢<code>Volantis</code>主题众开发者。主要参考内容包括各个volantis的内置标签插件文档<span class="hidden-anchor" id="referto_[5]"></span><sup class="reference"><a href="#referfrom_[5]">[5]</a></sup><span class="reference-bubble"><span class="reference-item"><span class="reference-literature">Volantis文档:内置标签插件</span><span class="reference-title">参考资料</span></span></span>
+Butterfly主题的各个衍生魔改<span class="hidden-anchor" id="referto_[6]"></span><sup class="reference"><a href="#referfrom_[6]">[6]</a></sup><span class="reference-bubble"><span class="reference-item"><span class="reference-literature">Butterfly 安装文档:标签外挂（Tag Plugins</span><span class="reference-title">参考资料</span></span></span><span class="hidden-anchor" id="referto_[7]"></span><sup class="reference"><a href="#referfrom_[7]">[7]</a></sup><span class="reference-bubble"><span class="reference-item"><span class="reference-literature">小弋の生活馆全样式预览</span><span class="reference-title">参考资料</span></span></span><span class="hidden-anchor" id="referto_[8]"></span><sup class="reference"><a href="#referfrom_[8]">[8]</a></sup><span class="reference-bubble"><span class="reference-item"><span class="reference-literature">l-lin-font-awesome-animation</span><span class="reference-title">参考资料</span></span></span><span class="hidden-anchor" id="referto_[9]"></span><sup class="reference"><a href="#referfrom_[9]">[9]</a></sup><span class="reference-bubble"><span class="reference-item"><span class="reference-literature">小康的butterfly主题使用文档</span><span class="reference-title">参考资料</span></span></span></p>
+<div class="reference-source"><span class="hidden-anchor" id="referfrom_[1]"></span><a class="reference-anchor" href="#referto_[1]">[1]<div class="reference-anchor-up fa-solid fa-angles-up"></div></a><a class="reference-link" href="https://jq.qq.com/?_wv=1027&k=pGLB2C0N">Akilarの糖果屋群聊简介</a></div>
+<div class="reference-source"><span class="hidden-anchor" id="referfrom_[2]"></span><a class="reference-anchor" href="#referto_[2]">[2]<div class="reference-anchor-up fa-solid fa-angles-up"></div></a><a class="reference-link" href="https://hexo.io/zh-cn/docs/">Hexo中文文档</a></div>
+<div class="reference-source"><span class="hidden-anchor" id="referfrom_[3]"></span><a class="reference-anchor" href="#referto_[3]">[3]<div class="reference-anchor-up fa-solid fa-angles-up"></div></a><a class="reference-link" href="https://butterfly.js.org/posts/21cfbf15/">Butterfly 安装文档(一) 快速开始</a></div>
+<div class="reference-source"><span class="hidden-anchor" id="referfrom_[4]"></span><a class="reference-anchor" href="#referto_[4]">[4]<div class="reference-anchor-up fa-solid fa-angles-up"></div></a><a class="reference-link" href="https://volantis.js.org/v5/tag-plugins/">hexo-theme-volantis 标签插件</a></div>
+<div class="reference-source"><span class="hidden-anchor" id="referfrom_[5]"></span><a class="reference-anchor" href="#referto_[5]">[5]<div class="reference-anchor-up fa-solid fa-angles-up"></div></a><a class="reference-link" href="https://volantis.js.org/tag-plugins/">Volantis文档:内置标签插件</a></div>
+<div class="reference-source"><span class="hidden-anchor" id="referfrom_[6]"></span><a class="reference-anchor" href="#referto_[6]">[6]<div class="reference-anchor-up fa-solid fa-angles-up"></div></a><a class="reference-link" href="https://butterfly.js.org/posts/4aa8abbe/#%E6%A8%99%E7%B1%A4%E5%A4%96%E6%8E%9B%EF%BC%88Tag-Plugins%EF%BC%89">Butterfly 安装文档:标签外挂（Tag Plugins</a></div>
+<div class="reference-source"><span class="hidden-anchor" id="referfrom_[7]"></span><a class="reference-anchor" href="#referto_[7]">[7]<div class="reference-anchor-up fa-solid fa-angles-up"></div></a><a class="reference-link" href="https://lovelijunyi.gitee.io/posts/c898.html">小弋の生活馆全样式预览</a></div>
+<div class="reference-source"><span class="hidden-anchor" id="referfrom_[8]"></span><a class="reference-anchor" href="#referto_[8]">[8]<div class="reference-anchor-up fa-solid fa-angles-up"></div></a><a class="reference-link" href="https://github.com/l-lin/font-awesome-animation">l-lin-font-awesome-animation</a></div>
+<div class="reference-source"><span class="hidden-anchor" id="referfrom_[9]"></span><a class="reference-anchor" href="#referto_[9]">[9]<div class="reference-anchor-up fa-solid fa-angles-up"></div></a><a class="reference-link" href="https://www.antmoe.com/posts/3b43914f/">小康的butterfly主题使用文档</a></div>
+]]></content>
+      <categories>
+        <category>博客搭建</category>
+      </categories>
+      <tags>
+        <tag>博客搭建</tag>
+        <tag>外挂标签</tag>
+        <tag>引用文献</tag>
       </tags>
   </entry>
 </search>
