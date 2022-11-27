@@ -164,39 +164,6 @@ id="手机端也呈现夜间繁星效果在universe.css文件中加入">4.手机
       </tags>
   </entry>
   <entry>
-    <title>博客搭建之文章链接</title>
-    <url>/posts/cc96dfee.html</url>
-    <content><![CDATA[<h1 id="博客搭建之文章链接">博客搭建之文章链接</h1>
-<div class="note info modern"><p>鉴于每个人的博客根目录名称都不太一样，本贴<strong>博客根目录</strong>一律以<code>[BlogRoot]</code>指代。
-站点配置文件<code>_config.yml</code>，路径为<code>[BlogRoot]\_config.yml</code>。
-主题配置文件<code>_config.yml</code>，路径为<code>[BlogRoot]\themes\butterfly\_config.yml</code>。</p>
-</div>
-<h2
-id="缩短文末copyright中文章链接的长度">缩短文末Copyright中文章链接的长度</h2>
-<h3
-id="在博客根目录下blogroot安装插件">1.在博客根目录下<code>[BlogRoot]</code>安装插件：</h3>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm install hexo-abbrlink --save</span><br></pre></td></tr></table></figure>
-<h3
-id="修改站点配置文件blogroot_config.yml添加以下内容">2.修改站点配置文件<code>[BlogRoot]\_config.yml</code>，添加以下内容：</h3>
-<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># permalink: :year/:month/:day/:title/</span></span><br><span class="line"><span class="comment"># permalink: p/:abbrlink.html  # p 是自定义的前缀</span></span><br><span class="line"><span class="attr">permalink:</span> <span class="string">/:abbrlink.html</span>  <span class="comment"># p 是自定义的前缀</span></span><br><span class="line"><span class="attr">abbrlink:</span></span><br><span class="line">    <span class="attr">alg:</span> <span class="string">crc32</span>   <span class="comment">#算法： crc16(default) and crc32</span></span><br><span class="line">    <span class="attr">rep:</span> <span class="string">hex</span>     <span class="comment">#进制： dec(default) and hex</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li><strong>不同算法和进制生成不同的格式</strong></li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">crc16 &amp; hex</span><br><span class="line">https://post.zz173.com/posts/66c8.html</span><br><span class="line">crc16 &amp; dec</span><br><span class="line">https://post.zz173.com/posts/65535.html</span><br><span class="line"></span><br><span class="line">crc32 &amp; hex</span><br><span class="line">https://post.zz173.com/posts/8ddf18fb.html</span><br><span class="line">crc32 &amp; dec</span><br><span class="line">https://post.zz173.com/posts/1690090958.html</span><br></pre></td></tr></table></figure>
-<ul>
-<li><strong><code>hexo g</code>生成网页时，会在每篇文章的<code>front matter</code>中加入一项<code>abbrlink</code>，它是根据文章题目生成的，生成之后不可更改，可以删除重新生成</strong></li>
-</ul>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">abbrlink: cc96dfee</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>博客搭建</category>
-      </categories>
-      <tags>
-        <tag>博客搭建</tag>
-        <tag>文章链接</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>博客搭建之外挂标签</title>
     <url>/posts/107251be.html</url>
     <content><![CDATA[<h1 id="博客搭建之外挂标签">博客搭建之外挂标签</h1>
@@ -2118,20 +2085,60 @@ href="https://www.sqwdream.cloud/posts/75b3d8a.html">1.32
       </tags>
   </entry>
   <entry>
-    <title>水调歌头</title>
-    <url>/posts/ac668694.html</url>
-    <content><![CDATA[<div class='poem'><div class='poem-title'>水调歌头</div><div class='poem-author'>苏轼</div><p>丙辰中秋，欢饮达旦，大醉，作此篇，兼怀子由。 明月几时有？把酒问青天。
-不知天上宫阙，今夕是何年？ 我欲乘风归去，又恐琼楼玉宇，高处不胜寒。
-起舞弄清影，何似在人间？</p>
-<p>转朱阁，低绮户，照无眠。 不应有恨，何事长向别时圆？
-人有悲欢离合，月有阴晴圆缺，此事古难全。 但愿人长久，千里共婵娟。</p>
+    <title>博客搭建之文章链接</title>
+    <url>/posts/cc96dfee.html</url>
+    <content><![CDATA[<h1 id="博客搭建之文章链接">博客搭建之文章链接</h1>
+<div class="note info modern"><p>鉴于每个人的博客根目录名称都不太一样，本贴<strong>博客根目录</strong>一律以<code>[BlogRoot]</code>指代。
+站点配置文件<code>_config.yml</code>，路径为<code>[BlogRoot]\_config.yml</code>。
+主题配置文件<code>_config.yml</code>，路径为<code>[BlogRoot]\themes\butterfly\_config.yml</code>。</p>
 </div>
+<h2
+id="缩短文末copyright中文章链接的长度">缩短文末Copyright中文章链接的长度</h2>
+<h3
+id="在博客根目录下blogroot安装插件">1.在博客根目录下<code>[BlogRoot]</code>安装插件：</h3>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm install hexo-abbrlink --save</span><br></pre></td></tr></table></figure>
+<h3
+id="修改站点配置文件blogroot_config.yml添加以下内容">2.修改站点配置文件<code>[BlogRoot]\_config.yml</code>，添加以下内容：</h3>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># permalink: :year/:month/:day/:title/</span></span><br><span class="line"><span class="comment"># permalink: p/:abbrlink.html  # p 是自定义的前缀</span></span><br><span class="line"><span class="attr">permalink:</span> <span class="string">/:abbrlink.html</span>  <span class="comment"># p 是自定义的前缀</span></span><br><span class="line"><span class="attr">abbrlink:</span></span><br><span class="line">    <span class="attr">alg:</span> <span class="string">crc32</span>   <span class="comment">#算法： crc16(default) and crc32</span></span><br><span class="line">    <span class="attr">rep:</span> <span class="string">hex</span>     <span class="comment">#进制： dec(default) and hex</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>不同算法和进制生成不同的格式</strong></li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">crc16 &amp; hex</span><br><span class="line">https://post.zz173.com/posts/66c8.html</span><br><span class="line">crc16 &amp; dec</span><br><span class="line">https://post.zz173.com/posts/65535.html</span><br><span class="line"></span><br><span class="line">crc32 &amp; hex</span><br><span class="line">https://post.zz173.com/posts/8ddf18fb.html</span><br><span class="line">crc32 &amp; dec</span><br><span class="line">https://post.zz173.com/posts/1690090958.html</span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong><code>hexo g</code>生成网页时，会在每篇文章的<code>front matter</code>中加入一项<code>abbrlink</code>，它是根据文章题目生成的，生成之后不可更改，可以删除重新生成</strong></li>
+</ul>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">abbrlink: cc96dfee</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
-        <category>诗与远方</category>
+        <category>博客搭建</category>
       </categories>
       <tags>
-        <tag>诗与远方</tag>
+        <tag>博客搭建</tag>
+        <tag>文章链接</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>博客问题集锦</title>
+    <url>/posts/6bf8c91.html</url>
+    <content><![CDATA[<div class="note info modern"><p>鉴于每个人的博客根目录名称都不太一样，本贴<strong>博客根目录</strong>一律以<code>[BlogRoot]</code>指代。
+数学公式配置：<a
+href="https://butterfly.js.org/posts/ceeb73f/#Math-%E6%95%B8%E5%AD%B8">Math
+数学</a> 参考：<a
+href="https://www.cnblogs.com/Ai-heng/p/7282110.html">hexo博客MathJax公式渲染问题</a></p>
+</div>
+<h1 id="公式渲染问题">公式渲染问题</h1>
+<details class="folding-tag" cyan><summary> 点击查看 </summary>
+              <div class='content'>
+              <p>在博客中一些数学公式会出现渲染问题，当然md文件也有可能出现渲染问题，比如引用变成上标等，这里只介绍出现的MathJax数学公式的渲染问题，主要问题就是行内数学公式会出现渲染失败的情况，对于单个符号问题渲染还是可以的，但是涉及到等式就会出现渲染失败的情况，具体问题展示如下：</p><p><ahref="https://blogresource.sqwdream.cloud/post/博客问题集锦/img/body/行内公式error.jpg"></a></p><p>解决的方法如下：</p><ol type="1"><li><p>更换公式渲染引擎</p><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm uninstall hexo-renderer-marked --save</span><br><span class="line">npm install hexo-renderer-kramed --save</span><br></pre></td></tr></table></figure></li><li><p>修改<code>[BlogRoot]/node_modules/kramed/lib/rules/inline.js</code>文件</p><figure class="highlight diff"><table><tr><td class="code"><pre><span class="line"><span class="deletion">- escape: /^\\([\\`*&#123;&#125;\[\]()#$+\-.!_&gt;])/,  /*11行*/</span></span><br><span class="line"><span class="addition">+ escape: /^\\([`*\[\]()#$+\-.!_&gt;])/,</span></span><br><span class="line"><span class="deletion">- em: /^\b_((?:__|[\s\S])+?)_\b|^\*((?:\*\*|[\s\S])+?)\*(?!\*)/,  /*20行*/  </span></span><br><span class="line"><span class="addition">+ em: /^\*((?:\*\*|[\s\S])+?)\*(?!\*)/,</span></span><br></pre></td></tr></table></figure></li><li><p>如果在md文件中用到数学公式，要在Front-matter中加入<code>mathjax: true</code></p></li><li><p>如果和butterfly外观标签混合使用，比如数学公式嵌套在butterfly外挂标签中，可以尝试在Front-matter中删除<code>mathjax: true</code>，以防止渲染冲突</p></li></ol>
+              </div>
+            </details>
+]]></content>
+      <categories>
+        <category>博客问题集锦</category>
+      </categories>
+      <tags>
+        <tag>MathJax</tag>
+        <tag>公式渲染</tag>
       </tags>
   </entry>
   <entry>
@@ -2170,46 +2177,6 @@ id="引入对应的资源修改主题配置文件_config.yml在-inject-配置项
       </tags>
   </entry>
   <entry>
-    <title>博客问题集锦</title>
-    <url>/posts/6bf8c91.html</url>
-    <content><![CDATA[<div class="note info modern"><p>鉴于每个人的博客根目录名称都不太一样，本贴<strong>博客根目录</strong>一律以<code>[BlogRoot]</code>指代。
-数学公式配置：<a
-href="https://butterfly.js.org/posts/ceeb73f/#Math-%E6%95%B8%E5%AD%B8">Math
-数学</a> 参考：<a
-href="https://www.cnblogs.com/Ai-heng/p/7282110.html">hexo博客MathJax公式渲染问题</a></p>
-</div>
-<h1 id="公式渲染问题">公式渲染问题</h1>
-<details class="folding-tag" cyan><summary> 点击查看 </summary>
-              <div class='content'>
-              <p>在博客中一些数学公式会出现渲染问题，当然md文件也有可能出现渲染问题，比如引用变成上标等，这里只介绍出现的MathJax数学公式的渲染问题，主要问题就是行内数学公式会出现渲染失败的情况，对于单个符号问题渲染还是可以的，但是涉及到等式就会出现渲染失败的情况，具体问题展示如下：</p><p><ahref="https://blogresource.sqwdream.cloud/post/博客问题集锦/img/body/行内公式error.jpg"></a></p><p>解决的方法如下：</p><ol type="1"><li><p>更换公式渲染引擎</p><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm uninstall hexo-renderer-marked --save</span><br><span class="line">npm install hexo-renderer-kramed --save</span><br></pre></td></tr></table></figure></li><li><p>修改<code>[BlogRoot]/node_modules/kramed/lib/rules/inline.js</code>文件</p><figure class="highlight diff"><table><tr><td class="code"><pre><span class="line"><span class="deletion">- escape: /^\\([\\`*&#123;&#125;\[\]()#$+\-.!_&gt;])/,  /*11行*/</span></span><br><span class="line"><span class="addition">+ escape: /^\\([`*\[\]()#$+\-.!_&gt;])/,</span></span><br><span class="line"><span class="deletion">- em: /^\b_((?:__|[\s\S])+?)_\b|^\*((?:\*\*|[\s\S])+?)\*(?!\*)/,  /*20行*/  </span></span><br><span class="line"><span class="addition">+ em: /^\*((?:\*\*|[\s\S])+?)\*(?!\*)/,</span></span><br></pre></td></tr></table></figure></li><li><p>如果在md文件中用到数学公式，要在Front-matter中加入<code>mathjax: true</code></p></li><li><p>如果和butterfly外观标签混合使用，比如数学公式嵌套在butterfly外挂标签中，可以尝试在Front-matter中删除<code>mathjax: true</code>，以防止渲染冲突</p></li></ol>
-              </div>
-            </details>
-]]></content>
-      <categories>
-        <category>博客问题集锦</category>
-      </categories>
-      <tags>
-        <tag>MathJax</tag>
-        <tag>公式渲染</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>出入红尘</title>
-    <url>/posts/1168772c.html</url>
-    <content><![CDATA[<div class='poem'><div class='poem-title'>好了歌</div><div class='poem-author'>曹雪芹</div><p>世人都晓神仙好，惟有功名忘不了！ 古今将相在何方？荒冢一堆草没了。
-世人都晓神仙好，只有金银忘不了！ 终朝只恨聚无多，及到多时眼闭了。
-世人都晓神仙好，只有娇妻忘不了！ 君生日日说恩情，君死又随人去了。
-世人都晓神仙好，只有儿孙忘不了！ 痴心父母古来多，孝顺儿孙谁见了？</p>
-</div>
-]]></content>
-      <categories>
-        <category>诗与远方</category>
-      </categories>
-      <tags>
-        <tag>诗与远方</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>单抛物带(Single Parabolic Band,SPB)模型</title>
     <url>/posts/3ca822df.html</url>
     <content><![CDATA[<h1
@@ -2240,40 +2207,73 @@ Parabolic Band，SPB</strong>)模型相关计算</h1>
       </tags>
   </entry>
   <entry>
-    <title>外挂标签之单选列表</title>
-    <url>/posts/ed0ab06c.html</url>
-    <content><![CDATA[<h1 id="外挂标签之单选列表">外挂标签之单选列表</h1>
+    <title>出入红尘</title>
+    <url>/posts/1168772c.html</url>
+    <content><![CDATA[<div class='poem'><div class='poem-title'>好了歌</div><div class='poem-author'>曹雪芹</div><p>世人都晓神仙好，惟有功名忘不了！ 古今将相在何方？荒冢一堆草没了。
+世人都晓神仙好，只有金银忘不了！ 终朝只恨聚无多，及到多时眼闭了。
+世人都晓神仙好，只有娇妻忘不了！ 君生日日说恩情，君死又随人去了。
+世人都晓神仙好，只有儿孙忘不了！ 痴心父母古来多，孝顺儿孙谁见了？</p>
+</div>
+]]></content>
+      <categories>
+        <category>诗与远方</category>
+      </categories>
+      <tags>
+        <tag>诗与远方</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>水调歌头</title>
+    <url>/posts/ac668694.html</url>
+    <content><![CDATA[<div class='poem'><div class='poem-title'>水调歌头</div><div class='poem-author'>苏轼</div><p>丙辰中秋，欢饮达旦，大醉，作此篇，兼怀子由。 明月几时有？把酒问青天。
+不知天上宫阙，今夕是何年？ 我欲乘风归去，又恐琼楼玉宇，高处不胜寒。
+起舞弄清影，何似在人间？</p>
+<p>转朱阁，低绮户，照无眠。 不应有恨，何事长向别时圆？
+人有悲欢离合，月有阴晴圆缺，此事古难全。 但愿人长久，千里共婵娟。</p>
+</div>
+]]></content>
+      <categories>
+        <category>诗与远方</category>
+      </categories>
+      <tags>
+        <tag>诗与远方</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>外挂标签之PDF展示</title>
+    <url>/posts/d629a2c2.html</url>
+    <content><![CDATA[<h1 id="外挂标签之pdf展示">外挂标签之PDF展示</h1>
+<div class="tip info"><p>需要安装<a
+href="https://blog.csdn.net/qq_43701912/article/details/107291518">hexo-pdf</a>插件</p>
+</div>
 <h2 id="标签语法">标签语法</h2>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% radio 样式参数（可选）, 文本（支持简单md） %&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% pdf 文件路径 %&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="配置参数">配置参数</h2>
 <ol type="1">
-<li><code>颜色</code>: red,yellow,green,cyan,blue,gray</li>
-<li><code>选中状态</code>: checked</li>
+<li><code>文件路径</code>: 可以是相对路径或者是在线链接</li>
 </ol>
 <h2 id="示例源码">示例源码</h2>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% radio 纯文本测试 %&#125;</span><br><span class="line">&#123;% radio checked, 支持简单的 [<span class="string">markdown</span>](<span class="link">https://guides.github.com/features/mastering-markdown/</span>) 语法 %&#125;</span><br><span class="line">&#123;% radio red, 支持自定义颜色 %&#125;</span><br><span class="line">&#123;% radio green, 绿色 %&#125;</span><br><span class="line">&#123;% radio yellow, 黄色 %&#125;</span><br><span class="line">&#123;% radio cyan, 青色 %&#125;</span><br><span class="line">&#123;% radio blue, 蓝色 %&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="bullet">1.</span> 本地文件:在md文件路径下创建一个同名文件夹，其内放pdf文件名为<span class="code">`能带模型.pdf`</span>的文件</span><br><span class="line">&#123;% pdf <span class="emphasis">_posts/博客搭建/外挂标签之PDF展示/能带模型.pdf %&#125;</span></span><br><span class="line"><span class="emphasis">2. 在线链接</span></span><br><span class="line"><span class="emphasis">&#123;% pdf https://cdn.jsdelivr.net/gh/Justlovesmile/CDN/pdf/小作文讲义.pdf %&#125;</span></span><br></pre></td></tr></table></figure>
 <h2 id="渲染演示">渲染演示</h2>
-<div class='checkbox'><input type="radio" />
-            <p>纯文本测试</p>
-            </div>
-<div class='checkbox checked'><input type="radio" checked="checked"/>
-            <p>支持简单的 <ahref="https://guides.github.com/features/mastering-markdown/">markdown</a>语法</p>
-            </div>
-<div class='checkbox red'><input type="radio" />
-            <p>支持自定义颜色</p>
-            </div>
-<div class='checkbox green'><input type="radio" />
-            <p>绿色</p>
-            </div>
-<div class='checkbox yellow'><input type="radio" />
-            <p>黄色</p>
-            </div>
-<div class='checkbox cyan'><input type="radio" />
-            <p>青色</p>
-            </div>
-<div class='checkbox blue'><input type="radio" />
-            <p>蓝色</p>
-            </div>
+<ol type="1">
+<li>本地文件:在md文件路径下创建一个同名文件夹，其内放pdf文件名为<code>能带模型.pdf</code>的文件
+
+
+	<div class="row">
+    <embed src="能带模型.pdf" width="100%" height="550" type="application/pdf">
+	</div>
+
+
+</li>
+<li>在线链接 
+
+	<div class="row">
+    <embed src="https://cdn.jsdelivr.net/gh/Justlovesmile/CDN/pdf/小作文讲义.pdf" width="100%" height="550" type="application/pdf">
+	</div>
+
+
+</li>
+</ol>
 ]]></content>
       <categories>
         <category>博客搭建</category>
@@ -2281,7 +2281,7 @@ Parabolic Band，SPB</strong>)模型相关计算</h1>
       <tags>
         <tag>博客搭建</tag>
         <tag>外挂标签</tag>
-        <tag>单选列表</tag>
+        <tag>PDF展示</tag>
       </tags>
   </entry>
   <entry>
@@ -2378,11 +2378,13 @@ href="https://lbs.amap.com/tools/picker">高德地图坐标拾取系统</a>、<a
 href="https://api.map.baidu.com/lbsapi/getpoint/index.html">百度地图坐标拾取系统</a></li>
 </ol>
 <h2 id="示例源码">示例源码</h2>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% map 120.101101,30.239119 %&#125;</span><br><span class="line">&#123;% gaodeMap 120.101101,30.239119, 这里是西湖灵隐寺，据说求姻缘很灵验哦！ %&#125;</span><br><span class="line">&#123;% gaodeMap 120.101101,30.239119, 这里是西湖灵隐寺，据说求姻缘很灵验哦！, 13,90%, 320px, 3%&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="bullet">+</span> &#123;% map 120.101101,30.239119 %&#125;</span><br><span class="line"><span class="bullet">+</span> &#123;% gaodeMap 120.101101,30.239119, 这里是西湖灵隐寺，据说求姻缘很灵验哦！ %&#125;</span><br><span class="line"><span class="bullet">+</span> &#123;% gaodeMap 120.101101,30.239119, 这里是西湖灵隐寺，据说求姻缘很灵验哦！, 13,90%, 320px, 3%&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="渲染演示">渲染演示</h2>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-tag-map/lib/leaflet@1.7.1.css"><script data-pjax src="https://cdn.jsdelivr.net/npm/hexo-tag-map/lib/leaflet@1.7.1.js"></script><script data-pjax src="https://cdn.jsdelivr.net/npm/hexo-tag-map/lib/leaflet.ChineseTmsProviders@1.0.4.js"></script><div class="map-box"><div id="map-120.101101-30.239119" style="max-width:100%; height:360px;display: block;margin:0 auto;z-index:1;border-radius: 5px;"></div></div><script type="text/javascript">var normalm=L.tileLayer.chinaProvider('GaoDe.Normal.Map',{maxZoom:20,minZoom:1,attribution:'Amap'});var imgm=L.tileLayer.chinaProvider('GaoDe.Satellite.Map',{maxZoom:20,minZoom:1,attribution:'Amap'});var imga=L.tileLayer.chinaProvider('GaoDe.Satellite.Annotion',{maxZoom:20,minZoom:1,attribution:'Amap'});var normalMap=L.tileLayer.chinaProvider('Google.Normal.Map',{maxZoom:20,minZoom:1,attribution:'Google Maps'}),satelliteMap=L.tileLayer.chinaProvider('Google.Satellite.Map',{maxZoom:21,minZoom:1,attribution:'Google Maps'});routeMap=L.tileLayer.chinaProvider('Google.Satellite.Annotion',{maxZoom:21,minZoom:1});var normalMap=L.tileLayer.chinaProvider('Google.Normal.Map',{maxZoom:21,minZoom:1,attribution:'Google Maps'}),satelliteMap=L.tileLayer.chinaProvider('Google.Satellite.Map',{maxZoom:21,minZoom:1,attribution:'Google Maps'}),routeMap=L.tileLayer.chinaProvider('Google.Satellite.Annotion',{maxZoom:21,minZoom:1,attribution:'Google Maps'});var normalm1=L.tileLayer.chinaProvider('Geoq.Normal.Map',{maxZoom:21,minZoom:1,attribution:'GeoQ'});var normal=L.layerGroup([normalm]),image=L.layerGroup([imgm,imga]);var baseLayers={"高德地图":normal,"智图地图":normalm1,"谷歌地图":normalMap,"高德卫星地图":imgm,"谷歌卫星地图":satelliteMap,"高德卫星标注":image,"谷歌卫星标注":routeMap};var mymap=L.map('map-120.101101-30.239119',{center:[30.239119,120.101101],zoom:14,layers:[normal],zoomControl:false});L.control.layers(baseLayers,null).addTo(mymap);L.control.zoom({zoomInTitle:'放大',zoomOutTitle:'缩小'}).addTo(mymap);</script>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-tag-map/lib/leaflet@1.7.1.css"><script data-pjax src="https://cdn.jsdelivr.net/npm/hexo-tag-map/lib/leaflet@1.7.1.js"></script><script data-pjax src="https://cdn.jsdelivr.net/npm/hexo-tag-map/lib/leaflet.ChineseTmsProviders@1.0.4.js"></script><div class="map-box"><div id="gaodeMap-120.101101-30.239119" style="max-width:100%; height:360px;display: block;margin:0 auto;z-index:1;border-radius: 5px;"></div></div><script type="text/javascript">var normalm=L.tileLayer.chinaProvider('GaoDe.Normal.Map',{maxZoom:20,minZoom:1,attribution:'Amap'});var imgm=L.tileLayer.chinaProvider('GaoDe.Satellite.Map',{maxZoom:20,minZoom:1,attribution:'Amap'});var imga=L.tileLayer.chinaProvider('GaoDe.Satellite.Annotion',{maxZoom:20,minZoom:1,attribution:'Amap'});var normal=L.layerGroup([normalm]),image=L.layerGroup([imgm,imga]);var baseLayers={"高德地图":normal,"高德卫星地图":imgm,"高德卫星标注":image};var mymap=L.map('gaodeMap-120.101101-30.239119',{center:[30.239119,120.101101],zoom:14,layers:[normal],zoomControl:false});L.control.layers(baseLayers,null).addTo(mymap);L.control.zoom({zoomInTitle:'放大',zoomOutTitle:'缩小'}).addTo(mymap);var marker = L.marker(['30.239119','120.101101']).addTo(mymap);marker.bindPopup("这里是西湖灵隐寺，据说求姻缘很灵验哦！").openPopup();</script>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-tag-map/lib/leaflet@1.7.1.css"><script data-pjax src="https://cdn.jsdelivr.net/npm/hexo-tag-map/lib/leaflet@1.7.1.js"></script><script data-pjax src="https://cdn.jsdelivr.net/npm/hexo-tag-map/lib/leaflet.ChineseTmsProviders@1.0.4.js"></script><div class="map-box"><div id="gaodeMap-120.101101-30.239119" style="max-width:90%; height:320px;display: block;margin:0 auto;z-index:1;border-radius: 5px;"></div></div><script type="text/javascript">var normalm=L.tileLayer.chinaProvider('GaoDe.Normal.Map',{maxZoom:20,minZoom:1,attribution:'Amap'});var imgm=L.tileLayer.chinaProvider('GaoDe.Satellite.Map',{maxZoom:20,minZoom:1,attribution:'Amap'});var imga=L.tileLayer.chinaProvider('GaoDe.Satellite.Annotion',{maxZoom:20,minZoom:1,attribution:'Amap'});var normal=L.layerGroup([normalm]),image=L.layerGroup([imgm,imga]);var baseLayers={"高德地图":normal,"高德卫星地图":imgm,"高德卫星标注":image};var mymap=L.map('gaodeMap-120.101101-30.239119',{center:[30.239119,120.101101],zoom:13,layers:[image],zoomControl:false});L.control.layers(baseLayers,null).addTo(mymap);L.control.zoom({zoomInTitle:'放大',zoomOutTitle:'缩小'}).addTo(mymap);var marker = L.marker(['30.239119','120.101101']).addTo(mymap);marker.bindPopup("这里是西湖灵隐寺，据说求姻缘很灵验哦！").openPopup();</script>
+<ul>
+<li><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-tag-map/lib/leaflet@1.7.1.css"><script data-pjax src="https://cdn.jsdelivr.net/npm/hexo-tag-map/lib/leaflet@1.7.1.js"></script><script data-pjax src="https://cdn.jsdelivr.net/npm/hexo-tag-map/lib/leaflet.ChineseTmsProviders@1.0.4.js"></script><div class="map-box"><div id="map-120.101101-30.239119" style="max-width:100%; height:360px;display: block;margin:0 auto;z-index:1;border-radius: 5px;"></div></div><script type="text/javascript">var normalm=L.tileLayer.chinaProvider('GaoDe.Normal.Map',{maxZoom:20,minZoom:1,attribution:'Amap'});var imgm=L.tileLayer.chinaProvider('GaoDe.Satellite.Map',{maxZoom:20,minZoom:1,attribution:'Amap'});var imga=L.tileLayer.chinaProvider('GaoDe.Satellite.Annotion',{maxZoom:20,minZoom:1,attribution:'Amap'});var normalMap=L.tileLayer.chinaProvider('Google.Normal.Map',{maxZoom:20,minZoom:1,attribution:'Google Maps'}),satelliteMap=L.tileLayer.chinaProvider('Google.Satellite.Map',{maxZoom:21,minZoom:1,attribution:'Google Maps'});routeMap=L.tileLayer.chinaProvider('Google.Satellite.Annotion',{maxZoom:21,minZoom:1});var normalMap=L.tileLayer.chinaProvider('Google.Normal.Map',{maxZoom:21,minZoom:1,attribution:'Google Maps'}),satelliteMap=L.tileLayer.chinaProvider('Google.Satellite.Map',{maxZoom:21,minZoom:1,attribution:'Google Maps'}),routeMap=L.tileLayer.chinaProvider('Google.Satellite.Annotion',{maxZoom:21,minZoom:1,attribution:'Google Maps'});var normalm1=L.tileLayer.chinaProvider('Geoq.Normal.Map',{maxZoom:21,minZoom:1,attribution:'GeoQ'});var normal=L.layerGroup([normalm]),image=L.layerGroup([imgm,imga]);var baseLayers={"高德地图":normal,"智图地图":normalm1,"谷歌地图":normalMap,"高德卫星地图":imgm,"谷歌卫星地图":satelliteMap,"高德卫星标注":image,"谷歌卫星标注":routeMap};var mymap=L.map('map-120.101101-30.239119',{center:[30.239119,120.101101],zoom:14,layers:[normal],zoomControl:false});L.control.layers(baseLayers,null).addTo(mymap);L.control.zoom({zoomInTitle:'放大',zoomOutTitle:'缩小'}).addTo(mymap);</script></li>
+<li><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-tag-map/lib/leaflet@1.7.1.css"><script data-pjax src="https://cdn.jsdelivr.net/npm/hexo-tag-map/lib/leaflet@1.7.1.js"></script><script data-pjax src="https://cdn.jsdelivr.net/npm/hexo-tag-map/lib/leaflet.ChineseTmsProviders@1.0.4.js"></script><div class="map-box"><div id="gaodeMap-120.101101-30.239119" style="max-width:100%; height:360px;display: block;margin:0 auto;z-index:1;border-radius: 5px;"></div></div><script type="text/javascript">var normalm=L.tileLayer.chinaProvider('GaoDe.Normal.Map',{maxZoom:20,minZoom:1,attribution:'Amap'});var imgm=L.tileLayer.chinaProvider('GaoDe.Satellite.Map',{maxZoom:20,minZoom:1,attribution:'Amap'});var imga=L.tileLayer.chinaProvider('GaoDe.Satellite.Annotion',{maxZoom:20,minZoom:1,attribution:'Amap'});var normal=L.layerGroup([normalm]),image=L.layerGroup([imgm,imga]);var baseLayers={"高德地图":normal,"高德卫星地图":imgm,"高德卫星标注":image};var mymap=L.map('gaodeMap-120.101101-30.239119',{center:[30.239119,120.101101],zoom:14,layers:[normal],zoomControl:false});L.control.layers(baseLayers,null).addTo(mymap);L.control.zoom({zoomInTitle:'放大',zoomOutTitle:'缩小'}).addTo(mymap);var marker = L.marker(['30.239119','120.101101']).addTo(mymap);marker.bindPopup("这里是西湖灵隐寺，据说求姻缘很灵验哦！").openPopup();</script></li>
+<li><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-tag-map/lib/leaflet@1.7.1.css"><script data-pjax src="https://cdn.jsdelivr.net/npm/hexo-tag-map/lib/leaflet@1.7.1.js"></script><script data-pjax src="https://cdn.jsdelivr.net/npm/hexo-tag-map/lib/leaflet.ChineseTmsProviders@1.0.4.js"></script><div class="map-box"><div id="gaodeMap-120.101101-30.239119" style="max-width:90%; height:320px;display: block;margin:0 auto;z-index:1;border-radius: 5px;"></div></div><script type="text/javascript">var normalm=L.tileLayer.chinaProvider('GaoDe.Normal.Map',{maxZoom:20,minZoom:1,attribution:'Amap'});var imgm=L.tileLayer.chinaProvider('GaoDe.Satellite.Map',{maxZoom:20,minZoom:1,attribution:'Amap'});var imga=L.tileLayer.chinaProvider('GaoDe.Satellite.Annotion',{maxZoom:20,minZoom:1,attribution:'Amap'});var normal=L.layerGroup([normalm]),image=L.layerGroup([imgm,imga]);var baseLayers={"高德地图":normal,"高德卫星地图":imgm,"高德卫星标注":image};var mymap=L.map('gaodeMap-120.101101-30.239119',{center:[30.239119,120.101101],zoom:13,layers:[image],zoomControl:false});L.control.layers(baseLayers,null).addTo(mymap);L.control.zoom({zoomInTitle:'放大',zoomOutTitle:'缩小'}).addTo(mymap);var marker = L.marker(['30.239119','120.101101']).addTo(mymap);marker.bindPopup("这里是西湖灵隐寺，据说求姻缘很灵验哦！").openPopup();</script></li>
+</ul>
 ]]></content>
       <categories>
         <category>博客搭建</category>
@@ -2394,40 +2396,40 @@ href="https://api.map.baidu.com/lbsapi/getpoint/index.html">百度地图坐标�
       </tags>
   </entry>
   <entry>
-    <title>外挂标签之PDF展示</title>
-    <url>/posts/d629a2c2.html</url>
-    <content><![CDATA[<h1 id="外挂标签之pdf展示">外挂标签之PDF展示</h1>
-<div class="tip info"><p>需要安装<a
-href="https://blog.csdn.net/qq_43701912/article/details/107291518">hexo-pdf</a>插件</p>
-</div>
+    <title>外挂标签之单选列表</title>
+    <url>/posts/ed0ab06c.html</url>
+    <content><![CDATA[<h1 id="外挂标签之单选列表">外挂标签之单选列表</h1>
 <h2 id="标签语法">标签语法</h2>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% pdf 文件路径 %&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% radio 样式参数（可选）, 文本（支持简单md） %&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="配置参数">配置参数</h2>
 <ol type="1">
-<li><code>文件路径</code>: 可以是相对路径或者是在线链接</li>
+<li><code>颜色</code>: red,yellow,green,cyan,blue,gray</li>
+<li><code>选中状态</code>: checked</li>
 </ol>
 <h2 id="示例源码">示例源码</h2>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="bullet">1.</span> 本地文件:在md文件路径下创建一个同名文件夹，其内放pdf文件名为<span class="code">`能带模型.pdf`</span>的文件</span><br><span class="line">&#123;% pdf <span class="emphasis">_posts/博客搭建/外挂标签之PDF展示/能带模型.pdf %&#125;</span></span><br><span class="line"><span class="emphasis">2. 在线链接</span></span><br><span class="line"><span class="emphasis">&#123;% pdf https://cdn.jsdelivr.net/gh/Justlovesmile/CDN/pdf/小作文讲义.pdf %&#125;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% radio 纯文本测试 %&#125;</span><br><span class="line">&#123;% radio checked, 支持简单的 [<span class="string">markdown</span>](<span class="link">https://guides.github.com/features/mastering-markdown/</span>) 语法 %&#125;</span><br><span class="line">&#123;% radio red, 支持自定义颜色 %&#125;</span><br><span class="line">&#123;% radio green, 绿色 %&#125;</span><br><span class="line">&#123;% radio yellow, 黄色 %&#125;</span><br><span class="line">&#123;% radio cyan, 青色 %&#125;</span><br><span class="line">&#123;% radio blue, 蓝色 %&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="渲染演示">渲染演示</h2>
-<ol type="1">
-<li>本地文件:在md文件路径下创建一个同名文件夹，其内放pdf文件名为<code>能带模型.pdf</code>的文件
-
-
-	<div class="row">
-    <embed src="能带模型.pdf" width="100%" height="550" type="application/pdf">
-	</div>
-
-
-</li>
-<li>在线链接 
-
-	<div class="row">
-    <embed src="https://cdn.jsdelivr.net/gh/Justlovesmile/CDN/pdf/小作文讲义.pdf" width="100%" height="550" type="application/pdf">
-	</div>
-
-
-</li>
-</ol>
+<div class='checkbox'><input type="radio" />
+            <p>纯文本测试</p>
+            </div>
+<div class='checkbox checked'><input type="radio" checked="checked"/>
+            <p>支持简单的 <ahref="https://guides.github.com/features/mastering-markdown/">markdown</a>语法</p>
+            </div>
+<div class='checkbox red'><input type="radio" />
+            <p>支持自定义颜色</p>
+            </div>
+<div class='checkbox green'><input type="radio" />
+            <p>绿色</p>
+            </div>
+<div class='checkbox yellow'><input type="radio" />
+            <p>黄色</p>
+            </div>
+<div class='checkbox cyan'><input type="radio" />
+            <p>青色</p>
+            </div>
+<div class='checkbox blue'><input type="radio" />
+            <p>蓝色</p>
+            </div>
 ]]></content>
       <categories>
         <category>博客搭建</category>
@@ -2435,101 +2437,7 @@ href="https://blog.csdn.net/qq_43701912/article/details/107291518">hexo-pdf</a>�
       <tags>
         <tag>博客搭建</tag>
         <tag>外挂标签</tag>
-        <tag>PDF展示</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>外挂标签之引用文献</title>
-    <url>/posts/965f46ee.html</url>
-    <content><![CDATA[<h1 id="外挂标签之引用文献">外挂标签之引用文献</h1>
-<h2 id="标签语法">标签语法</h2>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% referto [id] , [literature] %&#125;</span><br><span class="line">&#123;% referfrom [id] , [literature] , [url] %&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="配置参数">配置参数</h2>
-<ol type="1">
-<li>referto 引用上标
-<ul>
-<li><code>id</code>: 上标序号内容，需与 referfrom 标签的 id
-对应才能实现跳转</li>
-<li><code>literature</code>: 引用的参考文献名称</li>
-</ul></li>
-<li>referfrom 引用出处
-<ul>
-<li><code>id</code>: 序号内容，需与 referto 标签的 id 对应才能实现
-跳转</li>
-<li><code>literature</code>: 引用的参考文献名称</li>
-<li><code>url</code>: 引用的参考文献链接，可省略</li>
-</ul></li>
-</ol>
-<h2 id="示例源码">示例源码</h2>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">Akilarの糖果屋(akilar.top)是一个私人性质的博客&#123;% referto &#x27;[1]&#x27;,&#x27;Akilarの糖果屋群聊简介&#x27; %&#125;，从各类教程至生活点滴，无话不谈。建群的目的是提供一个闲聊的场所。博客采用Hexo框架&#123;% referto &#x27;[2]&#x27;,&#x27;Hexo中文文档&#x27; %&#125;，Butterfly主题&#123;% referto &#x27;[3]&#x27;,&#x27;Butterfly 安装文档(一) 快速开始&#x27; %&#125;</span><br><span class="line"></span><br><span class="line">本项目参考了Volantis&#123;% referto &#x27;[4]&#x27;,&#x27;hexo-theme-volantis 标签插件&#x27; %&#125;的标签样式。引入<span class="code">`[tag].js`</span>，并针对<span class="code">`butterfly`</span>主题修改了相应的<span class="code">`[tag].styl`</span>。在此鸣谢<span class="code">`Volantis`</span>主题众开发者。</span><br><span class="line">主要参考内容包括各个volantis的内置标签插件文档&#123;% referto &#x27;[5]&#x27;,&#x27;Volantis文档:内置标签插件&#x27; %&#125;</span><br><span class="line">Butterfly主题的各个衍生魔改&#123;% referto &#x27;[6]&#x27;,&#x27;Butterfly 安装文档:标签外挂（Tag Plugins&#x27; %&#125;&#123;% referto &#x27;[7]&#x27;,&#x27;小弋の生活馆全样式预览&#x27; %&#125;&#123;% referto &#x27;[8]&#x27;,&#x27;l-lin-font-awesome-animation&#x27; %&#125;&#123;% referto &#x27;[9]&#x27;,&#x27;小康的butterfly主题使用文档&#x27; %&#125;</span><br><span class="line"></span><br><span class="line">&#123;% referfrom &#x27;[1]&#x27;,&#x27;Akilarの糖果屋群聊简介&#x27;,&#x27;https://jq.qq.com/?<span class="emphasis">_wv=1027&amp;k=pGLB2C0N&#x27; %&#125;</span></span><br><span class="line"><span class="emphasis">&#123;% referfrom &#x27;[2]&#x27;,&#x27;Hexo中文文档&#x27;,&#x27;https://hexo.io/zh-cn/docs/&#x27; %&#125;</span></span><br><span class="line"><span class="emphasis">&#123;% referfrom &#x27;[3]&#x27;,&#x27;Butterfly 安装文档(一) 快速开始&#x27;,&#x27;https://butterfly.js.org/posts/21cfbf15/&#x27; %&#125;</span></span><br><span class="line"><span class="emphasis">&#123;% referfrom &#x27;[4]&#x27;,&#x27;hexo-theme-volantis 标签插件&#x27;,&#x27;https://volantis.js.org/v5/tag-plugins/&#x27; %&#125;</span></span><br><span class="line"><span class="emphasis">&#123;% referfrom &#x27;[5]&#x27;,&#x27;Volantis文档:内置标签插件&#x27;,&#x27;https://volantis.js.org/tag-plugins/&#x27; %&#125;</span></span><br><span class="line"><span class="emphasis">&#123;% referfrom &#x27;[6]&#x27;,&#x27;Butterfly 安装文档:标签外挂（Tag Plugins）&#x27;,&#x27;https://butterfly.js.org/posts/4aa8abbe/#%E6%A8%99%E7%B1%A4%E5%A4%96%E6%8E%9B%EF%BC%88Tag-Plugins%EF%BC%89&#x27; %&#125;</span></span><br><span class="line"><span class="emphasis">&#123;% referfrom &#x27;[7]&#x27;,&#x27;小弋の生活馆全样式预览&#x27;,&#x27;https://lovelijunyi.gitee.io/posts/c898.html&#x27; %&#125;</span></span><br><span class="line"><span class="emphasis">&#123;% referfrom &#x27;[8]&#x27;,&#x27;l-lin-font-awesome-animation&#x27;,&#x27;https://github.com/l-lin/font-awesome-animation&#x27; %&#125;</span></span><br><span class="line"><span class="emphasis">&#123;% referfrom &#x27;[9]&#x27;,&#x27;小康的butterfly主题使用文档&#x27;,&#x27;https://www.antmoe.com/posts/3b43914f/&#x27; %&#125;</span></span><br></pre></td></tr></table></figure>
-<h2 id="渲染演示">渲染演示</h2>
-<p>Akilarの糖果屋(akilar.top)是一个私人性质的博客<span class="hidden-anchor" id="referto_[1]"></span><sup class="reference"><a href="#referfrom_[1]">[1]</a></sup><span class="reference-bubble"><span class="reference-item"><span class="reference-literature">Akilarの糖果屋群聊简介</span><span class="reference-title">参考资料</span></span></span>，从各类教程至生活点滴，无话不谈。建群的目的是提供一个闲聊的场所。博客采用Hexo框架<span class="hidden-anchor" id="referto_[2]"></span><sup class="reference"><a href="#referfrom_[2]">[2]</a></sup><span class="reference-bubble"><span class="reference-item"><span class="reference-literature">Hexo中文文档</span><span class="reference-title">参考资料</span></span></span>，Butterfly主题<span class="hidden-anchor" id="referto_[3]"></span><sup class="reference"><a href="#referfrom_[3]">[3]</a></sup><span class="reference-bubble"><span class="reference-item"><span class="reference-literature">Butterfly 安装文档(一) 快速开始</span><span class="reference-title">参考资料</span></span></span></p>
-<p>本项目参考了Volantis<span class="hidden-anchor" id="referto_[4]"></span><sup class="reference"><a href="#referfrom_[4]">[4]</a></sup><span class="reference-bubble"><span class="reference-item"><span class="reference-literature">hexo-theme-volantis 标签插件</span><span class="reference-title">参考资料</span></span></span>的标签样式。引入<code>[tag].js</code>，并针对<code>butterfly</code>主题修改了相应的<code>[tag].styl</code>。在此鸣谢<code>Volantis</code>主题众开发者。主要参考内容包括各个volantis的内置标签插件文档<span class="hidden-anchor" id="referto_[5]"></span><sup class="reference"><a href="#referfrom_[5]">[5]</a></sup><span class="reference-bubble"><span class="reference-item"><span class="reference-literature">Volantis文档:内置标签插件</span><span class="reference-title">参考资料</span></span></span>
-Butterfly主题的各个衍生魔改<span class="hidden-anchor" id="referto_[6]"></span><sup class="reference"><a href="#referfrom_[6]">[6]</a></sup><span class="reference-bubble"><span class="reference-item"><span class="reference-literature">Butterfly 安装文档:标签外挂（Tag Plugins</span><span class="reference-title">参考资料</span></span></span><span class="hidden-anchor" id="referto_[7]"></span><sup class="reference"><a href="#referfrom_[7]">[7]</a></sup><span class="reference-bubble"><span class="reference-item"><span class="reference-literature">小弋の生活馆全样式预览</span><span class="reference-title">参考资料</span></span></span><span class="hidden-anchor" id="referto_[8]"></span><sup class="reference"><a href="#referfrom_[8]">[8]</a></sup><span class="reference-bubble"><span class="reference-item"><span class="reference-literature">l-lin-font-awesome-animation</span><span class="reference-title">参考资料</span></span></span><span class="hidden-anchor" id="referto_[9]"></span><sup class="reference"><a href="#referfrom_[9]">[9]</a></sup><span class="reference-bubble"><span class="reference-item"><span class="reference-literature">小康的butterfly主题使用文档</span><span class="reference-title">参考资料</span></span></span></p>
-<div class="reference-source"><span class="hidden-anchor" id="referfrom_[1]"></span><a class="reference-anchor" href="#referto_[1]">[1]<div class="reference-anchor-up fa-solid fa-angles-up"></div></a><a class="reference-link" href="https://jq.qq.com/?_wv=1027&k=pGLB2C0N">Akilarの糖果屋群聊简介</a></div>
-<div class="reference-source"><span class="hidden-anchor" id="referfrom_[2]"></span><a class="reference-anchor" href="#referto_[2]">[2]<div class="reference-anchor-up fa-solid fa-angles-up"></div></a><a class="reference-link" href="https://hexo.io/zh-cn/docs/">Hexo中文文档</a></div>
-<div class="reference-source"><span class="hidden-anchor" id="referfrom_[3]"></span><a class="reference-anchor" href="#referto_[3]">[3]<div class="reference-anchor-up fa-solid fa-angles-up"></div></a><a class="reference-link" href="https://butterfly.js.org/posts/21cfbf15/">Butterfly 安装文档(一) 快速开始</a></div>
-<div class="reference-source"><span class="hidden-anchor" id="referfrom_[4]"></span><a class="reference-anchor" href="#referto_[4]">[4]<div class="reference-anchor-up fa-solid fa-angles-up"></div></a><a class="reference-link" href="https://volantis.js.org/v5/tag-plugins/">hexo-theme-volantis 标签插件</a></div>
-<div class="reference-source"><span class="hidden-anchor" id="referfrom_[5]"></span><a class="reference-anchor" href="#referto_[5]">[5]<div class="reference-anchor-up fa-solid fa-angles-up"></div></a><a class="reference-link" href="https://volantis.js.org/tag-plugins/">Volantis文档:内置标签插件</a></div>
-<div class="reference-source"><span class="hidden-anchor" id="referfrom_[6]"></span><a class="reference-anchor" href="#referto_[6]">[6]<div class="reference-anchor-up fa-solid fa-angles-up"></div></a><a class="reference-link" href="https://butterfly.js.org/posts/4aa8abbe/#%E6%A8%99%E7%B1%A4%E5%A4%96%E6%8E%9B%EF%BC%88Tag-Plugins%EF%BC%89">Butterfly 安装文档:标签外挂（Tag Plugins</a></div>
-<div class="reference-source"><span class="hidden-anchor" id="referfrom_[7]"></span><a class="reference-anchor" href="#referto_[7]">[7]<div class="reference-anchor-up fa-solid fa-angles-up"></div></a><a class="reference-link" href="https://lovelijunyi.gitee.io/posts/c898.html">小弋の生活馆全样式预览</a></div>
-<div class="reference-source"><span class="hidden-anchor" id="referfrom_[8]"></span><a class="reference-anchor" href="#referto_[8]">[8]<div class="reference-anchor-up fa-solid fa-angles-up"></div></a><a class="reference-link" href="https://github.com/l-lin/font-awesome-animation">l-lin-font-awesome-animation</a></div>
-<div class="reference-source"><span class="hidden-anchor" id="referfrom_[9]"></span><a class="reference-anchor" href="#referto_[9]">[9]<div class="reference-anchor-up fa-solid fa-angles-up"></div></a><a class="reference-link" href="https://www.antmoe.com/posts/3b43914f/">小康的butterfly主题使用文档</a></div>
-]]></content>
-      <categories>
-        <category>博客搭建</category>
-      </categories>
-      <tags>
-        <tag>博客搭建</tag>
-        <tag>外挂标签</tag>
-        <tag>引用文献</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>外挂标签之旋转相册</title>
-    <url>/posts/75b3d8a.html</url>
-    <content><![CDATA[<h1 id="外挂标签之旋转相册">外挂标签之旋转相册</h1>
-<div class="tip info"><p>旋转相册标签与fancybox灯箱存在兼容性bug，若发现旋转相册呈扁平状，请关闭fancybox或换用medium_zoom。</p>
-</div>
-<h2 id="标签语法">标签语法</h2>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% carousel [Id] , [name] %&#125;</span><br><span class="line">![](<span class="link">/img/1.jpg</span>)</span><br><span class="line">![](<span class="link">/img/2.jpg</span>)</span><br><span class="line">![](<span class="link">/img/3,jpg</span>)</span><br><span class="line">&#123;% endcarousel %&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="配置参数">配置参数</h2>
-<ol type="1">
-<li><code>Id</code>:
-相册唯一ID，用于监测相册鼠标动作。禁止使用中文。同一页内不得出现相同ID的carousel相册。</li>
-<li><code>name</code>: 相册中间显示的内容，建议用英文单引号包裹。</li>
-</ol>
-<h2 id="示例源码">示例源码</h2>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% carousel &#x27;SF&#x27;,&#x27;strike freedom&#x27; %&#125;</span><br><span class="line">![](<span class="link">https://npm.elemecdn.com/akilar-candyassets/image/20200907110444226.png</span>)</span><br><span class="line">![](<span class="link">https://npm.elemecdn.com/akilar-candyassets/image/20200907110508327.png</span>)</span><br><span class="line">![](<span class="link">https://npm.elemecdn.com/akilar-candyassets/image/20200907110525753.png</span>)</span><br><span class="line">![](<span class="link">https://npm.elemecdn.com/akilar-candyassets/image/20200907110600751.png</span>)</span><br><span class="line">![](<span class="link">https://npm.elemecdn.com/akilar-candyassets/image/20200907110621554.png</span>)</span><br><span class="line">![](<span class="link">https://npm.elemecdn.com/akilar-candyassets/image/20200907110637459.png</span>)</span><br><span class="line">![](<span class="link">https://npm.elemecdn.com/akilar-candyassets/image/20200907110654150.png</span>)</span><br><span class="line">![](<span class="link">https://npm.elemecdn.com/akilar-candyassets/image/20200907110707916.png</span>)</span><br><span class="line">![](<span class="link">https://npm.elemecdn.com/akilar-candyassets/image/20200907110719787.png</span>)</span><br><span class="line">![](<span class="link">https://npm.elemecdn.com/akilar-candyassets/image/20200907110731118.png</span>)</span><br><span class="line">&#123;% endcarousel %&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="渲染演示">渲染演示</h2>
-<div id='SF' class='carousel'><div id="SF-drag-container" class="drag-container"><div id="SF-spin-container" class="spin-container"><img
-src="https://npm.elemecdn.com/akilar-candyassets/image/20200907110444226.png" />
-<img
-src="https://npm.elemecdn.com/akilar-candyassets/image/20200907110508327.png" />
-<img
-src="https://npm.elemecdn.com/akilar-candyassets/image/20200907110525753.png" />
-<img
-src="https://npm.elemecdn.com/akilar-candyassets/image/20200907110600751.png" />
-<img
-src="https://npm.elemecdn.com/akilar-candyassets/image/20200907110621554.png" />
-<img
-src="https://npm.elemecdn.com/akilar-candyassets/image/20200907110637459.png" />
-<img
-src="https://npm.elemecdn.com/akilar-candyassets/image/20200907110654150.png" />
-<img
-src="https://npm.elemecdn.com/akilar-candyassets/image/20200907110707916.png" />
-<img
-src="https://npm.elemecdn.com/akilar-candyassets/image/20200907110719787.png" />
-<img
-src="https://npm.elemecdn.com/akilar-candyassets/image/20200907110731118.png" /><p>strike freedom</p></div><div id="SF-carousel-ground" class="carousel-ground"></div></div></div><script type="text/javascript">carouselinit('SF');</script>
-]]></content>
-      <categories>
-        <category>博客搭建</category>
-      </categories>
-      <tags>
-        <tag>博客搭建</tag>
-        <tag>外挂标签</tag>
-        <tag>旋转相册</tag>
+        <tag>单选列表</tag>
       </tags>
   </entry>
   <entry>
@@ -2613,6 +2521,100 @@ checked将所需的CSS类添加到图标（或DOM中的任何元素）</li>
         <tag>博客搭建</tag>
         <tag>外挂标签</tag>
         <tag>气泡注释</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>外挂标签之旋转相册</title>
+    <url>/posts/75b3d8a.html</url>
+    <content><![CDATA[<h1 id="外挂标签之旋转相册">外挂标签之旋转相册</h1>
+<div class="tip info"><p>旋转相册标签与fancybox灯箱存在兼容性bug，若发现旋转相册呈扁平状，请关闭fancybox或换用medium_zoom。</p>
+</div>
+<h2 id="标签语法">标签语法</h2>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% carousel [Id] , [name] %&#125;</span><br><span class="line">![](<span class="link">/img/1.jpg</span>)</span><br><span class="line">![](<span class="link">/img/2.jpg</span>)</span><br><span class="line">![](<span class="link">/img/3,jpg</span>)</span><br><span class="line">&#123;% endcarousel %&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="配置参数">配置参数</h2>
+<ol type="1">
+<li><code>Id</code>:
+相册唯一ID，用于监测相册鼠标动作。禁止使用中文。同一页内不得出现相同ID的carousel相册。</li>
+<li><code>name</code>: 相册中间显示的内容，建议用英文单引号包裹。</li>
+</ol>
+<h2 id="示例源码">示例源码</h2>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% carousel &#x27;SF&#x27;,&#x27;strike freedom&#x27; %&#125;</span><br><span class="line">![](<span class="link">https://npm.elemecdn.com/akilar-candyassets/image/20200907110444226.png</span>)</span><br><span class="line">![](<span class="link">https://npm.elemecdn.com/akilar-candyassets/image/20200907110508327.png</span>)</span><br><span class="line">![](<span class="link">https://npm.elemecdn.com/akilar-candyassets/image/20200907110525753.png</span>)</span><br><span class="line">![](<span class="link">https://npm.elemecdn.com/akilar-candyassets/image/20200907110600751.png</span>)</span><br><span class="line">![](<span class="link">https://npm.elemecdn.com/akilar-candyassets/image/20200907110621554.png</span>)</span><br><span class="line">![](<span class="link">https://npm.elemecdn.com/akilar-candyassets/image/20200907110637459.png</span>)</span><br><span class="line">![](<span class="link">https://npm.elemecdn.com/akilar-candyassets/image/20200907110654150.png</span>)</span><br><span class="line">![](<span class="link">https://npm.elemecdn.com/akilar-candyassets/image/20200907110707916.png</span>)</span><br><span class="line">![](<span class="link">https://npm.elemecdn.com/akilar-candyassets/image/20200907110719787.png</span>)</span><br><span class="line">![](<span class="link">https://npm.elemecdn.com/akilar-candyassets/image/20200907110731118.png</span>)</span><br><span class="line">&#123;% endcarousel %&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="渲染演示">渲染演示</h2>
+<div id='SF' class='carousel'><div id="SF-drag-container" class="drag-container"><div id="SF-spin-container" class="spin-container"><img
+src="https://npm.elemecdn.com/akilar-candyassets/image/20200907110444226.png" />
+<img
+src="https://npm.elemecdn.com/akilar-candyassets/image/20200907110508327.png" />
+<img
+src="https://npm.elemecdn.com/akilar-candyassets/image/20200907110525753.png" />
+<img
+src="https://npm.elemecdn.com/akilar-candyassets/image/20200907110600751.png" />
+<img
+src="https://npm.elemecdn.com/akilar-candyassets/image/20200907110621554.png" />
+<img
+src="https://npm.elemecdn.com/akilar-candyassets/image/20200907110637459.png" />
+<img
+src="https://npm.elemecdn.com/akilar-candyassets/image/20200907110654150.png" />
+<img
+src="https://npm.elemecdn.com/akilar-candyassets/image/20200907110707916.png" />
+<img
+src="https://npm.elemecdn.com/akilar-candyassets/image/20200907110719787.png" />
+<img
+src="https://npm.elemecdn.com/akilar-candyassets/image/20200907110731118.png" /><p>strike freedom</p></div><div id="SF-carousel-ground" class="carousel-ground"></div></div></div><script type="text/javascript">carouselinit('SF');</script>
+]]></content>
+      <categories>
+        <category>博客搭建</category>
+      </categories>
+      <tags>
+        <tag>博客搭建</tag>
+        <tag>外挂标签</tag>
+        <tag>旋转相册</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>外挂标签之引用文献</title>
+    <url>/posts/965f46ee.html</url>
+    <content><![CDATA[<h1 id="外挂标签之引用文献">外挂标签之引用文献</h1>
+<h2 id="标签语法">标签语法</h2>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% referto [id] , [literature] %&#125;</span><br><span class="line">&#123;% referfrom [id] , [literature] , [url] %&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="配置参数">配置参数</h2>
+<ol type="1">
+<li>referto 引用上标
+<ul>
+<li><code>id</code>: 上标序号内容，需与 referfrom 标签的 id
+对应才能实现跳转</li>
+<li><code>literature</code>: 引用的参考文献名称</li>
+</ul></li>
+<li>referfrom 引用出处
+<ul>
+<li><code>id</code>: 序号内容，需与 referto 标签的 id 对应才能实现
+跳转</li>
+<li><code>literature</code>: 引用的参考文献名称</li>
+<li><code>url</code>: 引用的参考文献链接，可省略</li>
+</ul></li>
+</ol>
+<h2 id="示例源码">示例源码</h2>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">Akilarの糖果屋(akilar.top)是一个私人性质的博客&#123;% referto &#x27;[1]&#x27;,&#x27;Akilarの糖果屋群聊简介&#x27; %&#125;，从各类教程至生活点滴，无话不谈。建群的目的是提供一个闲聊的场所。博客采用Hexo框架&#123;% referto &#x27;[2]&#x27;,&#x27;Hexo中文文档&#x27; %&#125;，Butterfly主题&#123;% referto &#x27;[3]&#x27;,&#x27;Butterfly 安装文档(一) 快速开始&#x27; %&#125;</span><br><span class="line"></span><br><span class="line">本项目参考了Volantis&#123;% referto &#x27;[4]&#x27;,&#x27;hexo-theme-volantis 标签插件&#x27; %&#125;的标签样式。引入<span class="code">`[tag].js`</span>，并针对<span class="code">`butterfly`</span>主题修改了相应的<span class="code">`[tag].styl`</span>。在此鸣谢<span class="code">`Volantis`</span>主题众开发者。</span><br><span class="line">主要参考内容包括各个volantis的内置标签插件文档&#123;% referto &#x27;[5]&#x27;,&#x27;Volantis文档:内置标签插件&#x27; %&#125;</span><br><span class="line">Butterfly主题的各个衍生魔改&#123;% referto &#x27;[6]&#x27;,&#x27;Butterfly 安装文档:标签外挂（Tag Plugins&#x27; %&#125;&#123;% referto &#x27;[7]&#x27;,&#x27;小弋の生活馆全样式预览&#x27; %&#125;&#123;% referto &#x27;[8]&#x27;,&#x27;l-lin-font-awesome-animation&#x27; %&#125;&#123;% referto &#x27;[9]&#x27;,&#x27;小康的butterfly主题使用文档&#x27; %&#125;</span><br><span class="line"></span><br><span class="line">&#123;% referfrom &#x27;[1]&#x27;,&#x27;Akilarの糖果屋群聊简介&#x27;,&#x27;https://jq.qq.com/?<span class="emphasis">_wv=1027&amp;k=pGLB2C0N&#x27; %&#125;</span></span><br><span class="line"><span class="emphasis">&#123;% referfrom &#x27;[2]&#x27;,&#x27;Hexo中文文档&#x27;,&#x27;https://hexo.io/zh-cn/docs/&#x27; %&#125;</span></span><br><span class="line"><span class="emphasis">&#123;% referfrom &#x27;[3]&#x27;,&#x27;Butterfly 安装文档(一) 快速开始&#x27;,&#x27;https://butterfly.js.org/posts/21cfbf15/&#x27; %&#125;</span></span><br><span class="line"><span class="emphasis">&#123;% referfrom &#x27;[4]&#x27;,&#x27;hexo-theme-volantis 标签插件&#x27;,&#x27;https://volantis.js.org/v5/tag-plugins/&#x27; %&#125;</span></span><br><span class="line"><span class="emphasis">&#123;% referfrom &#x27;[5]&#x27;,&#x27;Volantis文档:内置标签插件&#x27;,&#x27;https://volantis.js.org/tag-plugins/&#x27; %&#125;</span></span><br><span class="line"><span class="emphasis">&#123;% referfrom &#x27;[6]&#x27;,&#x27;Butterfly 安装文档:标签外挂（Tag Plugins）&#x27;,&#x27;https://butterfly.js.org/posts/4aa8abbe/#%E6%A8%99%E7%B1%A4%E5%A4%96%E6%8E%9B%EF%BC%88Tag-Plugins%EF%BC%89&#x27; %&#125;</span></span><br><span class="line"><span class="emphasis">&#123;% referfrom &#x27;[7]&#x27;,&#x27;小弋の生活馆全样式预览&#x27;,&#x27;https://lovelijunyi.gitee.io/posts/c898.html&#x27; %&#125;</span></span><br><span class="line"><span class="emphasis">&#123;% referfrom &#x27;[8]&#x27;,&#x27;l-lin-font-awesome-animation&#x27;,&#x27;https://github.com/l-lin/font-awesome-animation&#x27; %&#125;</span></span><br><span class="line"><span class="emphasis">&#123;% referfrom &#x27;[9]&#x27;,&#x27;小康的butterfly主题使用文档&#x27;,&#x27;https://www.antmoe.com/posts/3b43914f/&#x27; %&#125;</span></span><br></pre></td></tr></table></figure>
+<h2 id="渲染演示">渲染演示</h2>
+<p>Akilarの糖果屋(akilar.top)是一个私人性质的博客<span class="hidden-anchor" id="referto_[1]"></span><sup class="reference"><a href="#referfrom_[1]">[1]</a></sup><span class="reference-bubble"><span class="reference-item"><span class="reference-literature">Akilarの糖果屋群聊简介</span><span class="reference-title">参考资料</span></span></span>，从各类教程至生活点滴，无话不谈。建群的目的是提供一个闲聊的场所。博客采用Hexo框架<span class="hidden-anchor" id="referto_[2]"></span><sup class="reference"><a href="#referfrom_[2]">[2]</a></sup><span class="reference-bubble"><span class="reference-item"><span class="reference-literature">Hexo中文文档</span><span class="reference-title">参考资料</span></span></span>，Butterfly主题<span class="hidden-anchor" id="referto_[3]"></span><sup class="reference"><a href="#referfrom_[3]">[3]</a></sup><span class="reference-bubble"><span class="reference-item"><span class="reference-literature">Butterfly 安装文档(一) 快速开始</span><span class="reference-title">参考资料</span></span></span></p>
+<p>本项目参考了Volantis<span class="hidden-anchor" id="referto_[4]"></span><sup class="reference"><a href="#referfrom_[4]">[4]</a></sup><span class="reference-bubble"><span class="reference-item"><span class="reference-literature">hexo-theme-volantis 标签插件</span><span class="reference-title">参考资料</span></span></span>的标签样式。引入<code>[tag].js</code>，并针对<code>butterfly</code>主题修改了相应的<code>[tag].styl</code>。在此鸣谢<code>Volantis</code>主题众开发者。主要参考内容包括各个volantis的内置标签插件文档<span class="hidden-anchor" id="referto_[5]"></span><sup class="reference"><a href="#referfrom_[5]">[5]</a></sup><span class="reference-bubble"><span class="reference-item"><span class="reference-literature">Volantis文档:内置标签插件</span><span class="reference-title">参考资料</span></span></span>
+Butterfly主题的各个衍生魔改<span class="hidden-anchor" id="referto_[6]"></span><sup class="reference"><a href="#referfrom_[6]">[6]</a></sup><span class="reference-bubble"><span class="reference-item"><span class="reference-literature">Butterfly 安装文档:标签外挂（Tag Plugins</span><span class="reference-title">参考资料</span></span></span><span class="hidden-anchor" id="referto_[7]"></span><sup class="reference"><a href="#referfrom_[7]">[7]</a></sup><span class="reference-bubble"><span class="reference-item"><span class="reference-literature">小弋の生活馆全样式预览</span><span class="reference-title">参考资料</span></span></span><span class="hidden-anchor" id="referto_[8]"></span><sup class="reference"><a href="#referfrom_[8]">[8]</a></sup><span class="reference-bubble"><span class="reference-item"><span class="reference-literature">l-lin-font-awesome-animation</span><span class="reference-title">参考资料</span></span></span><span class="hidden-anchor" id="referto_[9]"></span><sup class="reference"><a href="#referfrom_[9]">[9]</a></sup><span class="reference-bubble"><span class="reference-item"><span class="reference-literature">小康的butterfly主题使用文档</span><span class="reference-title">参考资料</span></span></span></p>
+<div class="reference-source"><span class="hidden-anchor" id="referfrom_[1]"></span><a class="reference-anchor" href="#referto_[1]">[1]<div class="reference-anchor-up fa-solid fa-angles-up"></div></a><a class="reference-link" href="https://jq.qq.com/?_wv=1027&k=pGLB2C0N">Akilarの糖果屋群聊简介</a></div>
+<div class="reference-source"><span class="hidden-anchor" id="referfrom_[2]"></span><a class="reference-anchor" href="#referto_[2]">[2]<div class="reference-anchor-up fa-solid fa-angles-up"></div></a><a class="reference-link" href="https://hexo.io/zh-cn/docs/">Hexo中文文档</a></div>
+<div class="reference-source"><span class="hidden-anchor" id="referfrom_[3]"></span><a class="reference-anchor" href="#referto_[3]">[3]<div class="reference-anchor-up fa-solid fa-angles-up"></div></a><a class="reference-link" href="https://butterfly.js.org/posts/21cfbf15/">Butterfly 安装文档(一) 快速开始</a></div>
+<div class="reference-source"><span class="hidden-anchor" id="referfrom_[4]"></span><a class="reference-anchor" href="#referto_[4]">[4]<div class="reference-anchor-up fa-solid fa-angles-up"></div></a><a class="reference-link" href="https://volantis.js.org/v5/tag-plugins/">hexo-theme-volantis 标签插件</a></div>
+<div class="reference-source"><span class="hidden-anchor" id="referfrom_[5]"></span><a class="reference-anchor" href="#referto_[5]">[5]<div class="reference-anchor-up fa-solid fa-angles-up"></div></a><a class="reference-link" href="https://volantis.js.org/tag-plugins/">Volantis文档:内置标签插件</a></div>
+<div class="reference-source"><span class="hidden-anchor" id="referfrom_[6]"></span><a class="reference-anchor" href="#referto_[6]">[6]<div class="reference-anchor-up fa-solid fa-angles-up"></div></a><a class="reference-link" href="https://butterfly.js.org/posts/4aa8abbe/#%E6%A8%99%E7%B1%A4%E5%A4%96%E6%8E%9B%EF%BC%88Tag-Plugins%EF%BC%89">Butterfly 安装文档:标签外挂（Tag Plugins</a></div>
+<div class="reference-source"><span class="hidden-anchor" id="referfrom_[7]"></span><a class="reference-anchor" href="#referto_[7]">[7]<div class="reference-anchor-up fa-solid fa-angles-up"></div></a><a class="reference-link" href="https://lovelijunyi.gitee.io/posts/c898.html">小弋の生活馆全样式预览</a></div>
+<div class="reference-source"><span class="hidden-anchor" id="referfrom_[8]"></span><a class="reference-anchor" href="#referto_[8]">[8]<div class="reference-anchor-up fa-solid fa-angles-up"></div></a><a class="reference-link" href="https://github.com/l-lin/font-awesome-animation">l-lin-font-awesome-animation</a></div>
+<div class="reference-source"><span class="hidden-anchor" id="referfrom_[9]"></span><a class="reference-anchor" href="#referto_[9]">[9]<div class="reference-anchor-up fa-solid fa-angles-up"></div></a><a class="reference-link" href="https://www.antmoe.com/posts/3b43914f/">小康的butterfly主题使用文档</a></div>
+]]></content>
+      <categories>
+        <category>博客搭建</category>
+      </categories>
+      <tags>
+        <tag>博客搭建</tag>
+        <tag>外挂标签</tag>
+        <tag>引用文献</tag>
       </tags>
   </entry>
 </search>
