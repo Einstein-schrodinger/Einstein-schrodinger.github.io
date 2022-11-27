@@ -25,66 +25,39 @@ href="https://www.cnblogs.com/Ai-heng/p/7282110.html">hexo博客MathJax公式渲
       </tags>
   </entry>
   <entry>
-    <title>单抛物带(Single Parabolic Band,SPB)模型</title>
-    <url>/posts/3ca822df.html</url>
-    <content><![CDATA[<h1
-id="单抛物带single-parabolic-bandspb模型相关计算">单抛物带(<strong>Single
-Parabolic Band，SPB</strong>)模型相关计算</h1>
-<h2 id="单抛物带模型计算简并条件下">单抛物带模型计算(简并条件下)</h2>
-<details class="folding-tag" cyan><summary> 点击查看 </summary>
-              <div class='content'>
-              <h3 id="计算公式">1.1 计算公式</h3><p><span class="math display">\[S=\frac{8\pi^2{k_\mathrm{B}}^2T}{3eh^2}m_{\mathrm{d}}^{*}\left(\frac{\pi}{3p}\right)^{2/3}\tag{1}\]</span></p><ul><li><spanclass="math inline">\(m_{\mathrm{d}}^{*}=N_{\mathrm{v}}^{2/3}m_{\mathrm{b}}^*\)</span><strong>:态密度有效质量</strong></li></ul><h3 id="计算代码">1.2 计算代码</h3><figure class="highlight matlab"><table><tr><td class="code"><pre><span class="line"><span class="comment">%基于单抛物带模型拟合S-n的关系得到态密度有效质量----简并条件下</span></span><br><span class="line">clc,clear</span><br><span class="line">Kb = <span class="number">1.38066</span>*<span class="number">10</span>^<span class="number">-23</span>;  <span class="comment">%J/K 1J=1V*A*s 1W = 1J/s</span></span><br><span class="line">h = <span class="number">6.62608</span>*<span class="number">10</span>^<span class="number">-34</span>; <span class="comment">%J*s</span></span><br><span class="line">hr = h/(<span class="number">2</span>*<span class="built_in">pi</span>); <span class="comment">%简约普朗克常数</span></span><br><span class="line">e = <span class="number">1.60219</span>*<span class="number">10</span>^<span class="number">-19</span>;  <span class="comment">%1C=1A*s</span></span><br><span class="line">me = <span class="number">9.10953</span>*<span class="number">10</span>^<span class="number">-31</span>;  <span class="comment">%Kg</span></span><br><span class="line">K = Kb/e;</span><br><span class="line">T = <span class="number">323</span>;  <span class="comment">%K 温度</span></span><br><span class="line"></span><br><span class="line">Sdata = [<span class="number">76.76</span>, <span class="number">101.92</span>, <span class="number">108.97</span>, <span class="number">174.48</span>]*<span class="number">10</span>^(<span class="number">-6</span>);  <span class="comment">%将uV/K转换为V/K</span></span><br><span class="line">ndata = [<span class="number">1.97</span>, <span class="number">1.04</span>, <span class="number">0.46</span>, <span class="number">0.63</span>]*<span class="number">10</span>^<span class="number">20</span>*<span class="number">10</span>^<span class="number">6</span>;   <span class="comment">%cm^-3, 转换为m^-3</span></span><br><span class="line"><span class="comment">% Sdata = [76.76]*10^(-6);  %将uV/K转换为V/K</span></span><br><span class="line"><span class="comment">% ndata = [1.97]*10^20*10^6;   %cm^-3, 转换为m^-3</span></span><br><span class="line">em0 = <span class="number">123</span>; <span class="comment">%态密度有效质量的初值  和初值有很大关系</span></span><br><span class="line">S = @(em,ndata)(<span class="number">8</span>*<span class="built_in">pi</span>^<span class="number">2</span>*Kb^<span class="number">2</span>)/(<span class="number">3</span>*e*h^<span class="number">2</span>)*em*me*T*(<span class="built_in">pi</span>./(<span class="number">3</span>*ndata)).^(<span class="number">2</span>/<span class="number">3</span>);</span><br><span class="line">[emf, resnorm] = lsqcurvefit(S, em0, ndata, Sdata); <span class="comment">%emf:拟合的得到的态密度有效质量，resnorm残差平方和</span></span><br><span class="line">display(emf);  <span class="comment">%显示拟合得到的值</span></span><br><span class="line"></span><br><span class="line">ndatac = (<span class="number">0.2</span>:<span class="number">0.001</span>:<span class="number">2</span>)*<span class="number">10</span>^<span class="number">26</span>;</span><br><span class="line">Sdatac = S(emf, ndatac);</span><br><span class="line"><span class="built_in">plot</span>(ndatac*<span class="number">10</span>^(<span class="number">-24</span>), Sdatac*<span class="number">10</span>^(<span class="number">6</span>), <span class="string">&#x27;-&#x27;</span>);</span><br><span class="line"><span class="built_in">hold</span> on</span><br><span class="line"><span class="built_in">plot</span>(ndata*<span class="number">10</span>^(<span class="number">-24</span>), Sdata*<span class="number">10</span>^(<span class="number">6</span>), <span class="string">&#x27;ro&#x27;</span>, <span class="string">&#x27;MarkerFaceColor&#x27;</span>, <span class="string">&#x27;r&#x27;</span>);  <span class="comment">%数据点为实心圆</span></span><br><span class="line">xlabel(<span class="string">&#x27;p [10^&#123;18&#125;\cdotcm^&#123;-3&#125;]&#x27;</span>);</span><br><span class="line">ylabel(<span class="string">&#x27;S [\muV\cdotK^&#123;-1&#125;]&#x27;</span>);</span><br></pre></td></tr></table></figure><h3 id="计算结果">1.3 计算结果</h3><div class="hide-block"><button type="button" class="hide-button" style>查看计算结果</button><div class="hide-content"><p><imgsrc="https://blogresource.sqwdream.cloud/post/单抛物带模型/img/单抛物带模型.jpg" /></p></div></div>
-              </div>
-            </details>
-<h2 id="单抛物带模型计算">单抛物带模型计算</h2>
-<details class="folding-tag" cyan><summary> 点击查看 </summary>
-              <div class='content'>
-              <h3 id="计算公式1-2-3">1.1 计算公式<a href="#fn1" class="footnote-ref"id="fnref1" role="doc-noteref"><sup>1</sup></a> <a href="#fn2"class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> <ahref="#fn3" class="footnote-ref" id="fnref3"role="doc-noteref"><sup>3</sup></a></h3><ul><li><strong>塞贝克系数与简约费米能级的关系:</strong></li></ul><p><span class="math display">\[\begin{split} S(\eta)&amp;=\frac{k_\mathrm{B}}{e}\left[\frac{(r+2)F_{r+1}(\eta)}{(r+1)F_{r}(\eta)}-\eta \right] \\F_i(\eta)&amp;=\int_0^\infty \frac{x^i}{1+e^{(x-\eta)}} \mathrm{d}x\end{split} \tag{1}\]</span></p><ul><li><strong>霍尔载流子浓度:</strong></li></ul><p><span class="math display">\[\begin{split}p_\mathrm{H}&amp; =4\pi\left(\frac{2m_{\mathrm{d}}^*k_\mathrm{B}T}{h^2}\right)^{3/2}\frac{F_{1/2}(\eta)}{r_{H}} \\r_\mathrm{H}&amp; =\frac{3}{4}\frac{F_{1/2}(\eta)F_{-1/2}(\eta)}{F_0^2(\eta)}\end{split}\tag{2}\]</span></p><ul><li><strong>霍尔迁移率(非简并条件):</strong></li></ul><p><span class="math display">\[\mu_\mathrm{H}=\frac{1}{2}\frac{F_{-1/2}(\eta)}{F_0(\eta)}\mu_{0}\]</span></p><ul><li><p><strong><spanclass="math inline">\(\mu_{0}\)</span>为漂移迁移率</strong><strong>由此可以得到电导率</strong></p></li><li><p><strong>电导率</strong> <span class="math display">\[\sigma =pe\mu=\frac{16\sqrt{2}\piek_\mathrm{B}^{3/2}TF_0(\eta)}{3h^3}\mu_{0}{m_\mathrm{d}^{*}}^{3/2}\tag{3}\]</span></p></li><li><p><span class="math inline">\(\mu_\mathrm{w} =\mu_{0}{m_\mathrm{d}^{*}}^{3/2}\)</span><strong>为权重迁移率</strong></p></li><li><p><strong>洛伦兹常数(参考其它文献):</strong></p></li></ul><p><span class="math display">\[L=\left(\frac{k_\mathrm{B}}{e}\right)^2\left\{\frac{(r+3)F_{r+2}(\eta)}{(r+1)F_{r}(\eta)}-\left[\frac{(r+2)F_{r+1}(\eta)}{(r+1)F_{r+1}(\eta)}\right]^2 \right\}\tag{4}\]</span></p><h3 id="计算代码">1.2 计算代码</h3><figure class="highlight matlab"><table><tr><td class="code"><pre><span class="line"><span class="comment">%基于单抛物带模型拟合S-n的关系得到态密度有效质量</span></span><br><span class="line">clc,clear</span><br><span class="line">Kb = <span class="number">1.38066</span>*<span class="number">10</span>^<span class="number">-23</span>;  <span class="comment">%J/K 1J=1V*A*s</span></span><br><span class="line">e = <span class="number">1.60219</span>*<span class="number">10</span>^<span class="number">-19</span>; <span class="comment">%1C=1A*s</span></span><br><span class="line">K = Kb/e;</span><br><span class="line">lambda = <span class="number">0</span>;<span class="comment">%只考虑声学声子散射lambad = 0，离化杂质散射为2</span></span><br><span class="line">h = <span class="number">6.62608</span>*<span class="number">10</span>^<span class="number">-34</span>; <span class="comment">%J*s、</span></span><br><span class="line">me = <span class="number">9.10953</span>*<span class="number">10</span>^<span class="number">-31</span>; <span class="comment">%Kg</span></span><br><span class="line">T = <span class="number">323</span>; <span class="comment">%K</span></span><br><span class="line">Sdata = [<span class="number">76.76</span>, <span class="number">101.92</span>, <span class="number">108.97</span>, <span class="number">174.48</span>]*<span class="number">10</span>^(<span class="number">-6</span>);  <span class="comment">%将uV/K转换为V/K</span></span><br><span class="line">pdata = [<span class="number">1.97</span>, <span class="number">1.04</span>, <span class="number">0.46</span>, <span class="number">0.63</span>]*<span class="number">10</span>^<span class="number">20</span>*<span class="number">10</span>^<span class="number">6</span>;   <span class="comment">%cm^-3, 转换为m^-3; 10^26m^(-3)=10^20 cm^(-3) 将m^(-3)换成cm^(-3)，并且以10^20cm^(-3)为单位开始</span></span><br><span class="line"><span class="comment">% Sdata = [76.76]*10^(-6);  %将uV/K转换为V/K</span></span><br><span class="line"><span class="comment">% pdata = [1.97]*10^20*10^6;   %cm^-3, 转换为m^-3</span></span><br><span class="line">Fn = @(no,yita)quadgk(@(x)x.^no./(<span class="number">1</span>+<span class="built_in">exp</span>(x-yita)),<span class="number">0</span>,<span class="built_in">inf</span>);</span><br><span class="line">rH = @(yita)((<span class="number">3</span>*Fn(<span class="number">1</span>/<span class="number">2</span>,yita)*Fn(<span class="number">-1</span>/<span class="number">2</span>,yita))/(<span class="number">4</span>*Fn(<span class="number">0</span>,yita)^<span class="number">2</span>));</span><br><span class="line"><span class="comment">%初始化</span></span><br><span class="line">yita = <span class="built_in">zeros</span>(<span class="number">1</span>,<span class="built_in">length</span>(Sdata)); </span><br><span class="line">Fndata = <span class="built_in">zeros</span>(<span class="number">1</span>,<span class="built_in">length</span>(Sdata));</span><br><span class="line">rHdata = <span class="built_in">zeros</span>(<span class="number">1</span>,<span class="built_in">length</span>(Sdata));</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> <span class="built_in">i</span> = <span class="number">1</span>:<span class="built_in">length</span>(Sdata)</span><br><span class="line">        func1 = @(yita)K*((lambda+<span class="number">2</span>)*Fn(lambda+<span class="number">1</span>,yita)/((lambda+<span class="number">1</span>)*Fn(lambda,yita))-yita)-Sdata(<span class="built_in">i</span>); <span class="comment">%V/K</span></span><br><span class="line">        yita(<span class="built_in">i</span>) = fzero(func1,<span class="number">0</span>);</span><br><span class="line">         Fndata(<span class="built_in">i</span>) =  Fn(<span class="number">1</span>/<span class="number">2</span>,yita(<span class="built_in">i</span>));</span><br><span class="line">         rHdata(<span class="built_in">i</span>) =  rH(yita(<span class="built_in">i</span>));</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line">Fr = Fndata./rHdata;</span><br><span class="line">func2 = @(em,Fr)(<span class="number">4</span>*<span class="built_in">pi</span>*(<span class="number">2</span>*Kb*T*em*me)^(<span class="number">3</span>/<span class="number">2</span>)/h^<span class="number">3.</span>*Fr);   <span class="comment">%func2 = p </span></span><br><span class="line"><span class="comment">% func2 = @(em, yita)(4*pi*(2*Kb*T*em*me)^(3/2)/h^3*Fn(1/2,yita)/rH(yita));   %func2 = p </span></span><br><span class="line">em0 = <span class="number">12</span>; <span class="comment">%态密度有效质量的初值  和初值有很大关系</span></span><br><span class="line">[emf, resnorm] = lsqcurvefit(func2, em0, yita, pdata); <span class="comment">%emf:拟合的得到的态密度有效质量，resnorm残差平方和</span></span><br><span class="line">display(emf);  <span class="comment">%显示拟合得到的值</span></span><br><span class="line"></span><br><span class="line"><span class="comment">%拟合得到态密度有效质量</span></span><br><span class="line">p = (<span class="number">0.2</span>:<span class="number">0.01</span>:<span class="number">2</span>)*<span class="number">10</span>^<span class="number">26</span>; <span class="comment">%10^26m^(-3)=10^20 cm^(-3) 将m^(-3)换成cm^(-3)，并且以10^20cm^(-3)为单位开始</span></span><br><span class="line">S = <span class="built_in">zeros</span>(<span class="number">1</span>,<span class="built_in">length</span>(p));</span><br><span class="line"> <span class="keyword">for</span> <span class="built_in">i</span> = <span class="number">1</span>:<span class="built_in">length</span>(p)</span><br><span class="line">        f1 = @(yita)(<span class="number">4</span>*<span class="built_in">pi</span>*(<span class="number">2</span>*Kb*T*emf*me)^(<span class="number">3</span>/<span class="number">2</span>)/h^<span class="number">3</span>*Fn(<span class="number">1</span>/<span class="number">2</span>,yita)/rH(yita)-p(<span class="built_in">i</span>)); </span><br><span class="line">        yita(<span class="built_in">i</span>) = fzero(f1,<span class="number">0</span>);</span><br><span class="line">        S(<span class="built_in">i</span>) = K*((lambda+<span class="number">2</span>)*Fn(lambda+<span class="number">1</span>,yita(<span class="built_in">i</span>))/((lambda+<span class="number">1</span>)*Fn(lambda,yita(<span class="built_in">i</span>)))-yita(<span class="built_in">i</span>)); <span class="comment">%V/K</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"><span class="built_in">plot</span>(p*<span class="number">10</span>^(<span class="number">-24</span>),S*<span class="number">10</span>^<span class="number">6</span>,<span class="string">&#x27;-&#x27;</span>,<span class="string">&#x27;LineWidth&#x27;</span>,<span class="number">1</span>)  <span class="comment">%将V/K换成uV/K</span></span><br><span class="line"><span class="built_in">hold</span> on</span><br><span class="line"><span class="built_in">plot</span>(pdata*<span class="number">10</span>^(<span class="number">-24</span>), Sdata*<span class="number">10</span>^(<span class="number">6</span>), <span class="string">&#x27;ro&#x27;</span>, <span class="string">&#x27;MarkerFaceColor&#x27;</span>, <span class="string">&#x27;r&#x27;</span>);  <span class="comment">%数据点为实心圆</span></span><br><span class="line">xlabel(<span class="string">&#x27;p [10^&#123;18&#125;\cdotcm^&#123;-3&#125;]&#x27;</span>);</span><br><span class="line">ylabel(<span class="string">&#x27;S [\muV\cdotK^&#123;-1&#125;]&#x27;</span>);</span><br></pre></td></tr></table></figure><h3 id="计算结果">1.3 计算结果</h3><div class="hide-block"><button type="button" class="hide-button" style>查看计算结果</button><div class="hide-content"><p><imgsrc="https://blogresource.sqwdream.cloud/post/单抛物带模型/img/单抛物带模型.jpg" /></p></div></div><h3 id="相关参考">1.4 相关参考</h3><section id="footnotes" class="footnotes footnotes-end-of-document"role="doc-endnotes"><hr /><ol><li id="fn1"><p><ahref="https://doi.org/10.1002/adma.201903480"><strong>Zhao, K., et al.(2019). "Are Cu<sub>2</sub>Te-Based Compounds Excellent ThermoelectricMaterials?" Advanced Materials 31(49): 1903480.</strong></a><ahref="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li><li id="fn2"><p><ahref="https://doi.org/10.1016/j.nanoen.2017.10.042"><strong>Zhao, K., etal. (2017). "High thermoelectric performance and low thermalconductivity inCu<sub>2-y</sub>S<sub>1/3</sub>Se<sub>1/3</sub>Te<sub>1/3</sub>liquid-like materials with nanoscale mosaic structures." Nano Energy 42:43-50.</strong></a><a href="#fnref2" class="footnote-back"role="doc-backlink">↩︎</a></p></li><li id="fn3"><p><strong><font color = red>特别致谢:</font></strong><ahref="http://muchong.com/t-12417284-1"><strong><font color = red>穿越千年</font></strong></a><ahref="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li></ol></section>
-              </div>
-            </details>
-]]></content>
-      <categories>
-        <category>热电</category>
-      </categories>
-      <tags>
-        <tag>热电</tag>
-        <tag>单抛物带模型</tag>
-        <tag>SPB</tag>
-        <tag>Pisarenko plot</tag>
-        <tag>Matlab code</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>出入红尘</title>
-    <url>/posts/1168772c.html</url>
-    <content><![CDATA[<div class='poem'><div class='poem-title'>好了歌</div><div class='poem-author'>曹雪芹</div><p>世人都晓神仙好，惟有功名忘不了！ 古今将相在何方？荒冢一堆草没了。
-世人都晓神仙好，只有金银忘不了！ 终朝只恨聚无多，及到多时眼闭了。
-世人都晓神仙好，只有娇妻忘不了！ 君生日日说恩情，君死又随人去了。
-世人都晓神仙好，只有儿孙忘不了！ 痴心父母古来多，孝顺儿孙谁见了？</p>
+    <title>博客搭建之Twikoo</title>
+    <url>/posts/6fc19c10.html</url>
+    <content><![CDATA[<h1 id="博客搭建之twikoo">博客搭建之Twikoo</h1>
+<div class="note info modern"><p>鉴于每个人的博客根目录名称都不太一样，本贴<strong>博客根目录</strong>一律以<code>[BlogRoot]</code>指代。
+站点配置文件<code>_config.yml</code>，路径为<code>[BlogRoot]\_config.yml</code>。
+主题配置文件<code>_config.yml</code>，路径为<code>[BlogRoot]\themes\butterfly\_config.yml</code>。</p>
 </div>
+<h2 id="twikoo的评论设置">1.Twikoo的评论设置</h2>
+<h3 id="支持图片评论">1.1 支持图片评论</h3>
+<p>Twikoo评论区要支持图片评论功能需要配置图床，这里以比较容易设置的<a
+href="https://smms.app/">smms</a>图床为例，首先要进行注册，注册成功之后，会给你5GB的空间用来存储图片，一般来说够用了。将获取的smms图床的token复制到Twikoo插件设置里的<code>IMAGE_CDN_ToKEN</code>，并且将<code>IMAGE_CDN</code>填写为<code>smms</code>，其余选项保持默认即可，配置结束之后记得拉到最下方点击保存，刷新一下即可生效。下面图片展示详细的步骤：</p>
+<ul>
+<li>smms注册并获取token</li>
+</ul>
+<p><img
+src="https://blogresource.sqwdream.cloud/post/博客搭建之Twikoo/img/body/smms.jpg" /></p>
+<ul>
+<li>网站的Twikoo评论设置</li>
+</ul>
+<p><img
+src="https://blogresource.sqwdream.cloud/post/博客搭建之Twikoo/img/body/评论图床设置.jpg" /></p>
+<h3 id="支持latex公式评论">1.2 支持Latex公式评论</h3>
+<p>支持公式评论可以参考Twikoo官网的<a
+href="https://twikoo.js.org/faq.html#%E5%A6%82%E4%BD%95%E5%90%AF%E7%94%A8-katex-%E6%94%AF%E6%8C%81">如何开启Katex支持？</a>，就是在主题配置文件<code>_config.yml</code>中引入如下代码：</p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">innject:</span></span><br><span class="line">  <span class="attr">head:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">&lt;link</span> <span class="string">rel=&quot;stylesheet&quot;</span> <span class="string">href=&quot;https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css&quot;</span> <span class="string">integrity=&quot;sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X&quot;</span> <span class="string">crossorigin=&quot;anonymous&quot;&gt;</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">&lt;script</span> <span class="string">defer</span> <span class="string">src=&quot;https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js&quot;</span> <span class="string">integrity=&quot;sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4&quot;</span> <span class="string">crossorigin=&quot;anonymous&quot;&gt;&lt;/script&gt;</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">&lt;script</span> <span class="string">defer</span> <span class="string">src=&quot;https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js&quot;</span> <span class="string">integrity=&quot;sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa&quot;</span> <span class="string">crossorigin=&quot;anonymous&quot;&gt;&lt;/script&gt;</span></span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
-        <category>诗与远方</category>
+        <category>博客搭建</category>
       </categories>
       <tags>
-        <tag>诗与远方</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>水调歌头</title>
-    <url>/posts/ac668694.html</url>
-    <content><![CDATA[<div class='poem'><div class='poem-title'>水调歌头</div><div class='poem-author'>苏轼</div><p>丙辰中秋，欢饮达旦，大醉，作此篇，兼怀子由。 明月几时有？把酒问青天。
-不知天上宫阙，今夕是何年？ 我欲乘风归去，又恐琼楼玉宇，高处不胜寒。
-起舞弄清影，何似在人间？</p>
-<p>转朱阁，低绮户，照无眠。 不应有恨，何事长向别时圆？
-人有悲欢离合，月有阴晴圆缺，此事古难全。 但愿人长久，千里共婵娟。</p>
-</div>
-]]></content>
-      <categories>
-        <category>诗与远方</category>
-      </categories>
-      <tags>
-        <tag>诗与远方</tag>
+        <tag>博客搭建</tag>
+        <tag>Twikoo</tag>
+        <tag>图床</tag>
       </tags>
   </entry>
   <entry>
@@ -178,8 +151,8 @@ S=\frac{8\pi^2{k_\mathrm{B}}^2T}{3eh^2}m_{\mathrm{d}}^{*}\left(\frac{\pi}{3p}\ri
         <category>博客搭建</category>
       </categories>
       <tags>
-        <tag>Markdown</tag>
         <tag>博客搭建</tag>
+        <tag>Markdown</tag>
       </tags>
   </entry>
   <entry>
@@ -1187,39 +1160,49 @@ id="修改站点配置文件blogroot_config.yml添加以下内容">2.修改站�
       </tags>
   </entry>
   <entry>
-    <title>博客搭建之Twikoo</title>
-    <url>/posts/6fc19c10.html</url>
-    <content><![CDATA[<h1 id="博客搭建之twikoo">博客搭建之Twikoo</h1>
-<div class="note info modern"><p>鉴于每个人的博客根目录名称都不太一样，本贴<strong>博客根目录</strong>一律以<code>[BlogRoot]</code>指代。
-站点配置文件<code>_config.yml</code>，路径为<code>[BlogRoot]\_config.yml</code>。
-主题配置文件<code>_config.yml</code>，路径为<code>[BlogRoot]\themes\butterfly\_config.yml</code>。</p>
-</div>
-<h2 id="twikoo的评论设置">1.Twikoo的评论设置</h2>
-<h3 id="支持图片评论">1.1 支持图片评论</h3>
-<p>Twikoo评论区要支持图片评论功能需要配置图床，这里以比较容易设置的<a
-href="https://smms.app/">smms</a>图床为例，首先要进行注册，注册成功之后，会给你5GB的空间用来存储图片，一般来说够用了。将获取的smms图床的token复制到Twikoo插件设置里的<code>IMAGE_CDN_ToKEN</code>，并且将<code>IMAGE_CDN</code>填写为<code>smms</code>，其余选项保持默认即可，配置结束之后记得拉到最下方点击保存，刷新一下即可生效。下面图片展示详细的步骤：</p>
-<ul>
-<li>smms注册并获取token</li>
-</ul>
-<p><img
-src="https://blogresource.sqwdream.cloud/post/博客搭建之Twikoo/img/body/smms.jpg" /></p>
-<ul>
-<li>网站的Twikoo评论设置</li>
-</ul>
-<p><img
-src="https://blogresource.sqwdream.cloud/post/博客搭建之Twikoo/img/body/评论图床设置.jpg" /></p>
-<h3 id="支持latex公式评论">1.2 支持Latex公式评论</h3>
-<p>支持公式评论可以参考Twikoo官网的<a
-href="https://twikoo.js.org/faq.html#%E5%A6%82%E4%BD%95%E5%90%AF%E7%94%A8-katex-%E6%94%AF%E6%8C%81">如何开启Katex支持？</a>，就是在主题配置文件<code>_config.yml</code>中引入如下代码：</p>
-<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">innject:</span></span><br><span class="line">  <span class="attr">head:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">&lt;link</span> <span class="string">rel=&quot;stylesheet&quot;</span> <span class="string">href=&quot;https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css&quot;</span> <span class="string">integrity=&quot;sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X&quot;</span> <span class="string">crossorigin=&quot;anonymous&quot;&gt;</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">&lt;script</span> <span class="string">defer</span> <span class="string">src=&quot;https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js&quot;</span> <span class="string">integrity=&quot;sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4&quot;</span> <span class="string">crossorigin=&quot;anonymous&quot;&gt;&lt;/script&gt;</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">&lt;script</span> <span class="string">defer</span> <span class="string">src=&quot;https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js&quot;</span> <span class="string">integrity=&quot;sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa&quot;</span> <span class="string">crossorigin=&quot;anonymous&quot;&gt;&lt;/script&gt;</span></span><br></pre></td></tr></table></figure>
+    <title>单抛物带(Single Parabolic Band,SPB)模型</title>
+    <url>/posts/3ca822df.html</url>
+    <content><![CDATA[<h1
+id="单抛物带single-parabolic-bandspb模型相关计算">单抛物带(<strong>Single
+Parabolic Band，SPB</strong>)模型相关计算</h1>
+<h2 id="单抛物带模型计算简并条件下">单抛物带模型计算(简并条件下)</h2>
+<details class="folding-tag" cyan><summary> 点击查看 </summary>
+              <div class='content'>
+              <h3 id="计算公式">1.1 计算公式</h3><p><span class="math display">\[S=\frac{8\pi^2{k_\mathrm{B}}^2T}{3eh^2}m_{\mathrm{d}}^{*}\left(\frac{\pi}{3p}\right)^{2/3}\tag{1}\]</span></p><ul><li><spanclass="math inline">\(m_{\mathrm{d}}^{*}=N_{\mathrm{v}}^{2/3}m_{\mathrm{b}}^*\)</span><strong>:态密度有效质量</strong></li></ul><h3 id="计算代码">1.2 计算代码</h3><figure class="highlight matlab"><table><tr><td class="code"><pre><span class="line"><span class="comment">%基于单抛物带模型拟合S-n的关系得到态密度有效质量----简并条件下</span></span><br><span class="line">clc,clear</span><br><span class="line">Kb = <span class="number">1.38066</span>*<span class="number">10</span>^<span class="number">-23</span>;  <span class="comment">%J/K 1J=1V*A*s 1W = 1J/s</span></span><br><span class="line">h = <span class="number">6.62608</span>*<span class="number">10</span>^<span class="number">-34</span>; <span class="comment">%J*s</span></span><br><span class="line">hr = h/(<span class="number">2</span>*<span class="built_in">pi</span>); <span class="comment">%简约普朗克常数</span></span><br><span class="line">e = <span class="number">1.60219</span>*<span class="number">10</span>^<span class="number">-19</span>;  <span class="comment">%1C=1A*s</span></span><br><span class="line">me = <span class="number">9.10953</span>*<span class="number">10</span>^<span class="number">-31</span>;  <span class="comment">%Kg</span></span><br><span class="line">K = Kb/e;</span><br><span class="line">T = <span class="number">323</span>;  <span class="comment">%K 温度</span></span><br><span class="line"></span><br><span class="line">Sdata = [<span class="number">76.76</span>, <span class="number">101.92</span>, <span class="number">108.97</span>, <span class="number">174.48</span>]*<span class="number">10</span>^(<span class="number">-6</span>);  <span class="comment">%将uV/K转换为V/K</span></span><br><span class="line">ndata = [<span class="number">1.97</span>, <span class="number">1.04</span>, <span class="number">0.46</span>, <span class="number">0.63</span>]*<span class="number">10</span>^<span class="number">20</span>*<span class="number">10</span>^<span class="number">6</span>;   <span class="comment">%cm^-3, 转换为m^-3</span></span><br><span class="line"><span class="comment">% Sdata = [76.76]*10^(-6);  %将uV/K转换为V/K</span></span><br><span class="line"><span class="comment">% ndata = [1.97]*10^20*10^6;   %cm^-3, 转换为m^-3</span></span><br><span class="line">em0 = <span class="number">123</span>; <span class="comment">%态密度有效质量的初值  和初值有很大关系</span></span><br><span class="line">S = @(em,ndata)(<span class="number">8</span>*<span class="built_in">pi</span>^<span class="number">2</span>*Kb^<span class="number">2</span>)/(<span class="number">3</span>*e*h^<span class="number">2</span>)*em*me*T*(<span class="built_in">pi</span>./(<span class="number">3</span>*ndata)).^(<span class="number">2</span>/<span class="number">3</span>);</span><br><span class="line">[emf, resnorm] = lsqcurvefit(S, em0, ndata, Sdata); <span class="comment">%emf:拟合的得到的态密度有效质量，resnorm残差平方和</span></span><br><span class="line">display(emf);  <span class="comment">%显示拟合得到的值</span></span><br><span class="line"></span><br><span class="line">ndatac = (<span class="number">0.2</span>:<span class="number">0.001</span>:<span class="number">2</span>)*<span class="number">10</span>^<span class="number">26</span>;</span><br><span class="line">Sdatac = S(emf, ndatac);</span><br><span class="line"><span class="built_in">plot</span>(ndatac*<span class="number">10</span>^(<span class="number">-24</span>), Sdatac*<span class="number">10</span>^(<span class="number">6</span>), <span class="string">&#x27;-&#x27;</span>);</span><br><span class="line"><span class="built_in">hold</span> on</span><br><span class="line"><span class="built_in">plot</span>(ndata*<span class="number">10</span>^(<span class="number">-24</span>), Sdata*<span class="number">10</span>^(<span class="number">6</span>), <span class="string">&#x27;ro&#x27;</span>, <span class="string">&#x27;MarkerFaceColor&#x27;</span>, <span class="string">&#x27;r&#x27;</span>);  <span class="comment">%数据点为实心圆</span></span><br><span class="line">xlabel(<span class="string">&#x27;p [10^&#123;18&#125;\cdotcm^&#123;-3&#125;]&#x27;</span>);</span><br><span class="line">ylabel(<span class="string">&#x27;S [\muV\cdotK^&#123;-1&#125;]&#x27;</span>);</span><br></pre></td></tr></table></figure><h3 id="计算结果">1.3 计算结果</h3><div class="hide-block"><button type="button" class="hide-button" style>查看计算结果</button><div class="hide-content"><p><imgsrc="https://blogresource.sqwdream.cloud/post/单抛物带模型/img/单抛物带模型.jpg" /></p></div></div>
+              </div>
+            </details>
+<h2 id="单抛物带模型计算">单抛物带模型计算</h2>
+<details class="folding-tag" cyan><summary> 点击查看 </summary>
+              <div class='content'>
+              <h3 id="计算公式1-2-3">1.1 计算公式<a href="#fn1" class="footnote-ref"id="fnref1" role="doc-noteref"><sup>1</sup></a> <a href="#fn2"class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> <ahref="#fn3" class="footnote-ref" id="fnref3"role="doc-noteref"><sup>3</sup></a></h3><ul><li><strong>塞贝克系数与简约费米能级的关系:</strong></li></ul><p><span class="math display">\[\begin{split} S(\eta)&amp;=\frac{k_\mathrm{B}}{e}\left[\frac{(r+2)F_{r+1}(\eta)}{(r+1)F_{r}(\eta)}-\eta \right] \\F_i(\eta)&amp;=\int_0^\infty \frac{x^i}{1+e^{(x-\eta)}} \mathrm{d}x\end{split} \tag{1}\]</span></p><ul><li><strong>霍尔载流子浓度:</strong></li></ul><p><span class="math display">\[\begin{split}p_\mathrm{H}&amp; =4\pi\left(\frac{2m_{\mathrm{d}}^*k_\mathrm{B}T}{h^2}\right)^{3/2}\frac{F_{1/2}(\eta)}{r_{H}} \\r_\mathrm{H}&amp; =\frac{3}{4}\frac{F_{1/2}(\eta)F_{-1/2}(\eta)}{F_0^2(\eta)}\end{split}\tag{2}\]</span></p><ul><li><strong>霍尔迁移率(非简并条件):</strong></li></ul><p><span class="math display">\[\mu_\mathrm{H}=\frac{1}{2}\frac{F_{-1/2}(\eta)}{F_0(\eta)}\mu_{0}\]</span></p><ul><li><p><strong><spanclass="math inline">\(\mu_{0}\)</span>为漂移迁移率</strong><strong>由此可以得到电导率</strong></p></li><li><p><strong>电导率</strong> <span class="math display">\[\sigma =pe\mu=\frac{16\sqrt{2}\piek_\mathrm{B}^{3/2}TF_0(\eta)}{3h^3}\mu_{0}{m_\mathrm{d}^{*}}^{3/2}\tag{3}\]</span></p></li><li><p><span class="math inline">\(\mu_\mathrm{w} =\mu_{0}{m_\mathrm{d}^{*}}^{3/2}\)</span><strong>为权重迁移率</strong></p></li><li><p><strong>洛伦兹常数(参考其它文献):</strong></p></li></ul><p><span class="math display">\[L=\left(\frac{k_\mathrm{B}}{e}\right)^2\left\{\frac{(r+3)F_{r+2}(\eta)}{(r+1)F_{r}(\eta)}-\left[\frac{(r+2)F_{r+1}(\eta)}{(r+1)F_{r+1}(\eta)}\right]^2 \right\}\tag{4}\]</span></p><h3 id="计算代码">1.2 计算代码</h3><figure class="highlight matlab"><table><tr><td class="code"><pre><span class="line"><span class="comment">%基于单抛物带模型拟合S-n的关系得到态密度有效质量</span></span><br><span class="line">clc,clear</span><br><span class="line">Kb = <span class="number">1.38066</span>*<span class="number">10</span>^<span class="number">-23</span>;  <span class="comment">%J/K 1J=1V*A*s</span></span><br><span class="line">e = <span class="number">1.60219</span>*<span class="number">10</span>^<span class="number">-19</span>; <span class="comment">%1C=1A*s</span></span><br><span class="line">K = Kb/e;</span><br><span class="line">lambda = <span class="number">0</span>;<span class="comment">%只考虑声学声子散射lambad = 0，离化杂质散射为2</span></span><br><span class="line">h = <span class="number">6.62608</span>*<span class="number">10</span>^<span class="number">-34</span>; <span class="comment">%J*s、</span></span><br><span class="line">me = <span class="number">9.10953</span>*<span class="number">10</span>^<span class="number">-31</span>; <span class="comment">%Kg</span></span><br><span class="line">T = <span class="number">323</span>; <span class="comment">%K</span></span><br><span class="line">Sdata = [<span class="number">76.76</span>, <span class="number">101.92</span>, <span class="number">108.97</span>, <span class="number">174.48</span>]*<span class="number">10</span>^(<span class="number">-6</span>);  <span class="comment">%将uV/K转换为V/K</span></span><br><span class="line">pdata = [<span class="number">1.97</span>, <span class="number">1.04</span>, <span class="number">0.46</span>, <span class="number">0.63</span>]*<span class="number">10</span>^<span class="number">20</span>*<span class="number">10</span>^<span class="number">6</span>;   <span class="comment">%cm^-3, 转换为m^-3; 10^26m^(-3)=10^20 cm^(-3) 将m^(-3)换成cm^(-3)，并且以10^20cm^(-3)为单位开始</span></span><br><span class="line"><span class="comment">% Sdata = [76.76]*10^(-6);  %将uV/K转换为V/K</span></span><br><span class="line"><span class="comment">% pdata = [1.97]*10^20*10^6;   %cm^-3, 转换为m^-3</span></span><br><span class="line">Fn = @(no,yita)quadgk(@(x)x.^no./(<span class="number">1</span>+<span class="built_in">exp</span>(x-yita)),<span class="number">0</span>,<span class="built_in">inf</span>);</span><br><span class="line">rH = @(yita)((<span class="number">3</span>*Fn(<span class="number">1</span>/<span class="number">2</span>,yita)*Fn(<span class="number">-1</span>/<span class="number">2</span>,yita))/(<span class="number">4</span>*Fn(<span class="number">0</span>,yita)^<span class="number">2</span>));</span><br><span class="line"><span class="comment">%初始化</span></span><br><span class="line">yita = <span class="built_in">zeros</span>(<span class="number">1</span>,<span class="built_in">length</span>(Sdata)); </span><br><span class="line">Fndata = <span class="built_in">zeros</span>(<span class="number">1</span>,<span class="built_in">length</span>(Sdata));</span><br><span class="line">rHdata = <span class="built_in">zeros</span>(<span class="number">1</span>,<span class="built_in">length</span>(Sdata));</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> <span class="built_in">i</span> = <span class="number">1</span>:<span class="built_in">length</span>(Sdata)</span><br><span class="line">        func1 = @(yita)K*((lambda+<span class="number">2</span>)*Fn(lambda+<span class="number">1</span>,yita)/((lambda+<span class="number">1</span>)*Fn(lambda,yita))-yita)-Sdata(<span class="built_in">i</span>); <span class="comment">%V/K</span></span><br><span class="line">        yita(<span class="built_in">i</span>) = fzero(func1,<span class="number">0</span>);</span><br><span class="line">         Fndata(<span class="built_in">i</span>) =  Fn(<span class="number">1</span>/<span class="number">2</span>,yita(<span class="built_in">i</span>));</span><br><span class="line">         rHdata(<span class="built_in">i</span>) =  rH(yita(<span class="built_in">i</span>));</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line">Fr = Fndata./rHdata;</span><br><span class="line">func2 = @(em,Fr)(<span class="number">4</span>*<span class="built_in">pi</span>*(<span class="number">2</span>*Kb*T*em*me)^(<span class="number">3</span>/<span class="number">2</span>)/h^<span class="number">3.</span>*Fr);   <span class="comment">%func2 = p </span></span><br><span class="line"><span class="comment">% func2 = @(em, yita)(4*pi*(2*Kb*T*em*me)^(3/2)/h^3*Fn(1/2,yita)/rH(yita));   %func2 = p </span></span><br><span class="line">em0 = <span class="number">12</span>; <span class="comment">%态密度有效质量的初值  和初值有很大关系</span></span><br><span class="line">[emf, resnorm] = lsqcurvefit(func2, em0, yita, pdata); <span class="comment">%emf:拟合的得到的态密度有效质量，resnorm残差平方和</span></span><br><span class="line">display(emf);  <span class="comment">%显示拟合得到的值</span></span><br><span class="line"></span><br><span class="line"><span class="comment">%拟合得到态密度有效质量</span></span><br><span class="line">p = (<span class="number">0.2</span>:<span class="number">0.01</span>:<span class="number">2</span>)*<span class="number">10</span>^<span class="number">26</span>; <span class="comment">%10^26m^(-3)=10^20 cm^(-3) 将m^(-3)换成cm^(-3)，并且以10^20cm^(-3)为单位开始</span></span><br><span class="line">S = <span class="built_in">zeros</span>(<span class="number">1</span>,<span class="built_in">length</span>(p));</span><br><span class="line"> <span class="keyword">for</span> <span class="built_in">i</span> = <span class="number">1</span>:<span class="built_in">length</span>(p)</span><br><span class="line">        f1 = @(yita)(<span class="number">4</span>*<span class="built_in">pi</span>*(<span class="number">2</span>*Kb*T*emf*me)^(<span class="number">3</span>/<span class="number">2</span>)/h^<span class="number">3</span>*Fn(<span class="number">1</span>/<span class="number">2</span>,yita)/rH(yita)-p(<span class="built_in">i</span>)); </span><br><span class="line">        yita(<span class="built_in">i</span>) = fzero(f1,<span class="number">0</span>);</span><br><span class="line">        S(<span class="built_in">i</span>) = K*((lambda+<span class="number">2</span>)*Fn(lambda+<span class="number">1</span>,yita(<span class="built_in">i</span>))/((lambda+<span class="number">1</span>)*Fn(lambda,yita(<span class="built_in">i</span>)))-yita(<span class="built_in">i</span>)); <span class="comment">%V/K</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"><span class="built_in">plot</span>(p*<span class="number">10</span>^(<span class="number">-24</span>),S*<span class="number">10</span>^<span class="number">6</span>,<span class="string">&#x27;-&#x27;</span>,<span class="string">&#x27;LineWidth&#x27;</span>,<span class="number">1</span>)  <span class="comment">%将V/K换成uV/K</span></span><br><span class="line"><span class="built_in">hold</span> on</span><br><span class="line"><span class="built_in">plot</span>(pdata*<span class="number">10</span>^(<span class="number">-24</span>), Sdata*<span class="number">10</span>^(<span class="number">6</span>), <span class="string">&#x27;ro&#x27;</span>, <span class="string">&#x27;MarkerFaceColor&#x27;</span>, <span class="string">&#x27;r&#x27;</span>);  <span class="comment">%数据点为实心圆</span></span><br><span class="line">xlabel(<span class="string">&#x27;p [10^&#123;18&#125;\cdotcm^&#123;-3&#125;]&#x27;</span>);</span><br><span class="line">ylabel(<span class="string">&#x27;S [\muV\cdotK^&#123;-1&#125;]&#x27;</span>);</span><br></pre></td></tr></table></figure><h3 id="计算结果">1.3 计算结果</h3><div class="hide-block"><button type="button" class="hide-button" style>查看计算结果</button><div class="hide-content"><p><imgsrc="https://blogresource.sqwdream.cloud/post/单抛物带模型/img/单抛物带模型.jpg" /></p></div></div><h3 id="相关参考">1.4 相关参考</h3><section id="footnotes" class="footnotes footnotes-end-of-document"role="doc-endnotes"><hr /><ol><li id="fn1"><p><ahref="https://doi.org/10.1002/adma.201903480"><strong>Zhao, K., et al.(2019). "Are Cu<sub>2</sub>Te-Based Compounds Excellent ThermoelectricMaterials?" Advanced Materials 31(49): 1903480.</strong></a><ahref="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li><li id="fn2"><p><ahref="https://doi.org/10.1016/j.nanoen.2017.10.042"><strong>Zhao, K., etal. (2017). "High thermoelectric performance and low thermalconductivity inCu<sub>2-y</sub>S<sub>1/3</sub>Se<sub>1/3</sub>Te<sub>1/3</sub>liquid-like materials with nanoscale mosaic structures." Nano Energy 42:43-50.</strong></a><a href="#fnref2" class="footnote-back"role="doc-backlink">↩︎</a></p></li><li id="fn3"><p><strong><font color = red>特别致谢:</font></strong><ahref="http://muchong.com/t-12417284-1"><strong><font color = red>穿越千年</font></strong></a><ahref="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li></ol></section>
+              </div>
+            </details>
 ]]></content>
       <categories>
-        <category>博客搭建</category>
+        <category>热电</category>
       </categories>
       <tags>
-        <tag>博客搭建</tag>
-        <tag>Twikoo</tag>
-        <tag>图床</tag>
+        <tag>热电</tag>
+        <tag>单抛物带模型</tag>
+        <tag>SPB</tag>
+        <tag>Pisarenko plot</tag>
+        <tag>Matlab code</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>出入红尘</title>
+    <url>/posts/1168772c.html</url>
+    <content><![CDATA[<div class='poem'><div class='poem-title'>好了歌</div><div class='poem-author'>曹雪芹</div><p>世人都晓神仙好，惟有功名忘不了！ 古今将相在何方？荒冢一堆草没了。
+世人都晓神仙好，只有金银忘不了！ 终朝只恨聚无多，及到多时眼闭了。
+世人都晓神仙好，只有娇妻忘不了！ 君生日日说恩情，君死又随人去了。
+世人都晓神仙好，只有儿孙忘不了！ 痴心父母古来多，孝顺儿孙谁见了？</p>
+</div>
+]]></content>
+      <categories>
+        <category>诗与远方</category>
+      </categories>
+      <tags>
+        <tag>诗与远方</tag>
       </tags>
   </entry>
   <entry>
@@ -1258,76 +1241,57 @@ id="引入对应的资源修改主题配置文件_config.yml在-inject-配置项
       </tags>
   </entry>
   <entry>
-    <title>外挂标签之gallery相册</title>
-    <url>/posts/7cede130.html</url>
-    <content><![CDATA[<h1 id="外挂标签之gallery相册">外挂标签之gallery相册</h1>
-<div class="tip info"><p>markdown的列表会与表格渲染时会发生冲突</p>
+    <title>水调歌头</title>
+    <url>/posts/ac668694.html</url>
+    <content><![CDATA[<div class='poem'><div class='poem-title'>水调歌头</div><div class='poem-author'>苏轼</div><p>丙辰中秋，欢饮达旦，大醉，作此篇，兼怀子由。 明月几时有？把酒问青天。
+不知天上宫阙，今夕是何年？ 我欲乘风归去，又恐琼楼玉宇，高处不胜寒。
+起舞弄清影，何似在人间？</p>
+<p>转朱阁，低绮户，照无眠。 不应有恨，何事长向别时圆？
+人有悲欢离合，月有阴晴圆缺，此事古难全。 但愿人长久，千里共婵娟。</p>
 </div>
+]]></content>
+      <categories>
+        <category>诗与远方</category>
+      </categories>
+      <tags>
+        <tag>诗与远方</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>外挂标签之单选列表</title>
+    <url>/posts/ed0ab06c.html</url>
+    <content><![CDATA[<h1 id="外挂标签之单选列表">外挂标签之单选列表</h1>
 <h2 id="标签语法">标签语法</h2>
-<ol type="1">
-<li><p>gallerygroup 相册图库 <figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;gallery-group-main&quot;</span>&gt;</span></span></span><br><span class="line">&#123;% galleryGroup name description link img-url %&#125;</span><br><span class="line">&#123;% galleryGroup name description link img-url %&#125;</span><br><span class="line">&#123;% galleryGroup name description link img-url %&#125;</span><br><span class="line"><span class="language-xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br></pre></td></tr></table></figure></p></li>
-<li><p>gallery相册 <figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% gallery %&#125;</span><br><span class="line">markdown 图片格式</span><br><span class="line">&#123;% endgallery %&#125;</span><br></pre></td></tr></table></figure></p></li>
-</ol>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% radio 样式参数（可选）, 文本（支持简单md） %&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="配置参数">配置参数</h2>
 <ol type="1">
-<li>gallerygroup 相册图库</li>
-</ol>
-<table>
-<thead>
-<tr class="header">
-<th style="text-align: center;">参数名</th>
-<th style="text-align: center;">释义</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;">name</td>
-<td style="text-align: center;">图库名字</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">description</td>
-<td style="text-align: center;">图库描述</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">link</td>
-<td style="text-align: center;">链接到对应相册的地址</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">img-url</td>
-<td style="text-align: center;">图库封面</td>
-</tr>
-</tbody>
-</table>
-<ol start="2" type="1">
-<li><p>gallery 相册</p>
-<p>区别于旧版的 Gallery 相册，新的 Gallery
-相册会自动根据图片长度进行排版，书写也更加方便，与 markdown
-格式一样。可根据需要插入到相应的
-md。无需再自己配置长宽。<strong>建议在粘贴时故意使用长短、大小、横竖不一的图片</strong>，会有更好的效果。（尺寸完全相同的图片只会平铺输出，效果很糟糕）</p></li>
+<li><code>颜色</code>: red,yellow,green,cyan,blue,gray</li>
+<li><code>选中状态</code>: checked</li>
 </ol>
 <h2 id="示例源码">示例源码</h2>
-<ol type="1">
-<li><p>gallerygroup 相册图库 <figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;gallery-group-main&quot;</span>&gt;</span></span></span><br><span class="line">&#123;% galleryGroup &#x27;OH MY GIRL&#x27; &#x27;关于OH MY GIRL的图片&#x27; &#x27;/gallery/ohmygirl&#x27; https://i.loli.net/2019/12/25/hOqbQ3BIwa6KWpo.jpg %&#125;</span><br><span class="line"><span class="language-xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br></pre></td></tr></table></figure></p></li>
-<li><p>gallery 相册 <figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% gallery %&#125;</span><br><span class="line">![](<span class="link">https://i.loli.net/2019/12/25/Fze9jchtnyJXMHN.jpg</span>)</span><br><span class="line">![](<span class="link">https://i.loli.net/2019/12/25/ryLVePaqkYm4TEK.jpg</span>)</span><br><span class="line">&#123;% endgallery %&#125;</span><br></pre></td></tr></table></figure></p></li>
-</ol>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% radio 纯文本测试 %&#125;</span><br><span class="line">&#123;% radio checked, 支持简单的 [<span class="string">markdown</span>](<span class="link">https://guides.github.com/features/mastering-markdown/</span>) 语法 %&#125;</span><br><span class="line">&#123;% radio red, 支持自定义颜色 %&#125;</span><br><span class="line">&#123;% radio green, 绿色 %&#125;</span><br><span class="line">&#123;% radio yellow, 黄色 %&#125;</span><br><span class="line">&#123;% radio cyan, 青色 %&#125;</span><br><span class="line">&#123;% radio blue, 蓝色 %&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="渲染演示">渲染演示</h2>
-<ol type="1">
-<li>gallerygroup 相册图库
-<div class="gallery-group-main">
-
-  <figure class="gallery-group">
-  <img class="gallery-group-img no-lightbox" src='https://i.loli.net/2019/12/25/hOqbQ3BIwa6KWpo.jpg' alt="Group Image Gallery">
-  <figcaption>
-  <div class="gallery-group-name">OH MY GIRL</div>
-  <p>关于OH MY GIRL的图片</p>
-  <a href='/gallery/ohmygirl'></a>
-  </figcaption>
-  </figure>
-  
-</div></li>
-<li>gallery相册 <div class="fj-gallery"><p><img src="https://i.loli.net/2019/12/25/Fze9jchtnyJXMHN.jpg" /> <imgsrc="https://i.loli.net/2019/12/25/ryLVePaqkYm4TEK.jpg" /></p>
-          </div></li>
-</ol>
+<div class='checkbox'><input type="radio" />
+            <p>纯文本测试</p>
+            </div>
+<div class='checkbox checked'><input type="radio" checked="checked"/>
+            <p>支持简单的 <ahref="https://guides.github.com/features/mastering-markdown/">markdown</a>语法</p>
+            </div>
+<div class='checkbox red'><input type="radio" />
+            <p>支持自定义颜色</p>
+            </div>
+<div class='checkbox green'><input type="radio" />
+            <p>绿色</p>
+            </div>
+<div class='checkbox yellow'><input type="radio" />
+            <p>黄色</p>
+            </div>
+<div class='checkbox cyan'><input type="radio" />
+            <p>青色</p>
+            </div>
+<div class='checkbox blue'><input type="radio" />
+            <p>蓝色</p>
+            </div>
 ]]></content>
       <categories>
         <category>博客搭建</category>
@@ -1335,7 +1299,7 @@ md。无需再自己配置长宽。<strong>建议在粘贴时故意使用长短�
       <tags>
         <tag>博客搭建</tag>
         <tag>外挂标签</tag>
-        <tag>gallery相册</tag>
+        <tag>单选列表</tag>
       </tags>
   </entry>
   <entry>
@@ -1448,51 +1412,75 @@ data-cites="icon">@icon</span>’ 和 ‘Tab caption@icon’.</li>
       </tags>
   </entry>
   <entry>
-    <title>外挂标签之复选列表</title>
-    <url>/posts/24a2c022.html</url>
-    <content><![CDATA[<h1 id="外挂标签之复选列表">外挂标签之复选列表</h1>
+    <title>外挂标签之gallery相册</title>
+    <url>/posts/7cede130.html</url>
+    <content><![CDATA[<h1 id="外挂标签之gallery相册">外挂标签之gallery相册</h1>
+<div class="tip info"><p>markdown的列表会与表格渲染时会发生冲突</p>
+</div>
 <h2 id="标签语法">标签语法</h2>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% checkbox 样式参数（可选）, 文本（支持简单md） %&#125;</span><br></pre></td></tr></table></figure>
+<ol type="1">
+<li><p>gallerygroup 相册图库 <figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;gallery-group-main&quot;</span>&gt;</span></span></span><br><span class="line">&#123;% galleryGroup name description link img-url %&#125;</span><br><span class="line">&#123;% galleryGroup name description link img-url %&#125;</span><br><span class="line">&#123;% galleryGroup name description link img-url %&#125;</span><br><span class="line"><span class="language-xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br></pre></td></tr></table></figure></p></li>
+<li><p>gallery相册 <figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% gallery %&#125;</span><br><span class="line">markdown 图片格式</span><br><span class="line">&#123;% endgallery %&#125;</span><br></pre></td></tr></table></figure></p></li>
+</ol>
 <h2 id="配置参数">配置参数</h2>
 <ol type="1">
-<li><code>样式</code>: plus, minus, times</li>
-<li><code>颜色</code>: red,yellow,green,cyan,blue,gray</li>
-<li><code>选中状态</code>:
-checked将所需的CSS类添加到图标（或DOM中的任何元素）</li>
+<li>gallerygroup 相册图库</li>
+</ol>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">参数名</th>
+<th style="text-align: center;">释义</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">name</td>
+<td style="text-align: center;">图库名字</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">description</td>
+<td style="text-align: center;">图库描述</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">link</td>
+<td style="text-align: center;">链接到对应相册的地址</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">img-url</td>
+<td style="text-align: center;">图库封面</td>
+</tr>
+</tbody>
+</table>
+<ol start="2" type="1">
+<li>gallery 相册 区别于旧版的 Gallery 相册，新的 Gallery
+相册会自动根据图片长度进行排版，书写也更加方便，与 markdown
+格式一样。可根据需要插入到相应的
+md。无需再自己配置长宽。<strong>建议在粘贴时故意使用长短、大小、横竖不一的图片</strong>，会有更好的效果。（尺寸完全相同的图片只会平铺输出，效果很糟糕）</li>
 </ol>
 <h2 id="示例源码">示例源码</h2>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% checkbox 纯文本测试 %&#125;</span><br><span class="line">&#123;% checkbox checked, 支持简单的 [<span class="string">markdown</span>](<span class="link">https://guides.github.com/features/mastering-markdown/</span>) 语法 %&#125;</span><br><span class="line">&#123;% checkbox red, 支持自定义颜色 %&#125;</span><br><span class="line">&#123;% checkbox green checked, 绿色 + 默认选中 %&#125;</span><br><span class="line">&#123;% checkbox yellow checked, 黄色 + 默认选中 %&#125;</span><br><span class="line">&#123;% checkbox cyan checked, 青色 + 默认选中 %&#125;</span><br><span class="line">&#123;% checkbox blue checked, 蓝色 + 默认选中 %&#125;</span><br><span class="line">&#123;% checkbox plus green checked, 增加 %&#125;</span><br><span class="line">&#123;% checkbox minus yellow checked, 减少 %&#125;</span><br><span class="line">&#123;% checkbox times red checked, 叉 %&#125;</span><br></pre></td></tr></table></figure>
+<ol type="1">
+<li><p>gallerygroup 相册图库 <figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;gallery-group-main&quot;</span>&gt;</span></span></span><br><span class="line">&#123;% galleryGroup &#x27;OH MY GIRL&#x27; &#x27;关于OH MY GIRL的图片&#x27; &#x27;/gallery/ohmygirl&#x27; https://i.loli.net/2019/12/25/hOqbQ3BIwa6KWpo.jpg %&#125;</span><br><span class="line"><span class="language-xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br></pre></td></tr></table></figure></p></li>
+<li><p>gallery 相册 <figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% gallery %&#125;</span><br><span class="line">![](<span class="link">https://i.loli.net/2019/12/25/Fze9jchtnyJXMHN.jpg</span>)</span><br><span class="line">![](<span class="link">https://i.loli.net/2019/12/25/ryLVePaqkYm4TEK.jpg</span>)</span><br><span class="line">&#123;% endgallery %&#125;</span><br></pre></td></tr></table></figure></p></li>
+</ol>
 <h2 id="渲染演示">渲染演示</h2>
-<div class='checkbox'><input type="checkbox" />
-            <p>纯文本测试</p>
-            </div>
-<div class='checkbox checked'><input type="checkbox" checked="checked"/>
-            <p>支持简单的 <ahref="https://guides.github.com/features/mastering-markdown/">markdown</a>语法</p>
-            </div>
-<div class='checkbox red'><input type="checkbox" />
-            <p>支持自定义颜色</p>
-            </div>
-<div class='checkbox green checked'><input type="checkbox" checked="checked"/>
-            <p>绿色 + 默认选中</p>
-            </div>
-<div class='checkbox yellow checked'><input type="checkbox" checked="checked"/>
-            <p>黄色 + 默认选中</p>
-            </div>
-<div class='checkbox cyan checked'><input type="checkbox" checked="checked"/>
-            <p>青色 + 默认选中</p>
-            </div>
-<div class='checkbox blue checked'><input type="checkbox" checked="checked"/>
-            <p>蓝色 + 默认选中</p>
-            </div>
-<div class='checkbox plus green checked'><input type="checkbox" checked="checked"/>
-            <p>增加</p>
-            </div>
-<div class='checkbox minus yellow checked'><input type="checkbox" checked="checked"/>
-            <p>减少</p>
-            </div>
-<div class='checkbox times red checked'><input type="checkbox" checked="checked"/>
-            <p>叉</p>
-            </div>
+<ol type="1">
+<li>gallerygroup 相册图库
+<div class="gallery-group-main">
+
+  <figure class="gallery-group">
+  <img class="gallery-group-img no-lightbox" src='https://i.loli.net/2019/12/25/hOqbQ3BIwa6KWpo.jpg' alt="Group Image Gallery">
+  <figcaption>
+  <div class="gallery-group-name">OH MY GIRL</div>
+  <p>关于OH MY GIRL的图片</p>
+  <a href='/gallery/ohmygirl'></a>
+  </figcaption>
+  </figure>
+  
+</div></li>
+<li>gallery相册 <div class="fj-gallery"><p><img src="https://i.loli.net/2019/12/25/Fze9jchtnyJXMHN.jpg" /> <imgsrc="https://i.loli.net/2019/12/25/ryLVePaqkYm4TEK.jpg" /></p>
+          </div></li>
+</ol>
 ]]></content>
       <categories>
         <category>博客搭建</category>
@@ -1500,52 +1488,7 @@ checked将所需的CSS类添加到图标（或DOM中的任何元素）</li>
       <tags>
         <tag>博客搭建</tag>
         <tag>外挂标签</tag>
-        <tag>复选列表</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>外挂标签之单选列表</title>
-    <url>/posts/ed0ab06c.html</url>
-    <content><![CDATA[<h1 id="外挂标签之单选列表">外挂标签之单选列表</h1>
-<h2 id="标签语法">标签语法</h2>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% radio 样式参数（可选）, 文本（支持简单md） %&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="配置参数">配置参数</h2>
-<ol type="1">
-<li><code>颜色</code>: red,yellow,green,cyan,blue,gray</li>
-<li><code>选中状态</code>: checked</li>
-</ol>
-<h2 id="示例源码">示例源码</h2>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% radio 纯文本测试 %&#125;</span><br><span class="line">&#123;% radio checked, 支持简单的 [<span class="string">markdown</span>](<span class="link">https://guides.github.com/features/mastering-markdown/</span>) 语法 %&#125;</span><br><span class="line">&#123;% radio red, 支持自定义颜色 %&#125;</span><br><span class="line">&#123;% radio green, 绿色 %&#125;</span><br><span class="line">&#123;% radio yellow, 黄色 %&#125;</span><br><span class="line">&#123;% radio cyan, 青色 %&#125;</span><br><span class="line">&#123;% radio blue, 蓝色 %&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="渲染演示">渲染演示</h2>
-<div class='checkbox'><input type="radio" />
-            <p>纯文本测试</p>
-            </div>
-<div class='checkbox checked'><input type="radio" checked="checked"/>
-            <p>支持简单的 <ahref="https://guides.github.com/features/mastering-markdown/">markdown</a>语法</p>
-            </div>
-<div class='checkbox red'><input type="radio" />
-            <p>支持自定义颜色</p>
-            </div>
-<div class='checkbox green'><input type="radio" />
-            <p>绿色</p>
-            </div>
-<div class='checkbox yellow'><input type="radio" />
-            <p>黄色</p>
-            </div>
-<div class='checkbox cyan'><input type="radio" />
-            <p>青色</p>
-            </div>
-<div class='checkbox blue'><input type="radio" />
-            <p>蓝色</p>
-            </div>
-]]></content>
-      <categories>
-        <category>博客搭建</category>
-      </categories>
-      <tags>
-        <tag>博客搭建</tag>
-        <tag>外挂标签</tag>
-        <tag>单选列表</tag>
+        <tag>gallery相册</tag>
       </tags>
   </entry>
   <entry>
@@ -1656,6 +1599,156 @@ href="https://api.map.baidu.com/lbsapi/getpoint/index.html">百度地图坐标�
         <tag>博客搭建</tag>
         <tag>外挂标签</tag>
         <tag>地图</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>外挂标签之复选列表</title>
+    <url>/posts/24a2c022.html</url>
+    <content><![CDATA[<h1 id="外挂标签之复选列表">外挂标签之复选列表</h1>
+<h2 id="标签语法">标签语法</h2>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% checkbox 样式参数（可选）, 文本（支持简单md） %&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="配置参数">配置参数</h2>
+<ol type="1">
+<li><code>样式</code>: plus, minus, times</li>
+<li><code>颜色</code>: red,yellow,green,cyan,blue,gray</li>
+<li><code>选中状态</code>:
+checked将所需的CSS类添加到图标（或DOM中的任何元素）</li>
+</ol>
+<h2 id="示例源码">示例源码</h2>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% checkbox 纯文本测试 %&#125;</span><br><span class="line">&#123;% checkbox checked, 支持简单的 [<span class="string">markdown</span>](<span class="link">https://guides.github.com/features/mastering-markdown/</span>) 语法 %&#125;</span><br><span class="line">&#123;% checkbox red, 支持自定义颜色 %&#125;</span><br><span class="line">&#123;% checkbox green checked, 绿色 + 默认选中 %&#125;</span><br><span class="line">&#123;% checkbox yellow checked, 黄色 + 默认选中 %&#125;</span><br><span class="line">&#123;% checkbox cyan checked, 青色 + 默认选中 %&#125;</span><br><span class="line">&#123;% checkbox blue checked, 蓝色 + 默认选中 %&#125;</span><br><span class="line">&#123;% checkbox plus green checked, 增加 %&#125;</span><br><span class="line">&#123;% checkbox minus yellow checked, 减少 %&#125;</span><br><span class="line">&#123;% checkbox times red checked, 叉 %&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="渲染演示">渲染演示</h2>
+<div class='checkbox'><input type="checkbox" />
+            <p>纯文本测试</p>
+            </div>
+<div class='checkbox checked'><input type="checkbox" checked="checked"/>
+            <p>支持简单的 <ahref="https://guides.github.com/features/mastering-markdown/">markdown</a>语法</p>
+            </div>
+<div class='checkbox red'><input type="checkbox" />
+            <p>支持自定义颜色</p>
+            </div>
+<div class='checkbox green checked'><input type="checkbox" checked="checked"/>
+            <p>绿色 + 默认选中</p>
+            </div>
+<div class='checkbox yellow checked'><input type="checkbox" checked="checked"/>
+            <p>黄色 + 默认选中</p>
+            </div>
+<div class='checkbox cyan checked'><input type="checkbox" checked="checked"/>
+            <p>青色 + 默认选中</p>
+            </div>
+<div class='checkbox blue checked'><input type="checkbox" checked="checked"/>
+            <p>蓝色 + 默认选中</p>
+            </div>
+<div class='checkbox plus green checked'><input type="checkbox" checked="checked"/>
+            <p>增加</p>
+            </div>
+<div class='checkbox minus yellow checked'><input type="checkbox" checked="checked"/>
+            <p>减少</p>
+            </div>
+<div class='checkbox times red checked'><input type="checkbox" checked="checked"/>
+            <p>叉</p>
+            </div>
+]]></content>
+      <categories>
+        <category>博客搭建</category>
+      </categories>
+      <tags>
+        <tag>博客搭建</tag>
+        <tag>外挂标签</tag>
+        <tag>复选列表</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>外挂标签之引用文献</title>
+    <url>/posts/965f46ee.html</url>
+    <content><![CDATA[<h1 id="外挂标签之引用文献">外挂标签之引用文献</h1>
+<h2 id="标签语法">标签语法</h2>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% referto [id] , [literature] %&#125;</span><br><span class="line">&#123;% referfrom [id] , [literature] , [url] %&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="配置参数">配置参数</h2>
+<ol type="1">
+<li>referto 引用上标
+<ul>
+<li><code>id</code>: 上标序号内容，需与 referfrom 标签的 id
+对应才能实现跳转</li>
+<li><code>literature</code>: 引用的参考文献名称</li>
+</ul></li>
+<li>referfrom 引用出处
+<ul>
+<li><code>id</code>: 序号内容，需与 referto 标签的 id 对应才能实现
+跳转</li>
+<li><code>literature</code>: 引用的参考文献名称</li>
+<li><code>url</code>: 引用的参考文献链接，可省略</li>
+</ul></li>
+</ol>
+<h2 id="示例源码">示例源码</h2>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">Akilarの糖果屋(akilar.top)是一个私人性质的博客&#123;% referto &#x27;[1]&#x27;,&#x27;Akilarの糖果屋群聊简介&#x27; %&#125;，从各类教程至生活点滴，无话不谈。建群的目的是提供一个闲聊的场所。博客采用Hexo框架&#123;% referto &#x27;[2]&#x27;,&#x27;Hexo中文文档&#x27; %&#125;，Butterfly主题&#123;% referto &#x27;[3]&#x27;,&#x27;Butterfly 安装文档(一) 快速开始&#x27; %&#125;</span><br><span class="line"></span><br><span class="line">本项目参考了Volantis&#123;% referto &#x27;[4]&#x27;,&#x27;hexo-theme-volantis 标签插件&#x27; %&#125;的标签样式。引入<span class="code">`[tag].js`</span>，并针对<span class="code">`butterfly`</span>主题修改了相应的<span class="code">`[tag].styl`</span>。在此鸣谢<span class="code">`Volantis`</span>主题众开发者。</span><br><span class="line">主要参考内容包括各个volantis的内置标签插件文档&#123;% referto &#x27;[5]&#x27;,&#x27;Volantis文档:内置标签插件&#x27; %&#125;</span><br><span class="line">Butterfly主题的各个衍生魔改&#123;% referto &#x27;[6]&#x27;,&#x27;Butterfly 安装文档:标签外挂（Tag Plugins&#x27; %&#125;&#123;% referto &#x27;[7]&#x27;,&#x27;小弋の生活馆全样式预览&#x27; %&#125;&#123;% referto &#x27;[8]&#x27;,&#x27;l-lin-font-awesome-animation&#x27; %&#125;&#123;% referto &#x27;[9]&#x27;,&#x27;小康的butterfly主题使用文档&#x27; %&#125;</span><br><span class="line"></span><br><span class="line">&#123;% referfrom &#x27;[1]&#x27;,&#x27;Akilarの糖果屋群聊简介&#x27;,&#x27;https://jq.qq.com/?<span class="emphasis">_wv=1027&amp;k=pGLB2C0N&#x27; %&#125;</span></span><br><span class="line"><span class="emphasis">&#123;% referfrom &#x27;[2]&#x27;,&#x27;Hexo中文文档&#x27;,&#x27;https://hexo.io/zh-cn/docs/&#x27; %&#125;</span></span><br><span class="line"><span class="emphasis">&#123;% referfrom &#x27;[3]&#x27;,&#x27;Butterfly 安装文档(一) 快速开始&#x27;,&#x27;https://butterfly.js.org/posts/21cfbf15/&#x27; %&#125;</span></span><br><span class="line"><span class="emphasis">&#123;% referfrom &#x27;[4]&#x27;,&#x27;hexo-theme-volantis 标签插件&#x27;,&#x27;https://volantis.js.org/v5/tag-plugins/&#x27; %&#125;</span></span><br><span class="line"><span class="emphasis">&#123;% referfrom &#x27;[5]&#x27;,&#x27;Volantis文档:内置标签插件&#x27;,&#x27;https://volantis.js.org/tag-plugins/&#x27; %&#125;</span></span><br><span class="line"><span class="emphasis">&#123;% referfrom &#x27;[6]&#x27;,&#x27;Butterfly 安装文档:标签外挂（Tag Plugins）&#x27;,&#x27;https://butterfly.js.org/posts/4aa8abbe/#%E6%A8%99%E7%B1%A4%E5%A4%96%E6%8E%9B%EF%BC%88Tag-Plugins%EF%BC%89&#x27; %&#125;</span></span><br><span class="line"><span class="emphasis">&#123;% referfrom &#x27;[7]&#x27;,&#x27;小弋の生活馆全样式预览&#x27;,&#x27;https://lovelijunyi.gitee.io/posts/c898.html&#x27; %&#125;</span></span><br><span class="line"><span class="emphasis">&#123;% referfrom &#x27;[8]&#x27;,&#x27;l-lin-font-awesome-animation&#x27;,&#x27;https://github.com/l-lin/font-awesome-animation&#x27; %&#125;</span></span><br><span class="line"><span class="emphasis">&#123;% referfrom &#x27;[9]&#x27;,&#x27;小康的butterfly主题使用文档&#x27;,&#x27;https://www.antmoe.com/posts/3b43914f/&#x27; %&#125;</span></span><br></pre></td></tr></table></figure>
+<h2 id="渲染演示">渲染演示</h2>
+<p>Akilarの糖果屋(akilar.top)是一个私人性质的博客<span class="hidden-anchor" id="referto_[1]"></span><sup class="reference"><a href="#referfrom_[1]">[1]</a></sup><span class="reference-bubble"><span class="reference-item"><span class="reference-literature">Akilarの糖果屋群聊简介</span><span class="reference-title">参考资料</span></span></span>，从各类教程至生活点滴，无话不谈。建群的目的是提供一个闲聊的场所。博客采用Hexo框架<span class="hidden-anchor" id="referto_[2]"></span><sup class="reference"><a href="#referfrom_[2]">[2]</a></sup><span class="reference-bubble"><span class="reference-item"><span class="reference-literature">Hexo中文文档</span><span class="reference-title">参考资料</span></span></span>，Butterfly主题<span class="hidden-anchor" id="referto_[3]"></span><sup class="reference"><a href="#referfrom_[3]">[3]</a></sup><span class="reference-bubble"><span class="reference-item"><span class="reference-literature">Butterfly 安装文档(一) 快速开始</span><span class="reference-title">参考资料</span></span></span></p>
+<p>本项目参考了Volantis<span class="hidden-anchor" id="referto_[4]"></span><sup class="reference"><a href="#referfrom_[4]">[4]</a></sup><span class="reference-bubble"><span class="reference-item"><span class="reference-literature">hexo-theme-volantis 标签插件</span><span class="reference-title">参考资料</span></span></span>的标签样式。引入<code>[tag].js</code>，并针对<code>butterfly</code>主题修改了相应的<code>[tag].styl</code>。在此鸣谢<code>Volantis</code>主题众开发者。主要参考内容包括各个volantis的内置标签插件文档<span class="hidden-anchor" id="referto_[5]"></span><sup class="reference"><a href="#referfrom_[5]">[5]</a></sup><span class="reference-bubble"><span class="reference-item"><span class="reference-literature">Volantis文档:内置标签插件</span><span class="reference-title">参考资料</span></span></span>
+Butterfly主题的各个衍生魔改<span class="hidden-anchor" id="referto_[6]"></span><sup class="reference"><a href="#referfrom_[6]">[6]</a></sup><span class="reference-bubble"><span class="reference-item"><span class="reference-literature">Butterfly 安装文档:标签外挂（Tag Plugins</span><span class="reference-title">参考资料</span></span></span><span class="hidden-anchor" id="referto_[7]"></span><sup class="reference"><a href="#referfrom_[7]">[7]</a></sup><span class="reference-bubble"><span class="reference-item"><span class="reference-literature">小弋の生活馆全样式预览</span><span class="reference-title">参考资料</span></span></span><span class="hidden-anchor" id="referto_[8]"></span><sup class="reference"><a href="#referfrom_[8]">[8]</a></sup><span class="reference-bubble"><span class="reference-item"><span class="reference-literature">l-lin-font-awesome-animation</span><span class="reference-title">参考资料</span></span></span><span class="hidden-anchor" id="referto_[9]"></span><sup class="reference"><a href="#referfrom_[9]">[9]</a></sup><span class="reference-bubble"><span class="reference-item"><span class="reference-literature">小康的butterfly主题使用文档</span><span class="reference-title">参考资料</span></span></span></p>
+<div class="reference-source"><span class="hidden-anchor" id="referfrom_[1]"></span><a class="reference-anchor" href="#referto_[1]">[1]<div class="reference-anchor-up fa-solid fa-angles-up"></div></a><a class="reference-link" href="https://jq.qq.com/?_wv=1027&k=pGLB2C0N">Akilarの糖果屋群聊简介</a></div>
+<div class="reference-source"><span class="hidden-anchor" id="referfrom_[2]"></span><a class="reference-anchor" href="#referto_[2]">[2]<div class="reference-anchor-up fa-solid fa-angles-up"></div></a><a class="reference-link" href="https://hexo.io/zh-cn/docs/">Hexo中文文档</a></div>
+<div class="reference-source"><span class="hidden-anchor" id="referfrom_[3]"></span><a class="reference-anchor" href="#referto_[3]">[3]<div class="reference-anchor-up fa-solid fa-angles-up"></div></a><a class="reference-link" href="https://butterfly.js.org/posts/21cfbf15/">Butterfly 安装文档(一) 快速开始</a></div>
+<div class="reference-source"><span class="hidden-anchor" id="referfrom_[4]"></span><a class="reference-anchor" href="#referto_[4]">[4]<div class="reference-anchor-up fa-solid fa-angles-up"></div></a><a class="reference-link" href="https://volantis.js.org/v5/tag-plugins/">hexo-theme-volantis 标签插件</a></div>
+<div class="reference-source"><span class="hidden-anchor" id="referfrom_[5]"></span><a class="reference-anchor" href="#referto_[5]">[5]<div class="reference-anchor-up fa-solid fa-angles-up"></div></a><a class="reference-link" href="https://volantis.js.org/tag-plugins/">Volantis文档:内置标签插件</a></div>
+<div class="reference-source"><span class="hidden-anchor" id="referfrom_[6]"></span><a class="reference-anchor" href="#referto_[6]">[6]<div class="reference-anchor-up fa-solid fa-angles-up"></div></a><a class="reference-link" href="https://butterfly.js.org/posts/4aa8abbe/#%E6%A8%99%E7%B1%A4%E5%A4%96%E6%8E%9B%EF%BC%88Tag-Plugins%EF%BC%89">Butterfly 安装文档:标签外挂（Tag Plugins</a></div>
+<div class="reference-source"><span class="hidden-anchor" id="referfrom_[7]"></span><a class="reference-anchor" href="#referto_[7]">[7]<div class="reference-anchor-up fa-solid fa-angles-up"></div></a><a class="reference-link" href="https://lovelijunyi.gitee.io/posts/c898.html">小弋の生活馆全样式预览</a></div>
+<div class="reference-source"><span class="hidden-anchor" id="referfrom_[8]"></span><a class="reference-anchor" href="#referto_[8]">[8]<div class="reference-anchor-up fa-solid fa-angles-up"></div></a><a class="reference-link" href="https://github.com/l-lin/font-awesome-animation">l-lin-font-awesome-animation</a></div>
+<div class="reference-source"><span class="hidden-anchor" id="referfrom_[9]"></span><a class="reference-anchor" href="#referto_[9]">[9]<div class="reference-anchor-up fa-solid fa-angles-up"></div></a><a class="reference-link" href="https://www.antmoe.com/posts/3b43914f/">小康的butterfly主题使用文档</a></div>
+]]></content>
+      <categories>
+        <category>博客搭建</category>
+      </categories>
+      <tags>
+        <tag>博客搭建</tag>
+        <tag>外挂标签</tag>
+        <tag>引用文献</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>外挂标签之旋转相册</title>
+    <url>/posts/75b3d8a.html</url>
+    <content><![CDATA[<h1 id="外挂标签之旋转相册">外挂标签之旋转相册</h1>
+<div class="tip info"><p>旋转相册标签与fancybox灯箱存在兼容性bug，若发现旋转相册呈扁平状，请关闭fancybox或换用medium_zoom。</p>
+</div>
+<h2 id="标签语法">标签语法</h2>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% carousel [Id] , [name] %&#125;</span><br><span class="line">![](<span class="link">/img/1.jpg</span>)</span><br><span class="line">![](<span class="link">/img/2.jpg</span>)</span><br><span class="line">![](<span class="link">/img/3,jpg</span>)</span><br><span class="line">&#123;% endcarousel %&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="配置参数">配置参数</h2>
+<ol type="1">
+<li><code>Id</code>:
+相册唯一ID，用于监测相册鼠标动作。禁止使用中文。同一页内不得出现相同ID的carousel相册。</li>
+<li><code>name</code>: 相册中间显示的内容，建议用英文单引号包裹。</li>
+</ol>
+<h2 id="示例源码">示例源码</h2>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% carousel &#x27;SF&#x27;,&#x27;strike freedom&#x27; %&#125;</span><br><span class="line">![](<span class="link">https://npm.elemecdn.com/akilar-candyassets/image/20200907110444226.png</span>)</span><br><span class="line">![](<span class="link">https://npm.elemecdn.com/akilar-candyassets/image/20200907110508327.png</span>)</span><br><span class="line">![](<span class="link">https://npm.elemecdn.com/akilar-candyassets/image/20200907110525753.png</span>)</span><br><span class="line">![](<span class="link">https://npm.elemecdn.com/akilar-candyassets/image/20200907110600751.png</span>)</span><br><span class="line">![](<span class="link">https://npm.elemecdn.com/akilar-candyassets/image/20200907110621554.png</span>)</span><br><span class="line">![](<span class="link">https://npm.elemecdn.com/akilar-candyassets/image/20200907110637459.png</span>)</span><br><span class="line">![](<span class="link">https://npm.elemecdn.com/akilar-candyassets/image/20200907110654150.png</span>)</span><br><span class="line">![](<span class="link">https://npm.elemecdn.com/akilar-candyassets/image/20200907110707916.png</span>)</span><br><span class="line">![](<span class="link">https://npm.elemecdn.com/akilar-candyassets/image/20200907110719787.png</span>)</span><br><span class="line">![](<span class="link">https://npm.elemecdn.com/akilar-candyassets/image/20200907110731118.png</span>)</span><br><span class="line">&#123;% endcarousel %&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="渲染演示">渲染演示</h2>
+<div id='SF' class='carousel'><div id="SF-drag-container" class="drag-container"><div id="SF-spin-container" class="spin-container"><img
+src="https://npm.elemecdn.com/akilar-candyassets/image/20200907110444226.png" />
+<img
+src="https://npm.elemecdn.com/akilar-candyassets/image/20200907110508327.png" />
+<img
+src="https://npm.elemecdn.com/akilar-candyassets/image/20200907110525753.png" />
+<img
+src="https://npm.elemecdn.com/akilar-candyassets/image/20200907110600751.png" />
+<img
+src="https://npm.elemecdn.com/akilar-candyassets/image/20200907110621554.png" />
+<img
+src="https://npm.elemecdn.com/akilar-candyassets/image/20200907110637459.png" />
+<img
+src="https://npm.elemecdn.com/akilar-candyassets/image/20200907110654150.png" />
+<img
+src="https://npm.elemecdn.com/akilar-candyassets/image/20200907110707916.png" />
+<img
+src="https://npm.elemecdn.com/akilar-candyassets/image/20200907110719787.png" />
+<img
+src="https://npm.elemecdn.com/akilar-candyassets/image/20200907110731118.png" /><p>strike freedom</p></div><div id="SF-carousel-ground" class="carousel-ground"></div></div></div><script type="text/javascript">carouselinit('SF');</script>
+]]></content>
+      <categories>
+        <category>博客搭建</category>
+      </categories>
+      <tags>
+        <tag>博客搭建</tag>
+        <tag>外挂标签</tag>
+        <tag>旋转相册</tag>
       </tags>
   </entry>
   <entry>
@@ -2154,127 +2247,6 @@ danger 提示块标签
       </tags>
   </entry>
   <entry>
-    <title>外挂标签之引用文献</title>
-    <url>/posts/965f46ee.html</url>
-    <content><![CDATA[<h1 id="外挂标签之引用文献">外挂标签之引用文献</h1>
-<h2 id="标签语法">标签语法</h2>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% referto [id] , [literature] %&#125;</span><br><span class="line">&#123;% referfrom [id] , [literature] , [url] %&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="配置参数">配置参数</h2>
-<ol type="1">
-<li>referto 引用上标
-<ul>
-<li><code>id</code>: 上标序号内容，需与 referfrom 标签的 id
-对应才能实现跳转</li>
-<li><code>literature</code>: 引用的参考文献名称</li>
-</ul></li>
-<li>referfrom 引用出处
-<ul>
-<li><code>id</code>: 序号内容，需与 referto 标签的 id 对应才能实现
-跳转</li>
-<li><code>literature</code>: 引用的参考文献名称</li>
-<li><code>url</code>: 引用的参考文献链接，可省略</li>
-</ul></li>
-</ol>
-<h2 id="示例源码">示例源码</h2>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">Akilarの糖果屋(akilar.top)是一个私人性质的博客&#123;% referto &#x27;[1]&#x27;,&#x27;Akilarの糖果屋群聊简介&#x27; %&#125;，从各类教程至生活点滴，无话不谈。建群的目的是提供一个闲聊的场所。博客采用Hexo框架&#123;% referto &#x27;[2]&#x27;,&#x27;Hexo中文文档&#x27; %&#125;，Butterfly主题&#123;% referto &#x27;[3]&#x27;,&#x27;Butterfly 安装文档(一) 快速开始&#x27; %&#125;</span><br><span class="line"></span><br><span class="line">本项目参考了Volantis&#123;% referto &#x27;[4]&#x27;,&#x27;hexo-theme-volantis 标签插件&#x27; %&#125;的标签样式。引入<span class="code">`[tag].js`</span>，并针对<span class="code">`butterfly`</span>主题修改了相应的<span class="code">`[tag].styl`</span>。在此鸣谢<span class="code">`Volantis`</span>主题众开发者。</span><br><span class="line">主要参考内容包括各个volantis的内置标签插件文档&#123;% referto &#x27;[5]&#x27;,&#x27;Volantis文档:内置标签插件&#x27; %&#125;</span><br><span class="line">Butterfly主题的各个衍生魔改&#123;% referto &#x27;[6]&#x27;,&#x27;Butterfly 安装文档:标签外挂（Tag Plugins&#x27; %&#125;&#123;% referto &#x27;[7]&#x27;,&#x27;小弋の生活馆全样式预览&#x27; %&#125;&#123;% referto &#x27;[8]&#x27;,&#x27;l-lin-font-awesome-animation&#x27; %&#125;&#123;% referto &#x27;[9]&#x27;,&#x27;小康的butterfly主题使用文档&#x27; %&#125;</span><br><span class="line"></span><br><span class="line">&#123;% referfrom &#x27;[1]&#x27;,&#x27;Akilarの糖果屋群聊简介&#x27;,&#x27;https://jq.qq.com/?<span class="emphasis">_wv=1027&amp;k=pGLB2C0N&#x27; %&#125;</span></span><br><span class="line"><span class="emphasis">&#123;% referfrom &#x27;[2]&#x27;,&#x27;Hexo中文文档&#x27;,&#x27;https://hexo.io/zh-cn/docs/&#x27; %&#125;</span></span><br><span class="line"><span class="emphasis">&#123;% referfrom &#x27;[3]&#x27;,&#x27;Butterfly 安装文档(一) 快速开始&#x27;,&#x27;https://butterfly.js.org/posts/21cfbf15/&#x27; %&#125;</span></span><br><span class="line"><span class="emphasis">&#123;% referfrom &#x27;[4]&#x27;,&#x27;hexo-theme-volantis 标签插件&#x27;,&#x27;https://volantis.js.org/v5/tag-plugins/&#x27; %&#125;</span></span><br><span class="line"><span class="emphasis">&#123;% referfrom &#x27;[5]&#x27;,&#x27;Volantis文档:内置标签插件&#x27;,&#x27;https://volantis.js.org/tag-plugins/&#x27; %&#125;</span></span><br><span class="line"><span class="emphasis">&#123;% referfrom &#x27;[6]&#x27;,&#x27;Butterfly 安装文档:标签外挂（Tag Plugins）&#x27;,&#x27;https://butterfly.js.org/posts/4aa8abbe/#%E6%A8%99%E7%B1%A4%E5%A4%96%E6%8E%9B%EF%BC%88Tag-Plugins%EF%BC%89&#x27; %&#125;</span></span><br><span class="line"><span class="emphasis">&#123;% referfrom &#x27;[7]&#x27;,&#x27;小弋の生活馆全样式预览&#x27;,&#x27;https://lovelijunyi.gitee.io/posts/c898.html&#x27; %&#125;</span></span><br><span class="line"><span class="emphasis">&#123;% referfrom &#x27;[8]&#x27;,&#x27;l-lin-font-awesome-animation&#x27;,&#x27;https://github.com/l-lin/font-awesome-animation&#x27; %&#125;</span></span><br><span class="line"><span class="emphasis">&#123;% referfrom &#x27;[9]&#x27;,&#x27;小康的butterfly主题使用文档&#x27;,&#x27;https://www.antmoe.com/posts/3b43914f/&#x27; %&#125;</span></span><br></pre></td></tr></table></figure>
-<h2 id="渲染演示">渲染演示</h2>
-<p>Akilarの糖果屋(akilar.top)是一个私人性质的博客<span class="hidden-anchor" id="referto_[1]"></span><sup class="reference"><a href="#referfrom_[1]">[1]</a></sup><span class="reference-bubble"><span class="reference-item"><span class="reference-literature">Akilarの糖果屋群聊简介</span><span class="reference-title">参考资料</span></span></span>，从各类教程至生活点滴，无话不谈。建群的目的是提供一个闲聊的场所。博客采用Hexo框架<span class="hidden-anchor" id="referto_[2]"></span><sup class="reference"><a href="#referfrom_[2]">[2]</a></sup><span class="reference-bubble"><span class="reference-item"><span class="reference-literature">Hexo中文文档</span><span class="reference-title">参考资料</span></span></span>，Butterfly主题<span class="hidden-anchor" id="referto_[3]"></span><sup class="reference"><a href="#referfrom_[3]">[3]</a></sup><span class="reference-bubble"><span class="reference-item"><span class="reference-literature">Butterfly 安装文档(一) 快速开始</span><span class="reference-title">参考资料</span></span></span></p>
-<p>本项目参考了Volantis<span class="hidden-anchor" id="referto_[4]"></span><sup class="reference"><a href="#referfrom_[4]">[4]</a></sup><span class="reference-bubble"><span class="reference-item"><span class="reference-literature">hexo-theme-volantis 标签插件</span><span class="reference-title">参考资料</span></span></span>的标签样式。引入<code>[tag].js</code>，并针对<code>butterfly</code>主题修改了相应的<code>[tag].styl</code>。在此鸣谢<code>Volantis</code>主题众开发者。主要参考内容包括各个volantis的内置标签插件文档<span class="hidden-anchor" id="referto_[5]"></span><sup class="reference"><a href="#referfrom_[5]">[5]</a></sup><span class="reference-bubble"><span class="reference-item"><span class="reference-literature">Volantis文档:内置标签插件</span><span class="reference-title">参考资料</span></span></span>
-Butterfly主题的各个衍生魔改<span class="hidden-anchor" id="referto_[6]"></span><sup class="reference"><a href="#referfrom_[6]">[6]</a></sup><span class="reference-bubble"><span class="reference-item"><span class="reference-literature">Butterfly 安装文档:标签外挂（Tag Plugins</span><span class="reference-title">参考资料</span></span></span><span class="hidden-anchor" id="referto_[7]"></span><sup class="reference"><a href="#referfrom_[7]">[7]</a></sup><span class="reference-bubble"><span class="reference-item"><span class="reference-literature">小弋の生活馆全样式预览</span><span class="reference-title">参考资料</span></span></span><span class="hidden-anchor" id="referto_[8]"></span><sup class="reference"><a href="#referfrom_[8]">[8]</a></sup><span class="reference-bubble"><span class="reference-item"><span class="reference-literature">l-lin-font-awesome-animation</span><span class="reference-title">参考资料</span></span></span><span class="hidden-anchor" id="referto_[9]"></span><sup class="reference"><a href="#referfrom_[9]">[9]</a></sup><span class="reference-bubble"><span class="reference-item"><span class="reference-literature">小康的butterfly主题使用文档</span><span class="reference-title">参考资料</span></span></span></p>
-<div class="reference-source"><span class="hidden-anchor" id="referfrom_[1]"></span><a class="reference-anchor" href="#referto_[1]">[1]<div class="reference-anchor-up fa-solid fa-angles-up"></div></a><a class="reference-link" href="https://jq.qq.com/?_wv=1027&k=pGLB2C0N">Akilarの糖果屋群聊简介</a></div>
-<div class="reference-source"><span class="hidden-anchor" id="referfrom_[2]"></span><a class="reference-anchor" href="#referto_[2]">[2]<div class="reference-anchor-up fa-solid fa-angles-up"></div></a><a class="reference-link" href="https://hexo.io/zh-cn/docs/">Hexo中文文档</a></div>
-<div class="reference-source"><span class="hidden-anchor" id="referfrom_[3]"></span><a class="reference-anchor" href="#referto_[3]">[3]<div class="reference-anchor-up fa-solid fa-angles-up"></div></a><a class="reference-link" href="https://butterfly.js.org/posts/21cfbf15/">Butterfly 安装文档(一) 快速开始</a></div>
-<div class="reference-source"><span class="hidden-anchor" id="referfrom_[4]"></span><a class="reference-anchor" href="#referto_[4]">[4]<div class="reference-anchor-up fa-solid fa-angles-up"></div></a><a class="reference-link" href="https://volantis.js.org/v5/tag-plugins/">hexo-theme-volantis 标签插件</a></div>
-<div class="reference-source"><span class="hidden-anchor" id="referfrom_[5]"></span><a class="reference-anchor" href="#referto_[5]">[5]<div class="reference-anchor-up fa-solid fa-angles-up"></div></a><a class="reference-link" href="https://volantis.js.org/tag-plugins/">Volantis文档:内置标签插件</a></div>
-<div class="reference-source"><span class="hidden-anchor" id="referfrom_[6]"></span><a class="reference-anchor" href="#referto_[6]">[6]<div class="reference-anchor-up fa-solid fa-angles-up"></div></a><a class="reference-link" href="https://butterfly.js.org/posts/4aa8abbe/#%E6%A8%99%E7%B1%A4%E5%A4%96%E6%8E%9B%EF%BC%88Tag-Plugins%EF%BC%89">Butterfly 安装文档:标签外挂（Tag Plugins</a></div>
-<div class="reference-source"><span class="hidden-anchor" id="referfrom_[7]"></span><a class="reference-anchor" href="#referto_[7]">[7]<div class="reference-anchor-up fa-solid fa-angles-up"></div></a><a class="reference-link" href="https://lovelijunyi.gitee.io/posts/c898.html">小弋の生活馆全样式预览</a></div>
-<div class="reference-source"><span class="hidden-anchor" id="referfrom_[8]"></span><a class="reference-anchor" href="#referto_[8]">[8]<div class="reference-anchor-up fa-solid fa-angles-up"></div></a><a class="reference-link" href="https://github.com/l-lin/font-awesome-animation">l-lin-font-awesome-animation</a></div>
-<div class="reference-source"><span class="hidden-anchor" id="referfrom_[9]"></span><a class="reference-anchor" href="#referto_[9]">[9]<div class="reference-anchor-up fa-solid fa-angles-up"></div></a><a class="reference-link" href="https://www.antmoe.com/posts/3b43914f/">小康的butterfly主题使用文档</a></div>
-]]></content>
-      <categories>
-        <category>博客搭建</category>
-      </categories>
-      <tags>
-        <tag>博客搭建</tag>
-        <tag>外挂标签</tag>
-        <tag>引用文献</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>外挂标签之旋转相册</title>
-    <url>/posts/75b3d8a.html</url>
-    <content><![CDATA[<h1 id="外挂标签之旋转相册">外挂标签之旋转相册</h1>
-<div class="tip info"><p>旋转相册标签与fancybox灯箱存在兼容性bug，若发现旋转相册呈扁平状，请关闭fancybox或换用medium_zoom。</p>
-</div>
-<h2 id="标签语法">标签语法</h2>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% carousel [Id] , [name] %&#125;</span><br><span class="line">![](<span class="link">/img/1.jpg</span>)</span><br><span class="line">![](<span class="link">/img/2.jpg</span>)</span><br><span class="line">![](<span class="link">/img/3,jpg</span>)</span><br><span class="line">&#123;% endcarousel %&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="配置参数">配置参数</h2>
-<ol type="1">
-<li><code>Id</code>:
-相册唯一ID，用于监测相册鼠标动作。禁止使用中文。同一页内不得出现相同ID的carousel相册。</li>
-<li><code>name</code>: 相册中间显示的内容，建议用英文单引号包裹。</li>
-</ol>
-<h2 id="示例源码">示例源码</h2>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% carousel &#x27;SF&#x27;,&#x27;strike freedom&#x27; %&#125;</span><br><span class="line">![](<span class="link">https://npm.elemecdn.com/akilar-candyassets/image/20200907110444226.png</span>)</span><br><span class="line">![](<span class="link">https://npm.elemecdn.com/akilar-candyassets/image/20200907110508327.png</span>)</span><br><span class="line">![](<span class="link">https://npm.elemecdn.com/akilar-candyassets/image/20200907110525753.png</span>)</span><br><span class="line">![](<span class="link">https://npm.elemecdn.com/akilar-candyassets/image/20200907110600751.png</span>)</span><br><span class="line">![](<span class="link">https://npm.elemecdn.com/akilar-candyassets/image/20200907110621554.png</span>)</span><br><span class="line">![](<span class="link">https://npm.elemecdn.com/akilar-candyassets/image/20200907110637459.png</span>)</span><br><span class="line">![](<span class="link">https://npm.elemecdn.com/akilar-candyassets/image/20200907110654150.png</span>)</span><br><span class="line">![](<span class="link">https://npm.elemecdn.com/akilar-candyassets/image/20200907110707916.png</span>)</span><br><span class="line">![](<span class="link">https://npm.elemecdn.com/akilar-candyassets/image/20200907110719787.png</span>)</span><br><span class="line">![](<span class="link">https://npm.elemecdn.com/akilar-candyassets/image/20200907110731118.png</span>)</span><br><span class="line">&#123;% endcarousel %&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="渲染演示">渲染演示</h2>
-<div id='SF' class='carousel'><div id="SF-drag-container" class="drag-container"><div id="SF-spin-container" class="spin-container"><img
-src="https://npm.elemecdn.com/akilar-candyassets/image/20200907110444226.png" />
-<img
-src="https://npm.elemecdn.com/akilar-candyassets/image/20200907110508327.png" />
-<img
-src="https://npm.elemecdn.com/akilar-candyassets/image/20200907110525753.png" />
-<img
-src="https://npm.elemecdn.com/akilar-candyassets/image/20200907110600751.png" />
-<img
-src="https://npm.elemecdn.com/akilar-candyassets/image/20200907110621554.png" />
-<img
-src="https://npm.elemecdn.com/akilar-candyassets/image/20200907110637459.png" />
-<img
-src="https://npm.elemecdn.com/akilar-candyassets/image/20200907110654150.png" />
-<img
-src="https://npm.elemecdn.com/akilar-candyassets/image/20200907110707916.png" />
-<img
-src="https://npm.elemecdn.com/akilar-candyassets/image/20200907110719787.png" />
-<img
-src="https://npm.elemecdn.com/akilar-candyassets/image/20200907110731118.png" /><p>strike freedom</p></div><div id="SF-carousel-ground" class="carousel-ground"></div></div></div><script type="text/javascript">carouselinit('SF');</script>
-]]></content>
-      <categories>
-        <category>博客搭建</category>
-      </categories>
-      <tags>
-        <tag>博客搭建</tag>
-        <tag>外挂标签</tag>
-        <tag>旋转相册</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>外挂标签之气泡注释</title>
-    <url>/posts/44dec147.html</url>
-    <content><![CDATA[<h1 id="外挂标签之气泡注释">外挂标签之气泡注释</h1>
-<h2 id="标签语法">标签语法</h2>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% bubble [content] , [notation] ,[background-color] %&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="配置参数">配置参数</h2>
-<ol type="1">
-<li><code>content</code>: 注释词汇</li>
-<li><code>notation</code>: 悬停显示的注解内容</li>
-<li><code>background-color</code>: 可选，气泡背景色。默认为
-“#71a4e3”</li>
-</ol>
-<h2 id="示例源码">示例源码</h2>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">最近我学到了不少新玩意儿（虽然对很多大佬来说这些已经是旧技术了），比如CSS的&#123;% bubble 兄弟相邻选择器,&quot;例如 h1 + p &#123;margin-top:50px;&#125;&quot; %&#125;，&#123;% bubble flex布局,&quot;Flex 是 Flexible Box 的缩写，意为&quot;弹性布局&quot;，用来为盒状模型提供最大的灵活性&quot;,&quot;#ec5830&quot; %&#125;，&#123;% bubble transform变换,&quot;transform 属性向元素应用 2D 或 3D 转换。该属性允许我们对元素进行旋转、缩放、移动或倾斜。&quot;,&quot;#1db675&quot; %&#125;，animation的&#123;% bubble 贝塞尔速度曲线,&quot;贝塞尔曲线(Bézier curve)，又称贝兹曲线或贝济埃曲线，是应用于二维图形应用程序的数学曲线。一般的矢量图形软件通过它来精确画出曲线，贝兹曲线由线段与节点组成，节点是可拖动的支点，线段像可伸缩的皮筋&quot;,&quot;#de4489&quot; %&#125;写法，还有今天刚看到的&#123;% bubble clip-path,&quot;clip-path属性使用裁剪方式创建元素的可显示区域。区域内的部分显示，区域外的隐藏。&quot;,&quot;#868fd7&quot; %&#125;属性。这些对我来说很新颖的概念狠狠的冲击着我以前积累起来的设计思路。</span><br></pre></td></tr></table></figure>
-<h2 id="渲染演示">渲染演示</h2>
-<p>最近我学到了不少新玩意儿（虽然对很多大佬来说这些已经是旧技术了），比如CSS的<span class="bubble-content">兄弟相邻选择器</span><span class="bubble-notation"><span class="bubble-item" style="background-color:#71a4e3;">例如 h1 + p {margin-top:50px;}</span></span>，<span class="bubble-content">flex布局</span><span class="bubble-notation"><span class="bubble-item" style="background-color:#ec5830;">Flex 是 Flexible Box 的缩写，意为弹性布局"，用来为盒状模型提供最大的灵活性"</span></span>，<span class="bubble-content">transform变换</span><span class="bubble-notation"><span class="bubble-item" style="background-color:#1db675;">transform 属性向元素应用 2D 或 3D 转换。该属性允许我们对元素进行旋转、缩放、移动或倾斜。</span></span>，animation的<span class="bubble-content">贝塞尔速度曲线</span><span class="bubble-notation"><span class="bubble-item" style="background-color:#de4489;">贝塞尔曲线(Bézier curve)，又称贝兹曲线或贝济埃曲线，是应用于二维图形应用程序的数学曲线。一般的矢量图形软件通过它来精确画出曲线，贝兹曲线由线段与节点组成，节点是可拖动的支点，线段像可伸缩的皮筋</span></span>写法，还有今天刚看到的<span class="bubble-content">clip-path</span><span class="bubble-notation"><span class="bubble-item" style="background-color:#868fd7;">clip-path属性使用裁剪方式创建元素的可显示区域。区域内的部分显示，区域外的隐藏。</span></span>属性。这些对我来说很新颖的概念狠狠的冲击着我以前积累起来的设计思路。</p>
-]]></content>
-      <categories>
-        <category>博客搭建</category>
-      </categories>
-      <tags>
-        <tag>博客搭建</tag>
-        <tag>外挂标签</tag>
-        <tag>气泡注释</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>外挂标签之特效标签</title>
     <url>/posts/dd1db991.html</url>
     <content><![CDATA[<h1 id="外挂标签之特效标签">外挂标签之特效标签</h1>
@@ -2343,6 +2315,33 @@ href="https://animate.style/">animate.css 参考文档</a></li>
         <tag>博客搭建</tag>
         <tag>外挂标签</tag>
         <tag>特效标签</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>外挂标签之气泡注释</title>
+    <url>/posts/44dec147.html</url>
+    <content><![CDATA[<h1 id="外挂标签之气泡注释">外挂标签之气泡注释</h1>
+<h2 id="标签语法">标签语法</h2>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% bubble [content] , [notation] ,[background-color] %&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="配置参数">配置参数</h2>
+<ol type="1">
+<li><code>content</code>: 注释词汇</li>
+<li><code>notation</code>: 悬停显示的注解内容</li>
+<li><code>background-color</code>: 可选，气泡背景色。默认为
+“#71a4e3”</li>
+</ol>
+<h2 id="示例源码">示例源码</h2>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">最近我学到了不少新玩意儿（虽然对很多大佬来说这些已经是旧技术了），比如CSS的&#123;% bubble 兄弟相邻选择器,&quot;例如 h1 + p &#123;margin-top:50px;&#125;&quot; %&#125;，&#123;% bubble flex布局,&quot;Flex 是 Flexible Box 的缩写，意为&quot;弹性布局&quot;，用来为盒状模型提供最大的灵活性&quot;,&quot;#ec5830&quot; %&#125;，&#123;% bubble transform变换,&quot;transform 属性向元素应用 2D 或 3D 转换。该属性允许我们对元素进行旋转、缩放、移动或倾斜。&quot;,&quot;#1db675&quot; %&#125;，animation的&#123;% bubble 贝塞尔速度曲线,&quot;贝塞尔曲线(Bézier curve)，又称贝兹曲线或贝济埃曲线，是应用于二维图形应用程序的数学曲线。一般的矢量图形软件通过它来精确画出曲线，贝兹曲线由线段与节点组成，节点是可拖动的支点，线段像可伸缩的皮筋&quot;,&quot;#de4489&quot; %&#125;写法，还有今天刚看到的&#123;% bubble clip-path,&quot;clip-path属性使用裁剪方式创建元素的可显示区域。区域内的部分显示，区域外的隐藏。&quot;,&quot;#868fd7&quot; %&#125;属性。这些对我来说很新颖的概念狠狠的冲击着我以前积累起来的设计思路。</span><br></pre></td></tr></table></figure>
+<h2 id="渲染演示">渲染演示</h2>
+<p>最近我学到了不少新玩意儿（虽然对很多大佬来说这些已经是旧技术了），比如CSS的<span class="bubble-content">兄弟相邻选择器</span><span class="bubble-notation"><span class="bubble-item" style="background-color:#71a4e3;">例如 h1 + p {margin-top:50px;}</span></span>，<span class="bubble-content">flex布局</span><span class="bubble-notation"><span class="bubble-item" style="background-color:#ec5830;">Flex 是 Flexible Box 的缩写，意为弹性布局"，用来为盒状模型提供最大的灵活性"</span></span>，<span class="bubble-content">transform变换</span><span class="bubble-notation"><span class="bubble-item" style="background-color:#1db675;">transform 属性向元素应用 2D 或 3D 转换。该属性允许我们对元素进行旋转、缩放、移动或倾斜。</span></span>，animation的<span class="bubble-content">贝塞尔速度曲线</span><span class="bubble-notation"><span class="bubble-item" style="background-color:#de4489;">贝塞尔曲线(Bézier curve)，又称贝兹曲线或贝济埃曲线，是应用于二维图形应用程序的数学曲线。一般的矢量图形软件通过它来精确画出曲线，贝兹曲线由线段与节点组成，节点是可拖动的支点，线段像可伸缩的皮筋</span></span>写法，还有今天刚看到的<span class="bubble-content">clip-path</span><span class="bubble-notation"><span class="bubble-item" style="background-color:#868fd7;">clip-path属性使用裁剪方式创建元素的可显示区域。区域内的部分显示，区域外的隐藏。</span></span>属性。这些对我来说很新颖的概念狠狠的冲击着我以前积累起来的设计思路。</p>
+]]></content>
+      <categories>
+        <category>博客搭建</category>
+      </categories>
+      <tags>
+        <tag>博客搭建</tag>
+        <tag>外挂标签</tag>
+        <tag>气泡注释</tag>
       </tags>
   </entry>
 </search>
