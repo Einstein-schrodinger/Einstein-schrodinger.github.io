@@ -513,139 +513,8 @@ class="desc">这是一段关于这个网站的描述文字</span>
 <img no-lazy class="inline" src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-emoji/aru-l/5150.gif" style="height:40px;"/>
 一段话。</p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div></div>
 <h2 id="单张图片-image">1.16 单张图片 image</h2>
-<div class="tabs" id="单张图片"><ul class="nav-tabs"><li class="tab active"><button type="button" data-href="#单张图片-1">标签语法</button></li><li class="tab"><button type="button" data-href="#单张图片-2">配置参数</button></li><li class="tab"><button type="button" data-href="#单张图片-3">示例源码</button></li><li class="tab"><button type="button" data-href="#单张图片-4">渲染演示</button></li></ul><div class="tab-contents"><div class="tab-item-content active" id="单张图片-1"><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% image 链接, width=宽度（可选）, height=高度（可选）, alt=描述（可选）, bg=占位颜色（可选） %&#125;</span><br></pre></td></tr></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="单张图片-2"><ol type="1">
-<li>图片宽度高度：width=300px, height=32px</li>
-<li>图片描述：alt=图片描述（butterfly需要在主题配置文件中开启图片描述）</li>
-<li>占位背景色：bg=#f2f2f2</li>
-</ol><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="单张图片-3"><ol type="1">
-<li><p>添加描述：</p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% image https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/025.jpg, alt=每天下课回宿舍的路，没有什么故事。 %&#125;</span><br></pre></td></tr></table></figure></li>
-<li><p>指定宽度</p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% image https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/025.jpg, width=400px %&#125;</span><br></pre></td></tr></table></figure></li>
-<li><p>指定宽度并添加描述：</p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% image https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/025.jpg, width=400px, alt=每天下课回宿舍的路，没有什么故事。 %&#125;</span><br></pre></td></tr></table></figure></li>
-<li><p>设置占位背景色：</p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% image https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/025.jpg, width=400px, bg=#1D0C04, alt=优化不同宽度浏览的</span><br></pre></td></tr></table></figure></li>
-</ol><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="单张图片-4"><ol type="1">
-<li><p>添加描述：</p>
-<div class="img-wrap">
-<div class="img-bg">
-<img class="img" src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/025.jpg" alt="每天下课回宿舍的路，没有什么故事。"/>
-</div>
-<span class="image-caption">每天下课回宿舍的路，没有什么故事。</span>
-</div></li>
-<li><p>指定宽度</p>
-<div class="img-wrap">
-<div class="img-bg">
-<img class="img" src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/025.jpg" style="width:400px;"/>
-</div>
-</div></li>
-<li><p>指定宽度并添加描述：</p>
-<div class="img-wrap">
-<div class="img-bg">
-<img class="img" src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/025.jpg" alt="每天下课回宿舍的路，没有什么故事。" style="width:400px;"/>
-</div>
-<span class="image-caption">每天下课回宿舍的路，没有什么故事。</span>
-</div></li>
-<li><p>设置占位背景色：</p>
-<div class="img-wrap">
-<div class="img-bg" style="background:#1D0C04">
-<img class="img" src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/025.jpg" alt="优化不同宽度浏览的观感" style="width:400px;"/>
-</div>
-<span class="image-caption">优化不同宽度浏览的观感</span>
-</div></li>
-</ol><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div></div>
 <h2 id="音频-audio">1.17 音频 audio</h2>
-<div class="tabs" id="音频"><ul class="nav-tabs"><li class="tab active"><button type="button" data-href="#音频-1">标签语法</button></li><li class="tab"><button type="button" data-href="#音频-2">示例源码</button></li><li class="tab"><button type="button" data-href="#音频-3">渲染演示</button></li></ul><div class="tab-contents"><div class="tab-item-content active" id="音频-1"><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% audio 音频链接 %&#125;</span><br></pre></td></tr></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="音频-2"><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% audio https://github.com/volantis-x/volantis-docs/releases/download/assets/Lumia1020.mp3 %&#125;</span><br></pre></td></tr></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="音频-3"><div class="audio">
-<audio controls preload>
-<source src='https://github.com/volantis-x/volantis-docs/releases/download/assets/Lumia1020.mp3' type='audio/mp3'>
-Your browser does not support the audio tag.</audio>
-</div><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div></div>
 <h2 id="视频-vidio">1.18 视频 vidio</h2>
-<div class="tabs" id="视频"><ul class="nav-tabs"><li class="tab active"><button type="button" data-href="#视频-1">标签语法</button></li><li class="tab"><button type="button" data-href="#视频-2">配置参数</button></li><li class="tab"><button type="button" data-href="#视频-3">示例源码</button></li><li class="tab"><button type="button" data-href="#视频-4">渲染演示</button></li></ul><div class="tab-contents"><div class="tab-item-content active" id="视频-1"><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% video 视频链接 %&#125;</span><br></pre></td></tr></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="视频-2"><ol type="1">
-<li>对齐方向：left, center, right</li>
-<li>列数：逗号后面直接写列数，支持 1 ～ 4 列</li>
-</ol><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="视频-3"><ol type="1">
-<li><p>100%宽度</p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% video https://github.com/volantis-x/volantis-docs/releases/download/assets/IMG<span class="emphasis">_0341.mov %&#125;</span></span><br></pre></td></tr></table></figure></li>
-<li><p>50%宽度</p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% videos, 2 %&#125;</span><br><span class="line">&#123;% video https://github.com/volantis-x/volantis-docs/releases/download/assets/IMG<span class="emphasis">_0341.mov %&#125;</span></span><br><span class="line"><span class="emphasis">&#123;% video https://github.com/volantis-x/volantis-docs/releases/download/assets/IMG_</span>0341.mov %&#125;</span><br><span class="line">&#123;% video https://github.com/volantis-x/volantis-docs/releases/download/assets/IMG<span class="emphasis">_0341.mov %&#125;</span></span><br><span class="line"><span class="emphasis">&#123;% video https://github.com/volantis-x/volantis-docs/releases/download/assets/IMG_</span>0341.mov %&#125;</span><br><span class="line">&#123;% endvideos %&#125;</span><br></pre></td></tr></table></figure></li>
-<li><p>25%宽度</p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% videos, 4 %&#125;</span><br><span class="line">&#123;% video https://github.com/volantis-x/volantis-docs/releases/download/assets/IMG<span class="emphasis">_0341.mov %&#125;</span></span><br><span class="line"><span class="emphasis">&#123;% video https://github.com/volantis-x/volantis-docs/releases/download/assets/IMG_</span>0341.mov %&#125;</span><br><span class="line">&#123;% video https://github.com/volantis-x/volantis-docs/releases/download/assets/IMG<span class="emphasis">_0341.mov %&#125;</span></span><br><span class="line"><span class="emphasis">&#123;% video https://github.com/volantis-x/volantis-docs/releases/download/assets/IMG_</span>0341.mov %&#125;</span><br><span class="line">&#123;% video https://github.com/volantis-x/volantis-docs/releases/download/assets/IMG<span class="emphasis">_0341.mov %&#125;</span></span><br><span class="line"><span class="emphasis">&#123;% video https://github.com/volantis-x/volantis-docs/releases/download/assets/IMG_</span>0341.mov %&#125;</span><br><span class="line">&#123;% video https://github.com/volantis-x/volantis-docs/releases/download/assets/IMG<span class="emphasis">_0341.mov %&#125;</span></span><br><span class="line"><span class="emphasis">&#123;% video https://github.com/volantis-x/volantis-docs/releases/download/assets/IMG_</span>0341.mov %&#125;</span><br><span class="line">&#123;% endvideos %&#125;</span><br></pre></td></tr></table></figure></li>
-</ol><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="视频-4"><ol type="1">
-<li><p>100%宽度</p>
-<div class="video">
-<video controls preload>
-<source src='https://github.com/volantis-x/volantis-docs/releases/download/assets/IMG_0341.mov' type='video/mp4'>
-<p>Your browser does not support the video tag.</video></p>
-</div></li>
-<li><p>50%宽度</p>
-<div class="videos" col='2'>
-<div class="video">
-<video controls preload>
-<source src='https://github.com/volantis-x/volantis-docs/releases/download/assets/IMG_0341.mov' type='video/mp4'>
-<p>Your browser does not support the video tag.</video></p>
-</div>
-<div class="video">
-<video controls preload>
-<source src='https://github.com/volantis-x/volantis-docs/releases/download/assets/IMG_0341.mov' type='video/mp4'>
-<p>Your browser does not support the video tag.</video></p>
-</div>
-<div class="video">
-<video controls preload>
-<source src='https://github.com/volantis-x/volantis-docs/releases/download/assets/IMG_0341.mov' type='video/mp4'>
-<p>Your browser does not support the video tag.</video></p>
-</div>
-<div class="video">
-<video controls preload>
-<source src='https://github.com/volantis-x/volantis-docs/releases/download/assets/IMG_0341.mov' type='video/mp4'>
-<p>Your browser does not support the video tag.</video></p>
-</div>
-</div></li>
-<li><p>25%宽度</p>
-<div class="videos" col='4'>
-<div class="video">
-<video controls preload>
-<source src='https://github.com/volantis-x/volantis-docs/releases/download/assets/IMG_0341.mov' type='video/mp4'>
-<p>Your browser does not support the video tag.</video></p>
-</div>
-<div class="video">
-<video controls preload>
-<source src='https://github.com/volantis-x/volantis-docs/releases/download/assets/IMG_0341.mov' type='video/mp4'>
-<p>Your browser does not support the video tag.</video></p>
-</div>
-<div class="video">
-<video controls preload>
-<source src='https://github.com/volantis-x/volantis-docs/releases/download/assets/IMG_0341.mov' type='video/mp4'>
-<p>Your browser does not support the video tag.</video></p>
-</div>
-<div class="video">
-<video controls preload>
-<source src='https://github.com/volantis-x/volantis-docs/releases/download/assets/IMG_0341.mov' type='video/mp4'>
-<p>Your browser does not support the video tag.</video></p>
-</div>
-<div class="video">
-<video controls preload>
-<source src='https://github.com/volantis-x/volantis-docs/releases/download/assets/IMG_0341.mov' type='video/mp4'>
-<p>Your browser does not support the video tag.</video></p>
-</div>
-<div class="video">
-<video controls preload>
-<source src='https://github.com/volantis-x/volantis-docs/releases/download/assets/IMG_0341.mov' type='video/mp4'>
-<p>Your browser does not support the video tag.</video></p>
-</div>
-<div class="video">
-<video controls preload>
-<source src='https://github.com/volantis-x/volantis-docs/releases/download/assets/IMG_0341.mov' type='video/mp4'>
-<p>Your browser does not support the video tag.</video></p>
-</div>
-<div class="video">
-<video controls preload>
-<source src='https://github.com/volantis-x/volantis-docs/releases/download/assets/IMG_0341.mov' type='video/mp4'>
-<p>Your browser does not support the video tag.</video></p>
-</div>
-</div></li>
-</ol><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div></div>
 <h2 id="相册-gallery"><a
 href="https://www.sqwdream.cloud/posts/7cede130.html">1.19 相册
 gallery</a></h2>
@@ -654,26 +523,6 @@ gallery</a></h2>
 href="https://www.sqwdream.cloud/posts/10aeeec0.html">1.21 分栏
 tab</a></h2>
 <h2 id="诗词标签-poem">1.22 诗词标签 poem</h2>
-<div class="tabs" id="诗词标签"><ul class="nav-tabs"><li class="tab active"><button type="button" data-href="#诗词标签-1">标签语法</button></li><li class="tab"><button type="button" data-href="#诗词标签-2">配置参数</button></li><li class="tab"><button type="button" data-href="#诗词标签-3">示例源码</button></li><li class="tab"><button type="button" data-href="#诗词标签-4">渲染演示</button></li></ul><div class="tab-contents"><div class="tab-item-content active" id="诗词标签-1"><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% poem [title],[author] %&#125;</span><br><span class="line">诗词内容</span><br><span class="line">&#123;% endpoem %&#125;</span><br></pre></td></tr></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="诗词标签-2"><ol type="1">
-<li>title：诗词标题</li>
-<li>author：作者，可以不写</li>
-</ol><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="诗词标签-3"><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% poem 水调歌头,苏轼 %&#125;</span><br><span class="line">丙辰中秋，欢饮达旦，大醉，作此篇，兼怀子由。</span><br><span class="line">明月几时有？把酒问青天。</span><br><span class="line">不知天上宫阙，今夕是何年？</span><br><span class="line">我欲乘风归去，又恐琼楼玉宇，高处不胜寒。</span><br><span class="line">起舞弄清影，何似在人间？</span><br><span class="line"></span><br><span class="line">转朱阁，低绮户，照无眠。</span><br><span class="line">不应有恨，何事长向别时圆？</span><br><span class="line">人有悲欢离合，月有阴晴圆缺，此事古难全。</span><br><span class="line">但愿人长久，千里共婵娟。</span><br><span class="line">&#123;% endpoem %&#125;</span><br></pre></td></tr></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="诗词标签-4"><div class="poem">
-<div class="poem-title">
-水调歌头
-</div>
-<div class="poem-author">
-苏轼
-</div>
-<p>
-丙辰中秋，欢饮达旦，大醉，作此篇，兼怀子由。 明月几时有？把酒问青天。
-不知天上宫阙，今夕是何年？ 我欲乘风归去，又恐琼楼玉宇，高处不胜寒。
-起舞弄清影，何似在人间？
-</p>
-<p>
-转朱阁，低绮户，照无眠。 不应有恨，何事长向别时圆？
-人有悲欢离合，月有阴晴圆缺，此事古难全。 但愿人长久，千里共婵娟。
-</p>
-</div><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div></div>
 <h2 id="阿里图标-icon">1.23 阿里图标 icon</h2>
 <h2 id="特效标签-wow"><a
 href="https://www.sqwdream.cloud/posts/dd1db991.html">1.24 特效标签
@@ -974,51 +823,6 @@ md。无需再自己配置长宽。<strong>在粘贴时故意使用长短、大�
       </tags>
   </entry>
   <entry>
-    <title>外挂标签之PDF展示</title>
-    <url>/posts/d629a2c2.html</url>
-    <content><![CDATA[<h1 id="外挂标签之pdf展示">外挂标签之PDF展示</h1>
-<div class="tip info"><p>需要安装<a
-href="https://blog.csdn.net/qq_43701912/article/details/107291518">hexo-pdf</a>插件</p>
-</div>
-<h2 id="标签语法">标签语法</h2>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% pdf 文件路径 %&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="配置参数">配置参数</h2>
-<ol type="1">
-<li><code>文件路径</code>: 可以是相对路径或者是在线链接</li>
-</ol>
-<h2 id="示例源码">示例源码</h2>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="bullet">1.</span> 本地文件:在md文件路径下创建一个同名文件夹，其内放pdf文件名为<span class="code">`能带模型.pdf`</span>的文件</span><br><span class="line">&#123;% pdf <span class="emphasis">_posts/博客搭建/外挂标签之PDF展示/能带模型.pdf %&#125;</span></span><br><span class="line"><span class="emphasis">2. 在线链接</span></span><br><span class="line"><span class="emphasis">&#123;% pdf https://cdn.jsdelivr.net/gh/Justlovesmile/CDN/pdf/小作文讲义.pdf %&#125;</span></span><br></pre></td></tr></table></figure>
-<h2 id="渲染演示">渲染演示</h2>
-<ol type="1">
-<li>本地文件:在md文件路径下创建一个同名文件夹，其内放pdf文件名为<code>能带模型.pdf</code>的文件
-
-
-	<div class="row">
-    <embed src="能带模型.pdf" width="100%" height="550" type="application/pdf">
-	</div>
-
-
-</li>
-<li>在线链接 
-
-	<div class="row">
-    <embed src="https://cdn.jsdelivr.net/gh/Justlovesmile/CDN/pdf/小作文讲义.pdf" width="100%" height="550" type="application/pdf">
-	</div>
-
-
-</li>
-</ol>
-]]></content>
-      <categories>
-        <category>博客搭建</category>
-      </categories>
-      <tags>
-        <tag>博客搭建</tag>
-        <tag>外挂标签</tag>
-        <tag>PDF展示</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>外挂标签之分栏tab</title>
     <url>/posts/10aeeec0.html</url>
     <content><![CDATA[<h1 id="外挂标签之分栏tab">外挂标签之分栏tab</h1>
@@ -1083,6 +887,51 @@ data-cites="icon">@icon</span>’ 和 ‘Tab caption@icon’.</li>
       </tags>
   </entry>
   <entry>
+    <title>外挂标签之PDF展示</title>
+    <url>/posts/d629a2c2.html</url>
+    <content><![CDATA[<h1 id="外挂标签之pdf展示">外挂标签之PDF展示</h1>
+<div class="tip info"><p>需要安装<a
+href="https://blog.csdn.net/qq_43701912/article/details/107291518">hexo-pdf</a>插件</p>
+</div>
+<h2 id="标签语法">标签语法</h2>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% pdf 文件路径 %&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="配置参数">配置参数</h2>
+<ol type="1">
+<li><code>文件路径</code>: 可以是相对路径或者是在线链接</li>
+</ol>
+<h2 id="示例源码">示例源码</h2>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="bullet">1.</span> 本地文件:在md文件路径下创建一个同名文件夹，其内放pdf文件名为<span class="code">`能带模型.pdf`</span>的文件</span><br><span class="line">&#123;% pdf <span class="emphasis">_posts/博客搭建/外挂标签之PDF展示/能带模型.pdf %&#125;</span></span><br><span class="line"><span class="emphasis">2. 在线链接</span></span><br><span class="line"><span class="emphasis">&#123;% pdf https://cdn.jsdelivr.net/gh/Justlovesmile/CDN/pdf/小作文讲义.pdf %&#125;</span></span><br></pre></td></tr></table></figure>
+<h2 id="渲染演示">渲染演示</h2>
+<ol type="1">
+<li>本地文件:在md文件路径下创建一个同名文件夹，其内放pdf文件名为<code>能带模型.pdf</code>的文件
+
+
+	<div class="row">
+    <embed src="能带模型.pdf" width="100%" height="550" type="application/pdf">
+	</div>
+
+
+</li>
+<li>在线链接 
+
+	<div class="row">
+    <embed src="https://cdn.jsdelivr.net/gh/Justlovesmile/CDN/pdf/小作文讲义.pdf" width="100%" height="550" type="application/pdf">
+	</div>
+
+
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>博客搭建</category>
+      </categories>
+      <tags>
+        <tag>博客搭建</tag>
+        <tag>外挂标签</tag>
+        <tag>PDF展示</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>外挂标签之动态标签</title>
     <url>/posts/c16bd145.html</url>
     <content><![CDATA[<h1 id="外挂标签之动态标签">外挂标签之动态标签</h1>
@@ -1135,6 +984,42 @@ ban
         <tag>博客搭建</tag>
         <tag>外挂标签</tag>
         <tag>动态标签</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>外挂标签之单张图片</title>
+    <url>/posts/84d3a02d.html</url>
+    <content><![CDATA[<h1 id="外挂标签之单张图片">外挂标签之单张图片</h1>
+<h2 id="标签语法">标签语法</h2>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% image 链接, width=宽度（可选）, height=高度（可选）, alt=描述（可选）, bg=占位颜色（可选） %&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="配置参数">配置参数</h2>
+<ol type="1">
+<li>图片宽度高度：width=300px, height=32px</li>
+<li>图片描述：alt=图片描述（butterfly需要在主题配置文件中开启图片描述）</li>
+<li>占位背景色：bg=#f2f2f2</li>
+</ol>
+<h2 id="示例源码">示例源码</h2>
+<ol type="1">
+<li><p>添加描述 <figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% image https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/025.jpg, alt=每天下课回宿舍的路，没有什么故事。 %&#125;</span><br></pre></td></tr></table></figure></p></li>
+<li><p>指定宽度 <figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% image https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/025.jpg, width=400px %&#125;</span><br></pre></td></tr></table></figure></p></li>
+<li><p>指定宽度并添加描述 <figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% image https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/025.jpg, width=400px, alt=每天下课回宿舍的路，没有什么故事。 %&#125;</span><br></pre></td></tr></table></figure></p></li>
+<li><p>设置占位背景色 <figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% image https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/025.jpg, width=400px, bg=#1D0C04, alt=优化不同宽度浏览的</span><br></pre></td></tr></table></figure></p></li>
+</ol>
+<h2 id="渲染演示">渲染演示</h2>
+<ol type="1">
+<li><p>添加描述 <div class="img-wrap"><div class="img-bg"><img class="img" src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/025.jpg" alt="每天下课回宿舍的路，没有什么故事。"/></div><span class="image-caption">每天下课回宿舍的路，没有什么故事。</span></div></p></li>
+<li><p>指定宽度 <div class="img-wrap"><div class="img-bg"><img class="img" src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/025.jpg" style="width:400px;"/></div></div></p></li>
+<li><p>指定宽度并添加描述 <div class="img-wrap"><div class="img-bg"><img class="img" src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/025.jpg" alt="每天下课回宿舍的路，没有什么故事。" style="width:400px;"/></div><span class="image-caption">每天下课回宿舍的路，没有什么故事。</span></div></p></li>
+<li><p>设置占位背景色 <div class="img-wrap"><div class="img-bg" style="background:#1D0C04"><img class="img" src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/025.jpg" alt="优化不同宽度浏览的观感" style="width:400px;"/></div><span class="image-caption">优化不同宽度浏览的观感</span></div></p></li>
+</ol>
+]]></content>
+      <categories>
+        <category>博客搭建</category>
+      </categories>
+      <tags>
+        <tag>博客搭建</tag>
+        <tag>外挂标签</tag>
+        <tag>单张图片</tag>
       </tags>
   </entry>
   <entry>
@@ -1844,6 +1729,53 @@ danger 提示块标签
       </tags>
   </entry>
   <entry>
+    <title>外挂标签之引用文献</title>
+    <url>/posts/965f46ee.html</url>
+    <content><![CDATA[<h1 id="外挂标签之引用文献">外挂标签之引用文献</h1>
+<h2 id="标签语法">标签语法</h2>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% referto [id] , [literature] %&#125;</span><br><span class="line">&#123;% referfrom [id] , [literature] , [url] %&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="配置参数">配置参数</h2>
+<ol type="1">
+<li>referto 引用上标
+<ul>
+<li><code>id</code>: 上标序号内容，需与 referfrom 标签的 id
+对应才能实现跳转</li>
+<li><code>literature</code>: 引用的参考文献名称</li>
+</ul></li>
+<li>referfrom 引用出处
+<ul>
+<li><code>id</code>: 序号内容，需与 referto 标签的 id 对应才能实现
+跳转</li>
+<li><code>literature</code>: 引用的参考文献名称</li>
+<li><code>url</code>: 引用的参考文献链接，可省略</li>
+</ul></li>
+</ol>
+<h2 id="示例源码">示例源码</h2>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">Akilarの糖果屋(akilar.top)是一个私人性质的博客&#123;% referto &#x27;[1]&#x27;,&#x27;Akilarの糖果屋群聊简介&#x27; %&#125;，从各类教程至生活点滴，无话不谈。建群的目的是提供一个闲聊的场所。博客采用Hexo框架&#123;% referto &#x27;[2]&#x27;,&#x27;Hexo中文文档&#x27; %&#125;，Butterfly主题&#123;% referto &#x27;[3]&#x27;,&#x27;Butterfly 安装文档(一) 快速开始&#x27; %&#125;</span><br><span class="line"></span><br><span class="line">本项目参考了Volantis&#123;% referto &#x27;[4]&#x27;,&#x27;hexo-theme-volantis 标签插件&#x27; %&#125;的标签样式。引入<span class="code">`[tag].js`</span>，并针对<span class="code">`butterfly`</span>主题修改了相应的<span class="code">`[tag].styl`</span>。在此鸣谢<span class="code">`Volantis`</span>主题众开发者。</span><br><span class="line">主要参考内容包括各个volantis的内置标签插件文档&#123;% referto &#x27;[5]&#x27;,&#x27;Volantis文档:内置标签插件&#x27; %&#125;</span><br><span class="line">Butterfly主题的各个衍生魔改&#123;% referto &#x27;[6]&#x27;,&#x27;Butterfly 安装文档:标签外挂（Tag Plugins&#x27; %&#125;&#123;% referto &#x27;[7]&#x27;,&#x27;小弋の生活馆全样式预览&#x27; %&#125;&#123;% referto &#x27;[8]&#x27;,&#x27;l-lin-font-awesome-animation&#x27; %&#125;&#123;% referto &#x27;[9]&#x27;,&#x27;小康的butterfly主题使用文档&#x27; %&#125;</span><br><span class="line"></span><br><span class="line">&#123;% referfrom &#x27;[1]&#x27;,&#x27;Akilarの糖果屋群聊简介&#x27;,&#x27;https://jq.qq.com/?<span class="emphasis">_wv=1027&amp;k=pGLB2C0N&#x27; %&#125;</span></span><br><span class="line"><span class="emphasis">&#123;% referfrom &#x27;[2]&#x27;,&#x27;Hexo中文文档&#x27;,&#x27;https://hexo.io/zh-cn/docs/&#x27; %&#125;</span></span><br><span class="line"><span class="emphasis">&#123;% referfrom &#x27;[3]&#x27;,&#x27;Butterfly 安装文档(一) 快速开始&#x27;,&#x27;https://butterfly.js.org/posts/21cfbf15/&#x27; %&#125;</span></span><br><span class="line"><span class="emphasis">&#123;% referfrom &#x27;[4]&#x27;,&#x27;hexo-theme-volantis 标签插件&#x27;,&#x27;https://volantis.js.org/v5/tag-plugins/&#x27; %&#125;</span></span><br><span class="line"><span class="emphasis">&#123;% referfrom &#x27;[5]&#x27;,&#x27;Volantis文档:内置标签插件&#x27;,&#x27;https://volantis.js.org/tag-plugins/&#x27; %&#125;</span></span><br><span class="line"><span class="emphasis">&#123;% referfrom &#x27;[6]&#x27;,&#x27;Butterfly 安装文档:标签外挂（Tag Plugins）&#x27;,&#x27;https://butterfly.js.org/posts/4aa8abbe/#%E6%A8%99%E7%B1%A4%E5%A4%96%E6%8E%9B%EF%BC%88Tag-Plugins%EF%BC%89&#x27; %&#125;</span></span><br><span class="line"><span class="emphasis">&#123;% referfrom &#x27;[7]&#x27;,&#x27;小弋の生活馆全样式预览&#x27;,&#x27;https://lovelijunyi.gitee.io/posts/c898.html&#x27; %&#125;</span></span><br><span class="line"><span class="emphasis">&#123;% referfrom &#x27;[8]&#x27;,&#x27;l-lin-font-awesome-animation&#x27;,&#x27;https://github.com/l-lin/font-awesome-animation&#x27; %&#125;</span></span><br><span class="line"><span class="emphasis">&#123;% referfrom &#x27;[9]&#x27;,&#x27;小康的butterfly主题使用文档&#x27;,&#x27;https://www.antmoe.com/posts/3b43914f/&#x27; %&#125;</span></span><br></pre></td></tr></table></figure>
+<h2 id="渲染演示">渲染演示</h2>
+<p>Akilarの糖果屋(akilar.top)是一个私人性质的博客<span class="hidden-anchor" id="referto_[1]"></span><sup class="reference"><a href="#referfrom_[1]">[1]</a></sup><span class="reference-bubble"><span class="reference-item"><span class="reference-literature">Akilarの糖果屋群聊简介</span><span class="reference-title">参考资料</span></span></span>，从各类教程至生活点滴，无话不谈。建群的目的是提供一个闲聊的场所。博客采用Hexo框架<span class="hidden-anchor" id="referto_[2]"></span><sup class="reference"><a href="#referfrom_[2]">[2]</a></sup><span class="reference-bubble"><span class="reference-item"><span class="reference-literature">Hexo中文文档</span><span class="reference-title">参考资料</span></span></span>，Butterfly主题<span class="hidden-anchor" id="referto_[3]"></span><sup class="reference"><a href="#referfrom_[3]">[3]</a></sup><span class="reference-bubble"><span class="reference-item"><span class="reference-literature">Butterfly 安装文档(一) 快速开始</span><span class="reference-title">参考资料</span></span></span></p>
+<p>本项目参考了Volantis<span class="hidden-anchor" id="referto_[4]"></span><sup class="reference"><a href="#referfrom_[4]">[4]</a></sup><span class="reference-bubble"><span class="reference-item"><span class="reference-literature">hexo-theme-volantis 标签插件</span><span class="reference-title">参考资料</span></span></span>的标签样式。引入<code>[tag].js</code>，并针对<code>butterfly</code>主题修改了相应的<code>[tag].styl</code>。在此鸣谢<code>Volantis</code>主题众开发者。主要参考内容包括各个volantis的内置标签插件文档<span class="hidden-anchor" id="referto_[5]"></span><sup class="reference"><a href="#referfrom_[5]">[5]</a></sup><span class="reference-bubble"><span class="reference-item"><span class="reference-literature">Volantis文档:内置标签插件</span><span class="reference-title">参考资料</span></span></span>
+Butterfly主题的各个衍生魔改<span class="hidden-anchor" id="referto_[6]"></span><sup class="reference"><a href="#referfrom_[6]">[6]</a></sup><span class="reference-bubble"><span class="reference-item"><span class="reference-literature">Butterfly 安装文档:标签外挂（Tag Plugins</span><span class="reference-title">参考资料</span></span></span><span class="hidden-anchor" id="referto_[7]"></span><sup class="reference"><a href="#referfrom_[7]">[7]</a></sup><span class="reference-bubble"><span class="reference-item"><span class="reference-literature">小弋の生活馆全样式预览</span><span class="reference-title">参考资料</span></span></span><span class="hidden-anchor" id="referto_[8]"></span><sup class="reference"><a href="#referfrom_[8]">[8]</a></sup><span class="reference-bubble"><span class="reference-item"><span class="reference-literature">l-lin-font-awesome-animation</span><span class="reference-title">参考资料</span></span></span><span class="hidden-anchor" id="referto_[9]"></span><sup class="reference"><a href="#referfrom_[9]">[9]</a></sup><span class="reference-bubble"><span class="reference-item"><span class="reference-literature">小康的butterfly主题使用文档</span><span class="reference-title">参考资料</span></span></span></p>
+<div class="reference-source"><span class="hidden-anchor" id="referfrom_[1]"></span><a class="reference-anchor" href="#referto_[1]">[1]<div class="reference-anchor-up fa-solid fa-angles-up"></div></a><a class="reference-link" href="https://jq.qq.com/?_wv=1027&k=pGLB2C0N">Akilarの糖果屋群聊简介</a></div>
+<div class="reference-source"><span class="hidden-anchor" id="referfrom_[2]"></span><a class="reference-anchor" href="#referto_[2]">[2]<div class="reference-anchor-up fa-solid fa-angles-up"></div></a><a class="reference-link" href="https://hexo.io/zh-cn/docs/">Hexo中文文档</a></div>
+<div class="reference-source"><span class="hidden-anchor" id="referfrom_[3]"></span><a class="reference-anchor" href="#referto_[3]">[3]<div class="reference-anchor-up fa-solid fa-angles-up"></div></a><a class="reference-link" href="https://butterfly.js.org/posts/21cfbf15/">Butterfly 安装文档(一) 快速开始</a></div>
+<div class="reference-source"><span class="hidden-anchor" id="referfrom_[4]"></span><a class="reference-anchor" href="#referto_[4]">[4]<div class="reference-anchor-up fa-solid fa-angles-up"></div></a><a class="reference-link" href="https://volantis.js.org/v5/tag-plugins/">hexo-theme-volantis 标签插件</a></div>
+<div class="reference-source"><span class="hidden-anchor" id="referfrom_[5]"></span><a class="reference-anchor" href="#referto_[5]">[5]<div class="reference-anchor-up fa-solid fa-angles-up"></div></a><a class="reference-link" href="https://volantis.js.org/tag-plugins/">Volantis文档:内置标签插件</a></div>
+<div class="reference-source"><span class="hidden-anchor" id="referfrom_[6]"></span><a class="reference-anchor" href="#referto_[6]">[6]<div class="reference-anchor-up fa-solid fa-angles-up"></div></a><a class="reference-link" href="https://butterfly.js.org/posts/4aa8abbe/#%E6%A8%99%E7%B1%A4%E5%A4%96%E6%8E%9B%EF%BC%88Tag-Plugins%EF%BC%89">Butterfly 安装文档:标签外挂（Tag Plugins</a></div>
+<div class="reference-source"><span class="hidden-anchor" id="referfrom_[7]"></span><a class="reference-anchor" href="#referto_[7]">[7]<div class="reference-anchor-up fa-solid fa-angles-up"></div></a><a class="reference-link" href="https://lovelijunyi.gitee.io/posts/c898.html">小弋の生活馆全样式预览</a></div>
+<div class="reference-source"><span class="hidden-anchor" id="referfrom_[8]"></span><a class="reference-anchor" href="#referto_[8]">[8]<div class="reference-anchor-up fa-solid fa-angles-up"></div></a><a class="reference-link" href="https://github.com/l-lin/font-awesome-animation">l-lin-font-awesome-animation</a></div>
+<div class="reference-source"><span class="hidden-anchor" id="referfrom_[9]"></span><a class="reference-anchor" href="#referto_[9]">[9]<div class="reference-anchor-up fa-solid fa-angles-up"></div></a><a class="reference-link" href="https://www.antmoe.com/posts/3b43914f/">小康的butterfly主题使用文档</a></div>
+]]></content>
+      <categories>
+        <category>博客搭建</category>
+      </categories>
+      <tags>
+        <tag>博客搭建</tag>
+        <tag>外挂标签</tag>
+        <tag>引用文献</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>外挂标签之折叠框</title>
     <url>/posts/f3b9da49.html</url>
     <content><![CDATA[<h1 id="外挂标签之折叠框">外挂标签之折叠框</h1>
@@ -1918,53 +1850,6 @@ themes/Butterfly</p>
         <tag>博客搭建</tag>
         <tag>外挂标签</tag>
         <tag>折叠框</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>外挂标签之引用文献</title>
-    <url>/posts/965f46ee.html</url>
-    <content><![CDATA[<h1 id="外挂标签之引用文献">外挂标签之引用文献</h1>
-<h2 id="标签语法">标签语法</h2>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% referto [id] , [literature] %&#125;</span><br><span class="line">&#123;% referfrom [id] , [literature] , [url] %&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="配置参数">配置参数</h2>
-<ol type="1">
-<li>referto 引用上标
-<ul>
-<li><code>id</code>: 上标序号内容，需与 referfrom 标签的 id
-对应才能实现跳转</li>
-<li><code>literature</code>: 引用的参考文献名称</li>
-</ul></li>
-<li>referfrom 引用出处
-<ul>
-<li><code>id</code>: 序号内容，需与 referto 标签的 id 对应才能实现
-跳转</li>
-<li><code>literature</code>: 引用的参考文献名称</li>
-<li><code>url</code>: 引用的参考文献链接，可省略</li>
-</ul></li>
-</ol>
-<h2 id="示例源码">示例源码</h2>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">Akilarの糖果屋(akilar.top)是一个私人性质的博客&#123;% referto &#x27;[1]&#x27;,&#x27;Akilarの糖果屋群聊简介&#x27; %&#125;，从各类教程至生活点滴，无话不谈。建群的目的是提供一个闲聊的场所。博客采用Hexo框架&#123;% referto &#x27;[2]&#x27;,&#x27;Hexo中文文档&#x27; %&#125;，Butterfly主题&#123;% referto &#x27;[3]&#x27;,&#x27;Butterfly 安装文档(一) 快速开始&#x27; %&#125;</span><br><span class="line"></span><br><span class="line">本项目参考了Volantis&#123;% referto &#x27;[4]&#x27;,&#x27;hexo-theme-volantis 标签插件&#x27; %&#125;的标签样式。引入<span class="code">`[tag].js`</span>，并针对<span class="code">`butterfly`</span>主题修改了相应的<span class="code">`[tag].styl`</span>。在此鸣谢<span class="code">`Volantis`</span>主题众开发者。</span><br><span class="line">主要参考内容包括各个volantis的内置标签插件文档&#123;% referto &#x27;[5]&#x27;,&#x27;Volantis文档:内置标签插件&#x27; %&#125;</span><br><span class="line">Butterfly主题的各个衍生魔改&#123;% referto &#x27;[6]&#x27;,&#x27;Butterfly 安装文档:标签外挂（Tag Plugins&#x27; %&#125;&#123;% referto &#x27;[7]&#x27;,&#x27;小弋の生活馆全样式预览&#x27; %&#125;&#123;% referto &#x27;[8]&#x27;,&#x27;l-lin-font-awesome-animation&#x27; %&#125;&#123;% referto &#x27;[9]&#x27;,&#x27;小康的butterfly主题使用文档&#x27; %&#125;</span><br><span class="line"></span><br><span class="line">&#123;% referfrom &#x27;[1]&#x27;,&#x27;Akilarの糖果屋群聊简介&#x27;,&#x27;https://jq.qq.com/?<span class="emphasis">_wv=1027&amp;k=pGLB2C0N&#x27; %&#125;</span></span><br><span class="line"><span class="emphasis">&#123;% referfrom &#x27;[2]&#x27;,&#x27;Hexo中文文档&#x27;,&#x27;https://hexo.io/zh-cn/docs/&#x27; %&#125;</span></span><br><span class="line"><span class="emphasis">&#123;% referfrom &#x27;[3]&#x27;,&#x27;Butterfly 安装文档(一) 快速开始&#x27;,&#x27;https://butterfly.js.org/posts/21cfbf15/&#x27; %&#125;</span></span><br><span class="line"><span class="emphasis">&#123;% referfrom &#x27;[4]&#x27;,&#x27;hexo-theme-volantis 标签插件&#x27;,&#x27;https://volantis.js.org/v5/tag-plugins/&#x27; %&#125;</span></span><br><span class="line"><span class="emphasis">&#123;% referfrom &#x27;[5]&#x27;,&#x27;Volantis文档:内置标签插件&#x27;,&#x27;https://volantis.js.org/tag-plugins/&#x27; %&#125;</span></span><br><span class="line"><span class="emphasis">&#123;% referfrom &#x27;[6]&#x27;,&#x27;Butterfly 安装文档:标签外挂（Tag Plugins）&#x27;,&#x27;https://butterfly.js.org/posts/4aa8abbe/#%E6%A8%99%E7%B1%A4%E5%A4%96%E6%8E%9B%EF%BC%88Tag-Plugins%EF%BC%89&#x27; %&#125;</span></span><br><span class="line"><span class="emphasis">&#123;% referfrom &#x27;[7]&#x27;,&#x27;小弋の生活馆全样式预览&#x27;,&#x27;https://lovelijunyi.gitee.io/posts/c898.html&#x27; %&#125;</span></span><br><span class="line"><span class="emphasis">&#123;% referfrom &#x27;[8]&#x27;,&#x27;l-lin-font-awesome-animation&#x27;,&#x27;https://github.com/l-lin/font-awesome-animation&#x27; %&#125;</span></span><br><span class="line"><span class="emphasis">&#123;% referfrom &#x27;[9]&#x27;,&#x27;小康的butterfly主题使用文档&#x27;,&#x27;https://www.antmoe.com/posts/3b43914f/&#x27; %&#125;</span></span><br></pre></td></tr></table></figure>
-<h2 id="渲染演示">渲染演示</h2>
-<p>Akilarの糖果屋(akilar.top)是一个私人性质的博客<span class="hidden-anchor" id="referto_[1]"></span><sup class="reference"><a href="#referfrom_[1]">[1]</a></sup><span class="reference-bubble"><span class="reference-item"><span class="reference-literature">Akilarの糖果屋群聊简介</span><span class="reference-title">参考资料</span></span></span>，从各类教程至生活点滴，无话不谈。建群的目的是提供一个闲聊的场所。博客采用Hexo框架<span class="hidden-anchor" id="referto_[2]"></span><sup class="reference"><a href="#referfrom_[2]">[2]</a></sup><span class="reference-bubble"><span class="reference-item"><span class="reference-literature">Hexo中文文档</span><span class="reference-title">参考资料</span></span></span>，Butterfly主题<span class="hidden-anchor" id="referto_[3]"></span><sup class="reference"><a href="#referfrom_[3]">[3]</a></sup><span class="reference-bubble"><span class="reference-item"><span class="reference-literature">Butterfly 安装文档(一) 快速开始</span><span class="reference-title">参考资料</span></span></span></p>
-<p>本项目参考了Volantis<span class="hidden-anchor" id="referto_[4]"></span><sup class="reference"><a href="#referfrom_[4]">[4]</a></sup><span class="reference-bubble"><span class="reference-item"><span class="reference-literature">hexo-theme-volantis 标签插件</span><span class="reference-title">参考资料</span></span></span>的标签样式。引入<code>[tag].js</code>，并针对<code>butterfly</code>主题修改了相应的<code>[tag].styl</code>。在此鸣谢<code>Volantis</code>主题众开发者。主要参考内容包括各个volantis的内置标签插件文档<span class="hidden-anchor" id="referto_[5]"></span><sup class="reference"><a href="#referfrom_[5]">[5]</a></sup><span class="reference-bubble"><span class="reference-item"><span class="reference-literature">Volantis文档:内置标签插件</span><span class="reference-title">参考资料</span></span></span>
-Butterfly主题的各个衍生魔改<span class="hidden-anchor" id="referto_[6]"></span><sup class="reference"><a href="#referfrom_[6]">[6]</a></sup><span class="reference-bubble"><span class="reference-item"><span class="reference-literature">Butterfly 安装文档:标签外挂（Tag Plugins</span><span class="reference-title">参考资料</span></span></span><span class="hidden-anchor" id="referto_[7]"></span><sup class="reference"><a href="#referfrom_[7]">[7]</a></sup><span class="reference-bubble"><span class="reference-item"><span class="reference-literature">小弋の生活馆全样式预览</span><span class="reference-title">参考资料</span></span></span><span class="hidden-anchor" id="referto_[8]"></span><sup class="reference"><a href="#referfrom_[8]">[8]</a></sup><span class="reference-bubble"><span class="reference-item"><span class="reference-literature">l-lin-font-awesome-animation</span><span class="reference-title">参考资料</span></span></span><span class="hidden-anchor" id="referto_[9]"></span><sup class="reference"><a href="#referfrom_[9]">[9]</a></sup><span class="reference-bubble"><span class="reference-item"><span class="reference-literature">小康的butterfly主题使用文档</span><span class="reference-title">参考资料</span></span></span></p>
-<div class="reference-source"><span class="hidden-anchor" id="referfrom_[1]"></span><a class="reference-anchor" href="#referto_[1]">[1]<div class="reference-anchor-up fa-solid fa-angles-up"></div></a><a class="reference-link" href="https://jq.qq.com/?_wv=1027&k=pGLB2C0N">Akilarの糖果屋群聊简介</a></div>
-<div class="reference-source"><span class="hidden-anchor" id="referfrom_[2]"></span><a class="reference-anchor" href="#referto_[2]">[2]<div class="reference-anchor-up fa-solid fa-angles-up"></div></a><a class="reference-link" href="https://hexo.io/zh-cn/docs/">Hexo中文文档</a></div>
-<div class="reference-source"><span class="hidden-anchor" id="referfrom_[3]"></span><a class="reference-anchor" href="#referto_[3]">[3]<div class="reference-anchor-up fa-solid fa-angles-up"></div></a><a class="reference-link" href="https://butterfly.js.org/posts/21cfbf15/">Butterfly 安装文档(一) 快速开始</a></div>
-<div class="reference-source"><span class="hidden-anchor" id="referfrom_[4]"></span><a class="reference-anchor" href="#referto_[4]">[4]<div class="reference-anchor-up fa-solid fa-angles-up"></div></a><a class="reference-link" href="https://volantis.js.org/v5/tag-plugins/">hexo-theme-volantis 标签插件</a></div>
-<div class="reference-source"><span class="hidden-anchor" id="referfrom_[5]"></span><a class="reference-anchor" href="#referto_[5]">[5]<div class="reference-anchor-up fa-solid fa-angles-up"></div></a><a class="reference-link" href="https://volantis.js.org/tag-plugins/">Volantis文档:内置标签插件</a></div>
-<div class="reference-source"><span class="hidden-anchor" id="referfrom_[6]"></span><a class="reference-anchor" href="#referto_[6]">[6]<div class="reference-anchor-up fa-solid fa-angles-up"></div></a><a class="reference-link" href="https://butterfly.js.org/posts/4aa8abbe/#%E6%A8%99%E7%B1%A4%E5%A4%96%E6%8E%9B%EF%BC%88Tag-Plugins%EF%BC%89">Butterfly 安装文档:标签外挂（Tag Plugins</a></div>
-<div class="reference-source"><span class="hidden-anchor" id="referfrom_[7]"></span><a class="reference-anchor" href="#referto_[7]">[7]<div class="reference-anchor-up fa-solid fa-angles-up"></div></a><a class="reference-link" href="https://lovelijunyi.gitee.io/posts/c898.html">小弋の生活馆全样式预览</a></div>
-<div class="reference-source"><span class="hidden-anchor" id="referfrom_[8]"></span><a class="reference-anchor" href="#referto_[8]">[8]<div class="reference-anchor-up fa-solid fa-angles-up"></div></a><a class="reference-link" href="https://github.com/l-lin/font-awesome-animation">l-lin-font-awesome-animation</a></div>
-<div class="reference-source"><span class="hidden-anchor" id="referfrom_[9]"></span><a class="reference-anchor" href="#referto_[9]">[9]<div class="reference-anchor-up fa-solid fa-angles-up"></div></a><a class="reference-link" href="https://www.antmoe.com/posts/3b43914f/">小康的butterfly主题使用文档</a></div>
-]]></content>
-      <categories>
-        <category>博客搭建</category>
-      </categories>
-      <tags>
-        <tag>博客搭建</tag>
-        <tag>外挂标签</tag>
-        <tag>引用文献</tag>
       </tags>
   </entry>
   <entry>
@@ -2072,33 +1957,6 @@ style="text-align: center;">填充布局，自动铺满至少一行，多了会�
       </tags>
   </entry>
   <entry>
-    <title>外挂标签之气泡注释</title>
-    <url>/posts/44dec147.html</url>
-    <content><![CDATA[<h1 id="外挂标签之气泡注释">外挂标签之气泡注释</h1>
-<h2 id="标签语法">标签语法</h2>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% bubble [content] , [notation] ,[background-color] %&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="配置参数">配置参数</h2>
-<ol type="1">
-<li><code>content</code>: 注释词汇</li>
-<li><code>notation</code>: 悬停显示的注解内容</li>
-<li><code>background-color</code>: 可选，气泡背景色。默认为
-“#71a4e3”</li>
-</ol>
-<h2 id="示例源码">示例源码</h2>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">最近我学到了不少新玩意儿（虽然对很多大佬来说这些已经是旧技术了），比如CSS的&#123;% bubble 兄弟相邻选择器,&quot;例如 h1 + p &#123;margin-top:50px;&#125;&quot; %&#125;，&#123;% bubble flex布局,&quot;Flex 是 Flexible Box 的缩写，意为&quot;弹性布局&quot;，用来为盒状模型提供最大的灵活性&quot;,&quot;#ec5830&quot; %&#125;，&#123;% bubble transform变换,&quot;transform 属性向元素应用 2D 或 3D 转换。该属性允许我们对元素进行旋转、缩放、移动或倾斜。&quot;,&quot;#1db675&quot; %&#125;，animation的&#123;% bubble 贝塞尔速度曲线,&quot;贝塞尔曲线(Bézier curve)，又称贝兹曲线或贝济埃曲线，是应用于二维图形应用程序的数学曲线。一般的矢量图形软件通过它来精确画出曲线，贝兹曲线由线段与节点组成，节点是可拖动的支点，线段像可伸缩的皮筋&quot;,&quot;#de4489&quot; %&#125;写法，还有今天刚看到的&#123;% bubble clip-path,&quot;clip-path属性使用裁剪方式创建元素的可显示区域。区域内的部分显示，区域外的隐藏。&quot;,&quot;#868fd7&quot; %&#125;属性。这些对我来说很新颖的概念狠狠的冲击着我以前积累起来的设计思路。</span><br></pre></td></tr></table></figure>
-<h2 id="渲染演示">渲染演示</h2>
-<p>最近我学到了不少新玩意儿（虽然对很多大佬来说这些已经是旧技术了），比如CSS的<span class="bubble-content">兄弟相邻选择器</span><span class="bubble-notation"><span class="bubble-item" style="background-color:#71a4e3;">例如 h1 + p {margin-top:50px;}</span></span>，<span class="bubble-content">flex布局</span><span class="bubble-notation"><span class="bubble-item" style="background-color:#ec5830;">Flex 是 Flexible Box 的缩写，意为弹性布局"，用来为盒状模型提供最大的灵活性"</span></span>，<span class="bubble-content">transform变换</span><span class="bubble-notation"><span class="bubble-item" style="background-color:#1db675;">transform 属性向元素应用 2D 或 3D 转换。该属性允许我们对元素进行旋转、缩放、移动或倾斜。</span></span>，animation的<span class="bubble-content">贝塞尔速度曲线</span><span class="bubble-notation"><span class="bubble-item" style="background-color:#de4489;">贝塞尔曲线(Bézier curve)，又称贝兹曲线或贝济埃曲线，是应用于二维图形应用程序的数学曲线。一般的矢量图形软件通过它来精确画出曲线，贝兹曲线由线段与节点组成，节点是可拖动的支点，线段像可伸缩的皮筋</span></span>写法，还有今天刚看到的<span class="bubble-content">clip-path</span><span class="bubble-notation"><span class="bubble-item" style="background-color:#868fd7;">clip-path属性使用裁剪方式创建元素的可显示区域。区域内的部分显示，区域外的隐藏。</span></span>属性。这些对我来说很新颖的概念狠狠的冲击着我以前积累起来的设计思路。</p>
-]]></content>
-      <categories>
-        <category>博客搭建</category>
-      </categories>
-      <tags>
-        <tag>博客搭建</tag>
-        <tag>外挂标签</tag>
-        <tag>气泡注释</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>外挂标签之旋转相册</title>
     <url>/posts/75b3d8a.html</url>
     <content><![CDATA[<h1 id="外挂标签之旋转相册">外挂标签之旋转相册</h1>
@@ -2168,6 +2026,33 @@ src="https://npm.elemecdn.com/akilar-candyassets/image/20200907110731118.png" />
         <tag>博客搭建</tag>
         <tag>外挂标签</tag>
         <tag>注释</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>外挂标签之气泡注释</title>
+    <url>/posts/44dec147.html</url>
+    <content><![CDATA[<h1 id="外挂标签之气泡注释">外挂标签之气泡注释</h1>
+<h2 id="标签语法">标签语法</h2>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% bubble [content] , [notation] ,[background-color] %&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="配置参数">配置参数</h2>
+<ol type="1">
+<li><code>content</code>: 注释词汇</li>
+<li><code>notation</code>: 悬停显示的注解内容</li>
+<li><code>background-color</code>: 可选，气泡背景色。默认为
+“#71a4e3”</li>
+</ol>
+<h2 id="示例源码">示例源码</h2>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">最近我学到了不少新玩意儿（虽然对很多大佬来说这些已经是旧技术了），比如CSS的&#123;% bubble 兄弟相邻选择器,&quot;例如 h1 + p &#123;margin-top:50px;&#125;&quot; %&#125;，&#123;% bubble flex布局,&quot;Flex 是 Flexible Box 的缩写，意为&quot;弹性布局&quot;，用来为盒状模型提供最大的灵活性&quot;,&quot;#ec5830&quot; %&#125;，&#123;% bubble transform变换,&quot;transform 属性向元素应用 2D 或 3D 转换。该属性允许我们对元素进行旋转、缩放、移动或倾斜。&quot;,&quot;#1db675&quot; %&#125;，animation的&#123;% bubble 贝塞尔速度曲线,&quot;贝塞尔曲线(Bézier curve)，又称贝兹曲线或贝济埃曲线，是应用于二维图形应用程序的数学曲线。一般的矢量图形软件通过它来精确画出曲线，贝兹曲线由线段与节点组成，节点是可拖动的支点，线段像可伸缩的皮筋&quot;,&quot;#de4489&quot; %&#125;写法，还有今天刚看到的&#123;% bubble clip-path,&quot;clip-path属性使用裁剪方式创建元素的可显示区域。区域内的部分显示，区域外的隐藏。&quot;,&quot;#868fd7&quot; %&#125;属性。这些对我来说很新颖的概念狠狠的冲击着我以前积累起来的设计思路。</span><br></pre></td></tr></table></figure>
+<h2 id="渲染演示">渲染演示</h2>
+<p>最近我学到了不少新玩意儿（虽然对很多大佬来说这些已经是旧技术了），比如CSS的<span class="bubble-content">兄弟相邻选择器</span><span class="bubble-notation"><span class="bubble-item" style="background-color:#71a4e3;">例如 h1 + p {margin-top:50px;}</span></span>，<span class="bubble-content">flex布局</span><span class="bubble-notation"><span class="bubble-item" style="background-color:#ec5830;">Flex 是 Flexible Box 的缩写，意为弹性布局"，用来为盒状模型提供最大的灵活性"</span></span>，<span class="bubble-content">transform变换</span><span class="bubble-notation"><span class="bubble-item" style="background-color:#1db675;">transform 属性向元素应用 2D 或 3D 转换。该属性允许我们对元素进行旋转、缩放、移动或倾斜。</span></span>，animation的<span class="bubble-content">贝塞尔速度曲线</span><span class="bubble-notation"><span class="bubble-item" style="background-color:#de4489;">贝塞尔曲线(Bézier curve)，又称贝兹曲线或贝济埃曲线，是应用于二维图形应用程序的数学曲线。一般的矢量图形软件通过它来精确画出曲线，贝兹曲线由线段与节点组成，节点是可拖动的支点，线段像可伸缩的皮筋</span></span>写法，还有今天刚看到的<span class="bubble-content">clip-path</span><span class="bubble-notation"><span class="bubble-item" style="background-color:#868fd7;">clip-path属性使用裁剪方式创建元素的可显示区域。区域内的部分显示，区域外的隐藏。</span></span>属性。这些对我来说很新颖的概念狠狠的冲击着我以前积累起来的设计思路。</p>
+]]></content>
+      <categories>
+        <category>博客搭建</category>
+      </categories>
+      <tags>
+        <tag>博客搭建</tag>
+        <tag>外挂标签</tag>
+        <tag>气泡注释</tag>
       </tags>
   </entry>
   <entry>
@@ -2242,6 +2127,82 @@ href="https://animate.style/">animate.css 参考文档</a></li>
       </tags>
   </entry>
   <entry>
+    <title>外挂标签之视频</title>
+    <url>/posts/470b286f.html</url>
+    <content><![CDATA[<h1 id="外挂标签之视频">外挂标签之视频</h1>
+<h2 id="标签语法">标签语法</h2>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% video 视频链接 %&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="配置参数">配置参数</h2>
+<ol type="1">
+<li>对齐方向：left, center, right</li>
+<li>列数：逗号后面直接写列数，支持 1 ～ 4 列</li>
+</ol>
+<h2 id="示例源码">示例源码</h2>
+<ol type="1">
+<li><p>100%宽度 <figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% video https://github.com/volantis-x/volantis-docs/releases/download/assets/IMG<span class="emphasis">_0341.mov %&#125;</span></span><br></pre></td></tr></table></figure></p></li>
+<li><p>50%宽度 <figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% videos, 2 %&#125;</span><br><span class="line">&#123;% video https://github.com/volantis-x/volantis-docs/releases/download/assets/IMG<span class="emphasis">_0341.mov %&#125;</span></span><br><span class="line"><span class="emphasis">&#123;% video https://github.com/volantis-x/volantis-docs/releases/download/assets/IMG_</span>0341.mov %&#125;</span><br><span class="line">&#123;% video https://github.com/volantis-x/volantis-docs/releases/download/assets/IMG<span class="emphasis">_0341.mov %&#125;</span></span><br><span class="line"><span class="emphasis">&#123;% video https://github.com/volantis-x/volantis-docs/releases/download/assets/IMG_</span>0341.mov %&#125;</span><br><span class="line">&#123;% endvideos %&#125;</span><br></pre></td></tr></table></figure></p></li>
+<li><p>25%宽度 <figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% videos, 4 %&#125;</span><br><span class="line">&#123;% video https://github.com/volantis-x/volantis-docs/releases/download/assets/IMG<span class="emphasis">_0341.mov %&#125;</span></span><br><span class="line"><span class="emphasis">&#123;% video https://github.com/volantis-x/volantis-docs/releases/download/assets/IMG_</span>0341.mov %&#125;</span><br><span class="line">&#123;% video https://github.com/volantis-x/volantis-docs/releases/download/assets/IMG<span class="emphasis">_0341.mov %&#125;</span></span><br><span class="line"><span class="emphasis">&#123;% video https://github.com/volantis-x/volantis-docs/releases/download/assets/IMG_</span>0341.mov %&#125;</span><br><span class="line">&#123;% video https://github.com/volantis-x/volantis-docs/releases/download/assets/IMG<span class="emphasis">_0341.mov %&#125;</span></span><br><span class="line"><span class="emphasis">&#123;% video https://github.com/volantis-x/volantis-docs/releases/download/assets/IMG_</span>0341.mov %&#125;</span><br><span class="line">&#123;% video https://github.com/volantis-x/volantis-docs/releases/download/assets/IMG<span class="emphasis">_0341.mov %&#125;</span></span><br><span class="line"><span class="emphasis">&#123;% video https://github.com/volantis-x/volantis-docs/releases/download/assets/IMG_</span>0341.mov %&#125;</span><br><span class="line">&#123;% endvideos %&#125;</span><br></pre></td></tr></table></figure></p></li>
+</ol>
+<h2 id="渲染演示">渲染演示</h2>
+<ol type="1">
+<li><p>100%宽度 <div class="video"><video controls preload><source src='https://github.com/volantis-x/volantis-docs/releases/download/assets/IMG_0341.mov' type='video/mp4'>Your browser does not support the video tag.</video></div>
+
+2. 50%宽度
+   <div class="videos" col='2'><div class="video"><video controls preload><source src='https://github.com/volantis-x/volantis-docs/releases/download/assets/IMG_0341.mov' type='video/mp4'>Your browser does not support the video tag.</video></div>
+<div class="video"><video controls preload><source src='https://github.com/volantis-x/volantis-docs/releases/download/assets/IMG_0341.mov' type='video/mp4'>Your browser does not support the video tag.</video></div>
+<div class="video"><video controls preload><source src='https://github.com/volantis-x/volantis-docs/releases/download/assets/IMG_0341.mov' type='video/mp4'>Your browser does not support the video tag.</video></div>
+<div class="video"><video controls preload><source src='https://github.com/volantis-x/volantis-docs/releases/download/assets/IMG_0341.mov' type='video/mp4'>Your browser does not support the video tag.</video></div></div></p></li>
+<li><p>25%宽度 <div class="videos" col='4'><div class="video"><video controls preload><source src='https://github.com/volantis-x/volantis-docs/releases/download/assets/IMG_0341.mov' type='video/mp4'>Your browser does not support the video tag.</video></div>
+  <div class="video"><video controls preload><source src='https://github.com/volantis-x/volantis-docs/releases/download/assets/IMG_0341.mov' type='video/mp4'>Your browser does not support the video tag.</video></div>
+  <div class="video"><video controls preload><source src='https://github.com/volantis-x/volantis-docs/releases/download/assets/IMG_0341.mov' type='video/mp4'>Your browser does not support the video tag.</video></div>
+  <div class="video"><video controls preload><source src='https://github.com/volantis-x/volantis-docs/releases/download/assets/IMG_0341.mov' type='video/mp4'>Your browser does not support the video tag.</video></div>
+  <div class="video"><video controls preload><source src='https://github.com/volantis-x/volantis-docs/releases/download/assets/IMG_0341.mov' type='video/mp4'>Your browser does not support the video tag.</video></div>
+  <div class="video"><video controls preload><source src='https://github.com/volantis-x/volantis-docs/releases/download/assets/IMG_0341.mov' type='video/mp4'>Your browser does not support the video tag.</video></div>
+  <div class="video"><video controls preload><source src='https://github.com/volantis-x/volantis-docs/releases/download/assets/IMG_0341.mov' type='video/mp4'>Your browser does not support the video tag.</video></div>
+  <div class="video"><video controls preload><source src='https://github.com/volantis-x/volantis-docs/releases/download/assets/IMG_0341.mov' type='video/mp4'>Your browser does not support the video tag.</video></div>
+  </div></p></li>
+</ol>
+]]></content>
+      <categories>
+        <category>博客搭建</category>
+      </categories>
+      <tags>
+        <tag>博客搭建</tag>
+        <tag>外挂标签</tag>
+        <tag>视频</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>外挂标签之诗词标签</title>
+    <url>/posts/1ec3eb97.html</url>
+    <content><![CDATA[<h1 id="外挂标签之诗词标签">外挂标签之诗词标签</h1>
+<h2 id="标签语法">标签语法</h2>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% poem [title],[author] %&#125;</span><br><span class="line">诗词内容</span><br><span class="line">&#123;% endpoem %&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="配置参数">配置参数</h2>
+<ol type="1">
+<li>title：诗词标题</li>
+<li>author：作者，可以不写</li>
+</ol>
+<h2 id="示例源码">示例源码</h2>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% poem 钗头凤·世情薄,唐婉 %&#125;</span><br><span class="line">世情薄，人情恶，雨送黄昏花易落。晓风干，泪痕残。欲笺心事，独语斜阑。难，难，难！</span><br><span class="line">人成各，今非昨，病魂常似秋千索。角声寒，夜阑珊。怕人寻问，咽泪装欢。瞒，瞒，瞒！</span><br><span class="line">&#123;% endpoem %&#125;</span><br><span class="line">&#123;% poem 钗头凤·红酥手,陆游 %&#125;</span><br><span class="line">红酥手。黄縢酒。满城春色宫墙柳。东风恶。欢情薄。一怀愁绪，几年离索。错错错。</span><br><span class="line">春如旧。人空瘦。泪痕红浥鲛绡透。桃花落。闲池阁。山盟虽在，锦书难托。莫莫莫。</span><br><span class="line">&#123;% endpoem %&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="渲染演示">渲染演示</h2>
+<div class='poem'><div class='poem-title'>钗头凤·世情薄</div><div class='poem-author'>唐婉</div><p>世情薄，人情恶，雨送黄昏花易落。晓风干，泪痕残。欲笺心事，独语斜阑。难，难，难！
+人成各，今非昨，病魂常似秋千索。角声寒，夜阑珊。怕人寻问，咽泪装欢。瞒，瞒，瞒！</p>
+</div>
+<div class='poem'><div class='poem-title'>钗头凤·红酥手</div><div class='poem-author'>陆游</div><p>红酥手，黄縢酒。满城春色宫墙柳。东风恶。欢情薄。一怀愁绪，几年离索。错，错，错！
+春如旧，人空瘦。泪痕红浥鲛绡透。桃花落。闲池阁。山盟虽在，锦书难托。莫，莫，莫！</p>
+</div>
+]]></content>
+      <categories>
+        <category>博客搭建</category>
+      </categories>
+      <tags>
+        <tag>博客搭建</tag>
+        <tag>外挂标签</tag>
+        <tag>诗词标签</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>外挂标签之进度条</title>
     <url>/posts/5dede2e1.html</url>
     <content><![CDATA[<h1 id="外挂标签之进度条">外挂标签之进度条</h1>
@@ -2276,6 +2237,56 @@ red,yellow,green,cyan,blue,gray</li>
         <tag>博客搭建</tag>
         <tag>外挂标签</tag>
         <tag>进度条</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>外挂标签之音频</title>
+    <url>/posts/daf3001e.html</url>
+    <content><![CDATA[<h1 id="外挂标签之音频">外挂标签之音频</h1>
+<h2 id="标签语法">标签语法</h2>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% audio 音频链接 %&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="示例源码">示例源码</h2>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% audio https://github.com/volantis-x/volantis-docs/releases/download/assets/Lumia1020.mp3 %&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="渲染演示">渲染演示</h2>
+<div class="audio"><audio controls preload><source src='https://github.com/volantis-x/volantis-docs/releases/download/assets/Lumia1020.mp3' type='audio/mp3'>Your browser does not support the audio tag.</audio></div>
+]]></content>
+      <categories>
+        <category>博客搭建</category>
+      </categories>
+      <tags>
+        <tag>博客搭建</tag>
+        <tag>外挂标签</tag>
+        <tag>音频</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>外挂标签之隐藏块</title>
+    <url>/posts/6c0efd75.html</url>
+    <content><![CDATA[<h1 id="外挂标签之隐藏块">外挂标签之隐藏块</h1>
+<h2 id="标签语法">标签语法</h2>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% hideBlock display,bg,color %&#125;</span><br><span class="line">content</span><br><span class="line">&#123;% endhideBlock %&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="配置参数">配置参数</h2>
+<ol type="1">
+<li><code>content</code>：要隐藏的内容</li>
+<li><code>display</code>：展示前按钮显示的文字（可选）</li>
+<li><code>bg</code>：按钮的背景颜色（可选）</li>
+<li><code>color</code>：按钮显示的文字的颜色（可选）</li>
+</ol>
+<h2 id="示例源码">示例源码</h2>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% hideBlock 点我预览, blue %&#125;</span><br><span class="line">这里有张图片：</span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;https://blogresource.sqwdream.cloud/post/博客问题集锦/img/cover/黑洞.png&quot;</span> <span class="attr">alt</span>=<span class="string">&quot;image (1)&quot;</span> <span class="attr">style</span>=<span class="string">&quot;zoom:100%;&quot;</span> /&gt;</span></span></span><br><span class="line"></span><br><span class="line">&#123;% endhideBlock %&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="渲染演示">渲染演示</h2>
+<div class="hide-block"><button type="button" class="hide-button" style="background-color:  blue;">点我预览
+    </button><div class="hide-content"><p>这里有张图片：
+<img src="https://blogresource.sqwdream.cloud/post/博客问题集锦/img/cover/黑洞.png" /></p>
+</div></div>
+]]></content>
+      <categories>
+        <category>博客搭建</category>
+      </categories>
+      <tags>
+        <tag>博客搭建</tag>
+        <tag>外挂标签</tag>
+        <tag>隐藏块</tag>
       </tags>
   </entry>
   <entry>
@@ -2314,36 +2325,6 @@ href="https://akilar.top/posts/d2ebecef/">Hexo引入阿里矢量图标库</a></p
         <tag>博客搭建</tag>
         <tag>外挂标签</tag>
         <tag>阿里图标</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>外挂标签之隐藏块</title>
-    <url>/posts/6c0efd75.html</url>
-    <content><![CDATA[<h1 id="外挂标签之隐藏块">外挂标签之隐藏块</h1>
-<h2 id="标签语法">标签语法</h2>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% hideBlock display,bg,color %&#125;</span><br><span class="line">content</span><br><span class="line">&#123;% endhideBlock %&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="配置参数">配置参数</h2>
-<ol type="1">
-<li><code>content</code>：要隐藏的内容</li>
-<li><code>display</code>：展示前按钮显示的文字（可选）</li>
-<li><code>bg</code>：按钮的背景颜色（可选）</li>
-<li><code>color</code>：按钮显示的文字的颜色（可选）</li>
-</ol>
-<h2 id="示例源码">示例源码</h2>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% hideBlock 点我预览, blue %&#125;</span><br><span class="line">这里有张图片：</span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;https://blogresource.sqwdream.cloud/post/博客问题集锦/img/cover/黑洞.png&quot;</span> <span class="attr">alt</span>=<span class="string">&quot;image (1)&quot;</span> <span class="attr">style</span>=<span class="string">&quot;zoom:100%;&quot;</span> /&gt;</span></span></span><br><span class="line"></span><br><span class="line">&#123;% endhideBlock %&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="渲染演示">渲染演示</h2>
-<div class="hide-block"><button type="button" class="hide-button" style="background-color:  blue;">点我预览
-    </button><div class="hide-content"><p>这里有张图片：
-<img src="https://blogresource.sqwdream.cloud/post/博客问题集锦/img/cover/黑洞.png" /></p>
-</div></div>
-]]></content>
-      <categories>
-        <category>博客搭建</category>
-      </categories>
-      <tags>
-        <tag>博客搭建</tag>
-        <tag>外挂标签</tag>
-        <tag>隐藏块</tag>
       </tags>
   </entry>
 </search>
