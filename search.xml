@@ -236,8 +236,8 @@ S=\frac{8\pi^2{k_\mathrm{B}}^2T}{3eh^2}m_{\mathrm{d}}^{*}\left(\frac{\pi}{3p}\ri
         <category>博客搭建</category>
       </categories>
       <tags>
-        <tag>Markdown</tag>
         <tag>博客搭建</tag>
+        <tag>Markdown</tag>
       </tags>
   </entry>
   <entry>
@@ -254,39 +254,6 @@ S=\frac{8\pi^2{k_\mathrm{B}}^2T}{3eh^2}m_{\mathrm{d}}^{*}\left(\frac{\pi}{3p}\ri
       </categories>
       <tags>
         <tag>诗与远方</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>博客搭建之文章链接</title>
-    <url>/posts/cc96dfee.html</url>
-    <content><![CDATA[<h1 id="博客搭建之文章链接">博客搭建之文章链接</h1>
-<div class="note info modern"><p>鉴于每个人的博客根目录名称都不太一样，本贴<strong>博客根目录</strong>一律以<code>[BlogRoot]</code>指代。
-站点配置文件<code>_config.yml</code>，路径为<code>[BlogRoot]\_config.yml</code>。
-主题配置文件<code>_config.yml</code>，路径为<code>[BlogRoot]\themes\butterfly\_config.yml</code>。</p>
-</div>
-<h2
-id="缩短文末copyright中文章链接的长度">缩短文末Copyright中文章链接的长度</h2>
-<h3
-id="在博客根目录下blogroot安装插件">1.在博客根目录下<code>[BlogRoot]</code>安装插件：</h3>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm install hexo-abbrlink --save</span><br></pre></td></tr></table></figure>
-<h3
-id="修改站点配置文件blogroot_config.yml添加以下内容">2.修改站点配置文件<code>[BlogRoot]\_config.yml</code>，添加以下内容：</h3>
-<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># permalink: :year/:month/:day/:title/</span></span><br><span class="line"><span class="comment"># permalink: p/:abbrlink.html  # p 是自定义的前缀</span></span><br><span class="line"><span class="attr">permalink:</span> <span class="string">/:abbrlink.html</span>  <span class="comment"># p 是自定义的前缀</span></span><br><span class="line"><span class="attr">abbrlink:</span></span><br><span class="line">    <span class="attr">alg:</span> <span class="string">crc32</span>   <span class="comment">#算法： crc16(default) and crc32</span></span><br><span class="line">    <span class="attr">rep:</span> <span class="string">hex</span>     <span class="comment">#进制： dec(default) and hex</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li><strong>不同算法和进制生成不同的格式</strong></li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">crc16 &amp; hex</span><br><span class="line">https://post.zz173.com/posts/66c8.html</span><br><span class="line">crc16 &amp; dec</span><br><span class="line">https://post.zz173.com/posts/65535.html</span><br><span class="line"></span><br><span class="line">crc32 &amp; hex</span><br><span class="line">https://post.zz173.com/posts/8ddf18fb.html</span><br><span class="line">crc32 &amp; dec</span><br><span class="line">https://post.zz173.com/posts/1690090958.html</span><br></pre></td></tr></table></figure>
-<ul>
-<li><strong><code>hexo g</code>生成网页时，会在每篇文章的<code>front matter</code>中加入一项<code>abbrlink</code>，它是根据文章题目生成的，生成之后不可更改，可以删除重新生成</strong></li>
-</ul>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">abbrlink: cc96dfee</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>博客搭建</category>
-      </categories>
-      <tags>
-        <tag>博客搭建</tag>
-        <tag>文章链接</tag>
       </tags>
   </entry>
   <entry>
@@ -2326,6 +2293,39 @@ href="https://www.cnblogs.com/Ai-heng/p/7282110.html">hexo博客MathJax公式渲
       <tags>
         <tag>MathJax</tag>
         <tag>公式渲染</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>博客搭建之文章链接</title>
+    <url>/posts/cc96dfee.html</url>
+    <content><![CDATA[<h1 id="博客搭建之文章链接">博客搭建之文章链接</h1>
+<div class="note info modern"><p>鉴于每个人的博客根目录名称都不太一样，本贴<strong>博客根目录</strong>一律以<code>[BlogRoot]</code>指代。
+站点配置文件<code>_config.yml</code>，路径为<code>[BlogRoot]\_config.yml</code>。
+主题配置文件<code>_config.yml</code>，路径为<code>[BlogRoot]\themes\butterfly\_config.yml</code>。</p>
+</div>
+<h2
+id="缩短文末copyright中文章链接的长度">缩短文末Copyright中文章链接的长度</h2>
+<h3
+id="在博客根目录下blogroot安装插件">1.在博客根目录下<code>[BlogRoot]</code>安装插件：</h3>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm install hexo-abbrlink --save</span><br></pre></td></tr></table></figure>
+<h3
+id="修改站点配置文件blogroot_config.yml添加以下内容">2.修改站点配置文件<code>[BlogRoot]\_config.yml</code>，添加以下内容：</h3>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># permalink: :year/:month/:day/:title/</span></span><br><span class="line"><span class="comment"># permalink: p/:abbrlink.html  # p 是自定义的前缀</span></span><br><span class="line"><span class="attr">permalink:</span> <span class="string">/:abbrlink.html</span>  <span class="comment"># p 是自定义的前缀</span></span><br><span class="line"><span class="attr">abbrlink:</span></span><br><span class="line">    <span class="attr">alg:</span> <span class="string">crc32</span>   <span class="comment">#算法： crc16(default) and crc32</span></span><br><span class="line">    <span class="attr">rep:</span> <span class="string">hex</span>     <span class="comment">#进制： dec(default) and hex</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>不同算法和进制生成不同的格式</strong></li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">crc16 &amp; hex</span><br><span class="line">https://post.zz173.com/posts/66c8.html</span><br><span class="line">crc16 &amp; dec</span><br><span class="line">https://post.zz173.com/posts/65535.html</span><br><span class="line"></span><br><span class="line">crc32 &amp; hex</span><br><span class="line">https://post.zz173.com/posts/8ddf18fb.html</span><br><span class="line">crc32 &amp; dec</span><br><span class="line">https://post.zz173.com/posts/1690090958.html</span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong><code>hexo g</code>生成网页时，会在每篇文章的<code>front matter</code>中加入一项<code>abbrlink</code>，它是根据文章题目生成的，生成之后不可更改，可以删除重新生成</strong></li>
+</ul>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">abbrlink: cc96dfee</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>博客搭建</category>
+      </categories>
+      <tags>
+        <tag>博客搭建</tag>
+        <tag>文章链接</tag>
       </tags>
   </entry>
   <entry>
