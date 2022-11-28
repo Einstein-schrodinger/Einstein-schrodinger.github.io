@@ -1,6 +1,155 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>博客搭建之Twikoo</title>
+    <url>/posts/6fc19c10.html</url>
+    <content><![CDATA[<h1 id="博客搭建之twikoo">博客搭建之Twikoo</h1>
+<div class="note info modern"><p>鉴于每个人的博客根目录名称都不太一样，本贴<strong>博客根目录</strong>一律以<code>[BlogRoot]</code>指代。
+站点配置文件<code>_config.yml</code>，路径为<code>[BlogRoot]\_config.yml</code>。
+主题配置文件<code>_config.yml</code>，路径为<code>[BlogRoot]\themes\butterfly\_config.yml</code>。</p>
+</div>
+<h2 id="twikoo的评论设置">1.Twikoo的评论设置</h2>
+<h3 id="支持图片评论">1.1 支持图片评论</h3>
+<p>Twikoo评论区要支持图片评论功能需要配置图床，这里以比较容易设置的<a
+href="https://smms.app/">smms</a>图床为例，首先要进行注册，注册成功之后，会给你5GB的空间用来存储图片，一般来说够用了。将获取的smms图床的token复制到Twikoo插件设置里的<code>IMAGE_CDN_ToKEN</code>，并且将<code>IMAGE_CDN</code>填写为<code>smms</code>，其余选项保持默认即可，配置结束之后记得拉到最下方点击保存，刷新一下即可生效。下面图片展示详细的步骤：</p>
+<ul>
+<li>smms注册并获取token</li>
+</ul>
+<p><img
+src="https://blogresource.sqwdream.cloud/post/博客搭建之Twikoo/img/body/smms.jpg" /></p>
+<ul>
+<li>网站的Twikoo评论设置</li>
+</ul>
+<p><img
+src="https://blogresource.sqwdream.cloud/post/博客搭建之Twikoo/img/body/评论图床设置.jpg" /></p>
+<h3 id="支持latex公式评论">1.2 支持Latex公式评论</h3>
+<p>支持公式评论可以参考Twikoo官网的<a
+href="https://twikoo.js.org/faq.html#%E5%A6%82%E4%BD%95%E5%90%AF%E7%94%A8-katex-%E6%94%AF%E6%8C%81">如何开启Katex支持？</a>，就是在主题配置文件<code>_config.yml</code>中引入如下代码：</p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">innject:</span></span><br><span class="line">  <span class="attr">head:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">&lt;link</span> <span class="string">rel=&quot;stylesheet&quot;</span> <span class="string">href=&quot;https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css&quot;</span> <span class="string">integrity=&quot;sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X&quot;</span> <span class="string">crossorigin=&quot;anonymous&quot;&gt;</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">&lt;script</span> <span class="string">defer</span> <span class="string">src=&quot;https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js&quot;</span> <span class="string">integrity=&quot;sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4&quot;</span> <span class="string">crossorigin=&quot;anonymous&quot;&gt;&lt;/script&gt;</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">&lt;script</span> <span class="string">defer</span> <span class="string">src=&quot;https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js&quot;</span> <span class="string">integrity=&quot;sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa&quot;</span> <span class="string">crossorigin=&quot;anonymous&quot;&gt;&lt;/script&gt;</span></span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>博客搭建</category>
+      </categories>
+      <tags>
+        <tag>博客搭建</tag>
+        <tag>Twikoo</tag>
+        <tag>图床</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>博客搭建之外挂标签</title>
+    <url>/posts/107251be.html</url>
+    <content><![CDATA[<h1 id="博客搭建之外挂标签">博客搭建之外挂标签</h1>
+<div class="note info modern"><p>外挂标签存在渲染失败/冲突的可能，有序/无序列表嵌套在外挂标签中也容易出现问题，PDF外挂标签、旋转相册还存在问题。
+搬运自：<a href="https://akilar.top/posts/615e2dec/">Tag Plugins
+Plus</a>、<a
+href="https://www.fomal.cc/posts/2013454d.html">Markdown语法与外挂标签写法汇总</a></p>
+</div>
+<h2 id="butterfly-外挂标签">Butterfly 外挂标签</h2>
+<h2 id="行内样式文本-text"><a
+href="https://www.sqwdream.cloud/posts/1d2c62cf.html">1.1 行内样式文本
+text</a></h2>
+<h2 id="行内文本-span">1.2 行内文本 span</h2>
+<h2 id="段落文本-p"><a
+href="https://www.sqwdream.cloud/posts/931d81cc.html">1.3 段落文本
+p</a></h2>
+<h2 id="引用-note"><a
+href="https://www.sqwdream.cloud/posts/36aa8c11.html">1.4 引用
+note</a></h2>
+<h2 id="上标标签-tip"><a
+href="https://www.sqwdream.cloud/posts/fbc6eb76.html">1.5 上标标签
+tip</a></h2>
+<h2 id="动态标签-anima"><a
+href="https://www.sqwdream.cloud/posts/c16bd145.html">1.6 动态标签
+anima</a></h2>
+<h2 id="单选列表-radio"><a
+href="https://www.sqwdream.cloud/posts/ed0ab06c.html">1.7 单选列表
+radio</a></h2>
+<h2 id="复选列表-checkbox"><a
+href="https://www.sqwdream.cloud/posts/24a2c022.html">1.8 复选列表
+checkbox</a></h2>
+<h2 id="时间轴-timeline"><a
+href="https://www.sqwdream.cloud/posts/57924155.html">1.9 时间轴
+timeline</a></h2>
+<h2 id="链接卡片-link"><a
+href="https://www.sqwdream.cloud/posts/816398cf.html">1.10 链接卡片
+link</a></h2>
+<h2 id="按钮-btns"><a
+href="https://www.sqwdream.cloud/posts/fa535c92.html">1.11 按钮
+btns</a></h2>
+<h2 id="github卡片-ghcard"><a
+href="https://www.sqwdream.cloud/posts/948f775.html">1.12 github卡片
+ghcard</a></h2>
+<h2 id="github徽标-ghbdage"><a
+href="https://www.sqwdream.cloud/posts/b08228d8.html">1.13 github徽标
+ghbdage</a></h2>
+<h2 id="网站卡片-sites"><a
+href="https://www.sqwdream.cloud/posts/cbc0000a.html">1.14 网站卡片
+sites</a></h2>
+<h2 id="行内图片-inlineimage"><a
+href="https://www.sqwdream.cloud/posts/c4c94f7f.html">1.15 行内图片
+inlineimage</a></h2>
+<h2 id="单张图片-image"><a
+href="https://www.sqwdream.cloud/posts/84d3a02d.html">1.16 单张图片
+image</a></h2>
+<h2 id="音频-audio"><a
+href="https://www.sqwdream.cloud/posts/daf3001e.html">1.17 音频
+audio</a></h2>
+<h2 id="视频-vidio"><a
+href="https://www.sqwdream.cloud/posts/470b286f.html">1.18 视频
+vidio</a></h2>
+<h2 id="相册-gallery"><a
+href="https://www.sqwdream.cloud/posts/7cede130.html">1.19 相册
+gallery</a></h2>
+<h2 id="折叠框-foldingtoggle"><a
+href="https://www.sqwdream.cloud/posts/f3b9da49.html">1.20 折叠框
+folding/Toggle</a></h2>
+<h2 id="分栏-tab"><a
+href="https://www.sqwdream.cloud/posts/10aeeec0.html">1.21 分栏
+tab</a></h2>
+<h2 id="诗词标签-poem"><a
+href="https://www.sqwdream.cloud/posts/1ec3eb97.html">1.22 诗词标签
+poem</a></h2>
+<h2 id="阿里图标-icon"><a
+href="https://www.sqwdream.cloud/posts/750d0c37.html">1.23 阿里图标
+icon</a></h2>
+<h2 id="特效标签-wow"><a
+href="https://www.sqwdream.cloud/posts/dd1db991.html">1.24 特效标签
+wow</a></h2>
+<h2 id="进度条-progress"><a
+href="https://www.sqwdream.cloud/posts/5dede2e1.html">1.25 进度条
+progress</a></h2>
+<h2 id="注释-notation"><a
+href="https://www.sqwdream.cloud/posts/ca1ab95b.html">1.26 注释
+notation</a></h2>
+<h2 id="气泡注释-bubble"><a
+href="https://www.sqwdream.cloud/posts/44dec147.html">1.27 气泡注释
+bubble</a></h2>
+<h2 id="引用文献-reference"><a
+href="https://www.sqwdream.cloud/posts/965f46ee.html">1.28 引用文献
+reference</a></h2>
+<h2 id="隐藏块"><a
+href="https://www.sqwdream.cloud/posts/6c0efd75.html">1.29
+隐藏块</a></h2>
+<h2 id="hexo-tag-map-插件"><a
+href="https://www.sqwdream.cloud/posts/546b5cdc.html">1.30 Hexo-tag-map
+插件</a></h2>
+<h2 id="pdf展示"><a
+href="https://www.sqwdream.cloud/posts/d629a2c2.html">1.31
+PDF展示</a></h2>
+<h2 id="旋转相册"><a
+href="https://www.sqwdream.cloud/posts/75b3d8a.html">1.32
+旋转相册</a></h2>
+]]></content>
+      <categories>
+        <category>博客搭建</category>
+      </categories>
+      <tags>
+        <tag>博客搭建</tag>
+        <tag>外挂标签</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>博客搭建之Markdown基本语法</title>
     <url>/posts/b289d8f9.html</url>
     <content><![CDATA[<h1 id="博客搭建之markdown基本语法">博客搭建之Markdown基本语法</h1>
@@ -91,139 +240,8 @@ S=\frac{8\pi^2{k_\mathrm{B}}^2T}{3eh^2}m_{\mathrm{d}}^{*}\left(\frac{\pi}{3p}\ri
         <category>博客搭建</category>
       </categories>
       <tags>
+        <tag>博客搭建</tag>
         <tag>Markdown</tag>
-        <tag>博客搭建</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>博客搭建之Twikoo</title>
-    <url>/posts/6fc19c10.html</url>
-    <content><![CDATA[<h1 id="博客搭建之twikoo">博客搭建之Twikoo</h1>
-<div class="note info modern"><p>鉴于每个人的博客根目录名称都不太一样，本贴<strong>博客根目录</strong>一律以<code>[BlogRoot]</code>指代。
-站点配置文件<code>_config.yml</code>，路径为<code>[BlogRoot]\_config.yml</code>。
-主题配置文件<code>_config.yml</code>，路径为<code>[BlogRoot]\themes\butterfly\_config.yml</code>。</p>
-</div>
-<h2 id="twikoo的评论设置">1.Twikoo的评论设置</h2>
-<h3 id="支持图片评论">1.1 支持图片评论</h3>
-<p>Twikoo评论区要支持图片评论功能需要配置图床，这里以比较容易设置的<a
-href="https://smms.app/">smms</a>图床为例，首先要进行注册，注册成功之后，会给你5GB的空间用来存储图片，一般来说够用了。将获取的smms图床的token复制到Twikoo插件设置里的<code>IMAGE_CDN_ToKEN</code>，并且将<code>IMAGE_CDN</code>填写为<code>smms</code>，其余选项保持默认即可，配置结束之后记得拉到最下方点击保存，刷新一下即可生效。下面图片展示详细的步骤：</p>
-<ul>
-<li>smms注册并获取token</li>
-</ul>
-<p><img
-src="https://blogresource.sqwdream.cloud/post/博客搭建之Twikoo/img/body/smms.jpg" /></p>
-<ul>
-<li>网站的Twikoo评论设置</li>
-</ul>
-<p><img
-src="https://blogresource.sqwdream.cloud/post/博客搭建之Twikoo/img/body/评论图床设置.jpg" /></p>
-<h3 id="支持latex公式评论">1.2 支持Latex公式评论</h3>
-<p>支持公式评论可以参考Twikoo官网的<a
-href="https://twikoo.js.org/faq.html#%E5%A6%82%E4%BD%95%E5%90%AF%E7%94%A8-katex-%E6%94%AF%E6%8C%81">如何开启Katex支持？</a>，就是在主题配置文件<code>_config.yml</code>中引入如下代码：</p>
-<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">innject:</span></span><br><span class="line">  <span class="attr">head:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">&lt;link</span> <span class="string">rel=&quot;stylesheet&quot;</span> <span class="string">href=&quot;https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css&quot;</span> <span class="string">integrity=&quot;sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X&quot;</span> <span class="string">crossorigin=&quot;anonymous&quot;&gt;</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">&lt;script</span> <span class="string">defer</span> <span class="string">src=&quot;https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js&quot;</span> <span class="string">integrity=&quot;sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4&quot;</span> <span class="string">crossorigin=&quot;anonymous&quot;&gt;&lt;/script&gt;</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">&lt;script</span> <span class="string">defer</span> <span class="string">src=&quot;https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js&quot;</span> <span class="string">integrity=&quot;sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa&quot;</span> <span class="string">crossorigin=&quot;anonymous&quot;&gt;&lt;/script&gt;</span></span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>博客搭建</category>
-      </categories>
-      <tags>
-        <tag>博客搭建</tag>
-        <tag>Twikoo</tag>
-        <tag>图床</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>博客搭建之外挂标签</title>
-    <url>/posts/107251be.html</url>
-    <content><![CDATA[<h1 id="博客搭建之外挂标签">博客搭建之外挂标签</h1>
-<div class="note info modern"><p>外挂标签存在渲染失败/冲突的可能，有序/无序列表嵌套在外挂标签中也容易出现问题，PDF外挂标签、旋转相册还存在问题。
-搬运自：<a href="https://akilar.top/posts/615e2dec/">Tag Plugins
-Plus</a>、<a
-href="https://www.fomal.cc/posts/2013454d.html">Markdown语法与外挂标签写法汇总</a></p>
-</div>
-<h2 id="butterfly-外挂标签">Butterfly 外挂标签</h2>
-<h2 id="行内样式文本-text">1.1 行内样式文本 text</h2>
-<h2 id="行内文本-span">1.2 行内文本 span</h2>
-<h2 id="段落文本-p">1.3 段落文本 p</h2>
-<h2 id="引用-note"><a
-href="https://www.sqwdream.cloud/posts/36aa8c11.html">1.4 引用
-note</a></h2>
-<h2 id="上标标签-tip">1.5 上标标签 tip</h2>
-<h2 id="动态标签-anima"><a
-href="https://www.sqwdream.cloud/posts/c16bd145.html">1.6 动态标签
-anima</a></h2>
-<h2 id="单选列表-radio"><a
-href="https://www.sqwdream.cloud/posts/ed0ab06c.html">1.7 单选列表
-radio</a></h2>
-<h2 id="复选列表-checkbox"><a
-href="https://www.sqwdream.cloud/posts/24a2c022.html">1.8 复选列表
-checkbox</a></h2>
-<h2 id="时间轴-timeline">1.9 时间轴 timeline</h2>
-<h2 id="链接卡片-link">1.10 链接卡片 link</h2>
-<h2 id="按钮-btns"><a
-href="https://www.sqwdream.cloud/posts/fa535c92.html">1.11 按钮
-btns</a></h2>
-<h2 id="github卡片-ghcard">1.12 github卡片 ghcard</h2>
-<h2 id="github徽标-ghbdage">1.13 github徽标 ghbdage</h2>
-<h2 id="网站卡片-sites">1.14 网站卡片 sites</h2>
-<h2 id="行内图片-inlineimage">1.15 行内图片 inlineimage</h2>
-<h2 id="单张图片-image"><a
-href="https://www.sqwdream.cloud/posts/84d3a02d.html">1.16 单张图片
-image</a></h2>
-<h2 id="音频-audio"><a
-href="https://www.sqwdream.cloud/posts/daf3001e.html">1.17 音频
-audio</a></h2>
-<h2 id="视频-vidio"><a
-href="https://www.sqwdream.cloud/posts/470b286f.html">1.18 视频
-vidio</a></h2>
-<h2 id="相册-gallery"><a
-href="https://www.sqwdream.cloud/posts/7cede130.html">1.19 相册
-gallery</a></h2>
-<h2 id="折叠框-foldingtoggle"><a
-href="https://www.sqwdream.cloud/posts/f3b9da49.html">1.20 折叠框
-folding/Toggle</a></h2>
-<h2 id="分栏-tab"><a
-href="https://www.sqwdream.cloud/posts/10aeeec0.html">1.21 分栏
-tab</a></h2>
-<h2 id="诗词标签-poem"><a
-href="https://www.sqwdream.cloud/posts/1ec3eb97.html">1.22 诗词标签
-poem</a></h2>
-<h2 id="阿里图标-icon"><a
-href="https://www.sqwdream.cloud/posts/750d0c37.html">1.23 阿里图标
-icon</a></h2>
-<h2 id="特效标签-wow"><a
-href="https://www.sqwdream.cloud/posts/dd1db991.html">1.24 特效标签
-wow</a></h2>
-<h2 id="进度条-progress"><a
-href="https://www.sqwdream.cloud/posts/5dede2e1.html">1.25 进度条
-progress</a></h2>
-<h2 id="注释-notation"><a
-href="https://www.sqwdream.cloud/posts/ca1ab95b.html">1.26 注释
-notation</a></h2>
-<h2 id="气泡注释-bubble"><a
-href="https://www.sqwdream.cloud/posts/44dec147.html">1.27 气泡注释
-bubble</a></h2>
-<h2 id="引用文献-reference"><a
-href="https://www.sqwdream.cloud/posts/965f46ee.html">1.28 引用文献
-reference</a></h2>
-<h2 id="隐藏块"><a
-href="https://www.sqwdream.cloud/posts/6c0efd75.html">1.29
-隐藏块</a></h2>
-<h2 id="hexo-tag-map-插件"><a
-href="https://www.sqwdream.cloud/posts/546b5cdc.html">1.30 Hexo-tag-map
-插件</a></h2>
-<h2 id="pdf展示"><a
-href="https://www.sqwdream.cloud/posts/d629a2c2.html">1.31
-PDF展示</a></h2>
-<h2 id="旋转相册"><a
-href="https://www.sqwdream.cloud/posts/75b3d8a.html">1.32
-旋转相册</a></h2>
-]]></content>
-      <categories>
-        <category>博客搭建</category>
-      </categories>
-      <tags>
-        <tag>博客搭建</tag>
-        <tag>外挂标签</tag>
       </tags>
   </entry>
   <entry>
@@ -256,39 +274,6 @@ id="手机端也呈现夜间繁星效果在universe.css文件中加入">4.手机
       <tags>
         <tag>博客搭建</tag>
         <tag>夜间繁星背景特效</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>博客搭建之文章链接</title>
-    <url>/posts/cc96dfee.html</url>
-    <content><![CDATA[<h1 id="博客搭建之文章链接">博客搭建之文章链接</h1>
-<div class="note info modern"><p>鉴于每个人的博客根目录名称都不太一样，本贴<strong>博客根目录</strong>一律以<code>[BlogRoot]</code>指代。
-站点配置文件<code>_config.yml</code>，路径为<code>[BlogRoot]\_config.yml</code>。
-主题配置文件<code>_config.yml</code>，路径为<code>[BlogRoot]\themes\butterfly\_config.yml</code>。</p>
-</div>
-<h2
-id="缩短文末copyright中文章链接的长度">缩短文末Copyright中文章链接的长度</h2>
-<h3
-id="在博客根目录下blogroot安装插件">1.在博客根目录下<code>[BlogRoot]</code>安装插件：</h3>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm install hexo-abbrlink --save</span><br></pre></td></tr></table></figure>
-<h3
-id="修改站点配置文件blogroot_config.yml添加以下内容">2.修改站点配置文件<code>[BlogRoot]\_config.yml</code>，添加以下内容：</h3>
-<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># permalink: :year/:month/:day/:title/</span></span><br><span class="line"><span class="comment"># permalink: p/:abbrlink.html  # p 是自定义的前缀</span></span><br><span class="line"><span class="attr">permalink:</span> <span class="string">/:abbrlink.html</span>  <span class="comment"># p 是自定义的前缀</span></span><br><span class="line"><span class="attr">abbrlink:</span></span><br><span class="line">    <span class="attr">alg:</span> <span class="string">crc32</span>   <span class="comment">#算法： crc16(default) and crc32</span></span><br><span class="line">    <span class="attr">rep:</span> <span class="string">hex</span>     <span class="comment">#进制： dec(default) and hex</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li><strong>不同算法和进制生成不同的格式</strong></li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">crc16 &amp; hex</span><br><span class="line">https://post.zz173.com/posts/66c8.html</span><br><span class="line">crc16 &amp; dec</span><br><span class="line">https://post.zz173.com/posts/65535.html</span><br><span class="line"></span><br><span class="line">crc32 &amp; hex</span><br><span class="line">https://post.zz173.com/posts/8ddf18fb.html</span><br><span class="line">crc32 &amp; dec</span><br><span class="line">https://post.zz173.com/posts/1690090958.html</span><br></pre></td></tr></table></figure>
-<ul>
-<li><strong><code>hexo g</code>生成网页时，会在每篇文章的<code>front matter</code>中加入一项<code>abbrlink</code>，它是根据文章题目生成的，生成之后不可更改，可以删除重新生成</strong></li>
-</ul>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">abbrlink: cc96dfee</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>博客搭建</category>
-      </categories>
-      <tags>
-        <tag>博客搭建</tag>
-        <tag>文章链接</tag>
       </tags>
   </entry>
   <entry>
@@ -346,13 +331,45 @@ Parabolic Band，SPB</strong>)模型相关计算</h1>
       </tags>
   </entry>
   <entry>
-    <title>水调歌头</title>
-    <url>/posts/ac668694.html</url>
-    <content><![CDATA[<div class='poem'><div class='poem-title'>水调歌头</div><div class='poem-author'>苏轼</div><p>丙辰中秋，欢饮达旦，大醉，作此篇，兼怀子由。 明月几时有？把酒问青天。
-不知天上宫阙，今夕是何年？ 我欲乘风归去，又恐琼楼玉宇，高处不胜寒。
-起舞弄清影，何似在人间？</p>
-<p>转朱阁，低绮户，照无眠。 不应有恨，何事长向别时圆？
-人有悲欢离合，月有阴晴圆缺，此事古难全。 但愿人长久，千里共婵娟。</p>
+    <title>博客搭建之文章链接</title>
+    <url>/posts/cc96dfee.html</url>
+    <content><![CDATA[<h1 id="博客搭建之文章链接">博客搭建之文章链接</h1>
+<div class="note info modern"><p>鉴于每个人的博客根目录名称都不太一样，本贴<strong>博客根目录</strong>一律以<code>[BlogRoot]</code>指代。
+站点配置文件<code>_config.yml</code>，路径为<code>[BlogRoot]\_config.yml</code>。
+主题配置文件<code>_config.yml</code>，路径为<code>[BlogRoot]\themes\butterfly\_config.yml</code>。</p>
+</div>
+<h2
+id="缩短文末copyright中文章链接的长度">缩短文末Copyright中文章链接的长度</h2>
+<h3
+id="在博客根目录下blogroot安装插件">1.在博客根目录下<code>[BlogRoot]</code>安装插件：</h3>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm install hexo-abbrlink --save</span><br></pre></td></tr></table></figure>
+<h3
+id="修改站点配置文件blogroot_config.yml添加以下内容">2.修改站点配置文件<code>[BlogRoot]\_config.yml</code>，添加以下内容：</h3>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># permalink: :year/:month/:day/:title/</span></span><br><span class="line"><span class="comment"># permalink: p/:abbrlink.html  # p 是自定义的前缀</span></span><br><span class="line"><span class="attr">permalink:</span> <span class="string">/:abbrlink.html</span>  <span class="comment"># p 是自定义的前缀</span></span><br><span class="line"><span class="attr">abbrlink:</span></span><br><span class="line">    <span class="attr">alg:</span> <span class="string">crc32</span>   <span class="comment">#算法： crc16(default) and crc32</span></span><br><span class="line">    <span class="attr">rep:</span> <span class="string">hex</span>     <span class="comment">#进制： dec(default) and hex</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>不同算法和进制生成不同的格式</strong></li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">crc16 &amp; hex</span><br><span class="line">https://post.zz173.com/posts/66c8.html</span><br><span class="line">crc16 &amp; dec</span><br><span class="line">https://post.zz173.com/posts/65535.html</span><br><span class="line"></span><br><span class="line">crc32 &amp; hex</span><br><span class="line">https://post.zz173.com/posts/8ddf18fb.html</span><br><span class="line">crc32 &amp; dec</span><br><span class="line">https://post.zz173.com/posts/1690090958.html</span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong><code>hexo g</code>生成网页时，会在每篇文章的<code>front matter</code>中加入一项<code>abbrlink</code>，它是根据文章题目生成的，生成之后不可更改，可以删除重新生成</strong></li>
+</ul>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">abbrlink: cc96dfee</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>博客搭建</category>
+      </categories>
+      <tags>
+        <tag>博客搭建</tag>
+        <tag>文章链接</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>出入红尘</title>
+    <url>/posts/1168772c.html</url>
+    <content><![CDATA[<div class='poem'><div class='poem-title'>好了歌</div><div class='poem-author'>曹雪芹</div><p>世人都晓神仙好，惟有功名忘不了！ 古今将相在何方？荒冢一堆草没了。
+世人都晓神仙好，只有金银忘不了！ 终朝只恨聚无多，及到多时眼闭了。
+世人都晓神仙好，只有娇妻忘不了！ 君生日日说恩情，君死又随人去了。
+世人都晓神仙好，只有儿孙忘不了！ 痴心父母古来多，孝顺儿孙谁见了？</p>
 </div>
 ]]></content>
       <categories>
@@ -398,12 +415,13 @@ id="引入对应的资源修改主题配置文件_config.yml在-inject-配置项
       </tags>
   </entry>
   <entry>
-    <title>出入红尘</title>
-    <url>/posts/1168772c.html</url>
-    <content><![CDATA[<div class='poem'><div class='poem-title'>好了歌</div><div class='poem-author'>曹雪芹</div><p>世人都晓神仙好，惟有功名忘不了！ 古今将相在何方？荒冢一堆草没了。
-世人都晓神仙好，只有金银忘不了！ 终朝只恨聚无多，及到多时眼闭了。
-世人都晓神仙好，只有娇妻忘不了！ 君生日日说恩情，君死又随人去了。
-世人都晓神仙好，只有儿孙忘不了！ 痴心父母古来多，孝顺儿孙谁见了？</p>
+    <title>水调歌头</title>
+    <url>/posts/ac668694.html</url>
+    <content><![CDATA[<div class='poem'><div class='poem-title'>水调歌头</div><div class='poem-author'>苏轼</div><p>丙辰中秋，欢饮达旦，大醉，作此篇，兼怀子由。 明月几时有？把酒问青天。
+不知天上宫阙，今夕是何年？ 我欲乘风归去，又恐琼楼玉宇，高处不胜寒。
+起舞弄清影，何似在人间？</p>
+<p>转朱阁，低绮户，照无眠。 不应有恨，何事长向别时圆？
+人有悲欢离合，月有阴晴圆缺，此事古难全。 但愿人长久，千里共婵娟。</p>
 </div>
 ]]></content>
       <categories>
@@ -456,6 +474,112 @@ href="https://blog.csdn.net/qq_43701912/article/details/107291518">hexo-pdf</a>�
         <tag>博客搭建</tag>
         <tag>外挂标签</tag>
         <tag>PDF展示</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>外挂标签之github卡片</title>
+    <url>/posts/948f775.html</url>
+    <content><![CDATA[<h1 id="外挂标签之github卡片">外挂标签之github卡片</h1>
+<h2 id="标签语法">标签语法</h2>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% ghcard 用户名, 其它参数（可选） %&#125;</span><br><span class="line">&#123;% ghcard 用户名/仓库, 其它参数（可选） %&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="配置参数">配置参数</h2>
+<ol type="1">
+<li>圆角样式：rounded, circle</li>
+<li>增加文字样式：可以在容器内增加
+<code>&lt;b&gt;</code>标题<code>&lt;/b&gt;</code>和<code>&lt;p&gt;</code>描述文字<code>&lt;/p&gt;</code></li>
+<li>布局方式： 默认为自动宽度，适合视野内只有一两个的情况</li>
+</ol>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">参数</th>
+<th style="text-align: center;">含义</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">wide</td>
+<td style="text-align: center;">宽一点的按钮</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">fill</td>
+<td
+style="text-align: center;">填充布局，自动铺满至少一行，多了会换行</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">center</td>
+<td style="text-align: center;">居中，按钮之间是固定间距</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">around</td>
+<td style="text-align: center;">居中分散</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">grid2</td>
+<td style="text-align: center;">等宽最多2列，屏幕变窄会适当减少列数</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">grid3</td>
+<td style="text-align: center;">等宽最多3列，屏幕变窄会适当减少列数</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">grid4</td>
+<td style="text-align: center;">等宽最多4列，屏幕变窄会适当减少列数</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">grid5</td>
+<td style="text-align: center;">等宽最多5列，屏幕变窄会适当减少列数</td>
+</tr>
+</tbody>
+</table>
+<h2 id="示例源码">示例源码</h2>
+<ol type="1">
+<li>用户信息卡片 <figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">| &#123;% ghcard xaoxuu %&#125;                | &#123;% ghcard xaoxuu, theme=vue %&#125;             |</span><br><span class="line">| ---------------------------------- | ------------------------------------------ |</span><br><span class="line">| &#123;% ghcard xaoxuu, theme=buefy %&#125;   | &#123;% ghcard xaoxuu, theme=solarized-light %&#125; |</span><br><span class="line">| &#123;% ghcard xaoxuu, theme=onedark %&#125; | &#123;% ghcard xaoxuu, theme=solarized-dark %&#125;  |</span><br><span class="line">| &#123;% ghcard xaoxuu, theme=algolia %&#125; | &#123;% ghcard xaoxuu, theme=calm %&#125;            |</span><br></pre></td></tr></table></figure></li>
+<li>仓库信息卡片 <figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">| &#123;% ghcard volantis-x/hexo-theme-volantis %&#125;                | &#123;% ghcard volantis-x/hexo-theme-volantis, theme=vue %&#125;             |</span><br><span class="line">| ---------------------------------------------------------- | ------------------------------------------------------------------ |</span><br><span class="line">| &#123;% ghcard volantis-x/hexo-theme-volantis, theme=buefy %&#125;   | &#123;% ghcard volantis-x/hexo-theme-volantis, theme=solarized-light %&#125; |</span><br><span class="line">| &#123;% ghcard volantis-x/hexo-theme-volantis, theme=onedark %&#125; | &#123;% ghcard volantis-x/hexo-theme-volantis, theme=solarized-dark %&#125;  |</span><br><span class="line">| &#123;% ghcard volantis-x/hexo-theme-volantis, theme=algolia %&#125; | &#123;% ghcard volantis-x/hexo-theme-volantis, theme=calm %&#125;            |</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h2 id="渲染演示">渲染演示</h2>
+<ol type="1">
+<li><p>用户信息卡片 | <a class="ghcard" rel="external nofollow noopener noreferrer" href="https://github.com/xaoxuu"><img src="https://github-readme-stats.vercel.app/api/?username=xaoxuu&show_owner=true"/></a> | <a class="ghcard" rel="external nofollow noopener noreferrer" href="https://github.com/xaoxuu"><img src="https://github-readme-stats.vercel.app/api/?username=xaoxuu&theme=vue&show_owner=true"/></a> | |
+---------------------------------- |
+------------------------------------------ | | <a class="ghcard" rel="external nofollow noopener noreferrer" href="https://github.com/xaoxuu"><img src="https://github-readme-stats.vercel.app/api/?username=xaoxuu&theme=buefy&show_owner=true"/></a> |
+<a class="ghcard" rel="external nofollow noopener noreferrer" href="https://github.com/xaoxuu"><img src="https://github-readme-stats.vercel.app/api/?username=xaoxuu&theme=solarized-light&show_owner=true"/></a> | | <a class="ghcard" rel="external nofollow noopener noreferrer" href="https://github.com/xaoxuu"><img src="https://github-readme-stats.vercel.app/api/?username=xaoxuu&theme=onedark&show_owner=true"/></a> | <a class="ghcard" rel="external nofollow noopener noreferrer" href="https://github.com/xaoxuu"><img src="https://github-readme-stats.vercel.app/api/?username=xaoxuu&theme=solarized-dark&show_owner=true"/></a> | | <a class="ghcard" rel="external nofollow noopener noreferrer" href="https://github.com/xaoxuu"><img src="https://github-readme-stats.vercel.app/api/?username=xaoxuu&theme=algolia&show_owner=true"/></a> |
+<a class="ghcard" rel="external nofollow noopener noreferrer" href="https://github.com/xaoxuu"><img src="https://github-readme-stats.vercel.app/api/?username=xaoxuu&theme=calm&show_owner=true"/></a> |</p></li>
+<li><p>仓库信息卡片</p>
+<table>
+<colgroup>
+<col style="width: 46%" />
+<col style="width: 53%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><a class="ghcard" rel="external nofollow noopener noreferrer" href="https://github.com/volantis-x/hexo-theme-volantis"><img src="https://github-readme-stats.vercel.app/api/pin/?username=volantis-x&repo=hexo-theme-volantis&show_owner=true"/></a></th>
+<th><a class="ghcard" rel="external nofollow noopener noreferrer" href="https://github.com/volantis-x/hexo-theme-volantis"><img src="https://github-readme-stats.vercel.app/api/pin/?username=volantis-x&repo=hexo-theme-volantis&theme=vue&show_owner=true"/></a></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><a class="ghcard" rel="external nofollow noopener noreferrer" href="https://github.com/volantis-x/hexo-theme-volantis"><img src="https://github-readme-stats.vercel.app/api/pin/?username=volantis-x&repo=hexo-theme-volantis&theme=buefy&show_owner=true"/></a></td>
+<td><a class="ghcard" rel="external nofollow noopener noreferrer" href="https://github.com/volantis-x/hexo-theme-volantis"><img src="https://github-readme-stats.vercel.app/api/pin/?username=volantis-x&repo=hexo-theme-volantis&theme=solarized-light&show_owner=true"/></a></td>
+</tr>
+<tr class="even">
+<td><a class="ghcard" rel="external nofollow noopener noreferrer" href="https://github.com/volantis-x/hexo-theme-volantis"><img src="https://github-readme-stats.vercel.app/api/pin/?username=volantis-x&repo=hexo-theme-volantis&theme=onedark&show_owner=true"/></a></td>
+<td><a class="ghcard" rel="external nofollow noopener noreferrer" href="https://github.com/volantis-x/hexo-theme-volantis"><img src="https://github-readme-stats.vercel.app/api/pin/?username=volantis-x&repo=hexo-theme-volantis&theme=solarized-dark&show_owner=true"/></a></td>
+</tr>
+<tr class="odd">
+<td><a class="ghcard" rel="external nofollow noopener noreferrer" href="https://github.com/volantis-x/hexo-theme-volantis"><img src="https://github-readme-stats.vercel.app/api/pin/?username=volantis-x&repo=hexo-theme-volantis&theme=algolia&show_owner=true"/></a></td>
+<td><a class="ghcard" rel="external nofollow noopener noreferrer" href="https://github.com/volantis-x/hexo-theme-volantis"><img src="https://github-readme-stats.vercel.app/api/pin/?username=volantis-x&repo=hexo-theme-volantis&theme=calm&show_owner=true"/></a></td>
+</tr>
+</tbody>
+</table></li>
+</ol>
+]]></content>
+      <categories>
+        <category>博客搭建</category>
+      </categories>
+      <tags>
+        <tag>博客搭建</tag>
+        <tag>外挂标签</tag>
+        <tag>github卡片</tag>
       </tags>
   </entry>
   <entry>
@@ -581,82 +705,6 @@ href="https://shields.io/">shields.io</a>的全部API参数支持，具体参数
       </tags>
   </entry>
   <entry>
-    <title>外挂标签之github卡片</title>
-    <url>/posts/948f775.html</url>
-    <content><![CDATA[<h1 id="外挂标签之github卡片">外挂标签之github卡片</h1>
-<h2 id="标签语法">标签语法</h2>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% ghcard 用户名, 其它参数（可选） %&#125;</span><br><span class="line">&#123;% ghcard 用户名/仓库, 其它参数（可选） %&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="配置参数">配置参数</h2>
-<ol type="1">
-<li>圆角样式：rounded, circle</li>
-<li>增加文字样式：可以在容器内增加
-<code>&lt;b&gt;</code>标题<code>&lt;/b&gt;</code>和<code>&lt;p&gt;</code>描述文字<code>&lt;/p&gt;</code></li>
-<li>布局方式： 默认为自动宽度，适合视野内只有一两个的情况</li>
-</ol>
-<table>
-<thead>
-<tr class="header">
-<th style="text-align: center;">参数</th>
-<th style="text-align: center;">含义</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;">wide</td>
-<td style="text-align: center;">宽一点的按钮</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">fill</td>
-<td
-style="text-align: center;">填充布局，自动铺满至少一行，多了会换行</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">center</td>
-<td style="text-align: center;">居中，按钮之间是固定间距</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">around</td>
-<td style="text-align: center;">居中分散</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">grid2</td>
-<td style="text-align: center;">等宽最多2列，屏幕变窄会适当减少列数</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">grid3</td>
-<td style="text-align: center;">等宽最多3列，屏幕变窄会适当减少列数</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">grid4</td>
-<td style="text-align: center;">等宽最多4列，屏幕变窄会适当减少列数</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">grid5</td>
-<td style="text-align: center;">等宽最多5列，屏幕变窄会适当减少列数</td>
-</tr>
-</tbody>
-</table>
-<h2 id="示例源码">示例源码</h2>
-<ol type="1">
-<li>用户信息卡片 <figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">| &#123;% ghcard xaoxuu %&#125;                | &#123;% ghcard xaoxuu, theme=vue %&#125;             |</span><br><span class="line">| ---------------------------------- | ------------------------------------------ |</span><br><span class="line">| &#123;% ghcard xaoxuu, theme=buefy %&#125;   | &#123;% ghcard xaoxuu, theme=solarized-light %&#125; |</span><br><span class="line">| &#123;% ghcard xaoxuu, theme=onedark %&#125; | &#123;% ghcard xaoxuu, theme=solarized-dark %&#125;  |</span><br><span class="line">| &#123;% ghcard xaoxuu, theme=algolia %&#125; | &#123;% ghcard xaoxuu, theme=calm %&#125;            |</span><br></pre></td></tr></table></figure></li>
-<li>仓库信息卡片 <figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">| &#123;% ghcard volantis-x/hexo-theme-volantis %&#125;                | &#123;% ghcard volantis-x/hexo-theme-volantis, theme=vue %&#125;             |</span><br><span class="line">| ---------------------------------------------------------- | ------------------------------------------------------------------ |</span><br><span class="line">| &#123;% ghcard volantis-x/hexo-theme-volantis, theme=buefy %&#125;   | &#123;% ghcard volantis-x/hexo-theme-volantis, theme=solarized-light %&#125; |</span><br><span class="line">| &#123;% ghcard volantis-x/hexo-theme-volantis, theme=onedark %&#125; | &#123;% ghcard volantis-x/hexo-theme-volantis, theme=solarized-dark %&#125;  |</span><br><span class="line">| &#123;% ghcard volantis-x/hexo-theme-volantis, theme=algolia %&#125; | &#123;% ghcard volantis-x/hexo-theme-volantis, theme=calm %&#125;            |</span><br></pre></td></tr></table></figure></li>
-</ol>
-<h2 id="渲染演示">渲染演示</h2>
-<ol type="1">
-<li>用户信息卡片 缺省</li>
-<li>仓库信息卡片 缺省</li>
-</ol>
-]]></content>
-      <categories>
-        <category>博客搭建</category>
-      </categories>
-      <tags>
-        <tag>博客搭建</tag>
-        <tag>外挂标签</tag>
-        <tag>github卡片</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>外挂标签之上标标签</title>
     <url>/posts/fbc6eb76.html</url>
     <content><![CDATA[<h1 id="外挂标签之上标标签">外挂标签之上标标签</h1>
@@ -705,6 +753,61 @@ success,error,warning,bolt,ban,home,sync,cogs,key,bell</li>
         <tag>博客搭建</tag>
         <tag>外挂标签</tag>
         <tag>上标标签</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>外挂标签之动态标签</title>
+    <url>/posts/c16bd145.html</url>
+    <content><![CDATA[<h1 id="外挂标签之动态标签">外挂标签之动态标签</h1>
+<h2 id="标签语法">标签语法</h2>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% tip [参数，可选] %&#125;文本内容&#123;% endtip %&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="配置参数">配置参数</h2>
+<div class="note blue icon-padding modern"><i class="note-icon fas fa-bullhorn"></i><ol type="1">
+<li>将所需的CSS类添加到图标（或DOM中的任何元素）。</li>
+<li>对于父级悬停样式，需要给目标元素添加指定CSS类，同时还要给目标元素的父级元素添加CSS类faa-parent
+animated-hover。（详情见示例及示例源码） You can regulate the speed of
+the animation by adding the CSS class or . faa-fastfaa-slow</li>
+<li>可以通过给目标元素添加CSS类faa-fast或faa-slow来控制动画快慢。</li>
+</ol>
+</div>
+<h2 id="示例源码">示例源码</h2>
+<ol type="1">
+<li><p>On DOM load（当页面加载时显示动画） <figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% tip warning faa-horizontal animated %&#125;warning&#123;% endtip %&#125;</span><br><span class="line">&#123;% tip ban faa-flash animated %&#125;ban&#123;% endtip %&#125;</span><br></pre></td></tr></table></figure></p></li>
+<li><p>调整动画速度 <figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% tip warning faa-horizontal animated faa-fast %&#125;warning&#123;% endtip %&#125;</span><br><span class="line">&#123;% tip ban faa-flash animated faa-slow %&#125;ban&#123;% endtip %&#125;</span><br></pre></td></tr></table></figure></p></li>
+<li><p>On hover（当鼠标悬停时显示动画） <figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% tip warning faa-horizontal animated-hover %&#125;warning&#123;% endtip %&#125;</span><br><span class="line">&#123;% tip ban faa-flash animated-hover %&#125;ban&#123;% endtip %&#125;</span><br></pre></td></tr></table></figure></p></li>
+<li><p>On parent hover（当鼠标悬停在父级元素时显示动画）
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% tip warning faa-parent animated-hover %&#125;</span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">&quot;faa-horizontal&quot;</span>&gt;</span></span>warning<span class="language-xml"><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span></span><br><span class="line">&#123;% endtip %&#125;</span><br><span class="line">&#123;% tip ban faa-parent animated-hover %&#125;</span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">&quot;faa-flash&quot;</span>&gt;</span></span>ban<span class="language-xml"><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span></span><br><span class="line">&#123;% endtip %&#125;</span><br></pre></td></tr></table></figure></p></li>
+</ol>
+<h2 id="渲染演示">渲染演示</h2>
+<ol type="1">
+<li><p>On DOM load（当页面加载时显示动画） <div class="tip warning faa-horizontal animated"><p>warning</p>
+</div>
+<div class="tip ban faa-flash animated"><p>ban</p>
+</div></p></li>
+<li><p>调整动画速度 <div class="tip warning faa-horizontal animated faa-fast"><p>warning</p>
+</div> <div class="tip ban faa-flash animated faa-slow"><p>ban</p>
+</div></p></li>
+<li><p>On hover（当鼠标悬停时显示动画） <div class="tip warning faa-horizontal animated-hover"><p>warning</p>
+</div>
+<div class="tip ban faa-flash animated-hover"><p>ban</p>
+</div></p></li>
+<li><p>On parent hover（当鼠标悬停在父级元素时显示动画） <div class="tip warning faa-parent animated-hover"><p class="faa-horizontal">
+warning
+</p>
+</div>
+<div class="tip ban faa-parent animated-hover"><p class="faa-flash">
+ban
+</p>
+</div></p></li>
+</ol>
+]]></content>
+      <categories>
+        <category>博客搭建</category>
+      </categories>
+      <tags>
+        <tag>博客搭建</tag>
+        <tag>外挂标签</tag>
+        <tag>动态标签</tag>
       </tags>
   </entry>
   <entry>
@@ -805,61 +908,6 @@ data-cites="icon">@icon</span>’ 和 ‘Tab caption@icon’.</li>
         <tag>博客搭建</tag>
         <tag>外挂标签</tag>
         <tag>单张图片</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>外挂标签之动态标签</title>
-    <url>/posts/c16bd145.html</url>
-    <content><![CDATA[<h1 id="外挂标签之动态标签">外挂标签之动态标签</h1>
-<h2 id="标签语法">标签语法</h2>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% tip [参数，可选] %&#125;文本内容&#123;% endtip %&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="配置参数">配置参数</h2>
-<div class="note blue icon-padding modern"><i class="note-icon fas fa-bullhorn"></i><ol type="1">
-<li>将所需的CSS类添加到图标（或DOM中的任何元素）。</li>
-<li>对于父级悬停样式，需要给目标元素添加指定CSS类，同时还要给目标元素的父级元素添加CSS类faa-parent
-animated-hover。（详情见示例及示例源码） You can regulate the speed of
-the animation by adding the CSS class or . faa-fastfaa-slow</li>
-<li>可以通过给目标元素添加CSS类faa-fast或faa-slow来控制动画快慢。</li>
-</ol>
-</div>
-<h2 id="示例源码">示例源码</h2>
-<ol type="1">
-<li><p>On DOM load（当页面加载时显示动画） <figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% tip warning faa-horizontal animated %&#125;warning&#123;% endtip %&#125;</span><br><span class="line">&#123;% tip ban faa-flash animated %&#125;ban&#123;% endtip %&#125;</span><br></pre></td></tr></table></figure></p></li>
-<li><p>调整动画速度 <figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% tip warning faa-horizontal animated faa-fast %&#125;warning&#123;% endtip %&#125;</span><br><span class="line">&#123;% tip ban faa-flash animated faa-slow %&#125;ban&#123;% endtip %&#125;</span><br></pre></td></tr></table></figure></p></li>
-<li><p>On hover（当鼠标悬停时显示动画） <figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% tip warning faa-horizontal animated-hover %&#125;warning&#123;% endtip %&#125;</span><br><span class="line">&#123;% tip ban faa-flash animated-hover %&#125;ban&#123;% endtip %&#125;</span><br></pre></td></tr></table></figure></p></li>
-<li><p>On parent hover（当鼠标悬停在父级元素时显示动画）
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% tip warning faa-parent animated-hover %&#125;</span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">&quot;faa-horizontal&quot;</span>&gt;</span></span>warning<span class="language-xml"><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span></span><br><span class="line">&#123;% endtip %&#125;</span><br><span class="line">&#123;% tip ban faa-parent animated-hover %&#125;</span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">&quot;faa-flash&quot;</span>&gt;</span></span>ban<span class="language-xml"><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span></span><br><span class="line">&#123;% endtip %&#125;</span><br></pre></td></tr></table></figure></p></li>
-</ol>
-<h2 id="渲染演示">渲染演示</h2>
-<ol type="1">
-<li><p>On DOM load（当页面加载时显示动画） <div class="tip warning faa-horizontal animated"><p>warning</p>
-</div>
-<div class="tip ban faa-flash animated"><p>ban</p>
-</div></p></li>
-<li><p>调整动画速度 <div class="tip warning faa-horizontal animated faa-fast"><p>warning</p>
-</div> <div class="tip ban faa-flash animated faa-slow"><p>ban</p>
-</div></p></li>
-<li><p>On hover（当鼠标悬停时显示动画） <div class="tip warning faa-horizontal animated-hover"><p>warning</p>
-</div>
-<div class="tip ban faa-flash animated-hover"><p>ban</p>
-</div></p></li>
-<li><p>On parent hover（当鼠标悬停在父级元素时显示动画） <div class="tip warning faa-parent animated-hover"><p class="faa-horizontal">
-warning
-</p>
-</div>
-<div class="tip ban faa-parent animated-hover"><p class="faa-flash">
-ban
-</p>
-</div></p></li>
-</ol>
-]]></content>
-      <categories>
-        <category>博客搭建</category>
-      </categories>
-      <tags>
-        <tag>博客搭建</tag>
-        <tag>外挂标签</tag>
-        <tag>动态标签</tag>
       </tags>
   </entry>
   <entry>
@@ -1015,6 +1063,62 @@ href="https://api.map.baidu.com/lbsapi/getpoint/index.html">百度地图坐标�
         <tag>博客搭建</tag>
         <tag>外挂标签</tag>
         <tag>地图</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>外挂标签之复选列表</title>
+    <url>/posts/24a2c022.html</url>
+    <content><![CDATA[<h1 id="外挂标签之复选列表">外挂标签之复选列表</h1>
+<h2 id="标签语法">标签语法</h2>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% checkbox 样式参数（可选）, 文本（支持简单md） %&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="配置参数">配置参数</h2>
+<ol type="1">
+<li><code>样式</code>: plus, minus, times</li>
+<li><code>颜色</code>: red,yellow,green,cyan,blue,gray</li>
+<li><code>选中状态</code>:
+checked将所需的CSS类添加到图标（或DOM中的任何元素）</li>
+</ol>
+<h2 id="示例源码">示例源码</h2>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% checkbox 纯文本测试 %&#125;</span><br><span class="line">&#123;% checkbox checked, 支持简单的 [<span class="string">markdown</span>](<span class="link">https://guides.github.com/features/mastering-markdown/</span>) 语法 %&#125;</span><br><span class="line">&#123;% checkbox red, 支持自定义颜色 %&#125;</span><br><span class="line">&#123;% checkbox green checked, 绿色 + 默认选中 %&#125;</span><br><span class="line">&#123;% checkbox yellow checked, 黄色 + 默认选中 %&#125;</span><br><span class="line">&#123;% checkbox cyan checked, 青色 + 默认选中 %&#125;</span><br><span class="line">&#123;% checkbox blue checked, 蓝色 + 默认选中 %&#125;</span><br><span class="line">&#123;% checkbox plus green checked, 增加 %&#125;</span><br><span class="line">&#123;% checkbox minus yellow checked, 减少 %&#125;</span><br><span class="line">&#123;% checkbox times red checked, 叉 %&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="渲染演示">渲染演示</h2>
+<div class='checkbox'><input type="checkbox" />
+            <p>纯文本测试</p>
+            </div>
+<div class='checkbox checked'><input type="checkbox" checked="checked"/>
+            <p>支持简单的 <ahref="https://guides.github.com/features/mastering-markdown/">markdown</a>语法</p>
+            </div>
+<div class='checkbox red'><input type="checkbox" />
+            <p>支持自定义颜色</p>
+            </div>
+<div class='checkbox green checked'><input type="checkbox" checked="checked"/>
+            <p>绿色 + 默认选中</p>
+            </div>
+<div class='checkbox yellow checked'><input type="checkbox" checked="checked"/>
+            <p>黄色 + 默认选中</p>
+            </div>
+<div class='checkbox cyan checked'><input type="checkbox" checked="checked"/>
+            <p>青色 + 默认选中</p>
+            </div>
+<div class='checkbox blue checked'><input type="checkbox" checked="checked"/>
+            <p>蓝色 + 默认选中</p>
+            </div>
+<div class='checkbox plus green checked'><input type="checkbox" checked="checked"/>
+            <p>增加</p>
+            </div>
+<div class='checkbox minus yellow checked'><input type="checkbox" checked="checked"/>
+            <p>减少</p>
+            </div>
+<div class='checkbox times red checked'><input type="checkbox" checked="checked"/>
+            <p>叉</p>
+            </div>
+]]></content>
+      <categories>
+        <category>博客搭建</category>
+      </categories>
+      <tags>
+        <tag>博客搭建</tag>
+        <tag>外挂标签</tag>
+        <tag>复选列表</tag>
       </tags>
   </entry>
   <entry>
@@ -1560,62 +1664,6 @@ Butterfly主题的各个衍生魔改<span class="hidden-anchor" id="referto_[6]"
       </tags>
   </entry>
   <entry>
-    <title>外挂标签之复选列表</title>
-    <url>/posts/24a2c022.html</url>
-    <content><![CDATA[<h1 id="外挂标签之复选列表">外挂标签之复选列表</h1>
-<h2 id="标签语法">标签语法</h2>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% checkbox 样式参数（可选）, 文本（支持简单md） %&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="配置参数">配置参数</h2>
-<ol type="1">
-<li><code>样式</code>: plus, minus, times</li>
-<li><code>颜色</code>: red,yellow,green,cyan,blue,gray</li>
-<li><code>选中状态</code>:
-checked将所需的CSS类添加到图标（或DOM中的任何元素）</li>
-</ol>
-<h2 id="示例源码">示例源码</h2>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% checkbox 纯文本测试 %&#125;</span><br><span class="line">&#123;% checkbox checked, 支持简单的 [<span class="string">markdown</span>](<span class="link">https://guides.github.com/features/mastering-markdown/</span>) 语法 %&#125;</span><br><span class="line">&#123;% checkbox red, 支持自定义颜色 %&#125;</span><br><span class="line">&#123;% checkbox green checked, 绿色 + 默认选中 %&#125;</span><br><span class="line">&#123;% checkbox yellow checked, 黄色 + 默认选中 %&#125;</span><br><span class="line">&#123;% checkbox cyan checked, 青色 + 默认选中 %&#125;</span><br><span class="line">&#123;% checkbox blue checked, 蓝色 + 默认选中 %&#125;</span><br><span class="line">&#123;% checkbox plus green checked, 增加 %&#125;</span><br><span class="line">&#123;% checkbox minus yellow checked, 减少 %&#125;</span><br><span class="line">&#123;% checkbox times red checked, 叉 %&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="渲染演示">渲染演示</h2>
-<div class='checkbox'><input type="checkbox" />
-            <p>纯文本测试</p>
-            </div>
-<div class='checkbox checked'><input type="checkbox" checked="checked"/>
-            <p>支持简单的 <ahref="https://guides.github.com/features/mastering-markdown/">markdown</a>语法</p>
-            </div>
-<div class='checkbox red'><input type="checkbox" />
-            <p>支持自定义颜色</p>
-            </div>
-<div class='checkbox green checked'><input type="checkbox" checked="checked"/>
-            <p>绿色 + 默认选中</p>
-            </div>
-<div class='checkbox yellow checked'><input type="checkbox" checked="checked"/>
-            <p>黄色 + 默认选中</p>
-            </div>
-<div class='checkbox cyan checked'><input type="checkbox" checked="checked"/>
-            <p>青色 + 默认选中</p>
-            </div>
-<div class='checkbox blue checked'><input type="checkbox" checked="checked"/>
-            <p>蓝色 + 默认选中</p>
-            </div>
-<div class='checkbox plus green checked'><input type="checkbox" checked="checked"/>
-            <p>增加</p>
-            </div>
-<div class='checkbox minus yellow checked'><input type="checkbox" checked="checked"/>
-            <p>减少</p>
-            </div>
-<div class='checkbox times red checked'><input type="checkbox" checked="checked"/>
-            <p>叉</p>
-            </div>
-]]></content>
-      <categories>
-        <category>博客搭建</category>
-      </categories>
-      <tags>
-        <tag>博客搭建</tag>
-        <tag>外挂标签</tag>
-        <tag>复选列表</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>外挂标签之折叠框</title>
     <url>/posts/f3b9da49.html</url>
     <content><![CDATA[<h1 id="外挂标签之折叠框">外挂标签之折叠框</h1>
@@ -1685,53 +1733,6 @@ themes/Butterfly</p>
         <tag>博客搭建</tag>
         <tag>外挂标签</tag>
         <tag>折叠框</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>外挂标签之旋转相册</title>
-    <url>/posts/75b3d8a.html</url>
-    <content><![CDATA[<h1 id="外挂标签之旋转相册">外挂标签之旋转相册</h1>
-<div class="tip info"><p>旋转相册标签与fancybox灯箱存在兼容性bug，若发现旋转相册呈扁平状，请关闭fancybox或换用medium_zoom。</p>
-</div>
-<h2 id="标签语法">标签语法</h2>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% carousel [Id] , [name] %&#125;</span><br><span class="line">![](<span class="link">/img/1.jpg</span>)</span><br><span class="line">![](<span class="link">/img/2.jpg</span>)</span><br><span class="line">![](<span class="link">/img/3,jpg</span>)</span><br><span class="line">&#123;% endcarousel %&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="配置参数">配置参数</h2>
-<ol type="1">
-<li><code>Id</code>:
-相册唯一ID，用于监测相册鼠标动作。禁止使用中文。同一页内不得出现相同ID的carousel相册。</li>
-<li><code>name</code>: 相册中间显示的内容，建议用英文单引号包裹。</li>
-</ol>
-<h2 id="示例源码">示例源码</h2>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% carousel &#x27;SF&#x27;,&#x27;strike freedom&#x27; %&#125;</span><br><span class="line">![](<span class="link">https://npm.elemecdn.com/akilar-candyassets/image/20200907110444226.png</span>)</span><br><span class="line">![](<span class="link">https://npm.elemecdn.com/akilar-candyassets/image/20200907110508327.png</span>)</span><br><span class="line">![](<span class="link">https://npm.elemecdn.com/akilar-candyassets/image/20200907110525753.png</span>)</span><br><span class="line">![](<span class="link">https://npm.elemecdn.com/akilar-candyassets/image/20200907110600751.png</span>)</span><br><span class="line">![](<span class="link">https://npm.elemecdn.com/akilar-candyassets/image/20200907110621554.png</span>)</span><br><span class="line">![](<span class="link">https://npm.elemecdn.com/akilar-candyassets/image/20200907110637459.png</span>)</span><br><span class="line">![](<span class="link">https://npm.elemecdn.com/akilar-candyassets/image/20200907110654150.png</span>)</span><br><span class="line">![](<span class="link">https://npm.elemecdn.com/akilar-candyassets/image/20200907110707916.png</span>)</span><br><span class="line">![](<span class="link">https://npm.elemecdn.com/akilar-candyassets/image/20200907110719787.png</span>)</span><br><span class="line">![](<span class="link">https://npm.elemecdn.com/akilar-candyassets/image/20200907110731118.png</span>)</span><br><span class="line">&#123;% endcarousel %&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="渲染演示">渲染演示</h2>
-<div id='SF' class='carousel'><div id="SF-drag-container" class="drag-container"><div id="SF-spin-container" class="spin-container"><img
-src="https://npm.elemecdn.com/akilar-candyassets/image/20200907110444226.png" />
-<img
-src="https://npm.elemecdn.com/akilar-candyassets/image/20200907110508327.png" />
-<img
-src="https://npm.elemecdn.com/akilar-candyassets/image/20200907110525753.png" />
-<img
-src="https://npm.elemecdn.com/akilar-candyassets/image/20200907110600751.png" />
-<img
-src="https://npm.elemecdn.com/akilar-candyassets/image/20200907110621554.png" />
-<img
-src="https://npm.elemecdn.com/akilar-candyassets/image/20200907110637459.png" />
-<img
-src="https://npm.elemecdn.com/akilar-candyassets/image/20200907110654150.png" />
-<img
-src="https://npm.elemecdn.com/akilar-candyassets/image/20200907110707916.png" />
-<img
-src="https://npm.elemecdn.com/akilar-candyassets/image/20200907110719787.png" />
-<img
-src="https://npm.elemecdn.com/akilar-candyassets/image/20200907110731118.png" /><p>strike freedom</p></div><div id="SF-carousel-ground" class="carousel-ground"></div></div></div><script type="text/javascript">carouselinit('SF');</script>
-]]></content>
-      <categories>
-        <category>博客搭建</category>
-      </categories>
-      <tags>
-        <tag>博客搭建</tag>
-        <tag>外挂标签</tag>
-        <tag>旋转相册</tag>
       </tags>
   </entry>
   <entry>
@@ -1839,6 +1840,112 @@ style="text-align: center;">填充布局，自动铺满至少一行，多了会�
       </tags>
   </entry>
   <entry>
+    <title>外挂标签之时间轴</title>
+    <url>/posts/57924155.html</url>
+    <content><![CDATA[<h1 id="外挂标签之时间轴">外挂标签之时间轴</h1>
+<h2 id="标签语法">标签语法</h2>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% timeline 时间线标题（可选）[,color] %&#125;</span><br><span class="line">&lt;!-- timeline 时间节点（标题） --&gt;</span><br><span class="line">正文内容</span><br><span class="line">&lt;!-- endtimeline --&gt;</span><br><span class="line">&lt;!-- timeline 时间节点（标题） --&gt;</span><br><span class="line">正文内容</span><br><span class="line">&lt;!-- endtimeline --&gt;</span><br><span class="line">&#123;% endtimeline %&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="配置参数">配置参数</h2>
+<ol type="1">
+<li><code>title</code>：标题/时间线</li>
+<li><code>color</code>：timeline颜色:default(留空) / blue / pink / red /
+purple / orange / green</li>
+</ol>
+<h2 id="示例源码">示例源码</h2>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% timeline 时间轴样式,blue %&#125;</span><br><span class="line">&lt;!-- timeline 2020-07-24 [<span class="string">2.6.6 -&gt; 3.0</span>](<span class="link">https://github.com/volantis-x/hexo-theme-volantis/releases</span>) --&gt;</span><br><span class="line"><span class="bullet">1.</span> 如果有 <span class="code">`hexo-lazyload-image`</span> 插件，需要删除并重新安装最新版本，设置 <span class="code">`lazyload.isSPA: true`</span>。</span><br><span class="line"><span class="bullet">2.</span> 2.x 版本的 css 和 js 不适用于 3.x 版本，如果使用了 <span class="code">`use_cdn: true`</span> 则需要删除。</span><br><span class="line"><span class="bullet">3.</span> 2.x 版本的 fancybox 标签在 3.x 版本中被重命名为 gallery 。</span><br><span class="line"><span class="bullet">4.</span> 2.x 版本的置顶 <span class="code">`top: true`</span> 改为了 <span class="code">`pin: true`</span>，并且同样适用于 <span class="code">`layout: page`</span> 的页面。</span><br><span class="line"><span class="bullet">5.</span> 如果使用了 <span class="code">`hexo-offline`</span> 插件，建议卸载，3.0 版本默认开启了 pjax 服务。</span><br><span class="line">&lt;!-- endtimeline --&gt;</span><br><span class="line">&lt;!-- timeline 2020-05-15 [<span class="string">2.6.3 -&gt; 2.6.6</span>](<span class="link">https://github.com/volantis-x/hexo-theme-volantis/releases/tag/2.6.6</span>) --&gt;</span><br><span class="line">不需要额外处理。</span><br><span class="line">&lt;!-- endtimeline --&gt;</span><br><span class="line">&lt;!-- timeline 2020-04-20 [<span class="string">2.6.2 -&gt; 2.6.3</span>](<span class="link">https://github.com/volantis-x/hexo-theme-volantis/releases/tag/2.6.3</span>) --&gt;</span><br><span class="line"><span class="bullet">1.</span> 全局搜索 <span class="code">`seotitle`</span> 并替换为 <span class="code">`seo_title`</span>。</span><br><span class="line"><span class="bullet">2.</span> group 组件的索引规则有变，使用 group 组件的文章内，<span class="code">`group: group_name`</span> 对应的组件名必须是 <span class="code">`group_name`</span>。</span><br><span class="line"><span class="bullet">3.</span> group 组件的列表名优先显示文章的 <span class="code">`short_title`</span> 其次是 <span class="code">`title`</span>。</span><br><span class="line">&lt;!-- endtimeline --&gt;</span><br><span class="line">&#123;% endtimeline %&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="渲染演示">渲染演示</h2>
+<div class="timeline blue"><div class='timeline-item headline'><div class='timeline-item-title'><div class='item-circle'><p>时间轴样式</p>
+</div></div></div><div class='timeline-item'><div class='timeline-item-title'><div class='item-circle'><p>2020-07-24 <a
+href="https://github.com/volantis-x/hexo-theme-volantis/releases">2.6.6
+-&gt; 3.0</a></p>
+</div></div><div class='timeline-item-content'><ol type="1">
+<li>如果有 <code>hexo-lazyload-image</code>
+插件，需要删除并重新安装最新版本，设置
+<code>lazyload.isSPA: true</code>。</li>
+<li>2.x 版本的 css 和 js 不适用于 3.x 版本，如果使用了
+<code>use_cdn: true</code> 则需要删除。</li>
+<li>2.x 版本的 fancybox 标签在 3.x 版本中被重命名为 gallery 。</li>
+<li>2.x 版本的置顶 <code>top: true</code> 改为了
+<code>pin: true</code>，并且同样适用于 <code>layout: page</code>
+的页面。</li>
+<li>如果使用了 <code>hexo-offline</code> 插件，建议卸载，3.0
+版本默认开启了 pjax 服务。</li>
+</ol>
+</div></div><div class='timeline-item'><div class='timeline-item-title'><div class='item-circle'><p>2020-05-15 <a
+href="https://github.com/volantis-x/hexo-theme-volantis/releases/tag/2.6.6">2.6.3
+-&gt; 2.6.6</a></p>
+</div></div><div class='timeline-item-content'><p>不需要额外处理。</p>
+</div></div><div class='timeline-item'><div class='timeline-item-title'><div class='item-circle'><p>2020-04-20 <a
+href="https://github.com/volantis-x/hexo-theme-volantis/releases/tag/2.6.3">2.6.2
+-&gt; 2.6.3</a></p>
+</div></div><div class='timeline-item-content'><ol type="1">
+<li>全局搜索 <code>seotitle</code> 并替换为
+<code>seo_title</code>。</li>
+<li>group 组件的索引规则有变，使用 group
+组件的文章内，<code>group: group_name</code> 对应的组件名必须是
+<code>group_name</code>。</li>
+<li>group 组件的列表名优先显示文章的 <code>short_title</code> 其次是
+<code>title</code>。</li>
+</ol>
+</div></div></div>
+]]></content>
+      <categories>
+        <category>博客搭建</category>
+      </categories>
+      <tags>
+        <tag>博客搭建</tag>
+        <tag>外挂标签</tag>
+        <tag>时间轴</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>外挂标签之旋转相册</title>
+    <url>/posts/75b3d8a.html</url>
+    <content><![CDATA[<h1 id="外挂标签之旋转相册">外挂标签之旋转相册</h1>
+<div class="tip info"><p>旋转相册标签与fancybox灯箱存在兼容性bug，若发现旋转相册呈扁平状，请关闭fancybox或换用medium_zoom。</p>
+</div>
+<h2 id="标签语法">标签语法</h2>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% carousel [Id] , [name] %&#125;</span><br><span class="line">![](<span class="link">/img/1.jpg</span>)</span><br><span class="line">![](<span class="link">/img/2.jpg</span>)</span><br><span class="line">![](<span class="link">/img/3,jpg</span>)</span><br><span class="line">&#123;% endcarousel %&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="配置参数">配置参数</h2>
+<ol type="1">
+<li><code>Id</code>:
+相册唯一ID，用于监测相册鼠标动作。禁止使用中文。同一页内不得出现相同ID的carousel相册。</li>
+<li><code>name</code>: 相册中间显示的内容，建议用英文单引号包裹。</li>
+</ol>
+<h2 id="示例源码">示例源码</h2>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% carousel &#x27;SF&#x27;,&#x27;strike freedom&#x27; %&#125;</span><br><span class="line">![](<span class="link">https://npm.elemecdn.com/akilar-candyassets/image/20200907110444226.png</span>)</span><br><span class="line">![](<span class="link">https://npm.elemecdn.com/akilar-candyassets/image/20200907110508327.png</span>)</span><br><span class="line">![](<span class="link">https://npm.elemecdn.com/akilar-candyassets/image/20200907110525753.png</span>)</span><br><span class="line">![](<span class="link">https://npm.elemecdn.com/akilar-candyassets/image/20200907110600751.png</span>)</span><br><span class="line">![](<span class="link">https://npm.elemecdn.com/akilar-candyassets/image/20200907110621554.png</span>)</span><br><span class="line">![](<span class="link">https://npm.elemecdn.com/akilar-candyassets/image/20200907110637459.png</span>)</span><br><span class="line">![](<span class="link">https://npm.elemecdn.com/akilar-candyassets/image/20200907110654150.png</span>)</span><br><span class="line">![](<span class="link">https://npm.elemecdn.com/akilar-candyassets/image/20200907110707916.png</span>)</span><br><span class="line">![](<span class="link">https://npm.elemecdn.com/akilar-candyassets/image/20200907110719787.png</span>)</span><br><span class="line">![](<span class="link">https://npm.elemecdn.com/akilar-candyassets/image/20200907110731118.png</span>)</span><br><span class="line">&#123;% endcarousel %&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="渲染演示">渲染演示</h2>
+<div id='SF' class='carousel'><div id="SF-drag-container" class="drag-container"><div id="SF-spin-container" class="spin-container"><img
+src="https://npm.elemecdn.com/akilar-candyassets/image/20200907110444226.png" />
+<img
+src="https://npm.elemecdn.com/akilar-candyassets/image/20200907110508327.png" />
+<img
+src="https://npm.elemecdn.com/akilar-candyassets/image/20200907110525753.png" />
+<img
+src="https://npm.elemecdn.com/akilar-candyassets/image/20200907110600751.png" />
+<img
+src="https://npm.elemecdn.com/akilar-candyassets/image/20200907110621554.png" />
+<img
+src="https://npm.elemecdn.com/akilar-candyassets/image/20200907110637459.png" />
+<img
+src="https://npm.elemecdn.com/akilar-candyassets/image/20200907110654150.png" />
+<img
+src="https://npm.elemecdn.com/akilar-candyassets/image/20200907110707916.png" />
+<img
+src="https://npm.elemecdn.com/akilar-candyassets/image/20200907110719787.png" />
+<img
+src="https://npm.elemecdn.com/akilar-candyassets/image/20200907110731118.png" /><p>strike freedom</p></div><div id="SF-carousel-ground" class="carousel-ground"></div></div></div><script type="text/javascript">carouselinit('SF');</script>
+]]></content>
+      <categories>
+        <category>博客搭建</category>
+      </categories>
+      <tags>
+        <tag>博客搭建</tag>
+        <tag>外挂标签</tag>
+        <tag>旋转相册</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>外挂标签之段落文本</title>
     <url>/posts/931d81cc.html</url>
     <content><![CDATA[<h1 id="外挂标签之段落文本">外挂标签之段落文本</h1>
@@ -1852,11 +1959,11 @@ style="text-align: center;">填充布局，自动铺满至少一行，多了会�
 <li><code>对齐方向</code>:left,center,right</li>
 </ol>
 <h2 id="示例源码">示例源码</h2>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="bullet">1.</span> 彩色文字</span><br><span class="line">   在一段话中方便插入各种颜色的标签，包括：&#123;% p red, 红色 %&#125;、&#123;% p yellow, 黄色 %&#125;、&#123;% p green, 绿色 %&#125;、&#123;% p cyan, 青色 %&#125;、&#123;% p blue, 蓝色 %&#125;、&#123;% p gray, 灰色 %&#125;。</span><br><span class="line"><span class="bullet">2.</span> 超大号文字</span><br><span class="line">   文档「开始」页面中的标题部分就是超大号文字。</span><br><span class="line">   &#123;% p center logo large, Volantis %&#125;</span><br><span class="line">   &#123;% p center small, A Wonderful Theme for Hexo %&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="bullet">1.</span> 彩色文字</span><br><span class="line">   在一段话中方便插入各种颜色的标签，包括：&#123;% p red, 红色 %&#125;&#123;% p yellow, 黄色 %&#125;&#123;% p green, 绿色 %&#125;&#123;% p cyan, 青色 %&#125;&#123;% p blue, 蓝色 %&#125;&#123;% p gray, 灰色 %&#125;</span><br><span class="line"><span class="bullet">2.</span> 超大号文字</span><br><span class="line">   文档「开始」页面中的标题部分就是超大号文字。</span><br><span class="line">   &#123;% p center logo large, Volantis %&#125;</span><br><span class="line">   &#123;% p center small, A Wonderful Theme for Hexo %&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="渲染演示">渲染演示</h2>
 <ol type="1">
 <li>彩色文字
-在一段话中方便插入各种颜色的标签，包括：<p class='p red'>红色</p>、<p class='p yellow'>黄色</p>、<p class='p green'>绿色</p>、<p class='p cyan'>青色</p>、<p class='p blue'>蓝色</p>、<p class='p gray'>灰色</p>。</li>
+在一段话中方便插入各种颜色的标签，包括：<p class='p red'>红色</p><p class='p yellow'>黄色</p><p class='p green'>绿色</p><p class='p cyan'>青色</p><p class='p blue'>蓝色</p><p class='p gray'>灰色</p></li>
 <li>超大号文字 文档「开始」页面中的标题部分就是超大号文字。
 <p class='p center logo large'>Volantis</p> <p class='p center small'>A Wonderful Theme for Hexo</p></li>
 </ol>
@@ -1994,65 +2101,6 @@ href="https://animate.style/">animate.css 参考文档</a></li>
       </tags>
   </entry>
   <entry>
-    <title>外挂标签之时间轴</title>
-    <url>/posts/57924155.html</url>
-    <content><![CDATA[<h1 id="外挂标签之时间轴">外挂标签之时间轴</h1>
-<h2 id="标签语法">标签语法</h2>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% timeline 时间线标题（可选）[,color] %&#125;</span><br><span class="line">&lt;!-- timeline 时间节点（标题） --&gt;</span><br><span class="line">正文内容</span><br><span class="line">&lt;!-- endtimeline --&gt;</span><br><span class="line">&lt;!-- timeline 时间节点（标题） --&gt;</span><br><span class="line">正文内容</span><br><span class="line">&lt;!-- endtimeline --&gt;</span><br><span class="line">&#123;% endtimeline %&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="配置参数">配置参数</h2>
-<ol type="1">
-<li>title:标题/时间线</li>
-<li>color:timeline颜色:default(留空) / blue / pink / red / purple /
-orange / green</li>
-</ol>
-<h2 id="示例源码">示例源码</h2>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% timeline 时间轴样式,blue %&#125;</span><br><span class="line">&lt;!-- timeline 2020-07-24 [<span class="string">2.6.6 -&gt; 3.0</span>](<span class="link">https://github.com/volantis-x/hexo-theme-volantis/releases</span>) --&gt;</span><br><span class="line"><span class="bullet">1.</span> 如果有 <span class="code">`hexo-lazyload-image`</span> 插件，需要删除并重新安装最新版本，设置 <span class="code">`lazyload.isSPA: true`</span>。</span><br><span class="line"><span class="bullet">2.</span> 2.x 版本的 css 和 js 不适用于 3.x 版本，如果使用了 <span class="code">`use_cdn: true`</span> 则需要删除。</span><br><span class="line"><span class="bullet">3.</span> 2.x 版本的 fancybox 标签在 3.x 版本中被重命名为 gallery 。</span><br><span class="line"><span class="bullet">4.</span> 2.x 版本的置顶 <span class="code">`top: true`</span> 改为了 <span class="code">`pin: true`</span>，并且同样适用于 <span class="code">`layout: page`</span> 的页面。</span><br><span class="line"><span class="bullet">5.</span> 如果使用了 <span class="code">`hexo-offline`</span> 插件，建议卸载，3.0 版本默认开启了 pjax 服务。</span><br><span class="line">&lt;!-- endtimeline --&gt;</span><br><span class="line">&lt;!-- timeline 2020-05-15 [<span class="string">2.6.3 -&gt; 2.6.6</span>](<span class="link">https://github.com/volantis-x/hexo-theme-volantis/releases/tag/2.6.6</span>) --&gt;</span><br><span class="line">不需要额外处理。</span><br><span class="line">&lt;!-- endtimeline --&gt;</span><br><span class="line">&lt;!-- timeline 2020-04-20 [<span class="string">2.6.2 -&gt; 2.6.3</span>](<span class="link">https://github.com/volantis-x/hexo-theme-volantis/releases/tag/2.6.3</span>) --&gt;</span><br><span class="line"><span class="bullet">1.</span> 全局搜索 <span class="code">`seotitle`</span> 并替换为 <span class="code">`seo_title`</span>。</span><br><span class="line"><span class="bullet">2.</span> group 组件的索引规则有变，使用 group 组件的文章内，<span class="code">`group: group_name`</span> 对应的组件名必须是 <span class="code">`group_name`</span>。</span><br><span class="line"><span class="bullet">3.</span> group 组件的列表名优先显示文章的 <span class="code">`short_title`</span> 其次是 <span class="code">`title`</span>。</span><br><span class="line">&lt;!-- endtimeline --&gt;</span><br><span class="line">&#123;% endtimeline %&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="渲染演示">渲染演示</h2>
-<div class="timeline blue"><div class='timeline-item headline'><div class='timeline-item-title'><div class='item-circle'><p>时间轴样式</p>
-</div></div></div><div class='timeline-item'><div class='timeline-item-title'><div class='item-circle'><p>2020-07-24 <a
-href="https://github.com/volantis-x/hexo-theme-volantis/releases">2.6.6
--&gt; 3.0</a></p>
-</div></div><div class='timeline-item-content'><ol type="1">
-<li>如果有 <code>hexo-lazyload-image</code>
-插件，需要删除并重新安装最新版本，设置
-<code>lazyload.isSPA: true</code>。</li>
-<li>2.x 版本的 css 和 js 不适用于 3.x 版本，如果使用了
-<code>use_cdn: true</code> 则需要删除。</li>
-<li>2.x 版本的 fancybox 标签在 3.x 版本中被重命名为 gallery 。</li>
-<li>2.x 版本的置顶 <code>top: true</code> 改为了
-<code>pin: true</code>，并且同样适用于 <code>layout: page</code>
-的页面。</li>
-<li>如果使用了 <code>hexo-offline</code> 插件，建议卸载，3.0
-版本默认开启了 pjax 服务。</li>
-</ol>
-</div></div><div class='timeline-item'><div class='timeline-item-title'><div class='item-circle'><p>2020-05-15 <a
-href="https://github.com/volantis-x/hexo-theme-volantis/releases/tag/2.6.6">2.6.3
--&gt; 2.6.6</a></p>
-</div></div><div class='timeline-item-content'><p>不需要额外处理。</p>
-</div></div><div class='timeline-item'><div class='timeline-item-title'><div class='item-circle'><p>2020-04-20 <a
-href="https://github.com/volantis-x/hexo-theme-volantis/releases/tag/2.6.3">2.6.2
--&gt; 2.6.3</a></p>
-</div></div><div class='timeline-item-content'><ol type="1">
-<li>全局搜索 <code>seotitle</code> 并替换为
-<code>seo_title</code>。</li>
-<li>group 组件的索引规则有变，使用 group
-组件的文章内，<code>group: group_name</code> 对应的组件名必须是
-<code>group_name</code>。</li>
-<li>group 组件的列表名优先显示文章的 <code>short_title</code> 其次是
-<code>title</code>。</li>
-</ol>
-</div></div></div>
-]]></content>
-      <categories>
-        <category>博客搭建</category>
-      </categories>
-      <tags>
-        <tag>博客搭建</tag>
-        <tag>外挂标签</tag>
-        <tag>时间轴</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>外挂标签之网站卡片</title>
     <url>/posts/cbc0000a.html</url>
     <content><![CDATA[<h1 id="外挂标签之网站卡片">外挂标签之网站卡片</h1>
@@ -2093,6 +2141,38 @@ href="https://github.com/volantis-x/hexo-theme-volantis/releases/tag/2.6.3">2.6.
         <tag>博客搭建</tag>
         <tag>外挂标签</tag>
         <tag>行内图片</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>外挂标签之行内文本</title>
+    <url>/posts/ad253b28.html</url>
+    <content><![CDATA[<h1 id="外挂标签之行内文本">外挂标签之行内文本</h1>
+<h2 id="标签语法">标签语法</h2>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% span 样式参数(参数以空格划分), 文本内容&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="配置参数">配置参数</h2>
+<ol type="1">
+<li><code>字体</code>:logo,code</li>
+<li><code>颜色</code>:red,yellow,green,cyan,blue,gray</li>
+<li><code>大小</code>:small,h4,h3,h3,h2,h1,large,huge.ultra</li>
+<li><code>对齐方向</code>:left,center,right</li>
+</ol>
+<h2 id="示例源码">示例源码</h2>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="bullet">1.</span> 彩色文字</span><br><span class="line">   在一段话中方便插入各种颜色的标签，包括：&#123;% span red, 红色 %&#125;、&#123;% span yellow, 黄色 %&#125;、&#123;% span green, 绿色 %&#125;、&#123;% span cyan, 青色 %&#125;、&#123;% span blue, 蓝色 %&#125;、&#123;% span gray, 灰色 %&#125;。</span><br><span class="line"><span class="bullet">2.</span> 超大号文字</span><br><span class="line">  文档「开始」页面中的标题部分就是超大号文字。</span><br><span class="line">  &#123;% span center logo large, Volantis %&#125;</span><br><span class="line">  &#123;% span center small, A Wonderful Theme for Hexo %&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="渲染演示">渲染演示</h2>
+<ol type="1">
+<li>彩色文字
+在一段话中方便插入各种颜色的标签，包括：<span class='p red'>红色</span>、<span class='p yellow'>黄色</span>、<span class='p green'>绿色</span>、<span class='p cyan'>青色</span>、<span class='p blue'>蓝色</span>、<span class='p gray'>灰色</span>。</li>
+<li>超大号文字 文档「开始」页面中的标题部分就是超大号文字。
+<span class='p center logo large'>Volantis</span> <span class='p center small'>A Wonderful Theme for Hexo</span></li>
+</ol>
+]]></content>
+      <categories>
+        <category>博客搭建</category>
+      </categories>
+      <tags>
+        <tag>博客搭建</tag>
+        <tag>外挂标签</tag>
+        <tag>行内文本</tag>
       </tags>
   </entry>
   <entry>
@@ -2198,6 +2278,26 @@ href="https://github.com/volantis-x/hexo-theme-volantis/releases/tag/2.6.3">2.6.
       </tags>
   </entry>
   <entry>
+    <title>外挂标签之链接卡片</title>
+    <url>/posts/816398cf.html</url>
+    <content><![CDATA[<h1 id="外挂标签之链接卡片">外挂标签之链接卡片</h1>
+<h2 id="标签语法">标签语法</h2>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% link 标题, 链接, 图片链接（可选） %&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="示例源码">示例源码</h2>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% link 糖果屋教程贴, https://akilar.top/posts/615e2dec/, https://cdn.cbd.int/akilar-candyassets@1.0.36/image/siteicon/favicon.ico %&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="渲染演示">渲染演示</h2>
+<div class="tag link"><a class="link-card" title="糖果屋教程贴" href="https://akilar.top/posts/615e2dec/"><div class="left"><img src="https://cdn.cbd.int/akilar-candyassets@1.0.36/image/siteicon/favicon.ico"/></div><div class="right"><p class="text">糖果屋教程贴</p><p class="url">https://akilar.top/posts/615e2dec/</p></div></a></div>
+]]></content>
+      <categories>
+        <category>博客搭建</category>
+      </categories>
+      <tags>
+        <tag>博客搭建</tag>
+        <tag>外挂标签</tag>
+        <tag>链接卡片</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>外挂标签之进度条</title>
     <url>/posts/5dede2e1.html</url>
     <content><![CDATA[<h1 id="外挂标签之进度条">外挂标签之进度条</h1>
@@ -2232,26 +2332,6 @@ red,yellow,green,cyan,blue,gray</li>
         <tag>博客搭建</tag>
         <tag>外挂标签</tag>
         <tag>进度条</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>外挂标签之链接卡片</title>
-    <url>/posts/816398cf.html</url>
-    <content><![CDATA[<h1 id="外挂标签之链接卡片">外挂标签之链接卡片</h1>
-<h2 id="标签语法">标签语法</h2>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% link 标题, 链接, 图片链接（可选） %&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="示例源码">示例源码</h2>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% link 糖果屋教程贴, https://akilar.top/posts/615e2dec/, https://cdn.cbd.int/akilar-candyassets@1.0.36/image/siteicon/favicon.ico %&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="渲染演示">渲染演示</h2>
-<div class="tag link"><a class="link-card" title="糖果屋教程贴" href="https://akilar.top/posts/615e2dec/"><div class="left"><img src="https://cdn.cbd.int/akilar-candyassets@1.0.36/image/siteicon/favicon.ico"/></div><div class="right"><p class="text">糖果屋教程贴</p><p class="url">https://akilar.top/posts/615e2dec/</p></div></a></div>
-]]></content>
-      <categories>
-        <category>博客搭建</category>
-      </categories>
-      <tags>
-        <tag>博客搭建</tag>
-        <tag>外挂标签</tag>
-        <tag>链接卡片</tag>
       </tags>
   </entry>
   <entry>
