@@ -13,6 +13,15 @@
     background: rgba(255, 255, 255, .92);
 }
 
+#aside-content .item-headline {
+    text-align: center;
+}
+
+#aside-content .announcement_content {
+    text-indent: 2em;
+    text-align: justify;
+}
+
 div#post {
     background: rgba(255, 255, 255, .92);
 }
