@@ -79,7 +79,7 @@ function createWinbox() {
     <a href="javascript:;" rel="noopener external nofollow" style="background-image:url(https://blogresource.sqwdream.cloud/background/desktop_wallpaper/girl2.jpg)" class="imgbox" onclick="changeBg('url(https\://blogresource.sqwdream.cloud/background/desktop_wallpaper/girl2.jpg)')"></a>
     <a href="javascript:;" rel="noopener external nofollow" style="background-image:url(https://blogresource.sqwdream.cloud/background/desktop_wallpaper/green.jpg)" class="imgbox" onclick="changeBg('url(https\://blogresource.sqwdream.cloud/background/desktop_wallpaper/green.jpg)')"></a>
     <a href="javascript:;" rel="noopener external nofollow" style="background-image:url(https://blogresource.sqwdream.cloud/background/desktop_wallpaper/girl3.jpg)" class="imgbox" onclick="changeBg('url(https\://blogresource.sqwdream.cloud/background/desktop_wallpaper/girl3.jpg)')"></a>
-    <a href="javascript:;" rel="noopener external nofollow" style="background-image:url(https://blogresource.sqwdream.cloud/background/desktop_wallpaper/men.jpg)" class="imgbox" onclick="changeBg('url(https\://blogresource.sqwdream.cloud/background/desktop_wallpaper/men.jpg)')"></a>
+    <a href="javascript:;" rel="noopener external nofollow" style="background-image:url(https://blogresource.sqwdream.cloud/background/desktop_wallpaper/men.png)" class="imgbox" onclick="changeBg('url(https\://blogresource.sqwdream.cloud/background/desktop_wallpaper/men.png)')"></a>
     </div>
     
     
