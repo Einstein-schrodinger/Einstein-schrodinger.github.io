@@ -48,7 +48,7 @@ function createWinbox() {
     winbox = WinBox({
         id: 'changeBgBox',
         index: 999,
-        title: "切换背景",
+        title: "背景切换",
         x: "center",
         y: "center",
         minwidth: '300px',
@@ -64,7 +64,7 @@ function createWinbox() {
     winbox.body.innerHTML = `
     <div id="article-container" style="padding:10px;">
     
-    <p><button onclick="localStorage.removeItem('blogbg');location.reload();" style="background:#5fcdff;display:block;width:100%;padding: 15px 0;border-radius:6px;color:white;"><i class="fa-solid fa-arrows-rotate"></i> 点我恢复默认背景</button></p>
+    <p><button onclick="localStorage.removeItem('blogbg');location.reload();" style="background:#b347f1;display:block;width:20%;padding: 15px 0;border-radius:6px;color:white;"><i class="fa-solid fa-arrows-rotate"></i> 点我恢复默认背景</button></p>
     <h2 id="图片（手机）"><a href="#图片（手机）" class="headerlink" title="图片（手机）"></a>图片（手机）</h2>
     <div class="bgbox">
     <a href="javascript:;" rel="noopener external nofollow" style="background-image:url(https://blogresource.sqwdream.cloud/background/cell_phone_wallpape/girl1.jpeg)" class="pimgbox" onclick="changeBg('url(https\://blogresource.sqwdream.cloud/background/cell_phone_wallpape/girl1.jpeg)')"></a>
