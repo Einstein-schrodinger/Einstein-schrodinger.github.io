@@ -72,12 +72,14 @@ function createWinbox() {
     
     <h2 id="图片（电脑）"><a href="#图片（电脑）" class="headerlink" title="图片（电脑）"></a>图片（电脑）</h2>
     <div class="bgbox">
-    <a href="javascript:;" rel="noopener external nofollow" style="background-image:url(https://blogresource.sqwdream.cloud/background/desktop_wallpaper/three_body.jpg)" class="imgbox" onclick="changeBg('url(https\://blogresource.sqwdream.cloud/background/desktop_wallpaper/three_body.jpg)')"></a>
+    <a href="javascript:;" rel="noopener external nofollow" style="background-image:url(https://blogresource.sqwdream.cloud/background/desktop_wallpaper/threebody.jpg)" class="imgbox" onclick="changeBg('url(https\://blogresource.sqwdream.cloud/background/desktop_wallpaper/threebody.jpg)')"></a>
     <a href="javascript:;" rel="noopener external nofollow" style="background-image:url(https://blogresource.sqwdream.cloud/background/desktop_wallpaper/distance.jpg)" class="imgbox" onclick="changeBg('url(https\://blogresource.sqwdream.cloud/background/desktop_wallpaper/distance.jpg)')"></a>
-    <a href="javascript:;" rel="noopener external nofollow" style="background-image:url(https://blogresource.sqwdream.cloud/background/desktop_wallpaper/beautiful_girl.png)" class="imgbox" onclick="changeBg('url(https\://blogresource.sqwdream.cloud/background/desktop_wallpaper/beautiful_girl.png)')"></a>
+    <a href="javascript:;" rel="noopener external nofollow" style="background-image:url(https://blogresource.sqwdream.cloud/background/desktop_wallpaper/beautifulgirl.png)" class="imgbox" onclick="changeBg('url(https\://blogresource.sqwdream.cloud/background/desktop_wallpaper/beautifulgirl.png)')"></a>
     <a href="javascript:;" rel="noopener external nofollow" style="background-image:url(https://blogresource.sqwdream.cloud/background/desktop_wallpaper/girl1.jpg)" class="imgbox" onclick="changeBg('url(https\://blogresource.sqwdream.cloud/background/desktop_wallpaper/girl1.jpg)')"></a>
     <a href="javascript:;" rel="noopener external nofollow" style="background-image:url(https://blogresource.sqwdream.cloud/background/desktop_wallpaper/girl2.jpg)" class="imgbox" onclick="changeBg('url(https\://blogresource.sqwdream.cloud/background/desktop_wallpaper/girl2.jpg)')"></a>
     <a href="javascript:;" rel="noopener external nofollow" style="background-image:url(https://blogresource.sqwdream.cloud/background/desktop_wallpaper/green.jpg)" class="imgbox" onclick="changeBg('url(https\://blogresource.sqwdream.cloud/background/desktop_wallpaper/green.jpg)')"></a>
+    <a href="javascript:;" rel="noopener external nofollow" style="background-image:url(https://blogresource.sqwdream.cloud/background/desktop_wallpaper/girl3.jpg)" class="imgbox" onclick="changeBg('url(https\://blogresource.sqwdream.cloud/background/desktop_wallpaper/girl3.jpg)')"></a>
+    <a href="javascript:;" rel="noopener external nofollow" style="background-image:url(https://blogresource.sqwdream.cloud/background/desktop_wallpaper/men.jpg)" class="imgbox" onclick="changeBg('url(https\://blogresource.sqwdream.cloud/background/desktop_wallpaper/men.jpg)')"></a>
     </div>
     
     
