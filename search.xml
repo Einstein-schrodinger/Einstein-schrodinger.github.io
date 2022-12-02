@@ -260,6 +260,34 @@ S=\frac{8\pi^2{k_\mathrm{B}}^2T}{3eh^2}m_{\mathrm{d}}^{*}\left(\frac{\pi}{3p}\ri
       </tags>
   </entry>
   <entry>
+    <title>VASP之能带反折叠</title>
+    <url>/posts/8864f856.html</url>
+    <content><![CDATA[<h1 id="vasp之能带反折叠">VASP之能带反折叠</h1>
+<div class="note info modern"><p>参考：</p>
+<ol type="1">
+<li><a
+href="http://supersunsir.com/2020/07/22/vasp/vasp_band_unfold/">VASP_能带反折叠计算</a></li>
+<li><a
+href="https://blog.shishiruqi.com/2019/07/12/unfold/">能带反折叠计算</a></li>
+<li><a
+href="http://bbs.vaspkit.cn/thread-35-1-1.html">关于含缺陷的supercell的能带反折叠的问题</a></li>
+</ol>
+</div>
+<details class="folding-tag" cyan><summary> 基本步骤 </summary>
+              <div class='content'>
+              <ol type="1"><li>准备<code>POSCAR</code>文件，原胞或者晶胞都可以(推荐用原胞，以防第<em>3</em>步程序不能正确将晶胞生成原胞)</li><li>执行<code>vaspkit -task 302</code>会生成<code>KPATH.in</code>(后续用于能带反折叠的计算)和<code>PRIMCELL.vasp</code>（即原胞，也就是第一步的POSCAR文件不管是不是原胞，到了这一步会生成原胞）</li><li>执行<code>cp PRIMCELL.vasp POSCAR</code>，<spanclass="bubble-content">对原胞进行结构优化</span><spanclass="bubble-notation"><span class="bubble-item"style="background-color: #de4489;">我认为可以不用对原胞结构进行优化，原胞主要是用来构建超胞的，关系应该不大</span></span>，优化结束执行<code>cp CONTCAR POSCAR</code></li><li>准备矩阵变换文件<code>TRANSMAT.in</code>用于生成所需的超胞结构</li><li>执行<code>vaspkit -task 400</code>程序会读取经过优化后的<code>POSCAR</code>文件与矩阵变换文件<code>TRANSMAT.in</code>生成超胞结构<code>SUPERCELL.vasp</code>,可以对超胞文件进行修改构造缺陷，执行<code>cp SUPERCELL.vasp POSCAR</code></li><li>新建一个目录<code>rel</code>，对超胞进行结构优化，优化结束，<code>cp CONTCAR POSCAR</code></li><li>新建一个目录<code>banduf</code>进行能带反折叠计算，准备<code>INCAR</code>，优化后的超胞结构<code>POSCAR</code>，拷贝之前的<code>KPATH.in</code>和<code>TRANSMAT.in</code>到该目录下，执行<code>vaspkit -task 281</code>生成用于能带反折叠计算得<code>KPOINTS</code>文件与<code>POTCAR</code>文件，进行静态计算</li><li>运行结束，执行<code>vaspkit -task 282</code>生成<code>有效能带（Effective Band Structure）</code>数据文件<code>EBS.dat</code>，画法类似于投影能带，或者用<spanclass="bubble-content">eps_plot.py</span><spanclass="bubble-notation"><span class="bubble-item"style="background-color: #de4489;">脚本的路径：<code>vaspkit/examples/band_unfolding/eps_plot.py</code></span></span>脚本进行绘图；另外执行<code>vasp -task 284</code>可以得到投影到元素以及元素轨道的能带数据<code>PEBS_Element.dat</code>，然后自行画图，画法类似于投影能带。</li></ol>
+              </div>
+            </details>
+]]></content>
+      <categories>
+        <category>理论计算</category>
+      </categories>
+      <tags>
+        <tag>VASP</tag>
+        <tag>能带反折叠</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>博客搭建之加载动画</title>
     <url>/posts/f5a1d98c.html</url>
     <content><![CDATA[<h1 id="博客搭建之加载动画">博客搭建之加载动画</h1>
@@ -1065,7 +1093,7 @@ red,yellow,green,cyan,blue,gray</li>
 <li><code>color</code>：按钮显示的文字的颜色（可选）</li>
 </ol>
 <h2 id="示例源码">示例源码</h2>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% hideBlock 点我预览, blue %&#125;</span><br><span class="line">这里有张图片：</span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;https://blogresource.sqwdream.cloud/post/博客问题集锦/img/cover/黑洞.png&quot;</span> <span class="attr">alt</span>=<span class="string">&quot;image (1)&quot;</span> <span class="attr">style</span>=<span class="string">&quot;zoom:100%;&quot;</span> /&gt;</span></span></span><br><span class="line"></span><br><span class="line">&#123;% endhideBlock %&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% hideBlock 点我预览, blue %&#125;</span><br><span class="line">这里有张图片：</span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;https://blogresource.sqwdream.cloud/post/博客问题集锦/img/cover/黑洞.png&quot;</span> <span class="attr">alt</span>=<span class="string">&quot;image (1)&quot;</span> <span class="attr">style</span>=<span class="string">&quot;zoom:100%;&quot;</span> /&gt;</span></span></span><br><span class="line">&#123;% endhideBlock %&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="渲染演示">渲染演示</h2>
 <div class="hide-block"><button type="button" class="hide-button" style="background-color:  blue;">点我预览
     </button><div class="hide-content"><p>这里有张图片：
