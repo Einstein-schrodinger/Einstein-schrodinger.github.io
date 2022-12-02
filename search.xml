@@ -1,36 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>出入红尘</title>
-    <url>/posts/1168772c.html</url>
-    <content><![CDATA[<div class='poem'><div class='poem-title'>好了歌</div><div class='poem-author'>曹雪芹</div><p>世人都晓神仙好，惟有功名忘不了！ 古今将相在何方？荒冢一堆草没了。
-世人都晓神仙好，只有金银忘不了！ 终朝只恨聚无多，及到多时眼闭了。
-世人都晓神仙好，只有娇妻忘不了！ 君生日日说恩情，君死又随人去了。
-世人都晓神仙好，只有儿孙忘不了！ 痴心父母古来多，孝顺儿孙谁见了？</p>
+    <title>博客问题集锦</title>
+    <url>/posts/6bf8c91.html</url>
+    <content><![CDATA[<div class="note info modern"><ol type="1">
+<li><p>鉴于每个人的博客根目录名称都不太一样，本贴<strong>博客根目录</strong>一律以<code>[BlogRoot]</code>指代</p></li>
+<li><p>数学公式配置：<a
+href="https://butterfly.js.org/posts/ceeb73f/#Math-%E6%95%B8%E5%AD%B8">Math
+数学</a></p></li>
+<li><p>参考：<a
+href="https://www.cnblogs.com/Ai-heng/p/7282110.html">hexo博客MathJax公式渲染问题</a></p></li>
+</ol>
 </div>
+<h1 id="公式渲染问题">公式渲染问题</h1>
+<details class="folding-tag" cyan><summary> 点击查看 </summary>
+              <div class='content'>
+              <p>在博客中一些数学公式会出现渲染问题，当然md文件也有可能出现渲染问题，比如引用变成上标等，这里只介绍出现的MathJax数学公式的渲染问题，主要问题就是行内数学公式会出现渲染失败的情况，对于单个符号问题渲染还是可以的，但是涉及到等式就会出现渲染失败的情况，具体问题展示如下：</p><p><ahref="https://blogresource.sqwdream.cloud/post/博客问题集锦/img/body/行内公式error.jpg"></a></p><p>解决的方法如下：</p><ol type="1"><li><p>更换公式渲染引擎</p><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm uninstall hexo-renderer-marked --save</span><br><span class="line">npm install hexo-renderer-kramed --save</span><br></pre></td></tr></table></figure></li><li><p>修改<code>[BlogRoot]/node_modules/kramed/lib/rules/inline.js</code>文件</p><figure class="highlight diff"><table><tr><td class="code"><pre><span class="line"><span class="deletion">- escape: /^\\([\\`*&#123;&#125;\[\]()#$+\-.!_&gt;])/,  /*11行*/</span></span><br><span class="line"><span class="addition">+ escape: /^\\([`*\[\]()#$+\-.!_&gt;])/,</span></span><br><span class="line"><span class="deletion">- em: /^\b_((?:__|[\s\S])+?)_\b|^\*((?:\*\*|[\s\S])+?)\*(?!\*)/,  /*20行*/  </span></span><br><span class="line"><span class="addition">+ em: /^\*((?:\*\*|[\s\S])+?)\*(?!\*)/,</span></span><br></pre></td></tr></table></figure></li><li><p>如果在md文件中用到数学公式，要在Front-matter中加入<code>mathjax: true</code></p></li><li><p>如果和butterfly外观标签混合使用，比如数学公式嵌套在butterfly外挂标签中，可以尝试在Front-matter中删除<code>mathjax: true</code>，以防止渲染冲突</p></li></ol>
+              </div>
+            </details>
 ]]></content>
       <categories>
-        <category>诗与远方</category>
+        <category>博客问题集锦</category>
       </categories>
       <tags>
-        <tag>诗与远方</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>水调歌头</title>
-    <url>/posts/ac668694.html</url>
-    <content><![CDATA[<div class='poem'><div class='poem-title'>水调歌头</div><div class='poem-author'>苏轼</div><p>丙辰中秋，欢饮达旦，大醉，作此篇，兼怀子由。 明月几时有？把酒问青天。
-不知天上宫阙，今夕是何年？ 我欲乘风归去，又恐琼楼玉宇，高处不胜寒。
-起舞弄清影，何似在人间？</p>
-<p>转朱阁，低绮户，照无眠。 不应有恨，何事长向别时圆？
-人有悲欢离合，月有阴晴圆缺，此事古难全。 但愿人长久，千里共婵娟。</p>
-</div>
-]]></content>
-      <categories>
-        <category>诗与远方</category>
-      </categories>
-      <tags>
-        <tag>诗与远方</tag>
+        <tag>MathJax</tag>
+        <tag>公式渲染</tag>
       </tags>
   </entry>
   <entry>
@@ -131,6 +125,44 @@ S=\frac{8\pi^2{k_\mathrm{B}}^2T}{3eh^2}m_{\mathrm{d}}^{*}\left(\frac{\pi}{3p}\ri
       </tags>
   </entry>
   <entry>
+    <title>博客搭建之Twikoo</title>
+    <url>/posts/6fc19c10.html</url>
+    <content><![CDATA[<h1 id="博客搭建之twikoo">博客搭建之Twikoo</h1>
+<div class="note info modern"><ol type="1">
+<li><p>鉴于每个人的博客根目录名称都不太一样，本贴<strong>博客根目录</strong>一律以<code>[BlogRoot]</code>指代</p></li>
+<li><p>站点配置文件<code>_config.yml</code>，路径为<code>[BlogRoot]\_config.yml</code></p></li>
+<li><p>主题配置文件<code>_config.yml</code>，路径为<code>[BlogRoot]\themes\butterfly\_config.yml</code></p></li>
+</ol>
+</div>
+<h2 id="twikoo的评论设置">1.Twikoo的评论设置</h2>
+<h3 id="支持图片评论">1.1 支持图片评论</h3>
+<p>Twikoo评论区要支持图片评论功能需要配置图床，这里以比较容易设置的<a
+href="https://smms.app/">smms</a>图床为例，首先要进行注册，注册成功之后，会给你5GB的空间用来存储图片，一般来说够用了。将获取的smms图床的token复制到Twikoo插件设置里的<code>IMAGE_CDN_ToKEN</code>，并且将<code>IMAGE_CDN</code>填写为<code>smms</code>，其余选项保持默认即可，配置结束之后记得拉到最下方点击保存，刷新一下即可生效。下面图片展示详细的步骤：</p>
+<ul>
+<li>smms注册并获取token</li>
+</ul>
+<p><img
+src="https://blogresource.sqwdream.cloud/post/博客搭建之Twikoo/img/body/smms.jpg" /></p>
+<ul>
+<li>网站的Twikoo评论设置</li>
+</ul>
+<p><img
+src="https://blogresource.sqwdream.cloud/post/博客搭建之Twikoo/img/body/评论图床设置.jpg" /></p>
+<h3 id="支持latex公式评论">1.2 支持Latex公式评论</h3>
+<p>支持公式评论可以参考Twikoo官网的<a
+href="https://twikoo.js.org/faq.html#%E5%A6%82%E4%BD%95%E5%90%AF%E7%94%A8-katex-%E6%94%AF%E6%8C%81">如何开启Katex支持？</a>，就是在主题配置文件<code>_config.yml</code>中引入如下代码：</p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">innject:</span></span><br><span class="line">  <span class="attr">head:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">&lt;link</span> <span class="string">rel=&quot;stylesheet&quot;</span> <span class="string">href=&quot;https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css&quot;</span> <span class="string">integrity=&quot;sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X&quot;</span> <span class="string">crossorigin=&quot;anonymous&quot;&gt;</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">&lt;script</span> <span class="string">defer</span> <span class="string">src=&quot;https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js&quot;</span> <span class="string">integrity=&quot;sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4&quot;</span> <span class="string">crossorigin=&quot;anonymous&quot;&gt;&lt;/script&gt;</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">&lt;script</span> <span class="string">defer</span> <span class="string">src=&quot;https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js&quot;</span> <span class="string">integrity=&quot;sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa&quot;</span> <span class="string">crossorigin=&quot;anonymous&quot;&gt;&lt;/script&gt;</span></span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>博客搭建</category>
+      </categories>
+      <tags>
+        <tag>博客搭建</tag>
+        <tag>Twikoo</tag>
+        <tag>图床</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>博客搭建之加载动画</title>
     <url>/posts/f5a1d98c.html</url>
     <content><![CDATA[<h1 id="博客搭建之加载动画">博客搭建之加载动画</h1>
@@ -207,79 +239,6 @@ Animation</a>，由于版本不同做了适当修改</p></li>
       <tags>
         <tag>博客搭建</tag>
         <tag>加载动画</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>博客搭建之文章链接</title>
-    <url>/posts/cc96dfee.html</url>
-    <content><![CDATA[<h1 id="博客搭建之文章链接">博客搭建之文章链接</h1>
-<div class="note info modern"><ol type="1">
-<li><p>鉴于每个人的博客根目录名称都不太一样，本贴<strong>博客根目录</strong>一律以<code>[BlogRoot]</code>指代</p></li>
-<li><p>站点配置文件<code>_config.yml</code>，路径为<code>[BlogRoot]\_config.yml</code></p></li>
-<li><p>主题配置文件<code>_config.yml</code>，路径为<code>[BlogRoot]\themes\butterfly\_config.yml</code></p></li>
-</ol>
-</div>
-<h2
-id="缩短文末copyright中文章链接的长度">缩短文末Copyright中文章链接的长度</h2>
-<h3
-id="在博客根目录下blogroot安装插件">1.在博客根目录下<code>[BlogRoot]</code>安装插件：</h3>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm install hexo-abbrlink --save</span><br></pre></td></tr></table></figure>
-<h3
-id="修改站点配置文件blogroot_config.yml添加以下内容">2.修改站点配置文件<code>[BlogRoot]\_config.yml</code>，添加以下内容：</h3>
-<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># permalink: :year/:month/:day/:title/</span></span><br><span class="line"><span class="comment"># permalink: p/:abbrlink.html  # p 是自定义的前缀</span></span><br><span class="line"><span class="attr">permalink:</span> <span class="string">/:abbrlink.html</span>  <span class="comment"># p 是自定义的前缀</span></span><br><span class="line"><span class="attr">abbrlink:</span></span><br><span class="line">    <span class="attr">alg:</span> <span class="string">crc32</span>   <span class="comment">#算法： crc16(default) and crc32</span></span><br><span class="line">    <span class="attr">rep:</span> <span class="string">hex</span>     <span class="comment">#进制： dec(default) and hex</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li><strong>不同算法和进制生成不同的格式</strong></li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">crc16 &amp; hex</span><br><span class="line">https://post.zz173.com/posts/66c8.html</span><br><span class="line">crc16 &amp; dec</span><br><span class="line">https://post.zz173.com/posts/65535.html</span><br><span class="line"></span><br><span class="line">crc32 &amp; hex</span><br><span class="line">https://post.zz173.com/posts/8ddf18fb.html</span><br><span class="line">crc32 &amp; dec</span><br><span class="line">https://post.zz173.com/posts/1690090958.html</span><br></pre></td></tr></table></figure>
-<ul>
-<li><strong><code>hexo g</code>生成网页时，会在每篇文章的<code>front matter</code>中加入一项<code>abbrlink</code>，它是根据文章题目生成的，生成之后不可更改，可以删除重新生成</strong></li>
-</ul>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">abbrlink: cc96dfee</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>博客搭建</category>
-      </categories>
-      <tags>
-        <tag>博客搭建</tag>
-        <tag>文章链接</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>博客搭建之Twikoo</title>
-    <url>/posts/6fc19c10.html</url>
-    <content><![CDATA[<h1 id="博客搭建之twikoo">博客搭建之Twikoo</h1>
-<div class="note info modern"><ol type="1">
-<li><p>鉴于每个人的博客根目录名称都不太一样，本贴<strong>博客根目录</strong>一律以<code>[BlogRoot]</code>指代</p></li>
-<li><p>站点配置文件<code>_config.yml</code>，路径为<code>[BlogRoot]\_config.yml</code></p></li>
-<li><p>主题配置文件<code>_config.yml</code>，路径为<code>[BlogRoot]\themes\butterfly\_config.yml</code></p></li>
-</ol>
-</div>
-<h2 id="twikoo的评论设置">1.Twikoo的评论设置</h2>
-<h3 id="支持图片评论">1.1 支持图片评论</h3>
-<p>Twikoo评论区要支持图片评论功能需要配置图床，这里以比较容易设置的<a
-href="https://smms.app/">smms</a>图床为例，首先要进行注册，注册成功之后，会给你5GB的空间用来存储图片，一般来说够用了。将获取的smms图床的token复制到Twikoo插件设置里的<code>IMAGE_CDN_ToKEN</code>，并且将<code>IMAGE_CDN</code>填写为<code>smms</code>，其余选项保持默认即可，配置结束之后记得拉到最下方点击保存，刷新一下即可生效。下面图片展示详细的步骤：</p>
-<ul>
-<li>smms注册并获取token</li>
-</ul>
-<p><img
-src="https://blogresource.sqwdream.cloud/post/博客搭建之Twikoo/img/body/smms.jpg" /></p>
-<ul>
-<li>网站的Twikoo评论设置</li>
-</ul>
-<p><img
-src="https://blogresource.sqwdream.cloud/post/博客搭建之Twikoo/img/body/评论图床设置.jpg" /></p>
-<h3 id="支持latex公式评论">1.2 支持Latex公式评论</h3>
-<p>支持公式评论可以参考Twikoo官网的<a
-href="https://twikoo.js.org/faq.html#%E5%A6%82%E4%BD%95%E5%90%AF%E7%94%A8-katex-%E6%94%AF%E6%8C%81">如何开启Katex支持？</a>，就是在主题配置文件<code>_config.yml</code>中引入如下代码：</p>
-<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">innject:</span></span><br><span class="line">  <span class="attr">head:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">&lt;link</span> <span class="string">rel=&quot;stylesheet&quot;</span> <span class="string">href=&quot;https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css&quot;</span> <span class="string">integrity=&quot;sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X&quot;</span> <span class="string">crossorigin=&quot;anonymous&quot;&gt;</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">&lt;script</span> <span class="string">defer</span> <span class="string">src=&quot;https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js&quot;</span> <span class="string">integrity=&quot;sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4&quot;</span> <span class="string">crossorigin=&quot;anonymous&quot;&gt;&lt;/script&gt;</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">&lt;script</span> <span class="string">defer</span> <span class="string">src=&quot;https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js&quot;</span> <span class="string">integrity=&quot;sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa&quot;</span> <span class="string">crossorigin=&quot;anonymous&quot;&gt;&lt;/script&gt;</span></span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>博客搭建</category>
-      </categories>
-      <tags>
-        <tag>博客搭建</tag>
-        <tag>Twikoo</tag>
-        <tag>图床</tag>
       </tags>
   </entry>
   <entry>
@@ -399,33 +358,6 @@ href="https://www.sqwdream.cloud/posts/75b3d8a.html">1.32
       </tags>
   </entry>
   <entry>
-    <title>博客问题集锦</title>
-    <url>/posts/6bf8c91.html</url>
-    <content><![CDATA[<div class="note info modern"><ol type="1">
-<li><p>鉴于每个人的博客根目录名称都不太一样，本贴<strong>博客根目录</strong>一律以<code>[BlogRoot]</code>指代</p></li>
-<li><p>数学公式配置：<a
-href="https://butterfly.js.org/posts/ceeb73f/#Math-%E6%95%B8%E5%AD%B8">Math
-数学</a></p></li>
-<li><p>参考：<a
-href="https://www.cnblogs.com/Ai-heng/p/7282110.html">hexo博客MathJax公式渲染问题</a></p></li>
-</ol>
-</div>
-<h1 id="公式渲染问题">公式渲染问题</h1>
-<details class="folding-tag" cyan><summary> 点击查看 </summary>
-              <div class='content'>
-              <p>在博客中一些数学公式会出现渲染问题，当然md文件也有可能出现渲染问题，比如引用变成上标等，这里只介绍出现的MathJax数学公式的渲染问题，主要问题就是行内数学公式会出现渲染失败的情况，对于单个符号问题渲染还是可以的，但是涉及到等式就会出现渲染失败的情况，具体问题展示如下：</p><p><ahref="https://blogresource.sqwdream.cloud/post/博客问题集锦/img/body/行内公式error.jpg"></a></p><p>解决的方法如下：</p><ol type="1"><li><p>更换公式渲染引擎</p><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm uninstall hexo-renderer-marked --save</span><br><span class="line">npm install hexo-renderer-kramed --save</span><br></pre></td></tr></table></figure></li><li><p>修改<code>[BlogRoot]/node_modules/kramed/lib/rules/inline.js</code>文件</p><figure class="highlight diff"><table><tr><td class="code"><pre><span class="line"><span class="deletion">- escape: /^\\([\\`*&#123;&#125;\[\]()#$+\-.!_&gt;])/,  /*11行*/</span></span><br><span class="line"><span class="addition">+ escape: /^\\([`*\[\]()#$+\-.!_&gt;])/,</span></span><br><span class="line"><span class="deletion">- em: /^\b_((?:__|[\s\S])+?)_\b|^\*((?:\*\*|[\s\S])+?)\*(?!\*)/,  /*20行*/  </span></span><br><span class="line"><span class="addition">+ em: /^\*((?:\*\*|[\s\S])+?)\*(?!\*)/,</span></span><br></pre></td></tr></table></figure></li><li><p>如果在md文件中用到数学公式，要在Front-matter中加入<code>mathjax: true</code></p></li><li><p>如果和butterfly外观标签混合使用，比如数学公式嵌套在butterfly外挂标签中，可以尝试在Front-matter中删除<code>mathjax: true</code>，以防止渲染冲突</p></li></ol>
-              </div>
-            </details>
-]]></content>
-      <categories>
-        <category>博客问题集锦</category>
-      </categories>
-      <tags>
-        <tag>MathJax</tag>
-        <tag>公式渲染</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>博客搭建之夜间繁星</title>
     <url>/posts/5ed672e6.html</url>
     <content><![CDATA[<h1 id="博客搭建之夜间繁星">博客搭建之夜间繁星</h1>
@@ -490,6 +422,57 @@ Parabolic Band，SPB</strong>)模型相关计算</h1>
       </tags>
   </entry>
   <entry>
+    <title>博客搭建之文章链接</title>
+    <url>/posts/cc96dfee.html</url>
+    <content><![CDATA[<h1 id="博客搭建之文章链接">博客搭建之文章链接</h1>
+<div class="note info modern"><ol type="1">
+<li><p>鉴于每个人的博客根目录名称都不太一样，本贴<strong>博客根目录</strong>一律以<code>[BlogRoot]</code>指代</p></li>
+<li><p>站点配置文件<code>_config.yml</code>，路径为<code>[BlogRoot]\_config.yml</code></p></li>
+<li><p>主题配置文件<code>_config.yml</code>，路径为<code>[BlogRoot]\themes\butterfly\_config.yml</code></p></li>
+</ol>
+</div>
+<h2
+id="缩短文末copyright中文章链接的长度">缩短文末Copyright中文章链接的长度</h2>
+<h3
+id="在博客根目录下blogroot安装插件">1.在博客根目录下<code>[BlogRoot]</code>安装插件：</h3>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm install hexo-abbrlink --save</span><br></pre></td></tr></table></figure>
+<h3
+id="修改站点配置文件blogroot_config.yml添加以下内容">2.修改站点配置文件<code>[BlogRoot]\_config.yml</code>，添加以下内容：</h3>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># permalink: :year/:month/:day/:title/</span></span><br><span class="line"><span class="comment"># permalink: p/:abbrlink.html  # p 是自定义的前缀</span></span><br><span class="line"><span class="attr">permalink:</span> <span class="string">/:abbrlink.html</span>  <span class="comment"># p 是自定义的前缀</span></span><br><span class="line"><span class="attr">abbrlink:</span></span><br><span class="line">    <span class="attr">alg:</span> <span class="string">crc32</span>   <span class="comment">#算法： crc16(default) and crc32</span></span><br><span class="line">    <span class="attr">rep:</span> <span class="string">hex</span>     <span class="comment">#进制： dec(default) and hex</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>不同算法和进制生成不同的格式</strong></li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">crc16 &amp; hex</span><br><span class="line">https://post.zz173.com/posts/66c8.html</span><br><span class="line">crc16 &amp; dec</span><br><span class="line">https://post.zz173.com/posts/65535.html</span><br><span class="line"></span><br><span class="line">crc32 &amp; hex</span><br><span class="line">https://post.zz173.com/posts/8ddf18fb.html</span><br><span class="line">crc32 &amp; dec</span><br><span class="line">https://post.zz173.com/posts/1690090958.html</span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong><code>hexo g</code>生成网页时，会在每篇文章的<code>front matter</code>中加入一项<code>abbrlink</code>，它是根据文章题目生成的，生成之后不可更改，可以删除重新生成</strong></li>
+</ul>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">abbrlink: cc96dfee</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>博客搭建</category>
+      </categories>
+      <tags>
+        <tag>博客搭建</tag>
+        <tag>文章链接</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>出入红尘</title>
+    <url>/posts/1168772c.html</url>
+    <content><![CDATA[<div class='poem'><div class='poem-title'>好了歌</div><div class='poem-author'>曹雪芹</div><p>世人都晓神仙好，惟有功名忘不了！ 古今将相在何方？荒冢一堆草没了。
+世人都晓神仙好，只有金银忘不了！ 终朝只恨聚无多，及到多时眼闭了。
+世人都晓神仙好，只有娇妻忘不了！ 君生日日说恩情，君死又随人去了。
+世人都晓神仙好，只有儿孙忘不了！ 痴心父母古来多，孝顺儿孙谁见了？</p>
+</div>
+]]></content>
+      <categories>
+        <category>诗与远方</category>
+      </categories>
+      <tags>
+        <tag>诗与远方</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>博客搭建之樱花雨</title>
     <url>/posts/a163ffe3.html</url>
     <content><![CDATA[<h1 id="博客搭建之樱花雨">博客搭建之樱花雨</h1>
@@ -524,6 +507,68 @@ id="引入对应的资源修改主题配置文件_config.yml在-inject-配置项
       <tags>
         <tag>博客搭建</tag>
         <tag>樱花雨背景特效</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>外挂标签之PDF展示</title>
+    <url>/posts/d629a2c2.html</url>
+    <content><![CDATA[<h1 id="外挂标签之pdf展示">外挂标签之PDF展示</h1>
+<div class="tip info"><p>需要安装<a
+href="https://blog.csdn.net/qq_43701912/article/details/107291518">hexo-pdf</a>插件</p>
+</div>
+<h2 id="标签语法">标签语法</h2>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% pdf 文件路径 %&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="配置参数">配置参数</h2>
+<ol type="1">
+<li><code>文件路径</code>: 可以是相对路径或者是在线链接</li>
+</ol>
+<h2 id="示例源码">示例源码</h2>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="bullet">1.</span> 本地文件:在md文件路径下创建一个同名文件夹，其内放pdf文件名为<span class="code">`能带模型.pdf`</span>的文件</span><br><span class="line">&#123;% pdf <span class="emphasis">_posts/博客搭建/外挂标签之PDF展示/能带模型.pdf %&#125;</span></span><br><span class="line"><span class="emphasis">2. 在线链接</span></span><br><span class="line"><span class="emphasis">&#123;% pdf https://cdn.jsdelivr.net/gh/Justlovesmile/CDN/pdf/小作文讲义.pdf %&#125;</span></span><br></pre></td></tr></table></figure>
+<h2 id="渲染演示">渲染演示</h2>
+<ol type="1">
+<li>本地文件:在md文件路径下创建一个同名文件夹，其内放pdf文件名为<code>能带模型.pdf</code>的文件
+
+
+	<div class="row">
+    <embed src="能带模型.pdf" width="100%" height="550" type="application/pdf">
+	</div>
+
+
+</li>
+<li>在线链接 
+
+	<div class="row">
+    <embed src="https://cdn.jsdelivr.net/gh/Justlovesmile/CDN/pdf/小作文讲义.pdf" width="100%" height="550" type="application/pdf">
+	</div>
+
+
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>博客搭建</category>
+      </categories>
+      <tags>
+        <tag>博客搭建</tag>
+        <tag>外挂标签</tag>
+        <tag>PDF展示</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>水调歌头</title>
+    <url>/posts/ac668694.html</url>
+    <content><![CDATA[<div class='poem'><div class='poem-title'>水调歌头</div><div class='poem-author'>苏轼</div><p>丙辰中秋，欢饮达旦，大醉，作此篇，兼怀子由。 明月几时有？把酒问青天。
+不知天上宫阙，今夕是何年？ 我欲乘风归去，又恐琼楼玉宇，高处不胜寒。
+起舞弄清影，何似在人间？</p>
+<p>转朱阁，低绮户，照无眠。 不应有恨，何事长向别时圆？
+人有悲欢离合，月有阴晴圆缺，此事古难全。 但愿人长久，千里共婵娟。</p>
+</div>
+]]></content>
+      <categories>
+        <category>诗与远方</category>
+      </categories>
+      <tags>
+        <tag>诗与远方</tag>
       </tags>
   </entry>
   <entry>
@@ -738,39 +783,35 @@ style="text-align: center;">填充布局，自动铺满至少一行，多了会�
       </tags>
   </entry>
   <entry>
-    <title>外挂标签之PDF展示</title>
-    <url>/posts/d629a2c2.html</url>
-    <content><![CDATA[<h1 id="外挂标签之pdf展示">外挂标签之PDF展示</h1>
-<div class="tip info"><p>需要安装<a
-href="https://blog.csdn.net/qq_43701912/article/details/107291518">hexo-pdf</a>插件</p>
-</div>
+    <title>外挂标签之github徽标</title>
+    <url>/posts/b08228d8.html</url>
+    <content><![CDATA[<h1 id="外挂标签之github徽标">外挂标签之github徽标</h1>
 <h2 id="标签语法">标签语法</h2>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% pdf 文件路径 %&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% bdage [right],[left],[logo]||[color],[link],[title]||[option] %&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="配置参数">配置参数</h2>
 <ol type="1">
-<li><code>文件路径</code>: 可以是相对路径或者是在线链接</li>
+<li><code>left</code>：徽标左边的信息，必选参数。</li>
+<li><code>right</code>: 徽标右边的信息，必选参数，</li>
+<li><code>logo</code>：徽标图标，图标名称详见<a
+href="https://simpleicons.org/">simpleicons</a>，可选参数。</li>
+<li><code>color</code>：徽标右边的颜色，可选参数。</li>
+<li><code>link</code>：指向的链接，可选参数。</li>
+<li><code>title</code>：徽标的额外信息，可选参数。主要用于优化SEO，但<code>object</code>标签不会像<code>a</code>标签一样在鼠标悬停显示<code>title</code>信息。</li>
+<li><code>option</code>：自定义参数，支持<a
+href="https://shields.io/">shields.io</a>的全部API参数支持，具体参数可以参看上文中的拓展写法示例。形式为<code>name1=value2&amp;name2=value2</code>。</li>
 </ol>
 <h2 id="示例源码">示例源码</h2>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="bullet">1.</span> 本地文件:在md文件路径下创建一个同名文件夹，其内放pdf文件名为<span class="code">`能带模型.pdf`</span>的文件</span><br><span class="line">&#123;% pdf <span class="emphasis">_posts/博客搭建/外挂标签之PDF展示/能带模型.pdf %&#125;</span></span><br><span class="line"><span class="emphasis">2. 在线链接</span></span><br><span class="line"><span class="emphasis">&#123;% pdf https://cdn.jsdelivr.net/gh/Justlovesmile/CDN/pdf/小作文讲义.pdf %&#125;</span></span><br></pre></td></tr></table></figure>
-<h2 id="渲染演示">渲染演示</h2>
 <ol type="1">
-<li>本地文件:在md文件路径下创建一个同名文件夹，其内放pdf文件名为<code>能带模型.pdf</code>的文件
-
-
-	<div class="row">
-    <embed src="能带模型.pdf" width="100%" height="550" type="application/pdf">
-	</div>
-
-
-</li>
-<li>在线链接 
-
-	<div class="row">
-    <embed src="https://cdn.jsdelivr.net/gh/Justlovesmile/CDN/pdf/小作文讲义.pdf" width="100%" height="550" type="application/pdf">
-	</div>
-
-
-</li>
+<li>基本参数,定义徽标左右文字和图标 <figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% bdage Theme,Butterfly %&#125;</span><br><span class="line">&#123;% bdage Frame,Hexo,hexo %&#125;</span><br></pre></td></tr></table></figure></li>
+<li>信息参数，定义徽标右侧内容背景色，指向链接 <figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% bdage CDN,JsDelivr,jsDelivr||abcdef,https://metroui.org.ua/index.html,本站使用JsDelivr为静态资源提供CDN加速 %&#125;</span><br><span class="line">//如果是跨顺序省略可选参数，仍然需要写个逗号,用作分割</span><br><span class="line">&#123;% bdage Source,GitHub,GitHub||,https://github.com/ %&#125;</span><br></pre></td></tr></table></figure></li>
+<li>拓展参数，支持shields的API的全部参数内容 <figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% bdage Hosted,Vercel,Vercel||brightgreen,https://vercel.com/,本站采用双线部署，默认线路托管于Vercel||style=social&amp;logoWidth=20 %&#125;</span><br><span class="line">//如果是跨顺序省略可选参数组，仍然需要写双竖线||用作分割</span><br><span class="line">&#123;% bdage Hosted,Vercel,Vercel||||style=social&amp;logoWidth=20&amp;logoColor=violet %&#125;</span><br></pre></td></tr></table></figure> ##
+渲染演示</li>
+<li>基本参数,定义徽标左右文字和图标 <object class="ghbdage" style="margin-inline:5px" title="" standby="loading..." data="https://img.shields.io/badge/Butterfly-Theme-orange?logo=&color=orange&link=&"></object> <object class="ghbdage" style="margin-inline:5px" title="" standby="loading..." data="https://img.shields.io/badge/Hexo-Frame-orange?logo=hexo&color=orange&link=&"></object></li>
+<li>信息参数，定义徽标右侧内容背景色，指向链接 <object class="ghbdage" style="margin-inline:5px" title="本站使用JsDelivr为静态资源提供CDN加速" standby="loading..." data="https://img.shields.io/badge/JsDelivr-CDN-orange?logo=jsDelivr&color=abcdef&link=https://metroui.org.ua/index.html&"></object>
+//如果是跨顺序省略可选参数，仍然需要写个逗号,用作分割 <object class="ghbdage" style="margin-inline:5px" title="" standby="loading..." data="https://img.shields.io/badge/GitHub-Source-orange?logo=GitHub&color=orange&link=https://github.com/&"></object></li>
+<li>拓展参数，支持shields的API的全部参数内容 <object class="ghbdage" style="margin-inline:5px" title="本站采用双线部署，默认线路托管于Vercel" standby="loading..." data="https://img.shields.io/badge/Vercel-Hosted-orange?logo=Vercel&color=brightgreen&link=https://vercel.com/&style=social&logoWidth=20"></object>
+//如果是跨顺序省略可选参数组，仍然需要写双竖线||用作分割
+<object class="ghbdage" style="margin-inline:5px" title="" standby="loading..." data="https://img.shields.io/badge/Vercel-Hosted-orange?logo=Vercel&color=orange&link=&style=social&logoWidth=20&logoColor=violet"></object></li>
 </ol>
 ]]></content>
       <categories>
@@ -779,7 +820,7 @@ href="https://blog.csdn.net/qq_43701912/article/details/107291518">hexo-pdf</a>�
       <tags>
         <tag>博客搭建</tag>
         <tag>外挂标签</tag>
-        <tag>PDF展示</tag>
+        <tag>github徽标</tag>
       </tags>
   </entry>
   <entry>
@@ -895,47 +936,6 @@ data-cites="icon">@icon</span>’ 和 ‘Tab caption@icon’.</li>
         <tag>博客搭建</tag>
         <tag>外挂标签</tag>
         <tag>分栏tab</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>外挂标签之github徽标</title>
-    <url>/posts/b08228d8.html</url>
-    <content><![CDATA[<h1 id="外挂标签之github徽标">外挂标签之github徽标</h1>
-<h2 id="标签语法">标签语法</h2>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% bdage [right],[left],[logo]||[color],[link],[title]||[option] %&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="配置参数">配置参数</h2>
-<ol type="1">
-<li><code>left</code>：徽标左边的信息，必选参数。</li>
-<li><code>right</code>: 徽标右边的信息，必选参数，</li>
-<li><code>logo</code>：徽标图标，图标名称详见<a
-href="https://simpleicons.org/">simpleicons</a>，可选参数。</li>
-<li><code>color</code>：徽标右边的颜色，可选参数。</li>
-<li><code>link</code>：指向的链接，可选参数。</li>
-<li><code>title</code>：徽标的额外信息，可选参数。主要用于优化SEO，但<code>object</code>标签不会像<code>a</code>标签一样在鼠标悬停显示<code>title</code>信息。</li>
-<li><code>option</code>：自定义参数，支持<a
-href="https://shields.io/">shields.io</a>的全部API参数支持，具体参数可以参看上文中的拓展写法示例。形式为<code>name1=value2&amp;name2=value2</code>。</li>
-</ol>
-<h2 id="示例源码">示例源码</h2>
-<ol type="1">
-<li>基本参数,定义徽标左右文字和图标 <figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% bdage Theme,Butterfly %&#125;</span><br><span class="line">&#123;% bdage Frame,Hexo,hexo %&#125;</span><br></pre></td></tr></table></figure></li>
-<li>信息参数，定义徽标右侧内容背景色，指向链接 <figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% bdage CDN,JsDelivr,jsDelivr||abcdef,https://metroui.org.ua/index.html,本站使用JsDelivr为静态资源提供CDN加速 %&#125;</span><br><span class="line">//如果是跨顺序省略可选参数，仍然需要写个逗号,用作分割</span><br><span class="line">&#123;% bdage Source,GitHub,GitHub||,https://github.com/ %&#125;</span><br></pre></td></tr></table></figure></li>
-<li>拓展参数，支持shields的API的全部参数内容 <figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% bdage Hosted,Vercel,Vercel||brightgreen,https://vercel.com/,本站采用双线部署，默认线路托管于Vercel||style=social&amp;logoWidth=20 %&#125;</span><br><span class="line">//如果是跨顺序省略可选参数组，仍然需要写双竖线||用作分割</span><br><span class="line">&#123;% bdage Hosted,Vercel,Vercel||||style=social&amp;logoWidth=20&amp;logoColor=violet %&#125;</span><br></pre></td></tr></table></figure> ##
-渲染演示</li>
-<li>基本参数,定义徽标左右文字和图标 <object class="ghbdage" style="margin-inline:5px" title="" standby="loading..." data="https://img.shields.io/badge/Butterfly-Theme-orange?logo=&color=orange&link=&"></object> <object class="ghbdage" style="margin-inline:5px" title="" standby="loading..." data="https://img.shields.io/badge/Hexo-Frame-orange?logo=hexo&color=orange&link=&"></object></li>
-<li>信息参数，定义徽标右侧内容背景色，指向链接 <object class="ghbdage" style="margin-inline:5px" title="本站使用JsDelivr为静态资源提供CDN加速" standby="loading..." data="https://img.shields.io/badge/JsDelivr-CDN-orange?logo=jsDelivr&color=abcdef&link=https://metroui.org.ua/index.html&"></object>
-//如果是跨顺序省略可选参数，仍然需要写个逗号,用作分割 <object class="ghbdage" style="margin-inline:5px" title="" standby="loading..." data="https://img.shields.io/badge/GitHub-Source-orange?logo=GitHub&color=orange&link=https://github.com/&"></object></li>
-<li>拓展参数，支持shields的API的全部参数内容 <object class="ghbdage" style="margin-inline:5px" title="本站采用双线部署，默认线路托管于Vercel" standby="loading..." data="https://img.shields.io/badge/Vercel-Hosted-orange?logo=Vercel&color=brightgreen&link=https://vercel.com/&style=social&logoWidth=20"></object>
-//如果是跨顺序省略可选参数组，仍然需要写双竖线||用作分割
-<object class="ghbdage" style="margin-inline:5px" title="" standby="loading..." data="https://img.shields.io/badge/Vercel-Hosted-orange?logo=Vercel&color=orange&link=&style=social&logoWidth=20&logoColor=violet"></object></li>
-</ol>
-]]></content>
-      <categories>
-        <category>博客搭建</category>
-      </categories>
-      <tags>
-        <tag>博客搭建</tag>
-        <tag>外挂标签</tag>
-        <tag>github徽标</tag>
       </tags>
   </entry>
   <entry>
@@ -1182,53 +1182,6 @@ href="https://api.map.baidu.com/lbsapi/getpoint/index.html">百度地图坐标�
         <tag>博客搭建</tag>
         <tag>外挂标签</tag>
         <tag>单选列表</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>外挂标签之引用文献</title>
-    <url>/posts/965f46ee.html</url>
-    <content><![CDATA[<h1 id="外挂标签之引用文献">外挂标签之引用文献</h1>
-<h2 id="标签语法">标签语法</h2>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% referto [id] , [literature] %&#125;</span><br><span class="line">&#123;% referfrom [id] , [literature] , [url] %&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="配置参数">配置参数</h2>
-<ol type="1">
-<li>referto 引用上标
-<ul>
-<li><code>id</code>: 上标序号内容，需与 referfrom 标签的 id
-对应才能实现跳转</li>
-<li><code>literature</code>: 引用的参考文献名称</li>
-</ul></li>
-<li>referfrom 引用出处
-<ul>
-<li><code>id</code>: 序号内容，需与 referto 标签的 id 对应才能实现
-跳转</li>
-<li><code>literature</code>: 引用的参考文献名称</li>
-<li><code>url</code>: 引用的参考文献链接，可省略</li>
-</ul></li>
-</ol>
-<h2 id="示例源码">示例源码</h2>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">Akilarの糖果屋(akilar.top)是一个私人性质的博客&#123;% referto &#x27;[1]&#x27;,&#x27;Akilarの糖果屋群聊简介&#x27; %&#125;，从各类教程至生活点滴，无话不谈。建群的目的是提供一个闲聊的场所。博客采用Hexo框架&#123;% referto &#x27;[2]&#x27;,&#x27;Hexo中文文档&#x27; %&#125;，Butterfly主题&#123;% referto &#x27;[3]&#x27;,&#x27;Butterfly 安装文档(一) 快速开始&#x27; %&#125;</span><br><span class="line"></span><br><span class="line">本项目参考了Volantis&#123;% referto &#x27;[4]&#x27;,&#x27;hexo-theme-volantis 标签插件&#x27; %&#125;的标签样式。引入<span class="code">`[tag].js`</span>，并针对<span class="code">`butterfly`</span>主题修改了相应的<span class="code">`[tag].styl`</span>。在此鸣谢<span class="code">`Volantis`</span>主题众开发者。</span><br><span class="line">主要参考内容包括各个volantis的内置标签插件文档&#123;% referto &#x27;[5]&#x27;,&#x27;Volantis文档:内置标签插件&#x27; %&#125;</span><br><span class="line">Butterfly主题的各个衍生魔改&#123;% referto &#x27;[6]&#x27;,&#x27;Butterfly 安装文档:标签外挂（Tag Plugins&#x27; %&#125;&#123;% referto &#x27;[7]&#x27;,&#x27;小弋の生活馆全样式预览&#x27; %&#125;&#123;% referto &#x27;[8]&#x27;,&#x27;l-lin-font-awesome-animation&#x27; %&#125;&#123;% referto &#x27;[9]&#x27;,&#x27;小康的butterfly主题使用文档&#x27; %&#125;</span><br><span class="line"></span><br><span class="line">&#123;% referfrom &#x27;[1]&#x27;,&#x27;Akilarの糖果屋群聊简介&#x27;,&#x27;https://jq.qq.com/?<span class="emphasis">_wv=1027&amp;k=pGLB2C0N&#x27; %&#125;</span></span><br><span class="line"><span class="emphasis">&#123;% referfrom &#x27;[2]&#x27;,&#x27;Hexo中文文档&#x27;,&#x27;https://hexo.io/zh-cn/docs/&#x27; %&#125;</span></span><br><span class="line"><span class="emphasis">&#123;% referfrom &#x27;[3]&#x27;,&#x27;Butterfly 安装文档(一) 快速开始&#x27;,&#x27;https://butterfly.js.org/posts/21cfbf15/&#x27; %&#125;</span></span><br><span class="line"><span class="emphasis">&#123;% referfrom &#x27;[4]&#x27;,&#x27;hexo-theme-volantis 标签插件&#x27;,&#x27;https://volantis.js.org/v5/tag-plugins/&#x27; %&#125;</span></span><br><span class="line"><span class="emphasis">&#123;% referfrom &#x27;[5]&#x27;,&#x27;Volantis文档:内置标签插件&#x27;,&#x27;https://volantis.js.org/tag-plugins/&#x27; %&#125;</span></span><br><span class="line"><span class="emphasis">&#123;% referfrom &#x27;[6]&#x27;,&#x27;Butterfly 安装文档:标签外挂（Tag Plugins）&#x27;,&#x27;https://butterfly.js.org/posts/4aa8abbe/#%E6%A8%99%E7%B1%A4%E5%A4%96%E6%8E%9B%EF%BC%88Tag-Plugins%EF%BC%89&#x27; %&#125;</span></span><br><span class="line"><span class="emphasis">&#123;% referfrom &#x27;[7]&#x27;,&#x27;小弋の生活馆全样式预览&#x27;,&#x27;https://lovelijunyi.gitee.io/posts/c898.html&#x27; %&#125;</span></span><br><span class="line"><span class="emphasis">&#123;% referfrom &#x27;[8]&#x27;,&#x27;l-lin-font-awesome-animation&#x27;,&#x27;https://github.com/l-lin/font-awesome-animation&#x27; %&#125;</span></span><br><span class="line"><span class="emphasis">&#123;% referfrom &#x27;[9]&#x27;,&#x27;小康的butterfly主题使用文档&#x27;,&#x27;https://www.antmoe.com/posts/3b43914f/&#x27; %&#125;</span></span><br></pre></td></tr></table></figure>
-<h2 id="渲染演示">渲染演示</h2>
-<p>Akilarの糖果屋(akilar.top)是一个私人性质的博客<span class="hidden-anchor" id="referto_[1]"></span><sup class="reference"><a href="#referfrom_[1]">[1]</a></sup><span class="reference-bubble"><span class="reference-item"><span class="reference-literature">Akilarの糖果屋群聊简介</span><span class="reference-title">参考资料</span></span></span>，从各类教程至生活点滴，无话不谈。建群的目的是提供一个闲聊的场所。博客采用Hexo框架<span class="hidden-anchor" id="referto_[2]"></span><sup class="reference"><a href="#referfrom_[2]">[2]</a></sup><span class="reference-bubble"><span class="reference-item"><span class="reference-literature">Hexo中文文档</span><span class="reference-title">参考资料</span></span></span>，Butterfly主题<span class="hidden-anchor" id="referto_[3]"></span><sup class="reference"><a href="#referfrom_[3]">[3]</a></sup><span class="reference-bubble"><span class="reference-item"><span class="reference-literature">Butterfly 安装文档(一) 快速开始</span><span class="reference-title">参考资料</span></span></span></p>
-<p>本项目参考了Volantis<span class="hidden-anchor" id="referto_[4]"></span><sup class="reference"><a href="#referfrom_[4]">[4]</a></sup><span class="reference-bubble"><span class="reference-item"><span class="reference-literature">hexo-theme-volantis 标签插件</span><span class="reference-title">参考资料</span></span></span>的标签样式。引入<code>[tag].js</code>，并针对<code>butterfly</code>主题修改了相应的<code>[tag].styl</code>。在此鸣谢<code>Volantis</code>主题众开发者。主要参考内容包括各个volantis的内置标签插件文档<span class="hidden-anchor" id="referto_[5]"></span><sup class="reference"><a href="#referfrom_[5]">[5]</a></sup><span class="reference-bubble"><span class="reference-item"><span class="reference-literature">Volantis文档:内置标签插件</span><span class="reference-title">参考资料</span></span></span>
-Butterfly主题的各个衍生魔改<span class="hidden-anchor" id="referto_[6]"></span><sup class="reference"><a href="#referfrom_[6]">[6]</a></sup><span class="reference-bubble"><span class="reference-item"><span class="reference-literature">Butterfly 安装文档:标签外挂（Tag Plugins</span><span class="reference-title">参考资料</span></span></span><span class="hidden-anchor" id="referto_[7]"></span><sup class="reference"><a href="#referfrom_[7]">[7]</a></sup><span class="reference-bubble"><span class="reference-item"><span class="reference-literature">小弋の生活馆全样式预览</span><span class="reference-title">参考资料</span></span></span><span class="hidden-anchor" id="referto_[8]"></span><sup class="reference"><a href="#referfrom_[8]">[8]</a></sup><span class="reference-bubble"><span class="reference-item"><span class="reference-literature">l-lin-font-awesome-animation</span><span class="reference-title">参考资料</span></span></span><span class="hidden-anchor" id="referto_[9]"></span><sup class="reference"><a href="#referfrom_[9]">[9]</a></sup><span class="reference-bubble"><span class="reference-item"><span class="reference-literature">小康的butterfly主题使用文档</span><span class="reference-title">参考资料</span></span></span></p>
-<div class="reference-source"><span class="hidden-anchor" id="referfrom_[1]"></span><a class="reference-anchor" href="#referto_[1]">[1]<div class="reference-anchor-up fa-solid fa-angles-up"></div></a><a class="reference-link" href="https://jq.qq.com/?_wv=1027&k=pGLB2C0N">Akilarの糖果屋群聊简介</a></div>
-<div class="reference-source"><span class="hidden-anchor" id="referfrom_[2]"></span><a class="reference-anchor" href="#referto_[2]">[2]<div class="reference-anchor-up fa-solid fa-angles-up"></div></a><a class="reference-link" href="https://hexo.io/zh-cn/docs/">Hexo中文文档</a></div>
-<div class="reference-source"><span class="hidden-anchor" id="referfrom_[3]"></span><a class="reference-anchor" href="#referto_[3]">[3]<div class="reference-anchor-up fa-solid fa-angles-up"></div></a><a class="reference-link" href="https://butterfly.js.org/posts/21cfbf15/">Butterfly 安装文档(一) 快速开始</a></div>
-<div class="reference-source"><span class="hidden-anchor" id="referfrom_[4]"></span><a class="reference-anchor" href="#referto_[4]">[4]<div class="reference-anchor-up fa-solid fa-angles-up"></div></a><a class="reference-link" href="https://volantis.js.org/v5/tag-plugins/">hexo-theme-volantis 标签插件</a></div>
-<div class="reference-source"><span class="hidden-anchor" id="referfrom_[5]"></span><a class="reference-anchor" href="#referto_[5]">[5]<div class="reference-anchor-up fa-solid fa-angles-up"></div></a><a class="reference-link" href="https://volantis.js.org/tag-plugins/">Volantis文档:内置标签插件</a></div>
-<div class="reference-source"><span class="hidden-anchor" id="referfrom_[6]"></span><a class="reference-anchor" href="#referto_[6]">[6]<div class="reference-anchor-up fa-solid fa-angles-up"></div></a><a class="reference-link" href="https://butterfly.js.org/posts/4aa8abbe/#%E6%A8%99%E7%B1%A4%E5%A4%96%E6%8E%9B%EF%BC%88Tag-Plugins%EF%BC%89">Butterfly 安装文档:标签外挂（Tag Plugins</a></div>
-<div class="reference-source"><span class="hidden-anchor" id="referfrom_[7]"></span><a class="reference-anchor" href="#referto_[7]">[7]<div class="reference-anchor-up fa-solid fa-angles-up"></div></a><a class="reference-link" href="https://lovelijunyi.gitee.io/posts/c898.html">小弋の生活馆全样式预览</a></div>
-<div class="reference-source"><span class="hidden-anchor" id="referfrom_[8]"></span><a class="reference-anchor" href="#referto_[8]">[8]<div class="reference-anchor-up fa-solid fa-angles-up"></div></a><a class="reference-link" href="https://github.com/l-lin/font-awesome-animation">l-lin-font-awesome-animation</a></div>
-<div class="reference-source"><span class="hidden-anchor" id="referfrom_[9]"></span><a class="reference-anchor" href="#referto_[9]">[9]<div class="reference-anchor-up fa-solid fa-angles-up"></div></a><a class="reference-link" href="https://www.antmoe.com/posts/3b43914f/">小康的butterfly主题使用文档</a></div>
-]]></content>
-      <categories>
-        <category>博客搭建</category>
-      </categories>
-      <tags>
-        <tag>博客搭建</tag>
-        <tag>外挂标签</tag>
-        <tag>引用文献</tag>
       </tags>
   </entry>
   <entry>
@@ -1783,67 +1736,42 @@ danger 提示块标签
       </tags>
   </entry>
   <entry>
-    <title>外挂标签之折叠框</title>
-    <url>/posts/f3b9da49.html</url>
-    <content><![CDATA[<h1 id="外挂标签之折叠框">外挂标签之折叠框</h1>
+    <title>外挂标签之引用文献</title>
+    <url>/posts/965f46ee.html</url>
+    <content><![CDATA[<h1 id="外挂标签之引用文献">外挂标签之引用文献</h1>
 <h2 id="标签语法">标签语法</h2>
-<ol type="1">
-<li><p>folding 折叠框 <figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% folding 状态（可选）, 标题 %&#125;</span><br><span class="line">content</span><br><span class="line">&#123;% endfolding %&#125;</span><br></pre></td></tr></table></figure></p></li>
-<li><p>Toggle 折叠框 <figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% hideToggle display,bg,color %&#125;</span><br><span class="line">content</span><br><span class="line">&#123;% endhideToggle %&#125;</span><br></pre></td></tr></table></figure></p></li>
-</ol>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% referto [id] , [literature] %&#125;</span><br><span class="line">&#123;% referfrom [id] , [literature] , [url] %&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="配置参数">配置参数</h2>
 <ol type="1">
-<li>folding 折叠框</li>
-</ol>
+<li>referto 引用上标
 <ul>
-<li><code>颜色</code>：blue, cyan, green, yellow, red</li>
-<li><code>状态</code>：状态填写 open 代表默认打开。</li>
-</ul>
-<ol start="2" type="1">
-<li>Toggle 折叠框</li>
-</ol>
+<li><code>id</code>: 上标序号内容，需与 referfrom 标签的 id
+对应才能实现跳转</li>
+<li><code>literature</code>: 引用的参考文献名称</li>
+</ul></li>
+<li>referfrom 引用出处
 <ul>
-<li><code>bg</code>：折叠框的颜色，blue, cyan, green, yellow,
-red,pink...</li>
-<li><code>color</code>：字体的颜色</li>
-</ul>
+<li><code>id</code>: 序号内容，需与 referto 标签的 id 对应才能实现
+跳转</li>
+<li><code>literature</code>: 引用的参考文献名称</li>
+<li><code>url</code>: 引用的参考文献链接，可省略</li>
+</ul></li>
+</ol>
 <h2 id="示例源码">示例源码</h2>
-<ol type="1">
-<li><p>folding 折叠框 <figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% folding 查看图片测试 %&#125;</span><br><span class="line">![](<span class="link">https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper/abstract/41F215B9-261F-48B4-80B5-4E86E165259E.jpeg</span>)</span><br><span class="line">&#123;% endfolding %&#125;</span><br><span class="line">&#123;% folding cyan open, 查看默认打开的折叠框 %&#125;</span><br><span class="line">这是一个默认打开的折叠框。</span><br><span class="line">&#123;% endfolding %&#125;</span><br><span class="line">&#123;% folding green, 查看代码测试 %&#125;</span><br><span class="line">假装这里有代码块（代码块没法嵌套代码块）</span><br><span class="line">&#123;% endfolding %&#125;</span><br><span class="line">&#123;% folding yellow, 查看列表测试 %&#125;</span><br><span class="line"><span class="bullet">-</span> haha</span><br><span class="line"><span class="bullet">-</span> hehe</span><br><span class="line">&#123;% endfolding %&#125;</span><br><span class="line">&#123;% folding red, 查看嵌套测试 %&#125;</span><br><span class="line">&#123;% folding blue, 查看嵌套测试2 %&#125;</span><br><span class="line">&#123;% folding 查看嵌套测试3 %&#125;</span><br><span class="line">hahaha <span class="language-xml"><span class="tag">&lt;<span class="name">span</span>&gt;</span></span><span class="language-xml"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&#x27;https://cdn.jsdelivr.net/gh/volantis-x/cdn-emoji/tieba/%E6%BB%91%E7%A8%BD.png&#x27;</span> <span class="attr">style</span>=<span class="string">&#x27;height:24px&#x27;</span>&gt;</span></span><span class="language-xml"><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span></span><br><span class="line">&#123;% endfolding %&#125;</span><br><span class="line">&#123;% endfolding %&#125;</span><br><span class="line">&#123;% endfolding %&#125;</span><br></pre></td></tr></table></figure></p></li>
-<li><p>Toggle 折叠框 <figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% hideToggle Butterfly安装方法, pink %&#125;</span><br><span class="line">在你的博客根目录里</span><br><span class="line">git clone -b master https://github.com/jerryc127/hexo-theme-butterfly.git themes/Butterfly</span><br><span class="line"></span><br><span class="line">如果想要安装比较新的dev分支，可以</span><br><span class="line">git clone -b dev https://github.com/jerryc127/hexo-theme-butterfly.git themes/Butterfly</span><br><span class="line">&#123;% endhideToggle %&#125;</span><br></pre></td></tr></table></figure></p></li>
-</ol>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">Akilarの糖果屋(akilar.top)是一个私人性质的博客&#123;% referto &#x27;[1]&#x27;,&#x27;Akilarの糖果屋群聊简介&#x27; %&#125;，从各类教程至生活点滴，无话不谈。建群的目的是提供一个闲聊的场所。博客采用Hexo框架&#123;% referto &#x27;[2]&#x27;,&#x27;Hexo中文文档&#x27; %&#125;，Butterfly主题&#123;% referto &#x27;[3]&#x27;,&#x27;Butterfly 安装文档(一) 快速开始&#x27; %&#125;</span><br><span class="line"></span><br><span class="line">本项目参考了Volantis&#123;% referto &#x27;[4]&#x27;,&#x27;hexo-theme-volantis 标签插件&#x27; %&#125;的标签样式。引入<span class="code">`[tag].js`</span>，并针对<span class="code">`butterfly`</span>主题修改了相应的<span class="code">`[tag].styl`</span>。在此鸣谢<span class="code">`Volantis`</span>主题众开发者。</span><br><span class="line">主要参考内容包括各个volantis的内置标签插件文档&#123;% referto &#x27;[5]&#x27;,&#x27;Volantis文档:内置标签插件&#x27; %&#125;</span><br><span class="line">Butterfly主题的各个衍生魔改&#123;% referto &#x27;[6]&#x27;,&#x27;Butterfly 安装文档:标签外挂（Tag Plugins&#x27; %&#125;&#123;% referto &#x27;[7]&#x27;,&#x27;小弋の生活馆全样式预览&#x27; %&#125;&#123;% referto &#x27;[8]&#x27;,&#x27;l-lin-font-awesome-animation&#x27; %&#125;&#123;% referto &#x27;[9]&#x27;,&#x27;小康的butterfly主题使用文档&#x27; %&#125;</span><br><span class="line"></span><br><span class="line">&#123;% referfrom &#x27;[1]&#x27;,&#x27;Akilarの糖果屋群聊简介&#x27;,&#x27;https://jq.qq.com/?<span class="emphasis">_wv=1027&amp;k=pGLB2C0N&#x27; %&#125;</span></span><br><span class="line"><span class="emphasis">&#123;% referfrom &#x27;[2]&#x27;,&#x27;Hexo中文文档&#x27;,&#x27;https://hexo.io/zh-cn/docs/&#x27; %&#125;</span></span><br><span class="line"><span class="emphasis">&#123;% referfrom &#x27;[3]&#x27;,&#x27;Butterfly 安装文档(一) 快速开始&#x27;,&#x27;https://butterfly.js.org/posts/21cfbf15/&#x27; %&#125;</span></span><br><span class="line"><span class="emphasis">&#123;% referfrom &#x27;[4]&#x27;,&#x27;hexo-theme-volantis 标签插件&#x27;,&#x27;https://volantis.js.org/v5/tag-plugins/&#x27; %&#125;</span></span><br><span class="line"><span class="emphasis">&#123;% referfrom &#x27;[5]&#x27;,&#x27;Volantis文档:内置标签插件&#x27;,&#x27;https://volantis.js.org/tag-plugins/&#x27; %&#125;</span></span><br><span class="line"><span class="emphasis">&#123;% referfrom &#x27;[6]&#x27;,&#x27;Butterfly 安装文档:标签外挂（Tag Plugins）&#x27;,&#x27;https://butterfly.js.org/posts/4aa8abbe/#%E6%A8%99%E7%B1%A4%E5%A4%96%E6%8E%9B%EF%BC%88Tag-Plugins%EF%BC%89&#x27; %&#125;</span></span><br><span class="line"><span class="emphasis">&#123;% referfrom &#x27;[7]&#x27;,&#x27;小弋の生活馆全样式预览&#x27;,&#x27;https://lovelijunyi.gitee.io/posts/c898.html&#x27; %&#125;</span></span><br><span class="line"><span class="emphasis">&#123;% referfrom &#x27;[8]&#x27;,&#x27;l-lin-font-awesome-animation&#x27;,&#x27;https://github.com/l-lin/font-awesome-animation&#x27; %&#125;</span></span><br><span class="line"><span class="emphasis">&#123;% referfrom &#x27;[9]&#x27;,&#x27;小康的butterfly主题使用文档&#x27;,&#x27;https://www.antmoe.com/posts/3b43914f/&#x27; %&#125;</span></span><br></pre></td></tr></table></figure>
 <h2 id="渲染演示">渲染演示</h2>
-<ol type="1">
-<li><p>folding 折叠框 <details class="folding-tag" ><summary> 查看图片测试 </summary>
-              <div class='content'>
-              <p><imgsrc="https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper/abstract/41F215B9-261F-48B4-80B5-4E86E165259E.jpeg" /></p>
-              </div>
-            </details> <details class="folding-tag" cyan open><summary> 查看默认打开的折叠框 </summary>
-              <div class='content'>
-              <p>这是一个默认打开的折叠框。</p>
-              </div>
-            </details> <details class="folding-tag" green><summary> 查看代码测试 </summary>
-              <div class='content'>
-              <p>假装这里有代码块（代码块没法嵌套代码块）</p>
-              </div>
-            </details>
-<details class="folding-tag" yellow><summary> 查看列表测试 </summary>
-              <div class='content'>
-              <ul><li>haha</li><li>hehe</li></ul>
-              </div>
-            </details> <details class="folding-tag" red><summary> 查看嵌套测试 </summary>
-              <div class='content'>
-              <details class="folding-tag" blue><summary>查看嵌套测试2</summary><pre><code>          &lt;div class=&#39;content&#39;&gt;          &lt;details class=&quot;folding-tag&quot; &gt;&lt;summary&gt;查看嵌套测试3&lt;/summary&gt;&lt;pre&gt;&lt;code&gt;          &amp;lt;div class=&amp;#39;content&amp;#39;&amp;gt;          &amp;lt;p&amp;gt;hahaha&amp;lt;span&amp;gt;&amp;lt;img src=&amp;#39;https://cdn.jsdelivr.net/gh/volantis-x/cdn-emoji/tieba/%E6%BB%91%E7%A8%BD.png&amp;#39; style=&amp;#39;height:24px&amp;#39;&amp;gt;&amp;lt;/span&amp;gt;&amp;lt;/p&amp;gt;          &amp;lt;/div&amp;gt;        &amp;lt;/details&amp;gt; &lt;/code&gt;&lt;/pre&gt;          &lt;/div&gt;        &lt;/details&gt; </code></pre>
-              </div>
-            </details></p></li>
-<li><p>Toggle 折叠框 <details class="toggle" style="border: 1px solid  pink"><summary class="toggle-button" style="background-color:  pink;">Butterfly安装方法</summary><div class="toggle-content"><p>在你的博客根目录里 git clone -b master
-https://github.com/jerryc127/hexo-theme-butterfly.git
-themes/Butterfly</p>
-<p>如果想要安装比较新的dev分支，可以 git clone -b dev
-https://github.com/jerryc127/hexo-theme-butterfly.git
-themes/Butterfly</p>
-</div></details></p></li>
-</ol>
+<p>Akilarの糖果屋(akilar.top)是一个私人性质的博客<span class="hidden-anchor" id="referto_[1]"></span><sup class="reference"><a href="#referfrom_[1]">[1]</a></sup><span class="reference-bubble"><span class="reference-item"><span class="reference-literature">Akilarの糖果屋群聊简介</span><span class="reference-title">参考资料</span></span></span>，从各类教程至生活点滴，无话不谈。建群的目的是提供一个闲聊的场所。博客采用Hexo框架<span class="hidden-anchor" id="referto_[2]"></span><sup class="reference"><a href="#referfrom_[2]">[2]</a></sup><span class="reference-bubble"><span class="reference-item"><span class="reference-literature">Hexo中文文档</span><span class="reference-title">参考资料</span></span></span>，Butterfly主题<span class="hidden-anchor" id="referto_[3]"></span><sup class="reference"><a href="#referfrom_[3]">[3]</a></sup><span class="reference-bubble"><span class="reference-item"><span class="reference-literature">Butterfly 安装文档(一) 快速开始</span><span class="reference-title">参考资料</span></span></span></p>
+<p>本项目参考了Volantis<span class="hidden-anchor" id="referto_[4]"></span><sup class="reference"><a href="#referfrom_[4]">[4]</a></sup><span class="reference-bubble"><span class="reference-item"><span class="reference-literature">hexo-theme-volantis 标签插件</span><span class="reference-title">参考资料</span></span></span>的标签样式。引入<code>[tag].js</code>，并针对<code>butterfly</code>主题修改了相应的<code>[tag].styl</code>。在此鸣谢<code>Volantis</code>主题众开发者。主要参考内容包括各个volantis的内置标签插件文档<span class="hidden-anchor" id="referto_[5]"></span><sup class="reference"><a href="#referfrom_[5]">[5]</a></sup><span class="reference-bubble"><span class="reference-item"><span class="reference-literature">Volantis文档:内置标签插件</span><span class="reference-title">参考资料</span></span></span>
+Butterfly主题的各个衍生魔改<span class="hidden-anchor" id="referto_[6]"></span><sup class="reference"><a href="#referfrom_[6]">[6]</a></sup><span class="reference-bubble"><span class="reference-item"><span class="reference-literature">Butterfly 安装文档:标签外挂（Tag Plugins</span><span class="reference-title">参考资料</span></span></span><span class="hidden-anchor" id="referto_[7]"></span><sup class="reference"><a href="#referfrom_[7]">[7]</a></sup><span class="reference-bubble"><span class="reference-item"><span class="reference-literature">小弋の生活馆全样式预览</span><span class="reference-title">参考资料</span></span></span><span class="hidden-anchor" id="referto_[8]"></span><sup class="reference"><a href="#referfrom_[8]">[8]</a></sup><span class="reference-bubble"><span class="reference-item"><span class="reference-literature">l-lin-font-awesome-animation</span><span class="reference-title">参考资料</span></span></span><span class="hidden-anchor" id="referto_[9]"></span><sup class="reference"><a href="#referfrom_[9]">[9]</a></sup><span class="reference-bubble"><span class="reference-item"><span class="reference-literature">小康的butterfly主题使用文档</span><span class="reference-title">参考资料</span></span></span></p>
+<div class="reference-source"><span class="hidden-anchor" id="referfrom_[1]"></span><a class="reference-anchor" href="#referto_[1]">[1]<div class="reference-anchor-up fa-solid fa-angles-up"></div></a><a class="reference-link" href="https://jq.qq.com/?_wv=1027&k=pGLB2C0N">Akilarの糖果屋群聊简介</a></div>
+<div class="reference-source"><span class="hidden-anchor" id="referfrom_[2]"></span><a class="reference-anchor" href="#referto_[2]">[2]<div class="reference-anchor-up fa-solid fa-angles-up"></div></a><a class="reference-link" href="https://hexo.io/zh-cn/docs/">Hexo中文文档</a></div>
+<div class="reference-source"><span class="hidden-anchor" id="referfrom_[3]"></span><a class="reference-anchor" href="#referto_[3]">[3]<div class="reference-anchor-up fa-solid fa-angles-up"></div></a><a class="reference-link" href="https://butterfly.js.org/posts/21cfbf15/">Butterfly 安装文档(一) 快速开始</a></div>
+<div class="reference-source"><span class="hidden-anchor" id="referfrom_[4]"></span><a class="reference-anchor" href="#referto_[4]">[4]<div class="reference-anchor-up fa-solid fa-angles-up"></div></a><a class="reference-link" href="https://volantis.js.org/v5/tag-plugins/">hexo-theme-volantis 标签插件</a></div>
+<div class="reference-source"><span class="hidden-anchor" id="referfrom_[5]"></span><a class="reference-anchor" href="#referto_[5]">[5]<div class="reference-anchor-up fa-solid fa-angles-up"></div></a><a class="reference-link" href="https://volantis.js.org/tag-plugins/">Volantis文档:内置标签插件</a></div>
+<div class="reference-source"><span class="hidden-anchor" id="referfrom_[6]"></span><a class="reference-anchor" href="#referto_[6]">[6]<div class="reference-anchor-up fa-solid fa-angles-up"></div></a><a class="reference-link" href="https://butterfly.js.org/posts/4aa8abbe/#%E6%A8%99%E7%B1%A4%E5%A4%96%E6%8E%9B%EF%BC%88Tag-Plugins%EF%BC%89">Butterfly 安装文档:标签外挂（Tag Plugins</a></div>
+<div class="reference-source"><span class="hidden-anchor" id="referfrom_[7]"></span><a class="reference-anchor" href="#referto_[7]">[7]<div class="reference-anchor-up fa-solid fa-angles-up"></div></a><a class="reference-link" href="https://lovelijunyi.gitee.io/posts/c898.html">小弋の生活馆全样式预览</a></div>
+<div class="reference-source"><span class="hidden-anchor" id="referfrom_[8]"></span><a class="reference-anchor" href="#referto_[8]">[8]<div class="reference-anchor-up fa-solid fa-angles-up"></div></a><a class="reference-link" href="https://github.com/l-lin/font-awesome-animation">l-lin-font-awesome-animation</a></div>
+<div class="reference-source"><span class="hidden-anchor" id="referfrom_[9]"></span><a class="reference-anchor" href="#referto_[9]">[9]<div class="reference-anchor-up fa-solid fa-angles-up"></div></a><a class="reference-link" href="https://www.antmoe.com/posts/3b43914f/">小康的butterfly主题使用文档</a></div>
 ]]></content>
       <categories>
         <category>博客搭建</category>
@@ -1851,7 +1779,7 @@ themes/Butterfly</p>
       <tags>
         <tag>博客搭建</tag>
         <tag>外挂标签</tag>
-        <tag>折叠框</tag>
+        <tag>引用文献</tag>
       </tags>
   </entry>
   <entry>
@@ -1959,6 +1887,125 @@ style="text-align: center;">填充布局，自动铺满至少一行，多了会�
       </tags>
   </entry>
   <entry>
+    <title>外挂标签之折叠框</title>
+    <url>/posts/f3b9da49.html</url>
+    <content><![CDATA[<h1 id="外挂标签之折叠框">外挂标签之折叠框</h1>
+<h2 id="标签语法">标签语法</h2>
+<ol type="1">
+<li><p>folding 折叠框 <figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% folding 状态（可选）, 标题 %&#125;</span><br><span class="line">content</span><br><span class="line">&#123;% endfolding %&#125;</span><br></pre></td></tr></table></figure></p></li>
+<li><p>Toggle 折叠框 <figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% hideToggle display,bg,color %&#125;</span><br><span class="line">content</span><br><span class="line">&#123;% endhideToggle %&#125;</span><br></pre></td></tr></table></figure></p></li>
+</ol>
+<h2 id="配置参数">配置参数</h2>
+<ol type="1">
+<li>folding 折叠框</li>
+</ol>
+<ul>
+<li><code>颜色</code>：blue, cyan, green, yellow, red</li>
+<li><code>状态</code>：状态填写 open 代表默认打开。</li>
+</ul>
+<ol start="2" type="1">
+<li>Toggle 折叠框</li>
+</ol>
+<ul>
+<li><code>bg</code>：折叠框的颜色，blue, cyan, green, yellow,
+red,pink...</li>
+<li><code>color</code>：字体的颜色</li>
+</ul>
+<h2 id="示例源码">示例源码</h2>
+<ol type="1">
+<li><p>folding 折叠框 <figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% folding 查看图片测试 %&#125;</span><br><span class="line">![](<span class="link">https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper/abstract/41F215B9-261F-48B4-80B5-4E86E165259E.jpeg</span>)</span><br><span class="line">&#123;% endfolding %&#125;</span><br><span class="line">&#123;% folding cyan open, 查看默认打开的折叠框 %&#125;</span><br><span class="line">这是一个默认打开的折叠框。</span><br><span class="line">&#123;% endfolding %&#125;</span><br><span class="line">&#123;% folding green, 查看代码测试 %&#125;</span><br><span class="line">假装这里有代码块（代码块没法嵌套代码块）</span><br><span class="line">&#123;% endfolding %&#125;</span><br><span class="line">&#123;% folding yellow, 查看列表测试 %&#125;</span><br><span class="line"><span class="bullet">-</span> haha</span><br><span class="line"><span class="bullet">-</span> hehe</span><br><span class="line">&#123;% endfolding %&#125;</span><br><span class="line">&#123;% folding red, 查看嵌套测试 %&#125;</span><br><span class="line">&#123;% folding blue, 查看嵌套测试2 %&#125;</span><br><span class="line">&#123;% folding 查看嵌套测试3 %&#125;</span><br><span class="line">hahaha <span class="language-xml"><span class="tag">&lt;<span class="name">span</span>&gt;</span></span><span class="language-xml"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&#x27;https://cdn.jsdelivr.net/gh/volantis-x/cdn-emoji/tieba/%E6%BB%91%E7%A8%BD.png&#x27;</span> <span class="attr">style</span>=<span class="string">&#x27;height:24px&#x27;</span>&gt;</span></span><span class="language-xml"><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span></span><br><span class="line">&#123;% endfolding %&#125;</span><br><span class="line">&#123;% endfolding %&#125;</span><br><span class="line">&#123;% endfolding %&#125;</span><br></pre></td></tr></table></figure></p></li>
+<li><p>Toggle 折叠框 <figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% hideToggle Butterfly安装方法, pink %&#125;</span><br><span class="line">在你的博客根目录里</span><br><span class="line">git clone -b master https://github.com/jerryc127/hexo-theme-butterfly.git themes/Butterfly</span><br><span class="line"></span><br><span class="line">如果想要安装比较新的dev分支，可以</span><br><span class="line">git clone -b dev https://github.com/jerryc127/hexo-theme-butterfly.git themes/Butterfly</span><br><span class="line">&#123;% endhideToggle %&#125;</span><br></pre></td></tr></table></figure></p></li>
+</ol>
+<h2 id="渲染演示">渲染演示</h2>
+<ol type="1">
+<li><p>folding 折叠框 <details class="folding-tag" ><summary> 查看图片测试 </summary>
+              <div class='content'>
+              <p><imgsrc="https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper/abstract/41F215B9-261F-48B4-80B5-4E86E165259E.jpeg" /></p>
+              </div>
+            </details> <details class="folding-tag" cyan open><summary> 查看默认打开的折叠框 </summary>
+              <div class='content'>
+              <p>这是一个默认打开的折叠框。</p>
+              </div>
+            </details> <details class="folding-tag" green><summary> 查看代码测试 </summary>
+              <div class='content'>
+              <p>假装这里有代码块（代码块没法嵌套代码块）</p>
+              </div>
+            </details>
+<details class="folding-tag" yellow><summary> 查看列表测试 </summary>
+              <div class='content'>
+              <ul><li>haha</li><li>hehe</li></ul>
+              </div>
+            </details> <details class="folding-tag" red><summary> 查看嵌套测试 </summary>
+              <div class='content'>
+              <details class="folding-tag" blue><summary>查看嵌套测试2</summary><pre><code>          &lt;div class=&#39;content&#39;&gt;          &lt;details class=&quot;folding-tag&quot; &gt;&lt;summary&gt;查看嵌套测试3&lt;/summary&gt;&lt;pre&gt;&lt;code&gt;          &amp;lt;div class=&amp;#39;content&amp;#39;&amp;gt;          &amp;lt;p&amp;gt;hahaha&amp;lt;span&amp;gt;&amp;lt;img src=&amp;#39;https://cdn.jsdelivr.net/gh/volantis-x/cdn-emoji/tieba/%E6%BB%91%E7%A8%BD.png&amp;#39; style=&amp;#39;height:24px&amp;#39;&amp;gt;&amp;lt;/span&amp;gt;&amp;lt;/p&amp;gt;          &amp;lt;/div&amp;gt;        &amp;lt;/details&amp;gt; &lt;/code&gt;&lt;/pre&gt;          &lt;/div&gt;        &lt;/details&gt; </code></pre>
+              </div>
+            </details></p></li>
+<li><p>Toggle 折叠框 <details class="toggle" style="border: 1px solid  pink"><summary class="toggle-button" style="background-color:  pink;">Butterfly安装方法</summary><div class="toggle-content"><p>在你的博客根目录里 git clone -b master
+https://github.com/jerryc127/hexo-theme-butterfly.git
+themes/Butterfly</p>
+<p>如果想要安装比较新的dev分支，可以 git clone -b dev
+https://github.com/jerryc127/hexo-theme-butterfly.git
+themes/Butterfly</p>
+</div></details></p></li>
+</ol>
+]]></content>
+      <categories>
+        <category>博客搭建</category>
+      </categories>
+      <tags>
+        <tag>博客搭建</tag>
+        <tag>外挂标签</tag>
+        <tag>折叠框</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>外挂标签之旋转相册</title>
+    <url>/posts/75b3d8a.html</url>
+    <content><![CDATA[<h1 id="外挂标签之旋转相册">外挂标签之旋转相册</h1>
+<div class="tip info"><p>旋转相册标签与fancybox灯箱存在兼容性bug，若发现旋转相册呈扁平状，请关闭fancybox或换用medium_zoom。</p>
+</div>
+<h2 id="标签语法">标签语法</h2>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% carousel [Id] , [name] %&#125;</span><br><span class="line">![](<span class="link">/img/1.jpg</span>)</span><br><span class="line">![](<span class="link">/img/2.jpg</span>)</span><br><span class="line">![](<span class="link">/img/3,jpg</span>)</span><br><span class="line">&#123;% endcarousel %&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="配置参数">配置参数</h2>
+<ol type="1">
+<li><code>Id</code>:
+相册唯一ID，用于监测相册鼠标动作。禁止使用中文。同一页内不得出现相同ID的carousel相册。</li>
+<li><code>name</code>: 相册中间显示的内容，建议用英文单引号包裹。</li>
+</ol>
+<h2 id="示例源码">示例源码</h2>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% carousel &#x27;SF&#x27;,&#x27;strike freedom&#x27; %&#125;</span><br><span class="line">![](<span class="link">https://npm.elemecdn.com/akilar-candyassets/image/20200907110444226.png</span>)</span><br><span class="line">![](<span class="link">https://npm.elemecdn.com/akilar-candyassets/image/20200907110508327.png</span>)</span><br><span class="line">![](<span class="link">https://npm.elemecdn.com/akilar-candyassets/image/20200907110525753.png</span>)</span><br><span class="line">![](<span class="link">https://npm.elemecdn.com/akilar-candyassets/image/20200907110600751.png</span>)</span><br><span class="line">![](<span class="link">https://npm.elemecdn.com/akilar-candyassets/image/20200907110621554.png</span>)</span><br><span class="line">![](<span class="link">https://npm.elemecdn.com/akilar-candyassets/image/20200907110637459.png</span>)</span><br><span class="line">![](<span class="link">https://npm.elemecdn.com/akilar-candyassets/image/20200907110654150.png</span>)</span><br><span class="line">![](<span class="link">https://npm.elemecdn.com/akilar-candyassets/image/20200907110707916.png</span>)</span><br><span class="line">![](<span class="link">https://npm.elemecdn.com/akilar-candyassets/image/20200907110719787.png</span>)</span><br><span class="line">![](<span class="link">https://npm.elemecdn.com/akilar-candyassets/image/20200907110731118.png</span>)</span><br><span class="line">&#123;% endcarousel %&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="渲染演示">渲染演示</h2>
+<div id='SF' class='carousel'><div id="SF-drag-container" class="drag-container"><div id="SF-spin-container" class="spin-container"><img
+src="https://npm.elemecdn.com/akilar-candyassets/image/20200907110444226.png" />
+<img
+src="https://npm.elemecdn.com/akilar-candyassets/image/20200907110508327.png" />
+<img
+src="https://npm.elemecdn.com/akilar-candyassets/image/20200907110525753.png" />
+<img
+src="https://npm.elemecdn.com/akilar-candyassets/image/20200907110600751.png" />
+<img
+src="https://npm.elemecdn.com/akilar-candyassets/image/20200907110621554.png" />
+<img
+src="https://npm.elemecdn.com/akilar-candyassets/image/20200907110637459.png" />
+<img
+src="https://npm.elemecdn.com/akilar-candyassets/image/20200907110654150.png" />
+<img
+src="https://npm.elemecdn.com/akilar-candyassets/image/20200907110707916.png" />
+<img
+src="https://npm.elemecdn.com/akilar-candyassets/image/20200907110719787.png" />
+<img
+src="https://npm.elemecdn.com/akilar-candyassets/image/20200907110731118.png" /><p>strike freedom</p></div><div id="SF-carousel-ground" class="carousel-ground"></div></div></div><script type="text/javascript">carouselinit('SF');</script>
+]]></content>
+      <categories>
+        <category>博客搭建</category>
+      </categories>
+      <tags>
+        <tag>博客搭建</tag>
+        <tag>外挂标签</tag>
+        <tag>旋转相册</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>外挂标签之时间轴</title>
     <url>/posts/57924155.html</url>
     <content><![CDATA[<h1 id="外挂标签之时间轴">外挂标签之时间轴</h1>
@@ -2018,33 +2065,6 @@ href="https://github.com/volantis-x/hexo-theme-volantis/releases/tag/2.6.3">2.6.
       </tags>
   </entry>
   <entry>
-    <title>外挂标签之气泡注释</title>
-    <url>/posts/44dec147.html</url>
-    <content><![CDATA[<h1 id="外挂标签之气泡注释">外挂标签之气泡注释</h1>
-<h2 id="标签语法">标签语法</h2>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% bubble [content] , [notation] ,[background-color] %&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="配置参数">配置参数</h2>
-<ol type="1">
-<li><code>content</code>: 注释词汇</li>
-<li><code>notation</code>: 悬停显示的注解内容</li>
-<li><code>background-color</code>: 可选，气泡背景色。默认为
-“#71a4e3”</li>
-</ol>
-<h2 id="示例源码">示例源码</h2>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">最近我学到了不少新玩意儿（虽然对很多大佬来说这些已经是旧技术了），比如CSS的&#123;% bubble 兄弟相邻选择器,&quot;例如 h1 + p &#123;margin-top:50px;&#125;&quot; %&#125;，&#123;% bubble flex布局,&quot;Flex 是 Flexible Box 的缩写，意为&quot;弹性布局&quot;，用来为盒状模型提供最大的灵活性&quot;,&quot;#ec5830&quot; %&#125;，&#123;% bubble transform变换,&quot;transform 属性向元素应用 2D 或 3D 转换。该属性允许我们对元素进行旋转、缩放、移动或倾斜。&quot;,&quot;#1db675&quot; %&#125;，animation的&#123;% bubble 贝塞尔速度曲线,&quot;贝塞尔曲线(Bézier curve)，又称贝兹曲线或贝济埃曲线，是应用于二维图形应用程序的数学曲线。一般的矢量图形软件通过它来精确画出曲线，贝兹曲线由线段与节点组成，节点是可拖动的支点，线段像可伸缩的皮筋&quot;,&quot;#de4489&quot; %&#125;写法，还有今天刚看到的&#123;% bubble clip-path,&quot;clip-path属性使用裁剪方式创建元素的可显示区域。区域内的部分显示，区域外的隐藏。&quot;,&quot;#868fd7&quot; %&#125;属性。这些对我来说很新颖的概念狠狠的冲击着我以前积累起来的设计思路。</span><br></pre></td></tr></table></figure>
-<h2 id="渲染演示">渲染演示</h2>
-<p>最近我学到了不少新玩意儿（虽然对很多大佬来说这些已经是旧技术了），比如CSS的<span class="bubble-content">兄弟相邻选择器</span><span class="bubble-notation"><span class="bubble-item" style="background-color:#71a4e3;">例如 h1 + p {margin-top:50px;}</span></span>，<span class="bubble-content">flex布局</span><span class="bubble-notation"><span class="bubble-item" style="background-color:#ec5830;">Flex 是 Flexible Box 的缩写，意为弹性布局"，用来为盒状模型提供最大的灵活性"</span></span>，<span class="bubble-content">transform变换</span><span class="bubble-notation"><span class="bubble-item" style="background-color:#1db675;">transform 属性向元素应用 2D 或 3D 转换。该属性允许我们对元素进行旋转、缩放、移动或倾斜。</span></span>，animation的<span class="bubble-content">贝塞尔速度曲线</span><span class="bubble-notation"><span class="bubble-item" style="background-color:#de4489;">贝塞尔曲线(Bézier curve)，又称贝兹曲线或贝济埃曲线，是应用于二维图形应用程序的数学曲线。一般的矢量图形软件通过它来精确画出曲线，贝兹曲线由线段与节点组成，节点是可拖动的支点，线段像可伸缩的皮筋</span></span>写法，还有今天刚看到的<span class="bubble-content">clip-path</span><span class="bubble-notation"><span class="bubble-item" style="background-color:#868fd7;">clip-path属性使用裁剪方式创建元素的可显示区域。区域内的部分显示，区域外的隐藏。</span></span>属性。这些对我来说很新颖的概念狠狠的冲击着我以前积累起来的设计思路。</p>
-]]></content>
-      <categories>
-        <category>博客搭建</category>
-      </categories>
-      <tags>
-        <tag>博客搭建</tag>
-        <tag>外挂标签</tag>
-        <tag>气泡注释</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>外挂标签之段落文本</title>
     <url>/posts/931d81cc.html</url>
     <content><![CDATA[<h1 id="外挂标签之段落文本">外挂标签之段落文本</h1>
@@ -2077,42 +2097,22 @@ href="https://github.com/volantis-x/hexo-theme-volantis/releases/tag/2.6.3">2.6.
       </tags>
   </entry>
   <entry>
-    <title>外挂标签之旋转相册</title>
-    <url>/posts/75b3d8a.html</url>
-    <content><![CDATA[<h1 id="外挂标签之旋转相册">外挂标签之旋转相册</h1>
-<div class="tip info"><p>旋转相册标签与fancybox灯箱存在兼容性bug，若发现旋转相册呈扁平状，请关闭fancybox或换用medium_zoom。</p>
-</div>
+    <title>外挂标签之气泡注释</title>
+    <url>/posts/44dec147.html</url>
+    <content><![CDATA[<h1 id="外挂标签之气泡注释">外挂标签之气泡注释</h1>
 <h2 id="标签语法">标签语法</h2>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% carousel [Id] , [name] %&#125;</span><br><span class="line">![](<span class="link">/img/1.jpg</span>)</span><br><span class="line">![](<span class="link">/img/2.jpg</span>)</span><br><span class="line">![](<span class="link">/img/3,jpg</span>)</span><br><span class="line">&#123;% endcarousel %&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% bubble [content] , [notation] ,[background-color] %&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="配置参数">配置参数</h2>
 <ol type="1">
-<li><code>Id</code>:
-相册唯一ID，用于监测相册鼠标动作。禁止使用中文。同一页内不得出现相同ID的carousel相册。</li>
-<li><code>name</code>: 相册中间显示的内容，建议用英文单引号包裹。</li>
+<li><code>content</code>: 注释词汇</li>
+<li><code>notation</code>: 悬停显示的注解内容</li>
+<li><code>background-color</code>: 可选，气泡背景色。默认为
+“#71a4e3”</li>
 </ol>
 <h2 id="示例源码">示例源码</h2>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% carousel &#x27;SF&#x27;,&#x27;strike freedom&#x27; %&#125;</span><br><span class="line">![](<span class="link">https://npm.elemecdn.com/akilar-candyassets/image/20200907110444226.png</span>)</span><br><span class="line">![](<span class="link">https://npm.elemecdn.com/akilar-candyassets/image/20200907110508327.png</span>)</span><br><span class="line">![](<span class="link">https://npm.elemecdn.com/akilar-candyassets/image/20200907110525753.png</span>)</span><br><span class="line">![](<span class="link">https://npm.elemecdn.com/akilar-candyassets/image/20200907110600751.png</span>)</span><br><span class="line">![](<span class="link">https://npm.elemecdn.com/akilar-candyassets/image/20200907110621554.png</span>)</span><br><span class="line">![](<span class="link">https://npm.elemecdn.com/akilar-candyassets/image/20200907110637459.png</span>)</span><br><span class="line">![](<span class="link">https://npm.elemecdn.com/akilar-candyassets/image/20200907110654150.png</span>)</span><br><span class="line">![](<span class="link">https://npm.elemecdn.com/akilar-candyassets/image/20200907110707916.png</span>)</span><br><span class="line">![](<span class="link">https://npm.elemecdn.com/akilar-candyassets/image/20200907110719787.png</span>)</span><br><span class="line">![](<span class="link">https://npm.elemecdn.com/akilar-candyassets/image/20200907110731118.png</span>)</span><br><span class="line">&#123;% endcarousel %&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">最近我学到了不少新玩意儿（虽然对很多大佬来说这些已经是旧技术了），比如CSS的&#123;% bubble 兄弟相邻选择器,&quot;例如 h1 + p &#123;margin-top:50px;&#125;&quot; %&#125;，&#123;% bubble flex布局,&quot;Flex 是 Flexible Box 的缩写，意为&quot;弹性布局&quot;，用来为盒状模型提供最大的灵活性&quot;,&quot;#ec5830&quot; %&#125;，&#123;% bubble transform变换,&quot;transform 属性向元素应用 2D 或 3D 转换。该属性允许我们对元素进行旋转、缩放、移动或倾斜。&quot;,&quot;#1db675&quot; %&#125;，animation的&#123;% bubble 贝塞尔速度曲线,&quot;贝塞尔曲线(Bézier curve)，又称贝兹曲线或贝济埃曲线，是应用于二维图形应用程序的数学曲线。一般的矢量图形软件通过它来精确画出曲线，贝兹曲线由线段与节点组成，节点是可拖动的支点，线段像可伸缩的皮筋&quot;,&quot;#de4489&quot; %&#125;写法，还有今天刚看到的&#123;% bubble clip-path,&quot;clip-path属性使用裁剪方式创建元素的可显示区域。区域内的部分显示，区域外的隐藏。&quot;,&quot;#868fd7&quot; %&#125;属性。这些对我来说很新颖的概念狠狠的冲击着我以前积累起来的设计思路。</span><br></pre></td></tr></table></figure>
 <h2 id="渲染演示">渲染演示</h2>
-<div id='SF' class='carousel'><div id="SF-drag-container" class="drag-container"><div id="SF-spin-container" class="spin-container"><img
-src="https://npm.elemecdn.com/akilar-candyassets/image/20200907110444226.png" />
-<img
-src="https://npm.elemecdn.com/akilar-candyassets/image/20200907110508327.png" />
-<img
-src="https://npm.elemecdn.com/akilar-candyassets/image/20200907110525753.png" />
-<img
-src="https://npm.elemecdn.com/akilar-candyassets/image/20200907110600751.png" />
-<img
-src="https://npm.elemecdn.com/akilar-candyassets/image/20200907110621554.png" />
-<img
-src="https://npm.elemecdn.com/akilar-candyassets/image/20200907110637459.png" />
-<img
-src="https://npm.elemecdn.com/akilar-candyassets/image/20200907110654150.png" />
-<img
-src="https://npm.elemecdn.com/akilar-candyassets/image/20200907110707916.png" />
-<img
-src="https://npm.elemecdn.com/akilar-candyassets/image/20200907110719787.png" />
-<img
-src="https://npm.elemecdn.com/akilar-candyassets/image/20200907110731118.png" /><p>strike freedom</p></div><div id="SF-carousel-ground" class="carousel-ground"></div></div></div><script type="text/javascript">carouselinit('SF');</script>
+<p>最近我学到了不少新玩意儿（虽然对很多大佬来说这些已经是旧技术了），比如CSS的<span class="bubble-content">兄弟相邻选择器</span><span class="bubble-notation"><span class="bubble-item" style="background-color:#71a4e3;">例如 h1 + p {margin-top:50px;}</span></span>，<span class="bubble-content">flex布局</span><span class="bubble-notation"><span class="bubble-item" style="background-color:#ec5830;">Flex 是 Flexible Box 的缩写，意为弹性布局"，用来为盒状模型提供最大的灵活性"</span></span>，<span class="bubble-content">transform变换</span><span class="bubble-notation"><span class="bubble-item" style="background-color:#1db675;">transform 属性向元素应用 2D 或 3D 转换。该属性允许我们对元素进行旋转、缩放、移动或倾斜。</span></span>，animation的<span class="bubble-content">贝塞尔速度曲线</span><span class="bubble-notation"><span class="bubble-item" style="background-color:#de4489;">贝塞尔曲线(Bézier curve)，又称贝兹曲线或贝济埃曲线，是应用于二维图形应用程序的数学曲线。一般的矢量图形软件通过它来精确画出曲线，贝兹曲线由线段与节点组成，节点是可拖动的支点，线段像可伸缩的皮筋</span></span>写法，还有今天刚看到的<span class="bubble-content">clip-path</span><span class="bubble-notation"><span class="bubble-item" style="background-color:#868fd7;">clip-path属性使用裁剪方式创建元素的可显示区域。区域内的部分显示，区域外的隐藏。</span></span>属性。这些对我来说很新颖的概念狠狠的冲击着我以前积累起来的设计思路。</p>
 ]]></content>
       <categories>
         <category>博客搭建</category>
@@ -2120,7 +2120,7 @@ src="https://npm.elemecdn.com/akilar-candyassets/image/20200907110731118.png" />
       <tags>
         <tag>博客搭建</tag>
         <tag>外挂标签</tag>
-        <tag>旋转相册</tag>
+        <tag>气泡注释</tag>
       </tags>
   </entry>
   <entry>
@@ -2322,73 +2322,6 @@ href="https://animate.style/">animate.css 参考文档</a></li>
       </tags>
   </entry>
   <entry>
-    <title>外挂标签之进度条</title>
-    <url>/posts/5dede2e1.html</url>
-    <content><![CDATA[<h1 id="外挂标签之进度条">外挂标签之进度条</h1>
-<div class="tip info"><p>进度条标签参考<a
-href="https://rongbuqiu.com/jdt.html">沂佰孜猫-给HEXO文章添加彩色进度条</a>。
-源样式提取自<a href="https://zwying0814.gitbook.io/cuteen/">Cuteen</a>
-主题。</p>
-</div>
-<h2 id="标签语法">标签语法</h2>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% progress [width] [color] [text] %&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="配置参数">配置参数</h2>
-<ol type="1">
-<li><code>width</code>: 0 到 100 的阿拉伯数字</li>
-<li><code>color</code>: 颜色，取值有
-red,yellow,green,cyan,blue,gray</li>
-<li><code>text</code>: 进度条上的文字内容</li>
-</ol>
-<h2 id="示例源码">示例源码</h2>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% progress 10 red 进度条样式预览 %&#125;</span><br><span class="line">&#123;% progress 30 yellow 进度条样式预览 %&#125;</span><br><span class="line">&#123;% progress 50 green 进度条样式预览 %&#125;</span><br><span class="line">&#123;% progress 70 cyan 进度条样式预览 %&#125;</span><br><span class="line">&#123;% progress 90 blue 进度条样式预览 %&#125;</span><br><span class="line">&#123;% progress 100 gray 进度条样式预览 %&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="渲染演示">渲染演示</h2>
-<div class="progress"><div class="progress-bar-animated progress-bar progress-bar-striped bg-red"  style="width: 10%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"><p>进度条样式预览</p></div></div>
-<div class="progress"><div class="progress-bar-animated progress-bar progress-bar-striped bg-yellow"  style="width: 30%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"><p>进度条样式预览</p></div></div>
-<div class="progress"><div class="progress-bar-animated progress-bar progress-bar-striped bg-green"  style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"><p>进度条样式预览</p></div></div>
-<div class="progress"><div class="progress-bar-animated progress-bar progress-bar-striped bg-cyan"  style="width: 70%" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"><p>进度条样式预览</p></div></div>
-<div class="progress"><div class="progress-bar-animated progress-bar progress-bar-striped bg-blue"  style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"><p>进度条样式预览</p></div></div>
-<div class="progress"><div class="progress-bar-animated progress-bar progress-bar-striped bg-gray"  style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"><p>进度条样式预览</p></div></div>
-]]></content>
-      <categories>
-        <category>博客搭建</category>
-      </categories>
-      <tags>
-        <tag>博客搭建</tag>
-        <tag>外挂标签</tag>
-        <tag>进度条</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>外挂标签之诗词标签</title>
-    <url>/posts/1ec3eb97.html</url>
-    <content><![CDATA[<h1 id="外挂标签之诗词标签">外挂标签之诗词标签</h1>
-<h2 id="标签语法">标签语法</h2>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% poem [title],[author] %&#125;</span><br><span class="line">诗词内容</span><br><span class="line">&#123;% endpoem %&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="配置参数">配置参数</h2>
-<ol type="1">
-<li><code>title</code>：诗词标题</li>
-<li><code>author</code>：作者，可以不写</li>
-</ol>
-<h2 id="示例源码">示例源码</h2>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% poem 钗头凤·世情薄,唐婉 %&#125;</span><br><span class="line">世情薄，人情恶，雨送黄昏花易落。晓风干，泪痕残。欲笺心事，独语斜阑。难，难，难！</span><br><span class="line">人成各，今非昨，病魂常似秋千索。角声寒，夜阑珊。怕人寻问，咽泪装欢。瞒，瞒，瞒！</span><br><span class="line">&#123;% endpoem %&#125;</span><br><span class="line">&#123;% poem 钗头凤·红酥手,陆游 %&#125;</span><br><span class="line">红酥手。黄縢酒。满城春色宫墙柳。东风恶。欢情薄。一怀愁绪，几年离索。错错错。</span><br><span class="line">春如旧。人空瘦。泪痕红浥鲛绡透。桃花落。闲池阁。山盟虽在，锦书难托。莫莫莫。</span><br><span class="line">&#123;% endpoem %&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="渲染演示">渲染演示</h2>
-<div class='poem'><div class='poem-title'>钗头凤·世情薄</div><div class='poem-author'>唐婉</div><p>世情薄，人情恶，雨送黄昏花易落。晓风干，泪痕残。欲笺心事，独语斜阑。难，难，难！
-人成各，今非昨，病魂常似秋千索。角声寒，夜阑珊。怕人寻问，咽泪装欢。瞒，瞒，瞒！</p>
-</div>
-<div class='poem'><div class='poem-title'>钗头凤·红酥手</div><div class='poem-author'>陆游</div><p>红酥手，黄縢酒。满城春色宫墙柳。东风恶。欢情薄。一怀愁绪，几年离索。错，错，错！
-春如旧，人空瘦。泪痕红浥鲛绡透。桃花落。闲池阁。山盟虽在，锦书难托。莫，莫，莫！</p>
-</div>
-]]></content>
-      <categories>
-        <category>博客搭建</category>
-      </categories>
-      <tags>
-        <tag>博客搭建</tag>
-        <tag>外挂标签</tag>
-        <tag>诗词标签</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>外挂标签之视频</title>
     <url>/posts/470b286f.html</url>
     <content><![CDATA[<h1 id="外挂标签之视频">外挂标签之视频</h1>
@@ -2434,6 +2367,93 @@ red,yellow,green,cyan,blue,gray</li>
       </tags>
   </entry>
   <entry>
+    <title>外挂标签之诗词标签</title>
+    <url>/posts/1ec3eb97.html</url>
+    <content><![CDATA[<h1 id="外挂标签之诗词标签">外挂标签之诗词标签</h1>
+<h2 id="标签语法">标签语法</h2>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% poem [title],[author] %&#125;</span><br><span class="line">诗词内容</span><br><span class="line">&#123;% endpoem %&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="配置参数">配置参数</h2>
+<ol type="1">
+<li><code>title</code>：诗词标题</li>
+<li><code>author</code>：作者，可以不写</li>
+</ol>
+<h2 id="示例源码">示例源码</h2>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% poem 钗头凤·世情薄,唐婉 %&#125;</span><br><span class="line">世情薄，人情恶，雨送黄昏花易落。晓风干，泪痕残。欲笺心事，独语斜阑。难，难，难！</span><br><span class="line">人成各，今非昨，病魂常似秋千索。角声寒，夜阑珊。怕人寻问，咽泪装欢。瞒，瞒，瞒！</span><br><span class="line">&#123;% endpoem %&#125;</span><br><span class="line">&#123;% poem 钗头凤·红酥手,陆游 %&#125;</span><br><span class="line">红酥手。黄縢酒。满城春色宫墙柳。东风恶。欢情薄。一怀愁绪，几年离索。错错错。</span><br><span class="line">春如旧。人空瘦。泪痕红浥鲛绡透。桃花落。闲池阁。山盟虽在，锦书难托。莫莫莫。</span><br><span class="line">&#123;% endpoem %&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="渲染演示">渲染演示</h2>
+<div class='poem'><div class='poem-title'>钗头凤·世情薄</div><div class='poem-author'>唐婉</div><p>世情薄，人情恶，雨送黄昏花易落。晓风干，泪痕残。欲笺心事，独语斜阑。难，难，难！
+人成各，今非昨，病魂常似秋千索。角声寒，夜阑珊。怕人寻问，咽泪装欢。瞒，瞒，瞒！</p>
+</div>
+<div class='poem'><div class='poem-title'>钗头凤·红酥手</div><div class='poem-author'>陆游</div><p>红酥手，黄縢酒。满城春色宫墙柳。东风恶。欢情薄。一怀愁绪，几年离索。错，错，错！
+春如旧，人空瘦。泪痕红浥鲛绡透。桃花落。闲池阁。山盟虽在，锦书难托。莫，莫，莫！</p>
+</div>
+]]></content>
+      <categories>
+        <category>博客搭建</category>
+      </categories>
+      <tags>
+        <tag>博客搭建</tag>
+        <tag>外挂标签</tag>
+        <tag>诗词标签</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>外挂标签之进度条</title>
+    <url>/posts/5dede2e1.html</url>
+    <content><![CDATA[<h1 id="外挂标签之进度条">外挂标签之进度条</h1>
+<div class="tip info"><p>进度条标签参考<a
+href="https://rongbuqiu.com/jdt.html">沂佰孜猫-给HEXO文章添加彩色进度条</a>。
+源样式提取自<a href="https://zwying0814.gitbook.io/cuteen/">Cuteen</a>
+主题。</p>
+</div>
+<h2 id="标签语法">标签语法</h2>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% progress [width] [color] [text] %&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="配置参数">配置参数</h2>
+<ol type="1">
+<li><code>width</code>: 0 到 100 的阿拉伯数字</li>
+<li><code>color</code>: 颜色，取值有
+red,yellow,green,cyan,blue,gray</li>
+<li><code>text</code>: 进度条上的文字内容</li>
+</ol>
+<h2 id="示例源码">示例源码</h2>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% progress 10 red 进度条样式预览 %&#125;</span><br><span class="line">&#123;% progress 30 yellow 进度条样式预览 %&#125;</span><br><span class="line">&#123;% progress 50 green 进度条样式预览 %&#125;</span><br><span class="line">&#123;% progress 70 cyan 进度条样式预览 %&#125;</span><br><span class="line">&#123;% progress 90 blue 进度条样式预览 %&#125;</span><br><span class="line">&#123;% progress 100 gray 进度条样式预览 %&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="渲染演示">渲染演示</h2>
+<div class="progress"><div class="progress-bar-animated progress-bar progress-bar-striped bg-red"  style="width: 10%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"><p>进度条样式预览</p></div></div>
+<div class="progress"><div class="progress-bar-animated progress-bar progress-bar-striped bg-yellow"  style="width: 30%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"><p>进度条样式预览</p></div></div>
+<div class="progress"><div class="progress-bar-animated progress-bar progress-bar-striped bg-green"  style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"><p>进度条样式预览</p></div></div>
+<div class="progress"><div class="progress-bar-animated progress-bar progress-bar-striped bg-cyan"  style="width: 70%" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"><p>进度条样式预览</p></div></div>
+<div class="progress"><div class="progress-bar-animated progress-bar progress-bar-striped bg-blue"  style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"><p>进度条样式预览</p></div></div>
+<div class="progress"><div class="progress-bar-animated progress-bar progress-bar-striped bg-gray"  style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"><p>进度条样式预览</p></div></div>
+]]></content>
+      <categories>
+        <category>博客搭建</category>
+      </categories>
+      <tags>
+        <tag>博客搭建</tag>
+        <tag>外挂标签</tag>
+        <tag>进度条</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>外挂标签之链接卡片</title>
+    <url>/posts/816398cf.html</url>
+    <content><![CDATA[<h1 id="外挂标签之链接卡片">外挂标签之链接卡片</h1>
+<h2 id="标签语法">标签语法</h2>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% link 标题, 链接, 图片链接（可选） %&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="示例源码">示例源码</h2>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% link 糖果屋教程贴, https://akilar.top/posts/615e2dec/, https://cdn.cbd.int/akilar-candyassets@1.0.36/image/siteicon/favicon.ico %&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="渲染演示">渲染演示</h2>
+<div class="tag link"><a class="link-card" title="糖果屋教程贴" href="https://akilar.top/posts/615e2dec/"><div class="left"><img src="https://cdn.cbd.int/akilar-candyassets@1.0.36/image/siteicon/favicon.ico"/></div><div class="right"><p class="text">糖果屋教程贴</p><p class="url">https://akilar.top/posts/615e2dec/</p></div></a></div>
+]]></content>
+      <categories>
+        <category>博客搭建</category>
+      </categories>
+      <tags>
+        <tag>博客搭建</tag>
+        <tag>外挂标签</tag>
+        <tag>链接卡片</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>外挂标签之阿里图标</title>
     <url>/posts/750d0c37.html</url>
     <content><![CDATA[<h1 id="外挂标签之阿里图标">外挂标签之阿里图标</h1>
@@ -2469,26 +2489,6 @@ href="https://akilar.top/posts/d2ebecef/">Hexo引入阿里矢量图标库</a></p
         <tag>博客搭建</tag>
         <tag>外挂标签</tag>
         <tag>阿里图标</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>外挂标签之链接卡片</title>
-    <url>/posts/816398cf.html</url>
-    <content><![CDATA[<h1 id="外挂标签之链接卡片">外挂标签之链接卡片</h1>
-<h2 id="标签语法">标签语法</h2>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% link 标题, 链接, 图片链接（可选） %&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="示例源码">示例源码</h2>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% link 糖果屋教程贴, https://akilar.top/posts/615e2dec/, https://cdn.cbd.int/akilar-candyassets@1.0.36/image/siteicon/favicon.ico %&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="渲染演示">渲染演示</h2>
-<div class="tag link"><a class="link-card" title="糖果屋教程贴" href="https://akilar.top/posts/615e2dec/"><div class="left"><img src="https://cdn.cbd.int/akilar-candyassets@1.0.36/image/siteicon/favicon.ico"/></div><div class="right"><p class="text">糖果屋教程贴</p><p class="url">https://akilar.top/posts/615e2dec/</p></div></a></div>
-]]></content>
-      <categories>
-        <category>博客搭建</category>
-      </categories>
-      <tags>
-        <tag>博客搭建</tag>
-        <tag>外挂标签</tag>
-        <tag>链接卡片</tag>
       </tags>
   </entry>
   <entry>
