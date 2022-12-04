@@ -239,8 +239,8 @@ S=\frac{8\pi^2{k_\mathrm{B}}^2T}{3eh^2}m_{\mathrm{d}}^{*}\left(\frac{\pi}{3p}\ri
         <category>博客搭建</category>
       </categories>
       <tags>
-        <tag>博客搭建</tag>
         <tag>Markdown</tag>
+        <tag>博客搭建</tag>
       </tags>
   </entry>
   <entry>
@@ -271,7 +271,7 @@ S=\frac{8\pi^2{k_\mathrm{B}}^2T}{3eh^2}m_{\mathrm{d}}^{*}\left(\frac{\pi}{3p}\ri
 <li><p><code>Nav</code>站点配置文件<code>_config.yml</code>，路径为<code>[NavRoot]\_config.yml</code></p></li>
 <li><p><code>Nav</code>主题配置文件<code>_config.webstack.yml</code>，路径为<code>[NavRoot]\_config.webstack.yml</code></p></li>
 <li><p>参考：<a
-href="https://tzy1997.com/articles/we0524bs/">优雅的使用Webstack打造个人网址导航</a>,<a
+href="https://tzy1997.com/articles/we0524bs/">优雅的使用Webstack打造个人网址导航</a>，<a
 href="https://www.fomal.cc/posts/4aa2d85f.html">Hexo 博客搭建基础教程
 (二)</a></p></li>
 </ol>
@@ -283,21 +283,29 @@ id="为什么要单独做一个网址收藏页面">为什么要单独做一个�
 <ol type="1">
 <li><p>在github新建一个仓库<code>blog-nav</code>，这个仓库可以private(如果通过vercel指定二级域名，private或者public都可以)或者public(通过生成Page自定义域名)。</p></li>
 <li><p>新建<code>[E:/gitcode/blog-nav]</code>目录，在此目录下执行如下代码用来安装<code>hexo</code>和相关依赖</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo init blog-nav   <span class="comment">#新建一个blog_nav目录并在此目录下安装hexo</span></span><br><span class="line">npm i   <span class="comment">#安装或更新相关依赖</span></span><br></pre></td></tr></table></figure></li>
-<li><p>与远程仓库<code>blog-nav</code>关联</p>
-<div class="note info modern"><p>在<code>git init</code>之后会出现<code>.gitignore</code>文件，紧接着对其修改保证只推送<code>public</code>文件(其它文件推送也没影响，只是为了简洁)</p>
-</div>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git init</span><br><span class="line"><span class="comment"># 修改 .gitignore 文件</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;博客的网址收藏&quot;</span> &gt;&gt; README.md  </span><br><span class="line">git add README.md</span><br><span class="line">git commit -m <span class="string">&quot;first commit&quot;</span></span><br><span class="line">git branch -M main  <span class="comment">#将Master分支转为Main分</span></span><br><span class="line">git remote add origin https://github.com/Einstein-schrodinger/blog-nav.git <span class="comment">#与远程仓库进行关联</span></span><br><span class="line">git pull --rebase origin main <span class="comment">#可选 如果在git push origin main报错，可以执行此局句再git push</span></span><br><span class="line">git push -u origin main</span><br></pre></td></tr></table></figure>
-<p><code>.gitignore</code></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">.DS_Store</span><br><span class="line">Thumbs.db</span><br><span class="line">db.json</span><br><span class="line">*.log</span><br><span class="line">node_modules/</span><br><span class="line">.deploy*/</span><br><span class="line">_multiconfig.yml</span><br><span class="line">source/</span><br><span class="line">*.yml</span><br><span class="line">scaffolds/</span><br><span class="line">themes/</span><br><span class="line">*.json</span><br></pre></td></tr></table></figure></li>
-<li><p>安装<code>webstack</code>主题，类似于同样基于<code>hexo</code>的<code>butterfly</code>主题</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># hexo &gt;= 5.0</span></span><br><span class="line">npm install hexo-theme-webstack -S</span><br></pre></td></tr></table></figure></li>
-<li><p>修改站点配置文件<code>_config.yml</code>，把主题改为<code>webstack</code></p>
-<p><figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">theme:</span> <span class="string">webstack</span> <span class="comment"># theme: landscape</span></span><br></pre></td></tr></table></figure></p></li>
-<li><p>将<code>[NavRoot]</code>根目录下的<code>_config.landscape.yml</code>改名为<code>_config.webstack.yml</code>，复制<code>[NavRoot]\node_moules\hexo-theme-webstack\_config.yml</code>内的内容到主题配置文件<code>_config.webstack.yml</code></p></li>
-<li><p>编译运行并推送</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo cl &amp;&amp; hexo g</span><br><span class="line">git add .</span><br><span class="line">git commit -m <span class="string">&quot;网址收藏&quot;</span></span><br><span class="line">git push origin main</span><br></pre></td></tr></table></figure></li>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo init blog-nav   <span class="comment">#新建一个blog_nav目录并在此目录下安装hexo</span></span><br><span class="line">npm i   <span class="comment">#安装或更新相关依赖</span></span><br></pre></td></tr></table></figure>
+<p>文件目录如下：</p>
+<p><img
+src="https://blogresource.sqwdream.cloud/post/博客搭建/博客搭建之网址收藏/img/body/目录.jpg" /></p>
+<p>【node_modules】：依赖包 【scaffolds】：生成文章的一些模板
+【source】：用来存放你的文章 【themes】：主题
+【.npmignore】：发布时忽略的文件（可忽略）
+【_config.landscape.yml】：主题的配置文件
+【_config.yml】：博客的配置文件
+【package.json】：项目名称、描述、版本、运行和开发等信息</p></li>
 </ol>
+<div class="tip info"><p>推荐直接采用方式2进行配置并推送，方式1也可行不过比较麻烦</p>
+</div>
+<details class="folding-tag" 方式1><summary> cyan </summary>
+              <div class='content'>
+              <ol type="1"><li><p>与远程仓库<code>blog-nav</code>关联</p><div class="note info modern"><p>在<code>gitinit</code>之后会出现<code>.gitignore</code>文件，紧接着对其修改保证只推送<code>public</code>文件(其它文件推送也没影响，只是为了简洁)</p></div><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git init</span><br><span class="line"><span class="comment"># 修改 .gitignore 文件</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;博客的网址收藏&quot;</span> &gt;&gt; README.md  </span><br><span class="line">git add README.md</span><br><span class="line">git commit -m <span class="string">&quot;first commit&quot;</span></span><br><span class="line">git branch -M main  <span class="comment">#将Master分支转为Main分</span></span><br><span class="line">git remote add origin https://github.com/Einstein-schrodinger/blog-nav.git <span class="comment">#与远程仓库进行关联</span></span><br><span class="line"><span class="comment">#git pull --rebase origin main #可选 如果在git push origin main报错，可以执行此局句再git push</span></span><br><span class="line">git push -u origin main</span><br></pre></td></tr></table></figure><p><code>.gitignore</code></p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">.DS_Store</span><br><span class="line">Thumbs.db</span><br><span class="line">db.json</span><br><span class="line">*.log</span><br><span class="line">node_modules/</span><br><span class="line">.deploy*/</span><br><span class="line">_multiconfig.yml</span><br><span class="line">source/</span><br><span class="line">*.yml</span><br><span class="line">scaffolds/</span><br><span class="line">themes/</span><br><span class="line">*.json</span><br></pre></td></tr></table></figure></li><li><p>安装<code>webstack</code>主题，类似于同样基于<code>hexo</code>的<code>butterfly</code>主题</p><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># hexo &gt;= 5.0</span></span><br><span class="line">npm install hexo-theme-webstack -S</span><br></pre></td></tr></table></figure></li><li><p>修改站点配置文件<code>_config.yml</code>，把主题改为<code>webstack</code></p><p><figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">theme:</span> <span class="string">webstack</span> <span class="comment"># theme: landscape</span></span><br></pre></td></tr></table></figure></p></li><li><p>将<code>[NavRoot]</code>根目录下的<code>_config.landscape.yml</code>改名为<code>_config.webstack.yml</code>，复制<code>[NavRoot]\node_moules\hexo-theme-webstack\_config.yml</code>内的内容到主题配置文件<code>_config.webstack.yml</code></p></li><li><p>编译运行并推送</p><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo cl &amp;&amp; hexo g</span><br><span class="line">git add .</span><br><span class="line">git commit -m <span class="string">&quot;网址收藏&quot;</span></span><br><span class="line">git push origin main</span><br></pre></td></tr></table></figure></li></ol>
+              </div>
+            </details>
+<details class="folding-tag" 方式2><summary> cyan </summary>
+              <div class='content'>
+              <ol type="1"><li><p>初始化仓库</p><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git init</span><br><span class="line">git branch -M main  <span class="comment">#将Master分支转为Main分</span></span><br></pre></td></tr></table></figure></li><li><p>安装<code>webstack</code>主题，类似于同样基于<code>hexo</code>的<code>butterfly</code>主题</p><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># hexo &gt;= 5.0</span></span><br><span class="line">npm install hexo-theme-webstack -S</span><br></pre></td></tr></table></figure></li><li><p>安装<code>hexo</code>针对git的<code>deploy</code>组件</p><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install --save hexo-deployer-git</span><br></pre></td></tr></table></figure></li><li><p>修改站点配置文件<code>_config.yml</code>，把主题改为<code>webstack</code>，并且配置推送的仓库</p><figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">theme:</span> <span class="string">webstack</span> <span class="comment"># theme: landscape</span></span><br><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">https://github.com/Einstein-schrodinger/blog-nav.git</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">main</span> <span class="comment">#github是main分支</span></span><br></pre></td></tr></table></figure></li><li><p>将<code>[NavRoot]</code>根目录下的<code>_config.landscape.yml</code>改名为<code>_config.webstack.yml</code>，复制<code>[NavRoot]\node_moules\hexo-theme-webstack\_config.yml</code>内的内容到主题配置文件<code>_config.webstack.yml</code></p></li><li><p>一键三连</p><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo cl &amp;&amp; hexo g &amp;&amp; hexo d</span><br></pre></td></tr></table></figure></li></ol>
+              </div>
+            </details>
 <h2 id="vercel部署与自定义域名">2.Vercel部署与自定义域名</h2>
 <ol type="1">
 <li><p>首先要注册一个Vercel账号，然后关联自己的Github仓库，这样就可以在
