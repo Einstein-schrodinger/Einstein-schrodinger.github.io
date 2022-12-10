@@ -3604,6 +3604,7 @@ font-family
 }
 #nav .menus_items {
   display: inline;
+  font-size: 17px;
 }
 #nav .menus_items .menus_item {
   position: relative;
