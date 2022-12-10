@@ -88,17 +88,3 @@
     /* 定义显示样式 */
     font-display: block;
 }
-
-
-
-
-
-/* 阿里图标字体设置 */
-.iconfont {
-    font-family: "iconfont" !important;
-    font-size: 1em;
-    /* 可以定义图标大小 */
-    font-style: normal;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-}
