@@ -43,7 +43,9 @@ div#category {
 }
 
 #page-header.nav-fixed #nav {
-    background: rgba(255, 255, 255, .92);
+    background: linear-gradient(60deg, #ffd7e4 0, #c8f1ff 93%);
+    opacity: .95;
+    /* background: rgba(255, 255, 255, .92); */
 }
 
 [data-theme=dark] #page-header.nav-fixed #nav {

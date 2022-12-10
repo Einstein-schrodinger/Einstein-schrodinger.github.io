@@ -1,9 +1,10 @@
 /* 一级菜单居中 */
 #nav .menus_items {
+    font-size: 26px;
     position: absolute !important;
     width: fit-content !important;
     left: 50% !important;
-    transform: translateX(-50%) !important;
+    transform: translateX(-50%, -15%) !important;
 }
 
 /* 子菜单横向展示 */
@@ -14,4 +15,9 @@
 /* 这里的2是代表导航栏的第2个元素，即有子菜单的元素，可以按自己需求修改 */
 .menus_items .menus_item:nth-child(2) .menus_item_child {
     left: -125px;
+}
+
+/* 这里的3是代表导航栏的第3个元素，即有子菜单的元素，可以按自己需求修改 */
+.menus_items .menus_item:nth-child(3) .menus_item_child {
+    left: -100px;
 }
