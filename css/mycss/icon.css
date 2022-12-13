@@ -7,10 +7,8 @@ svg.icon {
     overflow: hidden;
 }
 
-.card-info-social-icons svg.icon {
-    width: 1.5em;
-    height: 1.5em;
+.card-info-social-icons .icon {
+    width: 1.5em !important; 
+    height: 1.5em !important;
     vertical-align: -0.6em;
-    fill: currentColor;
-    overflow: hidden;
 }
