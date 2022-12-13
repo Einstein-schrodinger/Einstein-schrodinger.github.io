@@ -185,6 +185,7 @@ div#category {
 }
 
 /* 小冰分类分类磁铁黑夜模式适配 */
+
 /* 一般状态 */
 [data-theme="dark"] .magnet_link_context {
     background: #1e1e1e;
@@ -195,4 +196,11 @@ div#category {
 [data-theme="dark"] .magnet_link_context:hover {
     background: #3ecdf1;
     color: #f2f2f2;
+}
+
+[data-theme="dark"] .magnet_item {
+    flex-basis: calc(33.333333333333336% - 5px);
+    margin-bottom: 10px;
+    border-radius: 8px;
+    transition: all 0.2s ease-in-out;
 }
