@@ -262,7 +262,7 @@
     color:white;
 }
 [data-theme="dark"] .swf{
-    color:white;
+    color:white!important;
 }
 .wb-title{
     color:black;
