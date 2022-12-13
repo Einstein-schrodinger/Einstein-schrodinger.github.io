@@ -223,7 +223,7 @@ function toggleRightside(){
 
 
 if(localStorage.getItem("font")==undefined){
-    localStorage.setItem("font","HYTMR")
+    localStorage.setItem("font","汉仪唐美人")
 }
 setFont(localStorage.getItem("font"))
 // 存数据
@@ -309,8 +309,9 @@ function createWinbox() {
     window.addEventListener('resize', winResize)
 
     // 每一类我放了一个演示，直接往下复制粘贴 a标签 就可以，需要注意的是 函数里面的链接 冒号前面需要添加反斜杠\进行转义
+    // <div class="settings" style="display: block;"><a class="reSettings content-button">恢复默认设置</a>
     winbox.body.innerHTML = `
-    <div class="settings" style="display: block;"><a class="reSettings content-button">恢复默认设置</a>
+    <p><button onclick="localStorage.removeItem('blogbg');location.reload();" style="background:#b347f1;display:block;margin:0 auto;width:20%;padding: 15px 0;border-radius:6px;color:white;"><i class="fa-solid fa-arrows-rotate"></i> 点我恢复默认背景</button></p>
     <p></p>
     <h2 class="content-head">性能设置</h2>
     <p></p>
@@ -347,10 +348,10 @@ function createWinbox() {
     <p></p>
     <h2 class="content-head">字体设置</h2>
     <p id="swfs">
-    <a class="swf" href="javascript:;" rel="noopener external nofollow" style="font-family:'HYTMR'!important;color:black" onclick="setFont('HYTMR')">汉仪唐美人</a><br>
-    <a class="swf" href="javascript:;" rel="noopener external nofollow" style="font-family:'FZXJLJ'!important;color:black" onclick="setFont('FZXJLJ')">方正金陵体</a> <br>
-    <a class="swf" href="javascript:;" rel="noopener external nofollow" style="font-family:'FZXS'!important;color:black" onclick="setFont('FZXS')">方正像素体</a> <br>
-    <a class="swf" href="javascript:;" rel="noopener external nofollow" style="font-family:'FZODZK'!important;color:black" onclick="setFont('FZODZK')">方正欧蝶正楷</a> <br>
+    <a class="swf" href="javascript:;" rel="noopener external nofollow" style="font-family:'汉仪唐美人'!important;color:black" onclick="setFont('汉仪唐美人')">汉仪唐美人</a><br>
+    <a class="swf" href="javascript:;" rel="noopener external nofollow" style="font-family:'甜甜圈海报'!important;color:black" onclick="setFont('甜甜圈海报')">甜甜圈海报</a> <br>
+    <a class="swf" href="javascript:;" rel="noopener external nofollow" style="font-family:'优设好身体'!important;color:black" onclick="setFont('优设好身体')">优设好身体</a> <br>
+    <a class="swf" href="javascript:;" rel="noopener external nofollow" style="font-family:'霞鹜文楷'!important;color:black" onclick="setFont('霞鹜文楷')">霞鹜文楷</a> <br>
     <a class="swf" href="javascript:;" rel="noopener external nofollow" style="font-family:-apple-system, IBM Plex Mono ,monosapce,'微软雅黑', sans-serif;!important;color:black" onclick="setFont('main')">系统默认</a> <br>
     </p>
 </div>
