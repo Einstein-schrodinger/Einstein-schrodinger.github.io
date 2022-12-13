@@ -336,10 +336,10 @@ function createWinbox() {
     <p></p>
     <h2 class="content-head">字体设置</h2>
     <p id="swfs">
-    <a class="swf" href="javascript:;" rel="noopener external nofollow" style="font-family:'汉仪唐美人'!important;color:black" onclick="setFont('汉仪唐美人')">汉仪唐美人</a>&emsp
-    <a class="swf" href="javascript:;" rel="noopener external nofollow" style="font-family:'甜甜圈海报'!important;color:black" onclick="setFont('甜甜圈海报')">甜甜圈海报</a>&emsp
-    <a class="swf" href="javascript:;" rel="noopener external nofollow" style="font-family:'优设好身体'!important;color:black" onclick="setFont('优设好身体')">优设好身体</a>&emsp
-    <a class="swf" href="javascript:;" rel="noopener external nofollow" style="font-family:'霞鹜文楷'!important;color:black" onclick="setFont('霞鹜文楷')">霞鹜文楷</a>&emsp
+    <a class="swf" href="javascript:;" rel="noopener external nofollow" style="font-family:'汉仪唐美人'!important;color:black" onclick="setFont('汉仪唐美人')">汉仪唐美人</a> 
+    <a class="swf" href="javascript:;" rel="noopener external nofollow" style="font-family:'甜甜圈海报'!important;color:black" onclick="setFont('甜甜圈海报')">甜甜圈海报</a> 
+    <a class="swf" href="javascript:;" rel="noopener external nofollow" style="font-family:'优设好身体'!important;color:black" onclick="setFont('优设好身体')">优设好身体</a> 
+    <a class="swf" href="javascript:;" rel="noopener external nofollow" style="font-family:'霞鹜文楷'!important;color:black" onclick="setFont('霞鹜文楷')">霞鹜文楷</a> 
     <a class="swf" href="javascript:;" rel="noopener external nofollow" style="font-family:-apple-system, IBM Plex Mono ,monosapce,'微软雅黑', sans-serif;!important;color:black" onclick="setFont('main')">系统默认</a> <br>
     </p>
 </div>
