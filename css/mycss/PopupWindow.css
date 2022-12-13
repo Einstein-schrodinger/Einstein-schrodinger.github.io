@@ -185,16 +185,25 @@
     -ms-border-radius: 10px;
     -o-border-radius: 10px;
 }
-.reSettings{
-    color:var(--lyx-white)!important
+/* .reSettings{
+    color:var(--sqw-white)!important
 }
 .reSettings::before{
     content:"\f021";
     font-family:var(--fa-style-family,"Font Awesome 6 Free");font-weight:var(--fa-style,900);
-    color:var(--lyx-white)!important
+    color:var(--sqw-white)!important
 }
 .reSettings:hover{
     cursor: pointer;
+} */
+.reSettings {
+    background:#b347f1;
+    display:block;
+    margin:0 auto;
+    width:20%;
+    padding: 15px 0;
+    border-radius:6px;
+    color:white;
 }
 .wb-title{
     color:black;
@@ -246,7 +255,7 @@
     margin-left:5px
 }
 .content-button {
-    background-color: var(--lyx-theme);
+    background-color: var(--sqw-theme);
     padding: 5px;
     color: white;
     border-radius: 4px;
@@ -278,7 +287,7 @@ transform: translateY(5px);}
     border-radius: 10px;
     background-color: #000;}
 .settings input[type="checkbox"]:checked {
-    background-color: var(--lyx-theme);border-color:var(--lyx-theme)}
+    background-color: var(--sqw-theme);border-color:var(--sqw-theme)}
 .settings input[type="checkbox"]:checked:before {
     left: 19px;background-color: white!important;}
 .settings input[type="checkbox"] {
@@ -286,7 +295,7 @@ transform: translateY(5px);}
 .settings input[type="checkbox"]:before {
     transition: left 0.2s;}
 .settings input[type="checkbox"]:checked {
-    background-color: var(--lyx-theme);
+    background-color: var(--sqw-theme);
     /* transition: border ease 0.4s, background-color ease 1.2s; */
 }.settings input[type="checkbox"]:checked:before {
     transition: left 0.2s;}
@@ -330,101 +339,101 @@ input[name="colors"]{
     border-radius: 50%;
 }
 #red{
-    border: 3px solid var(--lyx-red);
+    border: 3px solid var(--sqw-red);
 }
 #orange{
-    border: 3px solid var(--lyx-orange);
+    border: 3px solid var(--sqw-orange);
 }
 #yellow{
-    border: 3px solid var(--lyx-yellow);
+    border: 3px solid var(--sqw-yellow);
 }
 #green{
-    border: 3px solid var(--lyx-green);
+    border: 3px solid var(--sqw-green);
 }
 #blue{
-    border: 3px solid var(--lyx-blue);
+    border: 3px solid var(--sqw-blue);
 }
 #purple{
-    border: 3px solid var(--lyx-purple);
+    border: 3px solid var(--sqw-purple);
 }
 #pink{
-    border: 3px solid var(--lyx-pink);
+    border: 3px solid var(--sqw-pink);
 }
 #heoblue{
-    border: 3px solid var(--lyx-heoblue);
+    border: 3px solid var(--sqw-heoblue);
 }
 #darkblue{
-    border: 3px solid var(--lyx-darkblue);
+    border: 3px solid var(--sqw-darkblue);
 }
 #black  {
-    border: 3px solid var(--lyx-black);
+    border: 3px solid var(--sqw-black);
 }
 #blackgray  {
-    border: 3px solid var(--lyx-blackgray);
+    border: 3px solid var(--sqw-blackgray);
 }
 #purple:checked{
     box-shadow: 0 0 0 2px #fff inset;
     border-radius: 50%;
-    border: 3px solid var(--lyx-purple);
-    background-color: var(--lyx-purple);
+    border: 3px solid var(--sqw-purple);
+    background-color: var(--sqw-purple);
 }
 #red:checked{
     box-shadow: 0 0 0 2px #fff inset;
     border-radius: 50%;
-    border: 3px solid var(--lyx-red);
-    background-color: var(--lyx-red);
+    border: 3px solid var(--sqw-red);
+    background-color: var(--sqw-red);
 }
 #orange:checked{
     box-shadow: 0 0 0 2px #fff inset;
     border-radius: 50%;
-    border: 3px solid var(--lyx-orange);
-    background-color: var(--lyx-orange);
+    border: 3px solid var(--sqw-orange);
+    background-color: var(--sqw-orange);
 }
 #yellow:checked{
     box-shadow: 0 0 0 2px #fff inset;
     border-radius: 50%;
-    border: 3px solid var(--lyx-yellow);
-    background-color: var(--lyx-yellow);
+    border: 3px solid var(--sqw-yellow);
+    background-color: var(--sqw-yellow);
 }
 #green:checked{
     box-shadow: 0 0 0 2px #fff inset;
     border-radius: 50%;
-    border: 3px solid var(--lyx-green);
-    background-color: var(--lyx-green);
+    border: 3px solid var(--sqw-green);
+    background-color: var(--sqw-green);
 }
 #blue:checked{
     box-shadow: 0 0 0 2px #fff inset;
     border-radius: 50%;
-    border: 3px solid var(--lyx-blue);
-    background-color: var(--lyx-blue);
+    border: 3px solid var(--sqw-blue);
+    background-color: var(--sqw-blue);
 }
 #pink:checked{
     box-shadow: 0 0 0 2px #fff inset;
     border-radius: 50%;
-    border: 3px solid var(--lyx-pink);
-    background-color: var(--lyx-pink);
+    border: 3px solid var(--sqw-pink);
+    background-color: var(--sqw-pink);
 }
 #heoblue:checked{
     box-shadow: 0 0 0 2px #fff inset;
     border-radius: 50%;
-    border: 3px solid var(--lyx-heoblue);
-    background-color: var(--lyx-heoblue);
+    border: 3px solid var(--sqw-heoblue);
+    background-color: var(--sqw-heoblue);
 }
 #darkblue:checked{
     box-shadow: 0 0 0 2px #fff inset;
     border-radius: 50%;
-    border: 3px solid var(--lyx-darkblue);
-    background-color: var(--lyx-darkblue);
+    border: 3px solid var(--sqw-darkblue);
+    background-color: var(--sqw-darkblue);
 }
 #black:checked{
     box-shadow: 0 0 0 2px #fff inset;
     border-radius: 50%;
-    border: 3px solid var(--lyx-black);
-    background-color: var(--lyx-black);
+    border: 3px solid var(--sqw-black);
+    background-color: var(--sqw-black);
 }
 #blackgray:checked{
     box-shadow: 0 0 0 2px #fff inset;
     border-radius: 50%;
-    border: 3px solid var(--lyx-blackgray);
-    background-color: var(--lyx-blackgray);
+    border: 3px solid var(--sqw-blackgray);
+    background-color: var(--sqw-blackgray);
 }

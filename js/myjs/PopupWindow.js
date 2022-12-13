@@ -210,18 +210,6 @@ function toggleRightside(){
     $("#rightside").toggle();
     localStorage.setItem("hideRightside",Math.abs(Number(localStorage.getItem("hideRightside"))-1))
 }
-
-
-
-
-
-
-
-
-
-
-
-
 if(localStorage.getItem("font")==undefined){
     localStorage.setItem("font","汉仪唐美人")
 }
@@ -309,8 +297,8 @@ function createWinbox() {
     window.addEventListener('resize', winResize)
 
     // 每一类我放了一个演示，直接往下复制粘贴 a标签 就可以，需要注意的是 函数里面的链接 冒号前面需要添加反斜杠\进行转义
-    // <div class="settings" style="display: block;"><a class="reSettings content-button">恢复默认设置</a>
     winbox.body.innerHTML = `
+    <div class="settings" style="display: block;">
     <p><button onclick="localStorage.removeItem('blogbg');location.reload();" style="background:#b347f1;display:block;margin:0 auto;width:20%;padding: 15px 0;border-radius:6px;color:white;"><i class="fa-solid fa-arrows-rotate"></i> 点我恢复默认背景</button></p>
     <p></p>
     <h2 class="content-head">性能设置</h2>
