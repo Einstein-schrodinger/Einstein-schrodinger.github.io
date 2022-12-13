@@ -1,3 +1,117 @@
+// // 存数据  切换背景 默认的
+// // name：命名 data：数据
+// function saveData(name, data) {
+//     localStorage.setItem(name, JSON.stringify({ 'time': Date.now(), 'data': data }))
+// }
+
+// // 取数据
+// // name：命名 time：过期时长,单位分钟,如传入30,即加载数据时如果超出30分钟返回0,否则返回数据
+// function loadData(name, time) {
+//     let d = JSON.parse(localStorage.getItem(name));
+//     // 过期或有错误返回 0 否则返回数据
+//     if (d) {
+//         let t = Date.now() - d.time
+//         if (t < (time * 60 * 1000) && t > -1) return d.data;
+//     }
+//     return 0;
+// }
+
+// // 上面两个函数如果你有其他需要存取数据的功能，也可以直接使用
+
+// // 读取背景
+// try {
+//     let data = loadData('blogbg', 1440)
+//     if (data) changeBg(data, 1)
+//     else localStorage.removeItem('blogbg');
+// } catch (error) { localStorage.removeItem('blogbg'); }
+
+// // 切换背景函数
+// // 此处的flag是为了每次读取时都重新存储一次,导致过期时间不稳定
+// // 如果flag为0则存储,即设置背景. 为1则不存储,即每次加载自动读取背景.
+// function changeBg(s, flag) {
+//     let bg = document.getElementById('web_bg')
+//     if (s.charAt(0) == '#') {
+//         bg.style.backgroundColor = s
+//         bg.style.backgroundImage = 'none'
+//     } else bg.style.backgroundImage = s
+//     if (!flag) { saveData('blogbg', s) }
+// }
+
+// // 以下为2.0新增内容
+
+// // 创建窗口
+// var winbox = ''
+
+// function createWinbox() {
+//     let div = document.createElement('div')
+//     document.body.appendChild(div)
+//     winbox = WinBox({
+//         id: 'changeBgBox',
+//         index: 999,
+//         title: "背景切换",
+//         x: "center",
+//         y: "center",
+//         minwidth: '300px',
+//         height: "60%",
+//         background: 'var(--leonus-blue)',
+//         onmaximize: () => { div.innerHTML = `<style>body::-webkit-scrollbar {display: none;}div#changeBgBox {width: 100% !important;}</style>` },
+//         onrestore: () => { div.innerHTML = '' }
+//     });
+//     winResize();
+//     window.addEventListener('resize', winResize)
+
+//     // 每一类我放了一个演示，直接往下复制粘贴 a标签 就可以，需要注意的是 函数里面的链接 冒号前面需要添加反斜杠\进行转义
+//     winbox.body.innerHTML = `
+//     <div id="article-container" style="padding:10px;">
+    
+//     <p><button onclick="localStorage.removeItem('blogbg');location.reload();" style="background:#b347f1;display:block;margin:0 auto;width:20%;padding: 15px 0;border-radius:6px;color:white;"><i class="fa-solid fa-arrows-rotate"></i> 点我恢复默认背景</button></p>
+//     <h2 id="图片（手机）"><a href="#图片（手机）" class="headerlink" title="图片（手机）"></a>图片（手机）</h2>
+//     <div class="bgbox">
+//     <a href="javascript:;" rel="noopener external nofollow" style="background-image:url(https://blogresource.sqwdream.cloud/background/cell_phone_wallpape/girl1.jpeg)" class="pimgbox" onclick="changeBg('url(https\://blogresource.sqwdream.cloud/background/cell_phone_wallpape/girl1.jpeg)')"></a>
+//     </div>
+    
+//     <h2 id="图片（电脑）"><a href="#图片（电脑）" class="headerlink" title="图片（电脑）"></a>图片（电脑）</h2>
+//     <div class="bgbox">
+//     <a href="javascript:;" rel="noopener external nofollow" style="background-image:url(https://blogresource.sqwdream.cloud/background/desktop_wallpaper/threebody.jpg)" class="imgbox" onclick="changeBg('url(https\://blogresource.sqwdream.cloud/background/desktop_wallpaper/threebody.jpg)')"></a>
+//     <a href="javascript:;" rel="noopener external nofollow" style="background-image:url(https://blogresource.sqwdream.cloud/background/desktop_wallpaper/distance.jpg)" class="imgbox" onclick="changeBg('url(https\://blogresource.sqwdream.cloud/background/desktop_wallpaper/distance.jpg)')"></a>
+//     <a href="javascript:;" rel="noopener external nofollow" style="background-image:url(https://blogresource.sqwdream.cloud/background/desktop_wallpaper/beautifulgirl.png)" class="imgbox" onclick="changeBg('url(https\://blogresource.sqwdream.cloud/background/desktop_wallpaper/beautifulgirl.png)')"></a>
+//     <a href="javascript:;" rel="noopener external nofollow" style="background-image:url(https://blogresource.sqwdream.cloud/background/desktop_wallpaper/girl1.jpg)" class="imgbox" onclick="changeBg('url(https\://blogresource.sqwdream.cloud/background/desktop_wallpaper/girl1.jpg)')"></a>
+//     <a href="javascript:;" rel="noopener external nofollow" style="background-image:url(https://blogresource.sqwdream.cloud/background/desktop_wallpaper/girl2.jpg)" class="imgbox" onclick="changeBg('url(https\://blogresource.sqwdream.cloud/background/desktop_wallpaper/girl2.jpg)')"></a>
+//     <a href="javascript:;" rel="noopener external nofollow" style="background-image:url(https://blogresource.sqwdream.cloud/background/desktop_wallpaper/green.jpg)" class="imgbox" onclick="changeBg('url(https\://blogresource.sqwdream.cloud/background/desktop_wallpaper/green.jpg)')"></a>
+//     <a href="javascript:;" rel="noopener external nofollow" style="background-image:url(https://blogresource.sqwdream.cloud/background/desktop_wallpaper/girl3.jpg)" class="imgbox" onclick="changeBg('url(https\://blogresource.sqwdream.cloud/background/desktop_wallpaper/girl3.jpg)')"></a>
+//     <a href="javascript:;" rel="noopener external nofollow" style="background-image:url(https://blogresource.sqwdream.cloud/background/desktop_wallpaper/men.png)" class="imgbox" onclick="changeBg('url(https\://blogresource.sqwdream.cloud/background/desktop_wallpaper/men.png)')"></a>
+//     </div>
+    
+    
+    
+//     <h2 id="渐变色"><a href="#渐变色" class="headerlink" title="渐变色"></a>渐变色</h2>
+//     <div class="bgbox">
+//     <a href="javascript:;" rel="noopener external nofollow" class="box" style="background: linear-gradient(to right, #eecda3, #ef629f)" onclick="changeBg('linear-gradient(to right, #eecda3, #ef629f)')"></a>
+//     <a href="javascript:;" rel="noopener external nofollow" class="box" style="background: radial-gradient(circle, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1)" onclick="changeBg('radial-gradient(circle, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1)')"></a>
+//     </div>
+    
+//     <h2 id="纯色"><a href="#纯色" class="headerlink" title="纯色"></a>纯色</h2>
+//     <div class="bgbox">
+//     <a href="javascript:;" rel="noopener external nofollow" class="box" style="background: #7D9D9C" onclick="changeBg('#7D9D9C')"></a> 
+//     </div>
+// `;
+// }
+
+// // 适应窗口大小
+// function winResize() {
+//     var offsetWid = document.documentElement.clientWidth;
+//     if (offsetWid <= 768) {
+//         winbox.resize(offsetWid * 0.95 + "px", "90%").move("center", "center");
+//     } else {
+//         winbox.resize(offsetWid * 0.6 + "px", "70%").move("center", "center");
+//     }
+// }
+
+// // 切换状态，窗口已创建则控制窗口显示和隐藏，没窗口则创建窗口
+// function toggleWinbox() {
+//     if (document.querySelector('#changeBgBox')) winbox.toggleClass('hide');
+//     else createWinbox();
+// }
 if(localStorage.getItem("blur")=="false"){
     var blur=0;
     }else{
@@ -63,11 +177,11 @@ if(localStorage.getItem("theme")=="acrylic"){
     document.getElementById("css").href=""
 }
 switchTheme=function(){
-    if(document.getElementById("css").href==window.location.protocol+"//"+window.location.host+"/css/stylessimple.css"){
+    if(document.getElementById("css").href==window.location.protocol+"//"+window.location.host+"/css/mycss/PopupWindow.css"){
         document.getElementById("css").href=""
         localStorage.setItem("theme","acrylic");
     }else{
-        document.getElementById("css").href="/css/stylessimple.css"
+        document.getElementById("css").href="/css/mycss/PopupWindow.css"
         localStorage.setItem("theme","simple");
     }
 }
@@ -257,45 +371,6 @@ function createWinbox() {
     </div>
     <h3 id="图片（电脑）"><a href="#图片（电脑）" class="headerlink" title="图片（电脑）"></a>图片（电脑）</h3>
     <div class="bgbox">
-    <a href="javascript:;" rel="noopener external nofollow" style="background-image:url(https://bu.dusays.com/2022/08/30/630d6d5574d0e.webp)" class="imgbox" onclick="changeBg('url(https://bu.dusays.com/2022/08/30/630d6d5574d0e.webp)')"></a>
-    <a href="javascript:;" rel="noopener external nofollow" style="background-image:url(https://bu.dusays.com/2022/08/30/630d6d529adf9.webp)" class="imgbox" onclick="changeBg('url(https://bu.dusays.com/2022/08/30/630d6d529adf9.webp)')"></a>
-    <a href="javascript:;" rel="noopener external nofollow" style="background-image:url(https://bu.dusays.com/2022/08/30/630d6d5159b31.webp)" class="imgbox" onclick="changeBg('url(https://bu.dusays.com/2022/08/30/630d6d5159b31.webp)')"></a>
-    <a href="javascript:;" rel="noopener external nofollow" style="background-image:url(https://bu.dusays.com/2022/08/30/630d718bbeef6.webp)" class="imgbox" onclick="changeBg('url(https://bu.dusays.com/2022/08/30/630d718bbeef6.webp)')"></a>
-    <a href="javascript:;" rel="noopener external nofollow" style="background-image:url(https://bu.dusays.com/2022/08/30/630d72f237d19.jpg)" class="imgbox" onclick="changeBg('url(https://bu.dusays.com/2022/08/30/630d72f237d19.jpg)')"></a>
-    <a href="javascript:;" rel="noopener external nofollow" style="background-image:url(https://bu.dusays.com/2022/08/30/630d72f2032c8.jpg)" class="imgbox" onclick="changeBg('url(https://bu.dusays.com/2022/08/30/630d72f2032c8.jpg)')"></a>
-    <a href="javascript:;" rel="noopener external nofollow" style="background-image:url(https://bu.dusays.com/2021/12/01/7792ff0082ec4.jpg)" class="imgbox" onclick="changeBg('url(https://bu.dusays.com/2021/12/01/7792ff0082ec4.jpg)')"></a>
-    <a href="javascript:;" rel="noopener external nofollow" style="background-image:url(https://bu.dusays.com/2022/08/30/630d72ee6d4f3.png)" class="imgbox" onclick="changeBg('url(https://bu.dusays.com/2022/08/30/630d72ee6d4f3.png)')"></a>
-    <a href="javascript:;" rel="noopener external nofollow" style="background-image:url(https://bu.dusays.com/2022/08/30/630d72ed76532.jpg)" class="imgbox" onclick="changeBg('url(https://bu.dusays.com/2022/08/30/630d72ed76532.jpg)')"></a>
-    <a href="javascript:;" class="imgbox" onclick="changeBg('url(https://bu.dusays.com/2022/09/17/6324aea549be6.webp)')"><img src="https://bu.dusays.com/2022/09/17/6324aea549be6.webp"></a>
-    <a href="javascript:;" class="imgbox" onclick="changeBg('url(https://bu.dusays.com/2022/09/17/6324aec701a68.webp)')"><img src="https://bu.dusays.com/2022/09/17/6324aec701a68.webp"></a>
-    <a href="javascript:;" class="imgbox" onclick="changeBg('url(https://bu.dusays.com/2022/09/17/6324aef4a5543.webp)')"><img src="https://bu.dusays.com/2022/09/17/6324aef4a5543.webp"></a>
-    <a href="javascript:;" class="imgbox" onclick="changeBg('url(https://bu.dusays.com/2022/09/17/6324af3622884.webp)')"><img src="https://bu.dusays.com/2022/09/17/6324af3622884.webp"></a>
-    <a href="javascript:;" class="imgbox" onclick="changeBg('url(https://cdn.afdelivr.top/npm/saiodgm-api@1.0.1/randomimg-my/5.webp)')"><img src="https://cdn.afdelivr.top/npm/saiodgm-api@1.0.1/randomimg-my/5.webp"></a>
-    <a href="javascript:;" class="imgbox" onclick="changeBg('url(https://cdn.afdelivr.top/npm/saiodgm-api@1.0.1/randomimg-my/6.webp)')"><img src="https://cdn.afdelivr.top/npm/saiodgm-api@1.0.1/randomimg-my/6.webp"></a>
-    <a href="javascript:;" class="imgbox" onclick="changeBg('url(https://cdn.afdelivr.top/npm/saiodgm-api@1.0.1/randomimg-my/7.webp)')"><img src="https://cdn.afdelivr.top/npm/saiodgm-api@1.0.1/randomimg-my/7.webp"></a>
-    <a href="javascript:;" class="imgbox" onclick="changeBg('url(https://bu.dusays.com/2022/12/08/6391b77ed767c.png)')"><img src="https://bu.dusays.com/2022/12/08/6391b77ed767c.png"></a>
-    <a href="javascript:;" class="imgbox" onclick="changeBg('url(https://cdn.afdelivr.top/npm/saiodgm-api@1.0.1/randomimg-my/9.webp)')"><img src="https://cdn.afdelivr.top/npm/saiodgm-api@1.0.1/randomimg-my/9.webp"></a>
-    <a href="javascript:;" class="imgbox" onclick="changeBg('url(https://cdn.afdelivr.top/npm/saiodgm-api@1.0.1/randomimg-my/10.webp)')"><img src="https://cdn.afdelivr.top/npm/saiodgm-api@1.0.1/randomimg-my/10.webp"></a>
-    <a href="javascript:;" class="imgbox" onclick="changeBg('url(https://cdn.afdelivr.top/npm/saiodgm-api@1.0.1/randomimg-my/11.webp)')"><img src="https://cdn.afdelivr.top/npm/saiodgm-api@1.0.1/randomimg-my/11.webp"></a>
-    <a href="javascript:;" class="imgbox" onclick="changeBg('url(https://cdn.afdelivr.top/npm/saiodgm-api@1.0.1/randomimg-my/12.webp)')"><img src="https://cdn.afdelivr.top/npm/saiodgm-api@1.0.1/randomimg-my/12.webp"></a>
-    <a href="javascript:;" class="imgbox" onclick="changeBg('url(https://cdn.afdelivr.top/npm/saiodgm-api@1.0.1/randomimg-my/13.webp)')"><img src="https://cdn.afdelivr.top/npm/saiodgm-api@1.0.1/randomimg-my/13.webp"></a>
-    <a href="javascript:;" class="imgbox" onclick="changeBg('url(https://cdn.afdelivr.top/npm/saiodgm-api@1.0.1/randomimg-my/14.webp)')"><img src="https://cdn.afdelivr.top/npm/saiodgm-api@1.0.1/randomimg-my/14.webp"></a>
-    <a href="javascript:;" class="imgbox" onclick="changeBg('url(https://cdn.afdelivr.top/npm/saiodgm-api@1.0.1/randomimg-my/15.webp)')"><img src="https://cdn.afdelivr.top/npm/saiodgm-api@1.0.1/randomimg-my/15.webp"></a>
-    <a href="javascript:;" class="imgbox" onclick="changeBg('url(https://cdn.afdelivr.top/npm/saiodgm-api@1.0.1/randomimg-my/16.webp)')"><img src="https://cdn.afdelivr.top/npm/saiodgm-api@1.0.1/randomimg-my/16.webp"></a>
-    <a href="javascript:;" class="imgbox" onclick="changeBg('url(https://cdn.afdelivr.top/npm/saiodgm-api@1.0.1/randomimg-my/17.webp)')"><img src="https://cdn.afdelivr.top/npm/saiodgm-api@1.0.1/randomimg-my/17.webp"></a>
-    <a href="javascript:;" class="imgbox" onclick="changeBg('url(https://cdn.afdelivr.top/npm/saiodgm-api@1.0.1/randomimg-my/18.webp)')"><img src="https://cdn.afdelivr.top/npm/saiodgm-api@1.0.1/randomimg-my/18.webp"></a>
-    <a href="javascript:;" class="imgbox" onclick="changeBg('url(https://cdn.afdelivr.top/npm/saiodgm-api@1.0.1/randomimg-my/19.webp)')"><img src="https://cdn.afdelivr.top/npm/saiodgm-api@1.0.1/randomimg-my/19.webp"></a>
-    <a href="javascript:;" class="imgbox" onclick="changeBg('url(https://cdn.afdelivr.top/npm/saiodgm-api@1.0.1/randomimg-my/20.webp)')"><img src="https://cdn.afdelivr.top/npm/saiodgm-api@1.0.1/randomimg-my/20.webp"></a>
-    <a href="javascript:;" class="imgbox" onclick="changeBg('url(https://cdn.afdelivr.top/npm/saiodgm-api@1.0.1/randomimg-my/21.webp)')"><img src="https://cdn.afdelivr.top/npm/saiodgm-api@1.0.1/randomimg-my/21.webp"></a>
-    <a href="javascript:;" class="imgbox" onclick="changeBg('url(https://cdn.afdelivr.top/npm/saiodgm-api@1.0.1/randomimg-my/22.webp)')"><img src="https://cdn.afdelivr.top/npm/saiodgm-api@1.0.1/randomimg-my/22.webp"></a>
-    <a href="javascript:;" class="imgbox" onclick="changeBg('url(https://cdn.afdelivr.top/npm/saiodgm-api@1.0.1/randomimg-my/23.webp)')"><img src="https://cdn.afdelivr.top/npm/saiodgm-api@1.0.1/randomimg-my/23.webp"></a>
-    <a href="javascript:;" class="imgbox" onclick="changeBg('url(https://cdn.afdelivr.top/npm/saiodgm-api@1.0.1/randomimg-my/24.webp)')"><img src="https://cdn.afdelivr.top/npm/saiodgm-api@1.0.1/randomimg-my/24.webp"></a>
-    <a href="javascript:;" class="imgbox" onclick="changeBg('url(https://cdn.afdelivr.top/npm/saiodgm-api@1.0.1/randomimg-my/25.webp)')"><img src="https://cdn.afdelivr.top/npm/saiodgm-api@1.0.1/randomimg-my/25.webp"></a>
-    <a href="javascript:;" class="imgbox" onclick="changeBg('url(https://cdn.afdelivr.top/npm/saiodgm-api@1.0.1/randomimg-my/26.webp)')"><img src="https://cdn.afdelivr.top/npm/saiodgm-api@1.0.1/randomimg-my/26.webp"></a>
-    <a href="javascript:;" class="imgbox" onclick="changeBg('url(https://cdn.afdelivr.top/npm/saiodgm-api@1.0.1/randomimg-my/27.webp)')"><img src="https://cdn.afdelivr.top/npm/saiodgm-api@1.0.1/randomimg-my/27.webp"></a>
-    <a href="javascript:;" class="imgbox" onclick="changeBg('url(https://cdn.afdelivr.top/npm/saiodgm-api@1.0.1/randomimg-my/28.webp)')"><img src="https://cdn.afdelivr.top/npm/saiodgm-api@1.0.1/randomimg-my/28.webp"></a>
-    <a href="javascript:;" class="imgbox" onclick="changeBg('url(https://cdn.afdelivr.top/npm/saiodgm-api@1.0.1/randomimg-my/29.webp)')"><img src="https://cdn.afdelivr.top/npm/saiodgm-api@1.0.1/randomimg-my/29.webp"></a>
-    <a href="javascript:;" class="imgbox" onclick="changeBg('url(https://cdn.afdelivr.top/npm/saiodgm-api@1.0.1/randomimg-my/30.webp)')"><img src="https://cdn.afdelivr.top/npm/saiodgm-api@1.0.1/randomimg-my/30.webp"></a>
     <a href="javascript:;" rel="noopener external nofollow" style="background-image:url(https://blogresource.sqwdream.cloud/background/desktop_wallpaper/threebody.jpg)" class="imgbox" onclick="changeBg('url(https\://blogresource.sqwdream.cloud/background/desktop_wallpaper/threebody.jpg)')"></a>
     <a href="javascript:;" rel="noopener external nofollow" style="background-image:url(https://blogresource.sqwdream.cloud/background/desktop_wallpaper/distance.jpg)" class="imgbox" onclick="changeBg('url(https\://blogresource.sqwdream.cloud/background/desktop_wallpaper/distance.jpg)')"></a>
     <a href="javascript:;" rel="noopener external nofollow" style="background-image:url(https://blogresource.sqwdream.cloud/background/desktop_wallpaper/beautifulgirl.png)" class="imgbox" onclick="changeBg('url(https\://blogresource.sqwdream.cloud/background/desktop_wallpaper/beautifulgirl.png)')"></a>
@@ -305,12 +380,13 @@ function createWinbox() {
     <a href="javascript:;" rel="noopener external nofollow" style="background-image:url(https://blogresource.sqwdream.cloud/background/desktop_wallpaper/girl3.jpg)" class="imgbox" onclick="changeBg('url(https\://blogresource.sqwdream.cloud/background/desktop_wallpaper/girl3.jpg)')"></a>
     <a href="javascript:;" rel="noopener external nofollow" style="background-image:url(https://blogresource.sqwdream.cloud/background/desktop_wallpaper/men.png)" class="imgbox" onclick="changeBg('url(https\://blogresource.sqwdream.cloud/background/desktop_wallpaper/men.png)')"></a>
     </div>
+
     <h3 id="渐变色"><a href="#渐变色" class="headerlink" title="渐变色"></a>渐变色</h3>
     <div class="bgbox">
     <a href="javascript:;" rel="noopener external nofollow" class="box" style="background: linear-gradient(to right, #eecda3, #ef629f)" onclick="changeBg('linear-gradient(to right, #eecda3, #ef629f)')"></a>
     <a href="javascript:;" rel="noopener external nofollow" class="box" style="background: linear-gradient(90deg, #ffd7e4 0%, #c8f1ff 100%)" onclick="changeBg('linear-gradient(90deg, #ffd7e4 0%, #c8f1ff 100%)')"></a>
     <a href="javascript:;" rel="noopener external nofollow" class="box" style="background: linear-gradient(45deg, #e5737b, #c6999e, #96b9c2, #00d6e8)" onclick="changeBg('linear-gradient(45deg, #e5737b, #c6999e, #96b9c2, #00d6e8)')"></a>
-
+    <a href="javascript:;" rel="noopener external nofollow" class="box" style="background: radial-gradient(circle, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1)" onclick="changeBg('radial-gradient(circle, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1)')"></a>
     </div>
     
     <h3 id="纯色"><a href="#纯色" class="headerlink" title="纯色"></a>纯色</h3>
