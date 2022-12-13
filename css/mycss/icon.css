@@ -6,3 +6,11 @@ svg.icon {
     fill: currentColor;
     overflow: hidden;
 }
+
+.card-info-social-icons svg.icon {
+    width: 1.5em;
+    height: 1.5em;
+    vertical-align: -0.6em;
+    fill: currentColor;
+    overflow: hidden;
+}
