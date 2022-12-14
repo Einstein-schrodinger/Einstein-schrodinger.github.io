@@ -252,6 +252,14 @@
 .reSettings:hover{
     cursor: pointer;
 } */
+.swf {
+    padding: 10px;
+    font-size: 20px;
+    background-color: #fff;
+    border: 2px solid var(--border-color);
+    border-radius: 10px!important;
+    margin: 10px;
+}
 [data-theme="dark"] .swf{
     color:white!important;
 }

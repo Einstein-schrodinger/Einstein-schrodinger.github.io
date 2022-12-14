@@ -186,7 +186,7 @@ switchTheme=function(){
     }
 }
 setColor=function(c){
-    document.getElementById("themeColor").innerText=`:root{--lyx-theme:var(--lyx-${c})!important}`;
+    document.getElementById("themeColor").innerText=`:root{--sqw-theme:var(--sqw-${c})!important}`;
     localStorage.setItem("themeColor",c);
 
 }
@@ -344,10 +344,6 @@ function createWinbox() {
     </p>
 </div>
     <h2 style="margin-left:10px">背景设置</h2>
-    <div>
-    </br>&nbsp&nbsp注意:切换背景功能仅在Acrylic主题中生效，在Simple主题中无效
-    <button onclick="localStorage.removeItem('blogbg');location.reload();" class="content-button"><i class="fa-solid fa-arrows-rotate"></i> 点我恢复默认背景</button>
-    </div>
     <div id="article-container" style="padding:20px;">
     <h3 id="图片（手机）"><a href="#图片（手机）" class="headerlink" title="图片（手机）"></a>图片（手机）</h3>
     <div class="bgbox">
