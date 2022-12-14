@@ -343,8 +343,8 @@ function createWinbox() {
     <a class="swf" href="javascript:;" rel="noopener external nofollow" style="font-family:-apple-system, IBM Plex Mono ,monosapce,'微软雅黑', sans-serif;!important;color:black" onclick="setFont('main')">系统默认</a> <br>
     </p>
 </div>
-    <h2 class="margin-left:10px">背景设置</h2>
-    <div id="article-container" style="padding:20px; padding-top:0px">
+    <h2 style="margin-left:15px">背景设置</h2>
+    <div id="article-container" style="padding:30px; padding-top:0px">
     <h3 id="图片（手机）"><a href="#图片（手机）" class="headerlink" title="图片（手机）"></a>图片（手机）</h3>
     <div class="bgbox">
     <a href="javascript:;" rel="noopener external nofollow" style="background-image:url(https://bu.dusays.com/2022/08/30/630d6d4d539a5.webp)" class="pimgbox" onclick="changeBg('url(https://bu.dusays.com/2022/08/30/630d6d4d539a5.webp)')"></a>
