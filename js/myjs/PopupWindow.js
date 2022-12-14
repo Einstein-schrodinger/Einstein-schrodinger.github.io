@@ -394,10 +394,10 @@ if(localStorage.getItem("yjjs")=="true"){
 if(localStorage.getItem("hideRightside")=="1"){
     document.getElementById("hideAside").checked=true;
 }
-document.getElementsByClassName("reSettings")[0].onclick=function(){
-    localStorage.clear()
-    window.location.reload()
-}
+// document.getElementsByClassName("reSettings")[0].onclick=function(){
+//     localStorage.clear()
+//     window.location.reload()
+// }
 }
 
 function winResize() {
