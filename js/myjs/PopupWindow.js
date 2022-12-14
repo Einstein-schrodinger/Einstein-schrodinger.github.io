@@ -173,18 +173,18 @@ function yjjs1(){
     //     document.getElementById("yjjs").innerText=``
     // }
 }
-if(localStorage.getItem("theme")=="acrylic"){
-    document.getElementById("css").href=""
-}
-switchTheme=function(){
-    if(document.getElementById("css").href==window.location.protocol+"//"+window.location.host+"/css/mycss/PopupWindow.css"){
-        document.getElementById("css").href=""
-        localStorage.setItem("theme","acrylic");
-    }else{
-        document.getElementById("css").href="/css/mycss/PopupWindow.css"
-        localStorage.setItem("theme","simple");
-    }
-}
+// if(localStorage.getItem("theme")=="acrylic"){
+//     document.getElementById("css").href=""
+// }
+// switchTheme=function(){
+//     if(document.getElementById("css").href==window.location.protocol+"//"+window.location.host+"/css/mycss/PopupWindow.css"){
+//         document.getElementById("css").href=""
+//         localStorage.setItem("theme","acrylic");
+//     }else{
+//         document.getElementById("css").href="/css/mycss/PopupWindow.css"
+//         localStorage.setItem("theme","simple");
+//     }
+// }
 setColor=function(c){
     document.getElementById("themeColor").innerText=`:root{--sqw-theme:var(--sqw-${c})!important}`;
     localStorage.setItem("themeColor",c);
@@ -314,6 +314,7 @@ function createWinbox() {
     <h2 class="content-head">主题设置</h2>
     <p></p>
     <div class="content" style="display:flex">
+        <input type="checkbox" id="hideAside" onclick="toggleRightside()">
         <div class="content-text">隐藏侧边栏</div>
     </div>
     <h3 class="content-head">&nbsp;&nbsp;主题色</h3>
@@ -342,7 +343,7 @@ function createWinbox() {
     <a class="swf" href="javascript:;" rel="noopener external nofollow" style="font-family:-apple-system, IBM Plex Mono ,monosapce,'微软雅黑', sans-serif;!important;color:black" onclick="setFont('main')">系统默认</a> <br>
     </p>
 </div>
-    <h2 class="content-head">背景设置</h2>
+    <h2 class="margin-left:10px">背景设置</h2>
     <div id="article-container" style="padding:20px; padding-top:0px">
     <h3 id="图片（手机）"><a href="#图片（手机）" class="headerlink" title="图片（手机）"></a>图片（手机）</h3>
     <div class="bgbox">
