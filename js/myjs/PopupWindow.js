@@ -314,7 +314,6 @@ function createWinbox() {
     <h2 class="content-head">主题设置</h2>
     <p></p>
     <div class="content" style="display:flex">
-        <button class="content-button" onclick="switchTheme()">切换主题</button><br><input type="checkbox" id="hideAside" onclick="toggleRightside()">
         <div class="content-text">隐藏侧边栏</div>
     </div>
     <h3 class="content-head">&nbsp;&nbsp;主题色</h3>
@@ -343,16 +342,15 @@ function createWinbox() {
     <a class="swf" href="javascript:;" rel="noopener external nofollow" style="font-family:-apple-system, IBM Plex Mono ,monosapce,'微软雅黑', sans-serif;!important;color:black" onclick="setFont('main')">系统默认</a> <br>
     </p>
 </div>
-    <h2 style="margin-left:10px">背景设置</h2>
-    <div id="article-container" style="padding:20px;">
+    <h2 class="content-head">背景设置</h2>
+    <div id="article-container" style="padding:20px; padding-top:0px">
     <h3 id="图片（手机）"><a href="#图片（手机）" class="headerlink" title="图片（手机）"></a>图片（手机）</h3>
     <div class="bgbox">
     <a href="javascript:;" rel="noopener external nofollow" style="background-image:url(https://bu.dusays.com/2022/08/30/630d6d4d539a5.webp)" class="pimgbox" onclick="changeBg('url(https://bu.dusays.com/2022/08/30/630d6d4d539a5.webp)')"></a>
     <a href="javascript:;" rel="noopener external nofollow" style="background-image:url(https://bu.dusays.com/2022/08/30/630d6d4e15c9d.webp)" class="pimgbox" onclick="changeBg('url(https://bu.dusays.com/2022/08/30/630d6d4e15c9d.webp)')"></a>
     <a href="javascript:;" rel="noopener external nofollow" style="background-image:url(https://bu.dusays.com/2022/08/30/630d6f22c03c6.webp)" class="pimgbox" onclick="changeBg('url(https://bu.dusays.com/2022/08/30/630d6f22c03c6.webp)')"></a>
     <a href="javascript:;" rel="noopener external nofollow" style="background-image:url(https://bu.dusays.com/2022/08/30/630d6d56c83eb.webp)" class="pimgbox" onclick="changeBg('url(https://bu.dusays.com/2022/08/30/630d6d56c83eb.webp)')"></a>   
-    <a href="javascript:;" rel="noopener external nofollow" style="background-image:url(https://bu.dusays.com/2022/08/30/630d6d50b439b.webp)" class="pimgbox" onclick="changeBg('url(https://bu.dusays.com/2022/08/30/630d6d50b439b.webp)')"></a>   
-
+    <a href="javascript:;" rel="noopener external nofollow" style="background-image:url(https://bu.dusays.com/2022/08/30/630d6d50b439b.webp)" class="pimgbox" onclick="changeBg('url(https://bu.dusays.com/2022/08/30/630d6d50b439b.webp)')"></a>
     </div>
     <h3 id="图片（电脑）"><a href="#图片（电脑）" class="headerlink" title="图片（电脑）"></a>图片（电脑）</h3>
     <div class="bgbox">
@@ -365,7 +363,6 @@ function createWinbox() {
     <a href="javascript:;" rel="noopener external nofollow" style="background-image:url(https://blogresource.sqwdream.cloud/background/desktop_wallpaper/girl3.jpg)" class="imgbox" onclick="changeBg('url(https\://blogresource.sqwdream.cloud/background/desktop_wallpaper/girl3.jpg)')"></a>
     <a href="javascript:;" rel="noopener external nofollow" style="background-image:url(https://blogresource.sqwdream.cloud/background/desktop_wallpaper/men.png)" class="imgbox" onclick="changeBg('url(https\://blogresource.sqwdream.cloud/background/desktop_wallpaper/men.png)')"></a>
     </div>
-
     <h3 id="渐变色"><a href="#渐变色" class="headerlink" title="渐变色"></a>渐变色</h3>
     <div class="bgbox">
     <a href="javascript:;" rel="noopener external nofollow" class="box" style="background: linear-gradient(to right, #eecda3, #ef629f)" onclick="changeBg('linear-gradient(to right, #eecda3, #ef629f)')"></a>
@@ -373,7 +370,6 @@ function createWinbox() {
     <a href="javascript:;" rel="noopener external nofollow" class="box" style="background: linear-gradient(45deg, #e5737b, #c6999e, #96b9c2, #00d6e8)" onclick="changeBg('linear-gradient(45deg, #e5737b, #c6999e, #96b9c2, #00d6e8)')"></a>
     <a href="javascript:;" rel="noopener external nofollow" class="box" style="background: radial-gradient(circle, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1)" onclick="changeBg('radial-gradient(circle, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1)')"></a>
     </div>
-    
     <h3 id="纯色"><a href="#纯色" class="headerlink" title="纯色"></a>纯色</h3>
     <div class="bgbox">
     <input type="color" id="colors" autocomplete="on" value="#FF0000"></input>

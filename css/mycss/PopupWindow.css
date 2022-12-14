@@ -262,6 +262,7 @@
 }
 [data-theme="dark"] .swf{
     color:white!important;
+    background-color: brown;
 }
 .wb-title{
     color:black;
