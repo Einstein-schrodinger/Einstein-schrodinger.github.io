@@ -1,4 +1,4 @@
-import calendarFormatter from '/dateChange.js'
+import calendarFormatter from './dateChange'
 var d = new Date();
 m=d.getMonth()+1;
 dd=d.getDate();
