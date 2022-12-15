@@ -1363,6 +1363,53 @@ canvas:not(#ribbon-canvas),
   --pseudo-hover: #ff7242;
   --headline-presudo: #a0a0a0;
   --scrollbar-color: #49b1f5;
+  --sqw-fontcolor: #363636;
+  --sqw-background: #f7f9fe;
+  --sqw-reverse: var(--sqw-black);
+  --sqw-maskbg: rgba(255,255,255,0.6);
+  --sqw-maskbgdeep: rgba(255,255,255,0.85);
+  --sqw-hovertext: var(--sqw-main);
+  --sqw-ahoverbg: #f7f7fa;
+  --sqw-lighttext: var(--sqw-main);
+  --sqw-secondtext: rgba(60,60,67,0.6);
+  --sqw-scrollbar: rgba(60,60,67,0.4);
+  --sqw-card-btn-bg: #edf0f7;
+  --sqw-post-blockquote-bg: #fafcff;
+  --sqw-post-tabs-bg: #f2f5f8;
+  --sqw-secondbg: #f1f3f8;
+  --sqw-shadow-nav: 0 5px 12px -5px rgba(102,68,68,0.05);
+  --sqw-card-bg: var(--sqw-white);
+  --sqw-card-bg-op: var(--sqw-black-op);
+  --sqw-shadow-lightblack: 0 5px 12px -5px rgba(102,68,68,0);
+  --sqw-shadow-light2black: 0 5px 12px -5px rgba(102,68,68,0);
+  --sqw-card-border: #e3e8f7;
+  --sqw-shadow-border: 0 8px 16px -4px rgba(44,45,48,0.047);
+  --style-border-forever: 2px solid var(--sqw-main);
+  --sqw-border: #c9c9c9;
+  --sqw-blue: #6cf;
+  --sqw-gray: #e2e2e2;
+  --sqw-theme: var(--sqw-pink);
+  --sqw-theme-op: rgba(66,89,239,0.137);
+  --sqw-light-grey: #f2f2f2;
+  --sqw-green: #34d0cc;
+  --sqw-black-acrylic1: rgba(0,0,0,0.533);
+  --sqw-black-acrylic2: rgba(0,0,0,0.667);
+  --sqw-black-acrylic3: rgba(0,0,0,0.6);
+  --sqw-black: #000;
+  --sqw-white: #fff;
+  --sqw-white-acrylic1: rgba(255,255,255,0.867);
+  --sqw-white-acrylic2: rgba(255,255,255,0.667);
+  --sqw-blackgray: #797979;
+  --sqw-0: rgba(0,0,0,0);
+  --sqw-scrollbar: rgba(172,172,172,0.867);
+  --sqw-whitegray: #f1f1f1;
+  --sqw-red: #d7000f;
+  --sqw-orange: #ed8e00;
+  --sqw-yellow: #f1ee47;
+  --sqw-purple: #b347f1;
+  --sqw-pink: #ed709b;
+  --sqw-heoblue: #0098db;
+  --sqw-darkblue: #61649f;
 }
 body {
   position: relative;
@@ -5955,9 +6002,9 @@ blockquote.pullquote.right {
 #gitcalendar {
     margin: 0 auto;
     border-radius: 24px;
-    background: var(--anzhiyu-card-bg);
+    background: var(--sqw-card-bg);
     border: var(--style-border-always);
-    box-shadow: var(--anzhiyu-shadow-border);
+    box-shadow: var(--sqw-shadow-border);
     position: relative;
     padding: 1rem 2rem;
     overflow: hidden;
@@ -5983,7 +6030,7 @@ blockquote.pullquote.right {
   }
   
   #web_bg ~ .page:has(#about-page) {
-    background: var(--anzhiyu-background);
+    background: var(--sqw-background);
   }
   
   #about-page .author-box {
@@ -6009,7 +6056,7 @@ blockquote.pullquote.right {
     background: #6bdf8f;
     position: absolute;
     border-radius: 50%;
-    border: 6px solid var(--anzhiyu-background);
+    border: 6px solid var(--sqw-background);
     top: 50%;
     left: 50%;
     transform: translate(35px, 45px);
@@ -6027,7 +6074,7 @@ blockquote.pullquote.right {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    color: var(--anzhiyu-white);
+    color: var(--sqw-white);
     background: linear-gradient(120deg, #5b27ff 0, #00d4ff 100%);
     background-size: 200%;
     animation: gradient 15s ease infinite;
@@ -6037,9 +6084,9 @@ blockquote.pullquote.right {
   .author-content-item {
     width: 49%;
     border-radius: 24px;
-    background: var(--anzhiyu-card-bg);
+    background: var(--sqw-card-bg);
     border: var(--style-border-always);
-    box-shadow: var(--anzhiyu-shadow-border);
+    box-shadow: var(--sqw-shadow-border);
     position: relative;
     padding: 1rem 2rem;
     overflow: hidden;
@@ -6132,7 +6179,7 @@ blockquote.pullquote.right {
     width: 39%;
     background: url(https://img02.anzhiy.cn/adminuploads/1/2022/09/23/632d634f8376d.jpg) no-repeat top;
     background-size: cover;
-    color: var(--anzhiyu-white);
+    color: var(--sqw-white);
     overflow: hidden;
   }
   #about-page .about-statistic::after {
@@ -6168,7 +6215,7 @@ blockquote.pullquote.right {
     font-size: 16px;
     border-radius: 15px;
     width: 100%;
-    color: var(--anzhiyu-white);
+    color: var(--sqw-white);
     display: flex;
     justify-content: space-between;
     flex-direction: row;
@@ -6195,14 +6242,14 @@ blockquote.pullquote.right {
   }
   
   .post-tips {
-    color: var(--anzhiyu-gray);
+    color: var(--sqw-gray);
     font-size: 14px;
     position: absolute;
     bottom: 1rem;
     left: 2rem;
   }
   .post-tips a {
-    color: var(--anzhiyu-gray) !important;
+    color: var(--sqw-gray) !important;
     border: none !important;
   }
   .author-content-item .card-content .banner-button-group {
@@ -6215,7 +6262,7 @@ blockquote.pullquote.right {
     width: 124px;
     border-radius: 20px;
     justify-content: center;
-    background: var(--anzhiyu-card-bg);
+    background: var(--sqw-card-bg);
     color: var(--font-color);
     display: flex;
     align-items: center;
@@ -6233,8 +6280,8 @@ blockquote.pullquote.right {
   }
   
   .author-content-item .card-content .banner-button-group .banner-button:hover {
-    background: var(--anzhiyu-main);
-    color: var(--anzhiyu-white);
+    background: var(--sqw-main);
+    color: var(--sqw-white);
     border-radius: 20px !important;
   }
   .author-content-item.personalities {
@@ -6313,7 +6360,7 @@ blockquote.pullquote.right {
     bottom: 0;
     left: 0;
     width: 100%;
-    background: var(--anzhiyu-maskbg);
+    background: var(--sqw-maskbg);
     padding: 0.5rem 2rem;
     backdrop-filter: saturate(180%) blur(20px);
     -webkit-backdrop-filter: blur(20px);
@@ -6369,12 +6416,12 @@ blockquote.pullquote.right {
   }
   
   .post-tips a:hover {
-    color: var(--anzhiyu-main) !important;
+    color: var(--sqw-main) !important;
     background: none !important;
   }
   
   .author-content-item.single.reward .reward-list-updateDate {
-    color: var(--anzhiyu-gray);
+    color: var(--sqw-gray);
     font-size: 14px;
   }
   
@@ -6574,7 +6621,7 @@ blockquote.pullquote.right {
     flex-direction: column;
     justify-content: center;
     background: linear-gradient(120deg, #ff27e8 0, #ff8000 100%);
-    color: var(--anzhiyu-white);
+    color: var(--sqw-white);
     background-size: 200%;
     animation: gradient 15s ease infinite;
     min-height: 200px;
@@ -6604,7 +6651,7 @@ blockquote.pullquote.right {
     background-size: cover;
     min-height: 300px;
     overflow: hidden;
-    color: var(--anzhiyu-white);
+    color: var(--sqw-white);
     width: 59%;
   }
   
@@ -6659,14 +6706,14 @@ blockquote.pullquote.right {
     background: url(https://img02.anzhiy.cn/adminuploads/1/2022/09/24/632f0dd8f33c6.webp) no-repeat;
     background-size: cover;
     min-height: 230px;
-    color: var(--anzhiyu-white);
+    color: var(--sqw-white);
   }
   
   .author-content-item.like-music {
     background: url(https://p2.music.126.net/Mrg1i7DwcwjWBvQPIMt_Mg==/79164837213438.jpg) no-repeat top;
     background-size: cover;
     min-height: 400px;
-    color: var(--anzhiyu-white);
+    color: var(--sqw-white);
     overflow: hidden;
   }
   
@@ -6691,7 +6738,7 @@ blockquote.pullquote.right {
       display: none;
     }
     [data-theme="dark"] .author-content-item .card-content .banner-button-group .banner-button {
-      color: var(--anzhiyu-black) !important;
+      color: var(--sqw-black) !important;
     }
     .author-content-item .card-content .banner-button-group .banner-button:hover {
       background: none !important;
@@ -6741,7 +6788,7 @@ blockquote.pullquote.right {
       /* border-radius: 0; */
       padding: 0 1rem !important;
       box-shadow: none !important;
-      background: var(--anzhiyu-background);
+      background: var(--sqw-background);
     }
     .author-content-item .card-content .banner-button-group .banner-button-text {
       display: none;
@@ -6763,8 +6810,8 @@ blockquote.pullquote.right {
       margin-left: 80px;
     }
     .author-content-item .card-content .banner-button-group .banner-button:hover i {
-      background: var(--anzhiyu-background) !important;
-      color: var(--anzhiyu-theme);
+      background: var(--sqw-background) !important;
+      color: var(--sqw-theme);
     }
     #selfInfo-content-year {
       width: 90px;
@@ -6795,7 +6842,7 @@ blockquote.pullquote.right {
     border: var(--style-border-always);
     width: calc((100% / 3) - 0.5rem);
     margin: 0 0.25rem 0.5rem 0.25rem;
-    box-shadow: var(--anzhiyu-shadow-border);
+    box-shadow: var(--sqw-shadow-border);
   }
   
   .reward-list-item .reward-list-item-name {
@@ -6824,7 +6871,7 @@ blockquote.pullquote.right {
   
   .reward-list-item .reward-list-item-time {
     font-size: 12px;
-    color: var(--anzhiyu-secondtext);
+    color: var(--sqw-secondtext);
     white-space: nowrap;
   }
 .author-content-item.careers {
@@ -6844,7 +6891,7 @@ blockquote.pullquote.right {
     border-radius: 16px;
   }
   .author-content-item.careers .careers-item .name {
-    color: var(--anzhiyu-secondtext);
+    color: var(--sqw-secondtext);
   }
   .author-content-item.careers .careers-item {
     display: flex;
@@ -6857,7 +6904,7 @@ blockquote.pullquote.right {
     border-radius: 16px;
   }
   .author-content-item.careers .careers-item .name {
-    color: var(--anzhiyu-secondtext);
+    color: var(--sqw-secondtext);
   }
   .author-content-item.careers img {
     position: absolute;
@@ -6991,9 +7038,9 @@ blockquote.pullquote.right {
 .hello-about {
     margin: 20px auto;
     border-radius: 24px;
-    background: var(--anzhiyu-card-bg);
+    background: var(--sqw-card-bg);
     border: var(--style-border-always);
-    box-shadow: var(--anzhiyu-shadow-border);
+    box-shadow: var(--sqw-shadow-border);
     position: relative;
     overflow: hidden;
     user-select: none;
@@ -7050,7 +7097,7 @@ blockquote.pullquote.right {
     background: transparent;
   }
   [data-theme="dark"] .hello-about h1 {
-    color: var(--anzhiyu-white);
+    color: var(--sqw-white);
   }
   
   .hello-about h1 {
@@ -7091,7 +7138,8 @@ blockquote.pullquote.right {
     color: #fff;
     background: #2128bd;
   }
-.site-card-group .site-card .info {
+/* 网站卡片样式 */
+/* .site-card-group .site-card .info {
     margin-top: 0;
   }
   .site-card-group > a {
@@ -7246,7 +7294,7 @@ blockquote.pullquote.right {
     -o-transform: translateY(-100%);
     -ms-transform: translateY(-100%);
     transform: translateY(-100%);
-  }
+  } */
 .author-content-item.skills {
     display: flex;
     justify-content: center;
@@ -7281,7 +7329,7 @@ blockquote.pullquote.right {
     color: #fff;
     font-size: 66px;
     font-weight: 700;
-    box-shadow: var(--anzhiyu-shadow-blackdeep);
+    box-shadow: var(--sqw-shadow-blackdeep);
     width: 120px;
     height: 120px;
     border-radius: 30px;
@@ -7311,11 +7359,11 @@ blockquote.pullquote.right {
     align-items: center;
     margin-right: 10px;
     margin-top: 10px;
-    background: var(--anzhiyu-background);
+    background: var(--sqw-background);
     border-radius: 40px;
     padding: 4px 12px 4px 8px;
     border: var(--style-border);
-    box-shadow: var(--anzhiyu-shadow-border);
+    box-shadow: var(--sqw-shadow-border);
   }
   .author-content-item.skills .skill-icon {
     width: 32px;

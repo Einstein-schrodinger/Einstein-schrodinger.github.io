@@ -203,3 +203,8 @@ div#category {
     background: linear-gradient(45deg, #ffd7e4 0, #c8f1ff 93%)!important; 
     opacity: .95!important;
 }
+
+/* 版面变大 */
+.layout {
+    max-width: 1400px!important;
+}
