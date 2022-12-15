@@ -252,6 +252,15 @@ function changeBg(s, flag) {
     } else bg.style.backgroundImage = s
     if (!flag) { saveData('blogbg', s) }
 }
+
+// function changeBgColor(s, flag) {
+//     let bg = document.getElementById('web_bg')
+//     if (s.charAt(0) == '#') {
+//         bg.style.backgroundColor = s
+//         bg.style.backgroundImage = 'none'
+//     } else bg.style.backgroundImage = s
+//     if (!flag) { saveData('blogbg', s) }
+// }
 function setFont(n){
     localStorage.setItem("font",n)
     if(n=="main"){
@@ -373,7 +382,7 @@ function createWinbox() {
     </div>
     <h3 id="纯色"><a href="#纯色" class="headerlink" title="纯色"></a>纯色</h3>
     <div class="bgbox">
-    <input type="color" id="colors" href="javascript:;" rel="noopener external nofollow" class="box" autocomplete="on" value="#513d3d" oninput="changeBgColor()">
+    <input type="color" id="colors" href="javascript:;" rel="noopener external nofollow" class="box" autocomplete="on" value="#513d3d" oninput="changeBg(value)">
     </div>
 
 `;
