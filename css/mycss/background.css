@@ -198,3 +198,8 @@ div#category {
     background: #3ecdf1;
     color: #f2f2f2;
 }
+
+#sidebar #sidebar-menus {
+    background: linear-gradient(45deg, #ffd7e4 0, #c8f1ff 93%)!important; 
+    opacity: .95!important;
+}

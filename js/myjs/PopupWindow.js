@@ -356,11 +356,10 @@ function createWinbox() {
     <div id="article-container" style="padding:30px; padding-top:0px">
     <h3 id="图片（手机）"><a href="#图片（手机）" class="headerlink" title="图片（手机）"></a>图片（手机）</h3>
     <div class="bgbox">
-    <a href="javascript:;" rel="noopener external nofollow" style="background-image:url(https://bu.dusays.com/2022/08/30/630d6d4d539a5.webp)" class="pimgbox" onclick="changeBg('url(https://bu.dusays.com/2022/08/30/630d6d4d539a5.webp)')"></a>
-    <a href="javascript:;" rel="noopener external nofollow" style="background-image:url(https://bu.dusays.com/2022/08/30/630d6d4e15c9d.webp)" class="pimgbox" onclick="changeBg('url(https://bu.dusays.com/2022/08/30/630d6d4e15c9d.webp)')"></a>
-    <a href="javascript:;" rel="noopener external nofollow" style="background-image:url(https://bu.dusays.com/2022/08/30/630d6f22c03c6.webp)" class="pimgbox" onclick="changeBg('url(https://bu.dusays.com/2022/08/30/630d6f22c03c6.webp)')"></a>
-    <a href="javascript:;" rel="noopener external nofollow" style="background-image:url(https://bu.dusays.com/2022/08/30/630d6d56c83eb.webp)" class="pimgbox" onclick="changeBg('url(https://bu.dusays.com/2022/08/30/630d6d56c83eb.webp)')"></a>   
-    <a href="javascript:;" rel="noopener external nofollow" style="background-image:url(https://bu.dusays.com/2022/08/30/630d6d50b439b.webp)" class="pimgbox" onclick="changeBg('url(https://bu.dusays.com/2022/08/30/630d6d50b439b.webp)')"></a>
+    <a href="javascript:;" rel="noopener external nofollow" style="background-image:url(https://blogresource.sqwdream.cloud/background/cell_phone_wallpaper/鼬神1.jpeg)" class="pimgbox" onclick="changeBg('url(https://blogresource.sqwdream.cloud/background/cell_phone_wallpaper/鼬神1.jpeg)')"></a>
+    <a href="javascript:;" rel="noopener external nofollow" style="background-image:url(https://blogresource.sqwdream.cloud/background/cell_phone_wallpaper/鬼刀公主.jpg)" class="pimgbox" onclick="changeBg('url(https://blogresource.sqwdream.cloud/background/cell_phone_wallpaper/鬼刀公主.jpg)')"></a>
+    <a href="javascript:;" rel="noopener external nofollow" style="background-image:url(https://blogresource.sqwdream.cloud/background/cell_phone_wallpaper/哆啦A梦.jpg)" class="pimgbox" onclick="changeBg('url(https://blogresource.sqwdream.cloud/background/cell_phone_wallpaper/哆啦A梦.jpg)')"></a>
+    <a href="javascript:;" rel="noopener external nofollow" style="background-image:url(https://blogresource.sqwdream.cloud/background/cell_phone_wallpaper/卡通恐龙.jpg)" class="pimgbox" onclick="changeBg('url(https://blogresource.sqwdream.cloud/background/cell_phone_wallpaper/卡通恐龙.jpg)')"></a>   
     </div>
     <h3 id="图片（电脑）"><a href="#图片（电脑）" class="headerlink" title="图片（电脑）"></a>图片（电脑）</h3>
     <div class="bgbox">
