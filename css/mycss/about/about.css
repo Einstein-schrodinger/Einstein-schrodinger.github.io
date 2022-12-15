@@ -645,7 +645,7 @@
     transform: rotate(30deg);
     transition: 2s ease-in-out;
   }
-  .author-content-item.game-yuanshen {
+  .author-content-item.game {
     background: url(https://blogresource.sqwdream.cloud/about/死门凯.png) no-repeat top;
     background-size: cover;
     min-height: 300px;
@@ -673,7 +673,7 @@
   .icon-pos-mid {
     background: url(https://img02.anzhiy.cn/adminuploads/1/2022/09/25/632fb9cecfc8c.png);
   }
-  .author-content-item.game-yuanshen::after {
+  .author-content-item.game::after {
     box-shadow: 0 -69px 203px 11px #575d8b inset;
     position: absolute;
     content: "";
@@ -702,14 +702,14 @@
   }
   
   .author-content-item.like-technology {
-    background: url(https://img02.anzhiy.cn/adminuploads/1/2022/09/24/632f0dd8f33c6.webp) no-repeat;
+    background: url(https://blogresource.sqwdream.cloud/about/chip.png) no-repeat;
     background-size: cover;
     min-height: 230px;
     color: var(--sqw-white);
   }
   
   .author-content-item.like-music {
-    background: url(https://p2.music.126.net/Mrg1i7DwcwjWBvQPIMt_Mg==/79164837213438.jpg) no-repeat top;
+    background: url(https://blogresource.sqwdream.cloud/about/music.png) no-repeat top;
     background-size: cover;
     min-height: 400px;
     color: var(--sqw-white);
@@ -742,10 +742,10 @@
     .author-content-item .card-content .banner-button-group .banner-button:hover {
       background: none !important;
     }
-    .author-content-item.game-yuanshen .content-bottom {
+    .author-content-item.game .content-bottom {
       padding-bottom: 10px;
     }
-    .author-content-item.game-yuanshen .game-yuanshen-uid {
+    .author-content-item.game .game-yuanshen-uid {
       display: none;
     }
     .author-content {
