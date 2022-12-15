@@ -373,7 +373,7 @@ function createWinbox() {
     </div>
     <h3 id="纯色"><a href="#纯色" class="headerlink" title="纯色"></a>纯色</h3>
     <div class="bgbox">
-    <input type="color" id="colors" autocomplete="on" value="#FF0000" onclick="changeBg(value)"></input>
+    <input type="color" id="colors" href="javascript:;" rel="noopener external nofollow" class="box" autocomplete="on" value="#513d3d" oninput="changeBgColor()">
     </div>
 
 `;
