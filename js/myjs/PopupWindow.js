@@ -151,6 +151,11 @@ function setBlur(){
         document.getElementById("settingStyle").innerText=''
     }
 }
+
+function fullScreen() {
+    if (document.fullscreenElement) document.exitFullscreen()
+    else document.documentElement.requestFullscreen();
+}
 // if(yjjs){
 //     document.getElementById("yjjs").innerText=`
 //     *:not(#web_bg){
@@ -315,8 +320,7 @@ function createWinbox() {
     <div class="content" style="display:flex"><input type="checkbox" id="blur" onclick="setBlur()">
         <div class="content-text">禁用模糊效果</div>
     </div>
-    <div class="content" style="display:flex"><input type="checkbox" id="yjjs" onclick="yjjs1()"
-            value="onrightMenurightMenu">
+    <div class="content" style="display:flex"><input type="checkbox" id="yjjs" onclick="yjjs1()" value="onrightMenurightMenu">
         <div class="content-text">硬件加速</div>
     </div>
     <p></p>
@@ -325,6 +329,9 @@ function createWinbox() {
     <div class="content" style="display:flex">
         <input type="checkbox" id="hideAside" onclick="toggleRightside()">
         <div class="content-text">隐藏侧边栏</div>
+        <div class="content" style="display:flex"><input type="checkbox"  onclick="fullScreen()">
+        <div class="content-text">全屏</div>
+        </div>
     </div>
     <h3 class="content-head">&nbsp;&nbsp;主题色</h3>
     <p></p>
