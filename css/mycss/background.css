@@ -208,3 +208,9 @@ div#category {
 .layout {
     max-width: 1400px!important;
 }
+
+/* 侧边栏大小 */
+.aside-content {
+    max-width: 312px;
+    min-width: 300px;
+}
