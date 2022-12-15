@@ -7005,6 +7005,10 @@ blockquote.pullquote.right {
   font-weight: 600;
 }
 
+[data-theme=dark] .author-content-item.careers .careers-item .name {
+  color: white;
+}
+
 .author-content-item.careers .careers-item {
   display: flex;
   align-items: center;
