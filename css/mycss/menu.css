@@ -14,7 +14,7 @@
 
 /* 这里的2是代表导航栏的第2个元素，即有子菜单的元素，可以按自己需求修改 */
 .menus_items .menus_item:nth-child(2) .menus_item_child {
-    left: -105px;
+    left: -125px;
 }
 
 /* 这里的3是代表导航栏的第3个元素，即有子菜单的元素，可以按自己需求修改 */
@@ -24,5 +24,10 @@
 
 /* 这里的4是代表导航栏的第4个元素，即有子菜单的元素，可以按自己需求修改 */
 .menus_items .menus_item:nth-child(4) .menus_item_child {
+    left: -50px;
+}
+
+/* 这里的4是代表导航栏的第5个元素，即有子菜单的元素，可以按自己需求修改 */
+.menus_items .menus_item:nth-child(5) .menus_item_child {
     left: -50px;
 }
