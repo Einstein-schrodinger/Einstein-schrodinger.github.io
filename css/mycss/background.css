@@ -219,3 +219,8 @@ div#category {
     max-width: 312px;
     min-width: 300px;
 }
+
+/* 朋友圈整页背景调整 */
+#web_bg~.page:has(.fcircle_page) {
+    background-color: #f7f9fe !important;
+}
