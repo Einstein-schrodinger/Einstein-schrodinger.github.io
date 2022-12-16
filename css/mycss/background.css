@@ -200,13 +200,18 @@ div#category {
 }
 
 #sidebar #sidebar-menus {
-    background: linear-gradient(45deg, #ffd7e4 0, #c8f1ff 93%)!important; 
-    opacity: .95!important;
+    background: linear-gradient(45deg, #ffd7e4 0, #c8f1ff 93%) !important;
+    opacity: .95 !important;
+}
+
+[data-theme="dark"] #sidebar #sidebar-menus {
+    background: #060606 !important;
+    opacity: .95 !important;
 }
 
 /* 版面变大 */
 .layout {
-    max-width: 1400px!important;
+    max-width: 1400px !important;
 }
 
 /* 侧边栏大小 */
