@@ -224,3 +224,16 @@ div#category {
 #web_bg~.page:has(.fcircle_page) {
     background-color: #f7f9fe !important;
 }
+
+/* 朋友圈的钓鱼 */
+[data-theme="dark"] #random-post {
+    background: black;
+}
+
+[data-theme="dark"] .cf-article {
+    background: black;
+}
+
+[data-theme="dark"] .cf-article a {
+    color: pink !important;
+}
