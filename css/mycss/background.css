@@ -230,6 +230,14 @@ div#category {
     background: black !important;
 }
 
+[data-theme="dark"] #random-post b {
+    color: pink !important;
+}
+
+[data-theme="dark"] #random-post #random-friends-post {
+    color: pink !important;
+}
+
 [data-theme="dark"] .cf-article {
     background: black !important;
 }
