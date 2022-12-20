@@ -28,44 +28,6 @@ href="https://www.cnblogs.com/Ai-heng/p/7282110.html">hexo博客MathJax公式渲
       </tags>
   </entry>
   <entry>
-    <title>博客搭建之Twikoo</title>
-    <url>/posts/6fc19c10.html</url>
-    <content><![CDATA[<h1 id="博客搭建之twikoo">博客搭建之Twikoo</h1>
-<div class="note info modern"><ol type="1">
-<li><p>鉴于每个人的博客根目录名称都不太一样，本贴<strong>博客根目录</strong>一律以<code>[BlogRoot]</code>指代</p></li>
-<li><p>站点配置文件<code>_config.yml</code>，路径为<code>[BlogRoot]\_config.yml</code></p></li>
-<li><p>主题配置文件<code>_config.yml</code>，路径为<code>[BlogRoot]\themes\butterfly\_config.yml</code></p></li>
-</ol>
-</div>
-<h2 id="twikoo的评论设置">1.Twikoo的评论设置</h2>
-<h3 id="支持图片评论">1.1 支持图片评论</h3>
-<p>Twikoo评论区要支持图片评论功能需要配置图床，这里以比较容易设置的<a
-href="https://smms.app/">smms</a>图床为例，首先要进行注册，注册成功之后，会给你5GB的空间用来存储图片，一般来说够用了。将获取的smms图床的token复制到Twikoo插件设置里的<code>IMAGE_CDN_ToKEN</code>，并且将<code>IMAGE_CDN</code>填写为<code>smms</code>，其余选项保持默认即可，配置结束之后记得拉到最下方点击保存，刷新一下即可生效。下面图片展示详细的步骤：</p>
-<ul>
-<li>smms注册并获取token</li>
-</ul>
-<p><img
-src="https://blogresource.sqwdream.cloud/post/博客搭建/博客搭建之Twikoo/img/body/smms.jpg" /></p>
-<ul>
-<li>网站的Twikoo评论设置</li>
-</ul>
-<p><img
-src="https://blogresource.sqwdream.cloud/post/博客搭建/博客搭建之Twikoo/img/body/评论图床设置.jpg" /></p>
-<h3 id="支持latex公式评论">1.2 支持Latex公式评论</h3>
-<p>支持公式评论可以参考Twikoo官网的<a
-href="https://twikoo.js.org/faq.html#%E5%A6%82%E4%BD%95%E5%90%AF%E7%94%A8-katex-%E6%94%AF%E6%8C%81">如何开启Katex支持？</a>，就是在主题配置文件<code>_config.yml</code>中引入如下代码：</p>
-<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">innject:</span></span><br><span class="line">  <span class="attr">head:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">&lt;link</span> <span class="string">rel=&quot;stylesheet&quot;</span> <span class="string">href=&quot;https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css&quot;</span> <span class="string">integrity=&quot;sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X&quot;</span> <span class="string">crossorigin=&quot;anonymous&quot;&gt;</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">&lt;script</span> <span class="string">defer</span> <span class="string">src=&quot;https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js&quot;</span> <span class="string">integrity=&quot;sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4&quot;</span> <span class="string">crossorigin=&quot;anonymous&quot;&gt;&lt;/script&gt;</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">&lt;script</span> <span class="string">defer</span> <span class="string">src=&quot;https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js&quot;</span> <span class="string">integrity=&quot;sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa&quot;</span> <span class="string">crossorigin=&quot;anonymous&quot;&gt;&lt;/script&gt;</span></span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>博客搭建</category>
-      </categories>
-      <tags>
-        <tag>博客搭建</tag>
-        <tag>Twikoo</tag>
-        <tag>图床</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>博客搭建之Markdown基本语法</title>
     <url>/posts/b289d8f9.html</url>
     <content><![CDATA[<h1 id="博客搭建之markdown基本语法">博客搭建之Markdown基本语法</h1>
@@ -158,8 +120,46 @@ S=\frac{8\pi^2{k_\mathrm{B}}^2T}{3eh^2}m_{\mathrm{d}}^{*}\left(\frac{\pi}{3p}\ri
         <category>博客搭建</category>
       </categories>
       <tags>
-        <tag>博客搭建</tag>
         <tag>Markdown</tag>
+        <tag>博客搭建</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>博客搭建之Twikoo</title>
+    <url>/posts/6fc19c10.html</url>
+    <content><![CDATA[<h1 id="博客搭建之twikoo">博客搭建之Twikoo</h1>
+<div class="note info modern"><ol type="1">
+<li><p>鉴于每个人的博客根目录名称都不太一样，本贴<strong>博客根目录</strong>一律以<code>[BlogRoot]</code>指代</p></li>
+<li><p>站点配置文件<code>_config.yml</code>，路径为<code>[BlogRoot]\_config.yml</code></p></li>
+<li><p>主题配置文件<code>_config.yml</code>，路径为<code>[BlogRoot]\themes\butterfly\_config.yml</code></p></li>
+</ol>
+</div>
+<h2 id="twikoo的评论设置">1.Twikoo的评论设置</h2>
+<h3 id="支持图片评论">1.1 支持图片评论</h3>
+<p>Twikoo评论区要支持图片评论功能需要配置图床，这里以比较容易设置的<a
+href="https://smms.app/">smms</a>图床为例，首先要进行注册，注册成功之后，会给你5GB的空间用来存储图片，一般来说够用了。将获取的smms图床的token复制到Twikoo插件设置里的<code>IMAGE_CDN_ToKEN</code>，并且将<code>IMAGE_CDN</code>填写为<code>smms</code>，其余选项保持默认即可，配置结束之后记得拉到最下方点击保存，刷新一下即可生效。下面图片展示详细的步骤：</p>
+<ul>
+<li>smms注册并获取token</li>
+</ul>
+<p><img
+src="https://blogresource.sqwdream.cloud/post/博客搭建/博客搭建之Twikoo/img/body/smms.jpg" /></p>
+<ul>
+<li>网站的Twikoo评论设置</li>
+</ul>
+<p><img
+src="https://blogresource.sqwdream.cloud/post/博客搭建/博客搭建之Twikoo/img/body/评论图床设置.jpg" /></p>
+<h3 id="支持latex公式评论">1.2 支持Latex公式评论</h3>
+<p>支持公式评论可以参考Twikoo官网的<a
+href="https://twikoo.js.org/faq.html#%E5%A6%82%E4%BD%95%E5%90%AF%E7%94%A8-katex-%E6%94%AF%E6%8C%81">如何开启Katex支持？</a>，就是在主题配置文件<code>_config.yml</code>中引入如下代码：</p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">innject:</span></span><br><span class="line">  <span class="attr">head:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">&lt;link</span> <span class="string">rel=&quot;stylesheet&quot;</span> <span class="string">href=&quot;https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css&quot;</span> <span class="string">integrity=&quot;sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X&quot;</span> <span class="string">crossorigin=&quot;anonymous&quot;&gt;</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">&lt;script</span> <span class="string">defer</span> <span class="string">src=&quot;https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js&quot;</span> <span class="string">integrity=&quot;sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4&quot;</span> <span class="string">crossorigin=&quot;anonymous&quot;&gt;&lt;/script&gt;</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">&lt;script</span> <span class="string">defer</span> <span class="string">src=&quot;https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js&quot;</span> <span class="string">integrity=&quot;sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa&quot;</span> <span class="string">crossorigin=&quot;anonymous&quot;&gt;&lt;/script&gt;</span></span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>博客搭建</category>
+      </categories>
+      <tags>
+        <tag>博客搭建</tag>
+        <tag>Twikoo</tag>
+        <tag>图床</tag>
       </tags>
   </entry>
   <entry>
@@ -358,6 +358,41 @@ Animation</a>，由于版本不同做了适当修改</p></li>
       </tags>
   </entry>
   <entry>
+    <title>博客搭建之文章链接</title>
+    <url>/posts/cc96dfee.html</url>
+    <content><![CDATA[<h1 id="博客搭建之文章链接">博客搭建之文章链接</h1>
+<div class="note info modern"><ol type="1">
+<li><p>鉴于每个人的博客根目录名称都不太一样，本贴<strong>博客根目录</strong>一律以<code>[BlogRoot]</code>指代</p></li>
+<li><p>站点配置文件<code>_config.yml</code>，路径为<code>[BlogRoot]\_config.yml</code></p></li>
+<li><p>主题配置文件<code>_config.yml</code>，路径为<code>[BlogRoot]\themes\butterfly\_config.yml</code></p></li>
+</ol>
+</div>
+<h2
+id="缩短文末copyright中文章链接的长度">缩短文末Copyright中文章链接的长度</h2>
+<h3
+id="在博客根目录下blogroot安装插件">1.在博客根目录下<code>[BlogRoot]</code>安装插件：</h3>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm install hexo-abbrlink --save</span><br></pre></td></tr></table></figure>
+<h3
+id="修改站点配置文件blogroot_config.yml添加以下内容">2.修改站点配置文件<code>[BlogRoot]\_config.yml</code>，添加以下内容：</h3>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># permalink: :year/:month/:day/:title/</span></span><br><span class="line"><span class="comment"># permalink: p/:abbrlink.html  # p 是自定义的前缀</span></span><br><span class="line"><span class="attr">permalink:</span> <span class="string">/:abbrlink.html</span>  <span class="comment"># p 是自定义的前缀</span></span><br><span class="line"><span class="attr">abbrlink:</span></span><br><span class="line">    <span class="attr">alg:</span> <span class="string">crc32</span>   <span class="comment">#算法： crc16(default) and crc32</span></span><br><span class="line">    <span class="attr">rep:</span> <span class="string">hex</span>     <span class="comment">#进制： dec(default) and hex</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>不同算法和进制生成不同的格式</strong></li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">crc16 &amp; hex</span><br><span class="line">https://post.zz173.com/posts/66c8.html</span><br><span class="line">crc16 &amp; dec</span><br><span class="line">https://post.zz173.com/posts/65535.html</span><br><span class="line"></span><br><span class="line">crc32 &amp; hex</span><br><span class="line">https://post.zz173.com/posts/8ddf18fb.html</span><br><span class="line">crc32 &amp; dec</span><br><span class="line">https://post.zz173.com/posts/1690090958.html</span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong><code>hexo g</code>生成网页时，会在每篇文章的<code>front matter</code>中加入一项<code>abbrlink</code>，它是根据文章题目生成的，生成之后不可更改，可以删除重新生成</strong></li>
+</ul>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">abbrlink: cc96dfee</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>博客搭建</category>
+      </categories>
+      <tags>
+        <tag>博客搭建</tag>
+        <tag>文章链接</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>博客搭建之夜间繁星</title>
     <url>/posts/5ed672e6.html</url>
     <content><![CDATA[<h1 id="博客搭建之夜间繁星">博客搭建之夜间繁星</h1>
@@ -456,41 +491,6 @@ Parabolic Band，SPB</strong>)模型相关计算</h1>
         <tag>SPB</tag>
         <tag>Pisarenko plot</tag>
         <tag>Matlab code</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>博客搭建之文章链接</title>
-    <url>/posts/cc96dfee.html</url>
-    <content><![CDATA[<h1 id="博客搭建之文章链接">博客搭建之文章链接</h1>
-<div class="note info modern"><ol type="1">
-<li><p>鉴于每个人的博客根目录名称都不太一样，本贴<strong>博客根目录</strong>一律以<code>[BlogRoot]</code>指代</p></li>
-<li><p>站点配置文件<code>_config.yml</code>，路径为<code>[BlogRoot]\_config.yml</code></p></li>
-<li><p>主题配置文件<code>_config.yml</code>，路径为<code>[BlogRoot]\themes\butterfly\_config.yml</code></p></li>
-</ol>
-</div>
-<h2
-id="缩短文末copyright中文章链接的长度">缩短文末Copyright中文章链接的长度</h2>
-<h3
-id="在博客根目录下blogroot安装插件">1.在博客根目录下<code>[BlogRoot]</code>安装插件：</h3>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm install hexo-abbrlink --save</span><br></pre></td></tr></table></figure>
-<h3
-id="修改站点配置文件blogroot_config.yml添加以下内容">2.修改站点配置文件<code>[BlogRoot]\_config.yml</code>，添加以下内容：</h3>
-<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># permalink: :year/:month/:day/:title/</span></span><br><span class="line"><span class="comment"># permalink: p/:abbrlink.html  # p 是自定义的前缀</span></span><br><span class="line"><span class="attr">permalink:</span> <span class="string">/:abbrlink.html</span>  <span class="comment"># p 是自定义的前缀</span></span><br><span class="line"><span class="attr">abbrlink:</span></span><br><span class="line">    <span class="attr">alg:</span> <span class="string">crc32</span>   <span class="comment">#算法： crc16(default) and crc32</span></span><br><span class="line">    <span class="attr">rep:</span> <span class="string">hex</span>     <span class="comment">#进制： dec(default) and hex</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li><strong>不同算法和进制生成不同的格式</strong></li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">crc16 &amp; hex</span><br><span class="line">https://post.zz173.com/posts/66c8.html</span><br><span class="line">crc16 &amp; dec</span><br><span class="line">https://post.zz173.com/posts/65535.html</span><br><span class="line"></span><br><span class="line">crc32 &amp; hex</span><br><span class="line">https://post.zz173.com/posts/8ddf18fb.html</span><br><span class="line">crc32 &amp; dec</span><br><span class="line">https://post.zz173.com/posts/1690090958.html</span><br></pre></td></tr></table></figure>
-<ul>
-<li><strong><code>hexo g</code>生成网页时，会在每篇文章的<code>front matter</code>中加入一项<code>abbrlink</code>，它是根据文章题目生成的，生成之后不可更改，可以删除重新生成</strong></li>
-</ul>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">abbrlink: cc96dfee</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>博客搭建</category>
-      </categories>
-      <tags>
-        <tag>博客搭建</tag>
-        <tag>文章链接</tag>
       </tags>
   </entry>
   <entry>
@@ -971,6 +971,128 @@ href="https://blog.csdn.net/qq_43701912/article/details/107291518">hexo-pdf</a>�
       </tags>
   </entry>
   <entry>
+    <title>外挂标签之gallery相册</title>
+    <url>/posts/7cede130.html</url>
+    <content><![CDATA[<h1 id="外挂标签之gallery相册">外挂标签之gallery相册</h1>
+<div class="tip info"><p>markdown的列表与表格渲染时会发生冲突，可以在之间加一个回车来避免</p>
+</div>
+<h2 id="标签语法">标签语法</h2>
+<ol type="1">
+<li><p>gallerygroup 相册图库 <figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;gallery-group-main&quot;</span>&gt;</span></span></span><br><span class="line">&#123;% galleryGroup name description link img-url %&#125;</span><br><span class="line">&#123;% galleryGroup name description link img-url %&#125;</span><br><span class="line">&#123;% galleryGroup name description link img-url %&#125;</span><br><span class="line"><span class="language-xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br></pre></td></tr></table></figure></p></li>
+<li><p>gallery相册 <figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% gallery %&#125;</span><br><span class="line">markdown 图片格式</span><br><span class="line">&#123;% endgallery %&#125;</span><br></pre></td></tr></table></figure></p></li>
+</ol>
+<h2 id="配置参数">配置参数</h2>
+<ol type="1">
+<li>gallerygroup 相册图库</li>
+</ol>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">参数名</th>
+<th style="text-align: center;">释义</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">name</td>
+<td style="text-align: center;">图库名字</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">description</td>
+<td style="text-align: center;">图库描述</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">link</td>
+<td style="text-align: center;">链接到对应相册的地址</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">img-url</td>
+<td style="text-align: center;">图库封面</td>
+</tr>
+</tbody>
+</table>
+<ol start="2" type="1">
+<li>gallery 相册</li>
+</ol>
+<p>区别于旧版的 Gallery 相册，新的 Gallery
+相册会自动根据图片长度进行排版，书写也加方便，与 markdown
+格式一样。可根据需要插入到相应的
+md。无需再自己配置长宽。<strong>在粘贴时故意使用长短、大小、横竖不一的图片</strong>，会有更好的效果。（尺寸完全相同的片只会平铺输出，效果很糟糕）</p>
+<h2 id="示例源码">示例源码</h2>
+<ol type="1">
+<li><p>gallerygroup 相册图库 <figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;gallery-group-main&quot;</span>&gt;</span></span></span><br><span class="line">&#123;% galleryGroup &#x27;OH MY GIRL&#x27; &#x27;关于OH MY GIRL的图片&#x27; &#x27;/gallery/ohmygirl&#x27; https://i.loli.net/2019/12/25/hOqbQ3BIwa6KWpo.jpg %&#125;</span><br><span class="line"><span class="language-xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br></pre></td></tr></table></figure></p></li>
+<li><p>gallery 相册 <figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% gallery %&#125;</span><br><span class="line">![](<span class="link">https://i.loli.net/2019/12/25/Fze9jchtnyJXMHN.jpg</span>)</span><br><span class="line">![](<span class="link">https://i.loli.net/2019/12/25/ryLVePaqkYm4TEK.jpg</span>)</span><br><span class="line">&#123;% endgallery %&#125;</span><br></pre></td></tr></table></figure></p></li>
+</ol>
+<h2 id="渲染演示">渲染演示</h2>
+<ol type="1">
+<li>gallerygroup 相册图库
+<div class="gallery-group-main">
+
+  <figure class="gallery-group">
+  <img class="gallery-group-img no-lightbox" src='https://i.loli.net/2019/12/25/hOqbQ3BIwa6KWpo.jpg' alt="Group Image Gallery">
+  <figcaption>
+  <div class="gallery-group-name">OH MY GIRL</div>
+  <p>关于OH MY GIRL的图片</p>
+  <a href='/gallery/ohmygirl'></a>
+  </figcaption>
+  </figure>
+  
+</div></li>
+<li>gallery相册 <div class="fj-gallery"><p><img src="https://i.loli.net/2019/12/25/Fze9jchtnyJXMHN.jpg" /> <imgsrc="https://i.loli.net/2019/12/25/ryLVePaqkYm4TEK.jpg" /></p>
+          </div></li>
+</ol>
+]]></content>
+      <categories>
+        <category>博客搭建</category>
+      </categories>
+      <tags>
+        <tag>博客搭建</tag>
+        <tag>外挂标签</tag>
+        <tag>gallery相册</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>外挂标签之github徽标</title>
+    <url>/posts/b08228d8.html</url>
+    <content><![CDATA[<h1 id="外挂标签之github徽标">外挂标签之github徽标</h1>
+<h2 id="标签语法">标签语法</h2>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% bdage [right],[left],[logo]||[color],[link],[title]||[option] %&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="配置参数">配置参数</h2>
+<ol type="1">
+<li><code>left</code>：徽标左边的信息，必选参数。</li>
+<li><code>right</code>: 徽标右边的信息，必选参数，</li>
+<li><code>logo</code>：徽标图标，图标名称详见<a
+href="https://simpleicons.org/">simpleicons</a>，可选参数。</li>
+<li><code>color</code>：徽标右边的颜色，可选参数。</li>
+<li><code>link</code>：指向的链接，可选参数。</li>
+<li><code>title</code>：徽标的额外信息，可选参数。主要用于优化SEO，但<code>object</code>标签不会像<code>a</code>标签一样在鼠标悬停显示<code>title</code>信息。</li>
+<li><code>option</code>：自定义参数，支持<a
+href="https://shields.io/">shields.io</a>的全部API参数支持，具体参数可以参看上文中的拓展写法示例。形式为<code>name1=value2&amp;name2=value2</code>。</li>
+</ol>
+<h2 id="示例源码">示例源码</h2>
+<ol type="1">
+<li>基本参数,定义徽标左右文字和图标 <figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% bdage Theme,Butterfly %&#125;</span><br><span class="line">&#123;% bdage Frame,Hexo,hexo %&#125;</span><br></pre></td></tr></table></figure></li>
+<li>信息参数，定义徽标右侧内容背景色，指向链接 <figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% bdage CDN,JsDelivr,jsDelivr||abcdef,https://metroui.org.ua/index.html,本站使用JsDelivr为静态资源提供CDN加速 %&#125;</span><br><span class="line">//如果是跨顺序省略可选参数，仍然需要写个逗号,用作分割</span><br><span class="line">&#123;% bdage Source,GitHub,GitHub||,https://github.com/ %&#125;</span><br></pre></td></tr></table></figure></li>
+<li>拓展参数，支持shields的API的全部参数内容 <figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% bdage Hosted,Vercel,Vercel||brightgreen,https://vercel.com/,本站采用双线部署，默认线路托管于Vercel||style=social&amp;logoWidth=20 %&#125;</span><br><span class="line">//如果是跨顺序省略可选参数组，仍然需要写双竖线||用作分割</span><br><span class="line">&#123;% bdage Hosted,Vercel,Vercel||||style=social&amp;logoWidth=20&amp;logoColor=violet %&#125;</span><br></pre></td></tr></table></figure> ##
+渲染演示</li>
+<li>基本参数,定义徽标左右文字和图标 <object class="ghbdage" style="margin-inline:5px" title="" standby="loading..." data="https://img.shields.io/badge/Butterfly-Theme-orange?logo=&color=orange&link=&"></object> <object class="ghbdage" style="margin-inline:5px" title="" standby="loading..." data="https://img.shields.io/badge/Hexo-Frame-orange?logo=hexo&color=orange&link=&"></object></li>
+<li>信息参数，定义徽标右侧内容背景色，指向链接 <object class="ghbdage" style="margin-inline:5px" title="本站使用JsDelivr为静态资源提供CDN加速" standby="loading..." data="https://img.shields.io/badge/JsDelivr-CDN-orange?logo=jsDelivr&color=abcdef&link=https://metroui.org.ua/index.html&"></object>
+//如果是跨顺序省略可选参数，仍然需要写个逗号,用作分割 <object class="ghbdage" style="margin-inline:5px" title="" standby="loading..." data="https://img.shields.io/badge/GitHub-Source-orange?logo=GitHub&color=orange&link=https://github.com/&"></object></li>
+<li>拓展参数，支持shields的API的全部参数内容 <object class="ghbdage" style="margin-inline:5px" title="本站采用双线部署，默认线路托管于Vercel" standby="loading..." data="https://img.shields.io/badge/Vercel-Hosted-orange?logo=Vercel&color=brightgreen&link=https://vercel.com/&style=social&logoWidth=20"></object>
+//如果是跨顺序省略可选参数组，仍然需要写双竖线||用作分割
+<object class="ghbdage" style="margin-inline:5px" title="" standby="loading..." data="https://img.shields.io/badge/Vercel-Hosted-orange?logo=Vercel&color=orange&link=&style=social&logoWidth=20&logoColor=violet"></object></li>
+</ol>
+]]></content>
+      <categories>
+        <category>博客搭建</category>
+      </categories>
+      <tags>
+        <tag>博客搭建</tag>
+        <tag>外挂标签</tag>
+        <tag>github徽标</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>外挂标签之github卡片</title>
     <url>/posts/948f775.html</url>
     <content><![CDATA[<h1 id="外挂标签之github卡片">外挂标签之github卡片</h1>
@@ -1101,128 +1223,6 @@ style="text-align: center;">填充布局，自动铺满至少一行，多了会�
       </tags>
   </entry>
   <entry>
-    <title>外挂标签之gallery相册</title>
-    <url>/posts/7cede130.html</url>
-    <content><![CDATA[<h1 id="外挂标签之gallery相册">外挂标签之gallery相册</h1>
-<div class="tip info"><p>markdown的列表与表格渲染时会发生冲突，可以在之间加一个回车来避免</p>
-</div>
-<h2 id="标签语法">标签语法</h2>
-<ol type="1">
-<li><p>gallerygroup 相册图库 <figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;gallery-group-main&quot;</span>&gt;</span></span></span><br><span class="line">&#123;% galleryGroup name description link img-url %&#125;</span><br><span class="line">&#123;% galleryGroup name description link img-url %&#125;</span><br><span class="line">&#123;% galleryGroup name description link img-url %&#125;</span><br><span class="line"><span class="language-xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br></pre></td></tr></table></figure></p></li>
-<li><p>gallery相册 <figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% gallery %&#125;</span><br><span class="line">markdown 图片格式</span><br><span class="line">&#123;% endgallery %&#125;</span><br></pre></td></tr></table></figure></p></li>
-</ol>
-<h2 id="配置参数">配置参数</h2>
-<ol type="1">
-<li>gallerygroup 相册图库</li>
-</ol>
-<table>
-<thead>
-<tr class="header">
-<th style="text-align: center;">参数名</th>
-<th style="text-align: center;">释义</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;">name</td>
-<td style="text-align: center;">图库名字</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">description</td>
-<td style="text-align: center;">图库描述</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">link</td>
-<td style="text-align: center;">链接到对应相册的地址</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">img-url</td>
-<td style="text-align: center;">图库封面</td>
-</tr>
-</tbody>
-</table>
-<ol start="2" type="1">
-<li>gallery 相册</li>
-</ol>
-<p>区别于旧版的 Gallery 相册，新的 Gallery
-相册会自动根据图片长度进行排版，书写也加方便，与 markdown
-格式一样。可根据需要插入到相应的
-md。无需再自己配置长宽。<strong>在粘贴时故意使用长短、大小、横竖不一的图片</strong>，会有更好的效果。（尺寸完全相同的片只会平铺输出，效果很糟糕）</p>
-<h2 id="示例源码">示例源码</h2>
-<ol type="1">
-<li><p>gallerygroup 相册图库 <figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;gallery-group-main&quot;</span>&gt;</span></span></span><br><span class="line">&#123;% galleryGroup &#x27;OH MY GIRL&#x27; &#x27;关于OH MY GIRL的图片&#x27; &#x27;/gallery/ohmygirl&#x27; https://i.loli.net/2019/12/25/hOqbQ3BIwa6KWpo.jpg %&#125;</span><br><span class="line"><span class="language-xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br></pre></td></tr></table></figure></p></li>
-<li><p>gallery 相册 <figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% gallery %&#125;</span><br><span class="line">![](<span class="link">https://i.loli.net/2019/12/25/Fze9jchtnyJXMHN.jpg</span>)</span><br><span class="line">![](<span class="link">https://i.loli.net/2019/12/25/ryLVePaqkYm4TEK.jpg</span>)</span><br><span class="line">&#123;% endgallery %&#125;</span><br></pre></td></tr></table></figure></p></li>
-</ol>
-<h2 id="渲染演示">渲染演示</h2>
-<ol type="1">
-<li>gallerygroup 相册图库
-<div class="gallery-group-main">
-
-  <figure class="gallery-group">
-  <img class="gallery-group-img no-lightbox" src='https://i.loli.net/2019/12/25/hOqbQ3BIwa6KWpo.jpg' alt="Group Image Gallery">
-  <figcaption>
-  <div class="gallery-group-name">OH MY GIRL</div>
-  <p>关于OH MY GIRL的图片</p>
-  <a href='/gallery/ohmygirl'></a>
-  </figcaption>
-  </figure>
-  
-</div></li>
-<li>gallery相册 <div class="fj-gallery"><p><img src="https://i.loli.net/2019/12/25/Fze9jchtnyJXMHN.jpg" /> <imgsrc="https://i.loli.net/2019/12/25/ryLVePaqkYm4TEK.jpg" /></p>
-          </div></li>
-</ol>
-]]></content>
-      <categories>
-        <category>博客搭建</category>
-      </categories>
-      <tags>
-        <tag>博客搭建</tag>
-        <tag>外挂标签</tag>
-        <tag>gallery相册</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>外挂标签之github徽标</title>
-    <url>/posts/b08228d8.html</url>
-    <content><![CDATA[<h1 id="外挂标签之github徽标">外挂标签之github徽标</h1>
-<h2 id="标签语法">标签语法</h2>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% bdage [right],[left],[logo]||[color],[link],[title]||[option] %&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="配置参数">配置参数</h2>
-<ol type="1">
-<li><code>left</code>：徽标左边的信息，必选参数。</li>
-<li><code>right</code>: 徽标右边的信息，必选参数，</li>
-<li><code>logo</code>：徽标图标，图标名称详见<a
-href="https://simpleicons.org/">simpleicons</a>，可选参数。</li>
-<li><code>color</code>：徽标右边的颜色，可选参数。</li>
-<li><code>link</code>：指向的链接，可选参数。</li>
-<li><code>title</code>：徽标的额外信息，可选参数。主要用于优化SEO，但<code>object</code>标签不会像<code>a</code>标签一样在鼠标悬停显示<code>title</code>信息。</li>
-<li><code>option</code>：自定义参数，支持<a
-href="https://shields.io/">shields.io</a>的全部API参数支持，具体参数可以参看上文中的拓展写法示例。形式为<code>name1=value2&amp;name2=value2</code>。</li>
-</ol>
-<h2 id="示例源码">示例源码</h2>
-<ol type="1">
-<li>基本参数,定义徽标左右文字和图标 <figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% bdage Theme,Butterfly %&#125;</span><br><span class="line">&#123;% bdage Frame,Hexo,hexo %&#125;</span><br></pre></td></tr></table></figure></li>
-<li>信息参数，定义徽标右侧内容背景色，指向链接 <figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% bdage CDN,JsDelivr,jsDelivr||abcdef,https://metroui.org.ua/index.html,本站使用JsDelivr为静态资源提供CDN加速 %&#125;</span><br><span class="line">//如果是跨顺序省略可选参数，仍然需要写个逗号,用作分割</span><br><span class="line">&#123;% bdage Source,GitHub,GitHub||,https://github.com/ %&#125;</span><br></pre></td></tr></table></figure></li>
-<li>拓展参数，支持shields的API的全部参数内容 <figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% bdage Hosted,Vercel,Vercel||brightgreen,https://vercel.com/,本站采用双线部署，默认线路托管于Vercel||style=social&amp;logoWidth=20 %&#125;</span><br><span class="line">//如果是跨顺序省略可选参数组，仍然需要写双竖线||用作分割</span><br><span class="line">&#123;% bdage Hosted,Vercel,Vercel||||style=social&amp;logoWidth=20&amp;logoColor=violet %&#125;</span><br></pre></td></tr></table></figure> ##
-渲染演示</li>
-<li>基本参数,定义徽标左右文字和图标 <object class="ghbdage" style="margin-inline:5px" title="" standby="loading..." data="https://img.shields.io/badge/Butterfly-Theme-orange?logo=&color=orange&link=&"></object> <object class="ghbdage" style="margin-inline:5px" title="" standby="loading..." data="https://img.shields.io/badge/Hexo-Frame-orange?logo=hexo&color=orange&link=&"></object></li>
-<li>信息参数，定义徽标右侧内容背景色，指向链接 <object class="ghbdage" style="margin-inline:5px" title="本站使用JsDelivr为静态资源提供CDN加速" standby="loading..." data="https://img.shields.io/badge/JsDelivr-CDN-orange?logo=jsDelivr&color=abcdef&link=https://metroui.org.ua/index.html&"></object>
-//如果是跨顺序省略可选参数，仍然需要写个逗号,用作分割 <object class="ghbdage" style="margin-inline:5px" title="" standby="loading..." data="https://img.shields.io/badge/GitHub-Source-orange?logo=GitHub&color=orange&link=https://github.com/&"></object></li>
-<li>拓展参数，支持shields的API的全部参数内容 <object class="ghbdage" style="margin-inline:5px" title="本站采用双线部署，默认线路托管于Vercel" standby="loading..." data="https://img.shields.io/badge/Vercel-Hosted-orange?logo=Vercel&color=brightgreen&link=https://vercel.com/&style=social&logoWidth=20"></object>
-//如果是跨顺序省略可选参数组，仍然需要写双竖线||用作分割
-<object class="ghbdage" style="margin-inline:5px" title="" standby="loading..." data="https://img.shields.io/badge/Vercel-Hosted-orange?logo=Vercel&color=orange&link=&style=social&logoWidth=20&logoColor=violet"></object></li>
-</ol>
-]]></content>
-      <categories>
-        <category>博客搭建</category>
-      </categories>
-      <tags>
-        <tag>博客搭建</tag>
-        <tag>外挂标签</tag>
-        <tag>github徽标</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>外挂标签之上标标签</title>
     <url>/posts/fbc6eb76.html</url>
     <content><![CDATA[<h1 id="外挂标签之上标标签">外挂标签之上标标签</h1>
@@ -1271,6 +1271,61 @@ success,error,warning,bolt,ban,home,sync,cogs,key,bell</li>
         <tag>博客搭建</tag>
         <tag>外挂标签</tag>
         <tag>上标标签</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>外挂标签之动态标签</title>
+    <url>/posts/c16bd145.html</url>
+    <content><![CDATA[<h1 id="外挂标签之动态标签">外挂标签之动态标签</h1>
+<h2 id="标签语法">标签语法</h2>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% tip [参数，可选] %&#125;文本内容&#123;% endtip %&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="配置参数">配置参数</h2>
+<div class="note blue icon-padding modern"><i class="note-icon fas fa-bullhorn"></i><ol type="1">
+<li>将所需的CSS类添加到图标（或DOM中的任何元素）。</li>
+<li>对于父级悬停样式，需要给目标元素添加指定CSS类，同时还要给目标元素的父级元素添加CSS类faa-parent
+animated-hover。（详情见示例及示例源码） You can regulate the speed of
+the animation by adding the CSS class or . faa-fastfaa-slow</li>
+<li>可以通过给目标元素添加CSS类faa-fast或faa-slow来控制动画快慢。</li>
+</ol>
+</div>
+<h2 id="示例源码">示例源码</h2>
+<ol type="1">
+<li><p>On DOM load（当页面加载时显示动画） <figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% tip warning faa-horizontal animated %&#125;warning&#123;% endtip %&#125;</span><br><span class="line">&#123;% tip ban faa-flash animated %&#125;ban&#123;% endtip %&#125;</span><br></pre></td></tr></table></figure></p></li>
+<li><p>调整动画速度 <figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% tip warning faa-horizontal animated faa-fast %&#125;warning&#123;% endtip %&#125;</span><br><span class="line">&#123;% tip ban faa-flash animated faa-slow %&#125;ban&#123;% endtip %&#125;</span><br></pre></td></tr></table></figure></p></li>
+<li><p>On hover（当鼠标悬停时显示动画） <figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% tip warning faa-horizontal animated-hover %&#125;warning&#123;% endtip %&#125;</span><br><span class="line">&#123;% tip ban faa-flash animated-hover %&#125;ban&#123;% endtip %&#125;</span><br></pre></td></tr></table></figure></p></li>
+<li><p>On parent hover（当鼠标悬停在父级元素时显示动画）
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% tip warning faa-parent animated-hover %&#125;</span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">&quot;faa-horizontal&quot;</span>&gt;</span></span>warning<span class="language-xml"><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span></span><br><span class="line">&#123;% endtip %&#125;</span><br><span class="line">&#123;% tip ban faa-parent animated-hover %&#125;</span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">&quot;faa-flash&quot;</span>&gt;</span></span>ban<span class="language-xml"><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span></span><br><span class="line">&#123;% endtip %&#125;</span><br></pre></td></tr></table></figure></p></li>
+</ol>
+<h2 id="渲染演示">渲染演示</h2>
+<ol type="1">
+<li><p>On DOM load（当页面加载时显示动画） <div class="tip warning faa-horizontal animated"><p>warning</p>
+</div>
+<div class="tip ban faa-flash animated"><p>ban</p>
+</div></p></li>
+<li><p>调整动画速度 <div class="tip warning faa-horizontal animated faa-fast"><p>warning</p>
+</div> <div class="tip ban faa-flash animated faa-slow"><p>ban</p>
+</div></p></li>
+<li><p>On hover（当鼠标悬停时显示动画） <div class="tip warning faa-horizontal animated-hover"><p>warning</p>
+</div>
+<div class="tip ban faa-flash animated-hover"><p>ban</p>
+</div></p></li>
+<li><p>On parent hover（当鼠标悬停在父级元素时显示动画） <div class="tip warning faa-parent animated-hover"><p class="faa-horizontal">
+warning
+</p>
+</div>
+<div class="tip ban faa-parent animated-hover"><p class="faa-flash">
+ban
+</p>
+</div></p></li>
+</ol>
+]]></content>
+      <categories>
+        <category>博客搭建</category>
+      </categories>
+      <tags>
+        <tag>博客搭建</tag>
+        <tag>外挂标签</tag>
+        <tag>动态标签</tag>
       </tags>
   </entry>
   <entry>
@@ -1338,61 +1393,6 @@ data-cites="icon">@icon</span>’ 和 ‘Tab caption@icon’.</li>
       </tags>
   </entry>
   <entry>
-    <title>外挂标签之动态标签</title>
-    <url>/posts/c16bd145.html</url>
-    <content><![CDATA[<h1 id="外挂标签之动态标签">外挂标签之动态标签</h1>
-<h2 id="标签语法">标签语法</h2>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% tip [参数，可选] %&#125;文本内容&#123;% endtip %&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="配置参数">配置参数</h2>
-<div class="note blue icon-padding modern"><i class="note-icon fas fa-bullhorn"></i><ol type="1">
-<li>将所需的CSS类添加到图标（或DOM中的任何元素）。</li>
-<li>对于父级悬停样式，需要给目标元素添加指定CSS类，同时还要给目标元素的父级元素添加CSS类faa-parent
-animated-hover。（详情见示例及示例源码） You can regulate the speed of
-the animation by adding the CSS class or . faa-fastfaa-slow</li>
-<li>可以通过给目标元素添加CSS类faa-fast或faa-slow来控制动画快慢。</li>
-</ol>
-</div>
-<h2 id="示例源码">示例源码</h2>
-<ol type="1">
-<li><p>On DOM load（当页面加载时显示动画） <figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% tip warning faa-horizontal animated %&#125;warning&#123;% endtip %&#125;</span><br><span class="line">&#123;% tip ban faa-flash animated %&#125;ban&#123;% endtip %&#125;</span><br></pre></td></tr></table></figure></p></li>
-<li><p>调整动画速度 <figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% tip warning faa-horizontal animated faa-fast %&#125;warning&#123;% endtip %&#125;</span><br><span class="line">&#123;% tip ban faa-flash animated faa-slow %&#125;ban&#123;% endtip %&#125;</span><br></pre></td></tr></table></figure></p></li>
-<li><p>On hover（当鼠标悬停时显示动画） <figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% tip warning faa-horizontal animated-hover %&#125;warning&#123;% endtip %&#125;</span><br><span class="line">&#123;% tip ban faa-flash animated-hover %&#125;ban&#123;% endtip %&#125;</span><br></pre></td></tr></table></figure></p></li>
-<li><p>On parent hover（当鼠标悬停在父级元素时显示动画）
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% tip warning faa-parent animated-hover %&#125;</span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">&quot;faa-horizontal&quot;</span>&gt;</span></span>warning<span class="language-xml"><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span></span><br><span class="line">&#123;% endtip %&#125;</span><br><span class="line">&#123;% tip ban faa-parent animated-hover %&#125;</span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">&quot;faa-flash&quot;</span>&gt;</span></span>ban<span class="language-xml"><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span></span><br><span class="line">&#123;% endtip %&#125;</span><br></pre></td></tr></table></figure></p></li>
-</ol>
-<h2 id="渲染演示">渲染演示</h2>
-<ol type="1">
-<li><p>On DOM load（当页面加载时显示动画） <div class="tip warning faa-horizontal animated"><p>warning</p>
-</div>
-<div class="tip ban faa-flash animated"><p>ban</p>
-</div></p></li>
-<li><p>调整动画速度 <div class="tip warning faa-horizontal animated faa-fast"><p>warning</p>
-</div> <div class="tip ban faa-flash animated faa-slow"><p>ban</p>
-</div></p></li>
-<li><p>On hover（当鼠标悬停时显示动画） <div class="tip warning faa-horizontal animated-hover"><p>warning</p>
-</div>
-<div class="tip ban faa-flash animated-hover"><p>ban</p>
-</div></p></li>
-<li><p>On parent hover（当鼠标悬停在父级元素时显示动画） <div class="tip warning faa-parent animated-hover"><p class="faa-horizontal">
-warning
-</p>
-</div>
-<div class="tip ban faa-parent animated-hover"><p class="faa-flash">
-ban
-</p>
-</div></p></li>
-</ol>
-]]></content>
-      <categories>
-        <category>博客搭建</category>
-      </categories>
-      <tags>
-        <tag>博客搭建</tag>
-        <tag>外挂标签</tag>
-        <tag>动态标签</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>外挂标签之单张图片</title>
     <url>/posts/84d3a02d.html</url>
     <content><![CDATA[<h1 id="外挂标签之单张图片">外挂标签之单张图片</h1>
@@ -1426,51 +1426,6 @@ ban
         <tag>博客搭建</tag>
         <tag>外挂标签</tag>
         <tag>单张图片</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>外挂标签之单选列表</title>
-    <url>/posts/ed0ab06c.html</url>
-    <content><![CDATA[<h1 id="外挂标签之单选列表">外挂标签之单选列表</h1>
-<h2 id="标签语法">标签语法</h2>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% radio 样式参数（可选）, 文本（支持简单md） %&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="配置参数">配置参数</h2>
-<ol type="1">
-<li><code>颜色</code>: red,yellow,green,cyan,blue,gray</li>
-<li><code>选中状态</code>: checked</li>
-</ol>
-<h2 id="示例源码">示例源码</h2>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% radio 纯文本测试 %&#125;</span><br><span class="line">&#123;% radio checked, 支持简单的 [<span class="string">markdown</span>](<span class="link">https://guides.github.com/features/mastering-markdown/</span>) 语法 %&#125;</span><br><span class="line">&#123;% radio red, 支持自定义颜色 %&#125;</span><br><span class="line">&#123;% radio green, 绿色 %&#125;</span><br><span class="line">&#123;% radio yellow, 黄色 %&#125;</span><br><span class="line">&#123;% radio cyan, 青色 %&#125;</span><br><span class="line">&#123;% radio blue, 蓝色 %&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="渲染演示">渲染演示</h2>
-<div class='checkbox'><input type="radio" />
-            <p>纯文本测试</p>
-            </div>
-<div class='checkbox checked'><input type="radio" checked="checked"/>
-            <p>支持简单的 <ahref="https://guides.github.com/features/mastering-markdown/">markdown</a>语法</p>
-            </div>
-<div class='checkbox red'><input type="radio" />
-            <p>支持自定义颜色</p>
-            </div>
-<div class='checkbox green'><input type="radio" />
-            <p>绿色</p>
-            </div>
-<div class='checkbox yellow'><input type="radio" />
-            <p>黄色</p>
-            </div>
-<div class='checkbox cyan'><input type="radio" />
-            <p>青色</p>
-            </div>
-<div class='checkbox blue'><input type="radio" />
-            <p>蓝色</p>
-            </div>
-]]></content>
-      <categories>
-        <category>博客搭建</category>
-      </categories>
-      <tags>
-        <tag>博客搭建</tag>
-        <tag>外挂标签</tag>
-        <tag>单选列表</tag>
       </tags>
   </entry>
   <entry>
@@ -2135,6 +2090,51 @@ danger 提示块标签
       </tags>
   </entry>
   <entry>
+    <title>外挂标签之单选列表</title>
+    <url>/posts/ed0ab06c.html</url>
+    <content><![CDATA[<h1 id="外挂标签之单选列表">外挂标签之单选列表</h1>
+<h2 id="标签语法">标签语法</h2>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% radio 样式参数（可选）, 文本（支持简单md） %&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="配置参数">配置参数</h2>
+<ol type="1">
+<li><code>颜色</code>: red,yellow,green,cyan,blue,gray</li>
+<li><code>选中状态</code>: checked</li>
+</ol>
+<h2 id="示例源码">示例源码</h2>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% radio 纯文本测试 %&#125;</span><br><span class="line">&#123;% radio checked, 支持简单的 [<span class="string">markdown</span>](<span class="link">https://guides.github.com/features/mastering-markdown/</span>) 语法 %&#125;</span><br><span class="line">&#123;% radio red, 支持自定义颜色 %&#125;</span><br><span class="line">&#123;% radio green, 绿色 %&#125;</span><br><span class="line">&#123;% radio yellow, 黄色 %&#125;</span><br><span class="line">&#123;% radio cyan, 青色 %&#125;</span><br><span class="line">&#123;% radio blue, 蓝色 %&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="渲染演示">渲染演示</h2>
+<div class='checkbox'><input type="radio" />
+            <p>纯文本测试</p>
+            </div>
+<div class='checkbox checked'><input type="radio" checked="checked"/>
+            <p>支持简单的 <ahref="https://guides.github.com/features/mastering-markdown/">markdown</a>语法</p>
+            </div>
+<div class='checkbox red'><input type="radio" />
+            <p>支持自定义颜色</p>
+            </div>
+<div class='checkbox green'><input type="radio" />
+            <p>绿色</p>
+            </div>
+<div class='checkbox yellow'><input type="radio" />
+            <p>黄色</p>
+            </div>
+<div class='checkbox cyan'><input type="radio" />
+            <p>青色</p>
+            </div>
+<div class='checkbox blue'><input type="radio" />
+            <p>蓝色</p>
+            </div>
+]]></content>
+      <categories>
+        <category>博客搭建</category>
+      </categories>
+      <tags>
+        <tag>博客搭建</tag>
+        <tag>外挂标签</tag>
+        <tag>单选列表</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>外挂标签之引用文献</title>
     <url>/posts/965f46ee.html</url>
     <content><![CDATA[<h1 id="外挂标签之引用文献">外挂标签之引用文献</h1>
@@ -2358,53 +2358,6 @@ style="text-align: center;">填充布局，自动铺满至少一行，多了会�
       </tags>
   </entry>
   <entry>
-    <title>外挂标签之旋转相册</title>
-    <url>/posts/75b3d8a.html</url>
-    <content><![CDATA[<h1 id="外挂标签之旋转相册">外挂标签之旋转相册</h1>
-<div class="tip info"><p>旋转相册标签与fancybox灯箱存在兼容性bug，若发现旋转相册呈扁平状，请关闭fancybox或换用medium_zoom。</p>
-</div>
-<h2 id="标签语法">标签语法</h2>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% carousel [Id] , [name] %&#125;</span><br><span class="line">![](<span class="link">/img/1.jpg</span>)</span><br><span class="line">![](<span class="link">/img/2.jpg</span>)</span><br><span class="line">![](<span class="link">/img/3,jpg</span>)</span><br><span class="line">&#123;% endcarousel %&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="配置参数">配置参数</h2>
-<ol type="1">
-<li><code>Id</code>:
-相册唯一ID，用于监测相册鼠标动作。禁止使用中文。同一页内不得出现相同ID的carousel相册。</li>
-<li><code>name</code>: 相册中间显示的内容，建议用英文单引号包裹。</li>
-</ol>
-<h2 id="示例源码">示例源码</h2>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% carousel &#x27;SF&#x27;,&#x27;strike freedom&#x27; %&#125;</span><br><span class="line">![](<span class="link">https://npm.elemecdn.com/akilar-candyassets/image/20200907110444226.png</span>)</span><br><span class="line">![](<span class="link">https://npm.elemecdn.com/akilar-candyassets/image/20200907110508327.png</span>)</span><br><span class="line">![](<span class="link">https://npm.elemecdn.com/akilar-candyassets/image/20200907110525753.png</span>)</span><br><span class="line">![](<span class="link">https://npm.elemecdn.com/akilar-candyassets/image/20200907110600751.png</span>)</span><br><span class="line">![](<span class="link">https://npm.elemecdn.com/akilar-candyassets/image/20200907110621554.png</span>)</span><br><span class="line">![](<span class="link">https://npm.elemecdn.com/akilar-candyassets/image/20200907110637459.png</span>)</span><br><span class="line">![](<span class="link">https://npm.elemecdn.com/akilar-candyassets/image/20200907110654150.png</span>)</span><br><span class="line">![](<span class="link">https://npm.elemecdn.com/akilar-candyassets/image/20200907110707916.png</span>)</span><br><span class="line">![](<span class="link">https://npm.elemecdn.com/akilar-candyassets/image/20200907110719787.png</span>)</span><br><span class="line">![](<span class="link">https://npm.elemecdn.com/akilar-candyassets/image/20200907110731118.png</span>)</span><br><span class="line">&#123;% endcarousel %&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="渲染演示">渲染演示</h2>
-<div id='SF' class='carousel'><div id="SF-drag-container" class="drag-container"><div id="SF-spin-container" class="spin-container"><img
-src="https://npm.elemecdn.com/akilar-candyassets/image/20200907110444226.png" />
-<img
-src="https://npm.elemecdn.com/akilar-candyassets/image/20200907110508327.png" />
-<img
-src="https://npm.elemecdn.com/akilar-candyassets/image/20200907110525753.png" />
-<img
-src="https://npm.elemecdn.com/akilar-candyassets/image/20200907110600751.png" />
-<img
-src="https://npm.elemecdn.com/akilar-candyassets/image/20200907110621554.png" />
-<img
-src="https://npm.elemecdn.com/akilar-candyassets/image/20200907110637459.png" />
-<img
-src="https://npm.elemecdn.com/akilar-candyassets/image/20200907110654150.png" />
-<img
-src="https://npm.elemecdn.com/akilar-candyassets/image/20200907110707916.png" />
-<img
-src="https://npm.elemecdn.com/akilar-candyassets/image/20200907110719787.png" />
-<img
-src="https://npm.elemecdn.com/akilar-candyassets/image/20200907110731118.png" /><p>strike freedom</p></div><div id="SF-carousel-ground" class="carousel-ground"></div></div></div><script type="text/javascript">carouselinit('SF');</script>
-]]></content>
-      <categories>
-        <category>博客搭建</category>
-      </categories>
-      <tags>
-        <tag>博客搭建</tag>
-        <tag>外挂标签</tag>
-        <tag>旋转相册</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>外挂标签之时间轴</title>
     <url>/posts/57924155.html</url>
     <content><![CDATA[<h1 id="外挂标签之时间轴">外挂标签之时间轴</h1>
@@ -2461,6 +2414,53 @@ href="https://github.com/volantis-x/hexo-theme-volantis/releases/tag/2.6.3">2.6.
         <tag>博客搭建</tag>
         <tag>外挂标签</tag>
         <tag>时间轴</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>外挂标签之旋转相册</title>
+    <url>/posts/75b3d8a.html</url>
+    <content><![CDATA[<h1 id="外挂标签之旋转相册">外挂标签之旋转相册</h1>
+<div class="tip info"><p>旋转相册标签与fancybox灯箱存在兼容性bug，若发现旋转相册呈扁平状，请关闭fancybox或换用medium_zoom。</p>
+</div>
+<h2 id="标签语法">标签语法</h2>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% carousel [Id] , [name] %&#125;</span><br><span class="line">![](<span class="link">/img/1.jpg</span>)</span><br><span class="line">![](<span class="link">/img/2.jpg</span>)</span><br><span class="line">![](<span class="link">/img/3,jpg</span>)</span><br><span class="line">&#123;% endcarousel %&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="配置参数">配置参数</h2>
+<ol type="1">
+<li><code>Id</code>:
+相册唯一ID，用于监测相册鼠标动作。禁止使用中文。同一页内不得出现相同ID的carousel相册。</li>
+<li><code>name</code>: 相册中间显示的内容，建议用英文单引号包裹。</li>
+</ol>
+<h2 id="示例源码">示例源码</h2>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% carousel &#x27;SF&#x27;,&#x27;strike freedom&#x27; %&#125;</span><br><span class="line">![](<span class="link">https://npm.elemecdn.com/akilar-candyassets/image/20200907110444226.png</span>)</span><br><span class="line">![](<span class="link">https://npm.elemecdn.com/akilar-candyassets/image/20200907110508327.png</span>)</span><br><span class="line">![](<span class="link">https://npm.elemecdn.com/akilar-candyassets/image/20200907110525753.png</span>)</span><br><span class="line">![](<span class="link">https://npm.elemecdn.com/akilar-candyassets/image/20200907110600751.png</span>)</span><br><span class="line">![](<span class="link">https://npm.elemecdn.com/akilar-candyassets/image/20200907110621554.png</span>)</span><br><span class="line">![](<span class="link">https://npm.elemecdn.com/akilar-candyassets/image/20200907110637459.png</span>)</span><br><span class="line">![](<span class="link">https://npm.elemecdn.com/akilar-candyassets/image/20200907110654150.png</span>)</span><br><span class="line">![](<span class="link">https://npm.elemecdn.com/akilar-candyassets/image/20200907110707916.png</span>)</span><br><span class="line">![](<span class="link">https://npm.elemecdn.com/akilar-candyassets/image/20200907110719787.png</span>)</span><br><span class="line">![](<span class="link">https://npm.elemecdn.com/akilar-candyassets/image/20200907110731118.png</span>)</span><br><span class="line">&#123;% endcarousel %&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="渲染演示">渲染演示</h2>
+<div id='SF' class='carousel'><div id="SF-drag-container" class="drag-container"><div id="SF-spin-container" class="spin-container"><img
+src="https://npm.elemecdn.com/akilar-candyassets/image/20200907110444226.png" />
+<img
+src="https://npm.elemecdn.com/akilar-candyassets/image/20200907110508327.png" />
+<img
+src="https://npm.elemecdn.com/akilar-candyassets/image/20200907110525753.png" />
+<img
+src="https://npm.elemecdn.com/akilar-candyassets/image/20200907110600751.png" />
+<img
+src="https://npm.elemecdn.com/akilar-candyassets/image/20200907110621554.png" />
+<img
+src="https://npm.elemecdn.com/akilar-candyassets/image/20200907110637459.png" />
+<img
+src="https://npm.elemecdn.com/akilar-candyassets/image/20200907110654150.png" />
+<img
+src="https://npm.elemecdn.com/akilar-candyassets/image/20200907110707916.png" />
+<img
+src="https://npm.elemecdn.com/akilar-candyassets/image/20200907110719787.png" />
+<img
+src="https://npm.elemecdn.com/akilar-candyassets/image/20200907110731118.png" /><p>strike freedom</p></div><div id="SF-carousel-ground" class="carousel-ground"></div></div></div><script type="text/javascript">carouselinit('SF');</script>
+]]></content>
+      <categories>
+        <category>博客搭建</category>
+      </categories>
+      <tags>
+        <tag>博客搭建</tag>
+        <tag>外挂标签</tag>
+        <tag>旋转相册</tag>
       </tags>
   </entry>
   <entry>
@@ -2548,6 +2548,49 @@ href="https://github.com/volantis-x/hexo-theme-volantis/releases/tag/2.6.3">2.6.
       </tags>
   </entry>
   <entry>
+    <title>外挂标签之行内图片</title>
+    <url>/posts/c4c94f7f.html</url>
+    <content><![CDATA[<h1 id="外挂标签之行内图片">外挂标签之行内图片</h1>
+<h2 id="标签语法">标签语法</h2>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% inlineimage 图片链接, height=高度（可选） %&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="配置参数">配置参数</h2>
+<p><code>高度</code>：height=20px</p>
+<h2 id="示例源码">示例源码</h2>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">这是 &#123;% inlineimage https://cdn.jsdelivr.net/gh/volantis-x/cdn-emoji/aru-l/0000.gif %&#125; 一段话。</span><br><span class="line"></span><br><span class="line">这又是 &#123;% inlineimage https://cdn.jsdelivr.net/gh/volantis-x/cdn-emoji/aru-l/5150.gif, height=40px %&#125; 一段话。</span><br></pre></td></tr></table></figure>
+<h2 id="渲染演示">渲染演示</h2>
+<p>这是 <img no-lazy class="inline" src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-emoji/aru-l/0000.gif" style="height:1.5em"/> 一段话。</p>
+<p>这又是 <img no-lazy class="inline" src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-emoji/aru-l/5150.gif" style="height:40px;"/> 一段话。</p>
+]]></content>
+      <categories>
+        <category>博客搭建</category>
+      </categories>
+      <tags>
+        <tag>博客搭建</tag>
+        <tag>外挂标签</tag>
+        <tag>行内图片</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>外挂标签之网站卡片</title>
+    <url>/posts/cbc0000a.html</url>
+    <content><![CDATA[<h1 id="外挂标签之网站卡片">外挂标签之网站卡片</h1>
+<h2 id="标签语法">标签语法</h2>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% sitegroup %&#125;</span><br><span class="line">&#123;% site 标题, url=链接, screenshot=截图链接, avatar=头像链接（可选）, description=描述（可选） %&#125;</span><br><span class="line">&#123;% site 标题, url=链接, screenshot=截图链接, avatar=头像链接（可选）, description=描述（可选） %&#125;</span><br><span class="line">&#123;% endsitegroup %&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="示例源码">示例源码</h2>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% sitegroup %&#125;</span><br><span class="line">&#123;% site Colsrch, url=https://colsrch.top, screenshot=https://i.loli.net/2020/08/22/dFRWXm52OVu8qfK.png, avatar=https://cdn.jsdelivr.net/gh/Colsrch/images/Colsrch/avatar.jpg, description=这是一段关于这个网站的描述文字 %&#125;</span><br><span class="line">&#123;% endsitegroup %&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="渲染演示">渲染演示</h2>
+<div class="site-card-group"><a class="site-card" href="https://colsrch.top"><div class="img"><img src="https://i.loli.net/2020/08/22/dFRWXm52OVu8qfK.png"/></div><div class="info"><img src="https://cdn.jsdelivr.net/gh/Colsrch/images/Colsrch/avatar.jpg"/><span class="title">Colsrch</span><span class="desc">这是一段关于这个网站的描述文字</span></div></a></div>
+]]></content>
+      <categories>
+        <category>博客搭建</category>
+      </categories>
+      <tags>
+        <tag>博客搭建</tag>
+        <tag>外挂标签</tag>
+        <tag>网站卡片</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>外挂标签之特效标签</title>
     <url>/posts/dd1db991.html</url>
     <content><![CDATA[<h1 id="外挂标签之特效标签">外挂标签之特效标签</h1>
@@ -2619,49 +2662,6 @@ href="https://animate.style/">animate.css 参考文档</a></li>
       </tags>
   </entry>
   <entry>
-    <title>外挂标签之网站卡片</title>
-    <url>/posts/cbc0000a.html</url>
-    <content><![CDATA[<h1 id="外挂标签之网站卡片">外挂标签之网站卡片</h1>
-<h2 id="标签语法">标签语法</h2>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% sitegroup %&#125;</span><br><span class="line">&#123;% site 标题, url=链接, screenshot=截图链接, avatar=头像链接（可选）, description=描述（可选） %&#125;</span><br><span class="line">&#123;% site 标题, url=链接, screenshot=截图链接, avatar=头像链接（可选）, description=描述（可选） %&#125;</span><br><span class="line">&#123;% endsitegroup %&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="示例源码">示例源码</h2>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% sitegroup %&#125;</span><br><span class="line">&#123;% site Colsrch, url=https://colsrch.top, screenshot=https://i.loli.net/2020/08/22/dFRWXm52OVu8qfK.png, avatar=https://cdn.jsdelivr.net/gh/Colsrch/images/Colsrch/avatar.jpg, description=这是一段关于这个网站的描述文字 %&#125;</span><br><span class="line">&#123;% endsitegroup %&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="渲染演示">渲染演示</h2>
-<div class="site-card-group"><a class="site-card" href="https://colsrch.top"><div class="img"><img src="https://i.loli.net/2020/08/22/dFRWXm52OVu8qfK.png"/></div><div class="info"><img src="https://cdn.jsdelivr.net/gh/Colsrch/images/Colsrch/avatar.jpg"/><span class="title">Colsrch</span><span class="desc">这是一段关于这个网站的描述文字</span></div></a></div>
-]]></content>
-      <categories>
-        <category>博客搭建</category>
-      </categories>
-      <tags>
-        <tag>博客搭建</tag>
-        <tag>外挂标签</tag>
-        <tag>网站卡片</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>外挂标签之行内图片</title>
-    <url>/posts/c4c94f7f.html</url>
-    <content><![CDATA[<h1 id="外挂标签之行内图片">外挂标签之行内图片</h1>
-<h2 id="标签语法">标签语法</h2>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% inlineimage 图片链接, height=高度（可选） %&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="配置参数">配置参数</h2>
-<p><code>高度</code>：height=20px</p>
-<h2 id="示例源码">示例源码</h2>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">这是 &#123;% inlineimage https://cdn.jsdelivr.net/gh/volantis-x/cdn-emoji/aru-l/0000.gif %&#125; 一段话。</span><br><span class="line"></span><br><span class="line">这又是 &#123;% inlineimage https://cdn.jsdelivr.net/gh/volantis-x/cdn-emoji/aru-l/5150.gif, height=40px %&#125; 一段话。</span><br></pre></td></tr></table></figure>
-<h2 id="渲染演示">渲染演示</h2>
-<p>这是 <img no-lazy class="inline" src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-emoji/aru-l/0000.gif" style="height:1.5em"/> 一段话。</p>
-<p>这又是 <img no-lazy class="inline" src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-emoji/aru-l/5150.gif" style="height:40px;"/> 一段话。</p>
-]]></content>
-      <categories>
-        <category>博客搭建</category>
-      </categories>
-      <tags>
-        <tag>博客搭建</tag>
-        <tag>外挂标签</tag>
-        <tag>行内图片</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>外挂标签之行内文本</title>
     <url>/posts/ad253b28.html</url>
     <content><![CDATA[<h1 id="外挂标签之行内文本">外挂标签之行内文本</h1>
@@ -2691,33 +2691,6 @@ href="https://animate.style/">animate.css 参考文档</a></li>
         <tag>博客搭建</tag>
         <tag>外挂标签</tag>
         <tag>行内文本</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>外挂标签之行内样式文本</title>
-    <url>/posts/1d2c62cf.html</url>
-    <content><![CDATA[<h1 id="外挂标签之行内样式文本">外挂标签之行内样式文本</h1>
-<h2 id="标签语法">标签语法</h2>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% u 文本内容 %&#125;</span><br><span class="line">&#123;% emp 文本内容 %&#125;</span><br><span class="line">&#123;% wavy 文本内容 %&#125;</span><br><span class="line">&#123;% del 文本内容 %&#125;</span><br><span class="line">&#123;% kbd 文本内容 %&#125;</span><br><span class="line">&#123;% psw 文本内容 %&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="示例源码">示例源码</h2>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="bullet">1.</span> 带 &#123;% u 下划线 %&#125; 的文本</span><br><span class="line"><span class="bullet">2.</span> 带 &#123;% emp 着重号 %&#125; 的文本</span><br><span class="line"><span class="bullet">3.</span> 带 &#123;% wavy 波浪线 %&#125; 的文本</span><br><span class="line"><span class="bullet">4.</span> 带 &#123;% del 删除线 %&#125; 的文本</span><br><span class="line"><span class="bullet">5.</span> 键盘样式的文本 &#123;% kbd command %&#125; + &#123;% kbd D %&#125;</span><br><span class="line"><span class="bullet">6.</span> 密码样式的文本：&#123;% psw 这里没有验证码 %&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="渲染演示">渲染演示</h2>
-<ol type="1">
-<li>带 <u>下划线</u> 的文本</li>
-<li>带 <emp>着重号</emp> 的文本</li>
-<li>带 <wavy>波浪线</wavy> 的文本</li>
-<li>带 <del>删除线</del> 的文本</li>
-<li>键盘样式的文本 <kbd>Ctrl</kbd> + <kbd>D</kbd></li>
-<li>密码样式的文本：<psw>这里没有验证码</psw></li>
-</ol>
-]]></content>
-      <categories>
-        <category>博客搭建</category>
-      </categories>
-      <tags>
-        <tag>博客搭建</tag>
-        <tag>外挂标签</tag>
-        <tag>行内样式文本</tag>
       </tags>
   </entry>
   <entry>
@@ -2766,36 +2739,6 @@ href="https://animate.style/">animate.css 参考文档</a></li>
       </tags>
   </entry>
   <entry>
-    <title>外挂标签之诗词标签</title>
-    <url>/posts/1ec3eb97.html</url>
-    <content><![CDATA[<h1 id="外挂标签之诗词标签">外挂标签之诗词标签</h1>
-<h2 id="标签语法">标签语法</h2>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% poem [title],[author] %&#125;</span><br><span class="line">诗词内容</span><br><span class="line">&#123;% endpoem %&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="配置参数">配置参数</h2>
-<ol type="1">
-<li><code>title</code>：诗词标题</li>
-<li><code>author</code>：作者，可以不写</li>
-</ol>
-<h2 id="示例源码">示例源码</h2>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% poem 钗头凤·世情薄,唐婉 %&#125;</span><br><span class="line">世情薄，人情恶，雨送黄昏花易落。晓风干，泪痕残。欲笺心事，独语斜阑。难，难，难！</span><br><span class="line">人成各，今非昨，病魂常似秋千索。角声寒，夜阑珊。怕人寻问，咽泪装欢。瞒，瞒，瞒！</span><br><span class="line">&#123;% endpoem %&#125;</span><br><span class="line">&#123;% poem 钗头凤·红酥手,陆游 %&#125;</span><br><span class="line">红酥手。黄縢酒。满城春色宫墙柳。东风恶。欢情薄。一怀愁绪，几年离索。错错错。</span><br><span class="line">春如旧。人空瘦。泪痕红浥鲛绡透。桃花落。闲池阁。山盟虽在，锦书难托。莫莫莫。</span><br><span class="line">&#123;% endpoem %&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="渲染演示">渲染演示</h2>
-<div class='poem'><div class='poem-title'>钗头凤·世情薄</div><div class='poem-author'>唐婉</div><p>世情薄，人情恶，雨送黄昏花易落。晓风干，泪痕残。欲笺心事，独语斜阑。难，难，难！
-人成各，今非昨，病魂常似秋千索。角声寒，夜阑珊。怕人寻问，咽泪装欢。瞒，瞒，瞒！</p>
-</div>
-<div class='poem'><div class='poem-title'>钗头凤·红酥手</div><div class='poem-author'>陆游</div><p>红酥手，黄縢酒。满城春色宫墙柳。东风恶。欢情薄。一怀愁绪，几年离索。错，错，错！
-春如旧，人空瘦。泪痕红浥鲛绡透。桃花落。闲池阁。山盟虽在，锦书难托。莫，莫，莫！</p>
-</div>
-]]></content>
-      <categories>
-        <category>博客搭建</category>
-      </categories>
-      <tags>
-        <tag>博客搭建</tag>
-        <tag>外挂标签</tag>
-        <tag>诗词标签</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>外挂标签之进度条</title>
     <url>/posts/5dede2e1.html</url>
     <content><![CDATA[<h1 id="外挂标签之进度条">外挂标签之进度条</h1>
@@ -2833,15 +2776,22 @@ red,yellow,green,cyan,blue,gray</li>
       </tags>
   </entry>
   <entry>
-    <title>外挂标签之链接卡片</title>
-    <url>/posts/816398cf.html</url>
-    <content><![CDATA[<h1 id="外挂标签之链接卡片">外挂标签之链接卡片</h1>
+    <title>外挂标签之行内样式文本</title>
+    <url>/posts/1d2c62cf.html</url>
+    <content><![CDATA[<h1 id="外挂标签之行内样式文本">外挂标签之行内样式文本</h1>
 <h2 id="标签语法">标签语法</h2>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% link 标题, 链接, 图片链接（可选） %&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% u 文本内容 %&#125;</span><br><span class="line">&#123;% emp 文本内容 %&#125;</span><br><span class="line">&#123;% wavy 文本内容 %&#125;</span><br><span class="line">&#123;% del 文本内容 %&#125;</span><br><span class="line">&#123;% kbd 文本内容 %&#125;</span><br><span class="line">&#123;% psw 文本内容 %&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="示例源码">示例源码</h2>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% link 糖果屋教程贴, https://akilar.top/posts/615e2dec/, https://cdn.cbd.int/akilar-candyassets@1.0.36/image/siteicon/favicon.ico %&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="bullet">1.</span> 带 &#123;% u 下划线 %&#125; 的文本</span><br><span class="line"><span class="bullet">2.</span> 带 &#123;% emp 着重号 %&#125; 的文本</span><br><span class="line"><span class="bullet">3.</span> 带 &#123;% wavy 波浪线 %&#125; 的文本</span><br><span class="line"><span class="bullet">4.</span> 带 &#123;% del 删除线 %&#125; 的文本</span><br><span class="line"><span class="bullet">5.</span> 键盘样式的文本 &#123;% kbd command %&#125; + &#123;% kbd D %&#125;</span><br><span class="line"><span class="bullet">6.</span> 密码样式的文本：&#123;% psw 这里没有验证码 %&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="渲染演示">渲染演示</h2>
-<div class="tag link"><a class="link-card" title="糖果屋教程贴" href="https://akilar.top/posts/615e2dec/"><div class="left"><img src="https://cdn.cbd.int/akilar-candyassets@1.0.36/image/siteicon/favicon.ico"/></div><div class="right"><p class="text">糖果屋教程贴</p><p class="url">https://akilar.top/posts/615e2dec/</p></div></a></div>
+<ol type="1">
+<li>带 <u>下划线</u> 的文本</li>
+<li>带 <emp>着重号</emp> 的文本</li>
+<li>带 <wavy>波浪线</wavy> 的文本</li>
+<li>带 <del>删除线</del> 的文本</li>
+<li>键盘样式的文本 <kbd>Ctrl</kbd> + <kbd>D</kbd></li>
+<li>密码样式的文本：<psw>这里没有验证码</psw></li>
+</ol>
 ]]></content>
       <categories>
         <category>博客搭建</category>
@@ -2849,7 +2799,37 @@ red,yellow,green,cyan,blue,gray</li>
       <tags>
         <tag>博客搭建</tag>
         <tag>外挂标签</tag>
-        <tag>链接卡片</tag>
+        <tag>行内样式文本</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>外挂标签之诗词标签</title>
+    <url>/posts/1ec3eb97.html</url>
+    <content><![CDATA[<h1 id="外挂标签之诗词标签">外挂标签之诗词标签</h1>
+<h2 id="标签语法">标签语法</h2>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% poem [title],[author] %&#125;</span><br><span class="line">诗词内容</span><br><span class="line">&#123;% endpoem %&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="配置参数">配置参数</h2>
+<ol type="1">
+<li><code>title</code>：诗词标题</li>
+<li><code>author</code>：作者，可以不写</li>
+</ol>
+<h2 id="示例源码">示例源码</h2>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% poem 钗头凤·世情薄,唐婉 %&#125;</span><br><span class="line">世情薄，人情恶，雨送黄昏花易落。晓风干，泪痕残。欲笺心事，独语斜阑。难，难，难！</span><br><span class="line">人成各，今非昨，病魂常似秋千索。角声寒，夜阑珊。怕人寻问，咽泪装欢。瞒，瞒，瞒！</span><br><span class="line">&#123;% endpoem %&#125;</span><br><span class="line">&#123;% poem 钗头凤·红酥手,陆游 %&#125;</span><br><span class="line">红酥手。黄縢酒。满城春色宫墙柳。东风恶。欢情薄。一怀愁绪，几年离索。错错错。</span><br><span class="line">春如旧。人空瘦。泪痕红浥鲛绡透。桃花落。闲池阁。山盟虽在，锦书难托。莫莫莫。</span><br><span class="line">&#123;% endpoem %&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="渲染演示">渲染演示</h2>
+<div class='poem'><div class='poem-title'>钗头凤·世情薄</div><div class='poem-author'>唐婉</div><p>世情薄，人情恶，雨送黄昏花易落。晓风干，泪痕残。欲笺心事，独语斜阑。难，难，难！
+人成各，今非昨，病魂常似秋千索。角声寒，夜阑珊。怕人寻问，咽泪装欢。瞒，瞒，瞒！</p>
+</div>
+<div class='poem'><div class='poem-title'>钗头凤·红酥手</div><div class='poem-author'>陆游</div><p>红酥手，黄縢酒。满城春色宫墙柳。东风恶。欢情薄。一怀愁绪，几年离索。错，错，错！
+春如旧，人空瘦。泪痕红浥鲛绡透。桃花落。闲池阁。山盟虽在，锦书难托。莫，莫，莫！</p>
+</div>
+]]></content>
+      <categories>
+        <category>博客搭建</category>
+      </categories>
+      <tags>
+        <tag>博客搭建</tag>
+        <tag>外挂标签</tag>
+        <tag>诗词标签</tag>
       </tags>
   </entry>
   <entry>
@@ -2888,6 +2868,26 @@ href="https://akilar.top/posts/d2ebecef/">Hexo引入阿里矢量图标库</a></p
         <tag>博客搭建</tag>
         <tag>外挂标签</tag>
         <tag>阿里图标</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>外挂标签之链接卡片</title>
+    <url>/posts/816398cf.html</url>
+    <content><![CDATA[<h1 id="外挂标签之链接卡片">外挂标签之链接卡片</h1>
+<h2 id="标签语法">标签语法</h2>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% link 标题, 链接, 图片链接（可选） %&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="示例源码">示例源码</h2>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% link 糖果屋教程贴, https://akilar.top/posts/615e2dec/, https://cdn.cbd.int/akilar-candyassets@1.0.36/image/siteicon/favicon.ico %&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="渲染演示">渲染演示</h2>
+<div class="tag link"><a class="link-card" title="糖果屋教程贴" href="https://akilar.top/posts/615e2dec/"><div class="left"><img src="https://cdn.cbd.int/akilar-candyassets@1.0.36/image/siteicon/favicon.ico"/></div><div class="right"><p class="text">糖果屋教程贴</p><p class="url">https://akilar.top/posts/615e2dec/</p></div></a></div>
+]]></content>
+      <categories>
+        <category>博客搭建</category>
+      </categories>
+      <tags>
+        <tag>博客搭建</tag>
+        <tag>外挂标签</tag>
+        <tag>链接卡片</tag>
       </tags>
   </entry>
   <entry>
