@@ -245,3 +245,9 @@ div#category {
 [data-theme="dark"] .cf-article-author {
     color: pink !important;
 }
+
+/* 加载动画 avatarload */
+.loading-img {
+    background: url(https://blogresource.sqwdream.cloud/avatar/avatar.png) no-repeat center center;
+    background-size: cover;
+  }
